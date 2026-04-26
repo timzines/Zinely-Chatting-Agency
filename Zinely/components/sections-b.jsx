@@ -48,21 +48,23 @@ function Results() {
   const cases = [
     {
       href: 'case-launch.html',
+      cover: 'screenshots/case-launch-insights-dashboard.png',
       niche: 'Goth / alt creator',
       platform: 'Fanvue',
       timeframe: '5-month launch',
-      metric: '$0 → $120K/mo',
-      headline: <>From $0 to <em>$120K/mo</em> in 5 months.</>,
-      teaser: 'Cold-launched goth Fanvue account. Niche-loyal funnel, ritualised drop calendar, sub-only Discord. Top-1% on platform.',
+      metric: '$0 → $125K total',
+      headline: <>From $0 to <em>$125K</em> in 5 months.</>,
+      teaser: 'Goth account on Fanvue. $88.9K in PPVs sold, $6.9K in tips — $125K total in five months.',
     },
     {
       href: 'case-sprint.html',
+      cover: 'screenshots/case-sprint-insights-dashboard.png',
       niche: 'Goth / alt creator',
       platform: 'Fanvue',
-      timeframe: '27-day sprint',
-      metric: '$0 → $10K in 27 days',
-      headline: <>From $0 to <em>$10K/mo</em> in less than a month.</>,
-      teaser: 'Aggressive pre-launch hype window, day-one PPV ladder pre-built, sub-minute DM cadence on every new fan.',
+      timeframe: '31-day sprint',
+      metric: '$0 → $10K in 31 days',
+      headline: <>From $0 to <em>$10K</em> in 31 days.</>,
+      teaser: 'Goth Fanvue account. $4.6K in messages, $4.7K in tips — $10K in just 31 days from a cold launch.',
     },
   ];
   return (
@@ -79,12 +81,8 @@ function Results() {
         <div className="case-index-grid reveal">
           {cases.map((c) => (
             <a key={c.href} className="case-card" href={c.href}>
-              <figure className="skeleton-img" style={{ aspectRatio: '16 / 10' }}>
-                <div className="skeleton-img-inner">
-                  <span className="skeleton-img-icon"><Icon.camera /></span>
-                  <span className="skeleton-img-label">{c.niche} thumbnail</span>
-                  <span className="skeleton-img-hint">Drop the cover image you want to lead this case with.</span>
-                </div>
+              <figure className="case-shot" style={{ aspectRatio: '16 / 10' }}>
+                <img src={c.cover} alt={`${c.niche} dashboard`} loading="lazy" />
               </figure>
               <div className="case-tags">
                 <span className="case-tag case-tag-niche">{c.niche}</span>

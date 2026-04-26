@@ -1649,6 +1649,37 @@ h2 { font-weight: 400; }
 .case-shots.multi  { grid-template-columns: 1fr 1fr; }
 @media (max-width: 720px) { .case-shots.multi { grid-template-columns: 1fr; } }
 
+/* Real screenshot frame — used when a case study has a real image (not a skeleton) */
+.case-shot {
+  position: relative;
+  margin: 0;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color 200ms;
+}
+.case-shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.case-shot figcaption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 10px 14px;
+  background: linear-gradient(180deg, transparent, rgba(7, 9, 15, 0.85));
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  pointer-events: none;
+}
+.case-card .case-shot { aspect-ratio: 16 / 10; }
+.case-card:hover .case-shot { border-color: var(--accent-ring); }
+
 /* Skeleton image — clear placeholder, reads as "drop your screenshot here" */
 .skeleton-img {
   position: relative;

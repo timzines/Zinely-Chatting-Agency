@@ -19,15 +19,16 @@ const CASES = {
     niche: 'Goth / alt creator',
     platform: 'Fanvue',
     timeframe: '5-month launch',
-    headline: <>From $0 to <em>$120K/mo</em> in 5 months.</>,
-    headlinePlain: 'From $0 to $120K/mo in 5 months.',
-    teaser: 'Brand-new goth creator launched on Fanvue. Niche-loyal funnel, ritualised drop calendar, sub-only Discord. Top-1% on platform inside five months — no follow-up agency required.',
-    metric: '$0 → $120K/mo',
+    headline: <>From $0 to <em>$125K</em> in 5 months.</>,
+    headlinePlain: 'From $0 to $125K in 5 months.',
+    teaser: 'Goth account on Fanvue. $88.9K in PPVs sold, $6.9K in tips — $125K total in five months.',
+    metric: '$0 → $125K total',
+    cover: 'screenshots/case-launch-insights-dashboard.png',
     stats: [
-      { num: '$120K', sub: 'monthly revenue', foot: 'at month-5 close' },
-      { num: '8.4K', sub: 'paying subscribers', foot: 'from a cold launch' },
-      { num: '46%', sub: 'from customs', foot: 'themed shoot menu' },
-      { num: '$540', sub: 'subscriber LTV', foot: 'across the 5-month window' },
+      { num: '$125K', sub: 'all-time revenue', foot: 'across the 5-month run' },
+      { num: '$88.9K', sub: 'from PPVs sold', foot: '71% of total revenue' },
+      { num: '$6.9K', sub: 'from tips', foot: 'across the 5-month run' },
+      { num: 'Top 0.24%', sub: 'on Fanvue', foot: 'platform leaderboard' },
     ],
     sections: [
       {
@@ -57,10 +58,12 @@ const CASES = {
         num: '03 / Receipts',
         title: <>Five months, <em>charted.</em></>,
         skeletons: [
-          { ratio: '4/3', label: 'Subscriber growth chart', hint: '5-month line chart from Fanvue analytics — weekly subscriber delta.' },
-          { ratio: '3/4', label: 'Custom shoot menu',       hint: 'Phone screenshot of the bookable shoot menu visible to subs.' },
-          { ratio: '4/3', label: 'Revenue mix breakdown',   hint: 'Pie or bar chart: subs / PPV / customs / tips at month-5.' },
-          { ratio: '3/4', label: 'Drop launch screenshot',  hint: 'Phone screenshot of one of the themed drops on the paid feed.' },
+          { ratio: '16/8', label: 'Fanvue Insights · all-time + last-month + top spenders',
+            src: 'screenshots/case-launch-insights-dashboard.png', alt: 'Fanvue Insights dashboard showing $124,546 all-time revenue and $22,858 in the last month for the launch case study' },
+          { ratio: '1/1',  label: 'Earnings by type · $125K total split across messages, subs, renewals, tips',
+            src: 'screenshots/case-launch-earnings-by-type.png', alt: 'Donut chart showing $125K total earnings broken down by source: messages $88,904, subs $18,072, renewals $10,586, tips $6,982' },
+          { ratio: '4/3',  label: 'Earnings over time · 6-month line + per-source breakdown',
+            src: 'screenshots/case-launch-earnings-over-time.png', alt: 'Earnings-over-time chart for the launch case with category breakdown' },
         ],
       },
     ],
@@ -75,16 +78,17 @@ const CASES = {
     href: 'case-sprint.html',
     niche: 'Goth / alt creator',
     platform: 'Fanvue',
-    timeframe: '27-day sprint',
-    headline: <>From $0 to <em>$10K/mo</em> in less than a month.</>,
-    headlinePlain: 'From $0 to $10K/mo in less than a month.',
-    teaser: 'New goth Fanvue account, broke five figures inside 27 days. Aggressive pre-launch hype window, day-one PPV ladder pre-built, sub-minute DM cadence on every new fan.',
-    metric: '$0 → $10K in 27 days',
+    timeframe: '31-day sprint',
+    headline: <>From $0 to <em>$10K</em> in 31 days.</>,
+    headlinePlain: 'From $0 to $10K in 31 days.',
+    teaser: 'Goth Fanvue account. $4.6K in messages, $4.7K in tips — $10K in just 31 days from a cold launch.',
+    metric: '$0 → $10K in 31 days',
+    cover: 'screenshots/case-sprint-insights-dashboard.png',
     stats: [
-      { num: '$10.4K', sub: 'first-month revenue', foot: 'closed at day 27' },
-      { num: '1,250', sub: 'subscribers', foot: 'from a 14-day pre-launch' },
-      { num: '$48', sub: 'avg PPV unlock', foot: 'across the launch month' },
-      { num: '< 4 min', sub: 'first DM response', foot: 'on every new sub, day one' },
+      { num: '$10K', sub: 'in 31 days', foot: '09 Jan – 09 Feb 2026' },
+      { num: '$4.7K', sub: 'from tips', foot: '47% of total revenue' },
+      { num: '$4.6K', sub: 'from messages', foot: '45% of total revenue' },
+      { num: 'Top 4.65%', sub: 'on Fanvue', foot: 'platform leaderboard, month-1' },
     ],
     sections: [
       {
@@ -112,12 +116,14 @@ const CASES = {
       },
       {
         num: '03 / Receipts',
-        title: <>27 days, <em>logged.</em></>,
+        title: <>31 days, <em>logged.</em></>,
         skeletons: [
-          { ratio: '4/3', label: 'Daily revenue chart',     hint: 'Line chart of daily revenue across the 27-day launch window.' },
-          { ratio: '3/4', label: 'Welcome DM thread',       hint: 'Annotated DM thread showing the welcome → PPV ladder → reply sequence.' },
-          { ratio: '3/4', label: 'PPV ladder mockup',       hint: 'Phone screenshot of the $9 / $19 / $39 PPV stack in a single DM thread.' },
-          { ratio: '4/3', label: 'Spend distribution',      hint: 'Histogram or bar chart of subscriber spend distribution at day-27 close.' },
+          { ratio: '16/8', label: 'Fanvue Insights · launch month + top spenders + earnings line',
+            src: 'screenshots/case-sprint-insights-dashboard.png', alt: 'Fanvue Insights dashboard showing $10,120.88 over the 09 Jan – 09 Feb launch window with top spenders and an earnings-over-time chart' },
+          { ratio: '1/1',  label: 'Earnings by type · $10K total split across tips, messages, subs',
+            src: 'screenshots/case-sprint-earnings-by-type.png', alt: 'Donut chart showing the $10K month broken down by source: tips $4,733, messages $4,600, subs $771, renewals $15' },
+          { ratio: '4/3',  label: 'Earnings over time · 31-day line + per-source breakdown',
+            src: 'screenshots/case-sprint-earnings-over-time.png', alt: 'Earnings-over-time chart for the sprint case with category breakdown table' },
         ],
       },
     ],
@@ -129,9 +135,20 @@ const CASES = {
 };
 
 // ─── Building blocks ─────────────────────────────────────────────────
-function SkeletonImage({ ratio = '16/9', label, hint }) {
+function SkeletonImage({ ratio = '16/9', label, hint, src, alt }) {
+  const aspect = ratio.replace('/', ' / ');
+  // If a real screenshot has been wired in, render that. Otherwise show the
+  // dashed placeholder card with the upload hint.
+  if (src) {
+    return (
+      <figure className="case-shot" style={{ aspectRatio: aspect }}>
+        <img src={src} alt={alt || label || ''} loading="lazy" />
+        {label && <figcaption>{label}</figcaption>}
+      </figure>
+    );
+  }
   return (
-    <figure className="skeleton-img" style={{ aspectRatio: ratio.replace('/', ' / ') }}>
+    <figure className="skeleton-img" style={{ aspectRatio: aspect }}>
       <div className="skeleton-img-inner">
         <span className="skeleton-img-icon">{CIcon.image()}</span>
         <span className="skeleton-img-label">{label}</span>
@@ -276,7 +293,7 @@ function CasesIndex() {
           <div className="case-index-grid">
             {list.map((c) => (
               <a key={c.slug} className="case-card reveal" href={c.href}>
-                <SkeletonImage ratio="16/10" label={`${c.niche} thumbnail`} hint="Replace with the cover image you want to lead this case with." />
+                <SkeletonImage ratio="16/10" src={c.cover} alt={`${c.niche} cover`} />
                 <CaseTags niche={c.niche} platform={c.platform} timeframe={c.timeframe} />
                 <h3 className="case-card-h">{c.headline}</h3>
                 <p className="case-card-teaser">{c.teaser}</p>
