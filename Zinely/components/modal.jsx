@@ -6,20 +6,65 @@ const { useState: useStateM, useEffect: useEffectM } = React;
 // ─────────────────────────────────────────────────────────────────────────
 function BookModal({ open, onClose }) {
   const [form, setForm] = useStateM({ name: '', email: '', handle: '', platform: 'OnlyFans', revenue: '$5K – $10K / mo', notes: '' });
-  const [sent, setSent] = useStateM(false);
+  const [status, setStatus] = useStateM('idle'); // idle | sending | sent | error
+  const [errMsg, setErrMsg] = useStateM('');
+
+  const cfg = (typeof window !== 'undefined' && window.ZINELY_CONFIG) || {};
+  const contactEmail = cfg.contactEmail || 'hello@zinely.agency';
+  const telegram = cfg.telegram || '@timzines';
 
   useEffectM(() => {
-    if (open) { setSent(false); document.body.style.overflow = 'hidden'; }
+    if (open) { setStatus('idle'); setErrMsg(''); document.body.style.overflow = 'hidden'; }
     else { document.body.style.overflow = ''; }
     const onKey = (e) => e.key === 'Escape' && onClose();
     if (open) window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, [open, onClose]);
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    setSent(true);
+    setStatus('sending');
+    setErrMsg('');
+
+    const payload = {
+      name: form.name,
+      email: form.email,
+      handle: form.handle,
+      platform: form.platform,
+      revenue: form.revenue,
+      notes: form.notes,
+      source: 'zinely.agency · trial form',
+      submittedAt: new Date().toISOString(),
+    };
+
+    // No endpoint configured → open the user's mail client with a prefilled draft.
+    if (!cfg.formEndpoint) {
+      const subject = encodeURIComponent(`Trial signup — ${form.handle || form.name}`);
+      const body = encodeURIComponent(
+        `Name: ${form.name}\nEmail: ${form.email}\nHandle: ${form.handle}\n` +
+        `Platform: ${form.platform}\nRevenue: ${form.revenue}\n\nNotes:\n${form.notes || '—'}`
+      );
+      window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
+      setStatus('sent');
+      return;
+    }
+
+    try {
+      const res = await fetch(cfg.formEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      setStatus('sent');
+    } catch (err) {
+      setStatus('error');
+      setErrMsg('Couldn’t send right now. Email us at ' + contactEmail + ' or DM ' + telegram + ' on Telegram.');
+    }
   };
+
+  const sending = status === 'sending';
+  const sent = status === 'sent';
 
   return (
     <div className={`modal-backdrop ${open ? 'open' : ''}`} onClick={onClose}>
@@ -68,14 +113,19 @@ function BookModal({ open, onClose }) {
               <textarea id="bm-notes" rows="3" value={form.notes} onChange={(e) => setForm({ ...form, notes: e.target.value })} placeholder="Goals, current pain points, niche..." />
             </div>
 
-            <button type="submit" className="btn btn-primary">Start my free trial <Icon.arrow /></button>
+            {status === 'error' && (
+              <div role="alert" style={{ color: '#B91C1C', fontSize: 13, marginTop: -4 }}>{errMsg}</div>
+            )}
+            <button type="submit" className="btn btn-primary" disabled={sending} aria-busy={sending}>
+              {sending ? 'Sending…' : <>Start my free trial <Icon.arrow /></>}
+            </button>
           </form>
         ) : (
           <div className="modal-success">
             <div className="modal-success-icon"><Icon.check /></div>
             <div className="modal-eyebrow">Sent</div>
             <h3 style={{ marginBottom: 12 }}>You'll hear from us within 24 hours.</h3>
-            <p className="modal-sub" style={{ marginBottom: 28 }}>We'll send a calendar link to <strong style={{ color: 'var(--ink)' }}>{form.email || 'your email'}</strong>. In the meantime, our Telegram is <strong style={{ color: 'var(--ink)' }}>@timzines</strong> if you want to chat sooner.</p>
+            <p className="modal-sub" style={{ marginBottom: 28 }}>We'll reach out to <strong style={{ color: 'var(--ink)' }}>{form.email || 'your email'}</strong> with a calendar link. In the meantime, Telegram <strong style={{ color: 'var(--ink)' }}>{telegram}</strong> is the fastest way to reach us.</p>
             <button className="btn btn-secondary" onClick={onClose}>Close</button>
           </div>
         )}
