@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Zinely — Logo Export</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #07090F; --bg-2: #0B0F1A;
+    --surface: rgba(255,255,255,0.025);
+    --line: rgba(255,255,255,0.08);
+    --ink: #E8ECF2; --slate: #8B92A0; --slate-2: #6B7280;
+    --accent: #7AB8E8; --cyan-bright: #A6CFEE;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+    padding: 56px 32px;
+    background-image:
+      radial-gradient(1100px 700px at 78% -10%, rgba(122,184,232,0.07), transparent 60%);
+  }
+  .wrap { max-width: 980px; margin: 0 auto; }
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400; font-size: 40px; margin: 0 0 8px;
+    letter-spacing: -0.02em;
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+  .lede { color: var(--slate); margin: 0 0 40px; font-size: 15px; max-width: 60ch; line-height: 1.6; }
+
+  .row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+  @media (max-width: 880px) { .row { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--bg-2); border: 1px solid var(--line);
+    border-radius: 16px; padding: 24px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .card-head {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--slate);
+  }
+  .card-preview {
+    aspect-ratio: 4 / 1.6;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    padding: 12px;
+  }
+  .card-preview canvas { max-width: 100%; max-height: 100%; display: block; }
+  .preview-dark { background: #07090F; }
+  .preview-light { background: #F5F7FA; }
+  .preview-transparent {
+    background:
+      linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.05) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.05) 75%);
+    background-size: 16px 16px;
+    background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+    background-color: var(--bg-2);
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 12px 18px; border-radius: 999px;
+    background: var(--cyan-bright); color: var(--bg);
+    border: 0; font-size: 13.5px; font-weight: 600;
+    cursor: pointer; font-family: inherit;
+    transition: all 200ms ease;
+  }
+  .btn:hover { background: #FFFFFF; }
+  .btn[disabled] { opacity: 0.4; cursor: not-allowed; }
+
+  .controls { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; padding: 24px 0 0; border-top: 1px solid var(--line); }
+  .control-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--slate-2); margin-right: 8px;
+  }
+  .scale-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .scale-btn {
+    padding: 6px 12px; border-radius: 999px;
+    border: 1px solid var(--line); background: transparent;
+    color: var(--slate); font-size: 12px; cursor: pointer;
+    font-family: inherit;
+  }
+  .scale-btn.active { background: rgba(122,184,232,0.1); border-color: var(--accent); color: var(--ink); }
+  .meta { margin-top: 14px; color: var(--slate); font-size: 13px; line-height: 1.6; }
+  .status {
+    margin-top: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--slate-2);
+    min-height: 16px;
+  }
+  .status.ok { color: #5BD78A; }
+
+  /* Hidden pre-loaders so the browser commits both fonts before we paint canvas */
+  .font-preload {
+    position: absolute; left: -99999px; top: 0;
+    pointer-events: none; opacity: 0;
+  }
+  .preload-name { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 64px; }
+  .preload-tag { font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Zinely <em>logo export.</em></h1>
+  <p class="lede">
+    Same Cormorant Garamond 600 + JetBrains Mono 500 as the site nav, painted via native canvas — what you see in the preview is what the PNG contains, glow included.
+  </p>
+
+  <div class="row">
+    <div class="card">
+      <div class="card-head"><span>Dark BG</span><span>solid</span></div>
+      <div class="card-preview preview-dark"><canvas id="cv-dark"></canvas></div>
+      <button class="btn" data-bg="dark">Download PNG</button>
+    </div>
+    <div class="card">
+      <div class="card-head"><span>Transparent</span><span>alpha</span></div>
+      <div class="card-preview preview-transparent"><canvas id="cv-transparent"></canvas></div>
+      <button class="btn" data-bg="transparent">Download PNG</button>
+    </div>
+    <div class="card">
+      <div class="card-head"><span>Light BG</span><span>solid</span></div>
+      <div class="card-preview preview-light"><canvas id="cv-light"></canvas></div>
+      <button class="btn" data-bg="light">Download PNG</button>
+    </div>
+  </div>
+
+  <div class="controls">
+    <span class="control-label">Export scale</span>
+    <div class="scale-row">
+      <button class="scale-btn" data-scale="3">3× (~720w)</button>
+      <button class="scale-btn active" data-scale="6">6× (~1440w)</button>
+      <button class="scale-btn" data-scale="10">10× (~2400w)</button>
+    </div>
+  </div>
+  <p class="meta">6× is the safe default. Drop to 3× for email signatures, push to 10× for print or large-format.</p>
+  <div class="status" id="status">Loading fonts…</div>
+</div>
+
+<!-- Force the browser to commit Cormorant 600 + JetBrains Mono 500 to memory -->
+<div class="font-preload">
+  <span class="preload-name">Zinely</span>
+  <span class="preload-tag">CHATTING AGENCY</span>
+</div>
+
+<script>
+  // ── Logo paths (same as components/foundation.jsx) ───────────────────
+  const PATHS = {
+    body:   'M 12 4 H 36 C 40.4 4 44 7.6 44 12 V 30 C 44 34.4 40.4 38 36 38 H 22 L 13 45.5 C 12 46.3 10.5 45.6 10.5 44.3 V 38 C 6.4 37.6 4 34.2 4 30 V 12 C 4 7.6 7.6 4 12 4 Z',
+    shine:  'M 12 4 H 36 C 40.4 4 44 7.6 44 12 V 14 C 44 12 40.4 10 36 10 H 12 C 7.6 10 4 12 4 14 V 12 C 4 7.6 7.6 4 12 4 Z',
+    inner:  'M 12 4 C 7.6 4 4 7.6 4 12 V 30 C 4 33.5 6.5 36.5 10 37.6 V 44 C 10 45 11 45.6 12 45 L 22 38 H 16 C 11.6 38 8 34.4 8 30 V 12 C 8 9 10 7 13 7 H 36 V 4 Z',
+    heartBack:  'M 26 26.15 C 26 26.15 20.02 21.21 20.02 17.7 C 20.02 14.58 22.88 14.58 26 17.7 C 29.12 14.58 31.98 14.58 31.98 17.7 C 31.98 21.21 26 26.15 26 26.15 Z',
+    heartFront: 'M 20 29.15 C 20 29.15 14.02 24.21 14.02 20.7 C 14.02 17.58 16.88 17.58 20 20.7 C 23.12 17.58 25.98 17.58 25.98 20.7 C 25.98 24.21 20 29.15 20 29.15 Z',
+  };
+
+  // ── Layout constants — matching the LIVE nav header 1:1 ───────────────
+  // The wordmark renders at exactly the same logical size as the site
+  // header (44px icon, 21px name @ -0.025em, 9.5px tag @ 0.18em).
+  // We then upscale the entire canvas via the scale factor for crisp PNG.
+  const BASE = {
+    canvasW:    240,   // logical canvas width
+    canvasH:    64,    // logical canvas height
+    padX:       12,    // left/right breathing room
+    markSize:   44,    // matches .nav-logo .logo-mark default
+    gap:        12,    // icon-to-wordmark gap (live is 10, +2 for export breathing)
+    nameSize:   21,    // matches .nav-logo .logo-name font-size
+    nameSpacing: -0.55,// = -0.025em * 21
+    nameWeight: 600,
+    tagSize:    9.5,   // matches .nav-logo .logo-tag font-size
+    tagSpacing: 1.7,   // = 0.18em * 9.5
+    tagWeight:  500,
+    nameTagGap: 4,     // gap between name baseline and tag top
+    shadowBlur: 14,
+    shadowOffsetY: 4,
+    shadowColor: 'rgba(0, 175, 240, 0.45)',
+  };
+
+  function drawLogo(canvas, bg, scale) {
+    const W = BASE.canvasW, H = BASE.canvasH;
+    canvas.width = W * scale;
+    canvas.height = H * scale;
+    const ctx = canvas.getContext('2d');
+    ctx.scale(scale, scale);
+    ctx.clearRect(0, 0, W, H);
+
+    if (bg === 'dark')  { ctx.fillStyle = '#07090F'; ctx.fillRect(0, 0, W, H); }
+    if (bg === 'light') { ctx.fillStyle = '#F5F7FA'; ctx.fillRect(0, 0, W, H); }
+
+    const ms = BASE.markSize;
+    const markX = BASE.padX;
+    const markY = (H - ms) / 2;
+
+    // ── Chat-bubble mark with cyan glow ────────────────────────────────
+    ctx.save();
+    ctx.translate(markX, markY);
+    ctx.scale(ms / 48, ms / 48);
+
+    // Glow on the bubble body — single drop-shadow, matches CSS exactly:
+    //   filter: drop-shadow(0 4px 14px rgba(0, 175, 240, 0.45))
+    ctx.shadowColor = BASE.shadowColor;
+    // shadow values are in canvas pixels; scale by ms/48 so they read correctly
+    ctx.shadowBlur = BASE.shadowBlur * (48 / ms);
+    ctx.shadowOffsetY = BASE.shadowOffsetY * (48 / ms);
+
+    const bodyGrad = ctx.createLinearGradient(24, 0, 24, 48);
+    bodyGrad.addColorStop(0, '#00C8FF');
+    bodyGrad.addColorStop(1, '#00A6E8');
+    ctx.fillStyle = bodyGrad;
+    ctx.fill(new Path2D(PATHS.body));
+
+    // Kill shadow for inner layers (or they'd re-cast)
+    ctx.shadowColor = 'transparent';
+    ctx.shadowBlur = 0;
+    ctx.shadowOffsetY = 0;
+
+    const shineGrad = ctx.createLinearGradient(24, 2, 24, 20);
+    shineGrad.addColorStop(0, 'rgba(255,255,255,0.35)');
+    shineGrad.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = shineGrad;
+    ctx.fill(new Path2D(PATHS.shine));
+
+    ctx.fillStyle = 'rgba(0, 111, 168, 0.16)';
+    ctx.fill(new Path2D(PATHS.inner));
+
+    ctx.fillStyle = 'rgba(255,255,255,0.45)';
+    ctx.fill(new Path2D(PATHS.heartBack));
+
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fill(new Path2D(PATHS.heartFront));
+
+    ctx.restore();
+
+    // ── Wordmark — 21px Cormorant + 9.5px JetBrains Mono ──────────────
+    const textX = markX + ms + BASE.gap;
+    const centerY = H / 2;
+
+    // Stack visual height ≈ name cap (~15) + gap (4) + tag cap (~7) ≈ 26px.
+    // Centre of stack at centerY → name baseline a few px above centre.
+    const nameBaseline = centerY - 2;          // slight negative to optically centre
+    const tagBaseline  = nameBaseline + BASE.nameTagGap + BASE.tagSize;
+
+    // Name — Cormorant Garamond 600 (matches live: same px size, same weight)
+    ctx.fillStyle = bg === 'light' ? '#0F1E36' : '#E8ECF2';
+    ctx.font = `${BASE.nameWeight} ${BASE.nameSize}px "Cormorant Garamond", "Cormorant", Georgia, serif`;
+    ctx.textBaseline = 'alphabetic';
+    if ('letterSpacing' in ctx) ctx.letterSpacing = BASE.nameSpacing + 'px';
+    ctx.fillText('Zinely', textX, nameBaseline);
+
+    // Tag — JetBrains Mono 500 (matches live: same px size, same weight)
+    ctx.fillStyle = bg === 'light' ? '#475569' : '#6B7280';
+    ctx.font = `${BASE.tagWeight} ${BASE.tagSize}px "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace`;
+    if ('letterSpacing' in ctx) ctx.letterSpacing = BASE.tagSpacing + 'px';
+    ctx.fillText('CHATTING AGENCY', textX, tagBaseline);
+
+    if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+  }
+
+  function paintPreviews() {
+    // Previews render at higher scale so the in-card preview is sharp,
+    // but the same logical layout — i.e. same as the downloaded PNG.
+    drawLogo(document.getElementById('cv-dark'),        'dark',        3);
+    drawLogo(document.getElementById('cv-transparent'), 'transparent', 3);
+    drawLogo(document.getElementById('cv-light'),       'light',       3);
+  }
+
+  function downloadPng(bg, scale) {
+    const canvas = document.createElement('canvas');
+    drawLogo(canvas, bg, scale);
+    canvas.toBlob((blob) => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `zinely-logo-${bg}-${scale}x.png`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }, 'image/png');
+  }
+
+  // ── Boot ─────────────────────────────────────────────────────────────
+  const status = document.getElementById('status');
+  let exportScale = 6;
+
+  // Force-load both font faces with the exact sizes/weights the canvas will
+  // request, so the rasteriser paints with the real typefaces on call #1.
+  Promise.all([
+    document.fonts.load('600 21px "Cormorant Garamond"'),
+    document.fonts.load('500 9.5px "JetBrains Mono"'),
+  ])
+    .then(() => document.fonts.ready)
+    .then(() => {
+      paintPreviews();
+      status.textContent = 'Ready · Cormorant Garamond 600 · JetBrains Mono 500';
+      status.classList.add('ok');
+      document.querySelectorAll('button[data-bg]').forEach(b => b.disabled = false);
+    })
+    .catch((err) => {
+      status.textContent = 'Font load failed — see console';
+      console.error(err);
+    });
+
+  document.querySelectorAll('.scale-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.scale-btn').forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      exportScale = parseInt(btn.dataset.scale, 10);
+    });
+  });
+
+  document.querySelectorAll('button[data-bg]').forEach((btn) => {
+    btn.disabled = true;
+    btn.addEventListener('click', () => downloadPng(btn.dataset.bg, exportScale));
+  });
+</script>
+</body>
+</html>

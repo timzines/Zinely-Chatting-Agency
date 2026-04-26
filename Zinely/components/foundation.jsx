@@ -2,40 +2,32 @@
 const { useState, useEffect, useRef, useMemo } = React;
 
 // ─────────────────────────────────────────────────────────────────────────
-// ZebraPattern — soft fingerprint-style flowing curves
-// Many fine lines, gentle wave variation, low contrast. Subtle texture only.
+// ZebraPattern — a single seamlessly-tileable wave row, repeated via
+// SVG <pattern>. Uniform scale at any container size, no banding, no edges.
 // ─────────────────────────────────────────────────────────────────────────
-function ZebraPattern({ opacity = 0.06, color = '#0F1E36', id = 'zp', scale = 1 }) {
-  const W = 1200;
-  const H = 800;
-  // Many densely-packed flowing curves. Each row uses two cubic bezier humps
-  // with slightly randomized amplitude/phase for an organic feel.
-  const lines = [];
-  const gap = 14;
-  const rows = Math.ceil(H / gap);
-  for (let i = 0; i <= rows; i++) {
-    const y = i * gap;
-    // Deterministic pseudo-random offset per row (no hooks; render-stable per `id`)
-    const seed = (i * 9301 + 49297) % 233280;
-    const r = seed / 233280;
-    const amp = 6 + r * 10;
-    const phase = (i % 3) * 80;
-    lines.push(
-      `M -20 ${y} C ${200 + phase} ${y - amp}, ${440 + phase} ${y + amp}, ${600} ${y} S ${980} ${y + amp}, ${1220} ${y}`
-    );
-  }
+function ZebraPattern({ opacity = 0.06, color = '#0F1E36', scale = 1 }) {
+  const uid = React.useId().replace(/:/g, '');
+  const tileW = 200 * scale;
+  const tileH = 14 * scale;
+  const amp = 4 * scale;
+  // Cubic that starts and ends at y=tileH/2 with mirrored control points,
+  // so the path is C¹-continuous across horizontal tile seams (no kinks).
+  const mid = tileH / 2;
+  const d = `M 0 ${mid} C ${tileW * 0.25} ${mid - amp}, ${tileW * 0.75} ${mid + amp}, ${tileW} ${mid}`;
+  const pid = `zp-${uid}`;
   return (
     <svg
       width="100%"
       height="100%"
-      viewBox={`0 0 ${W} ${H}`}
-      preserveAspectRatio="xMidYMid slice"
-      style={{ opacity, position: 'absolute', inset: 0 }}
+      style={{ opacity, position: 'absolute', inset: 0, display: 'block' }}
       aria-hidden="true"
     >
-      <g fill="none" stroke={color} strokeWidth="1" strokeLinecap="round">
-        {lines.map((d, idx) => <path key={idx} d={d} />)}
-      </g>
+      <defs>
+        <pattern id={pid} width={tileW} height={tileH} patternUnits="userSpaceOnUse">
+          <path d={d} fill="none" stroke={color} strokeWidth="1" strokeLinecap="round" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill={`url(#${pid})`} />
     </svg>
   );
 }

@@ -1,4 +1,4 @@
-/* global React, ReactDOM, Nav, Hero, Stats, Why, Services, Platforms, Process, Results, Pricing, FAQ, FinalCTA, Footer, BookModal, ZebraPattern, useReveal, TweaksPanel, useTweaks, TweakSection, TweakSlider, TweakToggle, TweakRadio, TweakColor */
+/* global React, ReactDOM, Nav, Hero, Stats, Why, Services, Platforms, Process, Results, Calculator, Pricing, FAQ, FinalCTA, Footer, BookModal, ZebraPattern, useReveal, TweaksPanel, useTweaks, TweakSection, TweakSlider, TweakToggle, TweakRadio, TweakColor */
 const { useState: useStateApp, useEffect: useEffectApp } = React;
 
 // Pattern divider between major sections
@@ -19,7 +19,6 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 }/*EDITMODE-END*/;
 
 function App() {
-  const [modalOpen, setModalOpen] = useStateApp(false);
   const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
   useReveal();
 
@@ -38,29 +37,30 @@ function App() {
     document.body.dataset.heroVisual = tweaks.showHeroVisual ? '1' : '0';
   }, [tweaks]);
 
-  const openModal = () => setModalOpen(true);
-  const closeModal = () => setModalOpen(false);
+  const openTelegram = () => {
+    const url = (window.ZINELY_CONFIG && window.ZINELY_CONFIG.telegramUrl) || 'https://t.me/timzines';
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <>
-      <Nav onBookCall={openModal} />
+      <Nav onBookCall={openTelegram} />
       <main>
-        <Hero onBookCall={openModal} />
+        <Hero onBookCall={openTelegram} />
         <Stats />
         <Divider />
         <Why />
         <Services />
         <Divider />
-        <Platforms />
         <Process />
         <Divider />
         <Results />
-        <Pricing onBookCall={openModal} />
+        <Calculator onBookCall={openTelegram} />
+        <Pricing onBookCall={openTelegram} />
         <FAQ />
-        <FinalCTA onBookCall={openModal} />
+        <FinalCTA onBookCall={openTelegram} />
       </main>
       <Footer />
-      <BookModal open={modalOpen} onClose={closeModal} />
 
       <TweaksPanel title="Tweaks">
         <TweakSection title="Accent">

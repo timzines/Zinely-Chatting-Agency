@@ -42,89 +42,211 @@ function Process() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────
-// Results — mix of skeleton placeholders and illustrative cards
+// Results — teaser of the two case studies, links to detail pages
 // ─────────────────────────────────────────────────────────────────────────
 function Results() {
+  const cases = [
+    {
+      href: 'case-launch.html',
+      niche: 'Goth / alt creator',
+      platform: 'Fanvue',
+      timeframe: '5-month launch',
+      metric: '$0 → $120K/mo',
+      headline: <>From $0 to <em>$120K/mo</em> in 5 months.</>,
+      teaser: 'Cold-launched goth Fanvue account. Niche-loyal funnel, ritualised drop calendar, sub-only Discord. Top-1% on platform.',
+    },
+    {
+      href: 'case-sprint.html',
+      niche: 'Goth / alt creator',
+      platform: 'Fanvue',
+      timeframe: '27-day sprint',
+      metric: '$0 → $10K in 27 days',
+      headline: <>From $0 to <em>$10K/mo</em> in less than a month.</>,
+      teaser: 'Aggressive pre-launch hype window, day-one PPV ladder pre-built, sub-minute DM cadence on every new fan.',
+    },
+  ];
   return (
     <section className="section section-bg-2" id="results">
       <div className="container">
         <div className="section-head reveal">
           <div>
-            <span className="section-num">06 / Results</span>
-            <h2>Proof,<br /><span style={{ color: 'var(--accent)' }}>not promises.</span></h2>
+            <span className="section-num">06 / Case studies</span>
+            <h2>Receipts,<br /><span style={{ color: 'var(--accent)', fontStyle: 'italic' }}>not promises.</span></h2>
           </div>
-          <div className="right"><p>Receipts from real accounts under management. Some screenshots redacted to protect creator identity — full case studies on request.</p></div>
+          <div className="right"><p>Two studies up. Real accounts, real numbers, screenshots redacted only where the creator asked. Full data available on request under NDA.</p></div>
         </div>
 
-        <div className="results-grid">
-          {/* Illustrative — earnings chart on dark */}
-          <article className="result-card illustrative-1 span-2 reveal">
-            <div>
-              <div className="result-label">Fitness creator · 90 days</div>
-              <div className="result-headline">$45,200 / mo</div>
-              <div className="result-sub">From $14K baseline. 3.2× growth in 60 days.</div>
-            </div>
-            <div className="fake-chart">
-              <svg viewBox="0 0 320 80" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="rg" x1="0" x2="0" y1="0" y2="1">
-                    <stop offset="0" stopColor="#1AA3F5" stopOpacity="0.4" />
-                    <stop offset="1" stopColor="#1AA3F5" stopOpacity="0" />
-                  </linearGradient>
-                </defs>
-                <path d="M0,68 L20,62 L40,64 L60,55 L80,58 L100,48 L120,50 L140,40 L160,42 L180,32 L200,28 L220,22 L240,18 L260,12 L280,14 L300,8 L320,6 L320,80 L0,80 Z" fill="url(#rg)" />
-                <path d="M0,68 L20,62 L40,64 L60,55 L80,58 L100,48 L120,50 L140,40 L160,42 L180,32 L200,28 L220,22 L240,18 L260,12 L280,14 L300,8 L320,6" fill="none" stroke="#1AA3F5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-          </article>
-
-          {/* Skeleton — testimonial */}
-          <article className="result-card skeleton reveal">
-            <div className="result-icon"><Icon.user /></div>
-            <div>
-              <div className="result-label">Testimonial</div>
-              <div className="result-headline">@creator_handle</div>
-              <div className="result-sub">Goth/alt niche · 6 months in</div>
-              {/* TODO: Replace with real testimonial screenshot */}
-            </div>
-          </article>
-
-          {/* Illustrative — fake DM thread */}
-          <article className="result-card illustrative-2 reveal">
-            <div className="result-label">Live DM · PPV upsell</div>
-            <div className="fake-msg">
-              <div className="fake-bubble them">hey beautiful 🥺 you up?</div>
-              <div className="fake-bubble us">just got out the shower 💦 want to see?</div>
-              <div className="fake-bubble tip">$85 PPV unlocked</div>
-            </div>
-          </article>
-
-          {/* Skeleton — earnings */}
-          <article className="result-card skeleton reveal">
-            <div className="result-icon"><Icon.dollar /></div>
-            <div>
-              <div className="result-label">Earnings · OnlyFans</div>
-              <div className="result-headline">$128K month</div>
-              <div className="result-sub">Top-1% creator · agency-managed</div>
-              {/* TODO: Replace with real earnings screenshot */}
-            </div>
-          </article>
-
-          {/* Skeleton — growth */}
-          <article className="result-card skeleton reveal">
-            <div className="result-icon"><Icon.chart /></div>
-            <div>
-              <div className="result-label">Subscriber growth</div>
-              <div className="result-headline">+312% in 60 days</div>
-              <div className="result-sub">Cosplay niche · Fansly</div>
-              {/* TODO: Replace with real growth chart */}
-            </div>
-          </article>
+        <div className="case-index-grid reveal">
+          {cases.map((c) => (
+            <a key={c.href} className="case-card" href={c.href}>
+              <figure className="skeleton-img" style={{ aspectRatio: '16 / 10' }}>
+                <div className="skeleton-img-inner">
+                  <span className="skeleton-img-icon"><Icon.camera /></span>
+                  <span className="skeleton-img-label">{c.niche} thumbnail</span>
+                  <span className="skeleton-img-hint">Drop the cover image you want to lead this case with.</span>
+                </div>
+              </figure>
+              <div className="case-tags">
+                <span className="case-tag case-tag-niche">{c.niche}</span>
+                <span className="case-tag">{c.platform}</span>
+                <span className="case-tag case-tag-time">{c.timeframe}</span>
+              </div>
+              <h3 className="case-card-h">{c.headline}</h3>
+              <p className="case-card-teaser">{c.teaser}</p>
+              <div className="case-card-foot">
+                <span className="case-card-metric">{c.metric}</span>
+                <span className="case-card-go">Read case study →</span>
+              </div>
+            </a>
+          ))}
         </div>
 
-        <p className="results-disclaimer">
-          Results vary based on account size, niche, and engagement. Case studies available on request — we’ll only share with serious applicants under NDA.
-        </p>
+        <div style={{ textAlign: 'center', marginTop: 40 }}>
+          <a className="btn btn-secondary" href="cases.html">All case studies <Icon.arrow /></a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────
+// Earnings Calculator
+//
+// Multipliers are dialled down vs TDM's 10/7/4 + 7/5/3 — we want the number
+// to read believable, not aspirational. AI mode is further conservative because
+// AI personas don't extract tips at the same rate as real models.
+//
+//   real models   paid: [8, 6, 4]   free: [6, 4, 2]
+//   AI models     paid: [6, 4, 2.5] free: [4, 3, 1.5]
+//
+// Formula matches TDM exactly:
+//   avgRatio = (trafficMul + tierMul) / 2
+//   revenue  = (isPaid ? avgRatio * price * subs : avgRatio * subs) * 0.8
+// ─────────────────────────────────────────────────────────────────────────
+function Calculator({ onBookCall }) {
+  const [mode, setMode] = useStateB('real');         // 'real' | 'ai'
+  const [subs, setSubs] = useStateB(2000);
+  const [isPaid, setIsPaid] = useStateB(true);
+  const [price, setPrice] = useStateB(9.99);
+  const [tier, setTier] = useStateB(0);              // 0 Premium, 1 Standard, 2 Casual
+  const [traffic, setTraffic] = useStateB(0);        // 0 Tier A, 1 Tier B, 2 Tier C
+
+  const MULT = {
+    real: { paid: [8, 6, 4],   free: [6, 4, 2]   },
+    ai:   { paid: [6, 4, 2.5], free: [4, 3, 1.5] },
+  };
+  const arr = MULT[mode][isPaid ? 'paid' : 'free'];
+  const tierMul = arr[tier];
+  const trafficMul = arr[traffic];
+  const avgRatio = (tierMul + trafficMul) / 2;
+  const revenue = (isPaid ? avgRatio * price * subs : avgRatio * subs) * 0.8;
+  const formattedRev = Math.round(revenue).toLocaleString();
+
+  // Slider track fill — used as a CSS var for the filled gradient
+  const subsPct = ((subs - 100) / (50000 - 100)) * 100;
+  const pricePct = (price / 50) * 100;
+
+  return (
+    <section className="section calc-section" id="calculator">
+      <div className="container">
+        <div className="section-head reveal">
+          <div>
+            <span className="section-num">07 / Calculator</span>
+            <h2>Run your<br/><span style={{ color: 'var(--accent)', fontStyle: 'italic' }}>numbers.</span></h2>
+          </div>
+          <div className="right">
+            <p>Conservative estimates pulled from 90-day rolling averages across the accounts we manage. Move the sliders to match yours, or flip to AI to see the realistic AI-model split.</p>
+          </div>
+        </div>
+
+        <div className="calc-shell reveal">
+          <div className="calc-mode">
+            <button className={`calc-mode-btn ${mode === 'real' ? 'active' : ''}`} onClick={() => setMode('real')}>
+              <span className="calc-mode-dot"></span>Real models
+            </button>
+            <button className={`calc-mode-btn ${mode === 'ai' ? 'active' : ''}`} onClick={() => setMode('ai')}>
+              <span className="calc-mode-dot"></span>AI models
+            </button>
+          </div>
+
+          <div className="calc-grid">
+            <div className="calc-inputs">
+              <div className="calc-field">
+                <div className="calc-field-head">
+                  <label htmlFor="calc-subs">Active subscribers</label>
+                  <span className="calc-value">{subs.toLocaleString()}</span>
+                </div>
+                <input id="calc-subs" type="range" min="100" max="50000" step="100"
+                       value={subs} onChange={(e) => setSubs(parseInt(e.target.value))}
+                       className="calc-slider" style={{ '--fill': subsPct + '%' }} />
+              </div>
+
+              <div className="calc-field">
+                <div className="calc-field-head"><label>Subscription model</label></div>
+                <div className="calc-seg calc-seg-2">
+                  <button className={isPaid ? 'active' : ''} onClick={() => setIsPaid(true)}>Paid</button>
+                  <button className={!isPaid ? 'active' : ''} onClick={() => setIsPaid(false)}>Free</button>
+                </div>
+              </div>
+
+              {isPaid && (
+                <div className="calc-field">
+                  <div className="calc-field-head">
+                    <label htmlFor="calc-price">Subscription price</label>
+                    <span className="calc-value">${price.toFixed(2)}</span>
+                  </div>
+                  <input id="calc-price" type="range" min="0" max="50" step="0.5"
+                         value={price} onChange={(e) => setPrice(parseFloat(e.target.value))}
+                         className="calc-slider" style={{ '--fill': pricePct + '%' }} />
+                </div>
+              )}
+
+              <div className="calc-field">
+                <div className="calc-field-head"><label>Subscriber spending tier</label></div>
+                <div className="calc-seg calc-seg-3">
+                  {['Premium', 'Standard', 'Casual'].map((t, i) => (
+                    <button key={t} className={tier === i ? 'active' : ''} onClick={() => setTier(i)}>{t}</button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="calc-field">
+                <div className="calc-field-head"><label>Traffic source quality</label></div>
+                <div className="calc-seg calc-seg-3">
+                  {[
+                    ['A', 'video / streaming'],
+                    ['B', 'social media'],
+                    ['C', 'other adult'],
+                  ].map(([t, h], i) => (
+                    <button key={t} className={traffic === i ? 'active' : ''} onClick={() => setTraffic(i)}>
+                      Tier {t}<span className="calc-seg-hint">{h}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <aside className="calc-output">
+              <div className="calc-output-eyebrow">{mode === 'ai' ? 'AI model' : 'Real model'} · projected</div>
+              <div className="calc-output-label">Monthly PPV + tips</div>
+              <div className="calc-output-value">$<span key={formattedRev} className="calc-output-num">{formattedRev}</span></div>
+              <div className="calc-output-sub">at <strong>{avgRatio.toFixed(1)}×</strong> sub-to-message ratio</div>
+
+              <div className="calc-output-line"></div>
+
+              <ul className="calc-output-meta">
+                <li><span>Subscribers</span><span>{subs.toLocaleString()}</span></li>
+                <li><span>Sub price</span><span>{isPaid ? '$' + price.toFixed(2) : 'Free'}</span></li>
+                <li><span>Tier × Traffic</span><span>{tierMul} × {trafficMul}</span></li>
+              </ul>
+
+              <button className="btn btn-primary calc-cta" onClick={onBookCall}>
+                Start free trial <Icon.arrow />
+              </button>
+              <p className="calc-disclaimer">Estimate only. Real numbers depend on niche, content cadence, and how you ramp the team. We'll show you actuals on a strategy call.</p>
+            </aside>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -171,7 +293,7 @@ function Pricing({ onBookCall }) {
 // FAQ
 // ─────────────────────────────────────────────────────────────────────────
 function FAQ() {
-  const [open, setOpen] = useStateB(0);
+  const [open, setOpen] = useStateB(-1);
   const faqs = [
     { q: 'How does the free 7-day trial work?', a: 'Live chatters on your account for 7 days, no card required. You keep 100% of what we generate during the trial. If the numbers don\u2019t move, walk away — no invoice, no awkward call.' },
     { q: 'Is my account safe? Do you get my login credentials?', a: 'Yes. We use platform-approved chatter access (where available) and a secure shared-credential vault with rotating sessions, IP whitelisting, and full audit logs. Every chatter signs an NDA. You can revoke access in one click.' },
@@ -225,7 +347,7 @@ function FinalCTA({ onBookCall }) {
         <h2>Try Zinely free<br />for <span style={{ color: 'var(--accent)' }}>seven days.</span></h2>
         <p className="lead">Live chatters on your account for a week. See the revenue lift before you commit. No pitch, no pressure — and no card on file.</p>
         <button className="btn btn-light" onClick={onBookCall}>Start Your Free Trial <Icon.arrow /></button>
-        <div><a className="apply-link" href="#apply">Apply as a chatter →</a></div>
+        <div><a className="apply-link" href="apply.html">Apply as a chatter →</a></div>
       </div>
     </section>
   );
@@ -244,20 +366,11 @@ function Footer() {
           <div className="footer-col">
             <h5>Services</h5>
             <ul>
-              <li><a href="#services">24/7 Chatting</a></li>
-              <li><a href="#services">Account Management</a></li>
-              <li><a href="#services">Content Strategy</a></li>
-              <li><a href="#pricing">Pricing</a></li>
-            </ul>
-          </div>
-          <div className="footer-col">
-            <h5>Platforms</h5>
-            <ul>
-              <li><a href="#platforms">OnlyFans</a></li>
-              <li><a href="#platforms">Fansly</a></li>
-              <li><a href="#platforms">Fanvue</a></li>
-              <li><a href="#platforms">LoyalFans</a></li>
-              <li><a href="#platforms">Fanfix</a></li>
+              <li><a href="index.html#services">24/7 Chatting</a></li>
+              <li><a href="index.html#services">Account Management</a></li>
+              <li><a href="index.html#services">Content Strategy</a></li>
+              <li><a href="cases.html">Case studies</a></li>
+              <li><a href="index.html#pricing">Pricing</a></li>
             </ul>
           </div>
           <div className="footer-col">
@@ -265,15 +378,15 @@ function Footer() {
             <ul>
               <li><a href="#">About</a></li>
               <li><a href="#">Blog</a></li>
-              <li><a href="#apply">Apply as chatter</a></li>
-              <li><a href="#">Telegram: @timzines</a></li>
+              <li><a href="apply.html">Apply as chatter</a></li>
+              <li><a href="https://t.me/timzines" target="_blank" rel="noopener noreferrer">Telegram: @timzines</a></li>
             </ul>
           </div>
         </div>
         <div className="footer-bottom">
           <div>© 2026 Zinely. All rights reserved.</div>
           <div className="footer-social">
-            <a href="#" aria-label="Telegram"><Icon.telegram /></a>
+            <a href="https://t.me/timzines" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><Icon.telegram /></a>
             <a href="#" aria-label="Discord"><Icon.discord /></a>
             <a href="#" aria-label="X"><Icon.x /></a>
           </div>
@@ -287,4 +400,4 @@ function Footer() {
   );
 }
 
-Object.assign(window, { Process, Results, Pricing, FAQ, FinalCTA, Footer });
+Object.assign(window, { Process, Results, Calculator, Pricing, FAQ, FinalCTA, Footer });

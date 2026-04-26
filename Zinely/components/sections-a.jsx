@@ -18,17 +18,17 @@ function Nav({ onBookCall }) {
   }, [open]);
 
   const links = [
-    ['Services', '#services'],
-    ['Process', '#process'],
-    ['Platforms', '#platforms'],
-    ['Results', '#results'],
-    ['FAQ', '#faq'],
+    ['Services', 'index.html#services'],
+    ['Process', 'index.html#process'],
+    ['Cases', 'cases.html'],
+    ['FAQ', 'index.html#faq'],
+    ['Apply as a Chatter', 'apply.html'],
   ];
 
   return (
     <>
       <header className={`nav ${scrolled ? 'scrolled' : ''}`}>
-        <a href="#top" aria-label="Zinely home"><Logo /></a>
+        <a href="index.html" aria-label="Zinely home"><Logo /></a>
         <nav className="nav-links" aria-label="Primary">
           {links.map(([l, h]) => <a key={h} href={h}>{l}</a>)}
         </nav>
@@ -45,7 +45,6 @@ function Nav({ onBookCall }) {
         </div>
         <nav>
           {links.map(([l, h]) => <a key={h} href={h} onClick={() => setOpen(false)}>{l}</a>)}
-          <a href="#apply" onClick={() => setOpen(false)}>Apply</a>
         </nav>
         <button className="btn btn-primary" onClick={() => { setOpen(false); onBookCall(); }}>Start Free Trial <Icon.arrow /></button>
       </div>
@@ -61,45 +60,36 @@ function Hero({ onBookCall }) {
     <section id="top" className="hero">
       <div className="hero-pattern"><ZebraPattern opacity={0.07} /></div>
       <div className="hero-visual" aria-hidden="true">
-        <div className="hv-card hv-stat">
-          <div className="hv-stat-label"><span className="hv-pulse"></span>Live this hour</div>
-          <div className="hv-stat-num">$4,128</div>
-          <div className="hv-stat-foot">+ 12 PPV unlocks</div>
-        </div>
-        <div className="hv-card hv-team">
-          <div className="hv-team-head">
-            <span className="hv-mono">Chatters online</span>
-            <span className="hv-online-dot"></span>
-          </div>
-          <div className="hv-avatars">
-            {['#FFB7B2','#FFD8A8','#B5EAD7','#A0E7E5','#C7B8FF','#FFC2E2'].map((c,i) => (
-              <span key={i} className="hv-avatar" style={{ background: c }}></span>
-            ))}
-            <span className="hv-avatar hv-more">+8</span>
-          </div>
-          <div className="hv-team-foot">24 / 7 coverage · 6 timezones</div>
-        </div>
         <div className="hv-card hv-dm">
-          <div className="hv-dm-head"><span className="hv-mono">DM · PPV upsell</span></div>
-          <div className="hv-bubble them">just woke up thinking about you 😘</div>
-          <div className="hv-bubble us">i made something just for you babe — wanna see?</div>
-          <div className="hv-bubble tip">$48 unlocked · 2:14 PM</div>
+          <div className="hv-bubble them">hey beautiful 🥺 you up?</div>
+          <div className="hv-bubble us">just got out the shower 💦 wanna see?</div>
+          <div className="hv-ppv">
+            <span className="hv-ppv-lock">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            </span>
+            <div className="hv-ppv-meta">
+              <span className="hv-ppv-label">Photo set · 4 pics</span>
+              <span className="hv-ppv-price">$48 to unlock</span>
+            </div>
+          </div>
+          <div className="hv-unlock">
+            <span className="hv-unlock-tick">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Unlocked · $48
+          </div>
         </div>
       </div>
       <div className="container hero-inner">
-        <div className="hero-eyebrow reveal">
-          <span className="dot"></span>
-          Free 7-day trial · No credit card · Cancel anytime
-        </div>
         <h1 className="reveal">
-          Chats that close.<br />
-          Creators that <span className="accent">scale</span>.
+          Your inbox is a <span className="accent-gold">goldmine.</span><br />
+          We're the <span className="accent">closers.</span>
         </h1>
         <p className="lead hero-sub reveal">
-          The chatting agency for real models and AI influencers. Trained chatters, 24/7 coverage, real revenue — start with a free 7-day trial, no credit card required.
+          Trained chatters running your DMs 24/7 — same fans, more PPV unlocks, more tips, real revenue. Free 7-day trial, no card on file.
         </p>
         <div className="hero-cta reveal">
-          <button className="btn btn-primary" onClick={onBookCall}>Start Your Free 7-Day Trial <Icon.arrow /></button>
+          <button className="btn btn-primary btn-cta" onClick={onBookCall}>Start Your Free 7-Day Trial <Icon.arrow /></button>
           <a className="btn btn-secondary" href="#process">See how it works <Icon.arrowDown /></a>
         </div>
         <div className="hero-platforms reveal">
