@@ -101,7 +101,7 @@ const CASES = {
     teaser: '$9.3K in PPVs & tips. $771 in subs.',
     metric: '$0 → $10K in 31 days',
     cardMeta: 'Goth · 31 days',
-    thumb: 'screenshots/case-sprint-thumb.png',
+    thumb: 'screenshots/case-sprint-thumb.png?v=2',
     cover: 'screenshots/case-sprint-insights-dashboard.png',
     stats: [
       { num: '$10K',      sub: 'In 31 days' },
@@ -115,22 +115,19 @@ const CASES = {
         title: <>The <em>cold start.</em></>,
         body: (
           <>
-            <p>Goth creator, ~3K TikTok followers, no monetised presence. Aggressive on the timeline — wanted a meaningful first month, not a "warm-up" quarter. We agreed on Fanvue (same calculus as the longer launch — niche fit, less competition) and built a 14-day pre-launch around the Fanvue go-live date.</p>
-            <p>The trick wasn't growing fast. It was making sure every fan who joined on day one already had a paid offer waiting.</p>
+            <p>Goth creator with a small Instagram following funnelling to Fanvue. Some traffic was getting through, but barely any of it was converting — sales were thin and the inbox was being run reactively. She wanted a real first month, not a slow warm-up.</p>
+            <p>The trick wasn't growing fast. It was making sure every fan who landed on the page already had a paid offer waiting, and that every DM was being run by someone trained to close.</p>
           </>
         ),
-        skeletons: [
-          { ratio: '16/9', label: 'Pre-launch announcement', hint: 'Replace with the TikTok / story announcing the Fanvue go-live date.' },
-        ],
       },
       {
         num: '02',
         title: <>The <em>plays.</em></>,
         plays: [
-          { title: 'Pre-launch hype window', body: '14 days of aesthetic teasers on TikTok before Fanvue opened. A countdown, a waiting list, and a "first 100 subs get a free custom" hook to convert anticipation into day-one purchases.', meta: '1,250 sub waitlist' },
-          { title: 'Day-1 PPV ladder', body: 'A $9 / $19 / $39 PPV ladder built and queued before the first sub joined. Every new fan got the $9 within 4 minutes of subscribing — softens the first sale, opens the door to the $39.', meta: '$48 avg unlock' },
+          { title: 'Cheap teasing', body: 'A $6.49 welcome message dressed up as a "limited-time gift for new subscribers." Almost every new sub opened it — and that low-friction first unlock opened the door to bigger spends.', meta: 'Near-100% open rate' },
+          { title: 'PPV ladder built for AI content', body: 'A clear unlock ladder mapped to the model’s content library. AI isn’t as straightforward to upsell as a real creator, but we structured the offer flow so unlocks scaled all the way to $200 per fan.', meta: 'Up to $200 / unlock' },
           { title: 'Sub-minute DM cadence', body: 'Every new subscriber got a personalised welcome DM in under 4 minutes, every time, day or night. Voice-matched, niche-specific, and ending in an open question that pulled a reply.', meta: '< 4 min response' },
-          { title: 'Whale capture by day 7', body: 'Top spenders flagged within the first week. Got "private vault" access — exclusive content drops, longer videos, no extra charge to whales — keeping them spending past the novelty window.', meta: '$2.1K from 18 fans' },
+          { title: 'Whale capture by week 1', body: 'Top spenders flagged within the first week. Got "private vault" access — exclusive content drops, longer videos, no extra charge to whales — keeping them spending past the novelty window.', meta: '$2.1K from 18 fans' },
         ],
       },
       {
@@ -148,10 +145,6 @@ const CASES = {
         ],
       },
     ],
-    quote: {
-      body: 'We agreed on a $5K month-one target. They hit $10K. The pre-launch was the unlock — by the time Fanvue opened I had a queue of fans waiting to spend.',
-      attribution: '@redacted_handle · goth creator, Fanvue',
-    },
   },
 };
 

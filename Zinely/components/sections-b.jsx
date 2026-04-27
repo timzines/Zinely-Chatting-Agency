@@ -92,7 +92,7 @@ function Results() {
     },
     {
       href: 'case-sprint.html',
-      cover: 'screenshots/case-sprint-thumb.png',
+      cover: 'screenshots/case-sprint-thumb.png?v=2',
       meta: 'Goth · 31 days',
       teaser: '$9.3K in PPVs & tips. $771 in subs.',
     },
@@ -340,16 +340,15 @@ function Pricing({ onBookCall }) {
 function FAQ() {
   const [open, setOpen] = useStateB(-1);
   const faqs = [
-    { q: 'How does the free 3-day trial work?', a: 'Trained chatters on your account for 3 days, with full 24/7 coverage included from hour one — no card required. You keep 100% of what we generate during the trial. If the numbers don’t move, walk away — no invoice, no awkward call.' },
+    { q: 'How does the free 3-day trial work?', a: 'Trained chatters on your account for 3 days, with full 24/7 coverage included from hour one — no card required. You keep 100% of what we generate during the trial. If the numbers don’t move, walk away — no invoice, no follow-up.' },
     { q: 'Is my account safe? Do you get my login credentials?', a: 'You never share your OnlyFans password. We work through Infloww — the industry-standard CRM used by serious OF agencies. We send you an invite link, you link your own account. From there, your chatter team works from a dedicated IP assigned only to your account, so no foreign-IP flags ever hit your inbox. Every chatter signs an NDA, and you can revoke our access from inside Infloww in one click — locked out instantly.' },
     { q: 'What platforms do you support?', a: 'OnlyFans, Fansly, Fanvue, LoyalFans, and Fanfix. We’ve managed accounts on smaller platforms case-by-case — ask on the call.' },
     { q: 'How fast can we start?', a: 'Strategy call within 48 hours, team assigned within 24 hours of signing. Live by day 3 in most cases.' },
     { q: 'What if I don’t like my chatter?', a: 'Swap them. No drama, no charge, no notice required. Your account manager runs the swap and the new chatter is briefed with the existing playbook.' },
-    { q: 'How do you train chatters in my voice?', a: 'A 48-hour calibration sprint: we read your last 30 days of DMs, study your posts, build a voice doc, and run sample replies past you for approval before any chatter goes live on your account.' },
     { q: 'Do you have minimum revenue requirements?', a: 'We prefer accounts already doing $5K+/month, but we take smaller accounts if the niche and trajectory are strong. Ask on the call.' },
     { q: 'How do payments work?', a: 'You keep 100% of platform earnings. We invoice monthly for our commission on net revenue we generated, with full transparency on which conversations drove which sales.' },
-    { q: 'Can I cancel anytime?', a: 'Yes. No contracts, no notice period, no cancellation fee. We earn the right to keep you every month.' },
-    { q: 'How do you handle different timezones?', a: 'Chatters are distributed across US, EU, and APAC. Your account is staffed continuously — there’s no "after hours" with Zinely.' },
+    { q: 'Can I cancel anytime?', a: 'Yes — by default we work month-to-month with no notice period and no cancellation fee. If you’d prefer a fixed-term contract for stability or internal accounting reasons, we’ll set one up. Either way, we have to earn the right to keep you.' },
+    { q: 'How do you handle different timezones?', a: 'Our team works in shifts across a few different regions, so there’s always someone awake on your account. Whether your fans message at 3am or 3pm, the inbox is being handled.' },
     { q: 'What makes Zinely different from other agencies?', a: '4% chatter acceptance rate, 5-stage screening, sales-trained (not script-trained), commission-only pricing, and a real account manager who actually answers your DMs. Most agencies ship one of these. We ship all five.' },
   ];
 

@@ -72,10 +72,7 @@ function Hero({ onBookCall }) {
           We manage your chatters, your inbox, and your fan relationships 24/7 — keeping every conversation human while maximizing PPV unlocks, tips, and renewals.
         </p>
         <div className="hero-cta reveal">
-          <div className="cta-stack">
-            <button className="btn btn-primary btn-cta" onClick={onBookCall}>Start free trial <Icon.arrow /></button>
-            <span className="cta-sub">3 days · 24/7 chatting included</span>
-          </div>
+          <button className="btn btn-primary btn-cta" onClick={onBookCall}>Start free trial <Icon.arrow /></button>
           <a className="btn btn-secondary btn-ghost-cyan" href="cases.html">See Case Studies <Icon.arrow /></a>
         </div>
         <div className="hero-platforms reveal">

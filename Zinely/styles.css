@@ -256,7 +256,7 @@ p { margin: 0; }
 .hero-inner-center .hero-platforms { justify-content: center; }
 .hero h1 .accent { color: var(--accent); font-style: italic; font-weight: 300; }
 .hero-sub { max-width: 56ch; margin-top: 36px; }
-.hero-cta { display: flex; gap: 14px; margin-top: 48px; flex-wrap: wrap; }
+.hero-cta { display: flex; gap: 14px; margin-top: 48px; flex-wrap: wrap; align-items: flex-start; }
 .hero-platforms {
   display: flex;
   align-items: center;
@@ -1110,7 +1110,7 @@ h2 { font-weight: 400; }
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;
+  gap: 18px;
 }
 .cta-sub {
   display: block;
@@ -1122,8 +1122,8 @@ h2 { font-weight: 400; }
   color: var(--slate-2);
   opacity: 0.7;
 }
-.calc-cta-sub { display: block; text-align: center; margin-top: 8px; }
-.pricing-cta-sub { display: block; text-align: center; margin-top: 10px; }
+.calc-cta-sub { display: block; text-align: center; margin-top: 16px; }
+.pricing-cta-sub { display: block; text-align: center; margin-top: 16px; }
 /* In the centered hero, the cta-stack should align its children centered too */
 .hero-inner-center .cta-stack { align-items: center; }
 .btn-secondary {
