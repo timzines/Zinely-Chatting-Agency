@@ -38,7 +38,7 @@ const CASES = {
         title: <>The <em>plateau.</em></>,
         body: (
           <>
-            <p>Goth creator on Fanvue. Instagram was the only marketing source — and it was bringing in traffic, but the funnel was leaky, the previous chatters weren't converting subs into spenders, and a handful of operational issues were stacking up. The first seven days under the previous setup pulled $2,205 — decent traffic, poor monetisation.</p>
+            <p>Goth creator on Fanvue. Instagram was the only marketing source — and it was bringing in traffic, but the funnel was leaky, the previous chatters weren't converting subs into spenders, and a handful of operational issues were stacking up. The first month under the previous setup pulled $2,205 — decent traffic, poor monetisation.</p>
             <p>They came to us. Same niche, same Instagram, same fans. We rebuilt the funnel, retrained the chatter cadence, and got out of the way.</p>
           </>
         ),
@@ -46,13 +46,13 @@ const CASES = {
       {
         num: '02',
         title: <>The <em>turn.</em></>,
-        body: <p className="case-prose-tight">Pulled straight from the creator's Fanvue dashboard — last week before they came to us, then the all-time view today.</p>,
+        body: <p className="case-prose-tight">Pulled straight from the creator's Fanvue dashboard — December 2025 (last month under the previous setup), then the all-time view today.</p>,
         compare: {
           before: {
             src: 'screenshots/case-launch-before.png',
-            alt: 'Fanvue dashboard showing $2,205 over 09 Dec – 16 Dec 2025, the week before joining Zinely',
-            headline: '$2,205 in 7 days',
-            detail: '09 – 16 Dec 2025 · Instagram-only funnel, previous chatters',
+            alt: 'Fanvue dashboard showing $2,205 in December 2025, the month before joining Zinely',
+            headline: '$2,205 / month',
+            detail: 'December 2025 · Instagram-only funnel, previous chatters',
           },
           after: {
             src: 'screenshots/case-launch-after.png',

@@ -3,6 +3,44 @@
 const { useState: useStateB, useEffect: useEffectB, useRef: useRefB } = React;
 
 // ─────────────────────────────────────────────────────────────────────────
+// FeaturedCase — proven-case-study spotlight, sits above Why
+// ─────────────────────────────────────────────────────────────────────────
+function FeaturedCase() {
+  return (
+    <section className="section featured-case" id="featured-case">
+      <div className="container">
+        <a href="case-launch.html" className="featured-case-card reveal">
+          <div className="featured-case-img">
+            <img src="screenshots/case-launch-insights-dashboard.png" alt="Fanvue dashboard receipt" loading="lazy" />
+          </div>
+          <div className="featured-case-copy">
+            <span className="featured-case-tag">Featured case study</span>
+            <div className="featured-case-result">
+              <div className="featured-case-side">
+                <span className="featured-case-side-label">Before</span>
+                <span className="featured-case-side-num featured-case-before">$2.2K</span>
+              </div>
+              <div className="featured-case-arrow-wrap" aria-hidden="true">
+                <svg className="featured-case-arrow-svg" viewBox="0 0 64 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M 4 12 H 56" />
+                  <path d="M 44 4 L 56 12 L 44 20" />
+                </svg>
+              </div>
+              <div className="featured-case-side">
+                <span className="featured-case-side-label">After</span>
+                <span className="featured-case-side-num featured-case-after">$125K</span>
+              </div>
+            </div>
+            <p className="featured-case-line">in under 5 months. Goth Fanvue creator.</p>
+            <span className="featured-case-go">Read the case study <Icon.arrow /></span>
+          </div>
+        </a>
+      </div>
+    </section>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────
 // Process — 4 step cards in a 2×2 grid (sturdy, no scroll-tracking)
 // ─────────────────────────────────────────────────────────────────────────
 function Process() {
@@ -109,28 +147,45 @@ function Results() {
 //   avgRatio = (trafficMul + tierMul) / 2
 //   revenue  = (isPaid ? avgRatio * price * subs : avgRatio * subs) * 0.8
 // ─────────────────────────────────────────────────────────────────────────
+// Country flag URLs from flagcdn.com (clean SVGs, ISO codes)
+const FLAG = (cc) => `https://flagcdn.com/w40/${cc}.png`;
+// Brand logos from simple-icons CDN — pass slug + hex color (no #)
+const BRAND = (slug, color = '8B92A0') => `https://cdn.simpleicons.org/${slug}/${color}`;
+
+const LOCATIONS = [
+  { label: '1st World',  flags: ['us', 'gb', 'de'] },
+  { label: '2nd World',  flags: ['cz', 'ru', 'bg'] },
+  { label: '3rd World',  flags: ['in', 'pk', 'za'] },
+];
+const TRAFFIC = [
+  { label: 'Tier A', brands: ['instagram', 'tiktok'] },
+  { label: 'Tier B', brands: ['x',         'reddit'] },
+  { label: 'Tier C', brands: ['youtube',   'snapchat'] },
+];
+
 function Calculator({ onBookCall }) {
   const [mode, setMode] = useStateB('real');         // 'real' | 'ai'
-  const [subs, setSubs] = useStateB(2000);
+  const [subs, setSubs] = useStateB(1000);
   const [isPaid, setIsPaid] = useStateB(true);
   const [price, setPrice] = useStateB(9.99);
-  const [tier, setTier] = useStateB(0);              // 0 Premium, 1 Standard, 2 Casual
-  const [traffic, setTraffic] = useStateB(0);        // 0 Tier A, 1 Tier B, 2 Tier C
+  const [location, setLocation] = useStateB(0);
+  const [traffic, setTraffic] = useStateB(0);
 
+  // Real-model ratios are highest. AI bumped up — still below Real, but no
+  // longer aggressively conservative.
   const MULT = {
-    real: { paid: [8, 6, 4],   free: [6, 4, 2]   },
-    ai:   { paid: [6, 4, 2.5], free: [4, 3, 1.5] },
+    real: { paid: [12, 9, 6], free: [9, 6, 4] },
+    ai:   { paid: [9, 6, 4], free: [6, 4, 2.5] },
   };
   const arr = MULT[mode][isPaid ? 'paid' : 'free'];
-  const tierMul = arr[tier];
+  const locMul = arr[location];
   const trafficMul = arr[traffic];
-  const avgRatio = (tierMul + trafficMul) / 2;
+  const avgRatio = (locMul + trafficMul) / 2;
   const revenue = (isPaid ? avgRatio * price * subs : avgRatio * subs) * 0.8;
   const formattedRev = Math.round(revenue).toLocaleString();
 
-  // Slider track fill — used as a CSS var for the filled gradient
-  const subsPct = ((subs - 100) / (50000 - 100)) * 100;
-  const pricePct = (price / 50) * 100;
+  const subsPct = ((subs - 100) / (5000 - 100)) * 100;
+  const pricePct = (price / 15) * 100;
 
   return (
     <section className="section calc-section" id="calculator">
@@ -141,17 +196,19 @@ function Calculator({ onBookCall }) {
             <h2>Run your<br/><span style={{ color: 'var(--accent)', fontStyle: 'italic' }}>numbers.</span></h2>
           </div>
           <div className="right">
-            <p>Conservative estimates pulled from 90-day rolling averages across the accounts we manage. Move the sliders to match yours, or flip to AI to see the realistic AI-model split.</p>
+            <p>Conservative estimates from accounts under management. Move the sliders to match yours — or flip to AI to see the realistic AI-model split.</p>
           </div>
         </div>
 
         <div className="calc-shell reveal">
           <div className="calc-mode">
             <button className={`calc-mode-btn ${mode === 'real' ? 'active' : ''}`} onClick={() => setMode('real')}>
-              <span className="calc-mode-dot"></span>Real models
+              <img className="calc-mode-logo" src="assets/platforms/onlyfans.png" alt="" />
+              Real models
             </button>
             <button className={`calc-mode-btn ${mode === 'ai' ? 'active' : ''}`} onClick={() => setMode('ai')}>
-              <span className="calc-mode-dot"></span>AI models
+              <img className="calc-mode-logo" src="assets/platforms/fanvue.png" alt="" />
+              AI models
             </button>
           </div>
 
@@ -162,7 +219,7 @@ function Calculator({ onBookCall }) {
                   <label htmlFor="calc-subs">Active subscribers</label>
                   <span className="calc-value">{subs.toLocaleString()}</span>
                 </div>
-                <input id="calc-subs" type="range" min="100" max="50000" step="100"
+                <input id="calc-subs" type="range" min="100" max="5000" step="50"
                        value={subs} onChange={(e) => setSubs(parseInt(e.target.value))}
                        className="calc-slider" style={{ '--fill': subsPct + '%' }} />
               </div>
@@ -181,31 +238,40 @@ function Calculator({ onBookCall }) {
                     <label htmlFor="calc-price">Subscription price</label>
                     <span className="calc-value">${price.toFixed(2)}</span>
                   </div>
-                  <input id="calc-price" type="range" min="0" max="50" step="0.5"
+                  <input id="calc-price" type="range" min="0" max="15" step="0.5"
                          value={price} onChange={(e) => setPrice(parseFloat(e.target.value))}
                          className="calc-slider" style={{ '--fill': pricePct + '%' }} />
                 </div>
               )}
 
               <div className="calc-field">
-                <div className="calc-field-head"><label>Subscriber spending tier</label></div>
-                <div className="calc-seg calc-seg-3">
-                  {['Premium', 'Standard', 'Casual'].map((t, i) => (
-                    <button key={t} className={tier === i ? 'active' : ''} onClick={() => setTier(i)}>{t}</button>
+                <div className="calc-field-head"><label>Subscriber locations</label></div>
+                <div className="calc-seg calc-seg-3 calc-seg-rich">
+                  {LOCATIONS.map((opt, i) => (
+                    <button key={opt.label} className={location === i ? 'active' : ''} onClick={() => setLocation(i)}>
+                      <span className="calc-flags">
+                        {opt.flags.map((cc) => (
+                          <img key={cc} src={FLAG(cc)} alt="" loading="lazy" />
+                        ))}
+                        <span className="calc-flag-more">& similar</span>
+                      </span>
+                      <span className="calc-seg-label">{opt.label}</span>
+                    </button>
                   ))}
                 </div>
               </div>
 
               <div className="calc-field">
-                <div className="calc-field-head"><label>Traffic source quality</label></div>
-                <div className="calc-seg calc-seg-3">
-                  {[
-                    ['A', 'video / streaming'],
-                    ['B', 'social media'],
-                    ['C', 'other adult'],
-                  ].map(([t, h], i) => (
-                    <button key={t} className={traffic === i ? 'active' : ''} onClick={() => setTraffic(i)}>
-                      Tier {t}<span className="calc-seg-hint">{h}</span>
+                <div className="calc-field-head"><label>Traffic source</label></div>
+                <div className="calc-seg calc-seg-3 calc-seg-rich">
+                  {TRAFFIC.map((opt, i) => (
+                    <button key={opt.label} className={traffic === i ? 'active' : ''} onClick={() => setTraffic(i)}>
+                      <span className="calc-brands">
+                        {opt.brands.map((slug) => (
+                          <img key={slug} src={BRAND(slug, traffic === i ? 'A6CFEE' : '8B92A0')} alt="" loading="lazy" />
+                        ))}
+                      </span>
+                      <span className="calc-seg-label">{opt.label}</span>
                     </button>
                   ))}
                 </div>
@@ -217,19 +283,10 @@ function Calculator({ onBookCall }) {
               <div className="calc-output-label">Monthly PPV + tips</div>
               <div className="calc-output-value">$<span key={formattedRev} className="calc-output-num">{formattedRev}</span></div>
               <div className="calc-output-sub">at <strong>{avgRatio.toFixed(1)}×</strong> sub-to-message ratio</div>
-
-              <div className="calc-output-line"></div>
-
-              <ul className="calc-output-meta">
-                <li><span>Subscribers</span><span>{subs.toLocaleString()}</span></li>
-                <li><span>Sub price</span><span>{isPaid ? '$' + price.toFixed(2) : 'Free'}</span></li>
-                <li><span>Tier × Traffic</span><span>{tierMul} × {trafficMul}</span></li>
-              </ul>
-
               <button className="btn btn-primary calc-cta" onClick={onBookCall}>
                 Start free trial <Icon.arrow />
               </button>
-              <p className="calc-disclaimer">Estimate only. Real numbers depend on niche, content cadence, and how you ramp the team. We'll show you actuals on a strategy call.</p>
+              <p className="calc-disclaimer">Estimate only. Actuals vary by niche, content cadence, and ramp.</p>
             </aside>
           </div>
         </div>
@@ -386,4 +443,4 @@ function Footer() {
   );
 }
 
-Object.assign(window, { Process, Results, Calculator, Pricing, FAQ, FinalCTA, Footer });
+Object.assign(window, { FeaturedCase, Process, Results, Calculator, Pricing, FAQ, FinalCTA, Footer });

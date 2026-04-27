@@ -246,6 +246,13 @@ p { margin: 0; }
 .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 8px 14px; background: var(--bg-2); border: 1px solid var(--line); border-radius: 999px; font-size: 13px; color: var(--slate); margin-bottom: 36px; }
 .hero-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: #22C55E; box-shadow: 0 0 0 4px rgba(34,197,94,0.18); }
 .hero h1 { max-width: 14ch; position: relative; z-index: 2; }
+
+/* Centered hero variant — no side card, content stacks centered on the page */
+.hero-inner-center { text-align: center; display: flex; flex-direction: column; align-items: center; }
+.hero-inner-center h1 { max-width: 24ch; margin: 0 auto; }
+.hero-inner-center .hero-sub { margin-left: auto; margin-right: auto; }
+.hero-inner-center .hero-cta { justify-content: center; }
+.hero-inner-center .hero-platforms { justify-content: center; }
 .hero h1 .accent { color: var(--accent); font-style: italic; font-weight: 300; }
 .hero-sub { max-width: 56ch; margin-top: 36px; }
 .hero-cta { display: flex; gap: 14px; margin-top: 48px; flex-wrap: wrap; }
@@ -1008,7 +1015,7 @@ body {
 h1, h2, h3, h4 { font-weight: 400; }
 h1 { font-weight: 300; letter-spacing: -0.025em; }
 h2 { font-weight: 400; }
-.italic, .hero h1 .accent, .hero h1 .accent-gold { font-style: italic; font-weight: 400; }
+.italic, .hero h1 .accent, .hero h1 .accent-gold, .hero h1 .accent-fanvue, .hero h1 .accent-of { font-style: italic; font-weight: 400; }
 
 /* Hero h1: vertical light-to-mid gradient on regular text;
    warm gold on "goldmine", cool cyan on "closers" — two-color wordplay. */
@@ -1031,6 +1038,24 @@ h2 { font-weight: 400; }
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 0 32px rgba(229, 190, 142, 0.16);
+}
+
+/* OnlyFans brand cyan — used on the "OnlyFans" word in the hero */
+.hero h1 .accent-of {
+  background: linear-gradient(180deg, #2BC8FF 0%, #00AFF0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 32px rgba(0, 175, 240, 0.28);
+}
+
+/* Fanvue green — used on "AI models" since Fanvue is the AI-friendly platform */
+.hero h1 .accent-fanvue {
+  background: linear-gradient(180deg, #36E59A 0%, #0F9E62 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 32px rgba(54, 229, 154, 0.18);
 }
 
 /* Buttons — pill, dark surface, cyan ring on primary */
@@ -1246,6 +1271,138 @@ h2 { font-weight: 400; }
 .hv-card { font-family: var(--font-body); }
 
 /* ════════════════════════════════════════════════════════════════════════
+   ─── Featured case study (single click-target card above Why)
+   ════════════════════════════════════════════════════════════════════════ */
+.featured-case { padding: clamp(48px, 6vw, 80px) 0; }
+.featured-case-card {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 0;
+  align-items: stretch;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: border-color 240ms ease, transform 240ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 240ms;
+  color: var(--ink);
+  isolation: isolate;
+}
+.featured-case-card:hover {
+  border-color: var(--accent-ring);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+}
+@media (max-width: 880px) { .featured-case-card { grid-template-columns: 1fr; } }
+
+.featured-case-img {
+  background: var(--bg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+}
+.featured-case-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  transition: transform 460ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.featured-case-card:hover .featured-case-img img { transform: scale(1.02); }
+
+.featured-case-copy {
+  padding: clamp(28px, 3vw, 44px);
+  display: flex; flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  background:
+    radial-gradient(500px 300px at 100% 0%, rgba(122,184,232,0.08), transparent 60%),
+    transparent;
+}
+.featured-case-tag {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+/* Before / After result block — visual progression with explicit labels */
+.featured-case-result {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  gap: clamp(12px, 2.5vw, 28px);
+  margin: 4px 0;
+}
+.featured-case-side {
+  display: flex; flex-direction: column; gap: 6px;
+}
+.featured-case-side-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--slate-2);
+  font-weight: 500;
+}
+.featured-case-side-num {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  font-size: clamp(34px, 4.5vw, 56px);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.featured-case-before {
+  color: var(--slate);
+  opacity: 0.85;
+}
+.featured-case-after {
+  background: linear-gradient(180deg, var(--cyan-bright), var(--cyan-deep));
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 28px rgba(122, 184, 232, 0.22);
+}
+.featured-case-arrow-wrap {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  color: var(--accent);
+}
+.featured-case-arrow-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+}
+.featured-case-arrow-svg {
+  width: clamp(40px, 5vw, 64px);
+  height: auto;
+  filter: drop-shadow(0 0 8px rgba(122, 184, 232, 0.4));
+}
+@media (max-width: 540px) {
+  .featured-case-result { grid-template-columns: 1fr; gap: 10px; justify-items: start; }
+  .featured-case-arrow-wrap { flex-direction: row; gap: 10px; }
+  .featured-case-arrow-svg { transform: rotate(90deg); width: 32px; }
+}
+.featured-case-line {
+  color: var(--ink-2);
+  font-size: 15px;
+  margin: 0;
+}
+.featured-case-go {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 12px;
+  font-size: 14px; font-weight: 600;
+  color: var(--ink);
+  transition: color 200ms;
+}
+.featured-case-card:hover .featured-case-go { color: var(--accent); }
+
+/* ════════════════════════════════════════════════════════════════════════
    ─── Earnings Calculator
    ════════════════════════════════════════════════════════════════════════ */
 .calc-shell {
@@ -1296,6 +1453,22 @@ h2 { font-weight: 400; }
 .calc-mode-btn.active .calc-mode-dot {
   background: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+/* Platform-logo indicator inside the mode toggle (OnlyFans · Fanvue) */
+.calc-mode-logo {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  display: block;
+  border-radius: 4px;
+  opacity: 0.55;
+  filter: grayscale(0.4);
+  transition: opacity 220ms ease, filter 220ms ease, transform 220ms ease;
+}
+.calc-mode-btn.active .calc-mode-logo {
+  opacity: 1;
+  filter: none;
 }
 
 /* Two-column layout — inputs left, output right */
@@ -1410,6 +1583,56 @@ h2 { font-weight: 400; }
   color: var(--slate-2);
 }
 .calc-seg button.active .calc-seg-hint { color: var(--cyan-bright); }
+
+/* Rich segmented buttons — flags or brand logos stacked above a label */
+.calc-seg-rich { padding: 8px; gap: 8px; }
+.calc-seg-rich button {
+  padding: 12px 10px 10px;
+  gap: 8px;
+  border-radius: var(--radius);
+}
+.calc-seg-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slate-2);
+}
+.calc-seg-rich button.active .calc-seg-label { color: var(--cyan-bright); }
+.calc-flags {
+  display: inline-flex; align-items: center; gap: 4px;
+  flex-wrap: nowrap;
+}
+.calc-flags img {
+  width: 22px; height: 16px; object-fit: cover;
+  border-radius: 2px;
+  display: block;
+  filter: grayscale(0.4) saturate(0.8) brightness(0.85);
+  transition: filter 220ms ease;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.calc-seg-rich button.active .calc-flags img {
+  filter: grayscale(0) saturate(1) brightness(1);
+}
+.calc-flag-more {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  color: var(--slate-2);
+  margin-left: 2px;
+}
+.calc-brands {
+  display: inline-flex; align-items: center; gap: 14px;
+  height: 22px;
+}
+.calc-brands img {
+  width: 18px; height: 18px;
+  object-fit: contain;
+  display: block;
+  opacity: 0.7;
+  transition: opacity 220ms ease;
+}
+.calc-seg-rich button.active .calc-brands img { opacity: 1; }
 
 /* Output panel */
 .calc-output {
@@ -1569,9 +1792,10 @@ h2 { font-weight: 400; }
   display: flex; flex-direction: column; gap: 6px;
 }
 .case-stat-num {
-  font-family: var(--font-display);
-  font-size: clamp(34px, 4vw, 52px);
-  letter-spacing: -0.025em;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  font-size: clamp(32px, 3.6vw, 46px);
+  letter-spacing: -0.04em;
   line-height: 1;
   color: var(--ink);
   background: linear-gradient(180deg, var(--cyan-bright), var(--cyan));
@@ -1729,10 +1953,10 @@ h2 { font-weight: 400; }
   display: flex; flex-direction: column; gap: 4px;
 }
 .case-compare-side figcaption strong {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 24px;
-  letter-spacing: -0.02em;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.035em;
   color: var(--ink);
 }
 .case-compare-side figcaption span {

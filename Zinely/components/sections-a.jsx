@@ -59,34 +59,14 @@ function Hero({ onBookCall }) {
   return (
     <section id="top" className="hero">
       <div className="hero-pattern"><ZebraPattern opacity={0.07} /></div>
-      <div className="hero-visual" aria-hidden="true">
-        <div className="hv-card hv-dm">
-          <div className="hv-bubble them">hey beautiful 🥺 you up?</div>
-          <div className="hv-bubble us">just got out the shower 💦 wanna see?</div>
-          <div className="hv-ppv">
-            <span className="hv-ppv-lock">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-            </span>
-            <div className="hv-ppv-meta">
-              <span className="hv-ppv-label">Photo set · 4 pics</span>
-              <span className="hv-ppv-price">$48 to unlock</span>
-            </div>
-          </div>
-          <div className="hv-unlock">
-            <span className="hv-unlock-tick">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </span>
-            Unlocked · $48
-          </div>
-        </div>
-      </div>
-      <div className="container hero-inner">
+      <div className="container hero-inner hero-inner-center">
         <h1 className="reveal">
-          Your inbox is a <span className="accent-gold">goldmine.</span><br />
-          We're the <span className="accent">closers.</span>
+          <span className="accent-of">OnlyFans</span> creators don't{' '}chat.<br />
+          <span className="accent-fanvue">AI models</span> can't.<br />
+          We do.
         </h1>
         <p className="lead hero-sub reveal">
-          Trained chatters running your DMs 24/7 — same fans, more PPV unlocks, more tips, real revenue. Free 7-day trial, no card on file.
+          We manage your chatters, your inbox, and your fan relationships 24/7 — keeping every conversation real while maximizing PPV unlocks, tips, and renewals.
         </p>
         <div className="hero-cta reveal">
           <button className="btn btn-primary btn-cta" onClick={onBookCall}>Start Your Free 7-Day Trial <Icon.arrow /></button>
