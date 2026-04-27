@@ -27,10 +27,10 @@ const CASES = {
     thumb: 'screenshots/case-launch-thumb.png',
     cover: 'screenshots/case-launch-insights-dashboard.png',
     stats: [
-      { num: '$125K', sub: 'all-time revenue', foot: 'across the 5-month run' },
-      { num: '$88.9K', sub: 'from PPVs sold', foot: '71% of total revenue' },
-      { num: '$6.9K', sub: 'from tips', foot: 'across the 5-month run' },
-      { num: 'Top 0.24%', sub: 'on Fanvue', foot: 'platform leaderboard' },
+      { num: '$125K',     sub: 'Total revenue' },
+      { num: '$88.9K',    sub: 'PPVs sold · 71%' },
+      { num: '$6.9K',     sub: 'Tips' },
+      { num: 'Top 0.24%', sub: 'On Fanvue' },
     ],
     sections: [
       {
@@ -104,10 +104,10 @@ const CASES = {
     thumb: 'screenshots/case-sprint-thumb.png',
     cover: 'screenshots/case-sprint-insights-dashboard.png',
     stats: [
-      { num: '$10K', sub: 'in 31 days', foot: '09 Jan – 09 Feb 2026' },
-      { num: '$4.7K', sub: 'from tips', foot: '47% of total revenue' },
-      { num: '$4.6K', sub: 'from messages', foot: '45% of total revenue' },
-      { num: 'Top 4.65%', sub: 'on Fanvue', foot: 'platform leaderboard, month-1' },
+      { num: '$10K',      sub: 'In 31 days' },
+      { num: '$4.7K',     sub: 'Tips · 47%' },
+      { num: '$4.6K',     sub: 'Messages · 45%' },
+      { num: 'Top 4.65%', sub: 'On Fanvue' },
     ],
     sections: [
       {
@@ -194,7 +194,6 @@ function CaseHero({ data }) {
     <section className="case-hero section-bg-2">
       <div className="container">
         <a className="case-back" href="cases.html">{CIcon.arrowL()} All case studies</a>
-        <CaseTags niche={data.niche} platform={data.platform} timeframe={data.timeframe} />
         <h1 className="case-h">{data.headline}</h1>
         <p className="lead case-lead">{data.teaser}</p>
       </div>
@@ -211,7 +210,6 @@ function CaseStats({ stats }) {
             <div key={i} className="case-stat">
               <div className="case-stat-num">{s.num}</div>
               <div className="case-stat-sub">{s.sub}</div>
-              <div className="case-stat-foot">{s.foot}</div>
             </div>
           ))}
         </div>
@@ -301,7 +299,7 @@ function CaseCta() {
     <section className="section case-cta">
       <div className="container case-body case-cta-inner">
         <h2 className="case-h2">Want a study like this <em>on your account?</em></h2>
-        <p className="lead">Free 7-day trial — live chatters on your account for a week, no card on file. We only show you a study when there’s one to show.</p>
+        <p className="lead">Free 3-day trial — trained chatters on your account, full 24/7 coverage included, no card on file. We only show you a study when there’s one to show.</p>
         <div className="case-cta-actions">
           <a className="btn btn-primary" href={tg} target="_blank" rel="noopener noreferrer">
             Start your trial {Icon ? <Icon.arrow /> : null}

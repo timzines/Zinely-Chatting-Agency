@@ -190,6 +190,7 @@ p { margin: 0; }
 .nav-links a:hover { color: var(--ink); }
 .nav-cta { display: flex; align-items: center; gap: 10px; }
 .nav-cta .btn { padding: 10px 18px; font-size: 13.5px; }
+.nav-cta .btn-primary.btn-cta { padding: 11px 20px; font-size: 13.5px; }
 .nav-burger { display: none; width: 38px; height: 38px; align-items: center; justify-content: center; border-radius: 10px; }
 .nav-burger:hover { background: var(--bg-2); }
 
@@ -1077,34 +1078,63 @@ h2 { font-weight: 400; }
 }
 .btn-primary:active { transform: translateY(0); }
 
-/* CTA modifier — filled cyan, the unmistakable click-here.
-   Used on the hero "Start Your Free 7-Day Trial" specifically. */
+/* CTA modifier — vibrant cyan, white bold, the highest-contrast element.
+   Used on every primary "Start free trial" button site-wide. */
 .btn-primary.btn-cta {
-  background: var(--cyan-bright);
-  color: var(--bg);
+  background: #1AB7E8;
+  color: #FFFFFF;
   border-color: transparent;
-  font-weight: 600;
-  padding: 16px 30px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  padding: 15px 28px;
   font-size: 15px;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.4),
-    0 12px 28px rgba(122,184,232,0.28);
+    inset 0 1px 0 rgba(255,255,255,0.28),
+    0 10px 28px rgba(26, 183, 232, 0.35),
+    0 0 0 0 rgba(26, 183, 232, 0);
+  transition: background 200ms ease, box-shadow 220ms ease, transform 180ms ease;
 }
+.btn-primary.btn-cta svg { stroke: #FFFFFF; opacity: 0.95; }
 .btn-primary.btn-cta:hover {
-  background: #FFFFFF;
+  background: #2BC8FF;
   border-color: transparent;
   transform: translateY(-1px);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.6),
-    0 16px 36px rgba(122,184,232,0.4);
+    inset 0 1px 0 rgba(255,255,255,0.4),
+    0 14px 36px rgba(26, 183, 232, 0.5),
+    0 0 0 4px rgba(26, 183, 232, 0.18);
 }
+
+/* CTA + small sub-text below it (e.g. "7 days, risk free") */
+.cta-stack {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+.cta-sub {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--slate-2);
+  opacity: 0.7;
+}
+.calc-cta-sub { display: block; text-align: center; margin-top: 8px; }
+.pricing-cta-sub { display: block; text-align: center; margin-top: 10px; }
+/* In the centered hero, the cta-stack should align its children centered too */
+.hero-inner-center .cta-stack { align-items: center; }
 .btn-secondary {
-  background: var(--surface);
+  background: transparent;
   color: var(--ink);
-  border: 1px solid var(--line);
+  border: 1px solid var(--accent-ring);
   box-shadow: none;
+  font-weight: 500;
 }
-.btn-secondary:hover { border-color: var(--accent-ring); background: var(--surface-2); }
+.btn-secondary:hover { border-color: var(--accent); background: rgba(122,184,232,0.06); }
+.btn-secondary svg { stroke: var(--accent); }
 .btn-dark {
   background: var(--surface);
   color: var(--ink);
@@ -1269,6 +1299,68 @@ h2 { font-weight: 400; }
 
 /* Hero visual bubble cards — upgrade font feel */
 .hv-card { font-family: var(--font-body); }
+
+/* ════════════════════════════════════════════════════════════════════════
+   ─── Legal pages (terms.html, privacy.html)
+   ════════════════════════════════════════════════════════════════════════ */
+.legal-page {
+  padding: clamp(120px, 12vw, 160px) 0 clamp(72px, 8vw, 120px);
+  background: var(--bg);
+}
+.legal-container { max-width: 760px; margin: 0 auto; }
+.legal-eyebrow {
+  display: inline-block;
+  margin: 28px 0 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.legal-h {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  font-size: clamp(36px, 5vw, 56px);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--ink);
+  margin: 0 0 12px;
+}
+.legal-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--slate-2);
+  margin: 0 0 48px;
+}
+.legal-prose {
+  color: var(--ink-2);
+  font-size: 15.5px;
+  line-height: 1.75;
+}
+.legal-prose p { margin: 0 0 18px; }
+.legal-prose h2 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 40px 0 14px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.legal-prose h2:first-child { padding-top: 0; border-top: 0; }
+.legal-prose ul {
+  margin: 0 0 22px;
+  padding-left: 20px;
+  color: var(--ink-2);
+}
+.legal-prose li { margin-bottom: 8px; line-height: 1.7; }
+.legal-prose li::marker { color: var(--slate-2); }
+.legal-prose a { color: var(--accent); border-bottom: 1px solid var(--accent-ring); transition: color 160ms, border-color 160ms; }
+.legal-prose a:hover { color: var(--cyan-bright); border-bottom-color: var(--cyan-bright); }
+.legal-prose strong { color: var(--ink); font-weight: 600; }
 
 /* ════════════════════════════════════════════════════════════════════════
    ─── Featured case study (single click-target card above Why)
@@ -1775,7 +1867,7 @@ h2 { font-weight: 400; }
 }
 .case-lead { color: var(--slate); max-width: 60ch; }
 
-/* Quick stats bar — 4 metrics in a row */
+/* Quick stats bar — 4 metrics in a row, tightened for clarity */
 .case-stats { padding: 48px 0; border-bottom: 1px solid var(--line); }
 .case-stats-grid {
   display: grid;
@@ -1788,22 +1880,29 @@ h2 { font-weight: 400; }
 }
 .case-stat {
   background: var(--bg);
-  padding: 32px 28px;
-  display: flex; flex-direction: column; gap: 6px;
+  padding: 26px 24px;
+  display: flex; flex-direction: column; gap: 10px;
 }
 .case-stat-num {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 700;
-  font-size: clamp(32px, 3.6vw, 46px);
+  font-size: clamp(30px, 3vw, 40px);
   letter-spacing: -0.04em;
   line-height: 1;
   color: var(--ink);
   background: linear-gradient(180deg, var(--cyan-bright), var(--cyan));
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-variant-numeric: tabular-nums;
 }
-.case-stat-sub { font-size: 14px; color: var(--ink-2); margin-top: 4px; }
-.case-stat-foot { font-size: 12px; color: var(--slate-2); margin-top: 2px; }
+.case-stat-sub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--slate);
+  font-weight: 500;
+}
 @media (max-width: 880px) { .case-stats-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 540px) { .case-stats-grid { grid-template-columns: 1fr; } }
 

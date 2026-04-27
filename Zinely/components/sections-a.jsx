@@ -22,7 +22,6 @@ function Nav({ onBookCall }) {
     ['Process', 'index.html#process'],
     ['Cases', 'cases.html'],
     ['FAQ', 'index.html#faq'],
-    ['Apply as a Chatter', 'apply.html'],
   ];
 
   return (
@@ -33,7 +32,7 @@ function Nav({ onBookCall }) {
           {links.map(([l, h]) => <a key={h} href={h}>{l}</a>)}
         </nav>
         <div className="nav-cta">
-          <button className="btn btn-primary" onClick={onBookCall}>Start Free Trial <Icon.arrow /></button>
+          <button className="btn btn-primary btn-cta" onClick={onBookCall}>Start free trial <Icon.arrow /></button>
           <button className="nav-burger" aria-label="Open menu" onClick={() => setOpen(true)}><Icon.burger /></button>
         </div>
       </header>
@@ -45,8 +44,12 @@ function Nav({ onBookCall }) {
         </div>
         <nav>
           {links.map(([l, h]) => <a key={h} href={h} onClick={() => setOpen(false)}>{l}</a>)}
+          <a href="apply.html" onClick={() => setOpen(false)} className="mobile-overlay-utility">Apply as a Chatter</a>
         </nav>
-        <button className="btn btn-primary" onClick={() => { setOpen(false); onBookCall(); }}>Start Free Trial <Icon.arrow /></button>
+        <div className="cta-stack">
+          <button className="btn btn-primary btn-cta" onClick={() => { setOpen(false); onBookCall(); }}>Start free trial <Icon.arrow /></button>
+          <span className="cta-sub">3 days · 24/7 chatting included</span>
+        </div>
       </div>
     </>
   );
@@ -66,11 +69,14 @@ function Hero({ onBookCall }) {
           We do.
         </h1>
         <p className="lead hero-sub reveal">
-          We manage your chatters, your inbox, and your fan relationships 24/7 — keeping every conversation real while maximizing PPV unlocks, tips, and renewals.
+          We manage your chatters, your inbox, and your fan relationships 24/7 — keeping every conversation human while maximizing PPV unlocks, tips, and renewals.
         </p>
         <div className="hero-cta reveal">
-          <button className="btn btn-primary btn-cta" onClick={onBookCall}>Start Your Free 7-Day Trial <Icon.arrow /></button>
-          <a className="btn btn-secondary" href="cases.html">See Case Studies <Icon.arrow /></a>
+          <div className="cta-stack">
+            <button className="btn btn-primary btn-cta" onClick={onBookCall}>Start free trial <Icon.arrow /></button>
+            <span className="cta-sub">3 days · 24/7 chatting included</span>
+          </div>
+          <a className="btn btn-secondary btn-ghost-cyan" href="cases.html">See Case Studies <Icon.arrow /></a>
         </div>
         <div className="hero-platforms reveal">
           <span className="hero-platforms-label">Platforms supported</span>
@@ -95,7 +101,7 @@ function Hero({ onBookCall }) {
 // ─────────────────────────────────────────────────────────────────────────
 function Stats() {
   const stats = [
-    { num: '$2M', unit: '+', label: 'Monthly client revenue managed across our roster' },
+    { num: '3.2', unit: '×', label: 'Average revenue lift on accounts under management' },
     { num: '40', unit: '+', label: 'Active creator accounts under full management' },
     { num: '24/7', unit: '', label: 'Live coverage across every major timezone' },
     { num: '<60', unit: 's', label: 'Average response time, fan to chatter' },
