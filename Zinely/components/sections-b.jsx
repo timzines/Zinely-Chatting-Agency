@@ -389,7 +389,7 @@ function FinalCTA({ onBookCall }) {
       <div className="container final-cta-inner reveal">
         <div className="modal-eyebrow" style={{ color: 'var(--accent)', marginBottom: 18 }}>Free 3-day trial · 24/7 chatting included</div>
         <h2>Try Zinely free<br />for <span style={{ color: 'var(--accent)' }}>three days.</span></h2>
-        <p className="lead">Live chatters on your account for a week. See the revenue lift before you commit. No pitch, no pressure — and no card on file.</p>
+        <p className="lead">Trained chatters on your account for 3 days, full 24/7 coverage included. See the revenue lift before you commit. No pitch, no pressure — and no card on file.</p>
         <div className="cta-stack" style={{ alignItems: 'center' }}>
           <button className="btn btn-light" onClick={onBookCall}>Start free trial <Icon.arrow /></button>
           <span className="cta-sub">3 days · 24/7 chatting included</span>

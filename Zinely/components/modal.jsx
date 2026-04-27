@@ -75,7 +75,7 @@ function BookModal({ open, onClose }) {
           <form className="modal-body" onSubmit={submit}>
             <div className="modal-eyebrow">Free 7-day trial · No credit card</div>
             <h3>Start your free trial.</h3>
-            <p className="modal-sub">Live chatters on your account for a week. Keep 100% of what we generate. Cancel anytime — no card, no contract.</p>
+            <p className="modal-sub">Trained chatters on your account for 3 days, full 24/7 coverage included. Keep 100% of what we generate. Cancel anytime — no card, no contract.</p>
 
             <div className="field-row">
               <div className="field">
