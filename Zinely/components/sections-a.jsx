@@ -90,7 +90,7 @@ function Hero({ onBookCall }) {
         </p>
         <div className="hero-cta reveal">
           <button className="btn btn-primary btn-cta" onClick={onBookCall}>Start Your Free 7-Day Trial <Icon.arrow /></button>
-          <a className="btn btn-secondary" href="#process">See how it works <Icon.arrowDown /></a>
+          <a className="btn btn-secondary" href="cases.html">See Case Studies <Icon.arrow /></a>
         </div>
         <div className="hero-platforms reveal">
           <span className="hero-platforms-label">Platforms supported</span>

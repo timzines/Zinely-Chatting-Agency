@@ -52,9 +52,9 @@ function Results() {
       niche: 'Goth / alt creator',
       platform: 'Fanvue',
       timeframe: '5-month launch',
-      metric: '$0 → $125K total',
-      headline: <>From $0 to <em>$125K</em> in 5 months.</>,
-      teaser: 'Goth account on Fanvue. $88.9K in PPVs sold, $6.9K in tips — $125K total in five months.',
+      metric: '$2.2K → $125K',
+      headline: <>From $2.2K to <em>$125K</em> in 5 months.</>,
+      teaser: 'Goth account on Fanvue. Plateaued at $2.2K/week before us → $125K total in five months. $88.9K in PPVs sold, $6.9K in tips.',
     },
     {
       href: 'case-sprint.html',
@@ -257,7 +257,7 @@ function Pricing({ onBookCall }) {
   const [selected, setSelected] = useStateB(0);
   const tiers = [
     { tag: 'Start here', name: 'Free 7-Day Trial', price: '$0', priceSub: 'for 7 days, no card', desc: 'Live chatters on your account for a week. See the revenue lift before you commit a dollar.', fit: 'Best way to see if we’re a fit — keep 100% of what we make for you in week one.' },
-    { tag: 'Most popular', name: 'Performance', price: '15%', priceSub: 'of net revenue we generate', desc: 'Commission only. We earn when you earn — no base fees, no contracts.', fit: 'Best for creators doing $10K+/month who want skin-in-the-game pricing.' },
+    { tag: 'Most popular', name: 'Performance', price: '20–26%', priceSub: 'of gross earnings, scaled to volume', desc: 'Commission only. Rate slides between 20% and 26% depending on the volume of the account — bigger accounts pay less, smaller accounts pay more. No base fees, no contracts.', fit: 'Best for creators doing $10K+/month who want skin-in-the-game pricing.' },
     { tag: 'High volume', name: 'Hybrid', price: 'Custom', priceSub: '', desc: 'Lower commission rate plus a small monthly base fee for predictable cost.', fit: 'Best for $50K+/month accounts wanting forecastable agency spend.' },
   ];
   return (

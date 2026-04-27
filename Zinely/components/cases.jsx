@@ -19,10 +19,10 @@ const CASES = {
     niche: 'Goth / alt creator',
     platform: 'Fanvue',
     timeframe: '5-month launch',
-    headline: <>From $0 to <em>$125K</em> in 5 months.</>,
-    headlinePlain: 'From $0 to $125K in 5 months.',
-    teaser: 'Goth account on Fanvue. $88.9K in PPVs sold, $6.9K in tips — $125K total in five months.',
-    metric: '$0 → $125K total',
+    headline: <>From $2.2K to <em>$125K</em> in 5 months.</>,
+    headlinePlain: 'From $2.2K to $125K in 5 months.',
+    teaser: 'Goth account on Fanvue. Plateaued at $2.2K/week before us → $125K total in five months. $88.9K in PPVs sold, $6.9K in tips.',
+    metric: '$2.2K → $125K',
     cover: 'screenshots/case-launch-insights-dashboard.png',
     stats: [
       { num: '$125K', sub: 'all-time revenue', foot: 'across the 5-month run' },
@@ -32,45 +32,60 @@ const CASES = {
     ],
     sections: [
       {
-        num: '01 / The starting line',
-        title: <>The <em>cold start.</em></>,
+        num: '01',
+        title: <>The <em>plateau.</em></>,
         body: (
           <>
-            <p>Brand-new Fanvue account, day zero. The creator had a strong goth/alt aesthetic on TikTok — about 6K followers — but no monetised presence. Fanvue was the deliberate pick over OnlyFans: smaller competitor pool, AI-friendly tooling we wanted on standby, and a higher per-fan spend in the goth/alt niche specifically.</p>
-            <p>Most agencies push goth/alt creators toward "softer" content for "broader appeal." We do the opposite — lean harder into the niche, charge more, and let the wrong-fit fans churn out at the door.</p>
+            <p>Goth creator on Fanvue. Instagram was the only marketing source — and it was bringing in traffic, but the funnel was leaky, the previous chatters weren't converting subs into spenders, and a handful of operational issues were stacking up. The first seven days under the previous setup pulled $2,205 — decent traffic, poor monetisation.</p>
+            <p>They came to us. Same niche, same Instagram, same fans. We rebuilt the funnel, retrained the chatter cadence, and got out of the way.</p>
           </>
         ),
-        skeletons: [
-          { ratio: '16/9', label: 'Day-zero account state', hint: 'Replace with the launch-day Fanvue screenshot — 0 subs, default banner.' },
-        ],
       },
       {
-        num: '02 / What we did',
-        title: <>Four plays. <em>Sequenced.</em></>,
+        num: '02',
+        title: <>The <em>turn.</em></>,
+        body: <p className="case-prose-tight">Pulled straight from the creator's Fanvue dashboard — last week before they came to us, then the all-time view today.</p>,
+        compare: {
+          before: {
+            src: 'screenshots/case-launch-before.png',
+            alt: 'Fanvue dashboard showing $2,205 over 09 Dec – 16 Dec 2025, the week before joining Zinely',
+            headline: '$2,205 in 7 days',
+            detail: '09 – 16 Dec 2025 · Instagram-only funnel, previous chatters',
+          },
+          after: {
+            src: 'screenshots/case-launch-after.png',
+            alt: 'Fanvue dashboard showing $124,655.11 all-time and $22,966.83 this month, agency-managed',
+            headline: '$124,655 all-time',
+            detail: '$22,966 last month · agency-managed',
+          },
+          arrowLabel: 'with our agency',
+        },
+      },
+      {
+        num: '03',
+        title: <>The <em>plays.</em></>,
         plays: [
-          { title: 'Niche-loyal funnel', body: 'TikTok pivoted to short-form goth aesthetic content with Fanvue link in bio. No softening, no broader-appeal content — every post optimised for the niche audience and let the algorithm sort.', meta: '8.4K subs / 5 mo' },
-          { title: 'Themed drop calendar', body: 'Weekly themed photo + video drops — each drop pre-teased on TikTok 3 days out, then released on Fanvue as a paid event. Drops were treated as product launches.', meta: '4 drops / mo' },
-          { title: 'Custom shoot menu', body: 'Bookable menu — themed photo set ($120), custom video ($280), full themed scene ($500). Calendar gated to 4 slots a week to manufacture scarcity.', meta: '46% of revenue' },
-          { title: 'Sub-only Discord', body: 'Private goth Discord with weekly voice chats and behind-the-scenes drops. Killed early churn — 91% month-2 retention vs 54% category benchmark.', meta: '91% retention' },
+          { title: 'Niche-loyal funnel', body: 'Kept Instagram as the source. Re-cut the bio funnel and the link-in-bio path so traffic landed on a Fanvue page priced and packaged for the goth/alt audience — not softened for "broader appeal."', meta: 'Instagram → Fanvue' },
+          { title: 'Chatter rebuild', body: 'Replaced the previous chatter team with our own. Voice-matched, niche-trained, on a tighter response cadence — every new sub got a personalised welcome inside minutes, not hours.', meta: 'Same niche, real closers' },
+          { title: 'Themed drops', body: 'Weekly themed PPV drops, pre-teased on Instagram, released on Fanvue as paid events. Each drop priced as a product launch instead of just another post.', meta: '4 drops / month' },
+          { title: 'Sub-only retention loop', body: 'Private community for paying subs only — kept the most valuable fans engaged month-over-month. Repeat unlocks did the heavy lifting on revenue.', meta: 'Repeat-unlock engine' },
         ],
       },
       {
-        num: '03 / Receipts',
-        title: <>Five months, <em>charted.</em></>,
+        num: '04',
+        title: <>The <em>receipts.</em></>,
+        wide: true,
+        layout: 'stack',
         skeletons: [
           { ratio: '16/8', label: 'Fanvue Insights · all-time + last-month + top spenders',
             src: 'screenshots/case-launch-insights-dashboard.png', alt: 'Fanvue Insights dashboard showing $124,546 all-time revenue and $22,858 in the last month for the launch case study' },
-          { ratio: '1/1',  label: 'Earnings by type · $125K total split across messages, subs, renewals, tips',
-            src: 'screenshots/case-launch-earnings-by-type.png', alt: 'Donut chart showing $125K total earnings broken down by source: messages $88,904, subs $18,072, renewals $10,586, tips $6,982' },
+          { ratio: '1/1',  label: '$125K total split: messages $88.9K · subs $18K · renewals $10.5K · tips $6.9K',
+            src: 'screenshots/case-launch-earnings-by-type.png', alt: 'Donut chart showing $125K total earnings broken down by source' },
           { ratio: '4/3',  label: 'Earnings over time · 6-month line + per-source breakdown',
             src: 'screenshots/case-launch-earnings-over-time.png', alt: 'Earnings-over-time chart for the launch case with category breakdown' },
         ],
       },
     ],
-    quote: {
-      body: 'Every other agency wanted me to soften the goth. Zinely doubled down on it — and that’s the only reason this worked. Five months in, customs are booked three weeks out and I’m turning fans away.',
-      attribution: '@redacted_handle · goth creator, Fanvue',
-    },
   },
 
   sprint: {
@@ -92,8 +107,8 @@ const CASES = {
     ],
     sections: [
       {
-        num: '01 / The starting line',
-        title: <>Cold to <em>five figures, fast.</em></>,
+        num: '01',
+        title: <>The <em>cold start.</em></>,
         body: (
           <>
             <p>Goth creator, ~3K TikTok followers, no monetised presence. Aggressive on the timeline — wanted a meaningful first month, not a "warm-up" quarter. We agreed on Fanvue (same calculus as the longer launch — niche fit, less competition) and built a 14-day pre-launch around the Fanvue go-live date.</p>
@@ -105,8 +120,8 @@ const CASES = {
         ],
       },
       {
-        num: '02 / What we did',
-        title: <>Four plays. <em>Compressed.</em></>,
+        num: '02',
+        title: <>The <em>plays.</em></>,
         plays: [
           { title: 'Pre-launch hype window', body: '14 days of aesthetic teasers on TikTok before Fanvue opened. A countdown, a waiting list, and a "first 100 subs get a free custom" hook to convert anticipation into day-one purchases.', meta: '1,250 sub waitlist' },
           { title: 'Day-1 PPV ladder', body: 'A $9 / $19 / $39 PPV ladder built and queued before the first sub joined. Every new fan got the $9 within 4 minutes of subscribing — softens the first sale, opens the door to the $39.', meta: '$48 avg unlock' },
@@ -115,8 +130,10 @@ const CASES = {
         ],
       },
       {
-        num: '03 / Receipts',
-        title: <>31 days, <em>logged.</em></>,
+        num: '03',
+        title: <>The <em>receipts.</em></>,
+        wide: true,
+        layout: 'stack',
         skeletons: [
           { ratio: '16/8', label: 'Fanvue Insights · launch month + top spenders + earnings line',
             src: 'screenshots/case-sprint-insights-dashboard.png', alt: 'Fanvue Insights dashboard showing $10,120.88 over the 09 Jan – 09 Feb launch window with top spenders and an earnings-over-time chart' },
@@ -199,13 +216,44 @@ function CaseStats({ stats }) {
   );
 }
 
-function CaseSection({ num, title, body, plays, skeletons, alt }) {
+function CaseCompare({ data }) {
+  return (
+    <div className="case-compare">
+      <figure className="case-compare-side">
+        <span className="case-compare-tag case-compare-tag-before">Before</span>
+        <div className="case-compare-frame"><img src={data.before.src} alt={data.before.alt || 'Before'} loading="lazy" /></div>
+        <figcaption>
+          <strong>{data.before.headline}</strong>
+          <span>{data.before.detail}</span>
+        </figcaption>
+      </figure>
+      <div className="case-compare-arrow" aria-hidden="true">
+        <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M 8 32 H 54" />
+          <path d="M 40 18 L 54 32 L 40 46" />
+        </svg>
+        <span className="case-compare-arrow-label">{data.arrowLabel || 'with our agency'}</span>
+      </div>
+      <figure className="case-compare-side">
+        <span className="case-compare-tag case-compare-tag-after">After</span>
+        <div className="case-compare-frame"><img src={data.after.src} alt={data.after.alt || 'After'} loading="lazy" /></div>
+        <figcaption>
+          <strong>{data.after.headline}</strong>
+          <span>{data.after.detail}</span>
+        </figcaption>
+      </figure>
+    </div>
+  );
+}
+
+function CaseSection({ num, title, body, plays, skeletons, compare, layout, wide, alt }) {
   return (
     <section className={`section ${alt ? 'section-bg-2' : ''}`}>
-      <div className="container case-body">
+      <div className={`container ${wide ? 'case-body-wide' : 'case-body'}`}>
         <span className="section-num">{num}</span>
         <h2 className="case-h2">{title}</h2>
         {body && <div className="case-prose">{body}</div>}
+        {compare && <CaseCompare data={compare} />}
         {plays && (
           <div className="case-plays">
             {plays.map((p, i) => (
@@ -220,7 +268,7 @@ function CaseSection({ num, title, body, plays, skeletons, alt }) {
           </div>
         )}
         {skeletons && (
-          <div className={`case-shots ${skeletons.length > 1 ? 'multi' : 'single'}`}>
+          <div className={`case-shots ${layout === 'stack' ? 'stack' : (skeletons.length > 1 ? 'multi' : 'single')}`}>
             {skeletons.map((s, i) => <SkeletonImage key={i} {...s} />)}
           </div>
         )}
