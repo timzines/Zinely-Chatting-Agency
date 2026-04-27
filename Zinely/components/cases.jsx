@@ -21,8 +21,10 @@ const CASES = {
     timeframe: '5-month launch',
     headline: <>From $2.2K to <em>$125K</em> in 5 months.</>,
     headlinePlain: 'From $2.2K to $125K in 5 months.',
-    teaser: 'Goth account on Fanvue. Plateaued at $2.2K/week before us → $125K total in five months. $88.9K in PPVs sold, $6.9K in tips.',
+    teaser: '$95.8K in PPVs & tips. $18K in subs.',
     metric: '$2.2K → $125K',
+    cardMeta: 'Goth · 5 months',
+    thumb: 'screenshots/case-launch-thumb.png',
     cover: 'screenshots/case-launch-insights-dashboard.png',
     stats: [
       { num: '$125K', sub: 'all-time revenue', foot: 'across the 5-month run' },
@@ -96,8 +98,10 @@ const CASES = {
     timeframe: '31-day sprint',
     headline: <>From $0 to <em>$10K</em> in 31 days.</>,
     headlinePlain: 'From $0 to $10K in 31 days.',
-    teaser: 'Goth Fanvue account. $4.6K in messages, $4.7K in tips — $10K in just 31 days from a cold launch.',
+    teaser: '$9.3K in PPVs & tips. $771 in subs.',
     metric: '$0 → $10K in 31 days',
+    cardMeta: 'Goth · 31 days',
+    thumb: 'screenshots/case-sprint-thumb.png',
     cover: 'screenshots/case-sprint-insights-dashboard.png',
     stats: [
       { num: '$10K', sub: 'in 31 days', foot: '09 Jan – 09 Feb 2026' },
@@ -340,13 +344,13 @@ function CasesIndex() {
         <div className="container">
           <div className="case-index-grid">
             {list.map((c) => (
-              <a key={c.slug} className="case-card reveal" href={c.href}>
-                <SkeletonImage ratio="16/10" src={c.cover} alt={`${c.niche} cover`} />
-                <CaseTags niche={c.niche} platform={c.platform} timeframe={c.timeframe} />
-                <h3 className="case-card-h">{c.headline}</h3>
-                <p className="case-card-teaser">{c.teaser}</p>
+              <a key={c.slug} className="case-card case-card-min reveal" href={c.href}>
+                <SkeletonImage ratio="16/9" src={c.thumb || c.cover} alt="Case study cover" />
                 <div className="case-card-foot">
-                  <span className="case-card-metric">{c.metric}</span>
+                  <div className="case-card-info">
+                    <span className="case-card-meta">{c.cardMeta}</span>
+                    <p className="case-card-teaser">{c.teaser}</p>
+                  </div>
                   <span className="case-card-go">Read case study →</span>
                 </div>
               </a>

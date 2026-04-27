@@ -48,23 +48,15 @@ function Results() {
   const cases = [
     {
       href: 'case-launch.html',
-      cover: 'screenshots/case-launch-insights-dashboard.png',
-      niche: 'Goth / alt creator',
-      platform: 'Fanvue',
-      timeframe: '5-month launch',
-      metric: '$2.2K → $125K',
-      headline: <>From $2.2K to <em>$125K</em> in 5 months.</>,
-      teaser: 'Goth account on Fanvue. Plateaued at $2.2K/week before us → $125K total in five months. $88.9K in PPVs sold, $6.9K in tips.',
+      cover: 'screenshots/case-launch-thumb.png',
+      meta: 'Goth · 5 months',
+      teaser: '$95.8K in PPVs & tips. $18K in subs.',
     },
     {
       href: 'case-sprint.html',
-      cover: 'screenshots/case-sprint-insights-dashboard.png',
-      niche: 'Goth / alt creator',
-      platform: 'Fanvue',
-      timeframe: '31-day sprint',
-      metric: '$0 → $10K in 31 days',
-      headline: <>From $0 to <em>$10K</em> in 31 days.</>,
-      teaser: 'Goth Fanvue account. $4.6K in messages, $4.7K in tips — $10K in just 31 days from a cold launch.',
+      cover: 'screenshots/case-sprint-thumb.png',
+      meta: 'Goth · 31 days',
+      teaser: '$9.3K in PPVs & tips. $771 in subs.',
     },
   ];
   return (
@@ -80,19 +72,15 @@ function Results() {
 
         <div className="case-index-grid reveal">
           {cases.map((c) => (
-            <a key={c.href} className="case-card" href={c.href}>
-              <figure className="case-shot" style={{ aspectRatio: '16 / 10' }}>
-                <img src={c.cover} alt={`${c.niche} dashboard`} loading="lazy" />
+            <a key={c.href} className="case-card case-card-min" href={c.href}>
+              <figure className="case-shot" style={{ aspectRatio: '16 / 9' }}>
+                <img src={c.cover} alt="Case study cover" loading="lazy" />
               </figure>
-              <div className="case-tags">
-                <span className="case-tag case-tag-niche">{c.niche}</span>
-                <span className="case-tag">{c.platform}</span>
-                <span className="case-tag case-tag-time">{c.timeframe}</span>
-              </div>
-              <h3 className="case-card-h">{c.headline}</h3>
-              <p className="case-card-teaser">{c.teaser}</p>
               <div className="case-card-foot">
-                <span className="case-card-metric">{c.metric}</span>
+                <div className="case-card-info">
+                  <span className="case-card-meta">{c.meta}</span>
+                  <p className="case-card-teaser">{c.teaser}</p>
+                </div>
                 <span className="case-card-go">Read case study →</span>
               </div>
             </a>
