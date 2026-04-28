@@ -128,10 +128,10 @@ const CASES = {
         num: '02',
         title: <>The <em>plays.</em></>,
         plays: [
-          { title: 'Profile reset', body: 'Built the on-account identity from scratch. Wrote a niche-pointed bio, swapped the profile picture and banner for something fans would actually stop scrolling for, added an intro video on the wall, and gave her a personality voice that pulled replies instead of bouncing them.', meta: 'Bio · banner · intro video' },
-          { title: 'Curiosity-driven feed', body: 'Daily feed cadence designed for one thing: getting fans to DM. Posts showed enough skin to make people stop, never enough to satisfy them. Every drop a curiosity hook pointed at the inbox.', meta: 'Daily feed · DM-driven' },
-          { title: 'Round-the-clock chatter desk', body: 'Brought in our own chatters from day one. 24-hour shift coverage with one rest day each, always backfilled when someone was off. Roster scaled down on quiet days so we weren\'t paying for empty seats.', meta: 'Round-the-clock · backfilled' },
-          { title: 'Mass-DM conversion engine', body: 'Mass-DM campaigns that turned the free follower base into paying subs — emotional setup, suggestive image attachment of the model, a clear next step. Tracked per campaign and refined every few days.', meta: 'Followers → paying subs' },
+          { title: 'Identity overhaul', body: 'Rebuilt the on-account presence from scratch — niche-pointed bio, scroll-stopping profile picture and banner, intro video on the wall. Re-voiced the model so fans actually wanted to message her instead of just window-shop.', meta: 'Bio · banner · intro video' },
+          { title: 'Tease, never satisfy', body: 'Daily feed cadence engineered to drive DMs. Enough skin to spike curiosity, nothing close to enough to settle it. Every post a hook pointing at the inbox.', meta: 'Daily feed · DM-bait' },
+          { title: '24/7 chatter desk', body: 'Our own chatters on the account from day one. Full 24-hour coverage with one rest day per chatter, always backfilled — never a gap, never a wait. Roster scaled down on quiet days so we weren\'t burning hours on a silent inbox.', meta: '24/7 · always backfilled' },
+          { title: 'Mass-DM conversion engine', body: 'Mass-message campaigns that flipped the free follower base into paying subs — emotional setup, suggestive image attachment, single clear next step. Tracked per campaign, refined every few days.', meta: 'Followers → paying subs' },
         ],
       },
       {
