@@ -532,33 +532,41 @@ function MobileStepper({ active }) {
 }
 
 // ─── Intro hero (different from inspiration: asymmetric, single statement) ──
-function Intro({ onStart }) {
-  const tg = (window.ZINELY_CONFIG && window.ZINELY_CONFIG.telegramUrl) || 'https://t.me/timzines';
+function Intro() {
+  const tg = (window.ZINELY_CONFIG && window.ZINELY_CONFIG.telegramUrl) || 'https://t.me/zinelyagency';
   return (
     <div className="ap-intro">
       <div className="ap-intro-grid">
         <div className="ap-intro-copy">
-          <div className="ap-intro-eyebrow"><span className="ap-dot"></span> Now hiring · Remote · Async</div>
+          <div className="ap-intro-eyebrow ap-intro-eyebrow-locked">
+            <span className="ap-lock-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            </span>
+            Applications · Coming soon
+          </div>
           <h1 className="ap-intro-h">
             Get paid to write<br/>
             <em>messages people remember.</em>
           </h1>
           <p className="ap-intro-sub">
             Zinely places trained chatters with vetted creators across OnlyFans, Fansly, Fanvue, LoyalFans and Fanfix.
-            Set your hours. Pick your niches. Keep the screenshots, drop the bad clients.
+            We're not opening applications publicly yet — drop your name in our Telegram group and we'll notify you the moment we do.
           </p>
 
           <div className="ap-intro-ctas">
-            <button className="ap-cta-primary" onClick={onStart}>
-              Start application <I.arrowR />
+            <button className="ap-cta-primary ap-cta-disabled" disabled aria-disabled="true">
+              <span className="ap-lock-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+              </span>
+              Applications closed
             </button>
             <a className="ap-cta-ghost" href={tg} target="_blank" rel="noopener noreferrer">
-              Talk to a recruiter first
+              Notify me on Telegram <I.arrowR />
             </a>
           </div>
 
           <div className="ap-intro-meta">
-            <div><span className="ap-meta-num">12 min</span><span className="ap-meta-lbl">Average application</span></div>
+            <div><span className="ap-meta-num">Soon</span><span className="ap-meta-lbl">Application opens</span></div>
             <div><span className="ap-meta-num">48 hrs</span><span className="ap-meta-lbl">Reply window</span></div>
             <div><span className="ap-meta-num">$22 – $40</span><span className="ap-meta-lbl">/ hour starting</span></div>
           </div>
@@ -638,7 +646,11 @@ function Wizard() {
   };
   const back = () => setStep(s => Math.max(s - 1, 0));
 
-  if (stage === 'intro') return <Intro onStart={() => setStage('wizard')} />;
+  // Applications are temporarily closed — the wizard is gated and the
+  // intro shows a "coming soon" state regardless of stage.
+  return <Intro />;
+  // eslint-disable-next-line no-unreachable
+  if (stage === 'intro') return <Intro />;
 
   if (stage === 'done') {
     const tg = (window.ZINELY_CONFIG && window.ZINELY_CONFIG.telegramUrl) || 'https://t.me/timzines';

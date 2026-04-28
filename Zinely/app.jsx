@@ -1,4 +1,4 @@
-/* global React, ReactDOM, Nav, Hero, Stats, FeaturedCase, Why, Services, Platforms, Process, Results, Calculator, Pricing, FAQ, FinalCTA, Footer, BookModal, ZebraPattern, useReveal, TweaksPanel, useTweaks, TweakSection, TweakSlider, TweakToggle, TweakRadio, TweakColor */
+/* global React, ReactDOM, Nav, Hero, Stats, FeaturedCase, Why, Services, Platforms, Process, Results, Calculator, Pricing, FullManagement, FAQ, FinalCTA, Footer, BookModal, ZebraPattern, useReveal, TweaksPanel, useTweaks, TweakSection, TweakSlider, TweakToggle, TweakRadio, TweakColor */
 const { useState: useStateApp, useEffect: useEffectApp } = React;
 
 // Pattern divider between major sections
@@ -58,6 +58,7 @@ function App() {
         <Results />
         <Calculator onBookCall={openTelegram} />
         <Pricing onBookCall={openTelegram} />
+        <FullManagement />
         <FAQ />
         <FinalCTA onBookCall={openTelegram} />
       </main>

@@ -66,7 +66,7 @@ function Hero({ onBookCall }) {
         <h1 className="reveal">
           <span className="accent-of">OnlyFans</span> creators don't{' '}chat.<br />
           <span className="accent-fanvue">AI models</span> can't.<br />
-          We do.
+          <span className="hero-h1-payoff">We do<span className="hero-h1-period">.</span></span>
         </h1>
         <p className="lead hero-sub reveal">
           We manage your chatters, your inbox, and your fan relationships 24/7 — keeping every conversation human while maximizing PPV unlocks, tips, and renewals.
@@ -164,10 +164,7 @@ function Services() {
     { num: '01', title: '24/7 Chatting Service',
       desc: 'Trained chatters managing your DMs around the clock. PPV, tips, sexting, customs, mass DMs — all in your voice.',
       list: ['Voice & tone calibration', '8 / 16 / 24-hour coverage tiers', 'Dedicated account manager', 'Weekly performance reports', 'Swap chatters anytime'] },
-    { num: '02', title: 'Full Account Management',
-      desc: 'We run the whole account: chatting, content scheduling, vault organization, fan analytics, profile optimization.',
-      list: ['Daily posting cadence', 'Story & reel scheduling', 'Vault organization', 'Campaign creation', 'Live analytics dashboard'] },
-    { num: '03', title: 'Content & Pricing Strategy',
+    { num: '02', title: 'Content & Pricing Strategy',
       desc: 'Data-driven content calendars and PPV pricing built around your niche and the top performers in your space.',
       list: ['Niche & competitor analysis', '90-day content calendar', 'PPV pricing playbook', 'Retention strategy', 'Monthly strategy calls'] },
   ];
@@ -177,11 +174,10 @@ function Services() {
         <div className="section-head reveal">
           <div>
             <span className="section-num">03 / What we do</span>
-            <h2>Three services.<br /><span style={{ color: 'var(--accent)' }}>One growth engine.</span></h2>
+            <h2>Two services.<br /><span style={{ color: 'var(--accent)' }}>One growth engine.</span></h2>
           </div>
           <div className="right">
-            <p>Mix and match. Most creators start with chatting, layer in management as they scale,
-            and pull in strategy when they’re ready to break into a new tier.</p>
+            <p>Start with chatting. Layer in strategy when you're ready to break into a new tier. Full account management runs as a separate, invitation-only program — currently at capacity.</p>
           </div>
         </div>
         <div className="services-grid">

@@ -125,6 +125,35 @@ input, select, textarea { font-family: inherit; color: inherit; }
   opacity: 0.4; cursor: not-allowed;
   background: var(--ap-surface); border-color: var(--ap-border);
 }
+.ap-cta-primary.ap-cta-disabled {
+  opacity: 1;
+  cursor: not-allowed;
+  background: var(--ap-surface);
+  border: 1px dashed var(--ap-border-strong);
+  color: var(--ap-ink-muted);
+  font-weight: 500;
+  box-shadow: none;
+}
+.ap-cta-primary.ap-cta-disabled:hover {
+  background: var(--ap-surface);
+  border-color: var(--ap-border-strong);
+  box-shadow: none;
+  transform: none;
+}
+.ap-cta-primary.ap-cta-disabled .ap-lock-icon {
+  display: inline-flex; align-items: center;
+  color: var(--ap-accent);
+}
+
+.ap-intro-eyebrow-locked {
+  background: rgba(122,184,232,0.08);
+  border-color: var(--ap-accent-ring);
+  color: var(--ap-accent);
+}
+.ap-intro-eyebrow-locked .ap-lock-icon {
+  display: inline-flex; align-items: center;
+  color: var(--ap-accent);
+}
 .ap-cta-ghost {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 14px 22px;

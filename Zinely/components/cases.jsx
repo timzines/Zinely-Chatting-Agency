@@ -16,14 +16,14 @@ const CASES = {
   launch: {
     slug: 'launch',
     href: 'case-launch.html',
-    niche: 'Goth / alt creator',
+    niche: 'AI goth creator',
     platform: 'Fanvue',
     timeframe: '5-month launch',
     headline: <>From $2.2K to <em>$125K</em> in 5 months.</>,
     headlinePlain: 'From $2.2K to $125K in 5 months.',
     teaser: '$95.8K in PPVs & tips. $18K in subs.',
     metric: '$2.2K → $125K',
-    cardMeta: 'Goth · 5 months',
+    cardMeta: 'AI · Goth · 5 months',
     thumb: 'screenshots/case-launch-thumb.png',
     cover: 'screenshots/case-launch-insights-dashboard.png',
     stats: [
@@ -38,7 +38,7 @@ const CASES = {
         title: <>The <em>plateau.</em></>,
         body: (
           <>
-            <p>Goth creator on Fanvue. Instagram was the only marketing source — and it was bringing in traffic, but the funnel was leaky, the previous chatters weren't converting subs into spenders, and a handful of operational issues were stacking up. The first month under the previous setup pulled $2,205 — decent traffic, poor monetisation.</p>
+            <p>AI goth creator on Fanvue. Instagram was the only marketing source — and it was bringing in traffic, but the funnel was leaky, the previous chatters weren't converting subs into spenders, and a handful of operational issues were stacking up. The first month under the previous setup pulled $2,205 — decent traffic, poor monetisation.</p>
             <p>They came to us. Same niche, same Instagram, same fans. We rebuilt the funnel, retrained the chatter cadence, and got out of the way.</p>
           </>
         ),
@@ -67,7 +67,7 @@ const CASES = {
         num: '03',
         title: <>The <em>plays.</em></>,
         plays: [
-          { title: 'Niche-loyal funnel', body: 'Kept Instagram as the source. Re-cut the bio funnel and the link-in-bio path so traffic landed on a Fanvue page priced and packaged for the goth/alt audience — not softened for "broader appeal."', meta: 'Instagram → Fanvue' },
+          { title: 'Niche-loyal funnel', body: 'Kept Instagram as the source. Re-cut the bio funnel and the link-in-bio path so traffic landed on a Fanvue page priced and packaged for the goth audience — not softened for "broader appeal."', meta: 'Instagram → Fanvue' },
           { title: 'Chatter rebuild', body: 'Replaced the previous chatter team with our own. Voice-matched, niche-trained, on a tighter response cadence — every new sub got a personalised welcome inside minutes, not hours.', meta: 'Same niche, real closers' },
           { title: 'Themed drops', body: 'Weekly themed PPV drops, pre-teased on Instagram, released on Fanvue as paid events. Each drop priced as a product launch instead of just another post.', meta: '4 drops / month' },
           { title: 'Sub-only retention loop', body: 'Private community for paying subs only — kept the most valuable fans engaged month-over-month. Repeat unlocks did the heavy lifting on revenue.', meta: 'Repeat-unlock engine' },
@@ -87,6 +87,8 @@ const CASES = {
             src: 'screenshots/case-launch-earnings-over-time.png', alt: 'Earnings-over-time chart for the launch case with category breakdown' },
           { ratio: '16/9', label: 'PPV unlocks · per-fan purchase log with amounts',
             src: 'screenshots/case-launch-message-purchases.png', alt: 'Fanvue message-purchase log showing per-fan PPV unlocks with amounts ranging from $10 to $199.99' },
+          { ratio: '16/5', label: 'Whale spend · single fan dropping $400 → $250 → $200 in one window',
+            src: 'screenshots/case-launch-whale-spend.png?v=2', alt: 'Fanvue purchase log showing one fan unlocking $400, $250, $199.99, $89.99, $99.99, and $75 messages within a few hours' },
         ],
       },
     ],
@@ -95,14 +97,14 @@ const CASES = {
   sprint: {
     slug: 'sprint',
     href: 'case-sprint.html',
-    niche: 'Goth / alt creator',
+    niche: 'AI goth creator',
     platform: 'Fanvue',
     timeframe: '31-day sprint',
     headline: <>From $0 to <em>$10K</em> in 31 days.</>,
     headlinePlain: 'From $0 to $10K in 31 days.',
     teaser: '$9.3K in PPVs & tips. $771 in subs.',
     metric: '$0 → $10K in 31 days',
-    cardMeta: 'Goth · 31 days',
+    cardMeta: 'AI · Goth · 31 days',
     thumb: 'screenshots/case-sprint-thumb.png?v=2',
     cover: 'screenshots/case-sprint-insights-dashboard.png',
     stats: [
@@ -117,7 +119,7 @@ const CASES = {
         title: <>The <em>cold start.</em></>,
         body: (
           <>
-            <p>Goth creator with a small Instagram following funnelling to Fanvue. Some traffic was getting through, but barely any of it was converting — sales were thin and the inbox was being run reactively. She wanted a real first month, not a slow warm-up.</p>
+            <p>AI goth creator with a small Instagram following funnelling to Fanvue. Some traffic was getting through, but barely any of it was converting — sales were thin and the inbox was being run reactively. The model needed a real first month, not a slow warm-up.</p>
             <p>The trick wasn't growing fast. It was making sure every fan who landed on the page already had a paid offer waiting, and that every DM was being run by someone trained to close.</p>
           </>
         ),
@@ -350,6 +352,13 @@ function CasesIndex() {
                 </div>
               </a>
             ))}
+          </div>
+          <div className="case-index-note reveal">
+            <span className="case-index-note-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+              Under NDA
+            </span>
+            <p>Two cases shown here. Every other account we manage is under NDA — we don't share their numbers, and that same protection is precisely why creators trust us with theirs.</p>
           </div>
         </div>
       </section>
