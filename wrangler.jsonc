@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "zinely-chatting",
+  "compatibility_date": "2026-04-28",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "Zinely"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
