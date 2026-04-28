@@ -67,10 +67,10 @@ const CASES = {
         num: '03',
         title: <>The <em>plays.</em></>,
         plays: [
-          { title: 'Niche-loyal funnel', body: 'Kept Instagram as the source. Re-cut the bio funnel and the link-in-bio path so traffic landed on a Fanvue page priced and packaged for the goth audience — not softened for "broader appeal."', meta: 'Instagram → Fanvue' },
-          { title: 'Chatter rebuild', body: 'Replaced the previous chatter team with our own. Voice-matched, niche-trained, on a tighter response cadence — every new sub got a personalised welcome inside minutes, not hours.', meta: 'Same niche, real closers' },
-          { title: 'Themed drops', body: 'Weekly themed PPV drops, pre-teased on Instagram, released on Fanvue as paid events. Each drop priced as a product launch instead of just another post.', meta: '4 drops / month' },
-          { title: 'Sub-only retention loop', body: 'Private community for paying subs only — kept the most valuable fans engaged month-over-month. Repeat unlocks did the heavy lifting on revenue.', meta: 'Repeat-unlock engine' },
+          { title: 'Identity rebuild', body: 'Rewrote the bio to lean hard into her niche, swapped the profile picture and banner for something more provocative, and added an intro video. Then we rewrote her on-account voice — gave her a real personality fans actually wanted to message.', meta: 'New bio · banner · intro video' },
+          { title: 'Tease, don\'t expose', body: 'Concrete daily feed cadence — enough skin to spike curiosity, never enough to satisfy it. Every post engineered to push fans into the DMs instead of giving the answer for free.', meta: 'Daily posts · curiosity-first' },
+          { title: 'Real 24/7 coverage', body: 'Our own chatters on the account, full 24-hour coverage with 1-day breaks. Even when a chatter was off, the shift was covered — never a gap. Staffing dialled back on low-traffic weeks so we weren\'t burning hours when the inbox was quiet.', meta: '24/7 · zero gaps' },
+          { title: 'Mass-message conversion engine', body: 'Built a mass-DM strategy that turned free followers into paying subs — a mix of emotional setup and teasing image attachments of the model in suggestive positions. Each campaign tracked and rebalanced weekly.', meta: 'Followers → paying subs' },
         ],
       },
       {
@@ -128,10 +128,10 @@ const CASES = {
         num: '02',
         title: <>The <em>plays.</em></>,
         plays: [
-          { title: 'Cheap teasing', body: 'A $6.49 welcome message dressed up as a "limited-time gift for new subscribers." Almost every new sub opened it — and that low-friction first unlock opened the door to bigger spends.', meta: 'Near-100% open rate' },
-          { title: 'PPV ladder built for AI content', body: 'A clear unlock ladder mapped to the model’s content library. AI isn’t as straightforward to upsell as a real creator, but we structured the offer flow so unlocks scaled all the way to $200 per fan.', meta: 'Up to $200 / unlock' },
-          { title: 'Sub-minute DM cadence', body: 'Every new subscriber got a personalised welcome DM in under 4 minutes, every time, day or night. Voice-matched, niche-specific, and ending in an open question that pulled a reply.', meta: '< 4 min response' },
-          { title: 'Whale capture by week 1', body: 'Top spenders flagged within the first week. Got "private vault" access — exclusive content drops, longer videos, no extra charge to whales — keeping them spending past the novelty window.', meta: '$2.1K from 18 fans' },
+          { title: 'Profile reset', body: 'Built the on-account identity from scratch. Wrote a niche-pointed bio, swapped the profile picture and banner for something fans would actually stop scrolling for, added an intro video on the wall, and gave her a personality voice that pulled replies instead of bouncing them.', meta: 'Bio · banner · intro video' },
+          { title: 'Curiosity-driven feed', body: 'Daily feed cadence designed for one thing: getting fans to DM. Posts showed enough skin to make people stop, never enough to satisfy them. Every drop a curiosity hook pointed at the inbox.', meta: 'Daily feed · DM-driven' },
+          { title: 'Round-the-clock chatter desk', body: 'Brought in our own chatters from day one. 24-hour shift coverage with one rest day each, always backfilled when someone was off. Roster scaled down on quiet days so we weren\'t paying for empty seats.', meta: 'Round-the-clock · backfilled' },
+          { title: 'Mass-DM conversion engine', body: 'Mass-DM campaigns that turned the free follower base into paying subs — emotional setup, suggestive image attachment of the model, a clear next step. Tracked per campaign and refined every few days.', meta: 'Followers → paying subs' },
         ],
       },
       {
