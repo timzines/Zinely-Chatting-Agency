@@ -69,7 +69,7 @@ function Hero({ onBookCall }) {
           <span className="hero-h1-payoff">We do<span className="hero-h1-period">.</span></span>
         </h1>
         <p className="lead hero-sub reveal">
-          We manage your chatters, your inbox, and your fan relationships 24/7 — keeping every conversation human while maximizing PPV unlocks, tips, and renewals.
+          We manage your chatters, your inbox, and your fan relationships 24/7, keeping every conversation human while maximizing PPV unlocks, tips, and renewals.
         </p>
         <div className="hero-cta reveal">
           <button className="btn btn-primary btn-cta" onClick={onBookCall}>Start free trial <Icon.arrow /></button>
@@ -123,7 +123,7 @@ function Stats() {
 function Why() {
   const cards = [
     { icon: <Icon.shield />, num: '01', title: 'Trained, vetted chatters', body: 'Every chatter passes a 5-stage screening: English fluency (C1+), sales psychology test, voice-matching trial, NDA, and live shadowing. Top 4% acceptance rate.' },
-    { icon: <Icon.trending />, num: '02', title: 'Built for revenue, not just replies', body: 'PPV upselling, tip extraction, custom negotiations, fan retention — every conversation is a sales opportunity, and we’re trained to close it.' },
+    { icon: <Icon.trending />, num: '02', title: 'Built for revenue, not just replies', body: 'PPV upselling, tip extraction, custom negotiations, fan retention. Every conversation is a sales opportunity, and we’re trained to close it.' },
     { icon: <Icon.scale />, num: '03', title: 'Performance pricing, no lock-in', body: 'Commission-based on the net revenue we generate. No upfront fees, no contracts, cancel anytime. We earn when you earn.' },
   ];
   return (
@@ -136,7 +136,7 @@ function Why() {
           </div>
           <div className="right">
             <p>Most agencies hire fast, train shallow, and leave revenue on the table.
-            We built Zinely to do the opposite — fewer chatters, longer training,
+            We built Zinely to do the opposite. Fewer chatters, longer training,
             tighter feedback loops, every conversation engineered to convert.</p>
           </div>
         </div>
@@ -162,7 +162,7 @@ function Why() {
 function Services() {
   const services = [
     { num: '01', title: '24/7 Chatting Service',
-      desc: 'Trained chatters managing your DMs around the clock. PPV, tips, sexting, customs, mass DMs — all in your voice.',
+      desc: 'Trained chatters managing your DMs around the clock. PPV, tips, sexting, customs, mass DMs, all in your voice.',
       list: ['Voice & tone calibration', '8 / 16 / 24-hour coverage tiers', 'Dedicated account manager', 'Weekly performance reports', 'Swap chatters anytime'] },
     { num: '02', title: 'Content & Pricing Strategy',
       desc: 'Data-driven content calendars and PPV pricing built around your niche and the top performers in your space.',
@@ -177,7 +177,7 @@ function Services() {
             <h2>Two services.<br /><span style={{ color: 'var(--accent)' }}>One growth engine.</span></h2>
           </div>
           <div className="right">
-            <p>Start with chatting. Layer in strategy when you're ready to break into a new tier. Full account management runs as a separate, invitation-only program — currently at capacity.</p>
+            <p>Start with chatting. Layer in strategy when you're ready to break into a new tier. Full account management runs as a separate, invitation-only program, currently at capacity.</p>
           </div>
         </div>
         <div className="services-grid">
@@ -204,7 +204,7 @@ function Services() {
 // ─────────────────────────────────────────────────────────────────────────
 function Platforms() {
   const items = [
-    { name: 'OnlyFans', logo: 'assets/platforms/onlyfans.png', bg: '#FFFFFF', desc: 'Our deepest playbook — PPV ladders, mass DM cadences, tip menus tuned to OF’s tipping culture.', stat: 'PPV · Mass DM · Tipping' },
+    { name: 'OnlyFans', logo: 'assets/platforms/onlyfans.png', bg: '#FFFFFF', desc: 'Our deepest playbook. PPV ladders, mass DM cadences, tip menus tuned to OF’s tipping culture.', stat: 'PPV · Mass DM · Tipping' },
     { name: 'Fansly', logo: 'assets/platforms/fansly.png', bg: '#FFFFFF', desc: 'Tighter feeds, looser content rules. We lean into custom requests and locked-content drops.', stat: 'Custom · Locked drops' },
     { name: 'Fanvue', logo: 'assets/platforms/fanvue.png', bg: '#FFFFFF', desc: 'AI-friendly platform. We pair human chatters with platform tools for high-volume scale.', stat: 'AI + human hybrid' },
     { name: 'LoyalFans', logo: 'assets/platforms/loyalfans.webp', bg: '#FFFFFF', desc: 'Smaller fan-base, higher LTV. We focus on retention loops and live-stream monetization.', stat: 'Retention · Live · LTV' },

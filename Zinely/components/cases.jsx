@@ -38,7 +38,7 @@ const CASES = {
         title: <>The <em>plateau.</em></>,
         body: (
           <>
-            <p>AI goth creator on Fanvue. Instagram was the only marketing source — and it was bringing in traffic, but the funnel was leaky, the previous chatters weren't converting subs into spenders, and a handful of operational issues were stacking up. The first month under the previous setup pulled $2,205 — decent traffic, poor monetisation.</p>
+            <p>AI goth creator on Fanvue. Instagram was the only marketing source, and it was bringing in traffic, but the funnel was leaky, the previous chatters weren't converting subs into spenders, and a handful of operational issues were stacking up. The first month under the previous setup pulled $2,205. Decent traffic, poor monetisation.</p>
             <p>They came to us. Same niche, same Instagram, same fans. We rebuilt the funnel, retrained the chatter cadence, and got out of the way.</p>
           </>
         ),
@@ -46,7 +46,7 @@ const CASES = {
       {
         num: '02',
         title: <>The <em>turn.</em></>,
-        body: <p className="case-prose-tight">Pulled straight from the creator's Fanvue dashboard — December 2025 (last month under the previous setup), then the all-time view today.</p>,
+        body: <p className="case-prose-tight">Pulled straight from the creator's Fanvue dashboard. December 2025 was the last month under the previous setup. Then the all-time view today.</p>,
         compare: {
           before: {
             src: 'screenshots/case-launch-before.png',
@@ -67,10 +67,10 @@ const CASES = {
         num: '03',
         title: <>The <em>plays.</em></>,
         plays: [
-          { title: 'Identity rebuild', body: 'Rewrote the bio to lean hard into her niche, swapped the profile picture and banner for something more provocative, and added an intro video. Then we rewrote her on-account voice — gave her a real personality fans actually wanted to message.' },
-          { title: 'Tease, don\'t expose', body: 'Concrete daily feed cadence — enough skin to spike curiosity, never enough to satisfy it. Every post engineered to push fans into the DMs instead of giving the answer for free.' },
-          { title: 'Real 24/7 coverage', body: 'Our own chatters on the account, full 24-hour coverage with 1-day breaks. Even when a chatter was off, the shift was covered — never a gap. Staffing dialled back on low-traffic weeks so we weren\'t burning hours when the inbox was quiet.' },
-          { title: 'Mass-message conversion engine', body: 'Built a mass-DM strategy that turned free followers into paying subs — a mix of emotional setup and teasing image attachments of the model in suggestive positions. Each campaign tracked and rebalanced weekly.' },
+          { title: 'Identity rebuild', body: 'Rewrote the bio to lean hard into her niche, swapped the profile picture and banner for something more provocative, and added an intro video. Then we rewrote her on-account voice and gave her a real personality fans actually wanted to message.' },
+          { title: 'Tease, don\'t expose', body: 'Concrete daily feed cadence. Enough skin to spike curiosity, never enough to satisfy it. Every post engineered to push fans into the DMs instead of giving the answer for free.' },
+          { title: 'Real 24/7 coverage', body: 'Our own chatters on the account, full 24-hour coverage with 1-day breaks. Even when a chatter was off, the shift was covered. Never a gap. Staffing dialled back on low-traffic weeks so we weren\'t burning hours when the inbox was quiet.' },
+          { title: 'Mass-message conversion engine', body: 'Built a mass-DM strategy that turned free followers into paying subs. A mix of emotional setup and teasing image attachments of the model in suggestive positions. Each campaign tracked and rebalanced weekly.' },
         ],
       },
       {
@@ -119,7 +119,7 @@ const CASES = {
         title: <>The <em>cold start.</em></>,
         body: (
           <>
-            <p>AI goth creator with a small Instagram following funnelling to Fanvue. Some traffic was getting through, but barely any of it was converting — sales were thin and the inbox was being run reactively. The model needed a real first month, not a slow warm-up.</p>
+            <p>AI goth creator with a small Instagram following funnelling to Fanvue. Some traffic was getting through, but barely any of it was converting. Sales were thin and the inbox was being run reactively. The model needed a real first month, not a slow warm-up.</p>
             <p>The trick wasn't growing fast. It was making sure every fan who landed on the page already had a paid offer waiting, and that every DM was being run by someone trained to close.</p>
           </>
         ),
@@ -128,10 +128,10 @@ const CASES = {
         num: '02',
         title: <>The <em>plays.</em></>,
         plays: [
-          { title: 'Identity overhaul', body: 'Rebuilt the on-account presence from scratch — niche-pointed bio, scroll-stopping profile picture and banner, intro video on the wall. Re-voiced the model so fans actually wanted to message her instead of just window-shop.' },
+          { title: 'Identity overhaul', body: 'Rebuilt the on-account presence from scratch. Niche-pointed bio, scroll-stopping profile picture and banner, intro video on the wall. Re-voiced the model so fans actually wanted to message her instead of just window-shop.' },
           { title: 'Tease, never satisfy', body: 'Daily feed cadence engineered to drive DMs. Enough skin to spike curiosity, nothing close to enough to settle it. Every post a hook pointing at the inbox.' },
-          { title: '24/7 chatter desk', body: 'Our own chatters on the account from day one. Full 24-hour coverage with one rest day per chatter, always backfilled — never a gap, never a wait. Roster scaled down on quiet days so we weren\'t burning hours on a silent inbox.' },
-          { title: 'Mass-DM conversion engine', body: 'Mass-message campaigns that flipped the free follower base into paying subs — emotional setup, suggestive image attachment, single clear next step. Tracked per campaign, refined every few days.' },
+          { title: '24/7 chatter desk', body: 'Our own chatters on the account from day one. Full 24-hour coverage with one rest day per chatter, always backfilled. Never a gap, never a wait. Roster scaled down on quiet days so we weren\'t burning hours on a silent inbox.' },
+          { title: 'Mass-DM conversion engine', body: 'Mass-message campaigns that flipped the free follower base into paying subs. Emotional setup, suggestive image attachment, single clear next step. Tracked per campaign, refined every few days.' },
         ],
       },
       {
@@ -256,14 +256,23 @@ function CaseSection({ num, title, body, plays, skeletons, compare, layout, wide
         {body && <div className="case-prose">{body}</div>}
         {compare && <CaseCompare data={compare} />}
         {plays && (
-          <div className="case-plays">
-            {plays.map((p, i) => (
-              <article key={i} className="case-play">
-                <h3>{p.title}</h3>
-                <p>{p.body}</p>
-              </article>
-            ))}
-          </div>
+          <>
+            <div className="case-plays">
+              {plays.map((p, i) => (
+                <article key={i} className="case-play">
+                  <h3>{p.title}</h3>
+                  <p>{p.body}</p>
+                </article>
+              ))}
+            </div>
+            <div className="case-plays-connector" aria-hidden="true">
+              <span className="case-plays-connector-label">Here's what it produced</span>
+              <svg viewBox="0 0 24 56" width="22" height="50" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M 12 4 V 48" />
+                <path d="M 4 40 L 12 48 L 20 40" />
+              </svg>
+            </div>
+          </>
         )}
         {skeletons && (
           <div className={`case-shots ${layout === 'stack' ? 'stack' : (skeletons.length > 1 ? 'multi' : 'single')}`}>
@@ -282,7 +291,7 @@ function CaseQuote({ quote }) {
         <blockquote className="case-quote">
           <span className="case-quote-mark">{CIcon.quote()}</span>
           <p>“{quote.body}”</p>
-          <footer>— {quote.attribution}</footer>
+          <footer>{quote.attribution}</footer>
         </blockquote>
       </div>
     </section>
@@ -295,7 +304,7 @@ function CaseCta() {
     <section className="section case-cta">
       <div className="container case-body case-cta-inner">
         <h2 className="case-h2">Want a study like this <em>on your account?</em></h2>
-        <p className="lead">Free 3-day trial — trained chatters on your account, full 24/7 coverage included, no card on file. We only show you a study when there’s one to show.</p>
+        <p className="lead">Free 3-day trial with trained chatters on your account, full 24/7 coverage included, no card on file. We only show you a study when there’s one to show.</p>
         <div className="case-cta-actions">
           <a className="btn btn-primary" href={tg} target="_blank" rel="noopener noreferrer">
             Start your trial {Icon ? <Icon.arrow /> : null}
@@ -331,7 +340,7 @@ function CasesIndex() {
         <div className="container">
           <span className="section-num">Case studies</span>
           <h1 className="case-h">Receipts, <em>not promises.</em></h1>
-          <p className="lead case-lead">Real accounts under management, written up. Some screenshots redacted to protect creators — full data on request, NDA covered.</p>
+          <p className="lead case-lead">Real accounts under management, written up. Some screenshots redacted to protect creators. Full data available on request, NDA covered.</p>
         </div>
       </section>
       <section className="section section-bg-2">
@@ -355,7 +364,7 @@ function CasesIndex() {
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
               Under NDA
             </span>
-            <p>Two cases shown here. Every other account we manage is under NDA — we don't share their numbers, and that same protection is precisely why creators trust us with theirs.</p>
+            <p>Two cases shown here. Every other account we manage is under NDA. We don't share their numbers, and that same protection is precisely why creators trust us with theirs.</p>
           </div>
         </div>
       </section>

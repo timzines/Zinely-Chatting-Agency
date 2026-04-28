@@ -2214,6 +2214,37 @@ h2 { font-weight: 400; }
 .case-play p { color: var(--slate); font-size: 15px; line-height: 1.6; margin: 0; }
 @media (max-width: 720px) { .case-plays { grid-template-columns: 1fr; } }
 
+/* "Here's what it produced" connector — sits below the plays grid and points
+   down to the Receipts section so the visual flow plays → results is obvious */
+.case-plays-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 56px auto 0;
+  color: var(--accent);
+  text-align: center;
+  animation: case-plays-arrow-bob 2.4s ease-in-out infinite;
+}
+.case-plays-connector-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--slate);
+  font-weight: 500;
+}
+.case-plays-connector svg {
+  filter: drop-shadow(0 0 12px rgba(122,184,232,0.35));
+}
+@keyframes case-plays-arrow-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(6px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .case-plays-connector { animation: none; }
+}
+
 /* Result shots — skeleton placeholders for screenshots the user adds later */
 .case-shots {
   display: grid;

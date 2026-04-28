@@ -54,9 +54,9 @@ function FeaturedCase() {
 // ─────────────────────────────────────────────────────────────────────────
 function Process() {
   const steps = [
-    { n: '01', t: 'Strategy Call', d: 'Free 30-minute call. We learn your account, niche, voice, and goals — and tell you straight whether we\u2019re the right fit.', meta: 'Day 1 · 30 min' },
+    { n: '01', t: 'Strategy Call', d: 'Free 30-minute call. We learn your account, niche, voice, and goals, then tell you straight whether we\u2019re the right fit.', meta: 'Day 1 · 30 min' },
     { n: '02', t: 'Team Assignment', d: 'We hand-pick chatters trained for your niche, timezone, and tone. Onboarded and shadowing inside 24 hours.', meta: 'Day 1–2 · Onboarding' },
-    { n: '03', t: 'Account Linking', d: 'You connect your account to Infloww via our invite — no password sharing. The team gets briefed on your niche, your top spenders, and your offer ladder. Ready to go live.', meta: 'Day 2 · Linked & briefed' },
+    { n: '03', t: 'Account Linking', d: 'You connect your account to Infloww via our invite. No password sharing. The team gets briefed on your niche, your top spenders, and your offer ladder. Ready to go live.', meta: 'Day 2 · Linked & briefed' },
     { n: '04', t: 'Scale', d: 'Your team chats 24/7. You get weekly reports, swap chatters anytime, and watch revenue climb.', meta: 'Day 3+ · Live & scaling' },
   ];
 
@@ -205,7 +205,7 @@ function Calculator({ onBookCall }) {
             <h2>Run your<br/><span style={{ color: 'var(--accent)', fontStyle: 'italic' }}>numbers.</span></h2>
           </div>
           <div className="right">
-            <p>Conservative estimates from accounts under management. Move the sliders to match yours — or flip to AI to see the realistic AI-model split.</p>
+            <p>Conservative estimates from accounts under management. Move the sliders to match yours, or flip to AI to see the realistic AI-model split.</p>
           </div>
         </div>
 
@@ -315,7 +315,7 @@ function Pricing({ onBookCall }) {
       name: 'Performance',
       price: '20–26%',
       priceSub: 'of gross · scaled to volume',
-      bullets: ['Commission only — no base fees', 'Bigger accounts pay less', 'Month-to-month, no contracts', '3-day free trial included'],
+      bullets: ['Commission only, no base fees', 'Bigger accounts pay less', 'Month-to-month, no contracts', '3-day free trial included'],
       cta: 'Start free trial',
       highlight: true,
     },
@@ -335,7 +335,7 @@ function Pricing({ onBookCall }) {
             <span className="section-num">07 / Pricing</span>
             <h2>Try it free.<br /><span style={{ color: 'var(--accent)' }}>Pay only when it works.</span></h2>
           </div>
-          <div className="right"><p>Start with a free 3-day trial — full 24/7 chatting included, no credit card, no contract. Keep going only if the numbers move. We earn when you earn.</p></div>
+          <div className="right"><p>Start with a free 3-day trial with full 24/7 chatting included, no credit card, no contract. Keep going only if the numbers move. We earn when you earn.</p></div>
         </div>
         <div className="pricing-grid">
           {tiers.map((t, i) => (
@@ -383,7 +383,7 @@ function FullManagement() {
           </div>
           <h2 className="full-mgmt-h">Full Account Management.</h2>
           <p className="full-mgmt-sub">
-            For a small handful of creators we run the entire account end-to-end — chatting, social media marketing, content scheduling, vault organisation, pricing strategy, fan analytics, profile optimisation. One team, one playbook, one accountable manager.
+            For a small handful of creators we run the entire account end-to-end: chatting, social media marketing, content scheduling, vault organisation, pricing strategy, fan analytics, profile optimisation. One team, one playbook, one accountable manager.
           </p>
           <p className="full-mgmt-meta">
             The roster is currently sealed at four. We're not onboarding new full-management clients until an existing engagement ramps down or the team expands.
@@ -406,14 +406,14 @@ function FullManagement() {
 function FAQ() {
   const [open, setOpen] = useStateB(-1);
   const faqs = [
-    { q: 'How does the free 3-day trial work?', a: 'Trained chatters on your account for 3 days, with full 24/7 coverage included from hour one — no card required. You keep 100% of what we generate during the trial. If the numbers don’t move, walk away — no invoice, no follow-up.' },
-    { q: 'Is my account safe? Do you get my login credentials?', a: 'You never share your OnlyFans password. We work through Infloww — the industry-standard CRM used by serious OF agencies. We send you an invite link, you link your own account. From there, your chatter team works from a dedicated IP assigned only to your account, so no foreign-IP flags ever hit your inbox. Every chatter signs an NDA, and you can revoke our access from inside Infloww in one click — locked out instantly.' },
-    { q: 'What platforms do you support?', a: 'OnlyFans, Fansly, Fanvue, LoyalFans, and Fanfix. We’ve managed accounts on smaller platforms case-by-case — ask on the call.' },
+    { q: 'How does the free 3-day trial work?', a: 'Trained chatters on your account for 3 days, with full 24/7 coverage included from hour one. No card required. You keep 100% of what we generate during the trial. If the numbers don’t move, walk away. No invoice, no follow-up.' },
+    { q: 'Is my account safe? Do you get my login credentials?', a: 'You never share your OnlyFans password. We work through Infloww, the industry-standard CRM used by serious OF agencies. We send you an invite link, you link your own account. From there, your chatter team works from a dedicated IP assigned only to your account, so no foreign-IP flags ever hit your inbox. Every chatter signs an NDA, and you can revoke our access from inside Infloww in one click and you're locked out instantly.' },
+    { q: 'What platforms do you support?', a: 'OnlyFans, Fansly, Fanvue, LoyalFans, and Fanfix. We’ve managed accounts on smaller platforms case-by-case. Ask on the call.' },
     { q: 'How fast can we start?', a: 'Strategy call within 48 hours, team assigned within 24 hours of signing. Live by day 3 in most cases.' },
     { q: 'What if I don’t like my chatter?', a: 'Swap them. No drama, no charge, no notice required. Your account manager runs the swap and the new chatter is briefed with the existing playbook.' },
     { q: 'Do you have minimum revenue requirements?', a: 'We prefer accounts already doing $5K+/month, but we take smaller accounts if the niche and trajectory are strong. Ask on the call.' },
     { q: 'How do payments work?', a: 'You keep 100% of platform earnings. We invoice monthly for our commission on net revenue we generated, with full transparency on which conversations drove which sales.' },
-    { q: 'Can I cancel anytime?', a: 'Yes — by default we work month-to-month with no notice period and no cancellation fee. If you’d prefer a fixed-term contract for stability or internal accounting reasons, we’ll set one up. Either way, we have to earn the right to keep you.' },
+    { q: 'Can I cancel anytime?', a: 'Yes. By default we work month-to-month with no notice period and no cancellation fee. If you’d prefer a fixed-term contract for stability or internal accounting reasons, we’ll set one up. Either way, we have to earn the right to keep you.' },
     { q: 'How do you handle different timezones?', a: 'Our team works in shifts across a few different regions, so there’s always someone awake on your account. Whether your fans message at 3am or 3pm, the inbox is being handled.' },
     { q: 'What makes Zinely different from other agencies?', a: '4% chatter acceptance rate, 5-stage screening, sales-trained (not script-trained), commission-only pricing, and a real account manager who actually answers your DMs. Most agencies ship one of these. We ship all five.' },
   ];
@@ -455,7 +455,7 @@ function FinalCTA({ onBookCall }) {
       <div className="container final-cta-inner reveal">
         <div className="modal-eyebrow" style={{ color: 'var(--accent)', marginBottom: 18 }}>Free 3-day trial · 24/7 chatting included</div>
         <h2>Try Zinely free<br />for <span style={{ color: 'var(--accent)' }}>three days.</span></h2>
-        <p className="lead">Trained chatters on your account for 3 days, full 24/7 coverage included. See the revenue lift before you commit. No pitch, no pressure — and no card on file.</p>
+        <p className="lead">Trained chatters on your account for 3 days, full 24/7 coverage included. See the revenue lift before you commit. No pitch, no pressure, no card on file.</p>
         <div className="cta-stack" style={{ alignItems: 'center' }}>
           <button className="btn btn-light" onClick={onBookCall}>Start free trial <Icon.arrow /></button>
           <span className="cta-sub">3 days · 24/7 chatting included</span>
