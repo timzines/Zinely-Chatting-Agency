@@ -130,7 +130,7 @@ const CASES = {
         plays: [
           { title: 'Identity overhaul', body: 'Rebuilt the on-account presence from scratch. Niche-pointed bio, scroll-stopping profile picture and banner, intro video on the wall. Re-voiced the model so fans actually wanted to message her instead of just window-shop.' },
           { title: 'Tease, never satisfy', body: 'Daily feed cadence engineered to drive DMs. Enough skin to spike curiosity, nothing close to enough to settle it. Every post a hook pointing at the inbox.' },
-          { title: '24/7 chatter desk', body: 'Our own chatters on the account from day one. Full 24-hour coverage with one rest day per chatter, always backfilled. Never a gap, never a wait. Roster scaled down on quiet days so we weren\'t burning hours on a silent inbox.' },
+          { title: '24/7 chatter desk', body: 'Brought in our own chatters from day one. They worked 24-hour shifts with one day off each, and someone else always picked up the off-day so the inbox was never sitting cold. On slower days we ran fewer chatters instead of paying people to stare at a quiet screen.' },
           { title: 'Mass-DM conversion engine', body: 'Mass-message campaigns that flipped the free follower base into paying subs. Emotional setup, suggestive image attachment, single clear next step. Tracked per campaign, refined every few days.' },
         ],
       },

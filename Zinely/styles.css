@@ -176,7 +176,7 @@ p { margin: 0; }
 .nav-logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); letter-spacing: -0.02em; }
 .nav-logo .logo-mark { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; filter: drop-shadow(0 4px 14px rgba(0, 175, 240, 0.35)); }
 .nav-logo .logo-word { display: inline-flex; flex-direction: column; line-height: 1; gap: 3px; }
-.nav-logo .logo-name { font-size: 21px; font-weight: 600; letter-spacing: -0.025em; }
+.nav-logo .logo-name { font-family: 'Cormorant Garamond', 'Cormorant', Georgia, serif; font-size: 21px; font-weight: 600; letter-spacing: -0.025em; }
 .nav-logo .logo-tag { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--slate-2); font-weight: 500; }
 .footer-brand .nav-logo .logo-tag { color: rgba(255,255,255,0.5); }
 @media (max-width: 1080px) {
