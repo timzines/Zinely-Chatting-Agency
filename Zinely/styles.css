@@ -1029,12 +1029,40 @@ p { margin: 0; }
 .divider-pattern svg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.18; }
 
 /* ─── Reveal ─── */
+/* Scroll-reveal — desktop default */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(20px);
+  transition:
+    opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
 }
-.reveal.in { opacity: 1; transform: none; }
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Mobile reveal — tighter distance + faster duration so elements snap in
+   crisply during a fast scroll. The big translateY + slow easing was
+   making things feel laggy and over-animated on phones. */
+@media (max-width: 720px) {
+  .reveal {
+    transform: translateY(10px);
+    transition:
+      opacity 320ms ease-out,
+      transform 320ms ease-out;
+  }
+}
+
+/* Honour the user's OS-level motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 
 /* ─── Modal ─── */
 .modal-backdrop {
