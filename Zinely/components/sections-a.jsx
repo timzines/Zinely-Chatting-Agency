@@ -78,13 +78,13 @@ function Hero({ onBookCall }) {
         <div className="hero-platforms reveal">
           <span className="hero-platforms-label">Platforms supported</span>
           {[
-            { name: 'OnlyFans', logo: 'assets/platforms/onlyfans.png' },
-            { name: 'Fanvue', logo: 'assets/platforms/fanvue.png' },
+            { name: 'OnlyFans', logo: 'assets/platforms/onlyfans.png', primary: true },
+            { name: 'Fanvue', logo: 'assets/platforms/fanvue.png', primary: true },
             { name: 'Fansly', logo: 'assets/platforms/fansly.png' },
             { name: 'LoyalFans', logo: 'assets/platforms/loyalfans.webp' },
             { name: 'Fanfix', logo: 'assets/platforms/fanfix.png' },
           ].map(p => (
-            <span key={p.name} className="platform-chip"><img src={p.logo} alt="" style={{ width: 16, height: 16, objectFit: 'contain' }} />{p.name}</span>
+            <span key={p.name} className={`platform-chip ${p.primary ? 'platform-chip-primary' : 'platform-chip-muted'}`}><img src={p.logo} alt="" style={{ width: 16, height: 16, objectFit: 'contain' }} />{p.name}</span>
           ))}
           <span className="platform-chip" style={{ color: 'var(--slate-2)', fontStyle: 'italic' }}>& more</span>
         </div>
