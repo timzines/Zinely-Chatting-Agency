@@ -2205,21 +2205,11 @@ h2 { font-weight: 400; }
   transition: border-color 200ms, background 200ms;
 }
 .case-play:hover { border-color: var(--accent-ring); background: var(--surface-2); }
-.case-play-head {
-  display: flex; align-items: baseline; justify-content: space-between;
-  gap: 12px; margin-bottom: 12px;
-}
 .case-play h3 {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 22px; font-weight: 600; letter-spacing: -0.025em;
-  margin: 0;
+  margin: 0 0 12px;
   color: var(--ink);
-}
-.case-play-meta {
-  font-family: var(--font-mono);
-  font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--accent);
-  flex-shrink: 0;
 }
 .case-play p { color: var(--slate); font-size: 15px; line-height: 1.6; margin: 0; }
 @media (max-width: 720px) { .case-plays { grid-template-columns: 1fr; } }

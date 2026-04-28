@@ -67,10 +67,10 @@ const CASES = {
         num: '03',
         title: <>The <em>plays.</em></>,
         plays: [
-          { title: 'Identity rebuild', body: 'Rewrote the bio to lean hard into her niche, swapped the profile picture and banner for something more provocative, and added an intro video. Then we rewrote her on-account voice — gave her a real personality fans actually wanted to message.', meta: 'New bio · banner · intro video' },
-          { title: 'Tease, don\'t expose', body: 'Concrete daily feed cadence — enough skin to spike curiosity, never enough to satisfy it. Every post engineered to push fans into the DMs instead of giving the answer for free.', meta: 'Daily posts · curiosity-first' },
-          { title: 'Real 24/7 coverage', body: 'Our own chatters on the account, full 24-hour coverage with 1-day breaks. Even when a chatter was off, the shift was covered — never a gap. Staffing dialled back on low-traffic weeks so we weren\'t burning hours when the inbox was quiet.', meta: '24/7 · zero gaps' },
-          { title: 'Mass-message conversion engine', body: 'Built a mass-DM strategy that turned free followers into paying subs — a mix of emotional setup and teasing image attachments of the model in suggestive positions. Each campaign tracked and rebalanced weekly.', meta: 'Followers → paying subs' },
+          { title: 'Identity rebuild', body: 'Rewrote the bio to lean hard into her niche, swapped the profile picture and banner for something more provocative, and added an intro video. Then we rewrote her on-account voice — gave her a real personality fans actually wanted to message.' },
+          { title: 'Tease, don\'t expose', body: 'Concrete daily feed cadence — enough skin to spike curiosity, never enough to satisfy it. Every post engineered to push fans into the DMs instead of giving the answer for free.' },
+          { title: 'Real 24/7 coverage', body: 'Our own chatters on the account, full 24-hour coverage with 1-day breaks. Even when a chatter was off, the shift was covered — never a gap. Staffing dialled back on low-traffic weeks so we weren\'t burning hours when the inbox was quiet.' },
+          { title: 'Mass-message conversion engine', body: 'Built a mass-DM strategy that turned free followers into paying subs — a mix of emotional setup and teasing image attachments of the model in suggestive positions. Each campaign tracked and rebalanced weekly.' },
         ],
       },
       {
@@ -128,10 +128,10 @@ const CASES = {
         num: '02',
         title: <>The <em>plays.</em></>,
         plays: [
-          { title: 'Identity overhaul', body: 'Rebuilt the on-account presence from scratch — niche-pointed bio, scroll-stopping profile picture and banner, intro video on the wall. Re-voiced the model so fans actually wanted to message her instead of just window-shop.', meta: 'Bio · banner · intro video' },
-          { title: 'Tease, never satisfy', body: 'Daily feed cadence engineered to drive DMs. Enough skin to spike curiosity, nothing close to enough to settle it. Every post a hook pointing at the inbox.', meta: 'Daily feed · DM-bait' },
-          { title: '24/7 chatter desk', body: 'Our own chatters on the account from day one. Full 24-hour coverage with one rest day per chatter, always backfilled — never a gap, never a wait. Roster scaled down on quiet days so we weren\'t burning hours on a silent inbox.', meta: '24/7 · always backfilled' },
-          { title: 'Mass-DM conversion engine', body: 'Mass-message campaigns that flipped the free follower base into paying subs — emotional setup, suggestive image attachment, single clear next step. Tracked per campaign, refined every few days.', meta: 'Followers → paying subs' },
+          { title: 'Identity overhaul', body: 'Rebuilt the on-account presence from scratch — niche-pointed bio, scroll-stopping profile picture and banner, intro video on the wall. Re-voiced the model so fans actually wanted to message her instead of just window-shop.' },
+          { title: 'Tease, never satisfy', body: 'Daily feed cadence engineered to drive DMs. Enough skin to spike curiosity, nothing close to enough to settle it. Every post a hook pointing at the inbox.' },
+          { title: '24/7 chatter desk', body: 'Our own chatters on the account from day one. Full 24-hour coverage with one rest day per chatter, always backfilled — never a gap, never a wait. Roster scaled down on quiet days so we weren\'t burning hours on a silent inbox.' },
+          { title: 'Mass-DM conversion engine', body: 'Mass-message campaigns that flipped the free follower base into paying subs — emotional setup, suggestive image attachment, single clear next step. Tracked per campaign, refined every few days.' },
         ],
       },
       {
@@ -259,10 +259,7 @@ function CaseSection({ num, title, body, plays, skeletons, compare, layout, wide
           <div className="case-plays">
             {plays.map((p, i) => (
               <article key={i} className="case-play">
-                <div className="case-play-head">
-                  <h3>{p.title}</h3>
-                  <span className="case-play-meta">{p.meta}</span>
-                </div>
+                <h3>{p.title}</h3>
                 <p>{p.body}</p>
               </article>
             ))}
