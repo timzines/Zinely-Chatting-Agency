@@ -58,12 +58,12 @@ function Nav({ onBookCall }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────
-// Hero — clean rebuild. The rotating word is an inline span whose text
-// state swaps on an interval; key={idx} forces React to remount the inner
-// span so the CSS fade-in animation re-runs every cycle. Word stays in
-// the H1's normal text flow — no absolute positioning, no stacking.
+// Hero — agencies. shows first, then cycles to creators. Both words are
+// always in the DOM, stacked via inline-grid; an .is-on class flips
+// opacity/blur/translate transitions on whichever is active so the
+// transition is a true cross-fade, not a remount.
 // ─────────────────────────────────────────────────────────────────────────
-const HERO_ROTOR_WORDS = ['creators.', 'agencies.'];
+const HERO_ROTOR_WORDS = ['agencies.', 'creators.'];
 
 function Hero({ onBookCall }) {
   const [rotorIdx, setRotorIdx] = useStateS(0);
@@ -71,7 +71,7 @@ function Hero({ onBookCall }) {
   useEffectS(() => {
     const id = setInterval(
       () => setRotorIdx(v => (v + 1) % HERO_ROTOR_WORDS.length),
-      3200
+      3400
     );
     return () => clearInterval(id);
   }, []);
@@ -89,10 +89,15 @@ function Hero({ onBookCall }) {
       <div className="container hero-inner hero-inner-center">
         <h1 className="reveal hero-h1">
           The chatting agency for{' '}
-          <span
-            key={rotorIdx}
-            className="hero-h1-rotor"
-          >{HERO_ROTOR_WORDS[rotorIdx]}</span>
+          <span className="hero-h1-rotor" aria-label="agencies and creators">
+            {HERO_ROTOR_WORDS.map((w, i) => (
+              <span
+                key={w}
+                className={`hero-h1-word ${i === rotorIdx ? 'is-on' : ''}`}
+                aria-hidden={i !== rotorIdx}
+              >{w}</span>
+            ))}
+          </span>
         </h1>
         <p className="lead hero-sub reveal">
           White-label 24/7 chats run by trained chatters. Free 5-day trial on one account — see the lift before you scale across your roster.
@@ -110,6 +115,11 @@ function Hero({ onBookCall }) {
           <li><Icon.check /><span>White-label by default</span></li>
           <li><Icon.check /><span>No commitment</span></li>
         </ul>
+        <a className="hero-proof reveal" href="case-launch.html">
+          <span className="hero-proof-arrow" aria-hidden="true">↗</span>
+          <span className="hero-proof-num">$2.2K → $125K</span>
+          <span className="hero-proof-meta">in 5 months · see the case study</span>
+        </a>
       </div>
     </section>
   );
