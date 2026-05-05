@@ -48,8 +48,8 @@ function Nav({ onBookCall }) {
           <a href="apply.html" onClick={() => setOpen(false)} className="mobile-overlay-utility">Apply as a Chatter</a>
         </nav>
         <div className="cta-stack">
-          <button className="btn btn-primary btn-cta" onClick={() => { setOpen(false); onBookCall(); }}>Book partnership call <Icon.arrow /></button>
-          <span className="cta-sub">30-day pilot · single model · no roster lock-in</span>
+          <button className="btn btn-primary btn-cta" onClick={() => { setOpen(false); onBookCall(); }}>Start free trial <Icon.arrow /></button>
+          <span className="cta-sub">Free 30-day trial · one model · no commitment</span>
         </div>
       </div>
     </>
@@ -64,20 +64,22 @@ function Hero({ onBookCall }) {
     <section id="top" className="hero">
       <div className="hero-pattern"><ZebraPattern opacity={0.07} /></div>
       <div className="container hero-inner hero-inner-center">
+        <span className="hero-eyebrow reveal">
+          <span className="hero-eyebrow-pulse" aria-hidden="true"></span>
+          Free 30-day trial · One model · No commitment
+        </span>
         <h1 className="reveal">
           Chatting infrastructure<br />
-          for <span style={{ color: 'var(--accent)' }}>OnlyFans agencies<span className="hero-h1-period">.</span></span>
+          for <span style={{ color: 'var(--accent)' }}>OnlyFans agencies.</span>
         </h1>
         <p className="lead hero-sub reveal">
-          White-label 24/7 coverage. Wholesale rates. 30-day pilot on a single model — no commitment, no roster lock-in.
-        </p>
-        <p className="hero-qualifier reveal">
-          For marketing-focused and full-service agencies managing 5+ models.
+          White-label 24/7 chats at wholesale rates. Run a free trial on one of your models — see the lift before you scale across your roster.
         </p>
         <div className="hero-cta reveal">
-          <button className="btn btn-primary btn-cta" onClick={onBookCall}>Book partnership call <Icon.arrow /></button>
+          <button className="btn btn-primary btn-cta" onClick={onBookCall}>Start free trial <Icon.arrow /></button>
           <a className="btn btn-secondary btn-ghost-cyan" href="cases.html">See partner case studies <Icon.arrow /></a>
         </div>
+        <p className="hero-qualifier reveal">For agencies managing 5+ models</p>
       </div>
     </section>
   );

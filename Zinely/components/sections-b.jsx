@@ -54,10 +54,10 @@ function FeaturedCase() {
 // ─────────────────────────────────────────────────────────────────────────
 function Process() {
   const steps = [
-    { n: '01', t: 'Partnership call', d: '30-min call with our founder. We learn your roster size, current chatting setup, what’s working, what’s broken. You see our wholesale rates, SLA, and pilot structure. No pitch deck, no follow-up nurture sequence.', meta: 'Day 1 · 30 min' },
-    { n: '02', t: 'Pilot setup', d: 'You pick one model from your roster. We sign mutual NDAs, agree pilot terms in writing, onboard her account through your existing systems. No password sharing — your access stays in your control.', meta: 'Days 2–3 · Onboarding' },
-    { n: '03', t: '30-day pilot', d: 'Our team runs her chats 24/7 under your brand. You get weekly reports, conversation samples on request, and a real-time view of revenue. We work to a documented SLA.', meta: 'Days 4–30 · Pilot' },
-    { n: '04', t: 'Scale across roster', d: 'End-of-pilot review. If the numbers work, we move into your wholesale rate tier and start absorbing more of your roster. Most partner agencies move from 1 pilot model to 8–15 within 90 days.', meta: 'Month 2+ · Scale' },
+    { n: '01', t: 'Partnership call', d: '30-min call. We learn your roster size, current chatting setup, what’s working, what’s broken. You see our wholesale rates, SLA, and how the free trial works. No pitch deck, no follow-up nurture sequence.', meta: 'Day 1 · 30 min' },
+    { n: '02', t: 'Trial setup', d: 'You pick one model from your roster. We sign mutual NDAs, agree trial terms in writing, onboard her account through your existing systems. No password sharing — your access stays in your control.', meta: 'Days 2–3 · Onboarding' },
+    { n: '03', t: 'Free 30-day trial', d: 'Our team runs her chats 24/7 under your brand at zero cost to you for 30 days. Weekly reports, conversation samples on request, real-time revenue view. We work to a documented SLA.', meta: 'Days 4–30 · Free trial' },
+    { n: '04', t: 'Scale across roster', d: 'End-of-trial review. If the numbers work, we move into your wholesale rate tier and start absorbing more of your roster. Most partner agencies move from 1 trial model to 8–15 within 90 days.', meta: 'Month 2+ · Scale' },
   ];
 
   return (
@@ -163,11 +163,14 @@ const TRAFFIC = [
   { label: 'Tier C', brands: ['youtube',   'snapchat'] },
 ];
 
-// Wholesale rate tiers based on roster size with us
-function wholesaleRateFor(roster) {
-  if (roster >= 16) return 12;
-  if (roster >= 6) return 15;
-  return 18;
+// Wholesale rate of gross — depends on traffic source, with Enterprise
+// discount kicking in at 16+ models on the roster.
+//   Partnership tier   1–15 models   19% / 21% / 23% by traffic A/B/C
+//   Enterprise tier    16+ models    15% / 17% / 19% by traffic A/B/C
+function wholesaleRateFor(roster, traffic) {
+  const partnership = [19, 21, 23];
+  const enterprise = [15, 17, 19];
+  return (roster >= 16 ? enterprise : partnership)[traffic];
 }
 
 function Calculator({ onBookCall }) {
@@ -188,7 +191,7 @@ function Calculator({ onBookCall }) {
   const avgRatio = (locMul + trafficMul) / 2;
   const perModel = (isPaid ? avgRatio * price * subs : avgRatio * subs) * 0.8;
   const totalGross = perModel * roster;
-  const rate = wholesaleRateFor(roster);
+  const rate = wholesaleRateFor(roster, traffic);
   const zinelyFee = totalGross * (rate / 100);
   const agencyKeep = totalGross * (agencyRate / 100);
   const spread = agencyKeep - zinelyFee;
@@ -208,7 +211,7 @@ function Calculator({ onBookCall }) {
             <h2>Run your<br/><span style={{ color: 'var(--accent)', fontStyle: 'italic' }}>roster economics.</span></h2>
           </div>
           <div className="right">
-            <p>Conservative estimates from accounts under management. Adjust the sliders to match your typical model. The output shows projected monthly revenue and your wholesale fee at that volume — so you can see your margin live.</p>
+            <p>Conservative estimates from accounts under management. Adjust the sliders to match your typical model. Your wholesale rate is 19–23% of gross depending on traffic source, with Enterprise rates kicking in at 16+ models.</p>
           </div>
         </div>
 
@@ -329,25 +332,28 @@ function Calculator({ onBookCall }) {
 function Pricing({ onBookCall }) {
   const tiers = [
     {
-      name: 'Pilot',
-      price: '18%',
-      priceSub: 'of net revenue · single model',
-      bullets: ['30-day pilot terms', 'Single model from your roster', 'Full SLA and reporting', 'Convert to partnership tier after pilot'],
-      cta: 'Start pilot',
-    },
-    {
       name: 'Partnership',
-      price: '15%',
-      priceSub: 'of net revenue · 6–15 models',
-      bullets: ['Wholesale rate for active partners', 'Dedicated account manager', 'Quarterly strategy reviews', 'Priority chatter allocation'],
-      cta: 'Book partnership call',
+      price: '19–23%',
+      priceSub: 'of gross · 1–15 models',
+      bullets: [
+        'Free 30-day trial on one of your models',
+        'Traffic-tiered after trial: 19% A · 21% B · 23% C',
+        'Dedicated account manager + weekly reporting',
+        'Full SLA, mutual NDAs, white-label by default',
+      ],
+      cta: 'Start free trial',
       highlight: true,
     },
     {
       name: 'Enterprise',
-      price: '12%',
-      priceSub: 'of net revenue · 16+ models',
-      bullets: ['Lowest wholesale rate', 'Senior account team', 'Custom SLA terms', 'Co-developed reporting'],
+      price: '15–19%',
+      priceSub: 'of gross · 16+ models',
+      bullets: [
+        'Lower traffic-tiered rates: 15% / 17% / 19%',
+        'Senior account team + co-developed reporting',
+        'Custom SLA terms and category exclusivity',
+        'Quarterly strategy reviews with our founder',
+      ],
       cta: 'Apply for Enterprise',
     },
   ];
@@ -357,11 +363,11 @@ function Pricing({ onBookCall }) {
         <div className="section-head reveal">
           <div>
             <span className="section-num">07 / Wholesale rates</span>
-            <h2>Volume-tiered.<br /><span style={{ color: 'var(--accent)' }}>Built for agency margins.</span></h2>
+            <h2>Two tiers.<br /><span style={{ color: 'var(--accent)' }}>Built for agency margins.</span></h2>
           </div>
-          <div className="right"><p>Wholesale rates start at 18% and drop as your roster with us scales. No upfront fees, no contracts beyond the pilot, no hidden charges.</p></div>
+          <div className="right"><p>Start with a free 30-day trial on one model. After that, 19–23% of gross at the Partnership tier depending on your traffic source. Enterprise rates kick in once you’re running 16+ models with us. No upfront fees, no hidden charges.</p></div>
         </div>
-        <div className="pricing-grid pricing-grid-3">
+        <div className="pricing-grid">
           {tiers.map((t, i) => (
             <article key={i} className={`pricing-card reveal ${t.highlight ? 'pricing-card-highlight' : ''}`}>
               {t.highlight && <span className="pricing-badge">Most popular</span>}
@@ -394,7 +400,7 @@ function FAQ() {
   const faqs = [
     { q: 'How do you handle white-label confidentiality?', a: 'Mutual NDAs are signed before any account access. Our chatters never identify themselves to your model or fans — they work in your agency’s voice and brand. We don’t maintain any public list of partners and references are only shared with your written approval.' },
     { q: 'What’s your chatter training and retention?', a: '5-stage screening with a 4% acceptance rate: English fluency (C1+), sales psychology test, voice-matching trial, NDA, and live shadowing. Average chatter tenure is 14+ months. Every account has a primary chatter plus a backup briefed on the same playbook.' },
-    { q: 'How is the 30-day pilot structured contractually?', a: 'Single-model pilot agreement signed up front with mutual NDAs. 18% of net revenue for the pilot period. No minimums, no auto-renewal — at day 30 you either move into the wholesale partnership tier or walk away with no further obligation.' },
+    { q: 'How is the free 30-day trial structured contractually?', a: 'Single-model trial agreement signed up front with mutual NDAs. We run chats 24/7 at zero cost to you for 30 days — you keep 100% of revenue. At day 30 you either continue at the Partnership rate (19–23% of gross depending on your traffic source) or walk away with no further obligation.' },
     { q: 'Who owns the relationship with our model during the pilot?', a: 'You do. Your agency is the model’s sole point of contact. We work behind your account manager, in your tone, on your reporting cadence. The model never sees Zinely branding, communications, or staff.' },
     { q: 'What happens if your team makes a mistake on our account?', a: 'Documented incident process: same-day root cause, written postmortem within 48h, and a credit against the next invoice for any verifiable revenue loss. We carry indemnification language in the partnership agreement.' },
     { q: 'How do you handle escalations and after-hours emergencies?', a: 'Your account manager is reachable on a dedicated channel (Telegram or Slack Connect) 24/7. Escalations to a senior operator are guaranteed within 30 minutes. We document an escalation playbook with you during onboarding.' },
@@ -439,12 +445,12 @@ function FinalCTA({ onBookCall }) {
     <section className="section final-cta" id="apply">
       <div className="final-cta-pattern"><ZebraPattern opacity={1} color="#FFFFFF" /></div>
       <div className="container final-cta-inner reveal">
-        <div className="modal-eyebrow" style={{ color: 'var(--accent)', marginBottom: 18 }}>30-day pilot · single model · no roster lock-in</div>
-        <h2>Run a pilot<br />on <span style={{ color: 'var(--accent)' }}>one model.</span></h2>
-        <p className="lead">30-day pilot at our wholesale pilot rate. Documented SLA, mutual NDA, your access stays in your control. See the numbers before you scale across your roster.</p>
+        <div className="modal-eyebrow" style={{ color: 'var(--accent)', marginBottom: 18 }}>Free 30-day trial · one model · no commitment</div>
+        <h2>Run a free trial<br />on <span style={{ color: 'var(--accent)' }}>one model.</span></h2>
+        <p className="lead">Free 30-day trial. Documented SLA, mutual NDA, your access stays in your control. See the numbers before you scale across your roster.</p>
         <div className="cta-stack" style={{ alignItems: 'center' }}>
-          <button className="btn btn-light" onClick={onBookCall}>Book partnership call <Icon.arrow /></button>
-          <span className="cta-sub">30-day pilot · single model · no roster lock-in</span>
+          <button className="btn btn-light" onClick={onBookCall}>Start free trial <Icon.arrow /></button>
+          <span className="cta-sub">Free 30-day trial · one model · no commitment</span>
         </div>
         <div><a className="apply-link" href="apply.html">Apply as a chatter →</a></div>
       </div>
@@ -457,8 +463,6 @@ function FinalCTA({ onBookCall }) {
 // ─────────────────────────────────────────────────────────────────────────
 function TrustStrip() {
   const cfg = (typeof window !== 'undefined' && window.ZINELY_CONFIG) || {};
-  const founder = cfg.founderName || 'Tim Zines';
-  const founderLinkedIn = cfg.founderLinkedIn || 'https://www.linkedin.com/in/timzines';
   const founded = cfg.foundedYear || '2024';
   const jurisdiction = cfg.jurisdiction || 'Czech Republic';
   return (
@@ -471,14 +475,6 @@ function TrustStrip() {
         <div className="trust-item"><span className="trust-label">Founded {founded}</span></div>
         <div className="trust-divider" aria-hidden="true"></div>
         <div className="trust-item"><span className="trust-label">Operating from {jurisdiction}</span></div>
-        <div className="trust-divider" aria-hidden="true"></div>
-        <a className="trust-founder" href={founderLinkedIn} target="_blank" rel="noopener noreferrer">
-          <span className="trust-founder-photo" aria-hidden="true">{founder.split(' ').map(s => s[0]).join('').slice(0,2)}</span>
-          <span className="trust-founder-meta">
-            <span className="trust-founder-name">{founder}</span>
-            <span className="trust-founder-role">Founder · LinkedIn ↗</span>
-          </span>
-        </a>
       </div>
     </section>
   );
@@ -486,7 +482,6 @@ function TrustStrip() {
 
 function Footer() {
   const cfg = (typeof window !== 'undefined' && window.ZINELY_CONFIG) || {};
-  const founder = cfg.founderName || 'Tim Zines';
   const jurisdiction = cfg.jurisdiction || 'Czech Republic';
   const partnersEmail = cfg.partnersEmail || 'partnerships@zinelyagency.com';
   const partnerTelegram = cfg.partnerTelegram || cfg.telegramUrl || 'https://t.me/timzines';
@@ -527,7 +522,6 @@ function Footer() {
           <div className="footer-col">
             <h5>Company</h5>
             <ul>
-              <li>{founder}, Founder</li>
               <li>Operating from {jurisdiction}</li>
             </ul>
           </div>
