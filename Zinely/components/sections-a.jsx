@@ -58,33 +58,29 @@ function Nav({ onBookCall }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────
-// Hero H1 word rotor — swaps "creators." ⇄ "agencies." inside the H1.
-// Single span, text swapped via state, key-based remount triggers a CSS
-// fade-in animation each cycle. No absolute positioning, no stacking —
-// the word renders in flow so it can't be invisible due to layout bugs.
+// Hero — clean rebuild. The rotating word is an inline span whose text
+// state swaps on an interval; key={idx} forces React to remount the inner
+// span so the CSS fade-in animation re-runs every cycle. Word stays in
+// the H1's normal text flow — no absolute positioning, no stacking.
 // ─────────────────────────────────────────────────────────────────────────
-const ROTOR_WORDS = ['creators.', 'agencies.'];
-function HeroH1Rotor() {
-  const [idx, setIdx] = useStateS(0);
+const HERO_ROTOR_WORDS = ['creators.', 'agencies.'];
+
+function Hero({ onBookCall }) {
+  const [rotorIdx, setRotorIdx] = useStateS(0);
+
   useEffectS(() => {
-    const id = setInterval(() => setIdx(v => (v + 1) % ROTOR_WORDS.length), 3500);
+    const id = setInterval(
+      () => setRotorIdx(v => (v + 1) % HERO_ROTOR_WORDS.length),
+      3200
+    );
     return () => clearInterval(id);
   }, []);
-  return (
-    <span className="hero-h1-rotor" aria-label="creators and agencies">
-      <span key={idx} className="hero-h1-word">{ROTOR_WORDS[idx]}</span>
-    </span>
-  );
-}
 
-// ─────────────────────────────────────────────────────────────────────────
-// Hero
-// ─────────────────────────────────────────────────────────────────────────
-function Hero({ onBookCall }) {
   return (
     <section id="top" className="hero">
       <div className="hero-pattern"><ZebraPattern opacity={0.07} /></div>
       <div className="hero-glow" aria-hidden="true"></div>
+
       <div className="hero-floats" aria-hidden="true">
         <div className="hero-float hero-float-a">
           <span className="hero-float-eyebrow">PPV unlocked</span>
@@ -105,16 +101,23 @@ function Hero({ onBookCall }) {
       </div>
 
       <div className="container hero-inner hero-inner-center">
-        <h1 className="reveal hero-h1-tight">
+        <h1 className="reveal hero-h1">
           The chatting agency<br />
-          for <HeroH1Rotor />
+          for{' '}
+          <span className="hero-h1-rotor" aria-label="creators and agencies">
+            <span key={rotorIdx} className="hero-h1-word">{HERO_ROTOR_WORDS[rotorIdx]}</span>
+          </span>
         </h1>
         <p className="lead hero-sub reveal">
           White-label 24/7 chats at wholesale rates. Run a free trial on one of your models — see the lift before you scale across your roster.
         </p>
         <div className="hero-cta reveal">
-          <button className="btn btn-primary btn-cta" onClick={onBookCall} aria-label="Start free trial">Start free trial <Icon.arrow /></button>
-          <a className="btn btn-secondary btn-ghost-cyan" href="cases.html" aria-label="See partner case studies">See partner case studies <Icon.arrow /></a>
+          <button className="btn btn-primary btn-cta" onClick={onBookCall}>
+            Start free trial <Icon.arrow />
+          </button>
+          <a className="btn btn-secondary btn-ghost-cyan" href="cases.html">
+            See partner case studies <Icon.arrow />
+          </a>
         </div>
         <ul className="hero-trust reveal" aria-label="Trial guarantees">
           <li><Icon.check /><span>Free 5-day trial</span></li>

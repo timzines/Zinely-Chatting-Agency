@@ -3107,22 +3107,18 @@ h2 { font-weight: 400; }
 /* Hero H1 with controlled wrap */
 .hero-h1-tight { max-width: 22ch; }
 
-/* Rotating word inside the hero H1 — single span, content swapped via JS,
-   each remount fades in via CSS. No stacking, no absolute positioning. */
+/* Hero H1 rotating word — bare-minimum styling. The rotor is just an
+   inline span coloured cyan + italic; the inner word fades in on every
+   remount triggered by a key change in JSX. */
 .hero-h1-rotor {
-  display: inline-block;
-  position: relative;
   color: var(--accent);
   font-style: italic;
   font-weight: 500;
-  min-width: 4.6ch;
-  text-align: left;
-  vertical-align: baseline;
+  white-space: nowrap;
 }
 .hero-h1-word {
   display: inline-block;
-  white-space: nowrap;
-  animation: hero-rotor-in 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: hero-rotor-in 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 @keyframes hero-rotor-in {
   from { opacity: 0; transform: translateY(6px); }
@@ -3130,19 +3126,6 @@ h2 { font-weight: 400; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-h1-word { animation: none; }
-}
-.hero-h1-rotor::after {
-  content: '';
-  position: absolute;
-  left: 4%;
-  right: 14%;
-  bottom: 0.10em;
-  height: 0.04em;
-  background: linear-gradient(90deg, transparent 0%, var(--accent) 30%, var(--accent) 70%, transparent 100%);
-  border-radius: 999px;
-  opacity: 0.45;
-  filter: blur(0.5px);
-  pointer-events: none;
 }
 
 /* Service card — featured (agency) variant */
