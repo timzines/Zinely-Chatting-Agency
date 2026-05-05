@@ -173,9 +173,9 @@ function performanceRateFor(monthlyRev) {
   return 26;
 }
 
-// Agency: wholesale rate tiered by total monthly revenue (matches the
-// pricing dropdown — 25% at $10k–$50k, sliding to 20% at $500k+).
-function wholesaleRateFor(monthlyRev) {
+// Agency rate tiered by total monthly revenue — 25% at $10k–$50k,
+// sliding to 20% past $500k.
+function agencyRateFor(monthlyRev) {
   if (monthlyRev >= 500000) return { label: '20%', value: 20 };
   if (monthlyRev >= 250000) return { label: '21%', value: 21 };
   if (monthlyRev >= 100000) return { label: '22%', value: 22 };
@@ -206,8 +206,8 @@ function Calculator({ onBookCall }) {
 
   // Agency output
   const totalGross = perAccount * roster;
-  const wholesale = wholesaleRateFor(totalGross);
-  const agencyFee = totalGross * (wholesale.value / 100);
+  const agencyRate = agencyRateFor(totalGross);
+  const agencyFee = totalGross * (agencyRate.value / 100);
   const agencyAtStandard = totalGross * 0.35;          // assume 35% standard rate to model
   const agencySpread = agencyAtStandard - agencyFee;
 
@@ -337,7 +337,7 @@ function Calculator({ onBookCall }) {
                   <div className="calc-output-value">$<span key={fmt(perAccount)} className="calc-output-num">{fmt(perAccount)}</span></div>
                   <div className="calc-output-sub">× <strong>{roster}</strong> {roster === 1 ? 'model' : 'models'} = <strong>${fmt(totalGross)}</strong>/mo gross</div>
                   <ul className="calc-output-meta">
-                    <li><span>Wholesale rate</span><span>{wholesale.label}</span></li>
+                    <li><span>Your rate</span><span>{agencyRate.label}</span></li>
                     <li><span>Zinely fee</span><span>${fmt(agencyFee)}/mo</span></li>
                     <li className="calc-output-spread"><span>Your spread (vs 35% std)</span><span>${fmt(agencySpread)}/mo</span></li>
                   </ul>
@@ -350,7 +350,7 @@ function Calculator({ onBookCall }) {
               <p className="calc-disclaimer">
                 {audience === 'creator'
                   ? 'Estimate only. Performance rate scales with monthly revenue. Actuals vary by niche, content cadence, and ramp.'
-                  : 'Estimate only. Wholesale rate steps down at $50k, $100k, $250k, and $500k of total monthly revenue. Spread compares Zinely fee against a 35% standard agency rate to model.'}
+                  : 'Estimate only. Rate steps down at $50k, $100k, $250k, and $500k of total monthly sales. Spread compares Zinely fee against a 35% standard agency rate to model.'}
               </p>
             </aside>
           </div>
@@ -390,14 +390,14 @@ function Pricing({ onBookCall }) {
             <span className="section-num">07 / Pricing</span>
             <h2>20–25% <span style={{ color: 'var(--accent)' }}>of gross.</span><br /><span style={{ color: 'var(--accent)', fontStyle: 'italic' }}>Drops as you scale.</span></h2>
           </div>
-          <div className="right"><p>Wholesale rate slides with monthly sales — 25% at the $10k+/mo entry tier, dropping to 20% past $500k. Free 5-day trial, no commitment, no upfront fees.</p></div>
+          <div className="right"><p>Rate slides with monthly sales — 25% at the $10k+/mo entry tier, dropping to 20% past $500k. Free 5-day trial, no commitment, no upfront fees.</p></div>
         </div>
 
         <div className="pricing-shell reveal">
           <div className="pricing-shell-glow" aria-hidden="true"></div>
 
           <div className="pricing-left">
-            <span className="pricing-eyebrow">Your wholesale rate</span>
+            <span className="pricing-eyebrow">Your rate</span>
             <div className="pricing-rate">
               <span className="pricing-rate-num">20–25<span className="pricing-rate-pct">%</span></span>
             </div>
@@ -439,7 +439,7 @@ function FAQ() {
     { q: 'Who actually does the chatting?', a: 'A small team of vetted, NDA-bound chatters trained on sales psychology and platform-specific tactics. 4% acceptance rate, 14-month average tenure. Every account has a primary chatter plus a briefed backup.' },
     { q: 'Can I see every message you send?', a: 'Yes. Conversations are visible to you in Infloww in real time. We also send weekly samples and flag any unusual fan exchanges proactively. No hidden activity on your account.' },
     { q: 'How is my account kept safe?', a: 'You never share your password. Account access flows through Infloww via your invite, on a dedicated IP assigned to your account so foreign-IP flags never hit. Revoke us in one click from inside Infloww.' },
-    { q: 'What happens after the trial?', a: 'You move onto our wholesale rate on gross revenue — 25% at the entry tier ($10k–$50k/mo in sales), sliding down to 20% as your monthly sales with us scale past $500k. No contracts, no minimums beyond the trial, cancel any time.' },
+    { q: 'What happens after the trial?', a: 'You move onto our performance rate on gross revenue — 25% at the entry tier ($10k–$50k/mo in sales), sliding down to 20% as your monthly sales with us scale past $500k. No contracts, no minimums beyond the trial, cancel any time.' },
     { q: 'How does the white-label arrangement work?', a: 'We work entirely under your brand voice, your reporting cadence, your escalation rules. The model — or your agency’s clients — never sees Zinely. NDAs with every chatter, scoped account access, audit trails on every action.' },
     { q: 'Can our models tell you’re not us?', a: 'No, by design. Onboarding includes voice calibration on your tone, your DMs style, and your top-spender language. The chatters work from your playbook, not ours. Models we’ve placed under partner brands have never flagged a difference.' },
     { q: 'What’s your chatter retention?', a: '14-month average tenure across the team. We invest in long-tenured chatters because the playbook compounds — a chatter on month 12 is materially better than a fresh hire, and we won’t put a new face on your account without shadowing first.' },

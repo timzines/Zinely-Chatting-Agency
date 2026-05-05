@@ -95,7 +95,7 @@ function Hero({ onBookCall }) {
           >{HERO_ROTOR_WORDS[rotorIdx]}</span>
         </h1>
         <p className="lead hero-sub reveal">
-          White-label 24/7 chats at wholesale rates. Run a free trial on one of your models — see the lift before you scale across your roster.
+          White-label 24/7 chats run by trained chatters. Free 5-day trial on one account — see the lift before you scale across your roster.
         </p>
         <div className="hero-cta reveal">
           <button className="btn btn-primary btn-cta" onClick={onBookCall}>
@@ -146,7 +146,7 @@ function Why() {
   const cards = [
     { icon: <Icon.shield />, num: '01', title: 'Trained, vetted chatters', body: 'Every chatter passes a 5-stage screening: English fluency (C1+), sales psychology test, voice-matching trial, NDA, and live shadowing. Top 4% acceptance rate.' },
     { icon: <Icon.scale />, num: '02', title: 'White-label by default', body: 'We work under your brand voice, your reporting cadence, your escalation rules. Your model — or your agency’s clients — never know we exist. NDAs with every chatter, scoped account access, audit trails on every action.' },
-    { icon: <Icon.trending />, num: '03', title: 'Performance pricing, no lock-in', body: 'Wholesale rates for agencies, performance commission for creators. No upfront fees. Month-to-month for creators, volume-tiered for agencies. We earn when you earn.' },
+    { icon: <Icon.trending />, num: '03', title: 'Performance pricing, no lock-in', body: 'One sliding rate that drops as your sales scale. No upfront fees, no contracts, no minimums beyond the trial. We earn when you earn.' },
   ];
   return (
     <section className="section section-bg-2" id="why">
@@ -177,28 +177,18 @@ function Why() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────
-// What you get — two audience-targeted service cards
+// What you get — one full service, every feature in one card
 // ─────────────────────────────────────────────────────────────────────────
 function Services({ onBookCall }) {
-  const services = [
-    {
-      audience: 'For creators',
-      num: '01',
-      title: '24/7 Chatting Service',
-      desc: 'Trained chatters running your DMs around the clock. PPV upselling, tips, customs, sexting, mass DMs — all in your voice.',
-      list: ['Voice & tone calibration', '8 / 16 / 24-hour coverage tiers', 'Dedicated account manager', 'Weekly performance reports', 'Swap chatters anytime'],
-      cta: 'Start free trial',
-      featured: false,
-    },
-    {
-      audience: 'For agencies',
-      num: '02',
-      title: 'White-Label Partnership',
-      desc: 'Wholesale chatting infrastructure for marketing-focused or full-service agencies. Plug us in under your brand, scale your roster without scaling your chatter ops.',
-      list: ['Wholesale rates, volume tiered', 'White-label by default', 'Dedicated partnership manager', 'Documented SLA on response times', 'Onboard new roster models in <48hrs'],
-      cta: 'Book partnership call',
-      featured: true,
-    },
+  const features = [
+    'Trained chatters running PPV, tips, customs, sexting, mass DMs',
+    '24/7 coverage across every timezone, <60s response SLA',
+    'Voice & tone calibration on your account or agency brand',
+    'Dedicated account manager + assigned team leader',
+    'Weekly performance reports and live conversation samples',
+    'White-label by default — invisible to models and fans',
+    'Swap chatters anytime, no notice, no charge',
+    'Onboard a new account in under 48 hours',
   ];
   return (
     <section className="section" id="services">
@@ -206,30 +196,27 @@ function Services({ onBookCall }) {
         <div className="section-head reveal">
           <div>
             <span className="section-num">03 / What you get</span>
-            <h2>One service.<br /><span style={{ color: 'var(--accent)' }}>Two ways to buy it.</span></h2>
+            <h2>One full service.<br /><span style={{ color: 'var(--accent)' }}>End-to-end chatting.</span></h2>
           </div>
           <div className="right">
-            <p>The chatting team is the same. The pricing structure depends on whether you’re a creator scaling your own account or an agency scaling your roster.</p>
+            <p>Trained chatters running your DMs around the clock — PPV, tips, customs, sexting, mass DMs, fan retention. Same team, same playbook, whether you’re scaling your own account or a roster.</p>
           </div>
         </div>
-        <div className="services-grid">
-          {services.map((s, i) => (
-            <article key={i} className={`service-card reveal ${s.featured ? 'service-card-featured' : ''}`}>
-              {s.featured && <span className="service-card-badge">Most popular</span>}
-              <div className="accent-bar"></div>
-              <div className="pattern"><ZebraPattern opacity={1} color="#0F1E36" /></div>
-              <span className="service-audience">{s.audience}</span>
-              <h3>{s.title}</h3>
-              <p className="desc">{s.desc}</p>
-              <ul className="service-list">
-                {s.list.map(l => <li key={l}><Icon.check /><span>{l}</span></li>)}
-              </ul>
-              <button className={`btn ${s.featured ? 'btn-primary btn-cta' : 'btn-secondary btn-ghost-cyan'} service-card-cta`} onClick={onBookCall}>
-                {s.cta} <Icon.arrow />
-              </button>
-            </article>
-          ))}
-        </div>
+        <article className="service-card service-card-solo reveal">
+          <div className="accent-bar"></div>
+          <div className="service-card-head">
+            <h3>The whole chatting layer of your business.</h3>
+            <p className="desc">Built into your brand, run on a documented SLA, paid only when it works.</p>
+          </div>
+          <ul className="service-list service-list-grid">
+            {features.map(f => (
+              <li key={f}><Icon.check /><span>{f}</span></li>
+            ))}
+          </ul>
+          <button className="btn btn-primary btn-cta service-card-cta" onClick={onBookCall}>
+            Start free trial <Icon.arrow />
+          </button>
+        </article>
       </div>
     </section>
   );

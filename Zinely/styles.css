@@ -3179,6 +3179,52 @@ h2 { font-weight: 400; }
   .hero-h1-rotor { animation: none; }
 }
 
+/* Solo service card — one card containing every feature */
+.service-card-solo {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(36px, 5vw, 56px);
+  display: flex;
+  flex-direction: column;
+}
+.service-card-head { margin-bottom: 28px; }
+.service-card-head h3 {
+  font-size: clamp(28px, 3.4vw, 40px);
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+.service-card-head .desc {
+  color: var(--slate);
+  font-size: 16px;
+  line-height: 1.55;
+  max-width: 56ch;
+}
+.service-list-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 32px;
+  margin-bottom: 36px;
+}
+.service-list-grid li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+.service-list-grid svg { color: var(--accent); margin-top: 4px; flex-shrink: 0; }
+.service-card-solo .service-card-cta {
+  align-self: flex-start;
+  width: 100%;
+  max-width: 320px;
+  justify-content: center;
+}
+@media (max-width: 720px) {
+  .service-list-grid { grid-template-columns: 1fr; gap: 12px; }
+  .service-card-solo .service-card-cta { max-width: none; }
+}
+
 /* Service card — featured (agency) variant */
 .service-card { position: relative; }
 .service-card-featured {
