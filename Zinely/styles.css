@@ -3059,3 +3059,174 @@ h2 { font-weight: 400; }
   font-family: var(--font-body);
 }
 
+/* ─── Dual-audience additions ─────────────────────────────────────────── */
+
+/* Hero eyebrow rotator — fade-cycles "FOR CREATORS / FOR AGENCIES / FOR BOTH" */
+.hero-eyebrow-rotator {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  padding: 6px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(11,15,26,0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cyan-bright);
+  outline: none;
+  cursor: default;
+}
+.hero-eyebrow-rotator:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+.hero-eyebrow-sizer {
+  display: inline-block;
+  visibility: hidden;
+}
+.hero-eyebrow-state {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+.hero-eyebrow-state.on { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-eyebrow-state { transition: none; }
+}
+
+/* Hero H1 with controlled wrap */
+.hero-h1-tight { max-width: 22ch; }
+
+/* Service card — featured (agency) variant */
+.service-card { position: relative; }
+.service-card-featured {
+  border: 1px solid var(--accent-ring) !important;
+  box-shadow: 0 0 0 1px var(--accent-ring) inset, 0 24px 64px rgba(0,0,0,0.55);
+}
+.service-card-featured .accent-bar {
+  background: linear-gradient(90deg, var(--accent), var(--cyan-bright)) !important;
+  height: 5px !important;
+}
+.service-card-featured:hover {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 1px var(--accent) inset, 0 24px 64px rgba(0,0,0,0.55);
+}
+.service-card-badge {
+  position: absolute;
+  top: -1px;
+  right: 28px;
+  padding: 6px 14px;
+  background: var(--accent);
+  color: #07090F;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+  z-index: 2;
+}
+.service-audience {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--slate-2);
+  margin-bottom: 10px;
+  display: inline-block;
+}
+.service-card-featured .service-audience { color: var(--accent); }
+.service-card-cta {
+  margin-top: auto;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Pricing audience eyebrow above tier name */
+.pricing-audience {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--slate-2);
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.pricing-audience-accent { color: var(--accent); }
+
+/* Calculator audience tabs */
+.calc-audience {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  margin: 0 auto 20px;
+}
+.calc-shell { display: flex; flex-direction: column; }
+.calc-shell .calc-audience { align-self: center; }
+.calc-audience-btn {
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--slate);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 200ms ease, color 200ms ease;
+}
+.calc-audience-btn:hover { color: var(--ink); }
+.calc-audience-btn.active {
+  background: var(--accent);
+  color: #07090F;
+  font-weight: 600;
+}
+@media (max-width: 480px) {
+  .calc-audience-btn { padding: 8px 14px; font-size: 11px; letter-spacing: 0.1em; }
+}
+
+/* Case card audience badge — corner pill on the cover image */
+.case-shot { position: relative; }
+.case-card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 6px 12px;
+  background: rgba(7,9,15,0.78);
+  border: 1px solid var(--line);
+  color: var(--cyan-bright);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 2;
+}
+
+/* Founder card photo (real image variant) */
+.trust-founder-photo-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+
+

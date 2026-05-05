@@ -33,7 +33,7 @@ function Nav({ onBookCall }) {
           {links.map(([l, h]) => <a key={h} href={h}>{l}</a>)}
         </nav>
         <div className="nav-cta">
-          <button className="btn btn-primary btn-cta" onClick={onBookCall}>Book partnership call <Icon.arrow /></button>
+          <button className="btn btn-primary btn-cta" onClick={onBookCall}>Start free trial <Icon.arrow /></button>
           <button className="nav-burger" aria-label="Open menu" onClick={() => setOpen(true)}><Icon.burger /></button>
         </div>
       </header>
@@ -49,10 +49,58 @@ function Nav({ onBookCall }) {
         </nav>
         <div className="cta-stack">
           <button className="btn btn-primary btn-cta" onClick={() => { setOpen(false); onBookCall(); }}>Start free trial <Icon.arrow /></button>
-          <span className="cta-sub">Free 30-day trial · one model · no commitment</span>
+          <button className="btn btn-secondary btn-ghost-cyan" onClick={() => { setOpen(false); onBookCall(); }}>Book partnership call <Icon.arrow /></button>
+          <span className="cta-sub">5-day free trial · 30-day pilot for agencies · no commitment</span>
         </div>
       </div>
     </>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────
+// Hero eyebrow rotator — cycles FOR CREATORS / FOR AGENCIES / FOR BOTH
+// ─────────────────────────────────────────────────────────────────────────
+function HeroEyebrow() {
+  const STATES = ['FOR CREATORS.', 'FOR AGENCIES.', 'FOR BOTH.'];
+  const [idx, setIdx] = useStateS(0);
+  const [paused, setPaused] = useStateS(false);
+  const reducedRef = useRefS(false);
+
+  useEffectS(() => {
+    const mq = typeof window !== 'undefined' && window.matchMedia
+      ? window.matchMedia('(prefers-reduced-motion: reduce)')
+      : null;
+    reducedRef.current = !!(mq && mq.matches);
+    if (reducedRef.current) {
+      setIdx(2); // pin to "FOR BOTH." for reduced-motion users
+      return;
+    }
+    let i = 0;
+    const id = setInterval(() => {
+      if (paused) return;
+      i = (i + 1) % STATES.length;
+      setIdx(i);
+    }, 3000);
+    return () => clearInterval(id);
+  }, [paused]);
+
+  return (
+    <span
+      className="hero-eyebrow-rotator"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocus={() => setPaused(true)}
+      onBlur={() => setPaused(false)}
+      tabIndex={0}
+      role="text"
+      aria-label="For creators and agencies"
+    >
+      {STATES.map((s, i) => (
+        <span key={s} className={`hero-eyebrow-state ${i === idx ? 'on' : ''}`} aria-hidden={i !== idx}>{s}</span>
+      ))}
+      {/* Sizer keeps width constant at the longest state */}
+      <span className="hero-eyebrow-sizer" aria-hidden="true">FOR AGENCIES.</span>
+    </span>
   );
 }
 
@@ -82,23 +130,24 @@ function Hero({ onBookCall }) {
           <span className="hero-float-num">$250</span>
         </div>
       </div>
+
       <div className="container hero-inner hero-inner-center">
-        <h1 className="reveal">
-          The chatting agency<br />
-          for <span className="hero-h1-mark">OnlyFans agencies.</span>
+        <HeroEyebrow />
+        <h1 className="reveal hero-h1-tight">
+          5 days to see what your<br />chats could actually be doing.
         </h1>
         <p className="lead hero-sub reveal">
-          White-label 24/7 chats at wholesale rates. Run a free trial on one of your models — see the lift before you scale across your roster.
+          White-label 24/7 chatting at wholesale rates. Run a free pilot on one account — see the lift before you scale.
         </p>
-        <div className="hero-cta reveal">
-          <button className="btn btn-primary btn-cta" onClick={onBookCall}>Start free trial <Icon.arrow /></button>
-          <a className="btn btn-secondary btn-ghost-cyan" href="cases.html">See partner case studies <Icon.arrow /></a>
-        </div>
-        <ul className="hero-trust reveal" aria-label="Trial guarantees">
-          <li><Icon.check /><span>Free 30-day trial</span></li>
+        <ul className="hero-trust reveal" aria-label="Pilot guarantees">
+          <li><Icon.check /><span>5-day pilot</span></li>
           <li><Icon.check /><span>White-label by default</span></li>
           <li><Icon.check /><span>No commitment</span></li>
         </ul>
+        <div className="hero-cta reveal">
+          <button className="btn btn-primary btn-cta" onClick={onBookCall} aria-label="Start free 5-day trial for creators">Start free trial <Icon.arrow /></button>
+          <button className="btn btn-secondary btn-ghost-cyan" onClick={onBookCall} aria-label="Book a partnership call for agencies">Book partnership call <Icon.arrow /></button>
+        </div>
       </div>
     </section>
   );
@@ -109,7 +158,7 @@ function Hero({ onBookCall }) {
 // ─────────────────────────────────────────────────────────────────────────
 function Stats() {
   const stats = [
-    { num: '40', unit: '+', label: 'Active accounts under management across partner agencies' },
+    { num: '40', unit: '+', label: 'Active accounts under management' },
     { num: '3.2', unit: '×', label: 'Average revenue lift on accounts we take over' },
     { num: '24/7', unit: '', label: 'Live coverage across every major timezone' },
     { num: '<60', unit: 's', label: 'Average response time, fan to chatter' },
@@ -129,24 +178,24 @@ function Stats() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────
-// Why agencies partner with us
+// Why we win
 // ─────────────────────────────────────────────────────────────────────────
 function Why() {
   const cards = [
-    { icon: <Icon.shield />, num: '01', title: 'White-label by default', body: 'Your model never knows we exist. We work under your agency’s brand, in your voice, with your reporting cadence. NDAs with every chatter. Account access flows through your systems, not ours.' },
-    { icon: <Icon.clock />, num: '02', title: 'Ops-grade reliability', body: 'Documented SLAs. <60s response times. Weekly QA reviews on every account. Redundant chatter assignment so a sick day or a bad shift never hits your numbers.' },
-    { icon: <Icon.scale />, num: '03', title: 'Wholesale rates, volume tiers', body: 'Pricing built for agency margins, not creator pricing. Tiered rates that drop as your roster scales with us. No upfront fees. We earn when your agency earns.' },
+    { icon: <Icon.shield />, num: '01', title: 'Trained, vetted chatters', body: 'Every chatter passes a 5-stage screening: English fluency (C1+), sales psychology test, voice-matching trial, NDA, and live shadowing. Top 4% acceptance rate.' },
+    { icon: <Icon.scale />, num: '02', title: 'White-label by default', body: 'We work under your brand voice, your reporting cadence, your escalation rules. Your model — or your agency’s clients — never know we exist. NDAs with every chatter, scoped account access, audit trails on every action.' },
+    { icon: <Icon.trending />, num: '03', title: 'Performance pricing, no lock-in', body: 'Wholesale rates for agencies, performance commission for creators. No upfront fees. Month-to-month for creators, volume-tiered for agencies. We earn when you earn.' },
   ];
   return (
     <section className="section section-bg-2" id="why">
       <div className="container">
         <div className="section-head reveal">
           <div>
-            <span className="section-num">02 / Why agencies partner with us</span>
+            <span className="section-num">02 / Why we win</span>
             <h2>Built to disappear<br /><span style={{ color: 'var(--accent)' }}>behind your brand.</span></h2>
           </div>
           <div className="right">
-            <p>Most chatting providers are built for direct-to-creator sales. We built Zinely as wholesale infrastructure — invisible to your models, accountable to you, priced for your margin.</p>
+            <p>Most chatting providers were built for direct-to-creator sales and bolted on agency support later. We built Zinely from day one to work invisibly under whatever brand fronts your fans — yours, your agency’s, or your partners’.</p>
           </div>
         </div>
         <div className="why-grid reveal">
@@ -166,18 +215,28 @@ function Why() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────
-// What you get — partnership feature grid
+// What you get — two audience-targeted service cards
 // ─────────────────────────────────────────────────────────────────────────
-function Services() {
-  const features = [
-    { num: '01', icon: <Icon.message />, title: '24/7 chatting team',
-      desc: 'Trained chatters covering every timezone. PPV upselling, tip extraction, custom coordination, sexting, mass DMs, fan retention — under your brand voice.' },
-    { num: '02', icon: <Icon.user />, title: 'Dedicated account manager',
-      desc: 'One senior point of contact for your agency. Weekly reporting, monthly strategy reviews, escalation path for anything urgent.' },
-    { num: '03', icon: <Icon.chart />, title: 'QA and reporting infrastructure',
-      desc: 'Live dashboards, conversation samples on request, anomaly flagging, performance benchmarks across your roster. Everything you’d need to QA us without doing the QA work yourself.' },
-    { num: '04', icon: <Icon.sparkle />, title: 'Onboarding playbook',
-      desc: 'We onboard a new model from your roster in under 48 hours. Voice calibration, top-spender briefing, content audit, chatter team assignment. Plug-in fast.' },
+function Services({ onBookCall }) {
+  const services = [
+    {
+      audience: 'For creators',
+      num: '01',
+      title: '24/7 Chatting Service',
+      desc: 'Trained chatters running your DMs around the clock. PPV upselling, tips, customs, sexting, mass DMs — all in your voice.',
+      list: ['Voice & tone calibration', '8 / 16 / 24-hour coverage tiers', 'Dedicated account manager', 'Weekly performance reports', 'Swap chatters anytime'],
+      cta: 'Start free trial',
+      featured: false,
+    },
+    {
+      audience: 'For agencies',
+      num: '02',
+      title: 'White-Label Partnership',
+      desc: 'Wholesale chatting infrastructure for marketing-focused or full-service agencies. Plug us in under your brand, scale your roster without scaling your chatter ops.',
+      list: ['Wholesale rates, volume tiered', 'White-label by default', 'Dedicated partnership manager', 'Documented SLA on response times', 'Onboard new roster models in <48hrs'],
+      cta: 'Book partnership call',
+      featured: true,
+    },
   ];
   return (
     <section className="section" id="services">
@@ -185,20 +244,27 @@ function Services() {
         <div className="section-head reveal">
           <div>
             <span className="section-num">03 / What you get</span>
-            <h2>One service.<br /><span style={{ color: 'var(--accent)' }}>Built for agency partners.</span></h2>
+            <h2>One service.<br /><span style={{ color: 'var(--accent)' }}>Two ways to buy it.</span></h2>
           </div>
           <div className="right">
-            <p>We run chatting. You run everything else. The clean specialization is the point.</p>
+            <p>The chatting team is the same. The pricing structure depends on whether you’re a creator scaling your own account or an agency scaling your roster.</p>
           </div>
         </div>
-        <div className="features-grid reveal">
-          {features.map((f, i) => (
-            <article key={i} className="feature-card">
+        <div className="services-grid">
+          {services.map((s, i) => (
+            <article key={i} className={`service-card reveal ${s.featured ? 'service-card-featured' : ''}`}>
+              {s.featured && <span className="service-card-badge">Most popular</span>}
+              <div className="accent-bar"></div>
               <div className="pattern"><ZebraPattern opacity={1} color="#0F1E36" /></div>
-              <span className="feature-num">{f.num}</span>
-              <div className="feature-icon">{f.icon}</div>
-              <h3>{f.title}</h3>
-              <p>{f.desc}</p>
+              <span className="service-audience">{s.audience}</span>
+              <h3>{s.title}</h3>
+              <p className="desc">{s.desc}</p>
+              <ul className="service-list">
+                {s.list.map(l => <li key={l}><Icon.check /><span>{l}</span></li>)}
+              </ul>
+              <button className={`btn ${s.featured ? 'btn-primary btn-cta' : 'btn-secondary btn-ghost-cyan'} service-card-cta`} onClick={onBookCall}>
+                {s.cta} <Icon.arrow />
+              </button>
             </article>
           ))}
         </div>

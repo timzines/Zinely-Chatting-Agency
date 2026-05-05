@@ -51,7 +51,7 @@ function App() {
         <Divider />
         <FeaturedCase />
         <Why />
-        <Services />
+        <Services onBookCall={openTelegram} />
         <Divider />
         <Process />
         <Divider />
