@@ -173,11 +173,14 @@ function performanceRateFor(monthlyRev) {
   return 26;
 }
 
-// Agency: wholesale rate tiered by roster size
-function wholesaleRateFor(roster) {
-  if (roster >= 16) return { label: 'Custom', value: 15 };
-  if (roster >= 6)  return { label: '16%',    value: 16 };
-  return { label: '18%', value: 18 };
+// Agency: wholesale rate tiered by total monthly revenue (matches the
+// pricing dropdown — 25% at $10k–$50k, sliding to 20% at $500k+).
+function wholesaleRateFor(monthlyRev) {
+  if (monthlyRev >= 500000) return { label: '20%', value: 20 };
+  if (monthlyRev >= 250000) return { label: '21%', value: 21 };
+  if (monthlyRev >= 100000) return { label: '22%', value: 22 };
+  if (monthlyRev >= 50000)  return { label: '23%', value: 23 };
+  return { label: '25%', value: 25 };
 }
 
 function Calculator({ onBookCall }) {
@@ -203,7 +206,7 @@ function Calculator({ onBookCall }) {
 
   // Agency output
   const totalGross = perAccount * roster;
-  const wholesale = wholesaleRateFor(roster);
+  const wholesale = wholesaleRateFor(totalGross);
   const agencyFee = totalGross * (wholesale.value / 100);
   const agencyAtStandard = totalGross * 0.35;          // assume 35% standard rate to model
   const agencySpread = agencyAtStandard - agencyFee;
@@ -347,7 +350,7 @@ function Calculator({ onBookCall }) {
               <p className="calc-disclaimer">
                 {audience === 'creator'
                   ? 'Estimate only. Performance rate scales with monthly revenue. Actuals vary by niche, content cadence, and ramp.'
-                  : 'Estimate only. Wholesale rate steps down at 6 and 16 models. Spread compares Zinely fee against a 35% standard agency rate to model.'}
+                  : 'Estimate only. Wholesale rate steps down at $50k, $100k, $250k, and $500k of total monthly revenue. Spread compares Zinely fee against a 35% standard agency rate to model.'}
               </p>
             </aside>
           </div>
@@ -358,50 +361,37 @@ function Calculator({ onBookCall }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────
-// Pricing — three tiers (creator / agency / enterprise)
+// Pricing — revenue-tier dropdown drives a live wholesale-rate display.
+// Built for agencies doing $10k+/mo. Sliding scale 25% → 20%.
 // ─────────────────────────────────────────────────────────────────────────
+const PRICING_TIERS = [
+  { range: '$10,000 – $49,999',   rate: 25 },
+  { range: '$50,000 – $99,999',   rate: 23 },
+  { range: '$100,000 – $249,999', rate: 22 },
+  { range: '$250,000 – $499,999', rate: 21 },
+  { range: '$500,000+',           rate: 20 },
+];
+
 function Pricing({ onBookCall }) {
-  const tiers = [
-    {
-      name: 'Performance',
-      audience: 'For creators',
-      price: '20–26%',
-      priceSub: 'of net · scaled to volume',
-      bullets: [
-        'Commission only, no base fees',
-        'Bigger accounts pay less',
-        'Month-to-month, no contracts',
-        '5-day free trial included',
-      ],
-      cta: 'Start free trial',
-    },
-    {
-      name: 'Partnership',
-      audience: 'For agencies',
-      price: '15–18%',
-      priceSub: 'wholesale · volume tiered',
-      bullets: [
-        'Wholesale rate for agency partners',
-        'Lower rates as your roster scales',
-        'Dedicated partnership manager',
-        '30-day pilot on a single model',
-      ],
-      cta: 'Book partnership call',
-      highlight: true,
-    },
-    {
-      name: 'Enterprise',
-      audience: 'For 16+ models',
-      price: 'Custom',
-      priceSub: 'for large agency rosters',
-      bullets: [
-        'Lowest wholesale rates',
-        'Senior account team',
-        'Custom SLA terms',
-        'Co-developed reporting',
-      ],
-      cta: 'Apply for Enterprise',
-    },
+  const [tierIdx, setTierIdx] = useStateB(0);
+  const tier = PRICING_TIERS[tierIdx];
+  const includes = [
+    [
+      '24/7 page coverage',
+      'Vault management',
+      'Wall posting',
+      'Custom content templates',
+      '100% secure & safe',
+      'AI voice cloning (if needed)',
+    ],
+    [
+      'Direct contact with team',
+      'Fully trained, experienced chatters',
+      'Quality assurance reviews',
+      'Staff monitoring chatters 24/7',
+      'Native-level English speakers',
+      'Free marketing consultations',
+    ],
   ];
   return (
     <section className="section" id="pricing">
@@ -409,30 +399,59 @@ function Pricing({ onBookCall }) {
         <div className="section-head reveal">
           <div>
             <span className="section-num">07 / Pricing</span>
-            <h2>Try it free.<br /><span style={{ color: 'var(--accent)' }}>Pay only when it works.</span></h2>
+            <h2>Built for agencies<br /><span style={{ color: 'var(--accent)' }}>doing $10k+/mo.</span></h2>
           </div>
-          <div className="right"><p>Start with a free 5-day pilot, full 24/7 chatting included, no credit card, no contract. Keep going only if the numbers move. We earn when you earn.</p></div>
+          <div className="right"><p>Wholesale rates from 25% down to 20% depending on your monthly revenue. Free 5-day trial, no commitment, no upfront fees. Pricing scales with you as you grow.</p></div>
         </div>
-        <div className="pricing-grid pricing-grid-3">
-          {tiers.map((t, i) => (
-            <article key={i} className={`pricing-card reveal ${t.highlight ? 'pricing-card-highlight' : ''}`}>
-              <span className={`pricing-audience ${t.highlight ? 'pricing-audience-accent' : ''}`}>{t.audience}</span>
-              {t.highlight && <span className="pricing-badge">Most popular</span>}
-              <h3 className="pricing-name">{t.name}</h3>
-              <div className="pricing-price">
-                <span className="pricing-price-num">{t.price}</span>
-                <span className="pricing-price-sub">{t.priceSub}</span>
-              </div>
-              <ul className="pricing-bullets">
-                {t.bullets.map((b, j) => (
-                  <li key={j}><Icon.check /><span>{b}</span></li>
+
+        <div className="pricing-shell reveal">
+          <div className="pricing-shell-glow" aria-hidden="true"></div>
+
+          <div className="pricing-left">
+            <span className="pricing-eyebrow">Your wholesale rate</span>
+            <div className="pricing-rate" aria-live="polite">
+              <span key={tier.rate} className="pricing-rate-num">{tier.rate}<span className="pricing-rate-pct">%</span></span>
+            </div>
+            <button className="btn btn-primary btn-cta pricing-cta-big" onClick={onBookCall}>
+              Start free trial <Icon.arrow />
+            </button>
+            <div className="pricing-rating">
+              <div className="pricing-rating-stars" aria-hidden="true">★★★★★</div>
+              <span>4.8/5 rating · 40+ accounts under management</span>
+            </div>
+          </div>
+
+          <div className="pricing-right">
+            <label className="pricing-select-label" htmlFor="pricing-tier">Select your current monthly revenue</label>
+            <div className="pricing-select-wrap">
+              <select
+                id="pricing-tier"
+                className="pricing-select"
+                value={tierIdx}
+                onChange={(e) => setTierIdx(parseInt(e.target.value))}
+              >
+                {PRICING_TIERS.map((t, i) => (
+                  <option key={i} value={i}>{t.range}</option>
                 ))}
-              </ul>
-              <button className={`btn ${t.highlight ? 'btn-primary btn-cta' : 'btn-secondary btn-ghost-cyan'} pricing-cta`} onClick={onBookCall}>
-                {t.cta} <Icon.arrow />
-              </button>
-            </article>
-          ))}
+              </select>
+              <span className="pricing-select-chev" aria-hidden="true"><Icon.chev /></span>
+            </div>
+
+            <div className="pricing-includes">
+              {includes.map((col, ci) => (
+                <ul key={ci} className="pricing-includes-col">
+                  {col.map((item) => (
+                    <li key={item}>
+                      <span className="pricing-check" aria-hidden="true"><Icon.check /></span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              ))}
+            </div>
+
+            <p className="pricing-floor">All partners start with a free 5-day trial — no card, no commitment. Once you’re live, the rate above is what you pay on net revenue we generate.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -445,11 +464,11 @@ function Pricing({ onBookCall }) {
 function FAQ() {
   const [open, setOpen] = useStateB(-1);
   const faqs = [
-    { q: 'What if I don’t see results in the trial?', a: 'Walk away. No invoice, no follow-up, no charge. The 5-day creator trial and the 30-day agency pilot exist precisely so you can prove the lift on real numbers before committing — if it doesn’t move, neither do we.' },
+    { q: 'What if I don’t see results in the trial?', a: 'Walk away. No invoice, no follow-up, no charge. The free 5-day trial exists precisely so you can prove the lift on real numbers before committing — if it doesn’t move, neither do we.' },
     { q: 'Who actually does the chatting?', a: 'A small team of vetted, NDA-bound chatters trained on sales psychology and platform-specific tactics. 4% acceptance rate, 14-month average tenure. Every account has a primary chatter plus a briefed backup.' },
     { q: 'Can I see every message you send?', a: 'Yes. Conversations are visible to you in Infloww in real time. We also send weekly samples and flag any unusual fan exchanges proactively. No hidden activity on your account.' },
     { q: 'How is my account kept safe?', a: 'You never share your password. Account access flows through Infloww via your invite, on a dedicated IP assigned to your account so foreign-IP flags never hit. Revoke us in one click from inside Infloww.' },
-    { q: 'What happens after the trial?', a: 'For creators: you move onto our Performance commission (20–26% of net, scaled to your volume). For agencies: you move into the Partnership wholesale tier (15–18% depending on roster size). Cancel any time after.' },
+    { q: 'What happens after the trial?', a: 'You move onto our wholesale rate — 25% at the entry tier ($10k–$50k/mo), sliding down to 20% as your monthly revenue with us scales past $500k. No contracts, no minimums beyond the trial, cancel any time.' },
     { q: 'How does the white-label arrangement work?', a: 'We work entirely under your brand voice, your reporting cadence, your escalation rules. The model — or your agency’s clients — never sees Zinely. NDAs with every chatter, scoped account access, audit trails on every action.' },
     { q: 'Can our models tell you’re not us?', a: 'No, by design. Onboarding includes voice calibration on your tone, your DMs style, and your top-spender language. The chatters work from your playbook, not ours. Models we’ve placed under partner brands have never flagged a difference.' },
     { q: 'What’s your chatter retention?', a: '14-month average tenure across the team. We invest in long-tenured chatters because the playbook compounds — a chatter on month 12 is materially better than a fresh hire, and we won’t put a new face on your account without shadowing first.' },
@@ -495,13 +514,13 @@ function FinalCTA({ onBookCall }) {
       <div className="container final-cta-inner reveal">
         <div className="modal-eyebrow" style={{ color: 'var(--accent)', marginBottom: 18 }}>Free pilot · 24/7 chatting included</div>
         <h2>Try Zinely free.<br /><span style={{ color: 'var(--accent)' }}>Pay only when it works.</span></h2>
-        <p className="lead">5-day free trial for creators. 30-day pilot for agencies. Documented SLA, mutual NDA, your access stays in your control. See the lift before you commit.</p>
+        <p className="lead">Free 5-day trial. Documented SLA, mutual NDA, your access stays in your control. See the lift before you commit.</p>
         <div className="cta-stack" style={{ alignItems: 'center', gap: 14 }}>
           <div className="hero-cta" style={{ marginTop: 0 }}>
             <button className="btn btn-light" onClick={onBookCall}>Start free trial <Icon.arrow /></button>
-            <button className="btn btn-secondary btn-ghost-cyan" onClick={onBookCall}>Book partnership call <Icon.arrow /></button>
+            <a className="btn btn-secondary btn-ghost-cyan" href="cases.html">See partner case studies <Icon.arrow /></a>
           </div>
-          <span className="cta-sub">5-day free trial · 30-day agency pilot · no commitment</span>
+          <span className="cta-sub">5-day free trial · no commitment · no card required</span>
         </div>
         <div><a className="apply-link" href="apply.html">Apply as a chatter →</a></div>
       </div>

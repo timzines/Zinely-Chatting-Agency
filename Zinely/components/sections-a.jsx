@@ -50,7 +50,7 @@ function Nav({ onBookCall }) {
         <div className="cta-stack">
           <button className="btn btn-primary btn-cta" onClick={() => { setOpen(false); onBookCall(); }}>Start free trial <Icon.arrow /></button>
           <button className="btn btn-secondary btn-ghost-cyan" onClick={() => { setOpen(false); onBookCall(); }}>Book partnership call <Icon.arrow /></button>
-          <span className="cta-sub">5-day free trial · 30-day pilot for agencies · no commitment</span>
+          <span className="cta-sub">5-day free trial · no commitment · no card required</span>
         </div>
       </div>
     </>
@@ -58,17 +58,21 @@ function Nav({ onBookCall }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────
-// Hero H1 word rotor — cross-fades "creators." ⇄ "agencies." inside the H1.
-// Pure-CSS animation (no JS interval) so it can't be torn down by hydration
-// or paused by Babel-standalone slow-loads. inline-grid stacks the two
-// words and the invisible sizer in a single cell.
+// Hero H1 word rotor — swaps "creators." ⇄ "agencies." inside the H1.
+// Single span, text swapped via state, key-based remount triggers a CSS
+// fade-in animation each cycle. No absolute positioning, no stacking —
+// the word renders in flow so it can't be invisible due to layout bugs.
 // ─────────────────────────────────────────────────────────────────────────
+const ROTOR_WORDS = ['creators.', 'agencies.'];
 function HeroH1Rotor() {
+  const [idx, setIdx] = useStateS(0);
+  useEffectS(() => {
+    const id = setInterval(() => setIdx(v => (v + 1) % ROTOR_WORDS.length), 3500);
+    return () => clearInterval(id);
+  }, []);
   return (
     <span className="hero-h1-rotor" aria-label="creators and agencies">
-      <span className="hero-h1-word-sizer" aria-hidden="true">agencies.</span>
-      <span className="hero-h1-word hero-h1-word-1">creators.</span>
-      <span className="hero-h1-word hero-h1-word-2">agencies.</span>
+      <span key={idx} className="hero-h1-word">{ROTOR_WORDS[idx]}</span>
     </span>
   );
 }
@@ -113,7 +117,7 @@ function Hero({ onBookCall }) {
           <a className="btn btn-secondary btn-ghost-cyan" href="cases.html" aria-label="See partner case studies">See partner case studies <Icon.arrow /></a>
         </div>
         <ul className="hero-trust reveal" aria-label="Trial guarantees">
-          <li><Icon.check /><span>Free 30-day trial</span></li>
+          <li><Icon.check /><span>Free 5-day trial</span></li>
           <li><Icon.check /><span>White-label by default</span></li>
           <li><Icon.check /><span>No commitment</span></li>
         </ul>
