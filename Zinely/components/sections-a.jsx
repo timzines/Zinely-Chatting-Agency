@@ -66,9 +66,9 @@ function Nav({ onBookCall }) {
 function HeroH1Rotor() {
   return (
     <span className="hero-h1-rotor" aria-label="creators and agencies">
-      <span className="hero-h1-word hero-h1-word-1" aria-hidden="true">creators.</span>
-      <span className="hero-h1-word hero-h1-word-2" aria-hidden="true">agencies.</span>
       <span className="hero-h1-word-sizer" aria-hidden="true">agencies.</span>
+      <span className="hero-h1-word hero-h1-word-1">creators.</span>
+      <span className="hero-h1-word hero-h1-word-2">agencies.</span>
     </span>
   );
 }
