@@ -139,7 +139,7 @@ function Logo({ withWord = true, dark = false, size = 44, withTag = true }) {
       {withWord && (
         <span className="logo-word">
           <span className="logo-name">Zinely</span>
-          {withTag && <span className="logo-tag">Chatting Infrastructure</span>}
+          {withTag && <span className="logo-tag">Chatting Agency</span>}
         </span>
       )}
     </span>

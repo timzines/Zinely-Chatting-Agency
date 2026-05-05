@@ -499,7 +499,7 @@ function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <Logo dark={true} size={44} />
-            <p>Chatting infrastructure for OnlyFans agencies. White-label 24/7 coverage, wholesale rates, ops-grade SLA.</p>
+            <p>The white-label chatting agency for OnlyFans agencies. 24/7 coverage, wholesale rates, ops-grade SLA.</p>
           </div>
           <div className="footer-col">
             <h5>Partnership</h5>

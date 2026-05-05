@@ -63,14 +63,29 @@ function Hero({ onBookCall }) {
   return (
     <section id="top" className="hero">
       <div className="hero-pattern"><ZebraPattern opacity={0.07} /></div>
+      <div className="hero-glow" aria-hidden="true"></div>
+      <div className="hero-floats" aria-hidden="true">
+        <div className="hero-float hero-float-a">
+          <span className="hero-float-eyebrow">PPV unlocked</span>
+          <span className="hero-float-num">+$847</span>
+          <span className="hero-float-meta">0:42 reply</span>
+        </div>
+        <div className="hero-float hero-float-b">
+          <span className="hero-float-dot hero-float-dot-pulse" aria-hidden="true"></span>
+          <div>
+            <span className="hero-float-eyebrow">Live coverage</span>
+            <span className="hero-float-num hero-float-num-sm">24/7 · &lt;60s</span>
+          </div>
+        </div>
+        <div className="hero-float hero-float-c">
+          <span className="hero-float-eyebrow">Tip received</span>
+          <span className="hero-float-num">$250</span>
+        </div>
+      </div>
       <div className="container hero-inner hero-inner-center">
-        <span className="hero-eyebrow reveal">
-          <span className="hero-eyebrow-pulse" aria-hidden="true"></span>
-          Free 30-day trial · One model · No commitment
-        </span>
         <h1 className="reveal">
-          Chatting infrastructure<br />
-          for <span style={{ color: 'var(--accent)' }}>OnlyFans agencies.</span>
+          The chatting agency<br />
+          for <span className="hero-h1-mark">OnlyFans agencies.</span>
         </h1>
         <p className="lead hero-sub reveal">
           White-label 24/7 chats at wholesale rates. Run a free trial on one of your models — see the lift before you scale across your roster.
@@ -79,7 +94,11 @@ function Hero({ onBookCall }) {
           <button className="btn btn-primary btn-cta" onClick={onBookCall}>Start free trial <Icon.arrow /></button>
           <a className="btn btn-secondary btn-ghost-cyan" href="cases.html">See partner case studies <Icon.arrow /></a>
         </div>
-        <p className="hero-qualifier reveal">For agencies managing 5+ models</p>
+        <ul className="hero-trust reveal" aria-label="Trial guarantees">
+          <li><Icon.check /><span>Free 30-day trial</span></li>
+          <li><Icon.check /><span>White-label by default</span></li>
+          <li><Icon.check /><span>No commitment</span></li>
+        </ul>
       </div>
     </section>
   );
