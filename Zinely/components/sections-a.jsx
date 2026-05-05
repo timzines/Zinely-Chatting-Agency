@@ -58,23 +58,34 @@ function Nav({ onBookCall }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────
-// Hero — agencies. shows first, then cycles to creators. Both words are
-// always in the DOM, stacked via inline-grid; an .is-on class flips
-// opacity/blur/translate transitions on whichever is active so the
-// transition is a true cross-fade, not a remount.
+// Hero — agencies. shows first, then cycles to creators. Scroll-style
+// rotor: incoming word slides up into place from below, outgoing word
+// slides up out of place. Two animated words live over an in-flow
+// sizer (visibility: hidden) so the box width always matches the
+// longest word and the H1 baseline is preserved.
 // ─────────────────────────────────────────────────────────────────────────
 const HERO_ROTOR_WORDS = ['agencies.', 'creators.'];
 
 function Hero({ onBookCall }) {
   const [rotorIdx, setRotorIdx] = useStateS(0);
+  const [leavingIdx, setLeavingIdx] = useStateS(null);
 
   useEffectS(() => {
-    const id = setInterval(
-      () => setRotorIdx(v => (v + 1) % HERO_ROTOR_WORDS.length),
-      3400
-    );
+    const id = setInterval(() => {
+      setRotorIdx(curr => {
+        setLeavingIdx(curr);
+        return (curr + 1) % HERO_ROTOR_WORDS.length;
+      });
+    }, 3400);
     return () => clearInterval(id);
   }, []);
+
+  // Drop the leaving word from the DOM after the exit animation runs.
+  useEffectS(() => {
+    if (leavingIdx === null) return;
+    const t = setTimeout(() => setLeavingIdx(null), 820);
+    return () => clearTimeout(t);
+  }, [leavingIdx, rotorIdx]);
 
   return (
     <section id="top" className="hero">
@@ -90,13 +101,18 @@ function Hero({ onBookCall }) {
         <h1 className="reveal hero-h1">
           The chatting agency for{' '}
           <span className="hero-h1-rotor" aria-label="agencies and creators">
-            {HERO_ROTOR_WORDS.map((w, i) => (
+            <span className="hero-h1-rotor-sizer" aria-hidden="true">agencies.</span>
+            <span
+              key={`enter-${rotorIdx}`}
+              className="hero-h1-word hero-h1-word-enter"
+            >{HERO_ROTOR_WORDS[rotorIdx]}</span>
+            {leavingIdx !== null && leavingIdx !== rotorIdx && (
               <span
-                key={w}
-                className={`hero-h1-word ${i === rotorIdx ? 'is-on' : ''}`}
-                aria-hidden={i !== rotorIdx}
-              >{w}</span>
-            ))}
+                key={`leave-${leavingIdx}-${rotorIdx}`}
+                className="hero-h1-word hero-h1-word-leave"
+                aria-hidden="true"
+              >{HERO_ROTOR_WORDS[leavingIdx]}</span>
+            )}
           </span>
         </h1>
         <p className="lead hero-sub reveal">
