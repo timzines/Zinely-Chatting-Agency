@@ -386,11 +386,11 @@ function Pricing({ onBookCall }) {
     ],
     [
       'Direct contact with team',
+      'Assigned team leader',
       'Fully trained, experienced chatters',
       'Quality assurance reviews',
       'Staff monitoring chatters 24/7',
       'Native-level English speakers',
-      'Free marketing consultations',
     ],
   ];
   return (
@@ -401,7 +401,7 @@ function Pricing({ onBookCall }) {
             <span className="section-num">07 / Pricing</span>
             <h2>Built for agencies<br /><span style={{ color: 'var(--accent)' }}>doing $10k+/mo.</span></h2>
           </div>
-          <div className="right"><p>Wholesale rates from 25% down to 20% depending on your monthly revenue. Free 5-day trial, no commitment, no upfront fees. Pricing scales with you as you grow.</p></div>
+          <div className="right"><p>20–25% of gross revenue depending on your monthly sales. Free 5-day trial, no commitment, no upfront fees. Pricing scales with you as you grow.</p></div>
         </div>
 
         <div className="pricing-shell reveal">
@@ -412,13 +412,10 @@ function Pricing({ onBookCall }) {
             <div className="pricing-rate" aria-live="polite">
               <span key={tier.rate} className="pricing-rate-num">{tier.rate}<span className="pricing-rate-pct">%</span></span>
             </div>
+            <span className="pricing-rate-meta">of gross revenue</span>
             <button className="btn btn-primary btn-cta pricing-cta-big" onClick={onBookCall}>
               Start free trial <Icon.arrow />
             </button>
-            <div className="pricing-rating">
-              <div className="pricing-rating-stars" aria-hidden="true">★★★★★</div>
-              <span>4.8/5 rating · 40+ accounts under management</span>
-            </div>
           </div>
 
           <div className="pricing-right">
@@ -468,7 +465,7 @@ function FAQ() {
     { q: 'Who actually does the chatting?', a: 'A small team of vetted, NDA-bound chatters trained on sales psychology and platform-specific tactics. 4% acceptance rate, 14-month average tenure. Every account has a primary chatter plus a briefed backup.' },
     { q: 'Can I see every message you send?', a: 'Yes. Conversations are visible to you in Infloww in real time. We also send weekly samples and flag any unusual fan exchanges proactively. No hidden activity on your account.' },
     { q: 'How is my account kept safe?', a: 'You never share your password. Account access flows through Infloww via your invite, on a dedicated IP assigned to your account so foreign-IP flags never hit. Revoke us in one click from inside Infloww.' },
-    { q: 'What happens after the trial?', a: 'You move onto our wholesale rate — 25% at the entry tier ($10k–$50k/mo), sliding down to 20% as your monthly revenue with us scales past $500k. No contracts, no minimums beyond the trial, cancel any time.' },
+    { q: 'What happens after the trial?', a: 'You move onto our wholesale rate on gross revenue — 25% at the entry tier ($10k–$50k/mo in sales), sliding down to 20% as your monthly sales with us scale past $500k. No contracts, no minimums beyond the trial, cancel any time.' },
     { q: 'How does the white-label arrangement work?', a: 'We work entirely under your brand voice, your reporting cadence, your escalation rules. The model — or your agency’s clients — never sees Zinely. NDAs with every chatter, scoped account access, audit trails on every action.' },
     { q: 'Can our models tell you’re not us?', a: 'No, by design. Onboarding includes voice calibration on your tone, your DMs style, and your top-spender language. The chatters work from your playbook, not ours. Models we’ve placed under partner brands have never flagged a difference.' },
     { q: 'What’s your chatter retention?', a: '14-month average tenure across the team. We invest in long-tenured chatters because the playbook compounds — a chatter on month 12 is materially better than a fresh hire, and we won’t put a new face on your account without shadowing first.' },

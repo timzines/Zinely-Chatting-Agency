@@ -3316,8 +3316,16 @@ h2 { font-weight: 400; }
   line-height: 0.9;
   color: var(--accent);
   letter-spacing: -0.04em;
-  margin-bottom: 32px;
+  margin-bottom: 8px;
   text-shadow: 0 0 48px rgba(122,184,232,0.25);
+}
+.pricing-rate-meta {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 28px;
 }
 .pricing-rate-num {
   display: inline-block;
@@ -3337,27 +3345,9 @@ h2 { font-weight: 400; }
 .pricing-cta-big {
   padding: 18px 36px;
   font-size: 16px;
-  margin-bottom: 24px;
   width: 100%;
   max-width: 280px;
   justify-content: center;
-}
-.pricing-rating {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--slate-2);
-  text-align: center;
-}
-.pricing-rating-stars {
-  color: var(--accent);
-  font-size: 16px;
-  letter-spacing: 0.12em;
 }
 
 /* Right panel */
