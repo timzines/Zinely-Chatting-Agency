@@ -1,9 +1,8 @@
-/* global React, ZebraPattern, Icon */
 /* global React, ZebraPattern, Icon, Logo */
 const { useState: useStateB, useEffect: useEffectB, useRef: useRefB } = React;
 
 // ─────────────────────────────────────────────────────────────────────────
-// FeaturedCase — proven-case-study spotlight, sits above Why
+// FeaturedCase — highlighted partnership, sits above Why
 // ─────────────────────────────────────────────────────────────────────────
 function FeaturedCase() {
   return (
@@ -11,19 +10,20 @@ function FeaturedCase() {
       <div className="container">
         <div className="section-head reveal">
           <div>
-            <span className="section-num">Highlighted case study</span>
+            <span className="section-num">01 / Highlighted partnership</span>
             <h2>$2.2K → <span style={{ color: 'var(--accent)' }}>$125K.</span><br />In under 5 months.</h2>
           </div>
           <div className="right">
-            <p>Inside: before/after dashboard, the four plays we ran, and the per-fan PPV receipts pulled straight from Fanvue.</p>
+            <p>Partner agency handed us a single model in their roster as a pilot. Five months later, she’s their top earner. Inside: the four chatting plays we ran, the per-fan PPV breakdown, and how the partnership scaled from 1 model to 12.</p>
           </div>
         </div>
         <a href="case-launch.html" className="featured-case-card reveal">
           <div className="featured-case-img">
-            <img src="screenshots/case-launch-insights-dashboard.png" alt="Fanvue dashboard receipt" loading="lazy" />
+            <img src="screenshots/case-launch-insights-dashboard.png" alt="Partner agency dashboard receipt" loading="lazy" />
+            <span className="featured-case-confidential" aria-hidden="true">Confidential · Partner data</span>
           </div>
           <div className="featured-case-copy">
-            <span className="featured-case-tag">Featured case study</span>
+            <span className="featured-case-tag">Highlighted partnership</span>
             <div className="featured-case-result">
               <div className="featured-case-side">
                 <span className="featured-case-side-label">Before</span>
@@ -40,8 +40,8 @@ function FeaturedCase() {
                 <span className="featured-case-side-num featured-case-after">$125K</span>
               </div>
             </div>
-            <p className="featured-case-line">in under 5 months. AI goth creator on Fanvue.</p>
-            <span className="featured-case-go">Read the case study <Icon.arrow /></span>
+            <p className="featured-case-line">Pilot model · Goth niche · Fanvue. Partnership scaled from 1 to 12 models.</p>
+            <span className="featured-case-go">Read the partnership case study <Icon.arrow /></span>
           </div>
         </a>
       </div>
@@ -50,14 +50,14 @@ function FeaturedCase() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────
-// Process — 4 step cards in a 2×2 grid (sturdy, no scroll-tracking)
+// Process — 4 step cards
 // ─────────────────────────────────────────────────────────────────────────
 function Process() {
   const steps = [
-    { n: '01', t: 'Strategy Call', d: 'Free 30-minute call. We learn your account, niche, voice, and goals, then tell you straight whether we\u2019re the right fit.', meta: 'Day 1 · 30 min' },
-    { n: '02', t: 'Team Assignment', d: 'We hand-pick chatters trained for your niche, timezone, and tone. Onboarded and shadowing inside 24 hours.', meta: 'Day 1–2 · Onboarding' },
-    { n: '03', t: 'Account Linking', d: 'You connect your account to Infloww via our invite. No password sharing. The team gets briefed on your niche, your top spenders, and your offer ladder. Ready to go live.', meta: 'Day 2 · Linked & briefed' },
-    { n: '04', t: 'Scale', d: 'Your team chats 24/7. You get weekly reports, swap chatters anytime, and watch revenue climb.', meta: 'Day 3+ · Live & scaling' },
+    { n: '01', t: 'Partnership call', d: '30-min call with our founder. We learn your roster size, current chatting setup, what’s working, what’s broken. You see our wholesale rates, SLA, and pilot structure. No pitch deck, no follow-up nurture sequence.', meta: 'Day 1 · 30 min' },
+    { n: '02', t: 'Pilot setup', d: 'You pick one model from your roster. We sign mutual NDAs, agree pilot terms in writing, onboard her account through your existing systems. No password sharing — your access stays in your control.', meta: 'Days 2–3 · Onboarding' },
+    { n: '03', t: '30-day pilot', d: 'Our team runs her chats 24/7 under your brand. You get weekly reports, conversation samples on request, and a real-time view of revenue. We work to a documented SLA.', meta: 'Days 4–30 · Pilot' },
+    { n: '04', t: 'Scale across roster', d: 'End-of-pilot review. If the numbers work, we move into your wholesale rate tier and start absorbing more of your roster. Most partner agencies move from 1 pilot model to 8–15 within 90 days.', meta: 'Month 2+ · Scale' },
   ];
 
   return (
@@ -65,10 +65,10 @@ function Process() {
       <div className="container">
         <div className="section-head reveal">
           <div>
-            <span className="section-num">05 / How it works</span>
-            <h2>Four steps.<br /><span style={{ color: 'var(--accent)' }}>Live in a couple of days.</span></h2>
+            <span className="section-num">04 / How partnership works</span>
+            <h2>Four steps.<br /><span style={{ color: 'var(--accent)' }}>Live in days, not weeks.</span></h2>
           </div>
-          <div className="right"><p>No long onboarding, no offshore handoff, no drawn-out quote process. You talk to a manager on day one, link your account through Infloww, and the team is on your inbox within a couple of days.</p></div>
+          <div className="right"><p>We don’t run drawn-out enterprise sales cycles. You’re talking to a founder on day one and a chatter is on your model’s account by the end of the week.</p></div>
         </div>
         <div className="process-grid">
           {steps.map((s, i) => (
@@ -89,43 +89,47 @@ function Process() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────
-// Results — teaser of the two case studies, links to detail pages
+// Results — partnership case studies
 // ─────────────────────────────────────────────────────────────────────────
 function Results() {
   const cases = [
     {
       href: 'case-launch.html',
       cover: 'screenshots/case-launch-thumb.png',
-      meta: 'AI · Goth · 5 months',
-      teaser: '$95.8K in PPVs & tips. $18K in subs.',
+      headline: '$2.2K → $125K in 5 months',
+      meta: 'Partner agency · Pilot model · Goth niche · Fanvue',
+      teaser: '$95.8K in PPVs & tips. $18K in subs. Pilot converted to 12-model partnership.',
     },
     {
       href: 'case-sprint.html',
       cover: 'screenshots/case-sprint-thumb.png?v=2',
-      meta: 'AI · Goth · 31 days',
-      teaser: '$9.3K in PPVs & tips. $771 in subs.',
+      headline: '$0 → $10K in 31 days',
+      meta: 'Partner agency · New launch · Goth niche · Fanvue',
+      teaser: '$9.3K in PPVs & tips. $771 in subs. Used as proof-of-concept for partner’s full roster onboarding.',
     },
   ];
+  const tg = (typeof window !== 'undefined' && window.ZINELY_CONFIG && window.ZINELY_CONFIG.telegramUrl) || 'https://t.me/timzines';
   return (
     <section className="section section-bg-2" id="results">
       <div className="container">
         <div className="section-head reveal">
           <div>
-            <span className="section-num">06 / Case studies</span>
+            <span className="section-num">05 / Case studies</span>
             <h2>Receipts,<br /><span style={{ color: 'var(--accent)', fontStyle: 'italic' }}>not promises.</span></h2>
           </div>
-          <div className="right"><p>Two studies up. Real accounts, real numbers, screenshots redacted only where the creator asked. Full data available on request under NDA.</p></div>
+          <div className="right"><p>Real partner agencies. Real numbers. Some details redacted at the partner’s request — full data available under NDA. Three additional partnership case studies available under NDA on request.</p></div>
         </div>
 
         <div className="case-index-grid reveal">
           {cases.map((c) => (
             <a key={c.href} className="case-card case-card-min" href={c.href}>
               <figure className="case-shot" style={{ aspectRatio: '16 / 9' }}>
-                <img src={c.cover} alt="Case study cover" loading="lazy" />
+                <img src={c.cover} alt="Partnership case study cover" loading="lazy" />
               </figure>
               <div className="case-card-foot">
                 <div className="case-card-info">
                   <span className="case-card-meta">{c.meta}</span>
+                  <h3 className="case-card-headline">{c.headline}</h3>
                   <p className="case-card-teaser">{c.teaser}</p>
                 </div>
                 <span className="case-card-go">Read case study →</span>
@@ -135,7 +139,7 @@ function Results() {
         </div>
 
         <div style={{ textAlign: 'center', marginTop: 40 }}>
-          <a className="btn btn-secondary" href="cases.html">All case studies <Icon.arrow /></a>
+          <a className="btn btn-secondary btn-ghost-cyan" href={tg} target="_blank" rel="noopener noreferrer">Request full case studies under NDA <Icon.arrow /></a>
         </div>
       </div>
     </section>
@@ -143,22 +147,9 @@ function Results() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────
-// Earnings Calculator
-//
-// Multipliers are dialled down vs TDM's 10/7/4 + 7/5/3 — we want the number
-// to read believable, not aspirational. AI mode is further conservative because
-// AI personas don't extract tips at the same rate as real models.
-//
-//   real models   paid: [8, 6, 4]   free: [6, 4, 2]
-//   AI models     paid: [6, 4, 2.5] free: [4, 3, 1.5]
-//
-// Formula matches TDM exactly:
-//   avgRatio = (trafficMul + tierMul) / 2
-//   revenue  = (isPaid ? avgRatio * price * subs : avgRatio * subs) * 0.8
+// Calculator — partner economics
 // ─────────────────────────────────────────────────────────────────────────
-// Country flag URLs from flagcdn.com (clean SVGs, ISO codes)
 const FLAG = (cc) => `https://flagcdn.com/w40/${cc}.png`;
-// Brand logos from simple-icons CDN — pass slug + hex color (no #)
 const BRAND = (slug, color = '8B92A0') => `https://cdn.simpleicons.org/${slug}/${color}`;
 
 const LOCATIONS = [
@@ -172,60 +163,61 @@ const TRAFFIC = [
   { label: 'Tier C', brands: ['youtube',   'snapchat'] },
 ];
 
+// Wholesale rate tiers based on roster size with us
+function wholesaleRateFor(roster) {
+  if (roster >= 16) return 12;
+  if (roster >= 6) return 15;
+  return 18;
+}
+
 function Calculator({ onBookCall }) {
-  const [mode, setMode] = useStateB('real');         // 'real' | 'ai'
   const [subs, setSubs] = useStateB(1000);
   const [isPaid, setIsPaid] = useStateB(true);
-  const [price, setPrice] = useStateB(9.99);
+  const [price, setPrice] = useStateB(9.5);
   const [location, setLocation] = useStateB(0);
   const [traffic, setTraffic] = useStateB(0);
+  const [roster, setRoster] = useStateB(5);
+  const [agencyRate, setAgencyRate] = useStateB(50);
 
-  // Real-model ratios are highest. AI bumped up — still below Real, but no
-  // longer aggressively conservative.
-  const MULT = {
-    real: { paid: [12, 9, 6], free: [9, 6, 4] },
-    ai:   { paid: [9, 6, 4], free: [6, 4, 2.5] },
-  };
-  const arr = MULT[mode][isPaid ? 'paid' : 'free'];
+  // Real-model multipliers (agency partners run real or AI models — we keep
+  // the same conservative ratios on which the platform was originally tuned).
+  const MULT = { paid: [12, 9, 6], free: [9, 6, 4] };
+  const arr = MULT[isPaid ? 'paid' : 'free'];
   const locMul = arr[location];
   const trafficMul = arr[traffic];
   const avgRatio = (locMul + trafficMul) / 2;
-  const revenue = (isPaid ? avgRatio * price * subs : avgRatio * subs) * 0.8;
-  const formattedRev = Math.round(revenue).toLocaleString();
+  const perModel = (isPaid ? avgRatio * price * subs : avgRatio * subs) * 0.8;
+  const totalGross = perModel * roster;
+  const rate = wholesaleRateFor(roster);
+  const zinelyFee = totalGross * (rate / 100);
+  const agencyKeep = totalGross * (agencyRate / 100);
+  const spread = agencyKeep - zinelyFee;
 
+  const fmt = (n) => Math.round(n).toLocaleString();
   const subsPct = ((subs - 100) / (5000 - 100)) * 100;
   const pricePct = (price / 15) * 100;
+  const rosterPct = ((roster - 1) / (30 - 1)) * 100;
+  const agencyPct = ((agencyRate - 30) / (70 - 30)) * 100;
 
   return (
     <section className="section calc-section" id="calculator">
       <div className="container">
         <div className="section-head reveal">
           <div>
-            <span className="section-num">07 / Calculator</span>
-            <h2>Run your<br/><span style={{ color: 'var(--accent)', fontStyle: 'italic' }}>numbers.</span></h2>
+            <span className="section-num">06 / Run your numbers</span>
+            <h2>Run your<br/><span style={{ color: 'var(--accent)', fontStyle: 'italic' }}>roster economics.</span></h2>
           </div>
           <div className="right">
-            <p>Conservative estimates from accounts under management. Move the sliders to match yours, or flip to AI to see the realistic AI-model split.</p>
+            <p>Conservative estimates from accounts under management. Adjust the sliders to match your typical model. The output shows projected monthly revenue and your wholesale fee at that volume — so you can see your margin live.</p>
           </div>
         </div>
 
         <div className="calc-shell reveal">
-          <div className="calc-mode">
-            <button className={`calc-mode-btn ${mode === 'real' ? 'active' : ''}`} onClick={() => setMode('real')}>
-              <img className="calc-mode-logo" src="assets/platforms/onlyfans.png" alt="" />
-              Real models
-            </button>
-            <button className={`calc-mode-btn ${mode === 'ai' ? 'active' : ''}`} onClick={() => setMode('ai')}>
-              <img className="calc-mode-logo" src="assets/platforms/fanvue.png" alt="" />
-              AI models
-            </button>
-          </div>
-
           <div className="calc-grid">
             <div className="calc-inputs">
               <div className="calc-field">
                 <div className="calc-field-head">
-                  <label htmlFor="calc-subs">Active subscribers</label>
+                  <label htmlFor="calc-subs">Active subscribers per model</label>
                   <span className="calc-value">{subs.toLocaleString()}</span>
                 </div>
                 <input id="calc-subs" type="range" min="100" max="5000" step="50"
@@ -285,18 +277,44 @@ function Calculator({ onBookCall }) {
                   ))}
                 </div>
               </div>
+
+              <div className="calc-field">
+                <div className="calc-field-head">
+                  <label htmlFor="calc-roster">Number of models in your roster</label>
+                  <span className="calc-value">{roster}</span>
+                </div>
+                <input id="calc-roster" type="range" min="1" max="30" step="1"
+                       value={roster} onChange={(e) => setRoster(parseInt(e.target.value))}
+                       className="calc-slider" style={{ '--fill': rosterPct + '%' }} />
+              </div>
+
+              <div className="calc-field">
+                <div className="calc-field-head">
+                  <label htmlFor="calc-agency">Your standard rate to model</label>
+                  <span className="calc-value">{agencyRate}%</span>
+                </div>
+                <input id="calc-agency" type="range" min="30" max="70" step="1"
+                       value={agencyRate} onChange={(e) => setAgencyRate(parseInt(e.target.value))}
+                       className="calc-slider" style={{ '--fill': agencyPct + '%' }} />
+              </div>
             </div>
 
             <aside className="calc-output">
-              <div className="calc-output-eyebrow">{mode === 'ai' ? 'AI model' : 'Real model'} · projected</div>
-              <div className="calc-output-label">Monthly PPV + tips</div>
-              <div className="calc-output-value">$<span key={formattedRev} className="calc-output-num">{formattedRev}</span></div>
-              <div className="calc-output-sub">at <strong>{avgRatio.toFixed(1)}×</strong> sub-to-message ratio</div>
+              <div className="calc-output-eyebrow">Partner projection</div>
+              <div className="calc-output-label">Monthly PPV + tips per model</div>
+              <div className="calc-output-value">$<span key={fmt(perModel)} className="calc-output-num">{fmt(perModel)}</span></div>
+              <div className="calc-output-sub">× <strong>{roster}</strong> {roster === 1 ? 'model' : 'models'} = <strong>${fmt(totalGross)}</strong>/mo gross</div>
+
+              <ul className="calc-output-meta">
+                <li><span>Your wholesale rate</span><span>{rate}%</span></li>
+                <li><span>Zinely fee</span><span>${fmt(zinelyFee)}/mo</span></li>
+                <li className="calc-output-spread"><span>Your net spread</span><span>${fmt(spread)}/mo</span></li>
+              </ul>
+
               <button className="btn btn-primary btn-cta calc-cta" onClick={onBookCall}>
-                Start free trial <Icon.arrow />
+                Book partnership call <Icon.arrow />
               </button>
-              <span className="cta-sub calc-cta-sub">3 days · 24/7 chatting included</span>
-              <p className="calc-disclaimer">Estimate only. Actuals vary by niche, content cadence, and ramp.</p>
+              <p className="calc-disclaimer">Estimate only. Net spread = your standard rate × revenue − Zinely wholesale fee. Actuals vary by niche, content cadence, and ramp.</p>
             </aside>
           </div>
         </div>
@@ -306,25 +324,31 @@ function Calculator({ onBookCall }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────
-// Pricing
+// Pricing — wholesale rates
 // ─────────────────────────────────────────────────────────────────────────
 function Pricing({ onBookCall }) {
-  const [selected, setSelected] = useStateB(0);
   const tiers = [
     {
-      name: 'Performance',
-      price: '20–26%',
-      priceSub: 'of gross · scaled to volume',
-      bullets: ['Commission only, no base fees', 'Bigger accounts pay less', 'Month-to-month, no contracts', '3-day free trial included'],
-      cta: 'Start free trial',
+      name: 'Pilot',
+      price: '18%',
+      priceSub: 'of net revenue · single model',
+      bullets: ['30-day pilot terms', 'Single model from your roster', 'Full SLA and reporting', 'Convert to partnership tier after pilot'],
+      cta: 'Start pilot',
+    },
+    {
+      name: 'Partnership',
+      price: '15%',
+      priceSub: 'of net revenue · 6–15 models',
+      bullets: ['Wholesale rate for active partners', 'Dedicated account manager', 'Quarterly strategy reviews', 'Priority chatter allocation'],
+      cta: 'Book partnership call',
       highlight: true,
     },
     {
-      name: 'Concierge',
-      price: 'Custom',
-      priceSub: 'for $50K+ / month accounts',
-      bullets: ['Lower commission rate', 'Dedicated senior account team', 'Predictable monthly spend', 'Priority allocation'],
-      cta: 'Apply for Concierge',
+      name: 'Enterprise',
+      price: '12%',
+      priceSub: 'of net revenue · 16+ models',
+      bullets: ['Lowest wholesale rate', 'Senior account team', 'Custom SLA terms', 'Co-developed reporting'],
+      cta: 'Apply for Enterprise',
     },
   ];
   return (
@@ -332,12 +356,12 @@ function Pricing({ onBookCall }) {
       <div className="container">
         <div className="section-head reveal">
           <div>
-            <span className="section-num">07 / Pricing</span>
-            <h2>Try it free.<br /><span style={{ color: 'var(--accent)' }}>Pay only when it works.</span></h2>
+            <span className="section-num">07 / Wholesale rates</span>
+            <h2>Volume-tiered.<br /><span style={{ color: 'var(--accent)' }}>Built for agency margins.</span></h2>
           </div>
-          <div className="right"><p>Start with a free 3-day trial with full 24/7 chatting included, no credit card, no contract. Keep going only if the numbers move. We earn when you earn.</p></div>
+          <div className="right"><p>Wholesale rates start at 18% and drop as your roster with us scales. No upfront fees, no contracts beyond the pilot, no hidden charges.</p></div>
         </div>
-        <div className="pricing-grid">
+        <div className="pricing-grid pricing-grid-3">
           {tiers.map((t, i) => (
             <article key={i} className={`pricing-card reveal ${t.highlight ? 'pricing-card-highlight' : ''}`}>
               {t.highlight && <span className="pricing-badge">Most popular</span>}
@@ -363,59 +387,21 @@ function Pricing({ onBookCall }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────
-// FullManagement — invitation-only tier, currently at capacity
-// ─────────────────────────────────────────────────────────────────────────
-function FullManagement() {
-  const tg = (typeof window !== 'undefined' && window.ZINELY_CONFIG && window.ZINELY_CONFIG.telegramUrl) || 'https://t.me/timzines';
-  return (
-    <section className="section full-mgmt-section" id="full-management">
-      <div className="container">
-        <div className="full-mgmt-card reveal">
-          <div className="full-mgmt-lock" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="4" y="11" width="16" height="10" rx="2"/>
-              <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
-            </svg>
-          </div>
-          <div className="full-mgmt-status">
-            <span className="full-mgmt-status-dot"></span>
-            Roster full · By invitation only
-          </div>
-          <h2 className="full-mgmt-h">Full Account Management.</h2>
-          <p className="full-mgmt-sub">
-            For a small handful of creators we run the entire account end-to-end: chatting, social media marketing, content scheduling, vault organisation, pricing strategy, fan analytics, profile optimisation. One team, one playbook, one accountable manager.
-          </p>
-          <p className="full-mgmt-meta">
-            The roster is currently sealed at four. We're not onboarding new full-management clients until an existing engagement ramps down or the team expands.
-          </p>
-          <div className="full-mgmt-actions">
-            <a className="btn btn-secondary btn-ghost-cyan" href={tg} target="_blank" rel="noopener noreferrer">
-              Ask about status <Icon.arrow />
-            </a>
-            <span className="full-mgmt-foot">Reviewed quarterly. Selective by design.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ─────────────────────────────────────────────────────────────────────────
 // FAQ
 // ─────────────────────────────────────────────────────────────────────────
 function FAQ() {
   const [open, setOpen] = useStateB(-1);
   const faqs = [
-    { q: 'How does the free 3-day trial work?', a: 'Trained chatters on your account for 3 days, with full 24/7 coverage included from hour one. No card required. You keep 100% of what we generate during the trial. If the numbers don’t move, walk away. No invoice, no follow-up.' },
-    { q: 'Is my account safe? Do you get my login credentials?', a: 'You never share your OnlyFans password. We work through Infloww, the industry-standard CRM used by serious OF agencies. We send you an invite link, you link your own account. From there, your chatter team works from a dedicated IP assigned only to your account, so no foreign-IP flags ever hit your inbox. Every chatter signs an NDA, and you can revoke our access from inside Infloww in one click and you’re locked out instantly.' },
-    { q: 'What platforms do you support?', a: 'OnlyFans, Fansly, Fanvue, LoyalFans, and Fanfix. We’ve managed accounts on smaller platforms case-by-case. Ask on the call.' },
-    { q: 'How fast can we start?', a: 'Strategy call within 48 hours, team assigned within 24 hours of signing. Live by day 3 in most cases.' },
-    { q: 'What if I don’t like my chatter?', a: 'Swap them. No drama, no charge, no notice required. Your account manager runs the swap and the new chatter is briefed with the existing playbook.' },
-    { q: 'Do you have minimum revenue requirements?', a: 'We prefer accounts already doing $5K+/month, but we take smaller accounts if the niche and trajectory are strong. Ask on the call.' },
-    { q: 'How do payments work?', a: 'You keep 100% of platform earnings. We invoice monthly for our commission on net revenue we generated, with full transparency on which conversations drove which sales.' },
-    { q: 'Can I cancel anytime?', a: 'Yes. By default we work month-to-month with no notice period and no cancellation fee. If you’d prefer a fixed-term contract for stability or internal accounting reasons, we’ll set one up. Either way, we have to earn the right to keep you.' },
-    { q: 'How do you handle different timezones?', a: 'Our team works in shifts across a few different regions, so there’s always someone awake on your account. Whether your fans message at 3am or 3pm, the inbox is being handled.' },
-    { q: 'What makes Zinely different from other agencies?', a: '4% chatter acceptance rate, 5-stage screening, sales-trained (not script-trained), commission-only pricing, and a real account manager who actually answers your DMs. Most agencies ship one of these. We ship all five.' },
+    { q: 'How do you handle white-label confidentiality?', a: 'Mutual NDAs are signed before any account access. Our chatters never identify themselves to your model or fans — they work in your agency’s voice and brand. We don’t maintain any public list of partners and references are only shared with your written approval.' },
+    { q: 'What’s your chatter training and retention?', a: '5-stage screening with a 4% acceptance rate: English fluency (C1+), sales psychology test, voice-matching trial, NDA, and live shadowing. Average chatter tenure is 14+ months. Every account has a primary chatter plus a backup briefed on the same playbook.' },
+    { q: 'How is the 30-day pilot structured contractually?', a: 'Single-model pilot agreement signed up front with mutual NDAs. 18% of net revenue for the pilot period. No minimums, no auto-renewal — at day 30 you either move into the wholesale partnership tier or walk away with no further obligation.' },
+    { q: 'Who owns the relationship with our model during the pilot?', a: 'You do. Your agency is the model’s sole point of contact. We work behind your account manager, in your tone, on your reporting cadence. The model never sees Zinely branding, communications, or staff.' },
+    { q: 'What happens if your team makes a mistake on our account?', a: 'Documented incident process: same-day root cause, written postmortem within 48h, and a credit against the next invoice for any verifiable revenue loss. We carry indemnification language in the partnership agreement.' },
+    { q: 'How do you handle escalations and after-hours emergencies?', a: 'Your account manager is reachable on a dedicated channel (Telegram or Slack Connect) 24/7. Escalations to a senior operator are guaranteed within 30 minutes. We document an escalation playbook with you during onboarding.' },
+    { q: 'What time zones do your chatters cover?', a: 'Three shifts spanning every major market — Americas, EMEA, and APAC. We staff redundantly so coverage holds through holidays, sick days, and shift handoffs. <60s response time SLA across the clock.' },
+    { q: 'Do you work with multiple agencies in the same niche?', a: 'Yes, but never on overlapping fan bases. Account-level firewalls separate chatter pools, account managers, and conversation samples. We disclose any niche overlap before signing and offer category exclusivity at the Enterprise tier.' },
+    { q: 'What’s your QA process for ongoing partnerships?', a: 'Weekly conversation sampling on every account, monthly performance benchmarks across your roster, anomaly flagging on response time and revenue dips. You get a live dashboard plus a written weekly report from your account manager.' },
+    { q: 'Can we audit your operation before signing?', a: 'Yes. We host video walkthroughs of our chatter dashboard, sample (anonymised) conversation logs, and references from existing partner agencies under mutual NDA. Most partners audit during the pilot rather than before.' },
   ];
 
   return (
@@ -424,7 +410,7 @@ function FAQ() {
         <div className="section-head reveal" style={{ gridTemplateColumns: '1fr', textAlign: 'center', marginBottom: 56 }}>
           <div>
             <span className="section-num" style={{ display: 'block' }}>08 / FAQ</span>
-            <h2 style={{ maxWidth: '20ch', margin: '0 auto' }}>Questions, answered.</h2>
+            <h2 style={{ maxWidth: '20ch', margin: '0 auto' }}>Common partnership questions.</h2>
           </div>
         </div>
         <div className="faq reveal">
@@ -434,7 +420,7 @@ function FAQ() {
                 <span>{f.q}</span>
                 <span className="faq-chev"><Icon.chev /></span>
               </button>
-              <div className="faq-a" style={{ maxHeight: open === i ? 320 : 0 }}>
+              <div className="faq-a" style={{ maxHeight: open === i ? 360 : 0 }}>
                 <div className="faq-a-inner">{f.a}</div>
               </div>
             </div>
@@ -446,19 +432,19 @@ function FAQ() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────
-// Final CTA + Footer
+// Final CTA
 // ─────────────────────────────────────────────────────────────────────────
 function FinalCTA({ onBookCall }) {
   return (
     <section className="section final-cta" id="apply">
       <div className="final-cta-pattern"><ZebraPattern opacity={1} color="#FFFFFF" /></div>
       <div className="container final-cta-inner reveal">
-        <div className="modal-eyebrow" style={{ color: 'var(--accent)', marginBottom: 18 }}>Free 3-day trial · 24/7 chatting included</div>
-        <h2>Try Zinely free<br />for <span style={{ color: 'var(--accent)' }}>three days.</span></h2>
-        <p className="lead">Trained chatters on your account for 3 days, full 24/7 coverage included. See the revenue lift before you commit. No pitch, no pressure, no card on file.</p>
+        <div className="modal-eyebrow" style={{ color: 'var(--accent)', marginBottom: 18 }}>30-day pilot · single model · no roster lock-in</div>
+        <h2>Run a pilot<br />on <span style={{ color: 'var(--accent)' }}>one model.</span></h2>
+        <p className="lead">30-day pilot at our wholesale pilot rate. Documented SLA, mutual NDA, your access stays in your control. See the numbers before you scale across your roster.</p>
         <div className="cta-stack" style={{ alignItems: 'center' }}>
-          <button className="btn btn-light" onClick={onBookCall}>Start free trial <Icon.arrow /></button>
-          <span className="cta-sub">3 days · 24/7 chatting included</span>
+          <button className="btn btn-light" onClick={onBookCall}>Book partnership call <Icon.arrow /></button>
+          <span className="cta-sub">30-day pilot · single model · no roster lock-in</span>
         </div>
         <div><a className="apply-link" href="apply.html">Apply as a chatter →</a></div>
       </div>
@@ -466,7 +452,51 @@ function FinalCTA({ onBookCall }) {
   );
 }
 
+// ─────────────────────────────────────────────────────────────────────────
+// TrustStrip — credentials above the footer
+// ─────────────────────────────────────────────────────────────────────────
+function TrustStrip() {
+  const cfg = (typeof window !== 'undefined' && window.ZINELY_CONFIG) || {};
+  const founder = cfg.founderName || 'Tim Zines';
+  const founderLinkedIn = cfg.founderLinkedIn || 'https://www.linkedin.com/in/timzines';
+  const founded = cfg.foundedYear || '2024';
+  const jurisdiction = cfg.jurisdiction || 'Czech Republic';
+  return (
+    <section className="trust-strip" aria-label="Trust signals">
+      <div className="container trust-strip-inner reveal">
+        <div className="trust-item"><span className="trust-num">40+</span><span className="trust-label">Accounts under management</span></div>
+        <div className="trust-divider" aria-hidden="true"></div>
+        <div className="trust-item"><span className="trust-label">Mutual NDAs standard</span></div>
+        <div className="trust-divider" aria-hidden="true"></div>
+        <div className="trust-item"><span className="trust-label">Founded {founded}</span></div>
+        <div className="trust-divider" aria-hidden="true"></div>
+        <div className="trust-item"><span className="trust-label">Operating from {jurisdiction}</span></div>
+        <div className="trust-divider" aria-hidden="true"></div>
+        <a className="trust-founder" href={founderLinkedIn} target="_blank" rel="noopener noreferrer">
+          <span className="trust-founder-photo" aria-hidden="true">{founder.split(' ').map(s => s[0]).join('').slice(0,2)}</span>
+          <span className="trust-founder-meta">
+            <span className="trust-founder-name">{founder}</span>
+            <span className="trust-founder-role">Founder · LinkedIn ↗</span>
+          </span>
+        </a>
+      </div>
+    </section>
+  );
+}
+
 function Footer() {
+  const cfg = (typeof window !== 'undefined' && window.ZINELY_CONFIG) || {};
+  const founder = cfg.founderName || 'Tim Zines';
+  const jurisdiction = cfg.jurisdiction || 'Czech Republic';
+  const partnersEmail = cfg.partnersEmail || 'partnerships@zinelyagency.com';
+  const partnerTelegram = cfg.partnerTelegram || cfg.telegramUrl || 'https://t.me/timzines';
+  const platforms = [
+    { name: 'OnlyFans', logo: 'assets/platforms/onlyfans.png' },
+    { name: 'Fanvue', logo: 'assets/platforms/fanvue.png' },
+    { name: 'Fansly', logo: 'assets/platforms/fansly.png' },
+    { name: 'LoyalFans', logo: 'assets/platforms/loyalfans.webp' },
+    { name: 'Fanfix', logo: 'assets/platforms/fanfix.png' },
+  ];
   return (
     <footer className="footer">
       <div className="footer-pattern"><ZebraPattern opacity={1} color="#FFFFFF" /></div>
@@ -474,31 +504,47 @@ function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <Logo dark={true} size={44} />
-            <p>The chatting agency for real models and AI influencers. 24/7 conversation, full-funnel sales, performance pricing.</p>
+            <p>Chatting infrastructure for OnlyFans agencies. White-label 24/7 coverage, wholesale rates, ops-grade SLA.</p>
           </div>
           <div className="footer-col">
-            <h5>Services</h5>
+            <h5>Partnership</h5>
             <ul>
-              <li><a href="index.html#services">24/7 Chatting</a></li>
-              <li><a href="index.html#services">Account Management</a></li>
-              <li><a href="index.html#services">Content Strategy</a></li>
+              <li><a href="index.html#why">Why agencies partner</a></li>
+              <li><a href="index.html#process">How it works</a></li>
               <li><a href="cases.html">Case studies</a></li>
-              <li><a href="index.html#pricing">Pricing</a></li>
+              <li><a href="index.html#pricing">Wholesale rates</a></li>
+              <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h5>Contact</h5>
+            <ul>
+              <li><a href={`mailto:${partnersEmail}`}>{partnersEmail}</a></li>
+              <li><a href={partnerTelegram} target="_blank" rel="noopener noreferrer">Telegram for partners</a></li>
+              <li><a href="apply.html">Apply as chatter</a></li>
             </ul>
           </div>
           <div className="footer-col">
             <h5>Company</h5>
             <ul>
-              <li><a href="apply.html">Apply as chatter</a></li>
-              <li><a href="https://t.me/zinelyagency" target="_blank" rel="noopener noreferrer">Telegram group</a></li>
-              <li><a href="https://t.me/timzines" target="_blank" rel="noopener noreferrer">Contact: @timzines</a></li>
+              <li>{founder}, Founder</li>
+              <li>Operating from {jurisdiction}</li>
             </ul>
           </div>
+        </div>
+        <div className="footer-platforms" aria-label="Platforms supported">
+          <span className="footer-platforms-label">Platforms supported</span>
+          {platforms.map(p => (
+            <span key={p.name} className="footer-platform-chip">
+              <img src={p.logo} alt="" />{p.name}
+            </span>
+          ))}
+          <span className="footer-platform-more">& more</span>
         </div>
         <div className="footer-bottom">
           <div>© 2026 Zinely. All rights reserved.</div>
           <div className="footer-social">
-            <a href="https://t.me/zinelyagency" target="_blank" rel="noopener noreferrer" aria-label="Zinely Telegram group"><Icon.telegram /></a>
+            <a href={partnerTelegram} target="_blank" rel="noopener noreferrer" aria-label="Zinely Telegram"><Icon.telegram /></a>
           </div>
           <div>
             <a href="terms.html" style={{ marginRight: 18 }}>Terms and Conditions</a>
@@ -510,4 +556,4 @@ function Footer() {
   );
 }
 
-Object.assign(window, { FeaturedCase, Process, Results, Calculator, Pricing, FullManagement, FAQ, FinalCTA, Footer });
+Object.assign(window, { FeaturedCase, Process, Results, Calculator, Pricing, FAQ, FinalCTA, TrustStrip, Footer });

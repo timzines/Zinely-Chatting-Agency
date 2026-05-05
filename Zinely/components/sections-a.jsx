@@ -18,9 +18,10 @@ function Nav({ onBookCall }) {
   }, [open]);
 
   const links = [
-    ['Services', 'index.html#services'],
+    ['Partnership', 'index.html#why'],
     ['Process', 'index.html#process'],
     ['Cases', 'cases.html'],
+    ['Pricing', 'index.html#pricing'],
     ['FAQ', 'index.html#faq'],
   ];
 
@@ -32,7 +33,7 @@ function Nav({ onBookCall }) {
           {links.map(([l, h]) => <a key={h} href={h}>{l}</a>)}
         </nav>
         <div className="nav-cta">
-          <button className="btn btn-primary btn-cta" onClick={onBookCall}>Start free trial <Icon.arrow /></button>
+          <button className="btn btn-primary btn-cta" onClick={onBookCall}>Book partnership call <Icon.arrow /></button>
           <button className="nav-burger" aria-label="Open menu" onClick={() => setOpen(true)}><Icon.burger /></button>
         </div>
       </header>
@@ -47,8 +48,8 @@ function Nav({ onBookCall }) {
           <a href="apply.html" onClick={() => setOpen(false)} className="mobile-overlay-utility">Apply as a Chatter</a>
         </nav>
         <div className="cta-stack">
-          <button className="btn btn-primary btn-cta" onClick={() => { setOpen(false); onBookCall(); }}>Start free trial <Icon.arrow /></button>
-          <span className="cta-sub">3 days · 24/7 chatting included</span>
+          <button className="btn btn-primary btn-cta" onClick={() => { setOpen(false); onBookCall(); }}>Book partnership call <Icon.arrow /></button>
+          <span className="cta-sub">30-day pilot · single model · no roster lock-in</span>
         </div>
       </div>
     </>
@@ -64,29 +65,18 @@ function Hero({ onBookCall }) {
       <div className="hero-pattern"><ZebraPattern opacity={0.07} /></div>
       <div className="container hero-inner hero-inner-center">
         <h1 className="reveal">
-          <span className="accent-of">OnlyFans</span> creators don't{' '}chat.<br />
-          <span className="accent-fanvue">AI models</span> can't.<br />
-          <span className="hero-h1-payoff">We do<span className="hero-h1-period">.</span></span>
+          Chatting infrastructure<br />
+          for <span style={{ color: 'var(--accent)' }}>OnlyFans agencies<span className="hero-h1-period">.</span></span>
         </h1>
         <p className="lead hero-sub reveal">
-          We manage your chatters, your inbox, and your fan relationships 24/7, keeping every conversation human while maximizing PPV unlocks, tips, and renewals.
+          White-label 24/7 coverage. Wholesale rates. 30-day pilot on a single model — no commitment, no roster lock-in.
+        </p>
+        <p className="hero-qualifier reveal">
+          For marketing-focused and full-service agencies managing 5+ models.
         </p>
         <div className="hero-cta reveal">
-          <button className="btn btn-primary btn-cta" onClick={onBookCall}>Start free trial <Icon.arrow /></button>
-          <a className="btn btn-secondary btn-ghost-cyan" href="cases.html">See Case Studies <Icon.arrow /></a>
-        </div>
-        <div className="hero-platforms reveal">
-          <span className="hero-platforms-label">Platforms supported</span>
-          {[
-            { name: 'OnlyFans', logo: 'assets/platforms/onlyfans.png', primary: true },
-            { name: 'Fanvue', logo: 'assets/platforms/fanvue.png', primary: true },
-            { name: 'Fansly', logo: 'assets/platforms/fansly.png' },
-            { name: 'LoyalFans', logo: 'assets/platforms/loyalfans.webp' },
-            { name: 'Fanfix', logo: 'assets/platforms/fanfix.png' },
-          ].map(p => (
-            <span key={p.name} className={`platform-chip ${p.primary ? 'platform-chip-primary' : 'platform-chip-muted'}`}><img src={p.logo} alt="" style={{ width: 16, height: 16, objectFit: 'contain' }} />{p.name}</span>
-          ))}
-          <span className="platform-chip" style={{ color: 'var(--slate-2)', fontStyle: 'italic' }}>& more</span>
+          <button className="btn btn-primary btn-cta" onClick={onBookCall}>Book partnership call <Icon.arrow /></button>
+          <a className="btn btn-secondary btn-ghost-cyan" href="cases.html">See partner case studies <Icon.arrow /></a>
         </div>
       </div>
     </section>
@@ -98,8 +88,8 @@ function Hero({ onBookCall }) {
 // ─────────────────────────────────────────────────────────────────────────
 function Stats() {
   const stats = [
-    { num: '3.2', unit: '×', label: 'Average revenue lift on accounts under management' },
-    { num: '40', unit: '+', label: 'Active creator accounts under full management' },
+    { num: '40', unit: '+', label: 'Active accounts under management across partner agencies' },
+    { num: '3.2', unit: '×', label: 'Average revenue lift on accounts we take over' },
     { num: '24/7', unit: '', label: 'Live coverage across every major timezone' },
     { num: '<60', unit: 's', label: 'Average response time, fan to chatter' },
   ];
@@ -118,26 +108,24 @@ function Stats() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────
-// Why Zinely
+// Why agencies partner with us
 // ─────────────────────────────────────────────────────────────────────────
 function Why() {
   const cards = [
-    { icon: <Icon.shield />, num: '01', title: 'Trained, vetted chatters', body: 'Every chatter passes a 5-stage screening: English fluency (C1+), sales psychology test, voice-matching trial, NDA, and live shadowing. Top 4% acceptance rate.' },
-    { icon: <Icon.trending />, num: '02', title: 'Built for revenue, not just replies', body: 'PPV upselling, tip extraction, custom negotiations, fan retention. Every conversation is a sales opportunity, and we’re trained to close it.' },
-    { icon: <Icon.scale />, num: '03', title: 'Performance pricing, no lock-in', body: 'Commission-based on the net revenue we generate. No upfront fees, no contracts, cancel anytime. We earn when you earn.' },
+    { icon: <Icon.shield />, num: '01', title: 'White-label by default', body: 'Your model never knows we exist. We work under your agency’s brand, in your voice, with your reporting cadence. NDAs with every chatter. Account access flows through your systems, not ours.' },
+    { icon: <Icon.clock />, num: '02', title: 'Ops-grade reliability', body: 'Documented SLAs. <60s response times. Weekly QA reviews on every account. Redundant chatter assignment so a sick day or a bad shift never hits your numbers.' },
+    { icon: <Icon.scale />, num: '03', title: 'Wholesale rates, volume tiers', body: 'Pricing built for agency margins, not creator pricing. Tiered rates that drop as your roster scales with us. No upfront fees. We earn when your agency earns.' },
   ];
   return (
     <section className="section section-bg-2" id="why">
       <div className="container">
         <div className="section-head reveal">
           <div>
-            <span className="section-num">02 / Why us</span>
-            <h2>Why creators choose<br /><span style={{ color: 'var(--accent)' }}>Zinely.</span></h2>
+            <span className="section-num">02 / Why agencies partner with us</span>
+            <h2>Built to disappear<br /><span style={{ color: 'var(--accent)' }}>behind your brand.</span></h2>
           </div>
           <div className="right">
-            <p>Most agencies hire fast, train shallow, and leave revenue on the table.
-            We built Zinely to do the opposite. Fewer chatters, longer training,
-            tighter feedback loops, every conversation engineered to convert.</p>
+            <p>Most chatting providers are built for direct-to-creator sales. We built Zinely as wholesale infrastructure — invisible to your models, accountable to you, priced for your margin.</p>
           </div>
         </div>
         <div className="why-grid reveal">
@@ -157,40 +145,39 @@ function Why() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────
-// Services
+// What you get — partnership feature grid
 // ─────────────────────────────────────────────────────────────────────────
 function Services() {
-  const services = [
-    { num: '01', title: '24/7 Chatting Service',
-      desc: 'Trained chatters managing your DMs around the clock. PPV, tips, sexting, customs, mass DMs, all in your voice.',
-      list: ['Voice & tone calibration', '8 / 16 / 24-hour coverage tiers', 'Dedicated account manager', 'Weekly performance reports', 'Swap chatters anytime'] },
-    { num: '02', title: 'Content & Pricing Strategy',
-      desc: 'Data-driven content calendars and PPV pricing built around your niche and the top performers in your space.',
-      list: ['Niche & competitor analysis', '90-day content calendar', 'PPV pricing playbook', 'Retention strategy', 'Monthly strategy calls'] },
+  const features = [
+    { num: '01', icon: <Icon.message />, title: '24/7 chatting team',
+      desc: 'Trained chatters covering every timezone. PPV upselling, tip extraction, custom coordination, sexting, mass DMs, fan retention — under your brand voice.' },
+    { num: '02', icon: <Icon.user />, title: 'Dedicated account manager',
+      desc: 'One senior point of contact for your agency. Weekly reporting, monthly strategy reviews, escalation path for anything urgent.' },
+    { num: '03', icon: <Icon.chart />, title: 'QA and reporting infrastructure',
+      desc: 'Live dashboards, conversation samples on request, anomaly flagging, performance benchmarks across your roster. Everything you’d need to QA us without doing the QA work yourself.' },
+    { num: '04', icon: <Icon.sparkle />, title: 'Onboarding playbook',
+      desc: 'We onboard a new model from your roster in under 48 hours. Voice calibration, top-spender briefing, content audit, chatter team assignment. Plug-in fast.' },
   ];
   return (
     <section className="section" id="services">
       <div className="container">
         <div className="section-head reveal">
           <div>
-            <span className="section-num">03 / What we do</span>
-            <h2>Two services.<br /><span style={{ color: 'var(--accent)' }}>One growth engine.</span></h2>
+            <span className="section-num">03 / What you get</span>
+            <h2>One service.<br /><span style={{ color: 'var(--accent)' }}>Built for agency partners.</span></h2>
           </div>
           <div className="right">
-            <p>Start with chatting. Layer in strategy when you're ready to break into a new tier. Full account management runs as a separate, invitation-only program, currently at capacity.</p>
+            <p>We run chatting. You run everything else. The clean specialization is the point.</p>
           </div>
         </div>
-        <div className="services-grid">
-          {services.map((s, i) => (
-            <article key={i} className="service-card reveal">
-              <div className="accent-bar"></div>
+        <div className="features-grid reveal">
+          {features.map((f, i) => (
+            <article key={i} className="feature-card">
               <div className="pattern"><ZebraPattern opacity={1} color="#0F1E36" /></div>
-              <span className="service-num">Service {s.num}</span>
-              <h3>{s.title}</h3>
-              <p className="desc">{s.desc}</p>
-              <ul className="service-list">
-                {s.list.map(l => <li key={l}><Icon.check /><span>{l}</span></li>)}
-              </ul>
+              <span className="feature-num">{f.num}</span>
+              <div className="feature-icon">{f.icon}</div>
+              <h3>{f.title}</h3>
+              <p>{f.desc}</p>
             </article>
           ))}
         </div>
@@ -199,42 +186,4 @@ function Services() {
   );
 }
 
-// ─────────────────────────────────────────────────────────────────────────
-// Platforms
-// ─────────────────────────────────────────────────────────────────────────
-function Platforms() {
-  const items = [
-    { name: 'OnlyFans', logo: 'assets/platforms/onlyfans.png', bg: '#FFFFFF', desc: 'Our deepest playbook. PPV ladders, mass DM cadences, tip menus tuned to OF’s tipping culture.', stat: 'PPV · Mass DM · Tipping' },
-    { name: 'Fansly', logo: 'assets/platforms/fansly.png', bg: '#FFFFFF', desc: 'Tighter feeds, looser content rules. We lean into custom requests and locked-content drops.', stat: 'Custom · Locked drops' },
-    { name: 'Fanvue', logo: 'assets/platforms/fanvue.png', bg: '#FFFFFF', desc: 'AI-friendly platform. We pair human chatters with platform tools for high-volume scale.', stat: 'AI + human hybrid' },
-    { name: 'LoyalFans', logo: 'assets/platforms/loyalfans.webp', bg: '#FFFFFF', desc: 'Smaller fan-base, higher LTV. We focus on retention loops and live-stream monetization.', stat: 'Retention · Live · LTV' },
-    { name: 'Fanfix', logo: 'assets/platforms/fanfix.png', bg: '#FFFFFF', desc: 'SFW-friendly, mainstream creators. Tip-driven economy and tight community building.', stat: 'Tips · Community · SFW' },
-  ];
-  return (
-    <section className="section section-bg-2" id="platforms">
-      <div className="container">
-        <div className="section-head reveal">
-          <div>
-            <span className="section-num">04 / Platforms</span>
-            <h2>Built for every major<br />creator <span style={{ color: 'var(--accent)' }}>platform.</span></h2>
-          </div>
-          <div className="right"><p>Wherever your fans are, we’re already there. Same chatters, same standards, platform-specific tactics.</p></div>
-        </div>
-        <div className="platforms-grid">
-          {items.map((p, i) => (
-            <article key={i} className="platform-card reveal">
-              <div className="platform-thumb" style={{ background: p.bg }}>
-                <img src={p.logo} alt={`${p.name} logo`} style={{ maxWidth: '60%', maxHeight: '60%', objectFit: 'contain' }} />
-              </div>
-              <div className="platform-name">{p.name}</div>
-              <div className="platform-desc">{p.desc}</div>
-              <div className="platform-stat">{p.stat}</div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-Object.assign(window, { Nav, Hero, Stats, Why, Services, Platforms });
+Object.assign(window, { Nav, Hero, Stats, Why, Services });
