@@ -2690,18 +2690,59 @@ h2 { font-weight: 400; }
 
 /* ─── B2B pivot additions ─────────────────────────────────────────────── */
 
-/* Hero ambient glow — soft cyan blob behind the H1 */
-.hero-glow {
+/* Hero aurora — multi-colour ambient glow blobs that drift gently */
+.hero-aurora {
   position: absolute;
-  left: 50%;
-  top: 14%;
-  transform: translateX(-50%);
-  width: min(960px, 95vw);
-  height: 540px;
-  background: radial-gradient(closest-side, rgba(122,184,232,0.18), transparent 72%);
-  filter: blur(46px);
+  inset: 0;
   pointer-events: none;
   z-index: 0;
+  overflow: hidden;
+}
+.hero-aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.85;
+  will-change: transform;
+}
+.hero-aurora-blob-cyan {
+  width: 720px; height: 720px;
+  top: -10%; left: 10%;
+  background: radial-gradient(closest-side, rgba(26,183,232,0.45), transparent 70%);
+  animation: hero-aurora-drift-1 22s ease-in-out infinite;
+}
+.hero-aurora-blob-teal {
+  width: 600px; height: 600px;
+  top: 28%; right: 4%;
+  background: radial-gradient(closest-side, rgba(56,210,178,0.32), transparent 70%);
+  animation: hero-aurora-drift-2 26s ease-in-out infinite;
+}
+.hero-aurora-blob-violet {
+  width: 520px; height: 520px;
+  bottom: -10%; left: 20%;
+  background: radial-gradient(closest-side, rgba(124,98,236,0.32), transparent 70%);
+  animation: hero-aurora-drift-3 30s ease-in-out infinite;
+}
+.hero-aurora-blob-soft {
+  width: 480px; height: 480px;
+  top: 14%; right: 28%;
+  background: radial-gradient(closest-side, rgba(166,207,238,0.30), transparent 70%);
+  animation: hero-aurora-drift-1 28s ease-in-out infinite reverse;
+}
+@keyframes hero-aurora-drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(40px, 30px) scale(1.08); }
+}
+@keyframes hero-aurora-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(-50px, 40px) scale(1.10); }
+}
+@keyframes hero-aurora-drift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(60px, -30px) scale(1.06); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-aurora-blob { animation: none; }
 }
 
 /* Italic accent on the second line of the hero H1 + soft underline shimmer */
@@ -3107,25 +3148,35 @@ h2 { font-weight: 400; }
 /* Hero H1 with controlled wrap */
 .hero-h1-tight { max-width: 22ch; }
 
-/* Hero H1 rotating word — bare-minimum styling. The rotor is just an
-   inline span coloured cyan + italic; the inner word fades in on every
-   remount triggered by a key change in JSX. */
+/* Hero H1 rotating word — single inline span, content swapped via state.
+   Each remount triggers a smooth blur-in/slide-up animation. The cyan
+   gradient text fill gives the word more colour life on the dark BG. */
 .hero-h1-rotor {
-  color: var(--accent);
+  display: inline-block;
   font-style: italic;
   font-weight: 500;
   white-space: nowrap;
-}
-.hero-h1-word {
-  display: inline-block;
-  animation: hero-rotor-in 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  background: linear-gradient(120deg, var(--cyan-bright) 0%, var(--accent) 50%, #6FE3CB 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: hero-rotor-in 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 @keyframes hero-rotor-in {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-h1-word { animation: none; }
+  .hero-h1-rotor { animation: none; }
 }
 
 /* Service card — featured (agency) variant */

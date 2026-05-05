@@ -78,26 +78,12 @@ function Hero({ onBookCall }) {
 
   return (
     <section id="top" className="hero">
-      <div className="hero-pattern"><ZebraPattern opacity={0.07} /></div>
-      <div className="hero-glow" aria-hidden="true"></div>
-
-      <div className="hero-floats" aria-hidden="true">
-        <div className="hero-float hero-float-a">
-          <span className="hero-float-eyebrow">PPV unlocked</span>
-          <span className="hero-float-num">+$847</span>
-          <span className="hero-float-meta">0:42 reply</span>
-        </div>
-        <div className="hero-float hero-float-b">
-          <span className="hero-float-dot hero-float-dot-pulse" aria-hidden="true"></span>
-          <div>
-            <span className="hero-float-eyebrow">Live coverage</span>
-            <span className="hero-float-num hero-float-num-sm">24/7 · &lt;60s</span>
-          </div>
-        </div>
-        <div className="hero-float hero-float-c">
-          <span className="hero-float-eyebrow">Tip received</span>
-          <span className="hero-float-num">$250</span>
-        </div>
+      <div className="hero-pattern"><ZebraPattern opacity={0.05} /></div>
+      <div className="hero-aurora" aria-hidden="true">
+        <div className="hero-aurora-blob hero-aurora-blob-cyan"></div>
+        <div className="hero-aurora-blob hero-aurora-blob-teal"></div>
+        <div className="hero-aurora-blob hero-aurora-blob-violet"></div>
+        <div className="hero-aurora-blob hero-aurora-blob-soft"></div>
       </div>
 
       <div className="container hero-inner hero-inner-center">
@@ -106,7 +92,6 @@ function Hero({ onBookCall }) {
           <span
             key={rotorIdx}
             className="hero-h1-rotor"
-            style={{ color: 'var(--accent)', fontStyle: 'italic', display: 'inline-block' }}
           >{HERO_ROTOR_WORDS[rotorIdx]}</span>
         </h1>
         <p className="lead hero-sub reveal">
