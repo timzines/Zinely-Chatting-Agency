@@ -514,12 +514,7 @@ function FinalCTA({ onBookCall }) {
 // ─────────────────────────────────────────────────────────────────────────
 function TrustStrip() {
   const cfg = (typeof window !== 'undefined' && window.ZINELY_CONFIG) || {};
-  const founder = cfg.founderName || 'Tim Zines';
-  const founderLinkedIn = cfg.founderLinkedIn || 'https://www.linkedin.com/in/timzines';
-  const founderPhoto = cfg.founderPhoto;
   const founded = cfg.foundedYear || '2024';
-  const jurisdiction = cfg.jurisdiction || 'Czech Republic';
-  const initials = founder.split(' ').map(s => s[0]).join('').slice(0, 2);
   return (
     <section className="trust-strip" aria-label="Trust signals">
       <div className="container trust-strip-inner reveal">
@@ -528,18 +523,6 @@ function TrustStrip() {
         <div className="trust-item"><span className="trust-label">Mutual NDAs standard</span></div>
         <div className="trust-divider" aria-hidden="true"></div>
         <div className="trust-item"><span className="trust-label">Founded {founded}</span></div>
-        <div className="trust-divider" aria-hidden="true"></div>
-        <div className="trust-item"><span className="trust-label">Operating from {jurisdiction}</span></div>
-        <div className="trust-divider" aria-hidden="true"></div>
-        <a className="trust-founder" href={founderLinkedIn} target="_blank" rel="noopener noreferrer" aria-label={`${founder} on LinkedIn`}>
-          {founderPhoto
-            ? <img className="trust-founder-photo trust-founder-photo-img" src={founderPhoto} alt={founder} />
-            : <span className="trust-founder-photo" aria-hidden="true">{initials}</span>}
-          <span className="trust-founder-meta">
-            <span className="trust-founder-name">{founder}</span>
-            <span className="trust-founder-role">Founder · LinkedIn ↗</span>
-          </span>
-        </a>
       </div>
     </section>
   );
@@ -550,10 +533,7 @@ function TrustStrip() {
 // ─────────────────────────────────────────────────────────────────────────
 function Footer() {
   const cfg = (typeof window !== 'undefined' && window.ZINELY_CONFIG) || {};
-  const founder = cfg.founderName || 'Tim Zines';
-  const jurisdiction = cfg.jurisdiction || 'Czech Republic';
-  const contactEmail = cfg.contactEmail || 'hello@zinelyagency.com';
-  const partnersEmail = cfg.partnersEmail || 'partnerships@zinelyagency.com';
+  const contactEmail = cfg.contactEmail || 'contact@zinelyagency.com';
   const partnerTelegram = cfg.partnerTelegram || cfg.telegramUrl || 'https://t.me/timzines';
   const platforms = [
     { name: 'OnlyFans', logo: 'assets/platforms/onlyfans.png' },
@@ -586,16 +566,8 @@ function Footer() {
             <h5>Contact</h5>
             <ul>
               <li><a href={`mailto:${contactEmail}`}>{contactEmail}</a></li>
-              <li><a href={`mailto:${partnersEmail}`}>{partnersEmail}</a></li>
               <li><a href={partnerTelegram} target="_blank" rel="noopener noreferrer">Telegram</a></li>
               <li><a href="apply.html">Apply as chatter</a></li>
-            </ul>
-          </div>
-          <div className="footer-col">
-            <h5>Company</h5>
-            <ul>
-              <li>{founder}, Founder</li>
-              <li>Operating from {jurisdiction}</li>
             </ul>
           </div>
         </div>

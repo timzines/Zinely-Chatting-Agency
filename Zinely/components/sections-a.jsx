@@ -58,48 +58,36 @@ function Nav({ onBookCall }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────
-// Hero eyebrow rotator — cycles FOR CREATORS / FOR AGENCIES / FOR BOTH
+// Hero H1 word rotor — cross-fades "creators." ⇄ "agencies." inside the H1
 // ─────────────────────────────────────────────────────────────────────────
-function HeroEyebrow() {
-  const STATES = ['FOR CREATORS.', 'FOR AGENCIES.', 'FOR BOTH.'];
+function HeroH1Rotor() {
+  const WORDS = ['creators.', 'agencies.'];
   const [idx, setIdx] = useStateS(0);
-  const [paused, setPaused] = useStateS(false);
-  const reducedRef = useRefS(false);
+  const [reduced, setReduced] = useStateS(false);
 
   useEffectS(() => {
     const mq = typeof window !== 'undefined' && window.matchMedia
       ? window.matchMedia('(prefers-reduced-motion: reduce)')
       : null;
-    reducedRef.current = !!(mq && mq.matches);
-    if (reducedRef.current) {
-      setIdx(2); // pin to "FOR BOTH." for reduced-motion users
+    if (mq && mq.matches) {
+      setReduced(true);
       return;
     }
-    let i = 0;
-    const id = setInterval(() => {
-      if (paused) return;
-      i = (i + 1) % STATES.length;
-      setIdx(i);
-    }, 3000);
+    const id = setInterval(() => setIdx(v => (v + 1) % WORDS.length), 3500);
     return () => clearInterval(id);
-  }, [paused]);
+  }, []);
 
   return (
-    <span
-      className="hero-eyebrow-rotator"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocus={() => setPaused(true)}
-      onBlur={() => setPaused(false)}
-      tabIndex={0}
-      role="text"
-      aria-label="For creators and agencies"
-    >
-      {STATES.map((s, i) => (
-        <span key={s} className={`hero-eyebrow-state ${i === idx ? 'on' : ''}`} aria-hidden={i !== idx}>{s}</span>
+    <span className="hero-h1-rotor" aria-label="creators and agencies">
+      {WORDS.map((w, i) => (
+        <span
+          key={w}
+          className={`hero-h1-word ${i === idx ? 'on' : ''}`}
+          aria-hidden={i !== idx}
+        >{w}</span>
       ))}
-      {/* Sizer keeps width constant at the longest state */}
-      <span className="hero-eyebrow-sizer" aria-hidden="true">FOR AGENCIES.</span>
+      {/* Invisible sizer pins the box width to the longest word */}
+      <span className="hero-h1-word-sizer" aria-hidden="true">{reduced ? WORDS[0] : 'agencies.'}</span>
     </span>
   );
 }
@@ -132,22 +120,22 @@ function Hero({ onBookCall }) {
       </div>
 
       <div className="container hero-inner hero-inner-center">
-        <HeroEyebrow />
         <h1 className="reveal hero-h1-tight">
-          5 days to see what your<br />chats could actually be doing.
+          The chatting agency<br />
+          for <HeroH1Rotor />
         </h1>
         <p className="lead hero-sub reveal">
-          White-label 24/7 chatting at wholesale rates. Run a free pilot on one account — see the lift before you scale.
+          White-label 24/7 chats at wholesale rates. Run a free trial on one of your models — see the lift before you scale across your roster.
         </p>
-        <ul className="hero-trust reveal" aria-label="Pilot guarantees">
-          <li><Icon.check /><span>5-day pilot</span></li>
+        <div className="hero-cta reveal">
+          <button className="btn btn-primary btn-cta" onClick={onBookCall} aria-label="Start free trial">Start free trial <Icon.arrow /></button>
+          <a className="btn btn-secondary btn-ghost-cyan" href="cases.html" aria-label="See partner case studies">See partner case studies <Icon.arrow /></a>
+        </div>
+        <ul className="hero-trust reveal" aria-label="Trial guarantees">
+          <li><Icon.check /><span>Free 30-day trial</span></li>
           <li><Icon.check /><span>White-label by default</span></li>
           <li><Icon.check /><span>No commitment</span></li>
         </ul>
-        <div className="hero-cta reveal">
-          <button className="btn btn-primary btn-cta" onClick={onBookCall} aria-label="Start free 5-day trial for creators">Start free trial <Icon.arrow /></button>
-          <button className="btn btn-secondary btn-ghost-cyan" onClick={onBookCall} aria-label="Book a partnership call for agencies">Book partnership call <Icon.arrow /></button>
-        </div>
       </div>
     </section>
   );
