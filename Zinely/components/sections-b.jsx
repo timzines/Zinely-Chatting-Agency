@@ -399,9 +399,9 @@ function Pricing({ onBookCall }) {
         <div className="section-head reveal">
           <div>
             <span className="section-num">07 / Pricing</span>
-            <h2>Built for agencies<br /><span style={{ color: 'var(--accent)' }}>doing $10k+/mo.</span></h2>
+            <h2>20–25% <span style={{ color: 'var(--accent)' }}>of gross.</span><br /><span style={{ color: 'var(--accent)', fontStyle: 'italic' }}>Drops as you scale.</span></h2>
           </div>
-          <div className="right"><p>20–25% of gross revenue depending on your monthly sales. Free 5-day trial, no commitment, no upfront fees. Pricing scales with you as you grow.</p></div>
+          <div className="right"><p>Wholesale rate slides with monthly sales — 25% at the $10k+/mo entry tier, dropping to 20% past $500k. Free 5-day trial, no commitment, no upfront fees.</p></div>
         </div>
 
         <div className="pricing-shell reveal">
@@ -447,7 +447,7 @@ function Pricing({ onBookCall }) {
               ))}
             </div>
 
-            <p className="pricing-floor">All partners start with a free 5-day trial — no card, no commitment. Once you’re live, the rate above is what you pay on net revenue we generate.</p>
+            <p className="pricing-floor">All partners start with a free 5-day trial — no card, no commitment. Once you’re live, the rate above is what you pay on the gross revenue we generate.</p>
           </div>
         </div>
       </div>
