@@ -58,36 +58,17 @@ function Nav({ onBookCall }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────
-// Hero H1 word rotor — cross-fades "creators." ⇄ "agencies." inside the H1
+// Hero H1 word rotor — cross-fades "creators." ⇄ "agencies." inside the H1.
+// Pure-CSS animation (no JS interval) so it can't be torn down by hydration
+// or paused by Babel-standalone slow-loads. inline-grid stacks the two
+// words and the invisible sizer in a single cell.
 // ─────────────────────────────────────────────────────────────────────────
 function HeroH1Rotor() {
-  const WORDS = ['creators.', 'agencies.'];
-  const [idx, setIdx] = useStateS(0);
-  const [reduced, setReduced] = useStateS(false);
-
-  useEffectS(() => {
-    const mq = typeof window !== 'undefined' && window.matchMedia
-      ? window.matchMedia('(prefers-reduced-motion: reduce)')
-      : null;
-    if (mq && mq.matches) {
-      setReduced(true);
-      return;
-    }
-    const id = setInterval(() => setIdx(v => (v + 1) % WORDS.length), 3500);
-    return () => clearInterval(id);
-  }, []);
-
   return (
     <span className="hero-h1-rotor" aria-label="creators and agencies">
-      {WORDS.map((w, i) => (
-        <span
-          key={w}
-          className={`hero-h1-word ${i === idx ? 'on' : ''}`}
-          aria-hidden={i !== idx}
-        >{w}</span>
-      ))}
-      {/* Invisible sizer pins the box width to the longest word */}
-      <span className="hero-h1-word-sizer" aria-hidden="true">{reduced ? WORDS[0] : 'agencies.'}</span>
+      <span className="hero-h1-word hero-h1-word-1" aria-hidden="true">creators.</span>
+      <span className="hero-h1-word hero-h1-word-2" aria-hidden="true">agencies.</span>
+      <span className="hero-h1-word-sizer" aria-hidden="true">agencies.</span>
     </span>
   );
 }
