@@ -102,11 +102,12 @@ function Hero({ onBookCall }) {
 
       <div className="container hero-inner hero-inner-center">
         <h1 className="reveal hero-h1">
-          The chatting agency<br />
-          for{' '}
-          <span className="hero-h1-rotor" aria-label="creators and agencies">
-            <span key={rotorIdx} className="hero-h1-word">{HERO_ROTOR_WORDS[rotorIdx]}</span>
-          </span>
+          The chatting agency for{' '}
+          <span
+            key={rotorIdx}
+            className="hero-h1-rotor"
+            style={{ color: 'var(--accent)', fontStyle: 'italic', display: 'inline-block' }}
+          >{HERO_ROTOR_WORDS[rotorIdx]}</span>
         </h1>
         <p className="lead hero-sub reveal">
           White-label 24/7 chats at wholesale rates. Run a free trial on one of your models — see the lift before you scale across your roster.

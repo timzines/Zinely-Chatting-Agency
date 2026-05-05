@@ -361,20 +361,9 @@ function Calculator({ onBookCall }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────
-// Pricing — revenue-tier dropdown drives a live wholesale-rate display.
-// Built for agencies doing $10k+/mo. Sliding scale 25% → 20%.
+// Pricing — single panel, no dropdown. Big range "20–25%" + inclusions.
 // ─────────────────────────────────────────────────────────────────────────
-const PRICING_TIERS = [
-  { range: '$10,000 – $49,999',   rate: 25 },
-  { range: '$50,000 – $99,999',   rate: 23 },
-  { range: '$100,000 – $249,999', rate: 22 },
-  { range: '$250,000 – $499,999', rate: 21 },
-  { range: '$500,000+',           rate: 20 },
-];
-
 function Pricing({ onBookCall }) {
-  const [tierIdx, setTierIdx] = useStateB(0);
-  const tier = PRICING_TIERS[tierIdx];
   const includes = [
     [
       '24/7 page coverage',
@@ -409,31 +398,18 @@ function Pricing({ onBookCall }) {
 
           <div className="pricing-left">
             <span className="pricing-eyebrow">Your wholesale rate</span>
-            <div className="pricing-rate" aria-live="polite">
-              <span key={tier.rate} className="pricing-rate-num">{tier.rate}<span className="pricing-rate-pct">%</span></span>
+            <div className="pricing-rate">
+              <span className="pricing-rate-num">20–25<span className="pricing-rate-pct">%</span></span>
             </div>
             <span className="pricing-rate-meta">of gross revenue</span>
             <button className="btn btn-primary btn-cta pricing-cta-big" onClick={onBookCall}>
               Start free trial <Icon.arrow />
             </button>
+            <p className="pricing-floor pricing-floor-left">5-day free trial · no card · no commitment</p>
           </div>
 
           <div className="pricing-right">
-            <label className="pricing-select-label" htmlFor="pricing-tier">Select your current monthly revenue</label>
-            <div className="pricing-select-wrap">
-              <select
-                id="pricing-tier"
-                className="pricing-select"
-                value={tierIdx}
-                onChange={(e) => setTierIdx(parseInt(e.target.value))}
-              >
-                {PRICING_TIERS.map((t, i) => (
-                  <option key={i} value={i}>{t.range}</option>
-                ))}
-              </select>
-              <span className="pricing-select-chev" aria-hidden="true"><Icon.chev /></span>
-            </div>
-
+            <span className="pricing-includes-eyebrow">Everything included</span>
             <div className="pricing-includes">
               {includes.map((col, ci) => (
                 <ul key={ci} className="pricing-includes-col">
@@ -446,8 +422,6 @@ function Pricing({ onBookCall }) {
                 </ul>
               ))}
             </div>
-
-            <p className="pricing-floor">All partners start with a free 5-day trial — no card, no commitment. Once you’re live, the rate above is what you pay on the gross revenue we generate.</p>
           </div>
         </div>
       </div>
