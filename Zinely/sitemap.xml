@@ -6,22 +6,22 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://zinelyagency.com/services.html</loc>
+    <loc>https://zinelyagency.com/services</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zinelyagency.com/pricing.html</loc>
+    <loc>https://zinelyagency.com/pricing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zinelyagency.com/cases.html</loc>
+    <loc>https://zinelyagency.com/cases</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zinelyagency.com/contact.html</loc>
+    <loc>https://zinelyagency.com/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
