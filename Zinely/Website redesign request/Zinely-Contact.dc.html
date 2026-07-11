@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#0A1626;-webkit-font-smoothing:antialiased}
+  html{scroll-behavior:smooth}
+  @media (max-width:820px){
+    .m-cols{grid-template-columns:1fr !important}
+    .m-wrap{flex-wrap:wrap !important}
+  }
+</style>
+</helmet>
+
+<div data-screen-label="Contact" style="font-family:'Figtree',system-ui,sans-serif;color:#EAF4FD;line-height:1.6;background:#0A1626;min-height:100vh;position:relative;overflow-x:hidden">
+
+  <div style="position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.55;background:radial-gradient(1200px 600px at 80% -10%, rgba(26,163,245,.13), transparent 60%),radial-gradient(900px 500px at -10% 30%, rgba(46,137,214,.10), transparent 55%),repeating-linear-gradient(115deg, rgba(26,163,245,.025) 0 2px, transparent 2px 26px)"></div>
+
+  <!-- NAV -->
+  <div style="position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(10,22,38,.82);border-bottom:1px solid #1C3A5A">
+    <div class="m-wrap" style="max-width:1160px;margin:0 auto;padding:13px 24px;display:flex;align-items:center;gap:28px">
+      <a href="Zinely-Home-B.dc.html" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+        <img src="assets/logo.png" alt="Zinely" style="width:34px;height:34px;filter:drop-shadow(0 6px 14px rgba(26,163,245,.4))">
+        <span style="display:flex;flex-direction:column;line-height:1"><span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:20px;color:#fff;letter-spacing:-.01em">Zinely</span><span style="font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#5E82A6;margin-top:3px">Chatting Agency</span></span>
+      </a>
+      <div class="m-wrap" style="display:flex;gap:26px;margin-left:auto;align-items:center">
+        <a href="Zinely-Services.dc.html" style="color:#8FB2D4;text-decoration:none;font-weight:600;font-size:14.5px" style-hover="color:#EAF4FD">Services</a>
+        <a href="Zinely-CaseStudies.dc.html" style="color:#8FB2D4;text-decoration:none;font-weight:600;font-size:14.5px" style-hover="color:#EAF4FD">Case studies</a>
+        <a href="Zinely-Pricing.dc.html" style="color:#8FB2D4;text-decoration:none;font-weight:600;font-size:14.5px" style-hover="color:#EAF4FD">Pricing</a>
+        <a href="Zinely-Contact.dc.html" style="color:#EAF4FD;text-decoration:none;font-weight:700;font-size:14.5px">Contact</a>
+        <a href="{{ calendly }}" style="display:flex;align-items:center;gap:8px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:14.5px;padding:10px 20px;border-radius:11px;text-decoration:none;box-shadow:0 8px 18px rgba(26,163,245,.3)" style-hover="transform:translateY(-1px)"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M9.04 15.31l-.38 5.37c.54 0 .78-.23 1.06-.5l2.55-2.44 5.28 3.87c.97.53 1.66.25 1.92-.9L22.9 3.9c.31-1.4-.51-1.95-1.45-1.6L3.1 9.36c-1.36.53-1.34 1.29-.23 1.63l4.7 1.47L18.5 5.6c.51-.34.98-.15.6.19L9.04 15.31z"></path></svg>Message us</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:relative;z-index:1;max-width:1160px;margin:0 auto;padding:0 24px">
+
+    <!-- HERO -->
+    <section style="text-align:center;padding:80px 0 20px;max-width:680px;margin:0 auto">
+      <h1 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(84px,15vw,180px);line-height:.9;letter-spacing:-.045em;margin:0;color:#fff">Zinely<span style="color:#1AA3F5;text-shadow:0 0 44px rgba(26,163,245,.55)">.</span></h1>
+      <p style="color:#8FB2D4;font-size:19px;font-weight:600;margin:26px auto 0;max-width:420px">The OnlyFans chatting agency.<br>One DM away.</p>
+      <a href="{{ calendly }}" style="display:inline-flex;align-items:center;gap:11px;margin-top:32px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:19px;padding:19px 46px;border-radius:16px;text-decoration:none;box-shadow:0 16px 36px rgba(26,163,245,.42)" style-hover="transform:translateY(-2px)"><svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor"><path d="M9.04 15.31l-.38 5.37c.54 0 .78-.23 1.06-.5l2.55-2.44 5.28 3.87c.97.53 1.66.25 1.92-.9L22.9 3.9c.31-1.4-.51-1.95-1.45-1.6L3.1 9.36c-1.36.53-1.34 1.29-.23 1.63l4.7 1.47L18.5 5.6c.51-.34.98-.15.6.19L9.04 15.31z"></path></svg>Message us on Telegram</a>
+      <div style="display:flex;justify-content:center;align-items:center;gap:8px;color:#5E82A6;font-size:13.5px;font-weight:600;margin-top:16px"><span style="width:7px;height:7px;border-radius:50%;background:#36D399;box-shadow:0 0 9px rgba(54,211,153,.8)"></span>Online now · no forms, no pressure</div>
+    </section>
+
+    <!-- OTHER CHANNELS -->
+    <section data-screen-label="Channels" style="padding:60px 0 10px;max-width:720px;margin:0 auto">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px">
+        <a href="mailto:contact@zinelyagency.com" style="display:block;background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:16px;padding:24px 26px;text-decoration:none" style-hover="border-color:#1AA3F5">
+          <div style="font-size:22px;margin-bottom:8px">✉️</div>
+          <div style="font-family:'Bricolage Grotesque';font-weight:700;font-size:17px;color:#fff;margin-bottom:3px">Email</div>
+          <div style="color:#1AA3F5;font-size:14.5px;font-weight:600">contact@zinelyagency.com</div>
+        </a>
+        <a href="https://t.me/timzines" style="display:block;background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:16px;padding:24px 26px;text-decoration:none" style-hover="border-color:#1AA3F5">
+          <div style="font-size:22px;margin-bottom:8px">💬</div>
+          <div style="font-family:'Bricolage Grotesque';font-weight:700;font-size:17px;color:#fff;margin-bottom:3px">Telegram</div>
+          <div style="color:#1AA3F5;font-size:14.5px;font-weight:600">@timzines</div>
+        </a>
+        <a href="assets/Zinely_Onboarding.pdf" download="Zinely_Onboarding.pdf" style="display:block;background:linear-gradient(160deg,rgba(26,163,245,.13),#0E2138);border:1px solid rgba(26,163,245,.5);border-radius:16px;padding:24px 26px;text-decoration:none" style-hover="border-color:#1AA3F5">
+          <div style="font-size:22px;margin-bottom:8px">📄</div>
+          <div style="font-family:'Bricolage Grotesque';font-weight:700;font-size:17px;color:#fff;margin-bottom:3px">Onboarding doc</div>
+          <div style="color:#1AA3F5;font-size:14.5px;font-weight:600">Download the PDF ↓</div>
+        </a>
+      </div>
+      <p style="text-align:center;color:#5E82A6;font-size:13.5px;margin-top:16px">We answer DMs for a living — you'll hear back fast.</p>
+    </section>
+
+    <!-- FOOTER -->
+    <div style="border-top:1px solid #1C3A5A;margin-top:70px;padding:26px 0 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+      <div style="display:flex;align-items:center;gap:9px">
+        <img src="assets/logo.png" alt="" style="width:22px;height:22px">
+        <span style="color:#8FB2D4;font-size:13.5px"><b style="color:#EAF4FD">Zinely Agency</b> · Chatting partner for OnlyFans creators &amp; agencies</span>
+      </div>
+      <div style="display:flex;gap:20px">
+        <a href="Zinely-Services.dc.html" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Services</a>
+        <a href="Zinely-CaseStudies.dc.html" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Case studies</a>
+        <a href="Zinely-Pricing.dc.html" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Pricing</a>
+        <a href="Zinely-Contact.dc.html" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Contact</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;telegramUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://t.me/timzines&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      calendly: this.props.telegramUrl ?? "https://t.me/timzines",
+    };
+  }
+}
+</script>
+</body>
+</html>

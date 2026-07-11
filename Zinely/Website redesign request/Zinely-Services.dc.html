@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#0A1626;-webkit-font-smoothing:antialiased}
+  html{scroll-behavior:smooth}
+  @media (max-width:820px){
+    .m-cols{grid-template-columns:1fr !important}
+    .m-cols2{grid-template-columns:1fr 1fr !important}
+    .m-hide{display:none !important}
+    .m-span{grid-column:auto !important;grid-row:auto !important}
+    .m-wrap{flex-wrap:wrap !important}
+  }
+</style>
+</helmet>
+
+<div data-screen-label="Services" style="font-family:'Figtree',system-ui,sans-serif;color:#EAF4FD;line-height:1.6;background:#0A1626;min-height:100vh;position:relative;overflow-x:hidden">
+
+  <div style="position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.55;background:radial-gradient(1200px 600px at 80% -10%, rgba(26,163,245,.13), transparent 60%),radial-gradient(900px 500px at -10% 30%, rgba(46,137,214,.10), transparent 55%),repeating-linear-gradient(115deg, rgba(26,163,245,.025) 0 2px, transparent 2px 26px)"></div>
+
+  <!-- NAV -->
+  <div style="position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(10,22,38,.82);border-bottom:1px solid #1C3A5A">
+    <div class="m-wrap" style="max-width:1160px;margin:0 auto;padding:13px 24px;display:flex;align-items:center;gap:28px">
+      <a href="Zinely-Home-B.dc.html" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+        <img src="assets/logo.png" alt="Zinely" style="width:34px;height:34px;filter:drop-shadow(0 6px 14px rgba(26,163,245,.4))">
+        <span style="display:flex;flex-direction:column;line-height:1"><span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:20px;color:#fff;letter-spacing:-.01em">Zinely</span><span style="font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#5E82A6;margin-top:3px">Chatting Agency</span></span>
+      </a>
+      <div class="m-wrap" style="display:flex;gap:26px;margin-left:auto;align-items:center">
+        <a href="Zinely-Services.dc.html" style="color:#EAF4FD;text-decoration:none;font-weight:700;font-size:14.5px">Services</a>
+        <a href="Zinely-CaseStudies.dc.html" style="color:#8FB2D4;text-decoration:none;font-weight:600;font-size:14.5px" style-hover="color:#EAF4FD">Case studies</a>
+        <a href="Zinely-Pricing.dc.html" style="color:#8FB2D4;text-decoration:none;font-weight:600;font-size:14.5px" style-hover="color:#EAF4FD">Pricing</a>
+        <a href="Zinely-Contact.dc.html" style="color:#8FB2D4;text-decoration:none;font-weight:600;font-size:14.5px" style-hover="color:#EAF4FD">Contact</a>
+        <a href="{{ calendly }}" style="display:flex;align-items:center;gap:8px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:14.5px;padding:10px 20px;border-radius:11px;text-decoration:none;box-shadow:0 8px 18px rgba(26,163,245,.3)" style-hover="transform:translateY(-1px)"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M9.04 15.31l-.38 5.37c.54 0 .78-.23 1.06-.5l2.55-2.44 5.28 3.87c.97.53 1.66.25 1.92-.9L22.9 3.9c.31-1.4-.51-1.95-1.45-1.6L3.1 9.36c-1.36.53-1.34 1.29-.23 1.63l4.7 1.47L18.5 5.6c.51-.34.98-.15.6.19L9.04 15.31z"></path></svg>Message us</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:relative;z-index:1;max-width:1160px;margin:0 auto;padding:0 24px">
+
+    <!-- HERO -->
+    <section style="text-align:center;padding:76px 0 20px;max-width:760px;margin:0 auto">
+      <div style="font-weight:700;letter-spacing:.28em;text-transform:uppercase;font-size:12px;color:#1AA3F5;margin-bottom:16px">Services</div>
+      <h1 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(38px,5.6vw,62px);line-height:1.02;letter-spacing:-.025em;margin:0;color:#fff">We don't "manage DMs."<br><span style="color:#1AA3F5">We close them.</span></h1>
+      <p style="color:#8FB2D4;font-size:18px;margin:20px auto 0;max-width:580px">Every service below exists for one reason: turning your inbox into your biggest earner without you touching it.</p>
+    </section>
+
+    <!-- 24/7 CHATTING DEEP DIVE -->
+    <section data-screen-label="Chatting" style="padding:60px 0 10px">
+      <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,rgba(26,163,245,.14),rgba(46,137,214,.05));border:1.5px solid rgba(26,163,245,.5);border-radius:20px;padding:38px 40px">
+        <div style="position:absolute;top:-34px;right:-14px;font-family:'Bricolage Grotesque';font-weight:800;font-size:180px;line-height:1;color:rgba(26,163,245,.09);pointer-events:none;letter-spacing:-.05em">24/7</div>
+        <div style="display:inline-block;font-family:'Bricolage Grotesque';font-weight:800;font-size:12.5px;background:#1AA3F5;color:#04182b;padding:5px 13px;border-radius:999px;letter-spacing:.05em;margin-bottom:16px;position:relative">FLAGSHIP</div>
+        <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.6vw,38px);letter-spacing:-.02em;margin:0 0 12px;color:#fff">24/7 done-for-you chatting</h2>
+        <p style="color:#8FB2D4;font-size:16.5px;margin:0 0 26px;max-width:720px">Trained closers take over your DMs completely, in your voice, around the clock. Not "customer support" — girlfriend experience with a sales engine underneath. Fans get real connection; you get maxed PPVs.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px">
+          <div style="background:rgba(10,22,38,.5);border:1px solid #1C3A5A;border-radius:14px;padding:20px 22px" style-hover="border-color:#1AA3F5">
+            <h4 style="display:flex;align-items:center;gap:9px;font-family:'Bricolage Grotesque';font-weight:700;font-size:16px;color:#fff;margin:0 0 6px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1AA3F5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-9 8.4 8.5 8.5 0 01-3.4-.7L3 21l1.8-5.6a8.4 8.4 0 1116.2-3.9z"></path></svg>Connection before selling</h4>
+            <p style="color:#8FB2D4;font-size:14px;margin:0">Fans pay for the girlfriend experience, not pixels. Our chatters build the bond first — then the PPV lands with someone who likes you, not someone being sold to.</p>
+          </div>
+          <div style="background:rgba(10,22,38,.5);border:1px solid #1C3A5A;border-radius:14px;padding:20px 22px" style-hover="border-color:#1AA3F5">
+            <h4 style="display:flex;align-items:center;gap:9px;font-family:'Bricolage Grotesque';font-weight:700;font-size:16px;color:#fff;margin:0 0 6px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1AA3F5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"></path></svg>Every fan profiled</h4>
+            <p style="color:#8FB2D4;font-size:14px;margin:0">Name, country, payday, occupation, purchase history, kinks, last conversation. Any chatter picks up any fan mid-relationship, seamlessly.</p>
+          </div>
+          <div style="background:rgba(10,22,38,.5);border:1px solid #1C3A5A;border-radius:14px;padding:20px 22px" style-hover="border-color:#1AA3F5">
+            <h4 style="display:flex;align-items:center;gap:9px;font-family:'Bricolage Grotesque';font-weight:700;font-size:16px;color:#fff;margin:0 0 6px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1AA3F5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>Your voice, kept</h4>
+            <p style="color:#8FB2D4;font-size:14px;margin:0">Onboarding captures tone, emoji habits, hard boundaries, and backstory. Human-only chatting — never AI, never generic scripts.</p>
+          </div>
+          <div style="background:rgba(10,22,38,.5);border:1px solid #1C3A5A;border-radius:14px;padding:20px 22px" style-hover="border-color:#1AA3F5">
+            <h4 style="display:flex;align-items:center;gap:9px;font-family:'Bricolage Grotesque';font-weight:700;font-size:16px;color:#fff;margin:0 0 6px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1AA3F5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>Every timezone covered</h4>
+            <p style="color:#8FB2D4;font-size:14px;margin:0">Fans spend the most at night and on weekends — exactly when you're offline. Shifts hand over through fan notes so no thread ever goes cold.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PPV STRATEGY -->
+    <section data-screen-label="PPV strategy" style="padding:50px 0 10px">
+      <div class="m-cols" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch">
+        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:34px 36px" style-hover="border-color:#1AA3F5;transform:translateY(-3px)">
+          <div style="position:absolute;top:-26px;right:-8px;font-family:'Bricolage Grotesque';font-weight:800;font-size:130px;line-height:1;color:rgba(143,178,212,.07);pointer-events:none">$</div>
+          <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:26px;letter-spacing:-.01em;margin:0 0 12px;color:#fff;position:relative">PPV &amp; pricing strategy</h2>
+          <p style="color:#8FB2D4;font-size:15.5px;margin:0 0 18px">Every price is engineered. Fans are tiered by country and spending power, prices are set to trigger an impulse yes instead of checkout hesitation, and every PPV is described and framed before it's sent — never just dropped.</p>
+          <div style="display:grid;gap:9px">
+            <div style="display:flex;gap:10px;align-items:baseline;font-size:14.5px;color:#8FB2D4"><span style="color:#1AA3F5;font-weight:800">→</span><span><b style="color:#EAF4FD">Psychological price points</b> — numbers that read cheap but close premium</span></div>
+            <div style="display:flex;gap:10px;align-items:baseline;font-size:14.5px;color:#8FB2D4"><span style="color:#1AA3F5;font-weight:800">→</span><span><b style="color:#EAF4FD">Tier-based floors</b> — priced to the fan's market, upsold to his behavior</span></div>
+            <div style="display:flex;gap:10px;align-items:baseline;font-size:14.5px;color:#8FB2D4"><span style="color:#1AA3F5;font-weight:800">→</span><span><b style="color:#EAF4FD">Follow-up on every PPV</b> — momentum kept, next sale set up</span></div>
+          </div>
+        </div>
+        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:34px 36px" style-hover="border-color:#1AA3F5;transform:translateY(-3px)">
+          <div style="position:absolute;top:-26px;right:-10px;font-family:'Bricolage Grotesque';font-weight:800;font-size:130px;line-height:1;color:rgba(143,178,212,.07);pointer-events:none">2%</div>
+          <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:26px;letter-spacing:-.01em;margin:0 0 12px;color:#fff;position:relative">Whale handling</h2>
+          <p style="color:#8FB2D4;font-size:15.5px;margin:0 0 18px">Your top 2% of fans can drive 30% of revenue — and they're fragile. We tag them, reserve them for the best closers, and make sure they never feel like a transaction.</p>
+          <div style="display:grid;gap:9px">
+            <div style="display:flex;gap:10px;align-items:baseline;font-size:14.5px;color:#8FB2D4"><span style="color:#1AA3F5;font-weight:800">→</span><span><b style="color:#EAF4FD">Spotted early</b> — fast buyers, unprompted tippers, long personal messages</span></div>
+            <div style="display:flex;gap:10px;align-items:baseline;font-size:14.5px;color:#8FB2D4"><span style="color:#1AA3F5;font-weight:800">→</span><span><b style="color:#EAF4FD">VIP treatment</b> — fastest replies, real attention, never ghosted</span></div>
+            <div style="display:flex;gap:10px;align-items:baseline;font-size:14.5px;color:#8FB2D4"><span style="color:#1AA3F5;font-weight:800">→</span><span><b style="color:#EAF4FD">Retention first</b> — a kept whale is worth more than any single sale</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOR AGENCIES -->
+    <section data-screen-label="For agencies" style="padding:50px 0 10px">
+      <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:34px 36px;display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center" class="m-cols" style-hover="border-color:#1AA3F5">
+        <div style="position:absolute;top:-22px;right:-10px;font-family:'Bricolage Grotesque';font-weight:800;font-size:120px;line-height:1;color:rgba(143,178,212,.07);pointer-events:none">B2B</div>
+        <div style="position:relative">
+          <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:26px;letter-spacing:-.01em;margin:0 0 12px;color:#fff">For agencies</h2>
+          <p style="color:#8FB2D4;font-size:15.5px;margin:0">Running an OnlyFans agency and drowning in chatting ops? Plug our team into your operation. Your clients stay yours; their fans see the creator; we do the closing. Chatting stops being your bottleneck and becomes your margin.</p>
+        </div>
+        <div style="display:grid;gap:9px">
+          <div style="display:flex;gap:10px;align-items:baseline;font-size:14.5px;color:#8FB2D4"><span style="color:#36D399;font-weight:800">✓</span><span>No hiring, training, or payroll on your plate</span></div>
+          <div style="display:flex;gap:10px;align-items:baseline;font-size:14.5px;color:#8FB2D4"><span style="color:#36D399;font-weight:800">✓</span><span>Scale to new creators without hiring</span></div>
+          <div style="display:flex;gap:10px;align-items:baseline;font-size:14.5px;color:#8FB2D4"><span style="color:#36D399;font-weight:800">✓</span><span>One partner, 15+ accounts of experience</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FULL MANAGEMENT -->
+    <section data-screen-label="Full management" style="padding:50px 0 10px">
+      <div style="background:linear-gradient(160deg,rgba(26,163,245,.12),#0E2138);border:1.5px solid rgba(26,163,245,.5);border-radius:20px;padding:38px 40px;text-align:center;max-width:820px;margin:0 auto">
+        <sc-if value="{{ mgmtClosed }}" hint-placeholder-val="{{ true }}">
+          <div style="display:inline-block;font-family:'Bricolage Grotesque';font-weight:800;font-size:12.5px;background:rgba(255,176,46,.15);border:1px solid rgba(255,176,46,.5);color:#FFB02E;padding:6px 15px;border-radius:999px;letter-spacing:.06em;margin-bottom:16px">AT FULL CAPACITY · WAITLIST ONLY</div>
+        </sc-if>
+        <sc-if value="{{ mgmtOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="display:inline-block;font-family:'Bricolage Grotesque';font-weight:800;font-size:12.5px;background:rgba(54,211,153,.15);border:1px solid rgba(54,211,153,.5);color:#36D399;padding:6px 15px;border-radius:999px;letter-spacing:.06em;margin-bottom:16px">LIMITED SPOTS OPEN</div>
+        </sc-if>
+        <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.8vw,38px);letter-spacing:-.02em;margin:0 0 12px;color:#fff">Full account management</h2>
+        <p style="color:#8FB2D4;font-size:16px;margin:0 auto 8px;max-width:600px">The whole account, run end to end: content strategy, marketing, growth, and of course the chatting. Our full-management creators are the reason the roster is capped — the results are too good to dilute across too many accounts.</p>
+        <p style="color:#8FB2D4;font-size:16px;margin:0 auto 22px;max-width:600px">Every seat is taken right now. Join the waitlist and you get the first message when one opens.</p>
+        <a href="{{ calendly }}" style="display:inline-block;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:16px;padding:14px 32px;border-radius:13px;text-decoration:none;box-shadow:0 12px 26px rgba(26,163,245,.35)" style-hover="transform:translateY(-2px)">Join the waitlist</a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="padding:80px 0 40px;text-align:center;max-width:640px;margin:0 auto">
+      <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4.6vw,46px);letter-spacing:-.02em;line-height:1.05;margin:0;color:#fff">See it on <span style="color:#1AA3F5">your</span> account.</h2>
+      <p style="color:#8FB2D4;font-size:16.5px;margin:16px auto 0;max-width:440px">One honest chat. No lock-in. The numbers make the decision.</p>
+      <a href="{{ calendly }}" style="display:inline-flex;align-items:center;gap:10px;margin-top:26px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:17px;padding:16px 38px;border-radius:14px;text-decoration:none;box-shadow:0 14px 30px rgba(26,163,245,.38)" style-hover="transform:translateY(-2px)"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M9.04 15.31l-.38 5.37c.54 0 .78-.23 1.06-.5l2.55-2.44 5.28 3.87c.97.53 1.66.25 1.92-.9L22.9 3.9c.31-1.4-.51-1.95-1.45-1.6L3.1 9.36c-1.36.53-1.34 1.29-.23 1.63l4.7 1.47L18.5 5.6c.51-.34.98-.15.6.19L9.04 15.31z"></path></svg>Message us on Telegram</a>
+    </section>
+
+    <!-- FOOTER -->
+    <div style="border-top:1px solid #1C3A5A;padding:26px 0 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+      <div style="display:flex;align-items:center;gap:9px">
+        <img src="assets/logo.png" alt="" style="width:22px;height:22px">
+        <span style="color:#8FB2D4;font-size:13.5px"><b style="color:#EAF4FD">Zinely Agency</b> · Chatting partner for OnlyFans creators &amp; agencies</span>
+      </div>
+      <div style="display:flex;gap:20px">
+        <a href="Zinely-Services.dc.html" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Services</a>
+        <a href="Zinely-CaseStudies.dc.html" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Case studies</a>
+        <a href="Zinely-Pricing.dc.html" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Pricing</a>
+        <a href="Zinely-Contact.dc.html" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Contact</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;telegramUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://t.me/timzines&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;managementOpen&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Full management&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const open = this.props.managementOpen ?? false;
+    return {
+      calendly: this.props.telegramUrl ?? "https://t.me/timzines",
+      mgmtOpen: open,
+      mgmtClosed: !open,
+    };
+  }
+}
+</script>
+</body>
+</html>
