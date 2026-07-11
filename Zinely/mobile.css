@@ -20,6 +20,20 @@
   /* Full-management card: let the waitlist chip wrap under the text */
   .z-mgmt { flex-wrap: wrap !important; gap: 16px 24px !important; }
 
+  /* Problem/solution: stacked cards need a gap (desktop uses the arrow as spacer) */
+  .z-problem { gap: 14px !important; }
+
+  /* "All of that is our problem now" bar: logo, text, and button stack vertically */
+  .z-resbar { flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; padding: 26px 24px !important; }
+  .z-resbar > a { align-self: stretch; text-align: center; }
+
+  /* How it works: vertical timeline — icon on the left, text on the right */
+  .z-steps { grid-template-columns: 1fr !important; gap: 26px !important; }
+  .z-steps > div { display: grid !important; grid-template-columns: 46px 1fr; column-gap: 16px; text-align: left !important; }
+  .z-steps > div > div:first-child { grid-row: 1 / span 3; margin: 0 !important; }
+  .z-steps > div > div:nth-child(2) { margin: 3px 0 5px !important; }
+  .z-steps > div p { max-width: none !important; }
+
   /* Purchases · Live feed: shorter card so the hero doesn't run forever,
      smaller subtitle so "Purchased your message · 2m ago" fits a phone row */
   .z-feed { height: 300px !important; }
