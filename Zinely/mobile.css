@@ -23,9 +23,9 @@
   /* Problem/solution: stacked cards need a gap (desktop uses the arrow as spacer) */
   .z-problem { gap: 14px !important; }
 
-  /* "All of that is our problem now" bar: logo, text, and button stack vertically */
-  .z-resbar { flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; padding: 26px 24px !important; }
-  .z-resbar > a { align-self: stretch; text-align: center; }
+  /* "All of that is our problem now" solution card: tighter padding, full-width CTA */
+  .z-resbar { padding: 34px 20px 30px !important; }
+  .z-resbar a { width: 100%; box-sizing: border-box; }
 
   /* How it works: vertical timeline — icon on the left, text on the right */
   .z-steps { grid-template-columns: 1fr !important; gap: 26px !important; }
@@ -41,9 +41,14 @@
 
   /* Calculator: tighter card, toggle buttons that can shrink */
   .z-calc { padding: 24px 16px !important; }
-  .z-tbtn { min-width: 0 !important; gap: 6px !important; padding: 11px 8px !important; font-size: 13px !important; }
+  .z-tbtn { min-width: 0 !important; gap: 6px !important; padding: 11px 8px !important; font-size: 13px !important; white-space: nowrap; }
   .z-flags { gap: 3px !important; }
   .z-flags img { height: 11px !important; }
+}
+
+/* Narrow toggles can't fit all five T1 flags — trim the trailing one */
+@media (max-width: 900px) {
+  .z-flags img:nth-child(n+5) { display: none !important; }
 }
 
 @media (max-width: 420px) {

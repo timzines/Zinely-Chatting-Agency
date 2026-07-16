@@ -183,14 +183,23 @@
 
       </div>
 
-      <!-- RESOLUTION BAR -->
-      <div class="z-resbar" style="margin-top:16px;background:linear-gradient(135deg,rgba(54,211,153,.12),rgba(26,163,245,.08));border:1px solid rgba(54,211,153,.4);border-radius:18px;padding:28px 34px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <img src="assets/logo.png" alt="" style="width:44px;height:44px;flex:none;filter:drop-shadow(0 8px 18px rgba(26,163,245,.4))">
-        <div style="flex:1;min-width:280px">
-          <h3 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:21px;margin:0 0 4px;color:#fff">All of that is our problem now.</h3>
-          <p style="color:#8FB2D4;font-size:15px;margin:0">Hiring, training, QA, shift coverage, payroll, pricing calls — Zinely runs the whole machine. You get one partner, one number, and your time back for marketing.</p>
+      <!-- RESOLUTION CARD -->
+      <div class="z-resbar" style="margin-top:18px;position:relative;overflow:hidden;background:linear-gradient(160deg,rgba(54,211,153,.14),rgba(26,163,245,.07));border:1.5px solid rgba(54,211,153,.5);border-radius:22px;padding:46px 34px 42px;text-align:center;box-shadow:0 24px 70px rgba(54,211,153,.10)">
+        <div style="position:absolute;top:-130px;left:50%;transform:translateX(-50%);width:560px;height:260px;background:radial-gradient(closest-side,rgba(54,211,153,.3),transparent);pointer-events:none"></div>
+        <div style="position:relative">
+          <img src="assets/logo.png" alt="" style="width:52px;height:52px;filter:drop-shadow(0 10px 24px rgba(26,163,245,.5));margin-bottom:14px">
+          <h3 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.8vw,38px);letter-spacing:-.02em;line-height:1.1;margin:0 0 10px;color:#fff">All of that is <span style="color:#36D399;text-shadow:0 0 26px rgba(54,211,153,.45)">our problem now.</span></h3>
+          <p style="color:#8FB2D4;font-size:16px;margin:0 auto;max-width:520px">Zinely runs the whole machine. You get one partner, one number, and your time back.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:22px 0 28px">
+            <span style="display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#D9F2E7;background:rgba(54,211,153,.1);border:1px solid rgba(54,211,153,.35);padding:7px 14px;border-radius:999px"><span style="color:#36D399;font-weight:800">✓</span>Hiring</span>
+            <span style="display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#D9F2E7;background:rgba(54,211,153,.1);border:1px solid rgba(54,211,153,.35);padding:7px 14px;border-radius:999px"><span style="color:#36D399;font-weight:800">✓</span>Training</span>
+            <span style="display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#D9F2E7;background:rgba(54,211,153,.1);border:1px solid rgba(54,211,153,.35);padding:7px 14px;border-radius:999px"><span style="color:#36D399;font-weight:800">✓</span>QA</span>
+            <span style="display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#D9F2E7;background:rgba(54,211,153,.1);border:1px solid rgba(54,211,153,.35);padding:7px 14px;border-radius:999px"><span style="color:#36D399;font-weight:800">✓</span>Shift coverage</span>
+            <span style="display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#D9F2E7;background:rgba(54,211,153,.1);border:1px solid rgba(54,211,153,.35);padding:7px 14px;border-radius:999px"><span style="color:#36D399;font-weight:800">✓</span>Payroll</span>
+            <span style="display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#D9F2E7;background:rgba(54,211,153,.1);border:1px solid rgba(54,211,153,.35);padding:7px 14px;border-radius:999px"><span style="color:#36D399;font-weight:800">✓</span>Pricing</span>
+          </div>
+          <a href="{{ calendly }}" style="display:inline-flex;align-items:center;justify-content:center;gap:9px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:16.5px;padding:15px 36px;border-radius:13px;text-decoration:none;box-shadow:0 12px 26px rgba(26,163,245,.35)" style-hover="transform:translateY(-2px)">Hand it all off <span style="font-weight:800">→</span></a>
         </div>
-        <a href="{{ calendly }}" style="flex:none;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:15.5px;padding:13px 28px;border-radius:12px;text-decoration:none;box-shadow:0 10px 22px rgba(26,163,245,.35)" style-hover="transform:translateY(-1px)">Hand it off</a>
       </div>
     </section>
 
@@ -198,7 +207,8 @@
     <section data-screen-label="Services" style="padding:80px 0 10px">
       <div style="text-align:center;margin-bottom:36px">
         <div style="font-weight:700;letter-spacing:.28em;text-transform:uppercase;font-size:12px;color:#1AA3F5;margin-bottom:12px">Services</div>
-        <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4.4vw,46px);letter-spacing:-.02em;margin:0;color:#fff">One obsession: <span style="color:#1AA3F5">your DMs.</span></h2>
+        <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4.4vw,46px);letter-spacing:-.02em;margin:0;color:#fff">One obsession: <span style="color:#1AA3F5;text-shadow:0 0 30px rgba(26,163,245,.4)">your DMs.</span></h2>
+        <p style="color:#8FB2D4;font-size:16.5px;margin:14px auto 0;max-width:500px">Everything we offer is built around one skill — turning conversations into revenue.</p>
       </div>
       <div class="m-cols" style="display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:minmax(200px,auto);gap:16px">
 
@@ -218,18 +228,21 @@
 
         <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:28px 30px;display:flex;flex-direction:column;justify-content:flex-end" style-hover="border-color:#1AA3F5;transform:translateY(-3px)">
           <div style="position:absolute;top:-22px;right:-6px;font-family:'Bricolage Grotesque';font-weight:800;font-size:120px;line-height:1;color:rgba(143,178,212,.07);pointer-events:none">$</div>
+          <div style="position:relative;align-self:flex-start;font-size:10.5px;font-weight:800;letter-spacing:.16em;color:#1AA3F5;border:1px solid rgba(26,163,245,.4);background:rgba(26,163,245,.08);padding:4px 11px;border-radius:999px;margin-bottom:12px">REVENUE</div>
           <h3 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:20px;margin:0 0 6px;color:#fff">PPV &amp; pricing strategy</h3>
           <p style="color:#8FB2D4;font-size:14.5px;margin:0">Prices tiered by country and spender. Every PPV framed to be an impulse yes.</p>
         </div>
 
         <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:28px 30px;display:flex;flex-direction:column;justify-content:flex-end" style-hover="border-color:#1AA3F5;transform:translateY(-3px)">
           <div style="position:absolute;top:-22px;right:-10px;font-family:'Bricolage Grotesque';font-weight:800;font-size:120px;line-height:1;color:rgba(143,178,212,.07);pointer-events:none">2%</div>
+          <div style="position:relative;align-self:flex-start;font-size:10.5px;font-weight:800;letter-spacing:.16em;color:#1AA3F5;border:1px solid rgba(26,163,245,.4);background:rgba(26,163,245,.08);padding:4px 11px;border-radius:999px;margin-bottom:12px">RETENTION</div>
           <h3 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:20px;margin:0 0 6px;color:#fff">Fan CRM &amp; whales</h3>
           <p style="color:#8FB2D4;font-size:14.5px;margin:0">Every fan profiled. Your top 2% of spenders tagged and reserved for the best closers.</p>
         </div>
 
         <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:28px 30px;display:flex;flex-direction:column;justify-content:flex-end" style-hover="border-color:#1AA3F5;transform:translateY(-3px)">
           <div style="position:absolute;top:-18px;right:-8px;font-family:'Bricolage Grotesque';font-weight:800;font-size:110px;line-height:1;color:rgba(143,178,212,.07);pointer-events:none">B2B</div>
+          <div style="position:relative;align-self:flex-start;font-size:10.5px;font-weight:800;letter-spacing:.16em;color:#1AA3F5;border:1px solid rgba(26,163,245,.4);background:rgba(26,163,245,.08);padding:4px 11px;border-radius:999px;margin-bottom:12px">SCALE</div>
           <h3 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:20px;margin:0 0 6px;color:#fff">For agencies</h3>
           <p style="color:#8FB2D4;font-size:14.5px;margin:0">Plug our team into your agency. Your clients, our closers — scale without hiring.</p>
         </div>
@@ -249,17 +262,18 @@
         </div>
 
       </div>
-      <div style="margin-top:18px;text-align:center"><a href="services.html" style="color:#1AA3F5;font-weight:700;font-size:15px;text-decoration:none">Full service breakdown →</a></div>
+      <div style="margin-top:24px;text-align:center"><a href="services.html" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(26,163,245,.5);color:#EAF4FD;font-weight:700;font-size:14.5px;padding:12px 26px;border-radius:12px;text-decoration:none;background:linear-gradient(160deg,rgba(26,163,245,.14),rgba(26,163,245,.04))" style-hover="background:rgba(26,163,245,.2)">Full service breakdown <span style="color:#1AA3F5;font-weight:800">→</span></a></div>
     </section>
 
     <!-- HOW IT WORKS — HORIZONTAL -->
     <section data-screen-label="How it works" style="padding:80px 0 10px">
       <div style="text-align:center;margin-bottom:34px">
         <div style="font-weight:700;letter-spacing:.28em;text-transform:uppercase;font-size:12px;color:#1AA3F5;margin-bottom:12px">How it works</div>
-        <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4.4vw,44px);letter-spacing:-.02em;margin:0;color:#fff">One DM to us.<br>Live in 48 hours.</h2>
+        <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4.4vw,44px);letter-spacing:-.02em;margin:0;color:#fff">One DM to us.<br><span style="color:#36D399;text-shadow:0 0 30px rgba(54,211,153,.4)">Live in 48 hours.</span></h2>
+        <p style="color:#8FB2D4;font-size:16px;margin:14px auto 0;max-width:440px">No onboarding calls, no setup fees — just a 48-hour countdown to full coverage.</p>
       </div>
       <div style="position:relative;max-width:1040px;margin:0 auto">
-        <div class="m-hide" style="position:absolute;top:22px;left:12.5%;right:12.5%;height:2px;background:linear-gradient(90deg,#1AA3F5,rgba(26,163,245,.55),rgba(26,163,245,.2))"></div>
+        <div class="m-hide" style="position:absolute;top:22px;left:12.5%;right:12.5%;height:2px;background:linear-gradient(90deg,#1AA3F5,rgba(26,163,245,.55) 55%,#36D399)"></div>
         <div class="z-steps" style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative">
           <div style="text-align:center">
             <div style="width:46px;height:46px;border-radius:50%;margin:0 auto;display:grid;place-items:center;color:#04182b;background:#1AA3F5;box-shadow:0 0 22px rgba(26,163,245,.55)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9.04 15.31l-.38 5.37c.54 0 .78-.23 1.06-.5l2.55-2.44 5.28 3.87c.97.53 1.66.25 1.92-.9L22.9 3.9c.31-1.4-.51-1.95-1.45-1.6L3.1 9.36c-1.36.53-1.34 1.29-.23 1.63l4.7 1.47L18.5 5.6c.51-.34.98-.15.6.19L9.04 15.31z"></path></svg></div>
@@ -280,13 +294,14 @@
             <p style="color:#8FB2D4;font-size:14px;margin:0;max-width:220px;display:inline-block">A chatting strategy proposed for your account — voice, pricing, whale plan.</p>
           </div>
           <div style="text-align:center">
-            <div style="width:46px;height:46px;border-radius:50%;margin:0 auto;display:grid;place-items:center;color:#04182b;background:#36D399;box-shadow:0 0 22px rgba(54,211,153,.5)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4.5 13.5h5L9.5 22 19 9.5h-5.5L13 2z"></path></svg></div>
-            <div style="font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#36D399;margin:16px 0 6px">Day 2</div>
+            <div style="width:46px;height:46px;border-radius:50%;margin:0 auto;display:grid;place-items:center;color:#04182b;background:#36D399;box-shadow:0 0 22px rgba(54,211,153,.5);animation:zGlow 2.4s ease-in-out infinite"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4.5 13.5h5L9.5 22 19 9.5h-5.5L13 2z"></path></svg></div>
+            <div style="font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#36D399;margin:16px 0 6px"><span style="display:inline-flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#36D399;box-shadow:0 0 9px rgba(54,211,153,.9)"></span>Day 2 · Live</span></div>
             <h4 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:18px;color:#fff;margin:0 0 6px">Chatters go live</h4>
             <p style="color:#8FB2D4;font-size:14px;margin:0;max-width:220px;display:inline-block">24/7 coverage starts — every fan answered, every sale worked.</p>
           </div>
         </div>
       </div>
+      <div style="text-align:center;margin-top:36px"><a href="{{ calendly }}" style="display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(26,163,245,.5);color:#EAF4FD;font-weight:700;font-size:15px;padding:13px 28px;border-radius:12px;text-decoration:none;background:linear-gradient(160deg,rgba(26,163,245,.14),rgba(26,163,245,.04))" style-hover="background:rgba(26,163,245,.2)">Start Day 0 — message us <span style="color:#1AA3F5;font-weight:800">→</span></a></div>
     </section>
 
     <!-- CASE STUDIES PREVIEW -->
@@ -527,6 +542,7 @@
         <a href="cases.html" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Case studies</a>
         <a href="pricing.html" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Pricing</a>
         <a href="contact.html" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Contact</a>
+        <a href="https://t.me/zinelyagency" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Telegram group ↗</a>
       </div>
     </div>
 
