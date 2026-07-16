@@ -46,11 +46,6 @@
   .z-flags img { height: 11px !important; }
 }
 
-/* Narrow toggles can't fit all five T1 flags — trim the trailing one */
-@media (max-width: 900px) {
-  .z-flags img:nth-child(n+5) { display: none !important; }
-}
-
 @media (max-width: 420px) {
   /* Inline min-width floors don't fit the smallest phones */
   [style*="min-width:280px"], [style*="min-width: 280px"] { min-width: 0 !important; }
