@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zinely Blog</title>
+    <link>https://zinelyagency.com/blog/</link>
+    <description>Chatting strategy for OnlyFans, Fanvue and Fansly creators and agencies — from the team at Zinely.</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 31 Jul 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://zinelyagency.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>What an OnlyFans Chatting Agency Actually Does (and When You Need One)</title>
+      <link>https://zinelyagency.com/blog/onlyfans-chatting-agency-guide/</link>
+      <guid isPermaLink="true">https://zinelyagency.com/blog/onlyfans-chatting-agency-guide/</guid>
+      <pubDate>Fri, 31 Jul 2026 12:00:00 GMT</pubDate>
+      <description>The day-to-day of a real chatting operation, the signs you've outgrown DIY, the three pricing models — and the one question that exposes a bad agency's fine print.</description>
+    </item>
+  </channel>
+</rss>
