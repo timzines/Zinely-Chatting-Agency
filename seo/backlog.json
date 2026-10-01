@@ -1,0 +1,137 @@
+{
+  "updated_on": "2026-10-01",
+  "mode": "prepare_for_review",
+  "max_new_articles_per_week": 2,
+  "max_pending_deliverables": 3,
+  "items": [
+    {
+      "id": "foundation",
+      "priority": 0,
+      "status": "release_pending",
+      "audience": "all",
+      "title": "Release audience journeys and agency service page",
+      "target_url": "/onlyfans-chatting-for-agencies/",
+      "next_action": "Website changes committed/pushed as e954b7e. Verify Cloudflare production release and record live URLs; do not duplicate the other website task’s deployment."
+    },
+    {
+      "id": "measurement",
+      "priority": 0,
+      "status": "needs_access",
+      "audience": "all",
+      "title": "Establish search, indexing and qualified-lead baseline",
+      "next_action": "Access GSC, Bing and chosen analytics; inspect crawl events, CTA flow and lead source reconciliation; avoid repeat requests"
+    },
+    {
+      "id": "fees",
+      "priority": 1,
+      "status": "queued",
+      "audience": "agency_owner",
+      "title": "Chatting agency commission: which revenue should the percentage apply to?",
+      "target_url": "/blog/chatting-agency-commission/",
+      "primary_keyword": "chatting agency commission rates",
+      "supports": [
+        "/pricing",
+        "/onlyfans-chatting-for-agencies/"
+      ],
+      "distinct_value": "Illustrative same-revenue comparison separating platform fees, subscriptions, tips, PPV and agency fees",
+      "required_evidence": [
+        "Reconcile live pricing commission base and tier wording",
+        "Clearly label hypothetical arithmetic"
+      ]
+    },
+    {
+      "id": "agency-handover",
+      "priority": 2,
+      "status": "queued",
+      "audience": "agency_owner",
+      "title": "The agency owner's checklist for handing over chatting",
+      "target_url": "/blog/agency-chatting-handover-checklist/",
+      "primary_keyword": "outsource agency chatting checklist",
+      "supports": [
+        "/onlyfans-chatting-for-agencies/",
+        "/services"
+      ],
+      "distinct_value": "Practical account brief, responsibility table, cutover plan and review criteria",
+      "required_evidence": [
+        "Approved anonymized operating example or a clearly labelled recommended checklist"
+      ]
+    },
+    {
+      "id": "creator-ready",
+      "priority": 3,
+      "status": "queued",
+      "audience": "creator",
+      "title": "When to outsource OnlyFans chatting if you already bring in traffic",
+      "target_url": "/blog/when-to-outsource-onlyfans-chatting/",
+      "primary_keyword": "when to outsource onlyfans chatting",
+      "supports": [
+        "/onlyfans-chatting-agency/",
+        "/pricing"
+      ],
+      "distinct_value": "Self-assessment separating an acquisition problem from a coverage problem",
+      "required_evidence": [
+        "No invented revenue threshold",
+        "No claim that a revenue ratio diagnoses every account"
+      ]
+    },
+    {
+      "id": "fanvue-handover",
+      "priority": 4,
+      "status": "queued",
+      "audience": "fanvue_ai_operator",
+      "title": "A Fanvue AI-persona handover brief for human chatters",
+      "target_url": "/blog/fanvue-ai-persona-chatting-brief/",
+      "primary_keyword": "fanvue ai model chatting handover",
+      "supports": [
+        "/fanvue-chatting-agency/"
+      ],
+      "distinct_value": "Usable voice, boundaries, content and escalation checklist",
+      "required_evidence": [
+        "Recheck Fanvue AI disclosure and manager-account guidance",
+        "Do not reuse OnlyFans results as Fanvue proof"
+      ]
+    },
+    {
+      "id": "in-house-cost",
+      "priority": 5,
+      "status": "queued",
+      "audience": "agency_owner",
+      "title": "In-house chatters versus a managed team: a cost worksheet",
+      "target_url": "/blog/in-house-chatters-vs-agency-cost/",
+      "primary_keyword": "in house chatters vs chatting agency cost",
+      "supports": [
+        "/onlyfans-chatting-for-agencies/",
+        "/pricing"
+      ],
+      "distinct_value": "Input-based coverage, recruitment, supervision and net-revenue worksheet without invented salary benchmarks",
+      "required_evidence": [
+        "Owner-provided cost inputs or labelled hypothetical values"
+      ]
+    },
+    {
+      "id": "proof-audit",
+      "priority": 2,
+      "status": "queued",
+      "audience": "all",
+      "title": "Audit case-study timeframes and inherited claims",
+      "target_url": "/cases",
+      "distinct_value": "Make monthly versus cumulative figures and historical rank explicit; qualify unsupported guarantee language in inherited pages",
+      "required_evidence": [
+        "Owner-approved source screenshots and date ranges",
+        "Coordinate with case-study task before editing"
+      ]
+    },
+    {
+      "id": "distribution",
+      "priority": 6,
+      "status": "queued",
+      "audience": "agency_owner",
+      "title": "Research three relevant partner/editorial/community opportunities",
+      "distinct_value": "Verified audience fit and community rules; helpful draft tied to an actual question",
+      "required_evidence": [
+        "Current destination URL and rules",
+        "No sending or posting without explicit instruction"
+      ]
+    }
+  ]
+}
