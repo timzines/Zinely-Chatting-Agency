@@ -19,7 +19,9 @@
       "Fanvue including AI-model accounts",
       "Fansly"
     ],
-    "scope": "Chatting does not substitute for acquiring traffic. No invented numerical revenue or audience minimum."
+    "scope": "Chatting does not substitute for acquiring traffic. No invented numerical revenue or audience minimum.",
+    "managed_accounts": "30+ accounts managed; owner-provided October 2, 2026 via coordinated website task, not independently audited",
+    "client_revenue": "Over $500K generated for clients; owner-provided cumulative claim October 2, 2026 via coordinated website task, not independently audited. Do not infer monthly revenue or use an invented exact total."
   },
   "source_files": [
     "Zinely/pricing.html",
@@ -42,7 +44,6 @@
   "requires_review_before_new_claims": [
     "Rate-tier wording above $140K and whether tiers use gross, net, or eligible revenue; do not invent a multi-account discount",
     "Each case-study figure's platform, time period, cumulative versus monthly basis, owner permission and historical rank",
-    "15+ managed accounts is existing public copy, not an independently verified current count",
     "Remaining platform support, current access processes, contractual guarantees, team size and staffing ratios"
   ],
   "do_not_claim": [
@@ -59,7 +60,24 @@
     "method": "Signed-in in-app browser",
     "property": "sc-domain:zinelyagency.com",
     "url": "https://search.google.com/search-console/performance/insights?resource_id=sc-domain%3Azinelyagency.com",
-    "note": "Browser access confirmed; no API connection was established. Inspect current indexing reports before making indexing claims."
+    "note": "Browser access confirmed; no API connection was established. Inspect current indexing reports before making indexing claims.",
+    "fanvue_inspection": {
+      "checked_on": "2026-10-02",
+      "url": "https://zinelyagency.com/fanvue-chatting-agency/",
+      "indexed_status": "URL is unknown to Google; not indexed",
+      "live_result": "Successful fetch; crawl and indexing allowed; correct self-canonical",
+      "request_status": "Indexing requested; accepted into priority crawl queue",
+      "note": "Do not equate accepted indexing request with indexed or ranking."
+    },
+    "sitemap": {
+      "url": "https://zinelyagency.com/sitemap.xml",
+      "submitted_on": "2026-10-02",
+      "submission_result": "Submitted successfully",
+      "processing_result": "Sitemap could not be read; 0 discovered pages",
+      "live_google_fetch": "Successful at 00:07 local October 2; crawl allowed",
+      "independent_validation": "HTTP 200, application/xml, 11 valid URLs including Fanvue",
+      "note": "Processing warning remains unresolved. Recheck next scheduled run and investigate verified-bot logs if persistent. No blanket security changes or repeated submissions."
+    }
   },
   "bing_access": {
     "verified_on": "2026-10-01",

@@ -1,9 +1,18 @@
 {
-  "updated_on": "2026-10-01",
+  "updated_on": "2026-10-02",
   "mode": "prepare_for_review",
   "max_new_articles_per_week": 2,
   "max_pending_deliverables": 3,
   "items": [
+    {
+      "id": "fanvue-indexing",
+      "priority": 0,
+      "status": "indexing_requested_pending_google",
+      "audience": "fanvue_ai_operator",
+      "title": "Get the Fanvue service page discovered and verify Google indexing",
+      "target_url": "/fanvue-chatting-agency/",
+      "next_action": "Live Fanvue inspection passed and indexing request accepted October 2. Sitemap submitted but processing reports could not be read; the sitemap itself passed direct XML validation and Google live fetch. At next daily run check both states once. If sitemap warning persists inspect Cloudflare verified-bot logs if accessible. Do not repeatedly request indexing, resubmit unchanged sitemaps or disable security broadly. Once indexed compare weekly Fanvue/commercial AI-model query evidence. Continue useful content work while pending."
+    },
     {
       "id": "foundation",
       "priority": 0,
@@ -23,7 +32,7 @@
     },
     {
       "id": "fees",
-      "priority": 1,
+      "priority": 2,
       "status": "queued",
       "audience": "agency_owner",
       "title": "Chatting agency commission: which revenue should the percentage apply to?",
@@ -76,7 +85,7 @@
     },
     {
       "id": "fanvue-handover",
-      "priority": 4,
+      "priority": 1,
       "status": "queued",
       "audience": "fanvue_ai_operator",
       "title": "A Fanvue AI-persona handover brief for human chatters",
@@ -89,7 +98,8 @@
       "required_evidence": [
         "Recheck Fanvue AI disclosure and manager-account guidance",
         "Do not reuse OnlyFans results as Fanvue proof"
-      ]
+      ],
+      "next_action": "Prepare the next article draft before the general fee article; support the existing Fanvue service page with a useful persona/voice brief, shift-handover example and current access/disclosure sources."
     },
     {
       "id": "in-house-cost",
@@ -133,5 +143,6 @@
         "No sending or posting without explicit instruction"
       ]
     }
-  ]
+  ],
+  "current_focus": "Fanvue / AI-model discovery and qualified organic enquiries"
 }

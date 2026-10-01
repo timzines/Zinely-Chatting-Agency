@@ -16,6 +16,18 @@ The homepage introduces all three. The existing Fansly page stays available but 
 
 The generic agency explainer is informational support; the OnlyFans service page owns the purchase intent. New articles answer specific questions and link to the relevant destination rather than competing with it for the same headline and intent.
 
+## Current priority: Fanvue discovery and qualified searches
+
+On October 2, 2026, the owner identified missing visibility for "Fanvue chatting" and "AI model chatting" as the immediate priority. Google URL Inspection reported `/fanvue-chatting-agency/` as unknown to Google and not indexed. The live smartphone inspection fetched it successfully, allowed crawling/indexing, and found the correct self-canonical. Google accepted a manual indexing request. This establishes indexability and a submitted request, not indexing or a ranking gain. Read the latest local measurement report for subsequent sitemap status and inspection evidence.
+
+The existing Fanvue page already has a relevant title, H1, static content, internal links and sitemap entry. Resolve discovery before creating another near-identical landing page. Keep that URL as the commercial destination for Fanvue chatting agency, Fanvue chatting service, outsource Fanvue chatting, and human chatters for AI models. These are intent hypotheses, not measured-volume keywords.
+
+The sampled Google results for "AI model chatting" were dominated by general AI-chat tools; "Fanvue chatting" mixed platform help, tutorials, videos and automation discussions. This was one signed-in, Slovakia-localized observation, not a universal ranking audit. Keep both owner-requested phrases in the watchlist, but evaluate commercial variants separately. Do not promise placement for a broad phrase whose results answer a different need.
+
+Move the useful Fanvue persona-handover guide ahead of the general commission article. It should give operators an actionable brief, shift-handover example, account-access checklist and clear service link. Use current official Fanvue guidance and label examples; never invent Fanvue results. Distribution research should prioritize relevant Fanvue/AI-creator educators and communities with verified rules. No outreach or posting without the owner's explicit instruction.
+
+The daily routine checks the Fanvue indexing status once while pending, alongside its usual work. Do not repeatedly request indexing or resubmit an unchanged sitemap. After indexing, use complete weekly Search Console periods to track page impressions/clicks and available queries containing Fanvue or AI-model terms, then compare consenting visitors' contact-intent events and owner-confirmed enquiries. A query absent from a Search Console table is not proof of zero searches. Notify on a changed indexing state, a concrete issue, a useful deliverable or meaningful performance change; stay quiet on unchanged pending status.
+
 ## Changes to the July assumptions
 
 - Daily work is useful; daily article publishing is not a requirement. Start with at most two thoroughly reviewed articles a week, plus updates to existing pages. Research and operational examples must add something beyond a generic AI answer. Google warns that generating many pages without value may constitute scaled content abuse ([Google guidance](https://developers.google.com/search/docs/fundamentals/using-gen-ai-content)).
