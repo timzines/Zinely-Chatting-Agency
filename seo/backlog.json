@@ -7,11 +7,11 @@
     {
       "id": "foundation",
       "priority": 0,
-      "status": "release_pending",
+      "status": "deployed",
       "audience": "all",
       "title": "Release audience journeys and agency service page",
       "target_url": "/onlyfans-chatting-for-agencies/",
-      "next_action": "Website changes committed/pushed as e954b7e. Verify Cloudflare production release and record live URLs; do not duplicate the other website task’s deployment."
+      "next_action": "Released in e954b7e. Live HTTP/canonical checks passed October 1, 2026. Verify indexing when Search Console or Bing access is available."
     },
     {
       "id": "measurement",
