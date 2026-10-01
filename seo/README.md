@@ -10,6 +10,7 @@ From the repository root, using Python 3.12 or newer:
 python scripts/seo.py build
 python scripts/seo.py check
 python -m unittest discover -s scripts/tests
+node --test scripts/tests/analytics.test.cjs
 python scripts/seo.py live --output seo/reports/live-latest.json
 ```
 
@@ -23,12 +24,20 @@ Do not assume all changes in the checkout belong to SEO. Another task may be edi
 
 The scheduled routine initially prepares work for review. It does not buy tools, send outreach, post in communities, change Cloudflare security, or publish content. Once a publishing workflow is selected, explicitly record its branch, build command, deployment method and verification step here; do not guess a Cloudflare worker name or assume pushing a branch deploys it.
 
-## Access still needed for measurement and release
+## Measurement access and production release
 
-- Search Console: existing property access or a recent export of queries, pages, countries and dates. The supplied July plan says the property is verified; access was not verified in this task.
-- Bing Webmaster Tools: confirm the property and sitemap submission. Submission and indexing are separate.
+- Search Console: browser access to the zinelyagency.com domain property was verified on October 1, 2026. Use the signed-in browser session and the current Performance/Indexing reports; no new connection is needed while this session remains valid.
+- Bing Webmaster Tools: browser access verified for zinelyagency.com. The current HTTPS sitemap was submitted October 1, 2026 and is processing; submission is not indexing.
 - Cloudflare: inspect bot/WAF events and hosting configuration; no blanket disabling of bot protection.
-- Conversion measurement: use the site's chosen analytics provider and the estimate/contact flow. No analytics destination was configured by this task.
-- Deployment: confirm the existing production pipeline. Local changes and a successful check do not mean production changed.
+- Conversion measurement: GA4 account 410488217, property 557105570, web stream 15939719890, measurement ID G-TRRHR6L9Z8 verified. Optional analytics was released in 38ce856. Consult the latest measurement report for actual Realtime receipt verification; an installed script does not establish collection.
+- Deployment: pushing `main` to `timzines/Zinely-Chatting-Agency` triggers the existing Cloudflare Workers Build for `zinely-chatting`, publishing `Zinely/`. Check the build and live result before marking a release deployed.
 
 Keep these limitations visible in reports. Never invent traffic, rankings, conversion rates, keyword volumes or qualified leads when the data is unavailable.
+
+## Analytics interpretation
+
+`assets/analytics.js` loads GA4 only after a visitor allows analytics. Both refusal and acceptance last 180 days; Analytics settings lets visitors change their choice. Local previews send no production events. Advertising features and GA4 enhanced measurement are off. Only standard page views and explicitly coded contact-intent events are collected. Page query strings, fragments, full referring URLs and Telegram message drafts are excluded.
+
+`estimate_start` means a visitor clicked an internal link to `/contact#estimate` or its `.html` equivalent. `telegram_click` means a visitor clicked a Telegram link; `destination` separates the community group from the sales contact. `cta_type` identifies an estimate CTA. `audience` describes the source page's topic, not a verified visitor identity. Neither event proves that a message was sent, a lead was qualified, or a client signed. Maintain those outcomes separately from owner-confirmed sales records.
+
+Analytics excludes people who decline or block tracking, and verification visits are not acquisition results. Use Search Console for Google search impressions/clicks, GA4 for consenting visitors' on-site actions, and actual enquiry records for business results. Signed-in dashboard access is browser access, not an API connection. The daily routine can read available sessions; an expired session should be reported once without stopping other useful work.

@@ -1,2 +1,3 @@
 .run-lock/
 reports/*-latest.json
+reports/*-measurement.json

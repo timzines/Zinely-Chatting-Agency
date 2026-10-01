@@ -1,7 +1,11 @@
 {
   "reviewed_on": "2026-10-01",
   "basis": "User-supplied plan plus current repository and live browser observations. Offering claims are owner-provided, not independently audited.",
-  "audiences": ["OnlyFans agencies with active creators and acquisition", "OnlyFans creators with existing traffic", "Fanvue AI-model operators with existing traffic"],
+  "audiences": [
+    "OnlyFans agencies with active creators and acquisition",
+    "OnlyFans creators with existing traffic",
+    "Fanvue AI-model operators with existing traffic"
+  ],
   "approved_claims": {
     "chatters": "Human chatting, 24/7 coverage",
     "commission": "Published range 16.5–25% of net tips and PPV closed by Zinely chatters; final terms agreed before launch",
@@ -10,20 +14,36 @@
     "billing": "Weekly invoices on Mondays, payable by bank transfer or crypto",
     "onboarding": "Current site target is usually within 24 hours of first contact, subject to account readiness and agreed access",
     "agency_service": "White label chatting; agency retains creator relationship and marketing",
-    "platforms": ["OnlyFans", "Fanvue including AI-model accounts", "Fansly"],
+    "platforms": [
+      "OnlyFans",
+      "Fanvue including AI-model accounts",
+      "Fansly"
+    ],
     "scope": "Chatting does not substitute for acquiring traffic. No invented numerical revenue or audience minimum."
   },
-  "source_files": ["Zinely/pricing.html", "Zinely/services.html", "Zinely/index.html", "Zinely/cases.html"],
+  "source_files": [
+    "Zinely/pricing.html",
+    "Zinely/services.html",
+    "Zinely/index.html",
+    "Zinely/cases.html"
+  ],
   "platform_sources": [
-    {"url": "https://help.fanvue.com/en/articles/9538738-is-ai-content-allowed-on-fanvue", "checked_on": "2026-10-01", "topic": "AI-generated media disclosure"},
-    {"url": "https://help.fanvue.com/en/articles/11163277-settings-management-using-manager-accounts-on-fanvue", "checked_on": "2026-10-01", "topic": "Manager and team-member permissions; check current account scopes"}
+    {
+      "url": "https://help.fanvue.com/en/articles/9538738-is-ai-content-allowed-on-fanvue",
+      "checked_on": "2026-10-01",
+      "topic": "AI-generated media disclosure"
+    },
+    {
+      "url": "https://help.fanvue.com/en/articles/11163277-settings-management-using-manager-accounts-on-fanvue",
+      "checked_on": "2026-10-01",
+      "topic": "Manager and team-member permissions; check current account scopes"
+    }
   ],
   "requires_review_before_new_claims": [
     "Rate-tier wording above $140K and whether tiers use gross, net, or eligible revenue; do not invent a multi-account discount",
     "Each case-study figure's platform, time period, cumulative versus monthly basis, owner permission and historical rank",
     "15+ managed accounts is existing public copy, not an independently verified current count",
-    "Remaining platform support, current access processes, contractual guarantees, team size and staffing ratios",
-    "Search Console verification appears in the supplied plan; actual property access and current index status were not verified"
+    "Remaining platform support, current access processes, contractual guarantees, team size and staffing ratios"
   ],
   "do_not_claim": [
     "Guaranteed rankings, AI citations, revenue uplift or safety",
@@ -33,5 +53,33 @@
     "Keyword search volumes or low competition without current evidence",
     "A universal message-to-subscription ratio or top-spender percentage predicts results",
     "Monday is the platform payout date"
-  ]
+  ],
+  "search_console_access": {
+    "verified_on": "2026-10-01",
+    "method": "Signed-in in-app browser",
+    "property": "sc-domain:zinelyagency.com",
+    "url": "https://search.google.com/search-console/performance/insights?resource_id=sc-domain%3Azinelyagency.com",
+    "note": "Browser access confirmed; no API connection was established. Inspect current indexing reports before making indexing claims."
+  },
+  "bing_access": {
+    "verified_on": "2026-10-01",
+    "method": "Signed-in in-app browser",
+    "property": "https://zinelyagency.com/",
+    "url": "https://www.bing.com/webmasters/sitemaps?siteUrl=https://zinelyagency.com/",
+    "sitemap": "https://zinelyagency.com/sitemap.xml",
+    "sitemap_status": "Submitted October 1, 2026; processing",
+    "note": "An older HTTP sitemap was discovered April 30 and crawled July 11 with five URLs. Do not equate discovered URLs with indexed pages."
+  },
+  "analytics_access": {
+    "verified_on": "2026-10-01",
+    "method": "Signed-in in-app browser",
+    "account_id": "410488217",
+    "property_id": "557105570",
+    "stream_id": "15939719890",
+    "measurement_id": "G-TRRHR6L9Z8",
+    "stream_url": "https://zinelyagency.com",
+    "url": "https://analytics.google.com/analytics/web/?authuser=1#/a410488217p557105570/reports/intelligenthome",
+    "collection_status": "Production release 38ce856 verified live. GA4 Realtime received page_view, estimate_start and telegram_click from one controlled verification visit on October 1, 2026 (UTC). This is setup evidence, not acquired traffic or a qualified lead.",
+    "enhanced_measurement": "Disabled in stream settings October 1, 2026; confirmed switch off. Standard page views plus explicit estimate_start and telegram_click only."
+  }
 }

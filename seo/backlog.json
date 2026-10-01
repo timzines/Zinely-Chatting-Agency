@@ -11,15 +11,15 @@
       "audience": "all",
       "title": "Release audience journeys and agency service page",
       "target_url": "/onlyfans-chatting-for-agencies/",
-      "next_action": "Released in e954b7e. Live HTTP/canonical checks passed October 1, 2026. Verify indexing when Search Console or Bing access is available."
+      "next_action": "Released in e954b7e. Live HTTP/canonical checks passed October 1, 2026. Search Console and Bing browser access is now available; inspect indexing separately from HTTP status."
     },
     {
       "id": "measurement",
       "priority": 0,
-      "status": "needs_access",
+      "status": "collection_verified_baseline_recorded",
       "audience": "all",
       "title": "Establish search, indexing and qualified-lead baseline",
-      "next_action": "Access GSC, Bing and chosen analytics; inspect crawl events, CTA flow and lead source reconciliation; avoid repeat requests"
+      "next_action": "GSC, Bing and GA4 browser access confirmed. Consent-based collection deployed in 38ce856 and all three event types verified in Realtime. Read local measurement report for the initial search baseline and exclude the controlled verification visit from acquisition results. Compare complete future periods, inspect indexing and HTTPS Bing sitemap processing, and track owner-confirmed qualified leads separately."
     },
     {
       "id": "fees",
