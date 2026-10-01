@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,9 @@
 {"@context":"https://schema.org","@type":"Organization","name":"Zinely","alternateName":"Zinely Chatting Agency","url":"https://zinelyagency.com/","logo":"https://zinelyagency.com/assets/logo.png","description":"24/7 human-only chatting agency for OnlyFans, Fanvue and Fansly creators and agencies.","sameAs":["https://t.me/zinelyagency"]}
 </script>
 <link rel="icon" type="image/png" href="assets/logo.png">
-<link rel="stylesheet" href="mobile.css">
+<link rel="stylesheet" href="mobile.css?v=20261001">
+<link rel="stylesheet" href="assets/refinements.css?v=20261001-3">
+<script src="assets/interactions.js?v=20261001-3" defer></script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -91,21 +93,16 @@
 
     <!-- BIG RATE CARD -->
     <section data-screen-label="Rate" style="padding:50px 0 10px;max-width:880px;margin:0 auto">
-      <div style="background:linear-gradient(135deg,rgba(26,163,245,.16),rgba(46,137,214,.05));border:1px solid rgba(26,163,245,.4);border-radius:22px;padding:46px 48px;text-align:center">
-        <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(80px,12vw,130px);line-height:1;color:#fff">{{ rateLabel }}<span style="color:#1AA3F5">%</span></div>
-        <div style="font-family:'Bricolage Grotesque';font-weight:700;font-size:19px;color:#8FB2D4;margin-top:8px">of net tips &amp; PPV — subs stay 100% yours</div>
-        <div style="max-width:560px;margin:36px auto 0">
-          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px">
-            <span style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5E82A6">Your monthly revenue</span>
-            <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:26px;color:#EAF4FD">{{ revLabel }}<span style="font-size:14px;color:#5E82A6;font-weight:600"> /month</span></span>
-          </div>
-          <input class="zslider" type="range" min="0" max="140000" step="2500" value="{{ revM }}" onInput="{{ onRevChange }}" style="width:100%">
-          <div style="display:flex;font-size:12px;font-weight:700;color:#5E82A6;margin-top:10px">
-            <span style="width:28.6%;text-align:left">25%</span>
-            <span style="width:35.7%;text-align:center">20%</span>
-            <span style="flex:1;text-align:right;color:#1AA3F5">16.5%</span>
-          </div>
+      <div class="z-rate-card">
+        <span class="z-eyebrow">We grow when you do</span>
+        <div class="z-rate-number" aria-live="polite">{{ rateLabel }}<span>%</span></div>
+        <p class="z-rate-description">of net tips &amp; PPV. <strong>Subscriptions stay 100% yours.</strong></p>
+        <div class="z-revenue-control">
+          <div class="z-revenue-heading"><label for="monthly-revenue">Your monthly revenue</label><output for="monthly-revenue">{{ revLabel }}<small> / month</small></output></div>
+          <input id="monthly-revenue" class="zslider z-revenue-slider" type="range" min="0" max="140000" step="2500" value="{{ revM }}" aria-valuetext="{{ revenueAria }}" onInput="{{ onRevChange }}" style="{{ revenueStyle }}">
+          <div class="z-rate-ticks" aria-hidden="true"><span data-active="{{ tier25 }}">25%<small>Up to $40K</small></span><span data-active="{{ tier20 }}">20%<small>$40K–$90K</small></span><span data-active="{{ tier16 }}">16.5%<small>Above $90K</small></span></div>
         </div>
+        <div class="z-rate-benefits"><span>No retainers</span><span>No minimums</span><span>No lock-in</span></div>
       </div>
     </section>
 
@@ -157,26 +154,26 @@
     <!-- PRICING FAQ -->
     <section data-screen-label="FAQ" style="padding:60px 0 10px;max-width:760px;margin:0 auto">
       <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.8vw,36px);letter-spacing:-.02em;margin:0 0 24px;color:#fff;text-align:center">Pricing questions.</h2>
-      <div style="display:grid;gap:10px">
-        <details style="background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:14px;padding:0;overflow:hidden">
-          <summary style="font-family:'Bricolage Grotesque';font-weight:700;font-size:17px;color:#fff;cursor:pointer;list-style:none;display:block;padding:20px 24px" style-hover="background:rgba(26,163,245,.06)">Why percentage instead of a flat fee?</summary>
-          <p style="color:#8FB2D4;font-size:15px;margin:0;padding:0 24px 20px">Because it puts us on your side of the table. A flat fee gets paid whether your DMs earn or not — a percentage only pays us when you get paid. Our incentive is your revenue, full stop.</p>
+      <div class="z-accordion">
+        <details>
+          <summary>Why percentage instead of a flat fee?</summary>
+          <div class="z-answer"><p>Because it puts us on your side of the table. A flat fee gets paid whether your DMs earn or not — a percentage only pays us when you get paid. Our incentive is your revenue, full stop.</p></div>
         </details>
-        <details style="background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:14px;padding:0;overflow:hidden">
-          <summary style="font-family:'Bricolage Grotesque';font-weight:700;font-size:17px;color:#fff;cursor:pointer;list-style:none;display:block;padding:20px 24px" style-hover="background:rgba(26,163,245,.06)">How does the sliding rate work?</summary>
-          <p style="color:#8FB2D4;font-size:15px;margin:0;padding:0 24px 20px">The rate is tied to your monthly revenue: 25% up to $40k, 20% from $40k to $90k, and 16.5% from $90k to $140k. As you grow, you automatically keep a bigger share — it's all agreed in writing before we start.</p>
+        <details>
+          <summary>How does the sliding rate work?</summary>
+          <div class="z-answer"><p>The rate is tied to your monthly revenue: 25% up to $40k, 20% from $40k to $90k, and 16.5% from $90k to $140k. As you grow, you automatically keep a bigger share — it's all agreed in writing before we start.</p></div>
         </details>
-        <details style="background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:14px;padding:0;overflow:hidden">
-          <summary style="font-family:'Bricolage Grotesque';font-weight:700;font-size:17px;color:#fff;cursor:pointer;list-style:none;display:block;padding:20px 24px" style-hover="background:rgba(26,163,245,.06)">Are there any other costs?</summary>
-          <p style="color:#8FB2D4;font-size:15px;margin:0;padding:0 24px 20px">No. No setup fee, no retainer, no minimum, no per-chatter charge. The percentage is the whole price.</p>
+        <details>
+          <summary>Are there any other costs?</summary>
+          <div class="z-answer"><p>No. No setup fee, no retainer, no minimum, no per-chatter charge. The percentage is the whole price.</p></div>
         </details>
-        <details style="background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:14px;padding:0;overflow:hidden">
-          <summary style="font-family:'Bricolage Grotesque';font-weight:700;font-size:17px;color:#fff;cursor:pointer;list-style:none;display:block;padding:20px 24px" style-hover="background:rgba(26,163,245,.06)">How does billing work?</summary>
-          <p style="color:#8FB2D4;font-size:15px;margin:0;padding:0 24px 20px">Every Monday we total the week's tips &amp; PPVs, take our percentage, and send you the amount — payable by bank transfer or crypto. The full details are in the <a href="assets/Zinely_Onboarding.pdf" download="Zinely_Onboarding.pdf" style="color:#1AA3F5;font-weight:700;text-decoration:none">onboarding doc (PDF ↓)</a>.</p>
+        <details>
+          <summary>How does billing work?</summary>
+          <div class="z-answer"><p>Every Monday we total the week's tips &amp; PPVs, take our percentage, and send you the amount — payable by bank transfer or crypto. We agree the full payment details with you before we start.</p></div>
         </details>
-        <details style="background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:14px;padding:0;overflow:hidden">
-          <summary style="font-family:'Bricolage Grotesque';font-weight:700;font-size:17px;color:#fff;cursor:pointer;list-style:none;display:block;padding:20px 24px" style-hover="background:rgba(26,163,245,.06)">Can I leave whenever I want?</summary>
-          <p style="color:#8FB2D4;font-size:15px;margin:0;padding:0 24px 20px">Yes. No lock-in contracts. We keep partners with results, not paperwork.</p>
+        <details>
+          <summary>Can I leave whenever I want?</summary>
+          <div class="z-answer"><p>Yes. No lock-in contracts. We keep partners with results, not paperwork.</p></div>
         </details>
       </div>
     </section>
@@ -193,7 +190,7 @@
         <img src="assets/logo.png" alt="" style="width:22px;height:22px">
         <span style="color:#8FB2D4;font-size:13.5px"><b style="color:#EAF4FD">Zinely Agency</b> · Chatting partner for OnlyFans creators &amp; agencies</span>
       </div>
-      <div style="display:flex;gap:20px">
+      <div class="z-footer-links" style="display:flex;gap:20px">
         <a href="services.html" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Services</a>
         <a href="cases.html" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Case studies</a>
         <a href="pricing.html" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Pricing</a>
@@ -219,6 +216,11 @@ class Component extends DCLogic {
     const rate = revM <= 40000 ? "25" : revM <= 90000 ? "20" : "16.5";
     return {
       calendly: this.props.telegramUrl ?? "https://t.me/timzines",
+      revenueAria: "$" + this.state.revM.toLocaleString("en-US") + " monthly revenue, " + (this.state.revM <= 40000 ? "25" : this.state.revM <= 90000 ? "20" : "16.5") + "% rate",
+      revenueStyle: { background: "linear-gradient(90deg, #1AA3F5 " + (this.state.revM / 140000 * 100) + "%, #1c3a5a " + (this.state.revM / 140000 * 100) + "%)" },
+      tier25: this.state.revM <= 40000,
+      tier20: this.state.revM > 40000 && this.state.revM <= 90000,
+      tier16: this.state.revM > 90000,
       revM: revM,
       revLabel: "$" + revM.toLocaleString("en-US"),
       rateLabel: rate,

@@ -8,6 +8,7 @@
   .z-nav-cta { display: inline-flex !important; }
   .z-burger { display: block !important; }
   .z-navbar { padding: 11px 16px !important; gap: 12px !important; }
+  .z-footer-links { flex-wrap: wrap; gap: 12px 20px !important; }
 
   /* Hero: smaller headline that fits a phone, allow the accent line to wrap */
   .z-hero { padding: 42px 0 8px !important; gap: 34px !important; }

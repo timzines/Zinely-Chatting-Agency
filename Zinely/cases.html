@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,9 @@
 {"@context":"https://schema.org","@type":"Organization","name":"Zinely","alternateName":"Zinely Chatting Agency","url":"https://zinelyagency.com/","logo":"https://zinelyagency.com/assets/logo.png","description":"24/7 human-only chatting agency for OnlyFans, Fanvue and Fansly creators and agencies.","sameAs":["https://t.me/zinelyagency"]}
 </script>
 <link rel="icon" type="image/png" href="assets/logo.png">
-<link rel="stylesheet" href="mobile.css">
+<link rel="stylesheet" href="mobile.css?v=20261001">
+<link rel="stylesheet" href="assets/refinements.css?v=20261001-4">
+<script src="assets/interactions.js?v=20261001-3" defer></script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -75,249 +77,165 @@
 
   <div style="position:relative;z-index:1;max-width:1160px;margin:0 auto;padding:0 24px">
 
-    <!-- HERO -->
-    <section style="text-align:center;padding:76px 0 20px;max-width:720px;margin:0 auto">
-      <div style="font-weight:700;letter-spacing:.28em;text-transform:uppercase;font-size:12px;color:#1AA3F5;margin-bottom:16px">Case studies</div>
-      <h1 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(38px,5.6vw,62px);line-height:1.02;letter-spacing:-.025em;margin:0;color:#fff">We don't promise.<br><span style="color:#1AA3F5">We show receipts.</span></h1>
-      <p style="color:#8FB2D4;font-size:18px;margin:20px auto 0;max-width:560px">Real dashboards, real numbers. Names and fans blurred — this industry runs on discretion.</p>
+    <!-- CASE STUDIES -->
+    <section class="z-cases-hero">
+      <div><span class="z-eyebrow">The work, in numbers</span><h1 class="z-title">What better<br><span>chatting looks like.</span></h1></div>
+      <div><p class="z-description">From 60 subscribers to six-figure accounts. A closer look at the results — with the dashboards to back them up.</p><span class="z-proof-note">Original screenshots. Creator identities protected.</span></div>
+    </section>
+    <nav class="z-case-nav z-case-nav-four z-case-nav-all" aria-label="Explore all seven case studies">
+      <a href="#case-growth"><span class="z-case-nav-top"><span>01 / Six-figure account</span><span aria-hidden="true">↘</span></span><strong>$164.9K</strong><small>All-time earnings</small></a>
+      <a href="#case-earlier-original"><span class="z-case-nav-top"><span>02 / Six-month takeover</span><span aria-hidden="true">↘</span></span><strong>$160.9K</strong><small>All-time earnings</small></a>
+      <a href="#case-partnership"><span class="z-case-nav-top"><span>03 / Long-term partnership</span><span aria-hidden="true">↘</span></span><strong>$64.3K</strong><small>All-time earnings</small></a>
+      <a href="#case-earlier-growth"><span class="z-case-nav-top"><span>04 / Fan relationships</span><span aria-hidden="true">↘</span></span><strong>$28.9K</strong><small>All-time earnings</small></a>
+      <a href="#case-takeover"><span class="z-case-nav-top"><span>05 / Chatting takeover</span><span aria-hidden="true">↘</span></span><strong>$22.2K</strong><small>All-time earnings</small></a>
+      <a href="#case-sixty"><span class="z-case-nav-top"><span>06 / 60 subscribers</span><span aria-hidden="true">↘</span></span><strong>$13.2K</strong><small>All-time earnings</small></a>
+      <a href="#case-earlier-launch"><span class="z-case-nav-top"><span>07 / First 31 days</span><span aria-hidden="true">↘</span></span><strong>$10.1K</strong><small>First 31 days</small></a>
+    </nav>
+
+    <section class="z-case z-case-featured" id="case-growth" aria-labelledby="case-title-growth">
+      <header class="z-case-header"><span class="z-case-index" aria-hidden="true">01</span><div><h2 id="case-title-growth">A six-figure account, built in the DMs.</h2><p>Full DM takeover · Fanvue · September 2026 snapshot</p></div></header>
+      <div class="z-case-layout">
+        <div class="z-case-story">
+          <span class="z-eyebrow">The latest account snapshot</span>
+          <div class="z-case-outcome">$164.9K</div>
+          <div class="z-case-period">$164,972.91 all-time earnings</div>
+          <p>The latest dashboard shows <b>$164,972.91 in all-time earnings</b> and a <b>top 0.53% creator ranking</b>. Behind the headline, the net chart records <b>$96,864.43 in messages</b> and <b>$11,170.04 in tips</b>. Conversations remain a major part of the account’s revenue.</p>
+          <div class="z-case-highlight"><strong>0.53%</strong><span>top creator ranking shown on the dashboard</span></div>
+        </div>
+        <div>
+          <button type="button" class="z-evidence" data-zoom="assets/case-growth-september-dashboard.png" data-caption="Growth account · $164,972.91 all-time earnings · September 2026" aria-label="Enlarge Growth account · $164,972.91 all-time earnings · September 2026">
+            <img src="assets/case-growth-september-dashboard.png" alt="Growth account · $164,972.91 all-time earnings · September 2026" loading="lazy">
+            <span class="z-evidence-caption"><span>Original account dashboard</span><span>View full size ↗</span></span>
+          </button>
+
+        </div>
+      </div>
+      <div class="z-case-revenue">
+        <div class="z-revenue-stats"><div><span>Messages · net chart</span><strong>$96,864.43</strong></div><div><span>Tips · net chart</span><strong>$11,170.04</strong></div><div><span>Total · net chart</span><strong>$132,256.74</strong></div></div>
+        <p class="z-data-note">Chart basis: net earnings. The headline above shows all-time account earnings.</p>
+      </div>
     </section>
 
-    <!-- CASE 1 -->
-    <section data-screen-label="Case 1" style="padding:56px 0 10px">
-      <div style="display:flex;align-items:center;gap:16px;margin:0 0 20px">
-        <div style="flex:none;width:52px;height:52px;border-radius:14px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);display:grid;place-items:center;font-family:'Bricolage Grotesque';font-weight:800;font-size:19px;color:#04182b;box-shadow:0 8px 20px rgba(26,163,245,.35)">01</div>
-        <div style="min-width:0">
-          <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:21px;color:#fff;letter-spacing:-.01em">$1.5K → $160K in 6 months</div>
-          <div style="font-size:13px;color:#5E82A6;font-weight:600">Top 1.23% creator · full DM takeover</div>
+    <section class="z-case" id="case-earlier-original" aria-labelledby="case-title-earlier-original">
+          <header class="z-case-header"><span class="z-case-index" aria-hidden="true">02</span><div><h2 id="case-title-earlier-original">From $1.5K to $160K in six months.</h2><p>Full DM takeover · earlier account result</p></div></header>
+          <div class="z-case-layout">
+            <div class="z-case-story"><span class="z-eyebrow">Starting point: $1.5K</span><div class="z-case-outcome">$160K<span>+</span></div><div class="z-case-period">$160,854.32 all time · six months after takeover</div><p>Our chatters took over the DMs. Six months later, this account’s dashboard showed <b>$160,854.32 in all-time revenue</b> and a place in the <b>top 1.23% of creators</b>.</p><div class="z-case-highlight"><strong>75%</strong><span>of account revenue closed in the DMs</span></div></div>
+            <div><button type="button" class="z-evidence" data-zoom="assets/case1-dashboard-wm5.png" data-caption="Earlier case 01 · $160,854.32 all-time dashboard" aria-label="Enlarge earlier case 01 dashboard"><img src="assets/case1-dashboard-wm5.png" alt="Earlier account dashboard showing $160,854.32 all time" loading="lazy"><span class="z-evidence-caption"><span>Original account dashboard</span><span>View full size ↗</span></span></button><div class="z-evidence-more"><button type="button" class="z-evidence z-evidence-small" data-zoom="assets/case1-earnings-by-type-wm4.png" data-caption="Earlier case 01 · Earnings by type" aria-label="Enlarge earlier case 01 earnings by type"><img src="assets/case1-earnings-by-type-wm4.png" alt="" loading="lazy"><span class="z-evidence-caption"><span>Earnings by type</span><span>View full size ↗</span></span></button></div></div>
+          </div>
+          <div class="z-case-revenue"><div class="z-revenue-bar" aria-hidden="true"><span style="width:74.8%"></span><span style="width:13.4%"></span><span style="width:11.8%"></span></div><div class="z-revenue-stats"><div><span>Messages &amp; tips</span><strong>$120,257</strong></div><div><span>Subscriptions</span><strong>$21,606</strong></div><div><span>Renewals</span><strong>$18,992</strong></div></div></div>
+        </section>
+
+    <section class="z-case " id="case-partnership" aria-labelledby="case-title-partnership">
+      <header class="z-case-header"><span class="z-case-index" aria-hidden="true">03</span><div><h2 id="case-title-partnership">Progress isn’t always a straight line.</h2><p>Ongoing partnership · Fanvue · August 2026 snapshot</p></div></header>
+      <div class="z-case-layout">
+        <div class="z-case-story">
+          <span class="z-eyebrow">Working together from near the start</span>
+          <div class="z-case-outcome">$64.3K</div>
+          <div class="z-case-period">$64,274.06 all-time earnings</div>
+          <p>We were on this account from almost the start. Results were uneven, and we kept working with the client through the slower stretches. The snapshot shows <b>$64,274.06 all time</b>, including <b>$24,258.58 in August</b>, and a <b>top 0.24% creator ranking</b>. Real progress, with the ups and downs still visible.</p>
+          <div class="z-case-highlight"><strong>$24.3K</strong><span>earnings in August 2026</span></div>
         </div>
-        <div style="flex:1;height:1px;background:#1C3A5A;min-width:40px"></div>
-      </div>
-      <div class="m-cols" style="display:grid;grid-template-columns:1.05fr 1fr;gap:16px;align-items:stretch">
-        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,rgba(26,163,245,.15),#0E2138);border:1.5px solid rgba(26,163,245,.5);border-radius:20px;padding:34px 36px;display:flex;flex-direction:column;justify-content:center">
-          <div style="position:absolute;top:-28px;right:-10px;font-family:'Bricolage Grotesque';font-weight:800;font-size:150px;line-height:1;color:rgba(26,163,245,.08);pointer-events:none;letter-spacing:-.05em">6mo</div>
-          <div style="position:relative">
-            <div style="display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap">
-              <div>
-                <div style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5E82A6;margin-bottom:6px">Before</div>
-                <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:32px;color:#8FB2D4;line-height:1">$1.5K</div>
-              </div>
-              <div style="color:#1AA3F5;font-size:26px;font-weight:800;padding-bottom:2px">→</div>
-              <div>
-                <div style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#1AA3F5;margin-bottom:6px">6 months later</div>
-                <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:58px;color:#fff;line-height:1;text-shadow:0 0 30px rgba(26,163,245,.4)">$160K<span style="color:#1AA3F5">+</span></div>
-              </div>
-            </div>
-            <p style="color:#8FB2D4;font-size:15px;margin:22px 0 0;max-width:380px">Our chatters took the DMs. Half a year later she's in the <b style="color:#EAF4FD">top 1.23% of all creators</b>.</p>
-          </div>
-        </div>
-        <div style="background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:30px 32px">
-          <div style="font-size:11.5px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#5E82A6;margin-bottom:24px">Where it came from</div>
-          <div style="display:grid;gap:20px">
-            <div>
-              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span style="font-size:14px;font-weight:700;color:#EAF4FD">Messages &amp; tips <span style="color:#1AA3F5">· our chatters</span></span><span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:18px;color:#fff">$120,257</span></div>
-              <div style="height:9px;border-radius:999px;background:#0D1E33"><div style="width:100%;height:100%;border-radius:999px;background:linear-gradient(90deg,#1AA3F5,#2E89D6);box-shadow:0 0 14px rgba(26,163,245,.5)"></div></div>
-            </div>
-            <div>
-              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span style="font-size:14px;font-weight:600;color:#8FB2D4">Subs</span><span style="font-family:'Bricolage Grotesque';font-weight:700;font-size:16px;color:#8FB2D4">$21,606</span></div>
-              <div style="height:9px;border-radius:999px;background:#0D1E33"><div style="width:18%;height:100%;border-radius:999px;background:#3E5F84"></div></div>
-            </div>
-            <div>
-              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span style="font-size:14px;font-weight:600;color:#8FB2D4">Renewals</span><span style="font-family:'Bricolage Grotesque';font-weight:700;font-size:16px;color:#8FB2D4">$18,992</span></div>
-              <div style="height:9px;border-radius:999px;background:#0D1E33"><div style="width:15.8%;height:100%;border-radius:999px;background:#3E5F84"></div></div>
-            </div>
-          </div>
-          <div style="margin-top:24px;padding-top:18px;border-top:1px solid #1C3A5A;display:flex;align-items:center;gap:9px">
-            <span style="width:9px;height:9px;border-radius:3px;background:linear-gradient(90deg,#1AA3F5,#2E89D6);flex:none"></span>
-            <span style="font-size:13.5px;font-weight:600;color:#8FB2D4"><b style="color:#36D399">75%</b> of the account's revenue, closed in the DMs</span>
-          </div>
+        <div>
+          <button type="button" class="z-evidence" data-zoom="assets/case-partnership-dashboard.png" data-caption="Partnership account · $64,274.06 all-time · $24,258.58 in August 2026" aria-label="Enlarge Partnership account · $64,274.06 all-time · $24,258.58 in August 2026">
+            <img src="assets/case-partnership-dashboard.png" alt="Partnership account · $64,274.06 all-time · $24,258.58 in August 2026" loading="lazy">
+            <span class="z-evidence-caption"><span>Original account dashboard</span><span>View full size ↗</span></span>
+          </button>
         </div>
       </div>
-      <div onContextMenu="{{ blockCtx }}" class="m-cols" style="display:grid;grid-template-columns:1fr minmax(300px,380px);gap:16px;margin-top:16px;user-select:none;align-items:start">
-        <div onClick="{{ openZoom }}" style="background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:14px;overflow:hidden;cursor:zoom-in" style-hover="border-color:#1AA3F5">
-          <div style="width:100%;padding-top:59.7%;border-radius:12px;background-image:url('assets/case1-dashboard-wm5.png');background-size:cover;background-position:top center;pointer-events:none"></div>
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding:12px 8px 2px;min-width:0">
-            <span style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#5E82A6;white-space:nowrap">Her dashboard · click to zoom</span>
-            <span style="font-size:12.5px;font-weight:700;color:#36D399;white-space:nowrap">$160,854.32 all time</span>
-          </div>
-        </div>
-        <div style="background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:14px;overflow:hidden">
-          <div style="width:100%;padding-top:96.5%;border-radius:12px;background-image:url('assets/case1-earnings-by-type-wm4.png');background-size:contain;background-repeat:no-repeat;background-position:center;background-color:#161616;pointer-events:none"></div>
-          <div style="padding:12px 8px 2px;text-align:center">
-            <span style="font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#5E82A6">Earnings by type</span>
-          </div>
-        </div>
+      <div class="z-case-revenue">
+        <div class="z-revenue-stats"><div><span>Messages · net chart</span><strong>$28,870.80</strong></div><div><span>Tips · net chart</span><strong>$18,845.46</strong></div><div><span>Total · net chart</span><strong>$51,484.15</strong></div></div>
+        <p class="z-data-note">Chart basis: net earnings. The headline above shows all-time account earnings.</p>
       </div>
-      <sc-if value="{{ zoomOpen }}" hint-placeholder-val="{{ false }}">
-        <div onClick="{{ closeZoom }}" onContextMenu="{{ blockCtx }}" style="position:fixed;inset:0;z-index:200;background:rgba(4,10,20,.93);backdrop-filter:blur(6px);display:grid;place-items:center;cursor:zoom-out;user-select:none">
-          <div style="width:min(1360px,95vw)">
-            <div style="width:100%;padding-top:59.7%;border-radius:14px;background-image:url('assets/case1-dashboard-wm5.png');background-size:contain;background-repeat:no-repeat;background-position:center;pointer-events:none;box-shadow:0 40px 120px rgba(0,0,0,.6)"></div>
-            <div style="text-align:center;color:#5E82A6;font-size:13px;font-weight:600;margin-top:14px">Click anywhere to close</div>
-          </div>
-        </div>
-      </sc-if>
     </section>
 
-    <!-- CASE 2 -->
-    <section data-screen-label="Case 2" style="padding:56px 0 10px">
-      <div style="display:flex;align-items:center;gap:16px;margin:0 0 20px">
-        <div style="flex:none;width:52px;height:52px;border-radius:14px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);display:grid;place-items:center;font-family:'Bricolage Grotesque';font-weight:800;font-size:19px;color:#04182b;box-shadow:0 8px 20px rgba(26,163,245,.35)">02</div>
-        <div style="min-width:0">
-          <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:21px;color:#fff;letter-spacing:-.01em">$6K → $28.9K in 10 weeks</div>
-          <div style="font-size:13px;color:#5E82A6;font-weight:600">89% of revenue closed in the DMs</div>
+    <section class="z-case" id="case-earlier-growth" aria-labelledby="case-title-earlier-growth">
+      <header class="z-case-header"><span class="z-case-index" aria-hidden="true">04</span><div><h2 id="case-title-earlier-growth">Better conversations. Bigger spenders.</h2><p>Fan relationships & retention</p></div></header>
+      <div class="z-case-layout">
+        <div class="z-case-story"><span class="z-eyebrow">Starting point: $6K</span><div class="z-case-outcome">$28.9K<span>+</span></div><div class="z-case-period">All-time revenue · 10 weeks after takeover</div><p>Five months had brought in <b>$6K</b>. We took over on <b>May 25</b> — the arrow on the dashboard — and put fan relationships at the centre of the inbox. Ten weeks later, the account reached <b>$28,910.07 all time</b> and the <b>top 0.59% of creators</b>. The top fan alone spent <b>$8,263</b>.</p><div class="z-case-highlight"><strong>89%</strong><span>of account revenue closed in the DMs</span></div></div>
+        <div><button type="button" class="z-evidence" data-zoom="assets/case2-dashboard-wm2.png" data-caption="Case 02 · Account dashboard · $28,910.07 all time" aria-label="Enlarge Case 02 · Account dashboard · $28,910.07 all time"><img src="assets/case2-dashboard-wm2.png" alt="Case 02 · Account dashboard · $28,910.07 all time" loading="lazy"><span class="z-evidence-caption"><span>Original account dashboard</span><span>View full size ↗</span></span></button><div class="z-evidence-more"><button type="button" class="z-evidence z-evidence-small" data-zoom="assets/case2-whales-wm.png" data-caption="Case 02 · Top fan spending" aria-label="Enlarge case 02 top fan spending"><img src="assets/case2-whales-wm.png" alt="" loading="lazy"><span class="z-evidence-caption"><span>Top fan spending</span><span>View evidence ↗</span></span></button><button type="button" class="z-evidence z-evidence-small" data-zoom="assets/case2-earnings-by-type-wm.png" data-caption="Case 02 · Earnings by type" aria-label="Enlarge case 02 earnings by type"><img src="assets/case2-earnings-by-type-wm.png" alt="" loading="lazy"><span class="z-evidence-caption"><span>Earnings by type</span><span>View evidence ↗</span></span></button></div></div></div><div class="z-case-revenue"><div class="z-revenue-bar" aria-hidden="true"><span style="width:89.2%"></span><span style="width:5.3%"></span><span style="width:5.5%"></span></div><div class="z-revenue-stats"><div><span>Messages &amp; tips</span><strong>$25,793</strong></div><div><span>Posts</span><strong>$1,530</strong></div><div><span>Subs &amp; renewals</span><strong>$1,578</strong></div></div></div></section>
+
+    <section class="z-case " id="case-takeover" aria-labelledby="case-title-takeover">
+      <header class="z-case-header"><span class="z-case-index" aria-hidden="true">05</span><div><h2 id="case-title-takeover">A quiet inbox. A clear turning point.</h2><p>Chatting takeover · Fanvue · September 2026 snapshot</p></div></header>
+      <div class="z-case-layout">
+        <div class="z-case-story">
+          <span class="z-eyebrow">The takeover, marked on the chart</span>
+          <div class="z-case-outcome">$22.2K</div>
+          <div class="z-case-period">$22,216.32 all-time earnings</div>
+          <p>The chart tells the story: a long quiet stretch, then a much more active inbox. Our takeover is marked directly on the dashboard. The account reached <b>$22,216.32 in all-time earnings</b>, with <b>$21,137.40 from messages and tips</b> and a <b>top 0.68% creator ranking</b>.</p>
+          <div class="z-case-highlight"><strong>95%</strong><span>of earnings from messages &amp; tips</span></div>
         </div>
-        <div style="flex:1;height:1px;background:#1C3A5A;min-width:40px"></div>
-      </div>
-      <div class="m-cols" style="display:grid;grid-template-columns:1fr 1.05fr;gap:16px;align-items:stretch">
-        <div style="background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:30px 32px">
-          <div style="font-size:11.5px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#5E82A6;margin-bottom:24px">Where it came from</div>
-          <div style="display:grid;gap:20px">
-            <div>
-              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span style="font-size:14px;font-weight:700;color:#EAF4FD">Messages &amp; tips <span style="color:#1AA3F5">· our chatters</span></span><span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:18px;color:#fff">$25,793</span></div>
-              <div style="height:9px;border-radius:999px;background:#0D1E33"><div style="width:100%;height:100%;border-radius:999px;background:linear-gradient(90deg,#1AA3F5,#2E89D6);box-shadow:0 0 14px rgba(26,163,245,.5)"></div></div>
-            </div>
-            <div>
-              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span style="font-size:14px;font-weight:600;color:#8FB2D4">Posts</span><span style="font-family:'Bricolage Grotesque';font-weight:700;font-size:16px;color:#8FB2D4">$1,530</span></div>
-              <div style="height:9px;border-radius:999px;background:#0D1E33"><div style="width:5.9%;height:100%;border-radius:999px;background:#3E5F84"></div></div>
-            </div>
-            <div>
-              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span style="font-size:14px;font-weight:600;color:#8FB2D4">Subs &amp; renewals</span><span style="font-family:'Bricolage Grotesque';font-weight:700;font-size:16px;color:#8FB2D4">$1,578</span></div>
-              <div style="height:9px;border-radius:999px;background:#0D1E33"><div style="width:6.1%;height:100%;border-radius:999px;background:#3E5F84"></div></div>
-            </div>
-          </div>
-          <div style="margin-top:24px;padding-top:18px;border-top:1px solid #1C3A5A;display:flex;align-items:center;gap:9px">
-            <span style="width:9px;height:9px;border-radius:3px;background:linear-gradient(90deg,#1AA3F5,#2E89D6);flex:none"></span>
-            <span style="font-size:13.5px;font-weight:600;color:#8FB2D4"><b style="color:#36D399">89%</b> of the account's revenue, closed in the DMs</span>
-          </div>
-        </div>
-        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,rgba(26,163,245,.15),#0E2138);border:1.5px solid rgba(26,163,245,.5);border-radius:20px;padding:34px 36px;display:flex;flex-direction:column;justify-content:center">
-          <div style="position:absolute;top:-28px;right:-10px;font-family:'Bricolage Grotesque';font-weight:800;font-size:150px;line-height:1;color:rgba(26,163,245,.08);pointer-events:none;letter-spacing:-.05em">89%</div>
-          <div style="position:relative">
-            <div style="display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap">
-              <div>
-                <div style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5E82A6;margin-bottom:6px">Before takeover</div>
-                <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:32px;color:#8FB2D4;line-height:1">$6K</div>
-              </div>
-              <div style="color:#1AA3F5;font-size:26px;font-weight:800;padding-bottom:2px">→</div>
-              <div>
-                <div style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#1AA3F5;margin-bottom:6px">10 weeks after takeover</div>
-                <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:58px;color:#fff;line-height:1;text-shadow:0 0 30px rgba(26,163,245,.4)">$28.9K<span style="color:#1AA3F5">+</span></div>
-              </div>
-            </div>
-            <p style="color:#8FB2D4;font-size:15px;margin:22px 0 0;max-width:400px">We took over on <b style="color:#EAF4FD">May 25</b> — the arrow on the chart below. She'd made $6K in five months; ten weeks later the account sits at $28.9K, in the <b style="color:#EAF4FD">top 0.59% of all creators</b> — with an insane <b style="color:#EAF4FD">89% of revenue closed in the DMs</b>. Our chatters built her whales into real relationships — the top one alone has sent <b style="color:#EAF4FD">$8,263</b>.</p>
+        <div>
+          <button type="button" class="z-evidence" data-zoom="assets/case-takeover-dashboard.png" data-caption="Takeover account · $22,216.32 all-time earnings" aria-label="Enlarge Takeover account · $22,216.32 all-time earnings">
+            <img src="assets/case-takeover-dashboard.png" alt="Takeover account · $22,216.32 all-time earnings" loading="lazy">
+            <span class="z-evidence-caption"><span>Original account dashboard</span><span>View full size ↗</span></span>
+          </button>
+          <div class="z-evidence-more">
+<button type="button" class="z-evidence z-evidence-small" data-zoom="assets/case-takeover-earnings.png" data-caption="Earnings by type · $22,216.32 total" aria-label="Enlarge Earnings by type · $22,216.32 total">
+            <img src="assets/case-takeover-earnings.png" alt="" loading="lazy">
+            <span class="z-evidence-caption"><span>Earnings by type</span><span>View full size ↗</span></span>
+          </button>
           </div>
         </div>
       </div>
-      <div onContextMenu="{{ blockCtx }}" class="m-cols" style="display:grid;grid-template-columns:1fr minmax(300px,380px);gap:16px;margin-top:16px;user-select:none;align-items:start">
-        <div onClick="{{ openZoom2 }}" style="background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:14px;overflow:hidden;cursor:zoom-in" style-hover="border-color:#1AA3F5">
-          <div style="width:100%;padding-top:62.7%;border-radius:12px;background-image:url('assets/case2-dashboard-wm2.png');background-size:cover;background-position:top center;pointer-events:none"></div>
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding:12px 8px 2px;min-width:0">
-            <span style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#5E82A6;white-space:nowrap">Her dashboard · click to zoom</span>
-            <span style="font-size:12.5px;font-weight:700;color:#36D399;white-space:nowrap">$28,910.07 all time</span>
-          </div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:16px">
-          <div style="background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:14px;overflow:hidden">
-            <div style="width:100%;padding-top:64.5%;border-radius:12px;background-image:url('assets/case2-whales-wm.png');background-size:cover;background-position:top center;pointer-events:none"></div>
-            <div style="padding:12px 8px 2px;text-align:center">
-              <span style="font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#5E82A6">Her whales · built by our chatters</span>
-            </div>
-          </div>
-          <div style="background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:14px;overflow:hidden">
-            <div style="width:100%;padding-top:100%;border-radius:12px;background-image:url('assets/case2-earnings-by-type-wm.png');background-size:contain;background-repeat:no-repeat;background-position:center;background-color:#161616;pointer-events:none"></div>
-            <div style="padding:12px 8px 2px;text-align:center">
-              <span style="font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#5E82A6">Earnings by type</span>
-            </div>
-          </div>
-        </div>
+      <div class="z-case-revenue">
+        <div class="z-revenue-bar" aria-hidden="true"><span style="width:86.4%"></span><span style="width:8.74%"></span><span style="width:4.86%"></span></div>
+        <div class="z-revenue-stats"><div><span>Messages</span><strong>$19,195.97</strong></div><div><span>Tips</span><strong>$1,941.43</strong></div><div><span>Subs &amp; renewals</span><strong>$1,078.92</strong></div></div>
+        <p class="z-data-note">All-time earnings breakdown.</p>
       </div>
-      <sc-if value="{{ zoom2Open }}" hint-placeholder-val="{{ false }}">
-        <div onClick="{{ closeZoom2 }}" onContextMenu="{{ blockCtx }}" style="position:fixed;inset:0;z-index:200;background:rgba(4,10,20,.93);backdrop-filter:blur(6px);display:grid;place-items:center;cursor:zoom-out;user-select:none">
-          <div style="width:min(1360px,95vw)">
-            <div style="width:100%;padding-top:62.7%;border-radius:14px;background-image:url('assets/case2-dashboard-wm2.png');background-size:contain;background-repeat:no-repeat;background-position:center;pointer-events:none;box-shadow:0 40px 120px rgba(0,0,0,.6)"></div>
-            <div style="text-align:center;color:#5E82A6;font-size:13px;font-weight:600;margin-top:14px">Click anywhere to close</div>
-          </div>
-        </div>
-      </sc-if>
     </section>
 
-    <!-- CASE 3 -->
-    <section data-screen-label="Case 3" style="padding:56px 0 10px">
-      <div style="display:flex;align-items:center;gap:16px;margin:0 0 20px">
-        <div style="flex:none;width:52px;height:52px;border-radius:14px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);display:grid;place-items:center;font-family:'Bricolage Grotesque';font-weight:800;font-size:19px;color:#04182b;box-shadow:0 8px 20px rgba(26,163,245,.35)">03</div>
-        <div style="min-width:0">
-          <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:21px;color:#fff;letter-spacing:-.01em">$0 → $10.1K in under a month</div>
-          <div style="font-size:13px;color:#5E82A6;font-weight:600">Super low-traffic account · no promo machine</div>
+    <section class="z-case " id="case-sixty" aria-labelledby="case-title-sixty">
+      <header class="z-case-header"><span class="z-case-index" aria-hidden="true">06</span><div><h2 id="case-title-sixty">60 subscribers. $13.2K in revenue.</h2><p>Small audience · Fanvue · August 2026 snapshot</p></div></header>
+      <div class="z-case-layout">
+        <div class="z-case-story">
+          <span class="z-eyebrow">60 all-time new subscribers</span>
+          <div class="z-case-outcome">$13.2K</div>
+          <div class="z-case-period">$13,172.31 all-time earnings</div>
+          <p>A big audience helps. This account had <b>just 60 new subscribers acquired across its lifetime</b>. The result: <b>$13,172.31 in earnings</b>, with <b>$12,514.75 from messages and tips</b>. A small audience, with real spending behind it.</p>
+          <div class="z-case-highlight"><strong>95%</strong><span>of earnings from messages &amp; tips</span></div>
         </div>
-        <div style="flex:1;height:1px;background:#1C3A5A;min-width:40px"></div>
-      </div>
-      <div class="m-cols" style="display:grid;grid-template-columns:1.05fr 1fr;gap:16px;align-items:stretch">
-        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,rgba(26,163,245,.15),#0E2138);border:1.5px solid rgba(26,163,245,.5);border-radius:20px;padding:34px 36px;display:flex;flex-direction:column;justify-content:center">
-          <div style="position:absolute;top:-28px;right:-10px;font-family:'Bricolage Grotesque';font-weight:800;font-size:150px;line-height:1;color:rgba(26,163,245,.08);pointer-events:none;letter-spacing:-.05em">31d</div>
-          <div style="position:relative">
-            <div style="display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap">
-              <div>
-                <div style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5E82A6;margin-bottom:6px">Before · low traffic</div>
-                <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:32px;color:#8FB2D4;line-height:1">$0</div>
-              </div>
-              <div style="color:#1AA3F5;font-size:26px;font-weight:800;padding-bottom:2px">→</div>
-              <div>
-                <div style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#1AA3F5;margin-bottom:6px">Under a month</div>
-                <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:58px;color:#fff;line-height:1;text-shadow:0 0 30px rgba(26,163,245,.4)">$10.1K<span style="color:#1AA3F5">+</span></div>
-              </div>
-            </div>
-            <p style="color:#8FB2D4;font-size:15px;margin:22px 0 0;max-width:400px">Barely any traffic, no promo machine — just fans nobody was talking to. Our chatters took this <b style="color:#EAF4FD">super low-traffic account</b> from a standing start to <b style="color:#EAF4FD">$10.1K in 31 days</b>, with <b style="color:#EAF4FD">92% closed in the DMs</b>.</p>
-          </div>
-        </div>
-        <div style="background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:30px 32px">
-          <div style="font-size:11.5px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#5E82A6;margin-bottom:24px">Where it came from</div>
-          <div style="display:grid;gap:20px">
-            <div>
-              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span style="font-size:14px;font-weight:700;color:#EAF4FD">Messages &amp; tips <span style="color:#1AA3F5">· our chatters</span></span><span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:18px;color:#fff">$9,334</span></div>
-              <div style="height:9px;border-radius:999px;background:#0D1E33"><div style="width:100%;height:100%;border-radius:999px;background:linear-gradient(90deg,#1AA3F5,#2E89D6);box-shadow:0 0 14px rgba(26,163,245,.5)"></div></div>
-            </div>
-            <div>
-              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span style="font-size:14px;font-weight:600;color:#8FB2D4">Subs</span><span style="font-family:'Bricolage Grotesque';font-weight:700;font-size:16px;color:#8FB2D4">$771</span></div>
-              <div style="height:9px;border-radius:999px;background:#0D1E33"><div style="width:8.3%;height:100%;border-radius:999px;background:#3E5F84"></div></div>
-            </div>
-            <div>
-              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span style="font-size:14px;font-weight:600;color:#8FB2D4">Renewals</span><span style="font-family:'Bricolage Grotesque';font-weight:700;font-size:16px;color:#8FB2D4">$16</span></div>
-              <div style="height:9px;border-radius:999px;background:#0D1E33"><div style="width:1%;height:100%;border-radius:999px;background:#3E5F84"></div></div>
-            </div>
-          </div>
-          <div style="margin-top:24px;padding-top:18px;border-top:1px solid #1C3A5A;display:flex;align-items:center;gap:9px">
-            <span style="width:9px;height:9px;border-radius:3px;background:linear-gradient(90deg,#1AA3F5,#2E89D6);flex:none"></span>
-            <span style="font-size:13.5px;font-weight:600;color:#8FB2D4"><b style="color:#36D399">92%</b> of the account's revenue, closed in the DMs</span>
+        <div>
+          <button type="button" class="z-evidence" data-zoom="assets/case-sixty-dashboard.png" data-caption="60-subscriber account · $13,172.31 all-time earnings" aria-label="Enlarge 60-subscriber account · $13,172.31 all-time earnings">
+            <img src="assets/case-sixty-dashboard.png" alt="60-subscriber account · $13,172.31 all-time earnings" loading="lazy">
+            <span class="z-evidence-caption"><span>Original account dashboard</span><span>View full size ↗</span></span>
+          </button>
+          <div class="z-evidence-more">
+<button type="button" class="z-evidence z-evidence-small" data-zoom="assets/case-sixty-earnings.png" data-caption="Earnings by type · $13,172.31 total" aria-label="Enlarge Earnings by type · $13,172.31 total">
+            <img src="assets/case-sixty-earnings.png" alt="" loading="lazy">
+            <span class="z-evidence-caption"><span>Earnings by type</span><span>View full size ↗</span></span>
+          </button>
+<button type="button" class="z-evidence z-evidence-small" data-zoom="assets/case-sixty-subscribers.png" data-caption="Subscriber history · 60 new, all time" aria-label="Enlarge Subscriber history · 60 new, all time">
+            <img src="assets/case-sixty-subscribers.png" alt="" loading="lazy">
+            <span class="z-evidence-caption"><span>Subscriber history</span><span>View full size ↗</span></span>
+          </button>
           </div>
         </div>
       </div>
-      <div onContextMenu="{{ blockCtx }}" class="m-cols" style="display:grid;grid-template-columns:1fr minmax(300px,380px);gap:16px;margin-top:16px;user-select:none;align-items:start">
-        <div onClick="{{ openZoom3 }}" style="background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:14px;overflow:hidden;cursor:zoom-in" style-hover="border-color:#1AA3F5">
-          <div style="width:100%;padding-top:47.6%;border-radius:12px;background-image:url('assets/case3-dashboard-wm.png');background-size:cover;background-position:top center;pointer-events:none"></div>
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding:12px 8px 2px;min-width:0">
-            <span style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#5E82A6;white-space:nowrap">Her dashboard · click to zoom</span>
-            <span style="font-size:12.5px;font-weight:700;color:#36D399;white-space:nowrap">$10,120.88 in 31 days</span>
-          </div>
-        </div>
-        <div style="background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:14px;overflow:hidden">
-          <div style="width:100%;padding-top:98%;border-radius:12px;background-image:url('assets/case3-earnings-by-type-wm.png');background-size:contain;background-repeat:no-repeat;background-position:center;background-color:#161616;pointer-events:none"></div>
-          <div style="padding:12px 8px 2px;text-align:center">
-            <span style="font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#5E82A6">Earnings by type</span>
-          </div>
-        </div>
+      <div class="z-case-revenue">
+        <div class="z-revenue-bar" aria-hidden="true"><span style="width:95%"></span><span style="width:3.36%"></span><span style="width:1.64%"></span></div>
+        <div class="z-revenue-stats"><div><span>Messages &amp; tips</span><strong>$12,514.75</strong></div><div><span>Subs &amp; renewals</span><strong>$442.56</strong></div><div><span>Posts</span><strong>$215.00</strong></div></div>
+        <p class="z-data-note">All-time earnings breakdown.</p>
       </div>
-      <sc-if value="{{ zoom3Open }}" hint-placeholder-val="{{ false }}">
-        <div onClick="{{ closeZoom3 }}" onContextMenu="{{ blockCtx }}" style="position:fixed;inset:0;z-index:200;background:rgba(4,10,20,.93);backdrop-filter:blur(6px);display:grid;place-items:center;cursor:zoom-out;user-select:none">
-          <div style="width:min(1360px,95vw)">
-            <div style="width:100%;padding-top:47.6%;border-radius:14px;background-image:url('assets/case3-dashboard-wm.png');background-size:contain;background-repeat:no-repeat;background-position:center;pointer-events:none;box-shadow:0 40px 120px rgba(0,0,0,.6)"></div>
-            <div style="text-align:center;color:#5E82A6;font-size:13px;font-weight:600;margin-top:14px">Click anywhere to close</div>
-          </div>
-        </div>
-      </sc-if>
     </section>
+
+    <section class="z-case" id="case-earlier-launch" aria-labelledby="case-title-earlier-launch">
+      <header class="z-case-header"><span class="z-case-index" aria-hidden="true">07</span><div><h2 id="case-title-earlier-launch">Small audience. A real first month.</h2><p>Low-traffic account</p></div></header>
+      <div class="z-case-layout">
+        <div class="z-case-story"><span class="z-eyebrow">Starting point: $0</span><div class="z-case-outcome">$10.1K<span>+</span></div><div class="z-case-period">Revenue in the first 31 days</div><p>No promo machine. No flood of new traffic. Just a <b>small audience with fans nobody was talking to</b>. Our chatters took the account from a standing start to <b>$10,120.88 in 31 days</b>, with messages and tips making up nearly all of it.</p><div class="z-case-highlight"><strong>92%</strong><span>of account revenue closed in the DMs</span></div></div>
+        <div><button type="button" class="z-evidence" data-zoom="assets/case3-dashboard-wm.png" data-caption="Case 03 · Account dashboard · $10,120.88 in 31 days" aria-label="Enlarge Case 03 · Account dashboard · $10,120.88 in 31 days"><img src="assets/case3-dashboard-wm.png" alt="Case 03 · Account dashboard · $10,120.88 in 31 days" loading="lazy"><span class="z-evidence-caption"><span>Original account dashboard</span><span>View full size ↗</span></span></button><div class="z-evidence-more"><button type="button" class="z-evidence z-evidence-small" data-zoom="assets/case3-earnings-by-type-wm.png" data-caption="Case 03 · Earnings by type" aria-label="Enlarge case 03 earnings by type"><img src="assets/case3-earnings-by-type-wm.png" alt="" loading="lazy"><span class="z-evidence-caption"><span>Earnings by type</span><span>View evidence ↗</span></span></button></div></div></div><div class="z-case-revenue"><div class="z-revenue-bar" aria-hidden="true"><span style="width:92.22%"></span><span style="width:7.62%"></span><span style="width:0.16%"></span></div><div class="z-revenue-stats"><div><span>Messages &amp; tips</span><strong>$9,334</strong></div><div><span>Subscriptions</span><strong>$771</strong></div><div><span>Renewals</span><strong>$16</strong></div></div></div></section>
+
+    <section class="z-honourable" aria-labelledby="fan-mention-title">
+      <div><span class="z-eyebrow">An honourable mention</span><h2 class="z-title" id="fan-mention-title">One fan.<br><span>$14,218.92 spent.</span></h2><p class="z-description">From another account in our roster. One fan, four months subscribed, and $11,269.85 in tips. A reminder of what a single fan relationship can be worth.</p><div class="z-mention-stats"><span><strong>$2,839</strong>PPV spending</span><span><strong>$502.95</strong>Top purchase</span></div></div>
+      <div><button type="button" class="z-evidence" data-zoom="assets/case-fan-honourable-mention.png" data-caption="Fan insights · $14,218.92 total spent since April 2026" aria-label="Enlarge Fan insights · $14,218.92 total spent since April 2026">
+            <img src="assets/case-fan-honourable-mention.png" alt="Fan insights · $14,218.92 total spent since April 2026" loading="lazy">
+            <span class="z-evidence-caption"><span>Original account dashboard</span><span>View full size ↗</span></span>
+          </button></div>
+    </section>
+    <p class="z-case-discretion">Names and fan details are redacted. Figures are individual account snapshots over the periods shown; all-time earnings and net chart totals are labelled separately.</p>
 
     <!-- CTA -->
     <section style="padding:80px 0 40px;text-align:center;max-width:640px;margin:0 auto">
-      <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4.6vw,46px);letter-spacing:-.02em;line-height:1.05;margin:0;color:#fff">Your account could be<br><span style="color:#1AA3F5">case study 04.</span></h2>
+      <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4.6vw,46px);letter-spacing:-.02em;line-height:1.05;margin:0;color:#fff">Let’s see what’s possible<br><span style="color:#1AA3F5">in your inbox.</span></h2>
       <p style="color:#8FB2D4;font-size:16.5px;margin:16px auto 0;max-width:440px">One Telegram message. We'll tell you honestly what your inbox is leaving on the table.</p>
       <a href="{{ calendly }}" style="display:inline-flex;align-items:center;gap:10px;margin-top:26px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:17px;padding:16px 38px;border-radius:14px;text-decoration:none;box-shadow:0 14px 30px rgba(26,163,245,.38)" style-hover="transform:translateY(-2px)"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M9.04 15.31l-.38 5.37c.54 0 .78-.23 1.06-.5l2.55-2.44 5.28 3.87c.97.53 1.66.25 1.92-.9L22.9 3.9c.31-1.4-.51-1.95-1.45-1.6L3.1 9.36c-1.36.53-1.34 1.29-.23 1.63l4.7 1.47L18.5 5.6c.51-.34.98-.15.6.19L9.04 15.31z"></path></svg>Message us on Telegram</a>
     </section>
@@ -328,7 +246,7 @@
         <img src="assets/logo.png" alt="" style="width:22px;height:22px">
         <span style="color:#8FB2D4;font-size:13.5px"><b style="color:#EAF4FD">Zinely Agency</b> · Chatting partner for OnlyFans creators &amp; agencies</span>
       </div>
-      <div style="display:flex;gap:20px">
+      <div class="z-footer-links" style="display:flex;gap:20px">
         <a href="services.html" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Services</a>
         <a href="cases.html" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Case studies</a>
         <a href="pricing.html" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Pricing</a>
@@ -346,23 +264,14 @@
   </div>
 </div>
 </x-dc>
+<dialog class="z-lightbox" id="case-lightbox" aria-labelledby="case-lightbox-title">
+  <div class="z-lightbox-header"><span id="case-lightbox-title">Account evidence</span><button type="button" data-close-lightbox autofocus>Close ✕</button></div>
+  <img alt="">
+</dialog>
 <script type="text/x-dc" data-dc-script data-props="{&quot;telegramUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://t.me/timzines&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;}}">
 class Component extends DCLogic {
-  state = { zoomOpen: false, zoom2Open: false, zoom3Open: false };
   renderVals() {
-    return {
-      calendly: this.props.telegramUrl ?? "https://t.me/timzines",
-      blockCtx: (e) => e.preventDefault(),
-      zoomOpen: this.state.zoomOpen,
-      openZoom: () => this.setState({ zoomOpen: true }),
-      closeZoom: () => this.setState({ zoomOpen: false }),
-      zoom2Open: this.state.zoom2Open,
-      openZoom2: () => this.setState({ zoom2Open: true }),
-      closeZoom2: () => this.setState({ zoom2Open: false }),
-      zoom3Open: this.state.zoom3Open,
-      openZoom3: () => this.setState({ zoom3Open: true }),
-      closeZoom3: () => this.setState({ zoom3Open: false }),
-    };
+    return { calendly: this.props.telegramUrl ?? "https://t.me/timzines" };
   }
 }
 </script>
