@@ -64,10 +64,14 @@
     "fanvue_inspection": {
       "checked_on": "2026-10-02",
       "url": "https://zinelyagency.com/fanvue-chatting-agency/",
-      "indexed_status": "URL is unknown to Google; not indexed",
+      "indexed_status": "Crawled - currently not indexed",
       "live_result": "Successful fetch; crawl and indexing allowed; correct self-canonical",
       "request_status": "Indexing requested; accepted into priority crawl queue",
-      "note": "Do not equate accepted indexing request with indexed or ranking."
+      "note": "Google has now discovered and crawled the page. It is still not indexed; do not resubmit unchanged page repeatedly.",
+      "last_crawl_local": "2026-10-02 00:04:40 Europe/Bratislava",
+      "crawler": "Googlebot smartphone",
+      "crawl_fetch": "Successful; crawl allowed",
+      "referring_page": "https://zinelyagency.com/"
     },
     "sitemap": {
       "url": "https://zinelyagency.com/sitemap.xml",

@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-02",
+  "report_type": "interactive_content_work",
+  "base_commit": "2a68175f00af476d4e2627d5d1f62c35379c3425",
+  "selected_item": "fanvue-handover",
+  "status": "draft_ready_for_review",
+  "daily_content_action_completed": true,
+  "full_article_drafts_created": 1,
+  "pending_deliverables": 1,
+  "output_path": "seo/drafts/fanvue-ai-persona-chatting-brief/index.html",
+  "supporting_assets": [
+    "persona-handover.svg",
+    "persona-brief.txt"
+  ],
+  "completed": [
+    "Drafted practical persona and account handover guide",
+    "Created downloadable plain-text brief and original SVG illustration",
+    "Rechecked official Fanvue sources",
+    "Validated responsive layout, links, schema and FAQ keyboard behavior"
+  ],
+  "sources": [
+    "https://help.fanvue.com/en/articles/9538738-is-ai-content-allowed-on-fanvue",
+    "https://help.fanvue.com/en/articles/11163277-settings-management-using-manager-accounts-on-fanvue"
+  ],
+  "publication": "Not published; draft outside public root with noindex and no publication dates",
+  "next_action": "Review draft for publication. Scheduled run may continue technical/indexing checks but must not duplicate today's article action. Use the queue and weekly draft cap for the next distinct output.",
+  "indexing_follow_up": "See local measurement report; Google has crawled Fanvue page but not indexed it. Sitemap processing warning remains."
+}

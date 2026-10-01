@@ -1,0 +1,46 @@
+{
+  "status": "draft_ready_for_review",
+  "created_on": "2026-10-02",
+  "base_commit": "2a68175f00af476d4e2627d5d1f62c35379c3425",
+  "audience": "Fanvue AI-model operators with existing traffic",
+  "primary_intent": "How to prepare an AI-persona account for outsourced Fanvue chatting",
+  "primary_keyword": "fanvue ai model chatting handover",
+  "volume_and_difficulty": "Not verified",
+  "intended_url": "https://zinelyagency.com/blog/fanvue-ai-persona-chatting-brief/",
+  "supports": [
+    "/fanvue-chatting-agency/"
+  ],
+  "sources": [
+    {
+      "url": "https://help.fanvue.com/en/articles/9538738-is-ai-content-allowed-on-fanvue",
+      "checked_on": "2026-10-02",
+      "used_for": "Clear disclosure of AI-generated media"
+    },
+    {
+      "url": "https://help.fanvue.com/en/articles/11163277-settings-management-using-manager-accounts-on-fanvue",
+      "checked_on": "2026-10-02",
+      "used_for": "Manager restrictions and broad default team-member scope"
+    }
+  ],
+  "claims_basis": "Operational checklist and examples are editorial recommendations, not claims about a measured client result. Initial estimate without account access and commercial CTA follow current published contact page/facts.json.",
+  "assets": [
+    "persona-handover.svg",
+    "persona-brief.txt"
+  ],
+  "release_steps": [
+    "Review the actual article and download",
+    "Assign real publication dates to visible byline, meta and Article schema",
+    "Remove draft noindex and draft notice",
+    "Place folder under Zinely/blog/fanvue-ai-persona-chatting-brief",
+    "Add a contextual service-page link and blog card",
+    "Build/check, responsive and CTA QA, deploy and verify",
+    "Submit published article for discovery only after live verification"
+  ],
+  "publication_date": null,
+  "validation": {
+    "static": "Passed: one H1, unique IDs, existing local assets/links, valid schemas and SVG, no tokens, noindex and no public sitemap entry",
+    "responsive": "No horizontal page overflow or broken images at desktop, 768, 390 and 320 widths",
+    "interaction": "Contents anchors, keyboard FAQ disclosure and contact estimate destination passed",
+    "no_javascript": "Core reading/links/FAQ are native HTML; no browser-level disabled-JavaScript test performed"
+  }
+}
