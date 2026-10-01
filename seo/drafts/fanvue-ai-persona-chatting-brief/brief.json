@@ -24,7 +24,7 @@
   ],
   "claims_basis": "Operational checklist and examples are editorial recommendations, not claims about a measured client result. Initial estimate without account access and commercial CTA follow current published contact page/facts.json.",
   "assets": [
-    "persona-handover.svg",
+    "handover.css",
     "persona-brief.txt"
   ],
   "release_steps": [
@@ -38,9 +38,10 @@
   ],
   "publication_date": null,
   "validation": {
-    "static": "Passed: one H1, unique IDs, existing local assets/links, valid schemas and SVG, no tokens, noindex and no public sitemap entry",
-    "responsive": "No horizontal page overflow or broken images at desktop, 768, 390 and 320 widths",
+    "static": "Passed: one H1, unique IDs, existing local assets/links, valid schemas, no tokens, noindex and no public sitemap entry. Obsolete SVG and schema image reference removed.",
+    "responsive": "Revised hero checked on desktop and 390/320px: readable text, no page overflow, no entrance animation.",
     "interaction": "Contents anchors, keyboard FAQ disclosure and contact estimate destination passed",
     "no_javascript": "Core reading/links/FAQ are native HTML; no browser-level disabled-JavaScript test performed"
-  }
+  },
+  "design_revision": "Replaced the SVG flowchart with a responsive HTML conversation and handover note. The hero has no entrance animation. Draft-only component CSS accompanies the illustration; shared article styles remain unchanged."
 }
