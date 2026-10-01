@@ -227,3 +227,12 @@ input.zslider.z-revenue-slider::-moz-range-track{background:transparent;height:8
  .z-section *,.z-cases-hero *,.z-case-nav *,.z-case *,.z-rate-card *,.z-accordion *{animation:none!important;transition:none!important}
  .z-feed>div{animation:none!important}
 }
+
+/* Audience routes use real links and remain readable without interaction. */
+.z-audience-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.z-audience-card{display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding:28px;border:1px solid #1C3A5A;border-radius:20px;background:linear-gradient(160deg,#10243C,#0E2138);text-decoration:none;color:#EAF4FD;transition:border-color .2s ease}
+.z-audience-card:hover,.z-audience-card:focus-visible{border-color:#1AA3F5}
+.z-audience-card h3{font-family:'Bricolage Grotesque',sans-serif;font-size:25px;line-height:1.15;margin:0;color:#fff}
+.z-audience-card p{font-size:15.5px;line-height:1.65;color:#8FB2D4;margin:0 0 8px}
+.z-audience-card .z-text-link{margin-top:auto}
+@media(max-width:820px){.z-audience-grid{grid-template-columns:1fr}}

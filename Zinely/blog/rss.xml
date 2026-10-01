@@ -1,18 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Zinely Blog</title>
     <link>https://zinelyagency.com/blog/</link>
-    <description>Chatting strategy for OnlyFans, Fanvue and Fansly creators and agencies — from the team at Zinely.</description>
+    <description>Chatting operations for agencies, established creators and Fanvue AI-model operators.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 31 Jul 2026 12:00:00 GMT</lastBuildDate>
-    <atom:link href="https://zinelyagency.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://zinelyagency.com/blog/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What an OnlyFans Chatting Agency Actually Does (and When You Need One)</title>
       <link>https://zinelyagency.com/blog/onlyfans-chatting-agency-guide/</link>
+      <description>What a chatting agency handles, the signs you need one, what it should cost, and what the commission should apply to — from the team behind a $160K account.</description>
       <guid isPermaLink="true">https://zinelyagency.com/blog/onlyfans-chatting-agency-guide/</guid>
-      <pubDate>Fri, 31 Jul 2026 12:00:00 GMT</pubDate>
-      <description>The day-to-day of a real chatting operation, the signs you've outgrown DIY, the three pricing models — and the one question that exposes a bad agency's fine print.</description>
+      <pubDate>Fri, 31 Jul 2026 00:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>

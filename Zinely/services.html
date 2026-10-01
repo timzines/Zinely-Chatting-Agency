@@ -19,6 +19,7 @@
 <link rel="icon" type="image/png" href="assets/logo.png">
 <link rel="stylesheet" href="mobile.css">
 <script src="./support.js"></script>
+<link rel="stylesheet" href="/assets/estimate.css?v=1">
 </head>
 <body>
 <x-dc>
@@ -56,18 +57,18 @@
         <a href="pricing.html" style="color:#8FB2D4;text-decoration:none;font-weight:600;font-size:14.5px" style-hover="color:#EAF4FD">Pricing</a>
         <a href="/blog/" style="color:#8FB2D4;text-decoration:none;font-weight:600;font-size:14.5px" style-hover="color:#EAF4FD">Blog</a>
         <a href="contact.html" style="color:#8FB2D4;text-decoration:none;font-weight:600;font-size:14.5px" style-hover="color:#EAF4FD">Contact</a>
-        <a href="{{ calendly }}" style="display:flex;align-items:center;gap:8px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:14.5px;padding:10px 20px;border-radius:11px;text-decoration:none;box-shadow:0 8px 18px rgba(26,163,245,.3)" style-hover="transform:translateY(-1px)"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M9.04 15.31l-.38 5.37c.54 0 .78-.23 1.06-.5l2.55-2.44 5.28 3.87c.97.53 1.66.25 1.92-.9L22.9 3.9c.31-1.4-.51-1.95-1.45-1.6L3.1 9.36c-1.36.53-1.34 1.29-.23 1.63l4.7 1.47L18.5 5.6c.51-.34.98-.15.6.19L9.04 15.31z"></path></svg>Message us</a>
+        <a data-estimate-cta aria-label="Free estimate via Telegram" href="{{ estimateUrl }}" style="display:flex;align-items:center;gap:8px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:14.5px;padding:10px 20px;border-radius:11px;text-decoration:none;box-shadow:0 8px 18px rgba(26,163,245,.3)" style-hover="transform:translateY(-1px)"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M9.04 15.31l-.38 5.37c.54 0 .78-.23 1.06-.5l2.55-2.44 5.28 3.87c.97.53 1.66.25 1.92-.9L22.9 3.9c.31-1.4-.51-1.95-1.45-1.6L3.1 9.36c-1.36.53-1.34 1.29-.23 1.63l4.7 1.47L18.5 5.6c.51-.34.98-.15.6.19L9.04 15.31z"></path></svg>Free estimate</a>
       </div>
-      <a class="z-nav-cta" href="{{ calendly }}" style="display:none;align-items:center;gap:7px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:13px;padding:9px 13px;border-radius:10px;text-decoration:none;margin-left:auto;white-space:nowrap"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9.04 15.31l-.38 5.37c.54 0 .78-.23 1.06-.5l2.55-2.44 5.28 3.87c.97.53 1.66.25 1.92-.9L22.9 3.9c.31-1.4-.51-1.95-1.45-1.6L3.1 9.36c-1.36.53-1.34 1.29-.23 1.63l4.7 1.47L18.5 5.6c.51-.34.98-.15.6.19L9.04 15.31z"></path></svg>Message us</a>
+      <a data-estimate-cta aria-label="Free estimate via Telegram" class="z-nav-cta" href="{{ estimateUrl }}" style="display:none;align-items:center;gap:7px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:13px;padding:9px 13px;border-radius:10px;text-decoration:none;margin-left:auto;white-space:nowrap"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9.04 15.31l-.38 5.37c.54 0 .78-.23 1.06-.5l2.55-2.44 5.28 3.87c.97.53 1.66.25 1.92-.9L22.9 3.9c.31-1.4-.51-1.95-1.45-1.6L3.1 9.36c-1.36.53-1.34 1.29-.23 1.63l4.7 1.47L18.5 5.6c.51-.34.98-.15.6.19L9.04 15.31z"></path></svg>Free estimate</a>
       <details class="z-burger" style="display:none;flex:none">
-        <summary style="list-style:none;cursor:pointer;width:42px;height:42px;display:grid;place-items:center;border:1px solid #1C3A5A;border-radius:11px;background:rgba(16,36,60,.65)"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#EAF4FD" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></summary>
+        <summary aria-label="Open navigation menu" style="list-style:none;cursor:pointer;width:42px;height:42px;display:grid;place-items:center;border:1px solid #1C3A5A;border-radius:11px;background:rgba(16,36,60,.65)"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#EAF4FD" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></summary>
         <div style="position:absolute;left:0;right:0;top:100%;background:#0B1B2E;border-bottom:1px solid #1C3A5A;box-shadow:0 30px 60px rgba(0,0,0,.55);padding:6px 20px 20px;display:grid">
           <a href="services.html" style="color:#EAF4FD;text-decoration:none;font-weight:700;font-size:16px;padding:15px 4px;border-bottom:1px solid rgba(28,58,90,.55)">Services</a>
           <a href="cases.html" style="color:#EAF4FD;text-decoration:none;font-weight:700;font-size:16px;padding:15px 4px;border-bottom:1px solid rgba(28,58,90,.55)">Case studies</a>
           <a href="pricing.html" style="color:#EAF4FD;text-decoration:none;font-weight:700;font-size:16px;padding:15px 4px;border-bottom:1px solid rgba(28,58,90,.55)">Pricing</a>
           <a href="/blog/" style="color:#EAF4FD;text-decoration:none;font-weight:700;font-size:16px;padding:15px 4px;border-bottom:1px solid rgba(28,58,90,.55)">Blog</a>
           <a href="contact.html" style="color:#EAF4FD;text-decoration:none;font-weight:700;font-size:16px;padding:15px 4px">Contact</a>
-          <a href="{{ calendly }}" style="margin-top:10px;display:flex;align-items:center;justify-content:center;gap:9px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:15.5px;padding:14px 20px;border-radius:12px;text-decoration:none;box-shadow:0 10px 24px rgba(26,163,245,.35)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9.04 15.31l-.38 5.37c.54 0 .78-.23 1.06-.5l2.55-2.44 5.28 3.87c.97.53 1.66.25 1.92-.9L22.9 3.9c.31-1.4-.51-1.95-1.45-1.6L3.1 9.36c-1.36.53-1.34 1.29-.23 1.63l4.7 1.47L18.5 5.6c.51-.34.98-.15.6.19L9.04 15.31z"></path></svg>Message us on Telegram</a>
+          <a data-estimate-cta aria-label="Get a free earnings estimate via Telegram" href="{{ estimateUrl }}" style="margin-top:10px;display:flex;align-items:center;justify-content:center;gap:9px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:15.5px;padding:14px 20px;border-radius:12px;text-decoration:none;box-shadow:0 10px 24px rgba(26,163,245,.35)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9.04 15.31l-.38 5.37c.54 0 .78-.23 1.06-.5l2.55-2.44 5.28 3.87c.97.53 1.66.25 1.92-.9L22.9 3.9c.31-1.4-.51-1.95-1.45-1.6L3.1 9.36c-1.36.53-1.34 1.29-.23 1.63l4.7 1.47L18.5 5.6c.51-.34.98-.15.6.19L9.04 15.31z"></path></svg>Get a free earnings estimate</a>
         </div>
       </details>
     </div>
@@ -137,12 +138,12 @@
     </section>
 
     <!-- FOR AGENCIES -->
-    <section data-screen-label="For agencies" style="padding:50px 0 10px">
+    <section id="for-agencies" data-screen-label="For agencies" style="padding:50px 0 10px">
       <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:34px 36px;display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center" class="m-cols" style-hover="border-color:#1AA3F5">
         <div style="position:absolute;top:-22px;right:-10px;font-family:'Bricolage Grotesque';font-weight:800;font-size:120px;line-height:1;color:rgba(143,178,212,.07);pointer-events:none">B2B</div>
         <div style="position:relative">
           <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:26px;letter-spacing:-.01em;margin:0 0 12px;color:#fff">For agencies</h2>
-          <p style="color:#8FB2D4;font-size:15.5px;margin:0">Running an OnlyFans agency and drowning in chatting ops? Plug our team into your operation. Your clients stay yours; their fans see the creator; we do the closing. Chatting stops being your bottleneck and becomes your margin.</p>
+          <p style="color:#8FB2D4;font-size:15.5px;margin:0">Running an OnlyFans agency and drowning in chatting ops? Plug our team into your operation. Your clients stay yours; their fans see the creator; we do the closing. Chatting stops being your bottleneck and becomes your margin.</p><p><a href="/onlyfans-chatting-for-agencies/" style="color:#1AA3F5;font-weight:700">Explore chatting for agencies →</a></p>
         </div>
         <div style="display:grid;gap:9px">
           <div style="display:flex;gap:10px;align-items:baseline;font-size:14.5px;color:#8FB2D4"><span style="color:#36D399;font-weight:800">✓</span><span>No hiring, training, or payroll on your plate</span></div>
@@ -163,7 +164,7 @@
         </sc-if>
         <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.8vw,38px);letter-spacing:-.02em;margin:0 0 12px;color:#fff">Full account management</h2>
         <p style="color:#8FB2D4;font-size:16px;margin:0 auto 8px;max-width:600px">The whole account, run end to end: content strategy, marketing, growth, and of course the chatting. Our full-management creators are the reason the roster is capped — the results are too good to dilute across too many accounts.</p>
-        <p style="color:#8FB2D4;font-size:16px;margin:0 auto 22px;max-width:600px">Every seat is taken right now. Join the waitlist and you get the first message when one opens.</p>
+        <p style="color:#8FB2D4;font-size:16px;margin:0 auto 22px;max-width:600px">The waitlist is for full account management. Chatting is a separate service — contact us to discuss coverage for your account or roster.</p>
         <a href="{{ calendly }}" style="display:inline-block;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:16px;padding:14px 32px;border-radius:13px;text-decoration:none;box-shadow:0 12px 26px rgba(26,163,245,.35)" style-hover="transform:translateY(-2px)">Join the waitlist</a>
       </div>
     </section>
@@ -171,15 +172,15 @@
     <!-- CTA -->
     <section style="padding:80px 0 40px;text-align:center;max-width:640px;margin:0 auto">
       <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4.6vw,46px);letter-spacing:-.02em;line-height:1.05;margin:0;color:#fff">See it on <span style="color:#1AA3F5">your</span> account.</h2>
-      <p style="color:#8FB2D4;font-size:16.5px;margin:16px auto 0;max-width:440px">One honest chat. No lock-in. The numbers make the decision.</p>
-      <a href="{{ calendly }}" style="display:inline-flex;align-items:center;gap:10px;margin-top:26px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:17px;padding:16px 38px;border-radius:14px;text-decoration:none;box-shadow:0 14px 30px rgba(26,163,245,.38)" style-hover="transform:translateY(-2px)"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M9.04 15.31l-.38 5.37c.54 0 .78-.23 1.06-.5l2.55-2.44 5.28 3.87c.97.53 1.66.25 1.92-.9L22.9 3.9c.31-1.4-.51-1.95-1.45-1.6L3.1 9.36c-1.36.53-1.34 1.29-.23 1.63l4.7 1.47L18.5 5.6c.51-.34.98-.15.6.19L9.04 15.31z"></path></svg>Message us on Telegram</a>
+      <p style="color:#8FB2D4;font-size:16.5px;margin:16px auto 0;max-width:440px">Get a free earnings estimate for your account or roster. We’ll review your numbers and explain the opportunities via Telegram. No commitment.</p>
+      <a data-estimate-cta aria-label="Get a free earnings estimate via Telegram" href="{{ estimateUrl }}" style="display:inline-flex;align-items:center;gap:10px;margin-top:26px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:17px;padding:16px 38px;border-radius:14px;text-decoration:none;box-shadow:0 14px 30px rgba(26,163,245,.38)" style-hover="transform:translateY(-2px)"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M9.04 15.31l-.38 5.37c.54 0 .78-.23 1.06-.5l2.55-2.44 5.28 3.87c.97.53 1.66.25 1.92-.9L22.9 3.9c.31-1.4-.51-1.95-1.45-1.6L3.1 9.36c-1.36.53-1.34 1.29-.23 1.63l4.7 1.47L18.5 5.6c.51-.34.98-.15.6.19L9.04 15.31z"></path></svg>Get a free earnings estimate</a>
     </section>
 
     <!-- FOOTER -->
     <div style="border-top:1px solid #1C3A5A;padding:26px 0 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
       <div style="display:flex;align-items:center;gap:9px">
         <img src="assets/logo.png" alt="" style="width:22px;height:22px">
-        <span style="color:#8FB2D4;font-size:13.5px"><b style="color:#EAF4FD">Zinely Agency</b> · Chatting partner for OnlyFans creators &amp; agencies</span>
+        <span style="color:#8FB2D4;font-size:13.5px"><b style="color:#EAF4FD">Zinely Agency</b> · Human chatting for real &amp; AI models</span>
       </div>
       <div style="display:flex;gap:20px">
         <a href="services.html" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Services</a>
@@ -193,6 +194,7 @@
         <a href="/onlyfans-chatting-agency/" style="color:#5E82A6;text-decoration:none;font-size:13px;font-weight:600">OnlyFans chatting agency</a>
         <a href="/fanvue-chatting-agency/" style="color:#5E82A6;text-decoration:none;font-size:13px;font-weight:600">Fanvue chatting agency</a>
         <a href="/fansly-chatting-agency/" style="color:#5E82A6;text-decoration:none;font-size:13px;font-weight:600">Fansly chatting service</a>
+        <a href="/onlyfans-chatting-for-agencies/" style="color:#5E82A6;text-decoration:none;font-size:13px;font-weight:600">Chatting for agencies</a>
       </div>
     </div>
 
@@ -205,6 +207,7 @@ class Component extends DCLogic {
     const open = this.props.managementOpen ?? false;
     return {
       calendly: this.props.telegramUrl ?? "https://t.me/timzines",
+      estimateUrl: (this.props.telegramUrl ?? "https://t.me/timzines") + ((this.props.telegramUrl ?? "").includes("?") ? "&" : "?") + "text=" + encodeURIComponent("Hi Zinely, I'd like a free earnings estimate for my account or roster."),
       mgmtOpen: open,
       mgmtClosed: !open,
     };
