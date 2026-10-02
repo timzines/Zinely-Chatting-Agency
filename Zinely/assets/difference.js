@@ -1,78 +1,76 @@
-/* An accessible, pausable walkthrough. Demo data never leaves the page. */
+/* Manual walkthrough with clear navigation and brief, optional illustrations. */
 (() => {
   function mount() {
     const root = document.querySelector('.z-difference-shell');
     if (!root || root.closest('x-dc')) return false;
     const tabs = [...root.querySelectorAll('[role="tab"]')];
     const panels = [...root.querySelectorAll('[role="tabpanel"]')];
-    const pause = root.querySelector('.z-difference-pause');
+    const previous = root.querySelector('.z-difference-previous');
+    const next = root.querySelector('.z-difference-next');
+    const position = root.querySelector('.z-difference-position');
+    const labels = ['Fan notes', 'Repeat buyers', 'Fan outreach', 'Our experience'];
     const motion = matchMedia('(prefers-reduced-motion: reduce)');
+    const viewed = new Set();
     let index = 0;
-    let paused = motion.matches;
-    let autoAdvance = true;
     let visible = false;
-    let hovering = false;
-    let focused = false;
     let timer;
 
-    function schedule() {
+    function settle() {
       clearTimeout(timer);
-      const animated = !paused && !motion.matches && visible && !document.hidden;
-      const playing = animated && autoAdvance && !hovering && !focused;
-      root.dataset.playing = String(playing);
-      root.dataset.animated = String(animated);
-      pause.setAttribute('aria-pressed', String(paused));
-      pause.setAttribute('aria-label', paused ? 'Play the walkthrough' : 'Pause the walkthrough');
-      pause.textContent = paused ? 'Play' : 'Pause';
-      if (playing) timer = setTimeout(() => select((index + 1) % tabs.length), 11000);
+      root.dataset.animated = 'false';
+      root.dataset.settled = 'true';
     }
 
-    function select(next, manual = false) {
-      index = next;
-      if (manual) autoAdvance = false;
+    function animate() {
+      if (motion.matches || document.hidden || !visible) { settle(); return; }
+      if (viewed.has(index)) return;
+      viewed.add(index);
+      root.dataset.settled = 'false';
+      root.dataset.animated = 'true';
+      timer = setTimeout(settle, 4200);
+    }
+
+    function select(selected) {
+      settle();
+      index = selected;
       tabs.forEach((tab, i) => {
         tab.setAttribute('aria-selected', String(i === index));
         tab.tabIndex = i === index ? 0 : -1;
         panels[i].hidden = i !== index;
         panels[i].setAttribute('aria-hidden', String(i !== index));
       });
-      schedule();
+      previous.disabled = index === 0;
+      position.textContent = `${index + 1} of ${tabs.length}`;
+      next.innerHTML = index === tabs.length - 1
+        ? 'Back to first <span aria-hidden="true">↶</span>'
+        : `Next: ${labels[index + 1]} <span aria-hidden="true">→</span>`;
+      previous.setAttribute('aria-controls', panels[Math.max(0, index - 1)].id);
+      next.setAttribute('aria-controls', panels[(index + 1) % tabs.length].id);
+      animate();
     }
 
+    previous.addEventListener('click', () => select(Math.max(0, index - 1)));
+    next.addEventListener('click', () => select((index + 1) % tabs.length));
     tabs.forEach((tab, i) => {
-      tab.addEventListener('click', () => select(i, true));
+      tab.addEventListener('click', () => select(i));
       tab.addEventListener('keydown', (event) => {
-        let next;
-        if (event.key === 'ArrowRight') next = (i + 1) % tabs.length;
-        if (event.key === 'ArrowLeft') next = (i + tabs.length - 1) % tabs.length;
-        if (event.key === 'Home') next = 0;
-        if (event.key === 'End') next = tabs.length - 1;
-        if (next === undefined) return;
+        let selected;
+        if (event.key === 'ArrowRight') selected = (i + 1) % tabs.length;
+        if (event.key === 'ArrowLeft') selected = (i + tabs.length - 1) % tabs.length;
+        if (event.key === 'Home') selected = 0;
+        if (event.key === 'End') selected = tabs.length - 1;
+        if (selected === undefined) return;
         event.preventDefault();
-        select(next, true);
-        tabs[next].focus();
+        select(selected);
+        tabs[selected].focus();
       });
     });
-
-    pause.addEventListener('click', () => {
-      paused = !paused;
-      if (!paused) autoAdvance = true;
-      schedule();
-    });
-    root.addEventListener('pointerenter', (event) => {
-      if (event.pointerType === 'mouse') { hovering = true; schedule(); }
-    });
-    root.addEventListener('pointerleave', () => { hovering = false; schedule(); });
-    root.addEventListener('focusin', () => { focused = true; schedule(); });
-    root.addEventListener('focusout', (event) => {
-      if (!root.contains(event.relatedTarget)) { focused = false; schedule(); }
-    });
-    document.addEventListener('visibilitychange', schedule);
-    motion.addEventListener('change', () => { if (motion.matches) paused = true; schedule(); });
+    document.addEventListener('visibilitychange', animate);
+    motion.addEventListener('change', animate);
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries) => {
         visible = entries[0].isIntersecting && entries[0].intersectionRatio >= .05;
-        schedule();
+        animate();
       }, {threshold: [0, .05]});
       observer.observe(root);
     } else {

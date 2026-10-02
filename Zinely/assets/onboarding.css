@@ -1,0 +1,20 @@
+/* One connected path from first contact to launch, with a CTA to start it. */
+#how-it-works .z-start-panel{padding:32px;background:radial-gradient(ellipse at 100% 0,#36d39913,transparent 60%),#0d2436;border-color:#35616a}
+#how-it-works .z-compact-heading{align-items:center;margin-bottom:26px;gap:25px}
+.z-start-cta{display:inline-flex;align-items:center;justify-content:center;gap:16px;background:linear-gradient(145deg,#1aa3f5,#2587ce);color:#fff;border:1px solid #5dc1f8;border-radius:10px;padding:15px 20px;text-decoration:none;font-size:14px;font-weight:700;line-height:1.4;box-shadow:0 8px 25px #1aa3f51a;white-space:nowrap}
+.z-start-cta:hover{background:#26aaf6}.z-start-cta:focus-visible{outline:2px solid #b4e7ff;outline-offset:4px}
+.z-start-window{display:flex;align-items:center;gap:11px;padding:15px 18px;border:1px solid #2d635b;border-radius:9px;background:#143b381c;color:#a8e5d0}
+.z-start-window svg{width:21px;height:21px;flex:none;color:#72dfb8}
+.z-start-window strong{font-size:12px;font-weight:600;line-height:1.5}
+.z-start-window>span{margin-left:auto;font-size:10px;color:#91b7b8;white-space:nowrap}.z-start-window i{font-style:normal;color:#6ce0b8;margin:0 9px}
+#how-it-works .z-start-steps{position:relative;grid-template-columns:repeat(4,minmax(0,1fr));gap:25px;padding:31px 0 0;border:0}
+#how-it-works .z-start-steps li{position:relative;display:flex;flex-direction:column;align-items:start;gap:15px}
+#how-it-works .z-start-steps li:not(:last-child)::before{content:'';position:absolute;top:20px;left:40px;width:calc(100% - 15px);height:1px;background:linear-gradient(90deg,#396683,#59ac9e)}
+#how-it-works .z-start-steps li:not(:last-child)::after{content:'';position:absolute;top:17px;right:-23px;width:6px;height:6px;border-right:1px solid #70bdaa;border-top:1px solid #70bdaa;transform:rotate(45deg)}
+#how-it-works .z-start-number{position:relative;width:40px;height:40px;font-size:12px;box-sizing:border-box;background:#102d43;z-index:1}
+#how-it-works .z-start-steps h3{font-size:17px;margin:5px 0 9px}
+#how-it-works .z-start-steps p{font-size:12px;line-height:1.65;color:#91b1c8;margin:0;max-width:220px}
+#how-it-works .z-start-steps li:last-child .z-start-number{background:#17433d;box-shadow:0 0 0 5px #36d39909;color:#91edcb}
+.z-start-timing{font-size:10px;line-height:1.7;color:#829fb6;margin:26px 0 0;max-width:700px}
+@media(max-width:900px){#how-it-works .z-compact-heading{flex-direction:column;align-items:start;gap:20px}.z-start-window{flex-wrap:wrap}.z-start-window>span{margin-left:32px;width:100%}#how-it-works .z-start-steps h3{font-size:15px}}
+@media(max-width:680px){#how-it-works .z-start-panel{padding:25px 22px}.z-start-cta{white-space:normal;width:100%;box-sizing:border-box;font-size:13px}.z-start-window{padding:13px;gap:8px}.z-start-window strong{font-size:11px}.z-start-window>span{margin-left:29px;font-size:9px}#how-it-works .z-start-steps{grid-template-columns:1fr;gap:0;padding-top:25px}#how-it-works .z-start-steps li{display:grid;grid-template-columns:40px 1fr;gap:16px;padding-bottom:28px;align-items:start}#how-it-works .z-start-steps li:last-child{padding-bottom:0}#how-it-works .z-start-steps li:not(:last-child)::before{top:40px;left:19px;width:1px;height:calc(100% - 40px);background:linear-gradient(#396683,#59ac9e)}#how-it-works .z-start-steps li:not(:last-child)::after{top:auto;right:auto;bottom:8px;left:16px;transform:rotate(135deg)}#how-it-works .z-start-steps h3{font-size:17px;margin-top:4px;margin-bottom:6px}#how-it-works .z-start-steps p{max-width:340px}.z-start-timing{margin-top:23px;font-size:9px}}

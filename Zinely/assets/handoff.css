@@ -1,0 +1,51 @@
+/* The costs and their resolution form one continuous panel. */
+.z-pain-resolution{position:relative;border:1px solid #304458;border-radius:22px;padding:14px;background:linear-gradient(165deg,#172334,#0c2031 55%,#0b292f);overflow:hidden}
+#why-zinely .z-pain-grid{gap:10px}
+#why-zinely .z-pain-card{border-color:#3c4656;border-radius:12px;background:#14223499}
+#why-zinely .z-handoff{margin:0;padding:75px 22px 24px;gap:36px;grid-template-columns:1fr 1.18fr;border:0;border-radius:0;background:none}
+.z-resolution-bridge{position:absolute;top:0;left:0;width:100%;height:56px;stroke:#426873;stroke-width:1.2;overflow:visible}
+.z-resolution-bridge-signal{stroke:#7addbe;stroke-dasharray:12 88;stroke-dashoffset:0;opacity:0}
+.z-resolution-arrow{stroke:#7addbe;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.z-resolution-label{display:block;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#89b9bd;margin-bottom:13px}
+#why-zinely .z-handoff h3{font-size:clamp(28px,3vw,37px);line-height:1.1}
+#why-zinely .z-handoff h3 span{color:#6ce0b8}
+#why-zinely .z-handoff p{font-size:13px;line-height:1.8;color:#a1bdcb;max-width:365px;margin-top:16px}
+.z-transfer{position:relative;height:224px;min-width:0;width:100%;max-width:500px;justify-self:end;isolation:isolate}
+.z-transfer-jobs{position:absolute;left:0;top:0;width:57%;display:grid;gap:8px;padding:0;margin:0;list-style:none;z-index:2}
+.z-transfer-jobs li{display:flex;align-items:center;gap:9px;height:50px;padding:0 12px;border:1px solid #355968;border-radius:9px;background:linear-gradient(120deg,#143144,#102a3b);color:#d2e5ed;font-size:11px;white-space:nowrap;box-sizing:border-box}
+.z-transfer-number{font-size:9px;font-weight:600;color:#8ab2c6;font-variant-numeric:tabular-nums}
+.z-transfer-jobs svg{margin-left:auto;width:15px;height:15px;flex:none;stroke:#77debb;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.z-transfer-routes{position:absolute;left:55%;top:0;width:30%;height:224px;z-index:1;stroke:#365e67;stroke-width:1.3}
+.z-transfer-signals path{stroke:#7be4c3;stroke-width:2;stroke-dasharray:13 87;stroke-dashoffset:0;opacity:0}
+.z-transfer-team{position:absolute;right:0;top:73px;width:29%;display:flex;align-items:center;flex-direction:column;z-index:2}
+.z-transfer-mark{position:relative;width:74px;height:74px;display:grid;place-items:center;border:1px solid #479d91;border-radius:20px;background:radial-gradient(circle at 30% 20%,#23505c,#10303b);box-shadow:0 0 0 8px #5ed6b307,0 14px 28px #020b1538;margin-bottom:14px}
+.z-transfer-mark::after{content:'';position:absolute;inset:-9px;border:1px solid #5ed6b326;border-radius:27px;opacity:.7}
+.z-transfer-mark img{width:42px;height:42px;object-fit:contain;filter:drop-shadow(0 3px 8px #1aa3f545)}
+.z-transfer-team strong{font-family:'Bricolage Grotesque',sans-serif;font-size:15px;color:#ddf7ed;line-height:1.2;font-weight:600}
+.z-transfer-team>span{font-size:9px;color:#89bfb6;margin-top:5px;white-space:nowrap}
+@media(prefers-reduced-motion:no-preference){
+ .z-handoff.is-revealed .z-resolution-bridge-signal{animation:zResolutionFlow 1.2s ease-in-out both}
+ .z-handoff.is-revealed .z-transfer-jobs li{animation:zTransferArrive .65s .2s cubic-bezier(.22,1,.36,1) backwards}
+ .z-handoff.is-revealed .z-transfer-jobs li:nth-child(2){animation-delay:.45s}
+ .z-handoff.is-revealed .z-transfer-jobs li:nth-child(3){animation-delay:.7s}
+ .z-handoff.is-revealed .z-transfer-jobs li:nth-child(4){animation-delay:.95s}
+ .z-handoff.is-revealed .z-transfer-signals path{animation:zResolutionFlow 1.7s .6s ease-in-out both}
+ .z-handoff.is-revealed .z-transfer-signals path:nth-child(2){animation-delay:.85s}
+ .z-handoff.is-revealed .z-transfer-signals path:nth-child(3){animation-delay:1.1s}
+ .z-handoff.is-revealed .z-transfer-signals path:nth-child(4){animation-delay:1.35s}
+ .z-handoff.is-revealed .z-transfer-jobs path{stroke-dasharray:1;animation:zTransferCheck .45s 1.3s ease-out backwards}
+ .z-handoff.is-revealed .z-transfer-jobs li:nth-child(2) path{animation-delay:1.55s}
+ .z-handoff.is-revealed .z-transfer-jobs li:nth-child(3) path{animation-delay:1.8s}
+ .z-handoff.is-revealed .z-transfer-jobs li:nth-child(4) path{animation-delay:2.05s}
+ .z-handoff.is-revealed .z-transfer-mark{animation:zTransferReceive 2.8s 1.2s ease-in-out both}
+ .z-handoff.is-revealed .z-transfer-mark::after{animation:zTransferRing 2.2s 1.5s ease-out both}
+ @keyframes zResolutionFlow{0%{stroke-dashoffset:100;opacity:0}15%,80%{opacity:1}100%{stroke-dashoffset:-13;opacity:0}}
+ @keyframes zTransferArrive{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:translateX(0)}}
+ @keyframes zTransferCheck{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+ @keyframes zTransferReceive{0%,100%{transform:scale(1)}45%{transform:scale(1.08);box-shadow:0 0 0 8px #5ed6b312,0 0 35px #36d39922}}
+ @keyframes zTransferRing{0%,100%{opacity:.7;transform:scale(1)}55%{opacity:0;transform:scale(1.3)}}
+}
+@media(max-width:1000px) and (min-width:821px){#why-zinely .z-handoff{gap:22px;padding-inline:12px;grid-template-columns:.85fr 1.15fr}.z-transfer-jobs li{padding-inline:9px;gap:6px;font-size:10px}.z-transfer-mark{width:62px;height:62px}.z-transfer-team{top:79px}}
+@media(max-width:820px){#why-zinely .z-handoff{grid-template-columns:1fr;gap:28px;padding:65px 16px 24px}.z-resolution-copy{text-align:center}#why-zinely .z-handoff p{max-width:460px;margin-inline:auto}.z-transfer{justify-self:center;max-width:460px}.z-transfer-jobs li{font-size:12px}}
+@media(max-width:480px){.z-pain-resolution{padding:9px;border-radius:17px}#why-zinely .z-pain-card{padding:20px 16px 20px 46px}#why-zinely .z-pain-number{left:15px;top:23px}#why-zinely .z-pain-card h3{font-size:17px}#why-zinely .z-pain-card p{font-size:13px}#why-zinely .z-handoff{padding:62px 7px 20px;gap:25px}.z-resolution-label{font-size:8px;letter-spacing:.1em}#why-zinely .z-handoff h3{font-size:30px}#why-zinely .z-handoff p{font-size:12px}.z-transfer-jobs{width:63%}.z-transfer-jobs li{font-size:10px;padding-inline:8px;gap:6px}.z-transfer-routes{left:60%;width:23%}.z-transfer-mark{width:55px;height:55px;border-radius:16px}.z-transfer-mark img{width:32px;height:32px}.z-transfer-mark::after{inset:-6px;border-radius:21px}.z-transfer-team{top:85px;width:25%}.z-transfer-team strong{font-size:12px}.z-transfer-team>span{font-size:8px}.z-transfer-number{font-size:8px}.z-transfer-jobs svg{width:12px;height:12px}}
+@media(max-width:359px){.z-transfer-jobs li{font-size:9px;gap:4px;padding-inline:6px}.z-transfer-team>span{font-size:7px}.z-resolution-label{font-size:7px}#why-zinely .z-handoff h3{font-size:27px}}
