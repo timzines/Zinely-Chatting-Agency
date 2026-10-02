@@ -53,20 +53,32 @@
     document.head.appendChild(script);
   }
 
+  // Preferences live in the footer; never interrupt a visit with a prompt.
+  const controls = document.createElement('footer');
+  controls.className = 'z-analytics-controls';
+  controls.setAttribute('aria-label', 'Privacy settings');
   const panel = document.createElement('section');
+  panel.id = 'z-analytics-panel';
   panel.className = 'z-analytics-panel';
   panel.setAttribute('aria-labelledby', 'z-analytics-title');
-  panel.innerHTML = '<div><h2 id="z-analytics-title">Help us improve Zinely?</h2><p>With your permission, Google Analytics uses cookies to measure visits and clicks on our contact links. Analytics is optional; the site works either way. Advertising features stay off. Change your choice anytime in Analytics settings.</p><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google uses this data ↗</a></div><div class="z-analytics-actions"><button type="button" data-analytics-choice="denied">No thanks</button><button type="button" data-analytics-choice="granted">Allow analytics</button></div>';
-  panel.hidden = choice !== null;
+  panel.innerHTML = '<h2 id="z-analytics-title">Optional analytics</h2><p>Allow Google Analytics cookies to measure visits and contact-link clicks? Advertising stays off. You can change your choice here anytime. <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google uses this data ↗</a></p><div class="z-analytics-actions"><button type="button" data-analytics-choice="denied">No thanks</button><button type="button" data-analytics-choice="granted">Allow analytics</button></div>';
+  panel.hidden = true;
   const settings = document.createElement('button');
   settings.type = 'button';
   settings.className = 'z-analytics-settings';
   settings.textContent = 'Analytics settings';
-  settings.hidden = choice === null;
+  settings.setAttribute('aria-controls', panel.id);
+  settings.setAttribute('aria-expanded', 'false');
   settings.addEventListener('click', () => {
-    panel.hidden = false;
-    settings.hidden = true;
-    panel.querySelector('button').focus();
+    panel.hidden = !panel.hidden;
+    settings.setAttribute('aria-expanded', String(!panel.hidden));
+    if (!panel.hidden) panel.querySelector('button').focus();
+  });
+  panel.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+    panel.hidden = true;
+    settings.setAttribute('aria-expanded', 'false');
+    settings.focus();
   });
   panel.addEventListener('click', (event) => {
     const button = event.target.closest('[data-analytics-choice]');
@@ -74,7 +86,7 @@
     choice = button.dataset.analyticsChoice;
     try { localStorage.setItem(consentKey, JSON.stringify({ value: choice, expires: Date.now() + 180 * 86400000 })); } catch { /* Session-only choice. */ }
     panel.hidden = true;
-    settings.hidden = false;
+    settings.setAttribute('aria-expanded', 'false');
     window[disabledKey] = choice !== 'granted' || !production;
     if (choice === 'granted') {
       if (started) window.gtag('consent', 'update', { ...denied, analytics_storage: 'granted' });
@@ -85,8 +97,24 @@
     }
     settings.focus();
   });
-  document.body.appendChild(panel);
-  document.body.appendChild(settings);
+  controls.appendChild(settings);
+  controls.appendChild(panel);
+  controls.hidden = true;
+  document.body.appendChild(controls);
+  function placeControls() {
+    const footer = document.querySelector('.sc-host .z-footer-links')?.parentElement || document.querySelector('.footer');
+    if (!footer) return false;
+    footer.appendChild(controls);
+    controls.hidden = false;
+    return true;
+  }
+  // Core pages render their footer asynchronously; static platform pages do not.
+  if (!placeControls()) {
+    const observer = new MutationObserver(() => {
+      if (placeControls()) observer.disconnect();
+    });
+    observer.observe(document.body, {childList: true, subtree: true});
+  }
   if (choice === 'granted') startAnalytics();
   else clearAnalyticsCookies();
 

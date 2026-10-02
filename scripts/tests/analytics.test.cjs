@@ -8,19 +8,22 @@ const consentKey = 'zinely.analytics-consent.v1';
 const measurementId = 'G-TRRHR6L9Z8';
 
 function setup({hostname = 'zinelyagency.com', stored, expires = Date.now() + 86400000, blockedStorage = false} = {}) {
+  const created = [];
   class Element {
     constructor(tag) { this.tag = tag; this.dataset = {}; this.children = []; this.events = {}; }
-    appendChild(child) { this.children.push(child); }
+    appendChild(child) { this.children.push(child); child.parentElement = this; }
     addEventListener(name, action) { this.events[name] = action; }
     setAttribute(name, value) { this[name] = value; }
     querySelector() { return {focus() {}}; }
     focus() {}
   }
   const writes = [];
+  const footer = new Element('div');
   const document = {
     head: new Element('head'), body: new Element('body'), events: {},
     referrer: 'https://www.google.com/search?q=private-search',
-    createElement(tag) { return new Element(tag); },
+    createElement(tag) { const element = new Element(tag); created.push(element); return element; },
+    querySelector(selector) { return selector === '.footer' ? footer : null; },
     addEventListener(name, action) { this.events[name] = action; },
     get cookie() { return '_ga=existing; _ga_TRRHR6L9Z8=existing; essential=keep'; },
     set cookie(value) { writes.push(value); }
@@ -33,11 +36,36 @@ function setup({hostname = 'zinelyagency.com', stored, expires = Date.now() + 86
   const location = new URL(`https://${hostname}/onlyfans-chatting-for-agencies/?email=private@example.com#private`);
   const window = {};
   vm.runInNewContext(source, {document, location, localStorage, window, URL, Date});
+  const panel = created.find(x => x.className === 'z-analytics-panel');
+  const settings = created.find(x => x.className === 'z-analytics-settings');
   const entries = () => (window.dataLayer || []).map(x => Array.from(x));
-  const choose = value => document.body.children[0].events.click({target: {closest: () => ({dataset: {analyticsChoice: value}})}});
+  const choose = value => panel.events.click({target: {closest: () => ({dataset: {analyticsChoice: value}})}});
   const click = (url, estimate = false, defaultPrevented = false) => document.events.click({defaultPrevented, target: {closest: () => ({href: url, hasAttribute: () => estimate})}});
-  return {document, window, storage, writes, entries, choose, click};
+  return {document, window, storage, writes, entries, choose, click, panel, settings, footer};
 }
+
+test('preferences never open automatically, including for first visits and saved choices', () => {
+  for (const stored of [undefined, 'denied', 'granted']) {
+    const s = setup({stored});
+    assert.equal(s.panel.hidden, true);
+    assert.equal(s.settings['aria-expanded'], 'false');
+    assert.equal(s.footer.children[0].tag, 'footer');
+    assert.ok(s.footer.children[0].children.includes(s.settings));
+  }
+});
+
+test('opening or dismissing footer preferences does not opt a visitor into analytics', () => {
+  const s = setup();
+  s.settings.events.click();
+  assert.equal(s.panel.hidden, false);
+  assert.equal(s.settings['aria-expanded'], 'true');
+  assert.equal(s.document.head.children.length, 0);
+  s.panel.events.keydown({key: 'Escape'});
+  assert.equal(s.panel.hidden, true);
+  assert.equal(s.settings['aria-expanded'], 'false');
+  assert.equal(s.storage.has(consentKey), false);
+  assert.equal(s.entries().length, 0);
+});
 
 test('new and declining visitors load no Google script and send no events', () => {
   const s = setup();
@@ -100,7 +128,8 @@ test('local preview never pollutes production analytics, even after opt-in', () 
 test('expired consent requires a new choice and blocked storage does not break the site', () => {
   const expired = setup({stored: 'granted', expires: Date.now() - 1});
   assert.equal(expired.document.head.children.length, 0);
-  assert.equal(expired.document.body.children[0].hidden, false);
+  assert.equal(expired.panel.hidden, true);
+  assert.equal(expired.settings['aria-expanded'], 'false');
   const blocked = setup({blockedStorage: true});
   assert.doesNotThrow(() => blocked.choose('granted'));
   assert.equal(blocked.document.head.children.length, 1);

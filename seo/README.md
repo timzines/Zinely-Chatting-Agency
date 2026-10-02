@@ -36,7 +36,7 @@ Keep these limitations visible in reports. Never invent traffic, rankings, conve
 
 ## Analytics interpretation
 
-`assets/analytics.js` loads GA4 only after a visitor allows analytics. Both refusal and acceptance last 180 days; Analytics settings lets visitors change their choice. Local previews send no production events. Advertising features and GA4 enhanced measurement are off. Only standard page views and explicitly coded contact-intent events are collected. Page query strings, fragments, full referring URLs and Telegram message drafts are excluded.
+`assets/analytics.js` loads GA4 only after a visitor allows analytics. Per the owner's October 2, 2026 preference, there is no automatic prompt or floating control: visitors can open Analytics settings in the footer. New visitors remain untracked unless they opt in there. Existing unexpired choices are respected; both refusal and acceptance last 180 days. Local previews send no production events. Advertising features and GA4 enhanced measurement are off. Only standard page views and explicitly coded contact-intent events are collected. Page query strings, fragments, full referring URLs and Telegram message drafts are excluded.
 
 `estimate_start` means a visitor clicked an internal link to `/contact#estimate` or its `.html` equivalent. `telegram_click` means a visitor clicked a Telegram link; `destination` separates the community group from the sales contact. `cta_type` identifies an estimate CTA. `audience` describes the source page's topic, not a verified visitor identity. Neither event proves that a message was sent, a lead was qualified, or a client signed. Maintain those outcomes separately from owner-confirmed sales records.
 
