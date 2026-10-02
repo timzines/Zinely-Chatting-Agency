@@ -8,7 +8,7 @@
   ],
   "approved_claims": {
     "chatters": "Human chatting, 24/7 coverage",
-    "commission": "Published range 16.5–25% of net tips and PPV closed by Zinely chatters; final terms agreed before launch",
+    "commission": "OnlyFans and Fansly: published range 16.5–25% of net tips and PPV closed by Zinely chatters. Fanvue: usually 20–25%, owner-confirmed October 2, 2026. Final terms agreed before launch; do not apply the 16.5% tier to Fanvue.",
     "subscriptions": "Zinely does not commission subscriptions or renewals; platform fees still apply",
     "retainer_minimum_lock_in": "No retainers, no minimums, no lock-in",
     "billing": "Weekly invoices on Mondays, payable by bank transfer or crypto",
@@ -21,7 +21,9 @@
     ],
     "scope": "Chatting does not substitute for acquiring traffic. No invented numerical revenue or audience minimum.",
     "managed_accounts": "30+ accounts managed; owner-provided October 2, 2026 via coordinated website task, not independently audited",
-    "client_revenue": "Over $500K generated for clients; owner-provided cumulative claim October 2, 2026 via coordinated website task, not independently audited. Do not infer monthly revenue or use an invented exact total."
+    "client_revenue": "Over $500K generated for clients; owner-provided cumulative claim October 2, 2026 via coordinated website task, not independently audited. Do not infer monthly revenue or use an invented exact total.",
+    "fanvue_fan_example": "Owner identified the existing fan example as an AI-model Fanvue account on October 2, 2026. Source: Zinely/assets/case-fan-honourable-mention.png. Exact snapshot: $14,218.92 total spent since April 2026; $11,269.85 tips; $2,839 PPV; four months subscribed. Use the exact evidence, not a rounded-up $15K; do not infer causation or a guaranteed result.",
+    "full_management": "Existing separate full-account-management offer includes content strategy, marketing/growth and chatting. Current default is at capacity / waitlist only. Do not imply chatting commission terms also apply to full management."
   },
   "source_files": [
     "Zinely/pricing.html",

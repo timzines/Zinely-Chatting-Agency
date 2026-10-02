@@ -1,0 +1,81 @@
+/* Fanvue evidence and Fansly conversation visuals. Motion plays once. */
+.fv-proof,.fs-inbox{width:100%;max-width:505px;margin:0 auto;border:1px solid #355365;border-radius:18px;background:#102737;box-shadow:0 24px 64px #020b1538;overflow:hidden}
+.fv-proof-head,.fs-inbox-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 27px;border-bottom:1px solid #284354}
+.fv-proof-brand,.fs-inbox-brand{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:700;color:#edf8f5}
+.fv-proof-brand img{width:25px;height:25px;border-radius:6px}
+.fv-proof-tag{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#a0cabb}
+.fv-proof-main{padding:26px 30px 25px}
+.fv-proof-main h2{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;font-weight:600;letter-spacing:-.02em;line-height:1.2;margin:0 0 9px;color:#ecf7f4}
+.fv-proof-amount{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(45px,5.3vw,69px);font-weight:700;line-height:1.1;letter-spacing:-.045em;color:#c0f0db;margin:0;white-space:nowrap;font-variant-numeric:tabular-nums}
+.fv-proof-amount span{font-size:.64em;letter-spacing:-.035em}
+.fv-proof-period{font-size:11px;color:#94adae;margin:10px 0 25px}
+.fv-proof-details{margin:0;display:grid;gap:17px}
+.fv-proof-details>div{position:relative;display:grid;grid-template-columns:1fr auto;gap:11px;padding-bottom:12px}
+.fv-proof-details dt{font-size:12px;color:#a5bfca}
+.fv-proof-details dd{font-size:14px;font-weight:600;color:#e9f6f4;margin:0;font-variant-numeric:tabular-nums}
+.fv-proof-track{position:absolute;bottom:0;height:3px;width:100%;background:#213e4b;border-radius:3px;overflow:hidden}
+.fv-proof-track i{display:block;height:100%;width:var(--share);background:#91dabb;border-radius:3px;transform-origin:left}
+.fv-proof-details>div+div .fv-proof-track i{background:#63afd4}
+.fv-proof-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 27px;border-top:1px solid #284354;background:#0d2332;font-size:10px;color:#a5c1ca}
+.fv-proof-foot a{font-size:11px;color:#c5eddf;font-weight:600;text-decoration:none}
+.fv-proof-foot a:hover{text-decoration:underline;text-underline-offset:4px}
+.ps-art .fv-proof-caption{font-size:11px;color:#9bb5c5;max-width:430px;margin:17px auto 0;line-height:1.6}
+.fs-inbox{background:#102439;border-color:#2f4f6a}
+.fs-inbox-head{padding:19px 24px;border-color:#2c4258}
+.fs-inbox-brand img{width:31px;height:auto}
+.fs-inbox-head>span{font-size:10px;color:#8fabbe}
+.fs-inbox-head>.fs-inbox-brand{font-size:15px;color:#edf8f5}
+.fs-audiences{display:flex;gap:7px;align-items:center;padding:19px 24px 0;list-style:none;margin:0}
+.fs-audiences li{font-size:10px;border:1px solid #304c65;border-radius:5px;padding:5px 11px;color:#94b0c8;white-space:nowrap}
+.fs-audiences .is-selected{color:#d2edff;border-color:#5489ad;background:#1a3d58}
+.fs-conversation{padding:20px 24px 23px;display:grid;gap:15px}
+.fs-fan-message{max-width:77%;font-size:13px;line-height:1.5;padding:13px 15px;background:#203a50;color:#dbeaf4;border-radius:10px 10px 10px 2px;margin:0}
+.fs-team-message{max-width:86%;justify-self:end;font-size:13px;line-height:1.55;background:#154a70;color:#e8f6ff;border:1px solid #276386;border-radius:10px 10px 2px 10px;padding:13px 15px;margin:0}
+.fs-content-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fs-content-item{border:1px solid #35536a;border-radius:8px;overflow:hidden;background:#0d2033}
+.fs-content-art{height:55px;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 15% 140%,#6fa8c779,transparent 60%),linear-gradient(135deg,#285a73,#112a41)}
+.fs-content-item+div .fs-content-art{background:radial-gradient(ellipse at 90% 150%,#8182b878,transparent 70%),linear-gradient(135deg,#243450,#13263c)}
+.fs-content-art svg{width:25px;height:25px;color:#add4e7}
+.fs-content-label{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px 8px;padding:10px 11px;font-size:11px;color:#d5e6f2}
+.fs-content-label small{font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:#8ad3bc}
+.fs-content-item+div small{color:#85c9f4}
+.fs-inbox-foot{border-top:1px solid #29445b;padding:15px 24px;font-size:10px;color:#93aec4;display:flex;align-items:center;gap:9px}
+.fs-inbox-foot svg{width:14px;height:14px;flex:none;color:#8ad3bc}
+@media(prefers-reduced-motion:no-preference){
+ .fv-proof-track i{animation:fv-spend-reveal 1.15s .15s cubic-bezier(.2,.7,.2,1) backwards}
+ .fv-proof-details>div+div .fv-proof-track i{animation-delay:.3s}
+ .fs-team-message{animation:fs-reply-reveal .65s .2s ease-out backwards}
+ .fs-content-pair{animation:fs-reply-reveal .65s .4s ease-out backwards}
+ @keyframes fv-spend-reveal{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+ @keyframes fs-reply-reveal{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+}
+@media(max-width:1000px) and (min-width:821px){
+ .fv-proof-head,.fv-proof-foot,.fv-proof-main{padding-left:23px;padding-right:23px}
+ .fv-proof-tag{font-size:8px}
+ .fs-inbox-head,.fs-inbox-foot,.fs-conversation{padding-left:18px;padding-right:18px}
+ .fs-audiences{padding-left:18px;padding-right:18px;gap:5px}
+ .fs-audiences li{padding-inline:7px;font-size:9px}
+}
+@media(max-width:500px){
+ .fv-proof-head,.fv-proof-foot{padding:17px 20px}
+ .fv-proof-main{padding:23px 22px}
+ .fv-proof-amount{font-size:clamp(42px,12.5vw,60px)}
+ .fv-proof-main h2{font-size:22px}
+ .fv-proof-foot{gap:12px;font-size:9px}
+ .fv-proof-foot a{font-size:10px}
+ .fv-proof-tag{font-size:8px;letter-spacing:.05em}
+ .fs-inbox-head{padding:18px}
+ .fs-audiences{padding:18px 18px 0;gap:6px}
+ .fs-audiences li{font-size:9px;padding:5px 8px}
+ .fs-conversation{padding:18px;gap:12px}
+ .fs-fan-message,.fs-team-message{font-size:12px;padding:11px 13px}
+ .fs-inbox-foot{padding:14px 18px;font-size:9px}
+ .fs-content-label{font-size:10px;padding:9px}
+ .fs-content-label small{font-size:7px}
+}
+@media(max-width:359px){
+ .fv-proof-head{gap:8px}.fv-proof-brand{font-size:13px;gap:7px}.fv-proof-brand img{width:21px;height:21px}
+ .fv-proof-main{padding:21px 18px}.fv-proof-foot{flex-wrap:wrap;gap:6px 12px}
+ .fs-audiences{gap:4px;padding-inline:14px}.fs-audiences li{padding-inline:6px;font-size:8px}
+ .fs-conversation{padding:17px 14px}.fs-team-message{max-width:94%}
+}
