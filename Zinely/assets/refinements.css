@@ -37,7 +37,7 @@
 .z-text-link{display:inline-flex;align-items:center;gap:13px;flex:none;color:#9bc6df;font-size:13px;font-weight:600;text-decoration:none;padding:8px 0;transition:color .25s}
 .z-text-link span{color:#64c2fc;transition:transform .25s var(--z-ease)}
 .z-text-link:hover{color:#fff}.z-text-link:hover span{transform:translate(2px,-2px)}
-.z-service-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.z-service-tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .z-service-tile{position:relative;overflow:hidden;padding:24px;border:1px solid #24425c;border-radius:16px;background:linear-gradient(135deg,#11263b,#0d1f32);transition:border-color .3s,transform .35s var(--z-ease),background .3s}
 .z-service-tile::after{content:'';position:absolute;left:24px;right:24px;bottom:0;height:1px;background:linear-gradient(90deg,transparent,#39b5ff,transparent);opacity:0;transform:scaleX(.35);transition:opacity .35s,transform .5s var(--z-ease)}
 .z-service-tile:hover{transform:translateY(-3px);border-color:#367cab;background:#112b42}.z-service-tile:hover::after{opacity:.8;transform:scaleX(1)}
@@ -49,7 +49,7 @@
 .z-services-note{display:flex;justify-content:space-between;align-items:center;gap:12px 24px;flex-wrap:wrap;margin-top:18px;font-size:12px;color:#789bb8}
 .z-services-note a{color:#a7bdce;text-decoration:none}.z-services-note a span{color:#69b9ea}.z-services-note a:hover{color:#fff}
 .z-service-tiles.is-revealed .z-service-tile{animation:zServiceIn .55s var(--z-ease) both}
-.z-service-tiles.is-revealed .z-service-tile:nth-child(2){animation-delay:75ms}.z-service-tiles.is-revealed .z-service-tile:nth-child(3){animation-delay:150ms}
+.z-service-tiles.is-revealed .z-service-tile:nth-child(2){animation-delay:75ms}.z-service-tiles.is-revealed .z-service-tile:nth-child(3){animation-delay:150ms}.z-service-tiles.is-revealed .z-service-tile:nth-child(4){animation-delay:225ms}
 @keyframes zServiceIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 .z-start-panel{padding:29px 32px;border:1px solid #254457;border-radius:20px;background:linear-gradient(120deg,#10263a,#0d2030)}
 .z-start-panel .z-compact-heading{margin-bottom:28px}.z-start-panel .z-title{font-size:clamp(28px,3.3vw,36px)}.z-start-panel .z-title span{color:#36d399}
