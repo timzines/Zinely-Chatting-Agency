@@ -3,25 +3,28 @@
   const animations = new WeakMap();
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  // Reveal the compact service cards once, after the template has mounted.
+  // Reveal audience and service cards once, after the template has mounted.
   if ('IntersectionObserver' in window && !reducedMotion.matches) {
-    const revealServices = () => {
-      const tiles = document.querySelector('.z-service-tiles');
-      if (!tiles || tiles.closest('x-dc')) return false;
+    const revealCards = () => {
+      const groups = [...document.querySelectorAll('.z-service-tiles, .z-audience-card')]
+        .filter(element => !element.closest('x-dc'));
+      if (!groups.length) return false;
       const observer = new IntersectionObserver((entries) => {
-        if (entries.some(entry => entry.isIntersecting)) {
-          tiles.classList.add('is-revealed');
-          observer.disconnect();
-          // Release the animation's transform so later hover motion stays smooth.
-          setTimeout(() => tiles.classList.remove('is-revealed'), 750);
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          const card = entry.target;
+          card.classList.add('is-revealed');
+          observer.unobserve(card);
+          // Release the animation transform so hover motion stays smooth.
+          setTimeout(() => card.classList.remove('is-revealed'), 1000);
         }
       }, {threshold: .15});
-      observer.observe(tiles);
+      groups.forEach(group => observer.observe(group));
       return true;
     };
-    if (!revealServices()) {
+    if (!revealCards()) {
       const mountObserver = new MutationObserver(() => {
-        if (revealServices()) mountObserver.disconnect();
+        if (revealCards()) mountObserver.disconnect();
       });
       mountObserver.observe(document.body, {childList: true, subtree: true});
       setTimeout(() => mountObserver.disconnect(), 10000);
