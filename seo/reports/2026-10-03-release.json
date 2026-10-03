@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-03",
+  "type": "owner_authorized_release",
+  "base_commit": "2c65598e5194fc14694d3b9d4df17dac493040a3",
+  "authorization": "Owner: you can make it live; subsequent requests to improve Google result copy, use supplied favicon artwork and target AI discovery with human-chatting comparisons. One-off release, no standing future publication or outreach authorization.",
+  "status": "locally_implemented",
+  "pages": 13,
+  "new_articles": [
+    "https://zinelyagency.com/blog/fanvue-ai-persona-chatting-brief/",
+    "https://zinelyagency.com/blog/human-chatters-vs-ai-chatbots/"
+  ],
+  "changes": [
+    "Approved case-study scope/date corrections and matching homepage cards",
+    "Homepage title, description, matching social tags and WebSite name schema",
+    "Illustrative homepage purchases excluded from snippets",
+    "Owner artwork converted to PNG/ICO/touch favicons without crop; original used for social/logo metadata",
+    "Two guides with actual publication date, blog cards, contextual service links, sitemap and RSS",
+    "Human-chatting comparison section on Fanvue service page",
+    "Scheduled routine extended with bounded Google/AI visibility sampling, no extra publishing authority"
+  ],
+  "validation": {
+    "local_seo": "13 pages; no errors; existing runtime-link warnings only",
+    "python_tests": "5 passed",
+    "analytics_tests": "10 passed",
+    "responsive": "Both new guides checked at desktop and 320/390/768px, no page overflow; mobile cases and Fanvue section checked; desktop homepage and blog cards checked",
+    "interaction": "Comparison TOC anchor, keyboard FAQ, rendered Telegram targets and no automatic analytics prompt verified",
+    "assets": "Favicon derived from supplied square artwork; original copy SHA-256 matches source",
+    "publication": "October 3, 2026 for both new articles; prior editorial dates preserved"
+  },
+  "limitations": [
+    "No ranking uplift or AI recommendation established",
+    "Google chooses snippets, titles and favicons after recrawling",
+    "OAI-SearchBot is permitted by wildcard robots locally; provider fetch/citation not established",
+    "One individual fan result is not a controlled human/AI comparison",
+    "Search Console overview has 1 indexed page; report contains historical URLs and is not an immediate inventory of this release"
+  ],
+  "sources": [
+    "https://developers.google.com/search/docs/appearance/snippet",
+    "https://developers.google.com/search/docs/appearance/favicon-in-search",
+    "https://developers.google.com/search/docs/appearance/ai-features",
+    "https://developers.openai.com/api/docs/bots",
+    "https://help.fanvue.com/en/articles/9538738-is-ai-content-allowed-on-fanvue",
+    "https://help.fanvue.com/en/articles/11163277-settings-management-using-manager-accounts-on-fanvue"
+  ],
+  "next_action": "Push reviewed release via existing main-to-Cloudflare build; confirm live files; request homepage recrawl once."
+}

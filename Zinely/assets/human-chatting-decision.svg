@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="448" viewBox="0 0 620 448" role="img" aria-labelledby="title desc">
+<title id="title">The next reply needs context</title><desc id="desc">An illustrative fan question is followed by three checks: purchase history, approved offer and a responsible person.</desc>
+<rect x="1" y="1" width="618" height="446" rx="24" fill="#0e2134" stroke="#284960"/>
+<circle cx="36" cy="36" r="4" fill="#5ddec2"/><text x="51" y="41" fill="#9cbacf" font-family="Arial,sans-serif" font-size="12" letter-spacing="1.4">BEFORE THE NEXT REPLY</text>
+<path d="M30 61H590" stroke="#284960"/>
+<rect x="30" y="90" width="560" height="103" rx="16" fill="#17344a"/>
+<text x="51" y="120" fill="#8db8d2" font-family="Arial,sans-serif" font-size="12">A FAN ASKS</text>
+<text x="51" y="151" fill="#f0f8ff" font-family="Arial,sans-serif" font-size="21" font-weight="600">“Is this different from what I bought?”</text>
+<path d="M58 216V348" stroke="#376078" stroke-width="2"/>
+<g font-family="Arial,sans-serif"><circle cx="58" cy="228" r="13" fill="#12334a" stroke="#56b9e6"/><text x="54" y="233" fill="#87d9ff" font-size="13">1</text><text x="88" y="234" fill="#d7e9f4" font-size="18">Check the purchase history.</text>
+<circle cx="58" cy="285" r="13" fill="#12334a" stroke="#56b9e6"/><text x="54" y="290" fill="#87d9ff" font-size="13">2</text><text x="88" y="291" fill="#d7e9f4" font-size="18">Know what is approved.</text>
+<circle cx="58" cy="342" r="13" fill="#12334a" stroke="#56b9e6"/><text x="54" y="347" fill="#87d9ff" font-size="13">3</text><text x="88" y="348" fill="#d7e9f4" font-size="18">Own the next decision.</text>
+<text x="31" y="410" fill="#77a5c0" font-size="12">ILLUSTRATIVE WORKFLOW · HUMAN CHATTING</text></g>
+</svg>

@@ -1,5 +1,5 @@
 {
-  "updated_on": "2026-10-02",
+  "updated_on": "2026-10-03",
   "mode": "prepare_for_review",
   "max_new_articles_per_week": 2,
   "max_pending_deliverables": 3,
@@ -11,7 +11,8 @@
       "audience": "fanvue_ai_operator",
       "title": "Get the Fanvue service page discovered and verify Google indexing",
       "target_url": "/fanvue-chatting-agency/",
-      "next_action": "Googlebot smartphone successfully crawled the Fanvue page October 2 at 00:04:40 local; homepage is the referring page. It remains crawled, currently not indexed. Check indexing and unresolved sitemap-processing warning at most once per daily run, avoiding repeated unchanged submissions. Prepare useful supporting content and review actual rendered content/canonical evidence if exclusion persists."
+      "next_action": "October 3 check unchanged: crawled, currently not indexed, with the October 2 00:04:40 crawl. Google/Bing sitemap success remains. Inspect at most once per next daily run; no repeated requests or submissions.",
+      "last_checked_on": "2026-10-03"
     },
     {
       "id": "foundation",
@@ -28,7 +29,7 @@
       "status": "collection_verified_baseline_recorded",
       "audience": "all",
       "title": "Establish search, indexing and qualified-lead baseline",
-      "next_action": "GSC, Bing and GA4 browser access confirmed. Consent-based collection deployed in 38ce856 and all three event types verified in Realtime. Read local measurement report for the initial search baseline and exclude the controlled verification visit from acquisition results. Compare complete future periods, inspect indexing and HTTPS Bing sitemap processing, and track owner-confirmed qualified leads separately."
+      "next_action": "See seo/reports/2026-10-02-weekly-measurement.json for exact complete-period Google comparisons, available Bing periods and consent-limited GA4 observations. These periods precede the October releases; no uplift or qualified leads are established. Continue complete-period measurement and separate owner-confirmed outcomes from CTA clicks."
     },
     {
       "id": "fees",
@@ -86,7 +87,7 @@
     {
       "id": "fanvue-handover",
       "priority": 1,
-      "status": "draft_ready_for_review",
+      "status": "locally_implemented",
       "audience": "fanvue_ai_operator",
       "title": "A Fanvue AI-persona handover brief for human chatters",
       "target_url": "/blog/fanvue-ai-persona-chatting-brief/",
@@ -99,9 +100,11 @@
         "Recheck Fanvue AI disclosure and manager-account guidance",
         "Do not reuse OnlyFans results as Fanvue proof"
       ],
-      "next_action": "Review the full article and downloadable persona brief. The draft uses the shared design and verified Fanvue access/disclosure sources; dates remain unassigned and noindex remains set. On approved release add service-page/blog links, assign real publication dates, build/check and verify production.",
+      "next_action": "Authorized by owner October 3. Included in the reviewed release; verify production deployment and track indexing separately.",
       "draft_path": "seo/drafts/fanvue-ai-persona-chatting-brief/index.html",
-      "created_on": "2026-10-02"
+      "created_on": "2026-10-02",
+      "review_appendix": "seo/drafts/fanvue-ai-persona-chatting-brief/distribution-review.json",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "in-house-cost",
@@ -123,7 +126,7 @@
     {
       "id": "proof-audit",
       "priority": 2,
-      "status": "queued",
+      "status": "locally_implemented",
       "audience": "all",
       "title": "Audit case-study timeframes and inherited claims",
       "target_url": "/cases",
@@ -131,19 +134,51 @@
       "required_evidence": [
         "Owner-approved source screenshots and date ranges",
         "Coordinate with case-study task before editing"
-      ]
+      ],
+      "draft_path": "seo/drafts/case-evidence-review-2026-10-03/review.txt",
+      "created_on": "2026-10-03",
+      "next_action": "Authorized by owner October 3. Included in the reviewed release; verify production deployment and track indexing separately.",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "distribution",
       "priority": 6,
-      "status": "queued",
+      "status": "research_in_progress",
       "audience": "agency_owner",
       "title": "Research three relevant partner/editorial/community opportunities",
       "distinct_value": "Verified audience fit and community rules; helpful draft tied to an actual question",
       "required_evidence": [
         "Current destination URL and rules",
         "No sending or posting without explicit instruction"
-      ]
+      ],
+      "research_path": "seo/drafts/fanvue-ai-persona-chatting-brief/distribution-review.json",
+      "next_action": "Research appended to the existing handover review package: one conditional Infloww editorial route and unsent copy; IF100 solicitation and an expired Fanvue referral campaign rejected. Editorial acceptance remains unverified. This is not three ready placements and does not create another pending deliverable. No outreach authorized."
+    },
+    {
+      "id": "human-vs-ai",
+      "priority": 1,
+      "status": "locally_implemented",
+      "audience": "creator_agency_fanvue_operator",
+      "title": "Human chatters vs AI chatbots for OnlyFans and Fanvue",
+      "target_url": "/blog/human-chatters-vs-ai-chatbots/",
+      "created_on": "2026-10-03",
+      "primary_keyword": "human chatters vs AI chatbots",
+      "supports": [
+        "/fanvue-chatting-agency/",
+        "/onlyfans-chatting-agency/",
+        "/onlyfans-chatting-for-agencies/"
+      ],
+      "next_action": "Verify live release; monitor discovery and relevant non-brand queries. No claimed ranking or AI citation yet."
+    },
+    {
+      "id": "search-appearance",
+      "priority": 1,
+      "status": "locally_implemented",
+      "audience": "all",
+      "title": "Refresh homepage search copy and owner-supplied favicon",
+      "target_url": "/",
+      "created_on": "2026-10-03",
+      "next_action": "Verify deployed title/description/favicon; request homepage recrawl once after release. Google appearance refresh remains unverified until observed."
     }
   ],
   "current_focus": "Fanvue / AI-model discovery and qualified organic enquiries"
