@@ -51,6 +51,8 @@
 .z-difference-copy p{font-size:14px;line-height:1.8;color:#91b1ca;margin:0}
 .z-difference-copy b{color:#d6e8f5;font-weight:600}
 .z-difference-copy .z-difference-line{font-size:12px;color:#64c8a5;margin-top:21px}
+.z-difference-copy .z-ai-note{margin-top:16px;padding:11px 14px;border:1px solid rgba(54,211,153,.28);border-left:3px solid #36D399;border-radius:10px;background:rgba(54,211,153,.07);font-size:13px;line-height:1.65;color:#a9c6d8}
+.z-difference-copy .z-ai-note b{color:#36D399}
 .z-difference-scene{position:relative;min-width:0;padding:22px;border:1px solid #31516a;border-radius:16px;background:radial-gradient(ellipse at 0 0,#1aa3f50c,transparent 80%),#0a1a2b;box-shadow:0 16px 40px #020b1526}
 .z-scene-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px;color:#9bc3dc;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
 .z-scene-top>span:first-child{display:flex;align-items:center;gap:8px}

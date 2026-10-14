@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="448" viewBox="0 0 620 448" role="img" aria-labelledby="title desc">
+<title id="title">The true cost of one hire</title><desc id="desc">An illustrative hiring loop: find applicants, screen and test, train, build shifts and cover, then weeks with live fans. If the chatter is not a fit, the loop starts again. Each round costs your hours, training time, missed sales and fan trust.</desc>
+<rect x="1" y="1" width="618" height="446" rx="24" fill="#0e2134" stroke="#284960"/>
+<circle cx="36" cy="36" r="4" fill="#36d399"/><text x="51" y="41" fill="#9cbacf" font-family="Arial,sans-serif" font-size="12" letter-spacing="1.4">THE TRUE COST OF ONE HIRE</text>
+<path d="M30 61H590" stroke="#284960"/>
+<g font-family="Arial,sans-serif">
+<rect x="30" y="78" width="330" height="44" rx="12" fill="#17344a"/>
+<circle cx="56" cy="100" r="12" fill="#12334a" stroke="#56b9e6"/><text x="56" y="105" fill="#87d9ff" font-size="13" text-anchor="middle">1</text><text x="80" y="106" fill="#d7e9f4" font-size="16">Find applicants</text>
+<rect x="30" y="132" width="330" height="44" rx="12" fill="#17344a"/>
+<circle cx="56" cy="154" r="12" fill="#12334a" stroke="#56b9e6"/><text x="56" y="159" fill="#87d9ff" font-size="13" text-anchor="middle">2</text><text x="80" y="160" fill="#d7e9f4" font-size="16">Screen and run test chats</text>
+<rect x="30" y="186" width="330" height="44" rx="12" fill="#17344a"/>
+<circle cx="56" cy="208" r="12" fill="#12334a" stroke="#56b9e6"/><text x="56" y="213" fill="#87d9ff" font-size="13" text-anchor="middle">3</text><text x="80" y="214" fill="#d7e9f4" font-size="16">Train voice, boundaries, prices</text>
+<rect x="30" y="240" width="330" height="44" rx="12" fill="#17344a"/>
+<circle cx="56" cy="262" r="12" fill="#12334a" stroke="#56b9e6"/><text x="56" y="267" fill="#87d9ff" font-size="13" text-anchor="middle">4</text><text x="80" y="268" fill="#d7e9f4" font-size="16">Build 24/7 shifts and cover</text>
+<rect x="30" y="294" width="330" height="44" rx="12" fill="#183f5a" stroke="#1aa3f5"/>
+<circle cx="56" cy="316" r="12" fill="#12334a" stroke="#1aa3f5"/><text x="56" y="321" fill="#bfe8ff" font-size="13" text-anchor="middle">5</text><text x="80" y="322" fill="#f0f8ff" font-size="16" font-weight="700">Weeks with live fans</text>
+<path d="M360 316H392V100H368" stroke="#1aa3f5" stroke-width="2" stroke-dasharray="6 6" fill="none"/>
+<path d="M370 94L361 100L370 106" stroke="#1aa3f5" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="406" y="208" fill="#87d9ff" font-size="11" letter-spacing="1.2" text-anchor="middle" transform="rotate(-90 406 208)">NOT A FIT? START AGAIN</text>
+<path d="M56 338V352" stroke="#36d399" stroke-width="2"/>
+<rect x="30" y="352" width="330" height="40" rx="12" fill="#173f46" stroke="#397365"/>
+<circle cx="50" cy="372" r="4" fill="#36d399"/><text x="64" y="377" fill="#d2f4e8" font-size="14">A fit? Keep reviewing every week.</text>
+<rect x="424" y="78" width="166" height="314" rx="16" fill="#122b40" stroke="#2c5069"/>
+<text x="442" y="106" fill="#8db8d2" font-size="11" letter-spacing="1.2">EACH ROUND COSTS</text>
+<path d="M442 120H572" stroke="#2c5069"/>
+<circle cx="447" cy="146" r="3" fill="#1aa3f5"/><text x="458" y="151" fill="#f0f8ff" font-size="15" font-weight="600">Your hours</text><text x="458" y="170" fill="#8fb1c7" font-size="11">recruiting, screening</text>
+<circle cx="447" cy="207" r="3" fill="#1aa3f5"/><text x="458" y="212" fill="#f0f8ff" font-size="15" font-weight="600">Training time</text><text x="458" y="231" fill="#8fb1c7" font-size="11">voice, offers, rules</text>
+<circle cx="447" cy="268" r="3" fill="#1aa3f5"/><text x="458" y="273" fill="#f0f8ff" font-size="15" font-weight="600">Missed sales</text><text x="458" y="292" fill="#8fb1c7" font-size="11">while they learn</text>
+<circle cx="447" cy="329" r="3" fill="#1aa3f5"/><text x="458" y="334" fill="#f0f8ff" font-size="15" font-weight="600">Fan trust</text><text x="458" y="353" fill="#8fb1c7" font-size="11">when a chat goes wrong</text>
+<text x="31" y="424" fill="#77a5c0" font-size="12" letter-spacing="1">ILLUSTRATIVE PROCESS · NOT DATA FROM A REAL HIRE</text>
+</g>
+</svg>

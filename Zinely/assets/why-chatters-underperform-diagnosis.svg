@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="448" viewBox="0 0 620 448" role="img" aria-labelledby="title desc">
+<title id="title">Reading a chat log: symptom, cause, fix</title><desc id="desc">An illustrative chat excerpt. A chatter offers a set the fan bought yesterday and the fan goes quiet. Symptom: the same offer was sent twice. Cause: no fan context after the shift change. Fix: a fan profile beside the chat, read before replying.</desc>
+<rect x="1" y="1" width="618" height="446" rx="24" fill="#0e2134" stroke="#284960"/>
+<circle cx="36" cy="36" r="4" fill="#5ddec2"/>
+<g font-family="Arial,sans-serif">
+<text x="51" y="41" fill="#9cbacf" font-size="12" letter-spacing="1.4">READING THE CHAT LOG</text>
+<text x="589" y="41" fill="#6f93ab" font-size="12" letter-spacing="1.2" text-anchor="end">SHIFT B · 21:40</text>
+<path d="M30 61H590" stroke="#284960"/>
+<rect x="236" y="80" width="354" height="50" rx="16" fill="#1b4f74" stroke="#3f8fbd"/>
+<rect x="256" y="99" width="12" height="10" rx="2" fill="#87d9ff"/><path d="M258.5 99v-3a3.5 3.5 0 0 1 7 0v3" stroke="#87d9ff" stroke-width="1.6" fill="none"/>
+<text x="280" y="111" fill="#eaf6ff" font-size="16">Unlock my new set? Made it for you.</text>
+<text x="589" y="148" fill="#6f93ab" font-size="11" text-anchor="end">Chatter · new shift</text>
+<rect x="30" y="160" width="300" height="50" rx="16" fill="#17344a" stroke="#2c516b"/>
+<text x="50" y="191" fill="#d7e9f4" font-size="16">I bought that one yesterday…</text>
+<text x="31" y="230" fill="#6f93ab" font-size="11">Fan · then no reply</text>
+<path d="M30 248H590" stroke="#284960" stroke-dasharray="4 6"/>
+<path d="M82 300V318M82 350V368" stroke="#376078" stroke-width="2"/>
+<rect x="30" y="270" width="104" height="30" rx="15" fill="#3a2a1e" stroke="#f0a35b"/>
+<text x="82" y="290" fill="#ffc58f" font-size="11" font-weight="700" letter-spacing="1.2" text-anchor="middle">SYMPTOM</text>
+<text x="152" y="292" fill="#f0f8ff" font-size="18" font-weight="600">Same offer sent twice</text>
+<rect x="30" y="320" width="104" height="30" rx="15" fill="#12334a" stroke="#56b9e6"/>
+<text x="82" y="340" fill="#87d9ff" font-size="11" font-weight="700" letter-spacing="1.2" text-anchor="middle">CAUSE</text>
+<text x="152" y="342" fill="#d7e9f4" font-size="18">No fan context after the shift change</text>
+<rect x="30" y="370" width="104" height="30" rx="15" fill="#133a33" stroke="#36d399"/>
+<text x="82" y="390" fill="#8ff0c6" font-size="11" font-weight="700" letter-spacing="1.2" text-anchor="middle">FIX</text>
+<text x="152" y="392" fill="#d7e9f4" font-size="18">Fan profile beside the chat, read first</text>
+<text x="31" y="428" fill="#77a5c0" font-size="11" letter-spacing="1">ILLUSTRATIVE EXAMPLE · NOT A CLIENT CONVERSATION</text>
+</g>
+</svg>

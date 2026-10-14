@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+<title id="title">What a chatter sees at the start of a shift</title>
+<desc id="desc">Illustrative screen. On the left, the fans who matter right now: one who spent on Friday and is back, one whose payday is today, one waiting on a promised answer. On the right, a short fan brief for the first fan: what he bought, what he likes, what to avoid, what was promised, the last shift's note and the next agreed step on the price ladder. The chatter still reads the conversation and decides what to send.</desc>
+<rect x="1" y="1" width="638" height="478" rx="22" fill="#0e2134" stroke="#284960"/>
+<g font-family="Arial,sans-serif">
+ <circle cx="34" cy="34" r="4" fill="#1AA3F5"/><text x="48" y="39" fill="#9cbacf" font-size="12" letter-spacing="1.4">START OF SHIFT · WHAT THE CHATTER SEES</text>
+ <path d="M24 56H616" stroke="#284960"/>
+
+ <!-- Fans that matter now -->
+ <text x="24" y="86" fill="#87d9ff" font-size="12" letter-spacing="1.3" font-weight="700">FANS THAT MATTER NOW</text>
+ <rect x="24" y="100" width="222" height="76" rx="14" fill="#17344a" stroke="#1AA3F5" stroke-width="1.6"/>
+ <circle cx="52" cy="138" r="15" fill="#1F516D"/><text x="52" y="143" fill="#a9ddfa" font-size="13" font-weight="700" text-anchor="middle">A</text>
+ <text x="78" y="133" fill="#f1faff" font-size="16" font-weight="700">Fan A</text>
+ <text x="78" y="155" fill="#a9ddfa" font-size="13">Spent Friday · back now</text>
+ <rect x="24" y="188" width="222" height="76" rx="14" fill="#122b40" stroke="#2c4d66"/>
+ <circle cx="52" cy="226" r="15" fill="#1d3f55"/><text x="52" y="231" fill="#8db8d2" font-size="13" font-weight="700" text-anchor="middle">B</text>
+ <text x="78" y="221" fill="#d8edfa" font-size="16" font-weight="700">Fan B</text>
+ <text x="78" y="243" fill="#8db8d2" font-size="13">Payday today</text>
+ <rect x="24" y="276" width="222" height="76" rx="14" fill="#122b40" stroke="#2c4d66"/>
+ <circle cx="52" cy="314" r="15" fill="#1d3f55"/><text x="52" y="319" fill="#8db8d2" font-size="13" font-weight="700" text-anchor="middle">C</text>
+ <text x="78" y="309" fill="#d8edfa" font-size="16" font-weight="700">Fan C</text>
+ <text x="78" y="331" fill="#8db8d2" font-size="13">Waiting on an answer</text>
+ <text x="24" y="384" fill="#77a5c0" font-size="12">Sorted by what needs</text>
+ <text x="24" y="401" fill="#77a5c0" font-size="12">a person's attention first.</text>
+
+ <!-- Fan brief -->
+ <rect x="266" y="70" width="350" height="342" rx="18" fill="#10283d" stroke="#376682"/>
+ <text x="288" y="98" fill="#f1faff" font-size="16" font-weight="700">Fan brief · Fan A</text>
+ <text x="594" y="98" fill="#87d9ff" font-size="11" letter-spacing="1" text-anchor="end">AI SUMMARY</text>
+ <path d="M288 112H594" stroke="#2c4d66"/>
+ <g font-size="11" letter-spacing="1.3" fill="#729CB8">
+  <text x="288" y="138">BOUGHT</text><text x="288" y="176">LIKES</text><text x="288" y="214">AVOID</text><text x="288" y="252">PROMISED</text><text x="288" y="290">LAST SHIFT</text>
+ </g>
+ <g font-size="15" fill="#D8EDFA">
+  <text x="392" y="138">Friday: bundle and a tip</text>
+  <text x="392" y="176">Slow chats, being remembered</text>
+  <text x="392" y="214">A hard sell after a purchase</text>
+  <text x="392" y="252">News on the next set, Sunday</text>
+  <text x="392" y="290">“Back Sunday night”</text>
+ </g>
+ <path d="M288 312H594" stroke="#2c4d66"/>
+ <rect x="288" y="328" width="306" height="64" rx="12" fill="#173F46" stroke="#397365"/>
+ <text x="306" y="352" fill="#9CE3CE" font-size="11" letter-spacing="1.3">PRICE LADDER</text>
+ <text x="306" y="377" fill="#EAFBF4" font-size="15">Next agreed step, not a guess</text>
+ <circle cx="560" cy="360" r="5" fill="#36D399"/><circle cx="542" cy="360" r="5" fill="#36D399"/><circle cx="578" cy="360" r="5" fill="none" stroke="#36D399"/>
+
+ <!-- Human step -->
+ <rect x="24" y="426" width="592" height="38" rx="19" fill="#36D399"/>
+ <text x="320" y="450" fill="#06231a" font-size="15" font-weight="700" text-anchor="middle">Then a person reads the thread, decides and sends.</text>
+</g>
+</svg>
