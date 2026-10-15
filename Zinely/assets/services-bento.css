@@ -1,39 +1,39 @@
-/* Services bento: two headline services on top, three tools underneath. */
-.z-svc-grid{grid-template-columns:repeat(6,minmax(0,1fr))}
-.z-svc-grid .z-service-tile{display:flex;flex-direction:column;padding:26px}
-.z-svc-wide{grid-column:span 3}
-.z-svc-third{grid-column:span 2}
-.z-svc-grid .z-tile-icon{width:40px;height:40px;border-radius:12px}
-.z-svc-grid .z-tile-icon svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.z-svc-grid .z-tile-heading{margin-bottom:12px}
-.z-svc-grid .z-service-tile h3{font-size:20px}
-.z-svc-grid .z-service-tile p{max-width:440px}
-.z-svc-grid .z-service-tile p b{color:#e3f1fb;font-weight:600}
-.z-svc-foot{margin-top:auto;padding-top:20px}
-/* 24/7: one big figure */
-.z-svc-big{display:flex;align-items:flex-end;gap:16px}
-.z-svc-big strong{font:800 64px/.9 'Bricolage Grotesque',sans-serif;letter-spacing:-.05em;background:linear-gradient(135deg,#7fd4ff,#1aa3f5);-webkit-background-clip:text;background-clip:text;color:transparent}
-.z-svc-big span{padding-bottom:4px;color:#7f9fb8;font-size:12.5px;line-height:1.45}
-/* Account manager: the premium tile */
-.z-svc-grid .z-svc-premium{border-color:#5c4e2e;background:radial-gradient(ellipse at 100% 0,rgba(232,194,122,.14),transparent 60%),linear-gradient(135deg,#17222c,#0f1d2b)}
-.z-svc-grid .z-svc-premium:hover{border-color:#a8894e;background:radial-gradient(ellipse at 100% 0,rgba(232,194,122,.2),transparent 60%),linear-gradient(135deg,#17222c,#0f1d2b)}
-.z-svc-premium::after{background:linear-gradient(90deg,transparent,#e8c27a,transparent)!important}
-.z-svc-premium .z-tile-icon{color:#f0cf8f;background:rgba(232,194,122,.08);border-color:#6b5a35}
-.z-svc-premium:hover .z-tile-icon{background:rgba(232,194,122,.16)}
-.z-svc-badge{margin-left:auto;padding:4px 9px;border:1px solid #6b5a35;border-radius:999px;color:#f0cf8f;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
-.z-svc-manager{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid #3d3a2e;border-radius:12px;background:rgba(10,22,38,.6)}
-.z-svc-manager>b{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f0cf8f,#b8904a);color:#1d1606;font:800 13px 'Bricolage Grotesque',sans-serif;flex:none}
-.z-svc-manager strong{display:block;color:#f3ead8;font-size:13px}
-.z-svc-manager small{display:block;color:#a9a08b;font-size:11.5px;margin-top:2px}
-.z-svc-manager em{margin-left:auto;display:inline-flex;align-items:center;gap:6px;color:#7fe0b9;font-size:11px;font-style:normal;font-weight:700;white-space:nowrap}
-.z-svc-manager em::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--z-green)}
-@media(max-width:1000px){.z-svc-wide,.z-svc-third{grid-column:span 6}.z-svc-grid .z-service-tile p{max-width:none}}
-@media(max-width:540px){
-  .z-svc-grid .z-service-tile{padding:21px 20px}
-  .z-svc-grid .z-service-tile p{margin-left:0}
-  .z-svc-grid .z-tile-heading{display:flex;margin-bottom:10px}
-  .z-svc-grid .z-service-tile h3{font-size:18px}
-  .z-svc-foot{padding-top:16px}
-  .z-svc-badge{display:none}
-  .z-svc-big strong{font-size:52px}
+/* Services: one chatting service, with everything else included inside it. */
+.z-pack{display:grid;grid-template-columns:.85fr 1.15fr;border:1px solid #2a5272;border-radius:22px;background:radial-gradient(ellipse at 0 0,rgba(26,163,245,.12),transparent 55%),linear-gradient(135deg,#10263b,#0c1e30);overflow:hidden;box-shadow:0 20px 50px rgba(2,11,21,.35)}
+.z-pack-core{display:flex;flex-direction:column;padding:34px 36px;border-right:1px solid #234560}
+.z-pack-brand{display:flex;align-items:center;gap:10px;margin-bottom:28px}
+.z-pack-brand img{width:30px;height:30px}
+.z-pack-brand span{color:#dcedfa;font-size:14px;font-weight:700}
+.z-pack-brand em{margin-left:auto;padding:5px 11px;border-radius:999px;background:rgba(54,211,153,.12);border:1px solid rgba(54,211,153,.45);color:#8ff0c9;font-size:11px;font-weight:800;font-style:normal;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.z-pack-core h3{font:800 30px/1.1 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em;color:#fff;margin:0 0 10px}
+.z-pack-core p{font-size:15px;line-height:1.65;color:#9dbbd2;margin:0;max-width:340px}
+.z-pack-core p b{color:#e3f1fb;font-weight:600}
+.z-pack-big{display:flex;align-items:flex-end;gap:16px;margin-top:auto;padding-top:30px}
+.z-pack-big strong{font:800 76px/.88 'Bricolage Grotesque',sans-serif;letter-spacing:-.05em;background:linear-gradient(135deg,#7fd4ff,#1aa3f5);-webkit-background-clip:text;background-clip:text;color:transparent}
+.z-pack-big span{padding-bottom:5px;color:#7f9fb8;font-size:12.5px;line-height:1.45}
+.z-pack-plus{padding:30px 32px}
+.z-pack-label{display:flex;align-items:center;gap:10px;color:#8ff0c9;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px}
+.z-pack-label::before{content:'+';display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:rgba(54,211,153,.15);font-size:14px;letter-spacing:0}
+.z-pack-plus ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px;margin:0;padding:0;list-style:none}
+.z-pack-plus li{display:flex;gap:14px;padding:20px 0;border-bottom:1px solid #1f3d55}
+.z-pack-plus li:nth-last-child(-n+2){border-bottom:0}
+.z-pack-icon{flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:11px;color:#60c2ff;background:rgba(26,163,245,.08);border:1px solid #2b536e}
+.z-pack-icon svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.z-pack-gold .z-pack-icon{color:#f0cf8f;background:rgba(232,194,122,.08);border-color:#6b5a35}
+.z-pack-plus h4{font:700 16px/1.3 'Bricolage Grotesque',sans-serif;letter-spacing:-.01em;color:#fff;margin:0 0 5px}
+.z-pack-plus p{font-size:13px;line-height:1.55;color:#8fb2d4;margin:0}
+@media(max-width:900px){
+  .z-pack{grid-template-columns:1fr}
+  .z-pack-core{border-right:0;border-bottom:1px solid #234560}
+  .z-pack-big{padding-top:22px}
+}
+@media(max-width:560px){
+  .z-pack-core{padding:24px 20px}
+  .z-pack-core h3{font-size:26px}
+  .z-pack-brand{margin-bottom:20px}
+  .z-pack-big strong{font-size:58px}
+  .z-pack-plus{padding:22px 20px 8px}
+  .z-pack-plus ul{grid-template-columns:1fr}
+  .z-pack-plus li:nth-last-child(2){border-bottom:1px solid #1f3d55}
+  .z-pack-plus li{padding:16px 0}
 }
