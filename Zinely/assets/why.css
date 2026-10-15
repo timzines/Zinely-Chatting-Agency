@@ -10,7 +10,7 @@
 .z-why-tab[aria-selected='true']>i{transform:scaleX(1)}
 .z-why-shell[data-auto='true'] .z-why-tab[aria-selected='true']>i{animation:zWhyProgress 7s linear both}
 .z-why-tab:focus-visible{outline:2px solid #72cbff;outline-offset:-4px}
-.z-why-panel{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:48px;padding:48px 52px;min-height:372px;box-sizing:border-box}
+.z-why-panel{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:48px;padding:44px 52px;min-height:548px;box-sizing:border-box}
 .z-why-panel[hidden]{display:none}
 .z-why-copy h3{font:800 clamp(28px,3.2vw,40px)/1.08 'Bricolage Grotesque',sans-serif;letter-spacing:-.035em;color:#fff;margin:0;text-wrap:balance}
 .z-why-copy h3 span{color:var(--z-blue)}
@@ -19,18 +19,20 @@
 .z-why-note svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .z-why-visual{display:grid;place-items:center;min-width:0}
 .z-why-visual svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.z-why-visual>div{width:100%;max-width:380px;box-sizing:border-box;padding:22px;border:1px solid #2c4c66;border-radius:18px;background:#0a1a2b;box-shadow:0 18px 40px rgba(2,11,21,.35)}
+.z-why-visual>div{width:100%;max-width:420px;box-sizing:border-box;padding:22px;border:1px solid #2c4c66;border-radius:18px;background:#0a1a2b;box-shadow:0 18px 40px rgba(2,11,21,.35)}
 /* 1: fan profile */
 .z-why-profile-head{display:flex;align-items:center;gap:12px;padding-bottom:16px;border-bottom:1px solid #1f3a51}
 .z-why-profile-head>b{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#1aa3f5,#0d6aa8);color:#fff;font:800 16px 'Bricolage Grotesque',sans-serif}
 .z-why-profile-head strong{display:block;color:#fff;font-size:15px}
 .z-why-profile-head small{display:block;color:#7397b4;font-size:12px;margin-top:2px}
 .z-why-profile-head em{margin-left:auto;padding:4px 10px;border-radius:999px;background:rgba(232,194,122,.14);border:1px solid rgba(232,194,122,.4);color:#f6d796;font-size:11px;font-weight:800;font-style:normal}
-.z-why-profile ul{display:grid;gap:4px;margin:12px 0 0;padding:0;list-style:none}
-.z-why-profile li{display:flex;justify-content:space-between;padding:10px 0;font-size:13.5px}
-.z-why-profile li span{color:#7f9fb8}
-.z-why-profile li strong{color:#e6f2fb}
-.z-why-profile li:last-child strong{color:#ffb0b0}
+.z-why-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:14px}
+.z-why-fields>div{padding:9px 11px;border:1px solid #1f3a51;border-radius:10px;background:#0d2236}
+.z-why-fields span,.z-why-flag span,.z-why-shiftnote span{display:block;color:#6f90aa;font-size:10.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:3px}
+.z-why-fields strong{display:block;color:#e6f2fb;font-size:13px;font-weight:600;line-height:1.35}
+.z-why-flag{margin-top:8px;padding:9px 11px;border:1px solid rgba(255,107,107,.3);border-radius:10px;background:rgba(255,107,107,.07)}
+.z-why-flag strong{color:#ffb0b0;font-size:13px;font-weight:600}
+.z-why-shiftnote{margin-top:8px;padding:9px 11px;border-left:3px solid #1aa3f5;border-radius:4px 10px 10px 4px;background:rgba(26,163,245,.08);color:#cfe6f6;font-size:13px;line-height:1.45}
 /* 2: spend bars */
 .z-why-bars-head{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#9dbbd2;font-weight:600}
 .z-why-bars-head em{font-style:normal;font-size:10.5px;color:#5f819c;font-weight:500}
@@ -57,8 +59,8 @@
 @media(prefers-reduced-motion:no-preference){
   .z-why-panel:not([hidden]) .z-why-copy{animation:zWhyFade .5s var(--z-ease) both}
   .z-why-panel:not([hidden]) .z-why-visual>div{animation:zWhyRise .6s .08s var(--z-ease) both}
-  .z-why-panel:not([hidden]) .z-why-profile li{animation:zWhyFade .4s var(--z-ease) both}
-  .z-why-panel:not([hidden]) .z-why-profile li:nth-child(1){animation-delay:.3s}.z-why-panel:not([hidden]) .z-why-profile li:nth-child(2){animation-delay:.42s}.z-why-panel:not([hidden]) .z-why-profile li:nth-child(3){animation-delay:.54s}
+  .z-why-panel:not([hidden]) .z-why-fields>div,.z-why-panel:not([hidden]) .z-why-flag,.z-why-panel:not([hidden]) .z-why-shiftnote{animation:zWhyFade .4s var(--z-ease) both}
+  .z-why-panel:not([hidden]) .z-why-fields>div:nth-child(n){animation-delay:.25s}.z-why-panel:not([hidden]) .z-why-fields>div:nth-child(n+3){animation-delay:.35s}.z-why-panel:not([hidden]) .z-why-fields>div:nth-child(n+5){animation-delay:.45s}.z-why-panel:not([hidden]) .z-why-flag{animation-delay:.55s}.z-why-panel:not([hidden]) .z-why-shiftnote{animation-delay:.65s}
   .z-why-panel:not([hidden]) .z-why-bars-grid i{animation:zWhyGrow .7s var(--z-ease) both}
   .z-why-panel:not([hidden]) .z-why-bars-grid i:nth-child(2){animation-delay:.08s}.z-why-panel:not([hidden]) .z-why-bars-grid i:nth-child(3){animation-delay:.16s}.z-why-panel:not([hidden]) .z-why-bars-grid i:nth-child(4){animation-delay:.24s}.z-why-panel:not([hidden]) .z-why-bars-grid i:nth-child(5){animation-delay:.32s}.z-why-panel:not([hidden]) .z-why-bars-grid i:nth-child(6){animation-delay:.4s}
   .z-why-panel:not([hidden]) .z-why-msg{animation:zWhyFade .4s var(--z-ease) both}
