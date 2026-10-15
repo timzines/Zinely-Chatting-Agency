@@ -1,0 +1,19 @@
+/* Results cards: plain labels, highlight chips, and a See more button people can find. */
+.z-result-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.z-result-card .z-chip-rank,.z-result-card .z-chip-stat{display:inline-flex;margin:0;align-items:center;gap:7px;padding:6px 11px 6px 8px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+.z-result-card .z-chip-rank{color:#f6d796;background:linear-gradient(135deg,rgba(232,194,122,.2),rgba(232,194,122,.07));border:1px solid rgba(232,194,122,.45)}
+.z-chip-rank svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.z-result-card .z-chip-stat{color:#8ff0c9;background:rgba(54,211,153,.1);border:1px solid rgba(54,211,153,.4)}
+.z-chip-stat i{position:relative;width:26px;height:6px;border-radius:999px;background:rgba(54,211,153,.2);overflow:hidden}
+.z-chip-stat i::after{content:'';position:absolute;inset:0 auto 0 0;width:var(--p,100%);border-radius:inherit;background:var(--z-green)}
+.z-chip-stat svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.z-result-card .z-result-caption{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.z-result-card .z-result-caption h3{font:700 16px/1.3 'Bricolage Grotesque',sans-serif;color:#e6f2fb;margin:0}
+.z-result-card .z-result-caption>span{color:#6f90aa;font-size:12px;white-space:nowrap}
+.z-result-featured .z-result-caption{display:block}
+.z-result-featured .z-result-caption h3{font-size:19px;margin-bottom:5px}
+.z-result-card-top>div{min-width:0}
+.z-results-more{flex-direction:column;justify-content:center;gap:12px;margin-top:30px;padding:0;border-top:0;text-align:center}
+.z-results-more .z-button{padding:16px 30px;font-size:15px}
+.z-results-more p{font-size:12.5px;color:#7397b4}
+@media(max-width:540px){.z-results-more{align-items:stretch}.z-result-card .z-chip-rank,.z-result-card .z-chip-stat{font-size:11px}.z-result-card .z-result-caption{flex-wrap:wrap}}
