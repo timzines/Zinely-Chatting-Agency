@@ -1,0 +1,88 @@
+/* What makes us different: four tabs, one line each, one calm visual each. */
+.z-why-shell{border:1px solid #294d68;border-radius:22px;background:radial-gradient(ellipse at 90% 100%,rgba(26,163,245,.08),transparent 60%),#0d2033;overflow:hidden}
+.z-why-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid #233e55}
+.z-why-tab{position:relative;display:flex;align-items:center;justify-content:center;gap:9px;padding:20px 8px;border:0;background:none;color:#7f9fb8;font:600 14px 'Figtree',sans-serif;cursor:pointer;transition:color .2s,background .2s}
+.z-why-tab>span{font-size:11px;color:#4f7898;font-variant-numeric:tabular-nums}
+.z-why-tab:hover{color:#e5f5ff;background:rgba(26,163,245,.04)}
+.z-why-tab[aria-selected='true']{color:#fff;background:rgba(26,163,245,.06)}
+.z-why-tab[aria-selected='true']>span{color:#5cc2ff}
+.z-why-tab>i{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:#4ebaff;transform:scaleX(0);transform-origin:left}
+.z-why-tab[aria-selected='true']>i{transform:scaleX(1)}
+.z-why-shell[data-auto='true'] .z-why-tab[aria-selected='true']>i{animation:zWhyProgress 7s linear both}
+.z-why-tab:focus-visible{outline:2px solid #72cbff;outline-offset:-4px}
+.z-why-panel{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:48px;padding:48px 52px;min-height:372px;box-sizing:border-box}
+.z-why-panel[hidden]{display:none}
+.z-why-copy h3{font:800 clamp(28px,3.2vw,40px)/1.08 'Bricolage Grotesque',sans-serif;letter-spacing:-.035em;color:#fff;margin:0;text-wrap:balance}
+.z-why-copy h3 span{color:var(--z-blue)}
+.z-why-copy p{font-size:16px;line-height:1.65;color:#9dbbd2;margin:16px 0 0;max-width:400px}
+.z-why-note{display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:8px 13px;border:1px solid rgba(54,211,153,.4);border-radius:999px;background:rgba(54,211,153,.08);color:#8ff0c9;font-size:13px;font-weight:700}
+.z-why-note svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.z-why-visual{display:grid;place-items:center;min-width:0}
+.z-why-visual svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.z-why-visual>div{width:100%;max-width:380px;box-sizing:border-box;padding:22px;border:1px solid #2c4c66;border-radius:18px;background:#0a1a2b;box-shadow:0 18px 40px rgba(2,11,21,.35)}
+/* 1: fan profile */
+.z-why-profile-head{display:flex;align-items:center;gap:12px;padding-bottom:16px;border-bottom:1px solid #1f3a51}
+.z-why-profile-head>b{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#1aa3f5,#0d6aa8);color:#fff;font:800 16px 'Bricolage Grotesque',sans-serif}
+.z-why-profile-head strong{display:block;color:#fff;font-size:15px}
+.z-why-profile-head small{display:block;color:#7397b4;font-size:12px;margin-top:2px}
+.z-why-profile-head em{margin-left:auto;padding:4px 10px;border-radius:999px;background:rgba(232,194,122,.14);border:1px solid rgba(232,194,122,.4);color:#f6d796;font-size:11px;font-weight:800;font-style:normal}
+.z-why-profile ul{display:grid;gap:4px;margin:12px 0 0;padding:0;list-style:none}
+.z-why-profile li{display:flex;justify-content:space-between;padding:10px 0;font-size:13.5px}
+.z-why-profile li span{color:#7f9fb8}
+.z-why-profile li strong{color:#e6f2fb}
+.z-why-profile li:last-child strong{color:#ffb0b0}
+/* 2: spend bars */
+.z-why-bars-head{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#9dbbd2;font-weight:600}
+.z-why-bars-head em{font-style:normal;font-size:10.5px;color:#5f819c;font-weight:500}
+.z-why-bars-grid{display:flex;align-items:flex-end;gap:12px;height:150px;margin-top:18px}
+.z-why-bars-grid i{flex:1;height:var(--h);border-radius:7px 7px 3px 3px;background:linear-gradient(180deg,#36d399,#1a7f68);transform-origin:bottom}
+.z-why-bars-axis{display:flex;gap:12px;margin-top:8px}
+.z-why-bars-axis span{flex:1;text-align:center;font-size:10.5px;color:#5f819c}
+/* 3: chat */
+.z-why-chat{display:flex;flex-direction:column;gap:10px}
+.z-why-msg{max-width:78%;padding:11px 14px;border-radius:16px;font-size:14px;line-height:1.4}
+.z-why-out{align-self:flex-end;background:#1aa3f5;color:#04192b;font-weight:600;border-bottom-right-radius:5px}
+.z-why-in{align-self:flex-start;background:#17324a;color:#e6f2fb;border-bottom-left-radius:5px}
+.z-why-sale{align-self:center;display:inline-flex;align-items:center;gap:7px;margin-top:4px;padding:7px 13px;border-radius:999px;background:rgba(54,211,153,.12);border:1px solid rgba(54,211,153,.45);color:#8ff0c9;font-size:12.5px;font-weight:800}
+.z-why-sale svg{width:15px;height:15px;stroke-width:2.4}
+/* 4: loop */
+.z-why-loop{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.z-why-loop>div{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.z-why-loop>div>span{display:grid;place-items:center;width:56px;height:56px;border-radius:16px;background:#10283d;border:1px solid #2f5a7b;color:#5cc2ff}
+.z-why-loop>div:last-child>span{background:rgba(54,211,153,.12);border-color:rgba(54,211,153,.45);color:#5fe3b1}
+.z-why-loop svg{width:24px;height:24px}
+.z-why-loop strong{color:#e6f2fb;font-size:13px}
+.z-why-loop>i{flex:1;height:2px;margin-bottom:28px;background:linear-gradient(90deg,#2f5a7b,#4ebaff);border-radius:2px}
+/* One gentle entrance per panel */
+@media(prefers-reduced-motion:no-preference){
+  .z-why-panel:not([hidden]) .z-why-copy{animation:zWhyFade .5s var(--z-ease) both}
+  .z-why-panel:not([hidden]) .z-why-visual>div{animation:zWhyRise .6s .08s var(--z-ease) both}
+  .z-why-panel:not([hidden]) .z-why-profile li{animation:zWhyFade .4s var(--z-ease) both}
+  .z-why-panel:not([hidden]) .z-why-profile li:nth-child(1){animation-delay:.3s}.z-why-panel:not([hidden]) .z-why-profile li:nth-child(2){animation-delay:.42s}.z-why-panel:not([hidden]) .z-why-profile li:nth-child(3){animation-delay:.54s}
+  .z-why-panel:not([hidden]) .z-why-bars-grid i{animation:zWhyGrow .7s var(--z-ease) both}
+  .z-why-panel:not([hidden]) .z-why-bars-grid i:nth-child(2){animation-delay:.08s}.z-why-panel:not([hidden]) .z-why-bars-grid i:nth-child(3){animation-delay:.16s}.z-why-panel:not([hidden]) .z-why-bars-grid i:nth-child(4){animation-delay:.24s}.z-why-panel:not([hidden]) .z-why-bars-grid i:nth-child(5){animation-delay:.32s}.z-why-panel:not([hidden]) .z-why-bars-grid i:nth-child(6){animation-delay:.4s}
+  .z-why-panel:not([hidden]) .z-why-msg{animation:zWhyFade .4s var(--z-ease) both}
+  .z-why-panel:not([hidden]) .z-why-msg:nth-child(2){animation-delay:.5s}.z-why-panel:not([hidden]) .z-why-msg:nth-child(3){animation-delay:1s}
+  .z-why-panel:not([hidden]) .z-why-loop>*{animation:zWhyFade .4s var(--z-ease) both}
+  .z-why-panel:not([hidden]) .z-why-loop>:nth-child(2){animation-delay:.15s}.z-why-panel:not([hidden]) .z-why-loop>:nth-child(3){animation-delay:.3s}.z-why-panel:not([hidden]) .z-why-loop>:nth-child(4){animation-delay:.45s}.z-why-panel:not([hidden]) .z-why-loop>:nth-child(5){animation-delay:.6s}
+}
+@keyframes zWhyFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes zWhyRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes zWhyGrow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes zWhyProgress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media(max-width:820px){
+  .z-why-panel{grid-template-columns:1fr;gap:28px;padding:30px 22px 32px;min-height:0}
+  .z-why-copy p{font-size:15px;max-width:none}
+  .z-why-visual>div{max-width:none}
+}
+@media(max-width:560px){
+  .z-why-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .z-why-tab{padding:15px 6px;font-size:13px}
+  .z-why-tab:nth-child(-n+2){border-bottom:1px solid #1d354a}
+  .z-why-shell{border-radius:18px}
+  .z-why-panel{padding:26px 18px 28px}
+  .z-why-copy h3{font-size:28px}
+  .z-why-visual>div{padding:18px}
+  .z-why-bars-grid{height:120px;gap:9px}
+  .z-why-loop>div>span{width:48px;height:48px}
+}
