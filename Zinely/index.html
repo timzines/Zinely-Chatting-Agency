@@ -35,7 +35,7 @@
 <link rel="stylesheet" href="assets/why.css?v=2">
 <link rel="stylesheet" href="assets/flow.css?v=1">
 <link rel="stylesheet" href="assets/painpoints.css?v=1">
-<link rel="stylesheet" href="assets/services-bento.css?v=2">
+<link rel="stylesheet" href="assets/services-bento.css?v=3">
 <script src="assets/difference.js?v=8" defer></script>
 <link rel="stylesheet" href="assets/hero-proof.css?v=5">
 <script src="assets/hero-proof.js?v=2" defer></script>
@@ -227,7 +227,7 @@
           <div class="z-pack-brand"><img src="assets/logo.png" alt="" width="30" height="30" loading="lazy"><span>Zinely chatting</span><em>All included</em></div>
           <h3>24/7 chatting</h3>
           <p>Every fan answered, day and night, in every timezone. <b>We've got it handled.</b></p>
-          <div class="z-pack-big" aria-hidden="true"><strong>24/7</strong><span>Every day.<br>Every timezone.</span></div>
+          <a data-estimate-cta class="z-pack-cta" aria-label="Get a free account review on Telegram" href="{{ estimateUrl }}"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.04 15.31l-.38 5.37c.54 0 .78-.23 1.06-.5l2.55-2.44 5.28 3.87c.97.53 1.66.25 1.92-.9L22.9 3.9c.31-1.4-.51-1.95-1.45-1.6L3.1 9.36c-1.36.53-1.34 1.29-.23 1.63l4.7 1.47L18.5 5.6c.51-.34.98-.15.6.19L9.04 15.31z"></path></svg>Get a free account review <span aria-hidden="true">→</span></a>
         </div>
         <div class="z-pack-plus">
           <span class="z-pack-label">Included with your chatting</span>
@@ -240,35 +240,6 @@
         </div>
       </div>
       <div class="z-services-note"><span>For creators &amp; agencies. Always under your brand.</span><sc-if value="{{ mgmtClosed }}" hint-placeholder-val="{{ true }}"><a href="{{ calendly }}">Full management <span>· Join waitlist ↗</span></a></sc-if><sc-if value="{{ mgmtOpen }}" hint-placeholder-val="{{ false }}"><a href="{{ calendly }}">Full management <span>· Spots open ↗</span></a></sc-if></div>
-    </section>
-
-    <!-- DIY PAIN POINTS -->
-    <section data-screen-label="DIY pain" class="z-section z-diy" id="why-zinely">
-      <div class="z-section-head">
-        <span class="z-eyebrow">Your time has better places to be</span>
-        <h2 class="z-title">Hiring your own chatters?<br><span style="color:#ef9999">The hidden cost adds up.</span></h2>
-      </div>
-      <ul class="z-diy-grid">
-        <li class="z-diy-pain"><span class="z-diy-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20v-1.5A6.5 6.5 0 0 1 13 13.4M16 15l5 5m0-5-5 5"/></svg></span><h3>Chatters who ghost</h3><p>Weeks of training, then they quit or can't sell.</p><span class="z-diy-cost">Weeks wasted</span></li>
-        <li class="z-diy-pain"><span class="z-diy-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg></span><h3>Micromanaging, forever</h3><p>Up at 3 AM checking if anyone's on shift.</p><span class="z-diy-cost">Your nights</span></li>
-        <li class="z-diy-pain"><span class="z-diy-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></svg></span><h3>Payroll by spreadsheet</h3><p>Hours and commissions, tallied by hand.</p><span class="z-diy-cost">Every single week</span></li>
-        <li class="z-diy-pain"><span class="z-diy-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7l6 6 4-4 8 8"/><path d="M15 15h6V9"/></svg></span><h3>Chatters burn your whales</h3><p>Hard-selling with no relationship drives your best spenders away.</p><span class="z-diy-cost">$10,000s lost</span></li>
-      </ul>
-      <div class="z-diy-bridge" aria-hidden="true"><span class="z-diy-logo"><img src="assets/logo.png" alt="" width="34" height="34" loading="lazy"></span></div>
-      <div class="z-diy-band">
-        <div class="z-diy-band-copy">
-          <h3>All of that is<br><span>our problem now.</span></h3>
-          <p>We run the whole chatting operation. You focus on content and growth.</p>
-          <a class="z-diy-cta" href="#how-it-works">See how we get you started <span aria-hidden="true">→</span></a>
-        </div>
-        <ul class="z-diy-fixes">
-          <li><span class="z-diy-fix-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20v-1.5A6.5 6.5 0 0 1 13 13.4M15 17l2 2 4-5"/></svg></span><span class="z-diy-swap"><s>Chatters who ghost</s><strong>We hire and train every chatter</strong></span><svg class="z-diy-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path pathLength="1" d="m7.5 12 3 3 6-6"/></svg></li>
-          <li><span class="z-diy-fix-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="z-diy-swap"><s>Micromanaging every shift</s><strong>Every shift covered and checked</strong></span><svg class="z-diy-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path pathLength="1" d="m7.5 12 3 3 6-6"/></svg></li>
-          <li><span class="z-diy-fix-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 7V5H6a2.5 2.5 0 0 0 0 5h14v10H6a3 3 0 0 1-3-3V7.5M16 14.5h1"/></svg></span><span class="z-diy-swap"><s>Payroll spreadsheets</s><strong>We pay the team, not you</strong></span><svg class="z-diy-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path pathLength="1" d="m7.5 12 3 3 6-6"/></svg></li>
-          <li><span class="z-diy-fix-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10A4.5 4.5 0 0 1 12 7.4 4.5 4.5 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z"/></svg></span><span class="z-diy-swap"><s>Burned whales</s><strong>Spenders kept for months, some for years</strong></span><svg class="z-diy-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path pathLength="1" d="m7.5 12 3 3 6-6"/></svg></li>
-        </ul>
-      </div>
-      <p class="z-diy-reading">Weighing it up? <a href="/blog/hire-chatters-or-chatting-agency/">Hiring chatters vs a chatting agency</a> · <a href="/blog/why-chatters-underperform/">Why chatters underperform</a></p>
     </section>
 
     <!-- CASE STUDIES PREVIEW -->
@@ -302,6 +273,35 @@
         </a>
       </div>
       <div class="z-results-more"><a class="z-button z-button-primary" href="/cases">See more results <span aria-hidden="true">→</span></a><p>Every account, with the original dashboards.</p></div>
+    </section>
+
+    <!-- DIY PAIN POINTS -->
+    <section data-screen-label="DIY pain" class="z-section z-diy" id="why-zinely">
+      <div class="z-section-head">
+        <span class="z-eyebrow">Your time has better places to be</span>
+        <h2 class="z-title">Hiring your own chatters?<br><span style="color:#ef9999">The hidden cost adds up.</span></h2>
+      </div>
+      <ul class="z-diy-grid">
+        <li class="z-diy-pain"><span class="z-diy-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20v-1.5A6.5 6.5 0 0 1 13 13.4M16 15l5 5m0-5-5 5"/></svg></span><h3>Chatters who ghost</h3><p>Weeks of training, then they quit or can't sell.</p><span class="z-diy-cost">Weeks wasted</span></li>
+        <li class="z-diy-pain"><span class="z-diy-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg></span><h3>Micromanaging, forever</h3><p>Up at 3 AM checking if anyone's on shift.</p><span class="z-diy-cost">Your nights</span></li>
+        <li class="z-diy-pain"><span class="z-diy-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></svg></span><h3>Payroll by spreadsheet</h3><p>Hours and commissions, tallied by hand.</p><span class="z-diy-cost">Every single week</span></li>
+        <li class="z-diy-pain"><span class="z-diy-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7l6 6 4-4 8 8"/><path d="M15 15h6V9"/></svg></span><h3>Chatters burn your whales</h3><p>Hard-selling with no relationship drives your best spenders away.</p><span class="z-diy-cost">$10,000s lost</span></li>
+      </ul>
+      <div class="z-diy-bridge" aria-hidden="true"><span class="z-diy-logo"><img src="assets/logo.png" alt="" width="34" height="34" loading="lazy"></span></div>
+      <div class="z-diy-band">
+        <div class="z-diy-band-copy">
+          <h3>All of that is<br><span>our problem now.</span></h3>
+          <p>We run the whole chatting operation. You focus on content and growth.</p>
+          <a class="z-diy-cta" href="#how-it-works">See how we get you started <span aria-hidden="true">→</span></a>
+        </div>
+        <ul class="z-diy-fixes">
+          <li><span class="z-diy-fix-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20v-1.5A6.5 6.5 0 0 1 13 13.4M15 17l2 2 4-5"/></svg></span><span class="z-diy-swap"><s>Chatters who ghost</s><strong>We hire and train every chatter</strong></span><svg class="z-diy-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path pathLength="1" d="m7.5 12 3 3 6-6"/></svg></li>
+          <li><span class="z-diy-fix-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="z-diy-swap"><s>Micromanaging every shift</s><strong>Every shift covered and checked</strong></span><svg class="z-diy-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path pathLength="1" d="m7.5 12 3 3 6-6"/></svg></li>
+          <li><span class="z-diy-fix-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 7V5H6a2.5 2.5 0 0 0 0 5h14v10H6a3 3 0 0 1-3-3V7.5M16 14.5h1"/></svg></span><span class="z-diy-swap"><s>Payroll spreadsheets</s><strong>We pay the team, not you</strong></span><svg class="z-diy-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path pathLength="1" d="m7.5 12 3 3 6-6"/></svg></li>
+          <li><span class="z-diy-fix-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10A4.5 4.5 0 0 1 12 7.4 4.5 4.5 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z"/></svg></span><span class="z-diy-swap"><s>Burned whales</s><strong>Spenders kept for months, some for years</strong></span><svg class="z-diy-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path pathLength="1" d="m7.5 12 3 3 6-6"/></svg></li>
+        </ul>
+      </div>
+      <p class="z-diy-reading">Weighing it up? <a href="/blog/hire-chatters-or-chatting-agency/">Hiring chatters vs a chatting agency</a> · <a href="/blog/why-chatters-underperform/">Why chatters underperform</a></p>
     </section>
 
     <!-- WHAT MAKES US DIFFERENT -->

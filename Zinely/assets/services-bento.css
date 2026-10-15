@@ -8,9 +8,11 @@
 .z-pack-core h3{font:800 30px/1.1 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em;color:#fff;margin:0 0 10px}
 .z-pack-core p{font-size:15px;line-height:1.65;color:#9dbbd2;margin:0;max-width:340px}
 .z-pack-core p b{color:#e3f1fb;font-weight:600}
-.z-pack-big{display:flex;align-items:flex-end;gap:16px;margin-top:auto;padding-top:30px}
-.z-pack-big strong{font:800 76px/.88 'Bricolage Grotesque',sans-serif;letter-spacing:-.05em;background:linear-gradient(135deg,#7fd4ff,#1aa3f5);-webkit-background-clip:text;background-clip:text;color:transparent}
-.z-pack-big span{padding-bottom:5px;color:#7f9fb8;font-size:12.5px;line-height:1.45}
+.z-pack-cta{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;margin-top:auto;padding:14px 22px;border-radius:12px;background:linear-gradient(145deg,#1aa3f5,#2e89d6);color:#fff;font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 10px 26px rgba(26,163,245,.3);transition:transform .2s,box-shadow .2s}
+.z-pack-cta:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(26,163,245,.42)}
+.z-pack-cta:focus-visible{outline:2px solid #b4e7ff;outline-offset:4px}
+.z-pack-cta svg{width:17px;height:17px}
+.z-pack-core p{margin-bottom:28px}
 .z-pack-plus{padding:30px 32px}
 .z-pack-label{display:flex;align-items:center;gap:10px;color:#8ff0c9;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px}
 .z-pack-label::before{content:'+';display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:rgba(54,211,153,.15);font-size:14px;letter-spacing:0}
@@ -25,13 +27,12 @@
 @media(max-width:900px){
   .z-pack{grid-template-columns:1fr}
   .z-pack-core{border-right:0;border-bottom:1px solid #234560}
-  .z-pack-big{padding-top:22px}
 }
 @media(max-width:560px){
   .z-pack-core{padding:24px 20px}
   .z-pack-core h3{font-size:26px}
   .z-pack-brand{margin-bottom:20px}
-  .z-pack-big strong{font-size:58px}
+  .z-pack-cta{align-self:stretch;justify-content:center}
   .z-pack-plus{padding:22px 20px 8px}
   .z-pack-plus ul{grid-template-columns:1fr}
   .z-pack-plus li:nth-last-child(2){border-bottom:1px solid #1f3d55}
