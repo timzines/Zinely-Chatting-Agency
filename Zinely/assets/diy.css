@@ -26,8 +26,8 @@
 .z-diy-fix-icon{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;color:#6fe3b8;background:rgba(54,211,153,.12)}
 .z-diy-fix-icon svg{width:19px;height:19px}
 .z-diy-swap{display:flex;flex-direction:column;align-items:flex-start;min-width:0}
-.z-diy-fixes s{position:relative;font-size:12px;font-weight:600;color:#d98e8e;text-decoration:none;transform-origin:left center}
-.z-diy-fixes s::after{content:'';position:absolute;left:-3px;right:-3px;top:52%;height:2px;border-radius:2px;background:#ff6b6b;transform-origin:left}
+.z-diy-fixes s{position:relative;display:inline-block;line-height:1.25;font-size:13px;font-weight:600;color:#f2c4c4;text-decoration:none;transform-origin:left center}
+.z-diy-fixes s::after{content:'';position:absolute;left:-3px;right:-3px;top:calc(50% - .5px);height:1.5px;border-radius:2px;background:rgba(255,107,107,.7);transform-origin:left}
 .z-diy-fixes strong{color:#effaf5;font-size:14.5px;font-weight:700;margin-top:3px}
 .z-diy-check{width:22px;height:22px;fill:none;stroke:#36d399;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .z-diy-check circle{stroke:#2f7a63;stroke-width:1.2}
@@ -50,7 +50,7 @@
   .z-diy-band.is-revealed .z-diy-fixes .z-diy-check{animation:zDiyShow .01s calc(var(--d) + .8s) forwards}
   .z-diy-band.is-revealed .z-diy-fixes .z-diy-check path{stroke-dasharray:1;stroke-dashoffset:1;animation:zDiyTick .4s calc(var(--d) + .8s) ease-out forwards}
   @keyframes zDiyStrike{to{transform:scaleX(1)}}
-  @keyframes zDiyShrink{to{font-size:12px;font-weight:600;color:#d98e8e;transform:none}}
+  @keyframes zDiyShrink{to{font-size:13px;font-weight:600;color:#f2c4c4;transform:none}}
   @keyframes zDiyIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
   @keyframes zDiyGreen{to{border-color:rgba(54,211,153,.45);background:rgba(54,211,153,.07)}}
   @keyframes zDiyIconGreen{to{color:#6fe3b8;background:rgba(54,211,153,.12)}}
