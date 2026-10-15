@@ -21,9 +21,6 @@
   /* Full-management card: let the waitlist chip wrap under the text */
   .z-mgmt { flex-wrap: wrap !important; gap: 16px 24px !important; }
 
-  /* Problem/solution: stacked cards need a gap (desktop uses the arrow as spacer) */
-  .z-problem { gap: 14px !important; }
-
   /* "All of that is our problem now" solution card: tighter padding, full-width CTA */
   .z-resbar { padding: 34px 20px 30px !important; }
   .z-resbar a { width: 100%; box-sizing: border-box; }

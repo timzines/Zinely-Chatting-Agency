@@ -1,0 +1,56 @@
+/* Problem → solution: four pain points, each paired with how Zinely removes it. */
+.z-fix{padding:84px 0 10px;max-width:1040px;margin:0 auto}
+.z-fix .z-section-head{margin-bottom:34px}
+.z-fix .z-eyebrow{color:#ff8a8a}
+.z-fix .z-title span{color:var(--z-green)}
+.z-fix-labels,.z-fix-row{display:grid;grid-template-columns:minmax(0,1fr) 64px minmax(0,1fr)}
+.z-fix-labels{padding:0 4px 12px;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+.z-fix-labels>span{display:flex;align-items:center;gap:8px}
+.z-fix-labels>span:first-child{color:#ff7a7a}
+.z-fix-labels>span:last-child{grid-column:3;color:var(--z-green)}
+.z-fix-labels img{width:16px;height:16px}
+.z-fix-list{display:grid;gap:14px;margin:0;padding:0;list-style:none}
+.z-fix-row{align-items:stretch}
+.z-fix-side{position:relative;display:flex;gap:16px;padding:24px 24px 24px 22px;border-radius:16px;min-width:0}
+.z-fix-pain{border:1px solid rgba(255,107,107,.22);background:linear-gradient(120deg,rgba(255,107,107,.09),rgba(255,107,107,.03))}
+.z-fix-win{border:1px solid rgba(54,211,153,.38);background:radial-gradient(ellipse at 100% 0,rgba(54,211,153,.16),transparent 70%),linear-gradient(120deg,#0f2a2a,#0d2233);box-shadow:0 14px 36px rgba(2,11,21,.35)}
+.z-fix-icon{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:12px}
+.z-fix-icon svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.z-fix-pain .z-fix-icon{color:#ff8a8a;background:rgba(255,107,107,.12);border:1px solid rgba(255,107,107,.25)}
+.z-fix-win .z-fix-icon{color:#5fe3b1;background:rgba(54,211,153,.14);border:1px solid rgba(54,211,153,.35)}
+.z-fix-side h3{font:800 19px/1.25 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin:1px 0 7px}
+.z-fix-pain h3{color:#ffd9d9}
+.z-fix-win h3{color:#fff}
+.z-fix-side p{font-size:14px;line-height:1.65;margin:0}
+.z-fix-pain p{color:#c9a9ae}
+.z-fix-win p{color:#b5d9cb}
+.z-fix-win p b{color:#5fe3b1;font-weight:700}
+.z-fix-arrow{display:grid;place-items:center}
+.z-fix-arrow span{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#10243c;border:1px solid #2a5a7e;color:#4ebaff;box-shadow:0 0 18px rgba(26,163,245,.25);transition:transform .3s var(--z-ease),background .3s,color .3s}
+.z-fix-arrow svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.z-fix-row:hover .z-fix-arrow span{transform:translateX(3px);background:#36d399;border-color:#36d399;color:#06231a}
+.z-fix-row .z-fix-win{transition:border-color .3s,transform .3s var(--z-ease)}
+.z-fix-row:hover .z-fix-win{border-color:rgba(54,211,153,.7);transform:translateY(-2px)}
+.z-fix-note{margin:24px 0 0;text-align:center;font-size:14px;color:var(--z-muted)}
+.z-fix-note a{color:#7fd9ff;font-weight:700;text-decoration:none;white-space:nowrap}
+.z-fix-note a:hover{text-decoration:underline}
+@media(max-width:820px){
+  .z-fix{padding-top:60px}
+  .z-fix-labels{display:none}
+  .z-fix-list{gap:22px}
+  .z-fix-row{grid-template-columns:1fr;grid-template-rows:auto 0 auto}
+  .z-fix-arrow{position:relative;z-index:1;height:0;justify-items:start;padding-left:18px}
+  .z-fix-arrow span{transform:rotate(90deg)}
+  .z-fix-row:hover .z-fix-arrow span{transform:rotate(90deg)}
+  .z-fix-side{padding:28px 18px 22px}
+  .z-fix-pain{padding-bottom:34px;border-bottom-left-radius:0;border-bottom-right-radius:0}
+  .z-fix-win{padding-top:42px;border-top-left-radius:0;border-top-right-radius:0}
+  .z-fix-row:hover .z-fix-win{transform:none}
+  .z-fix-side::before{position:absolute;top:10px;right:14px;font-size:9px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+  .z-fix-pain::before{content:'Your DMs today';color:#ff7a7a}
+  .z-fix-win::before{content:'With Zinely';color:var(--z-green)}
+  .z-fix-side h3{font-size:17.5px;padding-right:4px}
+  .z-fix-side p{font-size:13.5px}
+  .z-fix-icon{width:38px;height:38px}
+}
+@media(prefers-reduced-motion:reduce){.z-fix-arrow span,.z-fix-row .z-fix-win{transition:none}}
