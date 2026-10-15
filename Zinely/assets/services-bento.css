@@ -1,0 +1,42 @@
+/* Services bento: two headline services on top, three tools underneath. */
+.z-svc-grid{grid-template-columns:repeat(6,minmax(0,1fr))}
+.z-svc-grid .z-service-tile{display:flex;flex-direction:column;padding:26px}
+.z-svc-wide{grid-column:span 3}
+.z-svc-third{grid-column:span 2}
+.z-svc-grid .z-tile-icon{width:40px;height:40px;border-radius:12px}
+.z-svc-grid .z-tile-icon svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.z-svc-grid .z-tile-heading{margin-bottom:12px}
+.z-svc-grid .z-service-tile h3{font-size:20px}
+.z-svc-grid .z-service-tile p{max-width:440px}
+.z-svc-grid .z-service-tile p b{color:#e3f1fb;font-weight:600}
+.z-svc-foot{margin-top:auto;padding-top:20px}
+/* 24/7: every timezone online */
+.z-svc-zones{display:flex;flex-wrap:wrap;gap:8px}
+.z-svc-zones span{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid #24465f;border-radius:999px;background:#0b1d2f;color:#b9d4e6;font-size:12px;font-weight:600}
+.z-svc-zones i{width:7px;height:7px;border-radius:50%;background:var(--z-green);box-shadow:0 0 8px rgba(54,211,153,.8)}
+/* Account manager: the premium tile */
+.z-svc-grid .z-svc-premium{border-color:#5c4e2e;background:radial-gradient(ellipse at 100% 0,rgba(232,194,122,.14),transparent 60%),linear-gradient(135deg,#17222c,#0f1d2b)}
+.z-svc-grid .z-svc-premium:hover{border-color:#a8894e;background:radial-gradient(ellipse at 100% 0,rgba(232,194,122,.2),transparent 60%),linear-gradient(135deg,#17222c,#0f1d2b)}
+.z-svc-premium::after{background:linear-gradient(90deg,transparent,#e8c27a,transparent)!important}
+.z-svc-premium .z-tile-icon{color:#f0cf8f;background:rgba(232,194,122,.08);border-color:#6b5a35}
+.z-svc-premium:hover .z-tile-icon{background:rgba(232,194,122,.16)}
+.z-svc-badge{margin-left:auto;padding:4px 9px;border:1px solid #6b5a35;border-radius:999px;color:#f0cf8f;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.z-svc-manager{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid #3d3a2e;border-radius:12px;background:rgba(10,22,38,.6)}
+.z-svc-manager>b{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f0cf8f,#b8904a);color:#1d1606;font:800 13px 'Bricolage Grotesque',sans-serif;flex:none}
+.z-svc-manager strong{display:block;color:#f3ead8;font-size:13px}
+.z-svc-manager small{display:block;color:#a9a08b;font-size:11.5px;margin-top:2px}
+.z-svc-manager em{margin-left:auto;display:inline-flex;align-items:center;gap:6px;color:#7fe0b9;font-size:11px;font-style:normal;font-weight:700;white-space:nowrap}
+.z-svc-manager em::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--z-green)}
+/* Small proof chips under the three tool tiles */
+.z-svc-chips{display:flex;flex-wrap:wrap;gap:6px}
+.z-svc-chips span{padding:5px 10px;border-radius:8px;background:#0b1d2f;border:1px solid #213f57;color:#9fc2da;font-size:11.5px;font-weight:600}
+.z-svc-chips .z-svc-up{color:#7fe0b9;border-color:#25564a}
+@media(max-width:1000px){.z-svc-wide,.z-svc-third{grid-column:span 6}.z-svc-grid .z-service-tile p{max-width:none}}
+@media(max-width:540px){
+  .z-svc-grid .z-service-tile{padding:21px 20px}
+  .z-svc-grid .z-service-tile p{margin-left:0}
+  .z-svc-grid .z-tile-heading{display:flex;margin-bottom:10px}
+  .z-svc-grid .z-service-tile h3{font-size:18px}
+  .z-svc-foot{padding-top:16px}
+  .z-svc-badge{display:none}
+}
