@@ -77,7 +77,7 @@
       visible = true;
     }
     select(0);
-    const handoff = document.querySelector('.z-handoff');
+    const handoff = document.querySelector('.z-diy-band');
     if (handoff && 'IntersectionObserver' in window) {
       const reveal = new IntersectionObserver((entries) => {
         if (!entries[0].isIntersecting) return;
