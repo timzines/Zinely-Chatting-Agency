@@ -61,7 +61,8 @@
 .sv2-hub{position:relative;width:100%;max-width:440px;aspect-ratio:1;margin:0 auto}
 .sv2-hub-lines{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:#1f4462;stroke-width:1.4}
 .sv2-hub-lines circle{stroke-dasharray:3 7;stroke:#1d3d58}
-.sv2-hub-lines path{stroke:#4ebaff;stroke-width:2;stroke-dasharray:1;stroke-dashoffset:1}
+.sv2-hub-lines .sv2-wave{stroke:#2f6a92;stroke-width:1.8;stroke-linecap:round}
+.sv2-hub-lines .sv2-spark{stroke:#9fdcff;stroke-width:2.6;stroke-linecap:round;stroke-dasharray:14 86;stroke-dashoffset:100;opacity:0;filter:drop-shadow(0 0 4px #1aa3f5)}
 .sv2-hub-core{position:absolute;left:50%;top:50%;display:grid;place-items:center;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:30px;background:radial-gradient(circle at 30% 20%,#173c5c,#0c2136);border:1px solid #2f6a92;box-shadow:0 0 0 10px rgba(26,163,245,.06),0 0 60px rgba(26,163,245,.3)}
 .sv2-hub-core img{width:58px;height:58px;filter:drop-shadow(0 8px 18px rgba(26,163,245,.5))}
 .sv2-node{position:absolute;display:grid;place-items:center;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:20px;background:#0f2438;border:1px solid #2a5272;color:#60c2ff;box-shadow:0 12px 30px rgba(2,11,21,.45)}
@@ -122,17 +123,9 @@
 
 /* Loops (only while on screen) */
 @media(prefers-reduced-motion:no-preference){
-  .sv2-hub.is-live .sv2-hub-lines path{animation:sv2Beam 9s ease-in-out infinite}
-  .sv2-hub.is-live .sv2-node{animation:sv2Node 9s ease-in-out infinite}
-  .sv2-hub.is-live .sv2-hub-lines path:nth-of-type(1),.sv2-hub.is-live .sv2-node:nth-of-type(1){animation-delay:0.0s}
-  .sv2-hub.is-live .sv2-hub-lines path:nth-of-type(2),.sv2-hub.is-live .sv2-node:nth-of-type(2){animation-delay:1.5s}
-  .sv2-hub.is-live .sv2-hub-lines path:nth-of-type(3),.sv2-hub.is-live .sv2-node:nth-of-type(3){animation-delay:3.0s}
-  .sv2-hub.is-live .sv2-hub-lines path:nth-of-type(4),.sv2-hub.is-live .sv2-node:nth-of-type(4){animation-delay:4.5s}
-  .sv2-hub.is-live .sv2-hub-lines path:nth-of-type(5),.sv2-hub.is-live .sv2-node:nth-of-type(5){animation-delay:6.0s}
-  .sv2-hub.is-live .sv2-hub-lines path:nth-of-type(6),.sv2-hub.is-live .sv2-node:nth-of-type(6){animation-delay:7.5s}
+  .sv2-hub.is-live .sv2-spark{opacity:1;animation:sv2Flow 3.2s ease-in-out infinite}
+  @keyframes sv2Flow{0%{stroke-dashoffset:100;opacity:0}15%{opacity:1}85%{opacity:1}100%{stroke-dashoffset:0;opacity:0}}
   .sv2-hub.is-live .sv2-hub-core{animation:sv2Core 3s ease-in-out infinite alternate}
-  @keyframes sv2Beam{0%{stroke-dashoffset:1;opacity:1}8%{stroke-dashoffset:0;opacity:1}16%,100%{stroke-dashoffset:0;opacity:0}}
-  @keyframes sv2Node{0%,6%,24%,100%{border-color:#2a5272;transform:none;box-shadow:0 12px 30px rgba(2,11,21,.45)}10%,18%{border-color:currentColor;transform:scale(1.08);box-shadow:0 0 26px color-mix(in srgb,currentColor 40%,transparent)}}
   @keyframes sv2Core{from{box-shadow:0 0 0 10px rgba(26,163,245,.05),0 0 50px rgba(26,163,245,.25)}to{box-shadow:0 0 0 16px rgba(26,163,245,.08),0 0 70px rgba(26,163,245,.38)}}
   .sv2-clock.is-live .sv2-ring svg{animation:sv2Spin 10s linear infinite}
   @keyframes sv2Spin{from{transform:rotate(-90deg)}to{transform:rotate(270deg)}}
@@ -145,8 +138,6 @@
   @keyframes sv2Pick{0%,30%,100%{border-color:#23465f;background:#0e2437}8%,22%{border-color:#4ebaff;background:#12304a}}
 
 
-  .sv2-art-ppv.is-live .sv2-bubble{animation:sv2In 7s var(--sv2-ease) infinite}
-  .sv2-art-ppv.is-live .sv2-locked{animation:sv2In 7s .5s var(--sv2-ease) infinite backwards}
   .sv2-art-ppv.is-live .sv2-lock{animation:sv2Lock 7s infinite}
   .sv2-art-ppv.is-live .sv2-blur{animation:sv2Unblur 7s infinite}
   .sv2-art-ppv.is-live .sv2-locked b{animation:sv2Paid 7s var(--sv2-ease) infinite}
@@ -222,3 +213,18 @@
   @keyframes sv2Pulse{0%,100%{opacity:1}50%{opacity:.35}}
 }
 @media(max-width:620px){.sv2-big{padding:10px 0 4px}.sv2-big strong{font-size:84px}}
+/* v9: a clean Zinely clock with 24/7 inside */
+.sv2-watch{position:relative;justify-self:center;width:min(280px,100%);aspect-ratio:1;display:grid;place-items:center}
+.sv2-watch svg{position:absolute;inset:0;width:100%;height:100%}
+.sv2-watch-rim{fill:none;stroke:#1aa3f5;stroke-width:3;filter:drop-shadow(0 0 14px rgba(26,163,245,.45))}
+.sv2-watch-face{fill:#0b1d30;stroke:#1d3d58;stroke-width:1}
+.sv2-watch-ticks line{stroke:#2f5a7b;stroke-width:2;stroke-linecap:round}
+.sv2-watch-ticks line:nth-child(3n+1){stroke:#4ebaff;stroke-width:3}
+.sv2-watch-hand circle{fill:#bfeaff;filter:drop-shadow(0 0 6px #1aa3f5)}
+.sv2-watch-hand{transform-origin:100px 100px;transform:rotate(40deg)}
+.sv2-watch strong{position:relative;font:800 clamp(56px,6vw,72px)/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.045em;background:linear-gradient(135deg,#bfeaff,#1aa3f5);-webkit-background-clip:text;background-clip:text;color:transparent}
+@media(prefers-reduced-motion:no-preference){
+  .sv2-watch-hand{animation:sv2Tick 20s linear infinite}
+  @keyframes sv2Tick{from{transform:rotate(40deg)}to{transform:rotate(400deg)}}
+}
+@media(max-width:620px){.sv2-watch{width:220px}}
