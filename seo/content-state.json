@@ -1,86 +1,86 @@
 {
   "https://zinelyagency.com/": {
-    "sha256": "4397b31f2c0293884c66645a4a6f909c9136c9467d68afd9ea2a4673ba7bfe48",
+    "sha256": "3bbe15bb307de306d0b18e337c960e0fd068ff2a2b7a8d16e72fe956617e7240",
     "lastmod": "2026-10-16"
   },
   "https://zinelyagency.com/blog/": {
-    "sha256": "0ff11f4dc3980e2b35747a06cd3a94f22117b13888396853d319972338c5da20",
+    "sha256": "1ef122986c8184d2869cb177387903a5bafce20b7f7bce298562d8aabc43b05b",
     "lastmod": "2026-10-16"
   },
   "https://zinelyagency.com/blog/add-chatter-to-fanvue/": {
-    "sha256": "7a187dbc7fb19d0bf9fb860255934743c3f5505cc936764a4cfe2cfa80f93122",
+    "sha256": "538fe2266bca0ada478832b106355bae3c9886a211f5c8078a1437f307320013",
     "lastmod": "2026-10-16"
   },
   "https://zinelyagency.com/blog/ai-assisted-human-chatting/": {
-    "sha256": "5ced2e3a77f04f869ef2e6300b2f853db938c9b63d9c77238696212a20546a98",
+    "sha256": "90453f85e8b8ed7a2a945803e5525d4300984d7984fc1b149245260a5bc84d5e",
     "lastmod": "2026-10-16"
   },
   "https://zinelyagency.com/blog/fanvue-ai-persona-chatting-brief/": {
-    "sha256": "73a5eba0462dbcec2af1a4abbe5db0c9937e06a98f1e2d98856e264d8e10f089",
+    "sha256": "a3f96fc3f6036596d13823f75bf6ec3471338b34dde392e86f58ef62dfd057c3",
     "lastmod": "2026-10-16"
   },
   "https://zinelyagency.com/blog/fanvue-chatter-cost/": {
-    "sha256": "38e0eba31ac601fc096091880bc5e5eaba81b99ee4f63e090e490d612cfaf0c4",
+    "sha256": "896a21fbfd41a29eebdaa2361294a256029f5549ff223001fedd7aa75f76807c",
     "lastmod": "2026-10-16"
   },
   "https://zinelyagency.com/blog/fanvue-chatting-guide/": {
-    "sha256": "33590d30c839404ddb2886ece4b603359445c4c0be41ce3148a1392403348420",
+    "sha256": "47ed3ce943e6bc5d2ddbb44065d11a11be5c4bc4a0573c18ee456b5f3dcc1c0a",
     "lastmod": "2026-10-16"
   },
   "https://zinelyagency.com/blog/fanvue-ppv-pricing/": {
-    "sha256": "d2427adf58c98601a6f9ca25b654bb8170d504c78813ebe722885b0ba9618f4a",
+    "sha256": "b88600a9f1173ad59a468a93b0451c1b8f6e338205a07a93ce3037a39c6b2f04",
     "lastmod": "2026-10-16"
   },
   "https://zinelyagency.com/blog/hire-chatters-or-chatting-agency/": {
-    "sha256": "138b1b8fb14c4b748f65395f663ed8eec40fbd477784853773678769dfd37333",
+    "sha256": "0eb95d9bfce392695660b40195a2a7d0b6f3b11778f50de6bf0ca907a76f7275",
     "lastmod": "2026-10-16"
   },
   "https://zinelyagency.com/blog/hire-fanvue-chatters/": {
-    "sha256": "ff870d448366c566ace1a542ec6d18beaaa4f58ce3b91e02cd10d88bff92c41a",
+    "sha256": "c7994c85f08bb39dea2a6711400ee6d6abcc91b9aee77c1aecf3627ff8fadac6",
     "lastmod": "2026-10-16"
   },
   "https://zinelyagency.com/blog/human-chatters-vs-ai-chatbots/": {
-    "sha256": "2a0b13a515e48aaf02b65dd5a99f3a8016611048fcc61602b7d9dcf3561adaed",
+    "sha256": "85f781de700058c35f9f2b7e4d3b4b27cf2bbc1765738c957f42a2aa4d038355",
     "lastmod": "2026-10-16"
   },
   "https://zinelyagency.com/blog/onlyfans-chatting-agency-guide/": {
-    "sha256": "0d291d6ce0713767bfbf00b71d3ae0da75e54a8912c69e5640526b1bf31892a5",
+    "sha256": "7e09dac64afe63bdf0d1943c19834cda3c50b87f1509141e9f827a2d5c48e161",
     "lastmod": "2026-10-16"
   },
   "https://zinelyagency.com/blog/why-chatters-underperform/": {
-    "sha256": "d872b4f5a1f66a56ebbb5d9fccb2e44f7a75eec38fbecebbc000846f5f3d964e",
+    "sha256": "fb70c85a5f7ef0245f4699c0facafb3b3734046c6c27c1def278113c9e00ebfa",
     "lastmod": "2026-10-16"
   },
   "https://zinelyagency.com/cases": {
-    "sha256": "8a73ed71ac37ab447950b6ec03163b3e11ca57844ede85797df4410599a4f8ee",
+    "sha256": "803b22510db75626f38a70bcdf3f5d5e2cfb9d6ba249b10e201275489aa52f51",
     "lastmod": "2026-10-16"
   },
   "https://zinelyagency.com/contact": {
-    "sha256": "d810b820a4f0a27bc4b28857473bc032d6789168a1c33af4cb898d417476f3fc",
+    "sha256": "753253ec8b67b4a587cf0d56de15cbecfc6162507986b8b143918447d4f3a7fa",
     "lastmod": "2026-10-16"
   },
   "https://zinelyagency.com/fansly-chatting-agency/": {
-    "sha256": "d57c433a52bdff0ea06aafcf0e515fe6ac5d99817f8af299c27306e646180c5b",
+    "sha256": "e2f56262fdb3aa6089c7c103bcf4432991ac4653bcf9c9cb06ef182489bd8942",
     "lastmod": "2026-10-16"
   },
   "https://zinelyagency.com/fanvue": {
-    "sha256": "f6e95443c239a6361a9a8a4e4ea6bf16ffd9e63227ab6b7a1329ec8217bd54ee",
+    "sha256": "1cc3bd187cebde01d0e006fd0e8eade0c35c7d2be3f046b746cac9d581fb0108",
     "lastmod": "2026-10-16"
   },
   "https://zinelyagency.com/onlyfans-chatting-agency/": {
-    "sha256": "9205dfcd8b74f8f2da5cc191b53fc3b75aa238b2f045e480a28fd30d43c4a1e9",
+    "sha256": "584f8e2df750a4598d78be97ee5e0cb5917f470bd584e51e844ff6eb261ade3d",
     "lastmod": "2026-10-16"
   },
   "https://zinelyagency.com/onlyfans-chatting-for-agencies/": {
-    "sha256": "e6156db5af6a755cf78b4b28f4c22fcd05d256fadf60d35c1ae25e77dddd5793",
+    "sha256": "a3b0752b782e9e4c420ff2ef453e13a1f8ced442083a310c86812b7b00921504",
     "lastmod": "2026-10-16"
   },
   "https://zinelyagency.com/pricing": {
-    "sha256": "c4263cae5d6369cbe1b9f28918be75970909e5b9119c3d8567a64b9815f9c173",
+    "sha256": "e7b53f97e9e8aee4fc300337d63660ab805116b3ae23cd3b69b32d04580e4c0d",
     "lastmod": "2026-10-16"
   },
   "https://zinelyagency.com/services": {
-    "sha256": "2f4009e555eb84a81a31229439c9403d1d9f5d8180c7fea30093c789b681401e",
+    "sha256": "81b721f27ad0fdb9ff64e3be1c3f7c6912361176fc67a17d279f00546c1edf74",
     "lastmod": "2026-10-16"
   }
 }
