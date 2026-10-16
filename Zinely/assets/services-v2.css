@@ -228,3 +228,24 @@
   @keyframes sv2Glow{from{filter:drop-shadow(0 0 6px rgba(26,163,245,.25))}to{filter:drop-shadow(0 0 16px rgba(26,163,245,.55))}}
 }
 @media(max-width:620px){.sv2-watch{width:220px}}
+/* v14: compact main-service strip with a small chat loop */
+.sv2-core-slim{grid-template-columns:300px 1fr;gap:36px;padding:22px 36px 22px 22px}
+.sv2-core-slim h2{font-size:clamp(36px,4.2vw,52px);font-weight:800;letter-spacing:-.04em;margin:12px 0 8px}
+.sv2-core-slim .sv2-core-copy p{font-size:16.5px;color:#a8c5d6}
+.sv2-art-night{display:flex;flex-direction:column;gap:8px;height:150px;padding:14px 16px}
+.sv2-art-night small{align-self:center;color:#5f819c;font-size:10.5px;font-weight:700;letter-spacing:.08em}
+.sv2-night-typing{display:flex;gap:4px;align-self:flex-end;margin:0!important;padding:9px 12px;border-radius:14px 14px 4px 14px;background:#1a6fae;opacity:0;position:absolute;right:16px;bottom:16px}
+.sv2-night-typing i{width:6px;height:6px;border-radius:50%;background:#cfeaff}
+.sv2-night-reply{align-self:flex-end;margin:0!important;padding:8px 12px;border-radius:14px 14px 4px 14px;background:linear-gradient(135deg,#1aa3f5,#2e89d6);color:#fff!important;font-size:13px!important;font-weight:600}
+@media(prefers-reduced-motion:no-preference){
+  .sv2-art-night.is-live .sv2-night-typing{animation:sv2NightType 7s ease-in-out infinite}
+  .sv2-art-night.is-live .sv2-night-typing i{animation:sv2Dot 1s infinite}
+  .sv2-art-night.is-live .sv2-night-typing i:nth-child(2){animation-delay:.15s}.sv2-art-night.is-live .sv2-night-typing i:nth-child(3){animation-delay:.3s}
+  .sv2-art-night.is-live .sv2-night-reply{animation:sv2NightReply 7s ease-in-out infinite}
+  @keyframes sv2NightType{0%,8%{opacity:0}14%,34%{opacity:1}38%,100%{opacity:0}}
+  @keyframes sv2NightReply{0%,36%{opacity:0;transform:translateY(6px)}44%,92%{opacity:1;transform:none}100%{opacity:0}}
+}
+@media(max-width:980px){.sv2-core-slim{grid-template-columns:1fr;gap:20px;padding:22px}.sv2-core-slim .sv2-core-copy{order:-1}}
+.sv2-services-head{text-align:center;margin:30px 0 30px}
+.sv2-services-head h2{font-size:clamp(34px,4.6vw,52px);line-height:1.05;margin:0}
+.sv2-services-head h2 span{color:var(--sv2-blue)}
