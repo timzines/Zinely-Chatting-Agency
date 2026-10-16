@@ -48,9 +48,6 @@
 .z-service-tile p{font-size:14px;line-height:1.7;color:#91b2cc;margin:0}
 .z-services-note{display:flex;justify-content:space-between;align-items:center;gap:12px 24px;flex-wrap:wrap;margin-top:18px;font-size:12px;color:#789bb8}
 .z-services-note a{color:#a7bdce;text-decoration:none}.z-services-note a span{color:#69b9ea}.z-services-note a:hover{color:#fff}
-.z-service-tiles.is-revealed .z-service-tile{animation:zServiceIn .55s var(--z-ease) both}
-.z-service-tiles.is-revealed .z-service-tile:nth-child(2){animation-delay:75ms}.z-service-tiles.is-revealed .z-service-tile:nth-child(3){animation-delay:150ms}.z-service-tiles.is-revealed .z-service-tile:nth-child(4){animation-delay:225ms}
-@keyframes zServiceIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 .z-start-panel{padding:29px 32px;border:1px solid #254457;border-radius:20px;background:linear-gradient(120deg,#10263a,#0d2030)}
 .z-start-panel .z-compact-heading{margin-bottom:28px}.z-start-panel .z-title{font-size:clamp(28px,3.3vw,36px)}.z-start-panel .z-title span{color:#36d399}
 .z-start-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;list-style:none;margin:0;padding:24px 0 0;border-top:1px solid #244155}
@@ -190,7 +187,7 @@ input.zslider.z-revenue-slider::-moz-range-track{background:transparent;height:8
 }
 
 @media(max-width:820px){
- .z-section{padding-top:64px}.z-section-head{margin-bottom:28px}.z-hero .z-h1{font-size:clamp(37px,8.5vw,52px)!important}
+ .z-section{padding-top:64px}.z-section-head{margin-bottom:28px}.z-hero .z-h1{font-size:clamp(42px,11.5vw,52px)!important;line-height:1.02!important;letter-spacing:-.045em!important}.z-hero .z-h1+p{margin-top:18px!important}
  .z-handoff{grid-template-columns:1fr;gap:24px;padding:27px}.z-handoff-tags{margin-bottom:0}
  .z-rate-card{padding:30px 26px}.z-faq-heading{display:block}.z-faq-heading p{margin-top:14px}
  .z-cases-hero{grid-template-columns:1fr;gap:22px;padding-top:46px}.z-cases-hero .z-description{max-width:560px}
@@ -258,9 +255,6 @@ input.zslider.z-revenue-slider::-moz-range-track{background:transparent;height:8
 .z-audience-card .z-text-link>span{display:grid;place-items:center;width:27px;height:27px;border:1px solid #38617c;border-radius:50%;color:var(--audience-accent);transition:background .25s,transform .25s}
 .z-audience-card:hover .z-text-link>span{transform:rotate(45deg);background:#1aa3f517}
 @media(prefers-reduced-motion:no-preference){
- .z-audience-card.is-revealed{animation:zAudienceIn .7s var(--z-ease) both}
- .z-audience-card.is-revealed:nth-child(2){animation-delay:.1s}.z-audience-card.is-revealed:nth-child(3){animation-delay:.2s}
- @keyframes zAudienceIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 }
 @media(min-width:821px) and (max-width:1050px){.z-audience-card{padding:23px;gap:14px}.z-audience-card h3{font-size:25px}.z-audience-card .z-eyebrow{font-size:9px;letter-spacing:.09em}}
 @media(max-width:820px){.z-audience-grid{grid-template-columns:1fr;gap:16px}.z-audience-card{padding:25px 28px;gap:14px}.z-audience-brand{height:68px;padding-bottom:17px;margin-bottom:3px}.z-audience-card p{max-width:560px}.z-audience-detail{padding-top:4px}.z-audience-card .z-text-link{padding-top:14px}.z-audiences .z-section-head{margin-bottom:28px}}

@@ -3,34 +3,6 @@
   const animations = new WeakMap();
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  // Reveal audience and service cards once, after the template has mounted.
-  if ('IntersectionObserver' in window && !reducedMotion.matches) {
-    const revealCards = () => {
-      const groups = [...document.querySelectorAll('.z-service-tiles, .z-audience-card')]
-        .filter(element => !element.closest('x-dc'));
-      if (!groups.length) return false;
-      const observer = new IntersectionObserver((entries) => {
-        for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
-          const card = entry.target;
-          card.classList.add('is-revealed');
-          observer.unobserve(card);
-          // Release the animation transform so hover motion stays smooth.
-          setTimeout(() => card.classList.remove('is-revealed'), 1000);
-        }
-      }, {threshold: .15});
-      groups.forEach(group => observer.observe(group));
-      return true;
-    };
-    if (!revealCards()) {
-      const mountObserver = new MutationObserver(() => {
-        if (revealCards()) mountObserver.disconnect();
-      });
-      mountObserver.observe(document.body, {childList: true, subtree: true});
-      setTimeout(() => mountObserver.disconnect(), 10000);
-    }
-  }
-
   // The template mounts asynchronously, after the browser's initial hash scroll.
   // Restore deep links once their rendered section is available.
   if (location.hash) {
