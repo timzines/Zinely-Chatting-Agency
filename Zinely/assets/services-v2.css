@@ -249,3 +249,13 @@
 .sv2-services-head{text-align:center;margin:30px 0 30px}
 .sv2-services-head h2{font-size:clamp(34px,4.6vw,52px);line-height:1.05;margin:0}
 .sv2-services-head h2 span{color:var(--sv2-blue)}
+/* v16: 24/7 chatting and everything included sit in one panel */
+.sv2-bundle{padding:14px;border:1px solid #2a5272;border-radius:30px;background:linear-gradient(180deg,rgba(26,163,245,.07),rgba(13,31,50,.35) 40%);box-shadow:0 30px 70px rgba(2,11,21,.35)}
+.sv2-bundle .sv2-core{border-radius:22px}
+.sv2-bundle .sv2-grid-wrap{padding:0}
+.sv2-bundle .sv2-grid{gap:14px}
+.sv2-plus{position:relative;display:flex;justify-content:center;margin:18px 0}
+.sv2-plus::before{content:'';position:absolute;left:8%;right:8%;top:50%;height:1px;background:linear-gradient(90deg,transparent,#2f6a92,transparent)}
+.sv2-plus span{position:relative;display:inline-flex;align-items:center;gap:9px;padding:6px 16px 6px 6px;border-radius:999px;background:#0d2236;border:1px solid #2f6a92;color:#9fdcff;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.sv2-plus b{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#1aa3f5;color:#04192b;font-size:18px;line-height:1}
+@media(max-width:620px){.sv2-bundle{padding:8px;border-radius:22px}}
