@@ -74,3 +74,30 @@
  .z-contact-channel-name{font-size:21px}.z-contact-channel-handle{font-size:13px}
 }
 @media(max-width:400px){.z-contact-channel{padding:19px;gap:14px}.z-contact-channel-name{font-size:19px}.z-contact-channel-handle{font-size:11px}.z-contact-channel-action{font-size:12px}}
+/* v3: shorter intro and a three-step form that opens the visitor's chosen app. */
+.z-contact-ticks{display:flex;flex-wrap:wrap;gap:8px 20px;list-style:none;margin:26px 0 22px;padding:0}
+.z-contact-ticks li{display:flex;align-items:center;gap:8px;color:#cfe3f2;font-size:14.5px;font-weight:600}
+.z-contact-ticks li::before{content:'';width:16px;height:16px;border-radius:50%;background:#36d399 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2305231a' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12 4 4 8-8'/%3E%3C/svg%3E") center/11px no-repeat}
+.z-contact-form{display:grid;gap:22px}
+.z-contact-form .z-contact-preview{margin:0}
+.z-contact-form .z-contact-send-note{margin:-10px 0 0}
+.z-contact-step-label{display:flex;align-items:center;gap:10px;margin:0 0 10px;color:#eaf4fd;font-size:14px;font-weight:700}
+.z-contact-step-label b{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#1aa3f522;border:1px solid #1aa3f5;color:#7fd0ff;font-size:11px}
+.z-contact-select{position:relative}
+.z-contact-select::after{content:'';position:absolute;right:16px;top:50%;width:8px;height:8px;border-right:2px solid #8fb2d4;border-bottom:2px solid #8fb2d4;transform:translateY(-70%) rotate(45deg);pointer-events:none}
+.z-contact-select select{width:100%;appearance:none;-webkit-appearance:none;padding:13px 42px 13px 15px;border:1px solid #28455f;border-radius:11px;background:#081726aa;color:#eaf4fd;font:600 14px 'Figtree',sans-serif;cursor:pointer}
+.z-contact-select select:focus-visible{outline:2px solid #78d0ff;outline-offset:3px}
+.z-contact-select option{background:#0c1d30;color:#eaf4fd}
+.z-contact-apps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.z-contact-apps button{--app:#8fb2d4;display:flex;flex-direction:column;align-items:center;gap:7px;padding:13px 6px 11px;border:1px solid #28455f;border-radius:12px;background:#08172688;color:#a9c3d7;font:600 12.5px 'Figtree',sans-serif;cursor:pointer;transition:border-color .2s,background .2s,color .2s,transform .2s}
+.z-contact-apps svg{width:24px;height:24px;color:var(--app)}
+.z-contact-apps .z-app-whatsapp{--app:#25d366}
+.z-contact-apps .z-app-telegram{--app:#2aabee}
+.z-contact-apps .z-app-discord{--app:#5865f2}
+.z-contact-apps .z-app-email{--app:#9fc3dd}
+.z-contact-apps button:hover{transform:translateY(-1px);color:#fff}
+.z-contact-apps button[aria-pressed=true]{border-color:var(--app);background:color-mix(in srgb,var(--app) 14%,transparent);color:#fff;box-shadow:0 0 0 1px var(--app) inset}
+.z-contact-apps button:focus-visible{outline:2px solid #78d0ff;outline-offset:3px}
+.z-contact-form .z-contact-draft{min-height:0}
+button.z-contact-send{cursor:pointer;font:inherit;color:#fff;text-align:left}
+@media(max-width:480px){.z-contact-apps{grid-template-columns:repeat(2,minmax(0,1fr))}.z-contact-apps button{flex-direction:row;justify-content:center;padding:12px 8px}.z-contact-apps svg{width:20px;height:20px}}

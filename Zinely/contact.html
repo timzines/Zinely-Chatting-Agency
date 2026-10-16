@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Free Earnings Estimate — Zinely</title>
-<meta name="description" content="Get a free personal earnings estimate for your OnlyFans, Fanvue or Fansly account. Real creators, AI models and agency rosters. Start on Telegram, with no commitment.">
+<meta name="description" content="Get a free personal earnings estimate for your OnlyFans, Fanvue or Fansly account. Real creators, AI models and agency rosters. Message us on WhatsApp, Telegram, Discord or email.">
 <link rel="canonical" href="https://zinelyagency.com/contact">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Zinely">
 <meta property="og:title" content="Free Earnings Estimate — Zinely">
-<meta property="og:description" content="Get a free personal earnings estimate for your OnlyFans, Fanvue or Fansly account. Real creators, AI models and agency rosters. Start on Telegram, with no commitment.">
+<meta property="og:description" content="Get a free personal earnings estimate for your OnlyFans, Fanvue or Fansly account. Real creators, AI models and agency rosters. Message us on WhatsApp, Telegram, Discord or email.">
 <meta property="og:url" content="https://zinelyagency.com/contact">
 <meta property="og:image" content="https://zinelyagency.com/assets/zinely-logo-1200.jpg">
 <meta property="og:image:type" content="image/jpeg">
@@ -28,7 +28,7 @@
 <link rel="stylesheet" href="mobile.css?v=20261001">
 <script src="./support.js"></script>
 <link rel="stylesheet" href="/assets/estimate.css?v=1">
-<link rel="stylesheet" href="assets/contact.css?v=2">
+<link rel="stylesheet" href="assets/contact.css?v=3">
 <link rel="stylesheet" href="/assets/analytics.css?v=2">
 <script src="/assets/analytics.js?v=2" defer></script>
 </head>
@@ -86,76 +86,52 @@
 
     <section class="z-contact-hero" id="estimate" aria-labelledby="estimate-title">
       <div class="z-contact-intro">
-        <div class="z-contact-eyebrow"><span aria-hidden="true"></span>Let's talk about your account</div>
+        <div class="z-contact-eyebrow"><span aria-hidden="true"></span>Free earnings estimate</div>
         <h1 id="estimate-title">What could your<br><span>inbox earn?</span></h1>
-        <p class="z-contact-lead">A fresh perspective on your numbers.<br>24/7 human chatting for your account.</p>
-        <p class="z-contact-description">Get a free, personal earnings estimate for your OnlyFans, Fanvue or Fansly account — whether you're a creator, building an AI model, or running an agency.</p>
-        <div class="z-contact-promise"><span class="z-contact-promise-line" aria-hidden="true"></span><p><strong>Your potential, explained.</strong>An earnings range, the opportunities we see, and clear commission details before you decide.</p></div>
-        <a class="z-contact-proof" href="cases.html">See what we've done for other accounts <span aria-hidden="true">↗</span></a>
+        <p class="z-contact-lead">Three quick questions. Tim gets back to you personally.</p>
+        <ul class="z-contact-ticks"><li>Free</li><li>No commitment</li><li>No account access needed</li></ul>
+        <a class="z-contact-proof" href="cases.html">See our client results <span aria-hidden="true">↗</span></a>
       </div>
 
-      <div class="z-contact-composer" aria-labelledby="conversation-title">
-        <div class="z-contact-composer-head"><span class="z-contact-brandmark"><img src="assets/logo.png" alt="" width="27" height="27"></span><div><span class="z-contact-overline">Your free estimate</span><h2 id="conversation-title">It starts with a hello.</h2></div><svg class="z-contact-spark" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="m12 2 2.3 7.7L22 12l-7.7 2.3L12 22l-2.3-7.7L2 12l7.7-2.3Z"></path></svg></div>
-        <p class="z-contact-selector-label" id="setup-label">Choose your setup</p>
-        <div class="z-contact-options" role="group" aria-labelledby="setup-label">
-          <button type="button" aria-pressed="{{ isCreator }}" onClick="{{ selectCreator }}">Creator</button>
-          <button type="button" aria-pressed="{{ isAi }}" onClick="{{ selectAi }}">AI model</button>
-          <button type="button" aria-pressed="{{ isAgency }}" onClick="{{ selectAgency }}">Agency</button>
+      <div class="z-contact-composer z-contact-form" aria-label="Get your free earnings estimate">
+        <div class="z-contact-step">
+          <p class="z-contact-step-label" id="setup-label"><b>1</b>Your setup</p>
+          <div class="z-contact-options" role="group" aria-labelledby="setup-label">
+            <button type="button" aria-pressed="{{ isCreator }}" onClick="{{ selectCreator }}">Creator</button>
+            <button type="button" aria-pressed="{{ isAi }}" onClick="{{ selectAi }}">AI model</button>
+            <button type="button" aria-pressed="{{ isAgency }}" onClick="{{ selectAgency }}">Agency</button>
+          </div>
+        </div>
+        <div class="z-contact-step">
+          <label class="z-contact-step-label" for="contact-earnings"><b>2</b>{{ earnLabel }}</label>
+          <div class="z-contact-select"><select id="contact-earnings" value="{{ earn }}" onChange="{{ setEarn }}">
+            <option value="">Choose one</option>
+            <option value="new">New model, not earning yet</option>
+            <option value="u5">Under $5K a month</option>
+            <option value="5-15">$5K–$15K a month</option>
+            <option value="15-50">$15K–$50K a month</option>
+            <option value="50+">$50K+ a month</option>
+          </select></div>
+        </div>
+        <div class="z-contact-step">
+          <p class="z-contact-step-label" id="channel-label"><b>3</b>Best way to contact you</p>
+          <div class="z-contact-apps" role="group" aria-labelledby="channel-label">
+            <button type="button" class="z-app-whatsapp" aria-pressed="{{ isWhatsapp }}" onClick="{{ pickWhatsapp }}"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>WhatsApp</span></button>
+            <button type="button" class="z-app-telegram" aria-pressed="{{ isTelegram }}" onClick="{{ pickTelegram }}"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span>Telegram</span></button>
+            <button type="button" class="z-app-discord" aria-pressed="{{ isDiscord }}" onClick="{{ pickDiscord }}"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg><span>Discord</span></button>
+            <button type="button" class="z-app-email" aria-pressed="{{ isEmail }}" onClick="{{ pickEmail }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg><span>Email</span></button>
+          </div>
         </div>
         <div class="z-contact-preview" aria-live="polite" aria-atomic="true">
-          <div class="z-contact-draft-label"><span>Your first message</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m16 3 5 5M4 20l4-1 13-13a2.1 2.1 0 0 0-3-3L5 16l-1 4Z"></path></svg></div>
+          <div class="z-contact-draft-label"><span>Your message to Tim</span></div>
           <p class="z-contact-draft">{{ draftText }}</p>
-          <div class="z-contact-brief"><span>Helpful to bring</span><p>{{ briefText }}</p></div>
         </div>
-        <a class="z-contact-send" data-estimate-cta href="{{ estimateUrl }}" aria-label="Get a free earnings estimate via Telegram"><span>Get a free earnings estimate</span><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 3-7 18-4-7-7-4 18-7ZM10 14 21 3"></path></svg></a>
-        <p class="z-contact-send-note">Opens Telegram · Edit your draft before sending</p>
-        <div class="z-contact-assurances"><span>No commitment</span><span>No account access needed</span></div>
+        <sc-if value="{{ notDiscord }}" hint-placeholder-val="{{ true }}"><a class="z-contact-send" data-estimate-cta href="{{ sendUrl }}" target="_blank" rel="noopener" aria-label="{{ sendLabel }}"><span>{{ sendLabel }}</span><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 3-7 18-4-7-7-4 18-7ZM10 14 21 3"></path></svg></a></sc-if>
+        <sc-if value="{{ isDiscord }}" hint-placeholder-val="{{ false }}"><button type="button" class="z-contact-send" data-estimate-cta onClick="{{ copyDiscord }}"><span>{{ discordLabel }}</span><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 3-7 18-4-7-7-4 18-7ZM10 14 21 3"></path></svg></button></sc-if>
+        <p class="z-contact-send-note">{{ sendNote }}</p>
       </div>
     </section>
-
-    <section class="z-contact-channels" data-screen-label="Channels" aria-labelledby="channels-title">
-      <div class="z-contact-channels-head"><h2 id="channels-title">Or, just say hello.</h2><p>A direct line to the team.</p></div>
-      <div class="z-contact-channel-list">
-        <a class="z-contact-channel z-contact-channel-primary" href="https://t.me/timzines" aria-label="Message Timzines on Telegram">
-          <span class="z-contact-channel-top"><span class="z-contact-channel-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.04 15.31l-.38 5.37c.54 0 .78-.23 1.06-.5l2.55-2.44 5.28 3.87c.97.53 1.66.25 1.92-.9L22.9 3.9c.31-1.4-.51-1.95-1.45-1.6L3.1 9.36c-1.36.53-1.34 1.29-.23 1.63l4.7 1.47L18.5 5.6c.51-.34.98-.15.6.19L9.04 15.31z"/></svg></span><span class="z-contact-channel-label">Direct message</span></span>
-          <span class="z-contact-channel-copy"><span class="z-contact-channel-name">Telegram</span><span class="z-contact-channel-handle">@timzines</span></span>
-          <span class="z-contact-channel-action">Message us <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 15 15 5M5 5h10v10"/></svg></span>
-        </a>
-        <a class="z-contact-channel" href="https://t.me/zinelyagency" aria-label="Open the Zinely Telegram group">
-          <span class="z-contact-channel-top"><span class="z-contact-channel-icon"><svg width="30" height="30" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5h13a3 3 0 0 1 3 3v9l-4-2H10a3 3 0 0 1-3-3V8a3 3 0 0 1 2-3Z" fill="currentColor" fill-opacity=".13" stroke-opacity=".55"/><path d="M6 10h12a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H9l-5 3V13a3 3 0 0 1 2-3Z" fill="#153b50"/><path d="M9 15h7m-7 3h4"/></svg></span><span class="z-contact-channel-label">Community</span></span>
-          <span class="z-contact-channel-copy"><span class="z-contact-channel-name">Telegram group</span><span class="z-contact-channel-handle">@zinelyagency</span></span>
-          <span class="z-contact-channel-action">Join the group <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 15 15 5M5 5h10v10"/></svg></span>
-        </a>
-        <a class="z-contact-channel" href="mailto:timzines@zinelyagency.com" aria-label="Email timzines@zinelyagency.com">
-          <span class="z-contact-channel-top"><span class="z-contact-channel-icon"><svg width="30" height="30" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="22" height="16" rx="3" fill="currentColor" fill-opacity=".09"/><path d="m4 8 8.2 6.5a3 3 0 0 0 3.6 0L24 8m-20 12 6-5m14 5-6-5"/></svg></span><span class="z-contact-channel-label">Enquiries</span></span>
-          <span class="z-contact-channel-copy"><span class="z-contact-channel-name">Email</span><span class="z-contact-channel-handle">timzines@zinelyagency.com</span></span>
-          <span class="z-contact-channel-action">Write an email <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 15 15 5M5 5h10v10"/></svg></span>
-        </a>
-      </div>
-    </section>
-    <p class="z-contact-fineprint">Your estimate depends on your traffic, content and fan spending. We'll explain the assumptions — earnings aren't guaranteed.</p>
-
-    <!-- FOOTER -->
-    <div style="border-top:1px solid #1C3A5A;margin-top:70px;padding:26px 0 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
-      <div style="display:flex;align-items:center;gap:9px">
-        <img src="assets/logo.png" alt="" style="width:22px;height:22px">
-        <span style="color:#8FB2D4;font-size:13.5px"><b style="color:#EAF4FD">Zinely Agency</b> · Human chatting for real &amp; AI models</span>
-      </div>
-      <div class="z-footer-links" style="display:flex;gap:20px">
-        <a href="services.html" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Services</a>
-        <a href="cases.html" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Case studies</a>
-        <a href="pricing.html" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Pricing</a>
-        <a href="/blog/" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Blog</a>
-        <a href="contact.html" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Contact</a>
-        <a href="https://t.me/zinelyagency" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Telegram group ↗</a>
-      </div>
-      <div style="width:100%;display:flex;gap:18px;flex-wrap:wrap;padding-top:14px;border-top:1px solid rgba(28,58,90,.55)">
-        <a href="/onlyfans-chatting-agency/" style="color:#5E82A6;text-decoration:none;font-size:13px;font-weight:600">OnlyFans chatting agency</a>
-        <a href="/fanvue-chatting-agency/" style="color:#5E82A6;text-decoration:none;font-size:13px;font-weight:600">Fanvue chatting agency</a>
-        <a href="/fansly-chatting-agency/" style="color:#5E82A6;text-decoration:none;font-size:13px;font-weight:600">Fansly chatting service</a>
-        <a href="/onlyfans-chatting-for-agencies/" style="color:#5E82A6;text-decoration:none;font-size:13px;font-weight:600">Chatting for agencies</a>
-      </div>
-    </div>
+    <p class="z-contact-fineprint">Your estimate depends on your traffic, content and fan spending. We'll explain the assumptions; earnings aren't guaranteed.</p>
 
   </div>
 </div>
@@ -164,27 +140,62 @@
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { audience: "creator" };
+    this.state = { audience: "creator", earn: "", channel: "telegram", copied: false };
   }
   renderVals() {
-    const audience = this.state.audience;
-    const briefs = {
-      creator: { draft: "Hi Zinely, I'd like a free earnings estimate for my account. Can we talk?", brief: "Your platform, recent revenue and fan numbers. Switching teams? Tell us what you'd like to change." },
-      ai: { draft: "Hi Zinely, I run an AI model and I'd like a free earnings estimate for its chatting.", brief: "Your platform, persona, recent revenue and fan numbers. Tell us where you need support." },
-      agency: { draft: "Hi Zinely, I run an agency and I'd like a free earnings estimate for my roster.", brief: "Your roster size, platforms and recent numbers for each account. We'll talk through coverage and commission." },
+    const { audience, earn, channel, copied } = this.state;
+    const who = { creator: "I'm a creator", ai: "I run an AI model", agency: "I run an agency" }[audience];
+    const ranges = { u5: "under $5K", "5-15": "about $5K–$15K", "15-50": "about $15K–$50K", "50+": "over $50K" };
+    let earnLine = "";
+    if (earn === "new") earnLine = audience === "agency" ? " Our models are new and not earning yet." : " It's a new model, not earning yet.";
+    else if (ranges[earn]) earnLine = (audience === "agency" ? " The roster makes " : " It's making ") + ranges[earn] + " a month right now.";
+    const draft = "Hi Tim, " + who + "." + earnLine + " I'd like a free earnings estimate" + (audience === "agency" ? " for my roster." : ".");
+    const text = encodeURIComponent(draft);
+    const tg = this.props.telegramUrl ?? "https://t.me/timzines";
+    const urls = {
+      telegram: tg + (tg.includes("?") ? "&" : "?") + "text=" + text,
+      whatsapp: "https://wa.me/421915748982?text=" + text,
+      email: "mailto:timzines@zinelyagency.com?subject=" + encodeURIComponent("Free earnings estimate") + "&body=" + text,
     };
-    const brief = briefs[audience];
+    const labels = { telegram: "Message Tim on Telegram", whatsapp: "Message Tim on WhatsApp", email: "Email Tim" };
+    const notes = {
+      telegram: "Opens Telegram with your message ready to edit and send.",
+      whatsapp: "Opens WhatsApp with your message ready to edit and send.",
+      email: "Opens your email app, addressed to timzines@zinelyagency.com.",
+      discord: "We copy your message. Add timzines on Discord and paste it.",
+    };
+    const pick = (c) => () => this.setState({ channel: c, copied: false });
     return {
-      calendly: this.props.telegramUrl ?? "https://t.me/timzines",
-      estimateUrl: (this.props.telegramUrl ?? "https://t.me/timzines") + ((this.props.telegramUrl ?? "").includes("?") ? "&" : "?") + "text=" + encodeURIComponent(brief.draft),
-      draftText: brief.draft,
-      briefText: brief.brief,
+      calendly: tg,
+      estimateUrl: urls.telegram,
+      draftText: draft,
+      earn: earn,
+      earnLabel: audience === "agency" ? "What does your roster make?" : "What does it make now?",
+      setEarn: (e) => this.setState({ earn: e.target.value }),
       isCreator: audience === "creator",
       isAi: audience === "ai",
       isAgency: audience === "agency",
       selectCreator: () => this.setState({ audience: "creator" }),
       selectAi: () => this.setState({ audience: "ai" }),
       selectAgency: () => this.setState({ audience: "agency" }),
+      isTelegram: channel === "telegram",
+      isWhatsapp: channel === "whatsapp",
+      isDiscord: channel === "discord",
+      isEmail: channel === "email",
+      notDiscord: channel !== "discord",
+      pickTelegram: pick("telegram"),
+      pickWhatsapp: pick("whatsapp"),
+      pickDiscord: pick("discord"),
+      pickEmail: pick("email"),
+      sendUrl: urls[channel] || urls.telegram,
+      sendLabel: labels[channel] || labels.telegram,
+      sendNote: notes[channel],
+      discordLabel: copied ? "Copied. Now paste it to timzines" : "Copy message & open Discord",
+      copyDiscord: () => {
+        const done = () => { this.setState({ copied: true }); window.open("https://discord.com/app", "_blank", "noopener"); };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(draft).then(done, done);
+        else done();
+      },
     };
   }
 }
