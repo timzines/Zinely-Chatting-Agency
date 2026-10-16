@@ -194,3 +194,16 @@
   .sv2-stack{padding:18px}
   .sv2-grid-wrap{padding-top:60px}
 }
+/* Full management: dark, premium gold, matching the rest of the site */
+.sv2 .sv-management{background:radial-gradient(ellipse at 100% 0,rgba(232,194,122,.13),transparent 55%),linear-gradient(140deg,#17222c,#0e1c2b);color:#eaf4fd;border:1px solid #5c4e2e;border-radius:24px;box-shadow:0 24px 60px rgba(2,11,21,.45)}
+.sv2 .sv-management-head,.sv2 .sv-management-foot{border-color:#3a3626}
+.sv2 .sv-management-brand{color:#f0cf8f}
+.sv2 .sv-management-status{padding:5px 11px;border:1px solid #6b5a35;border-radius:999px;color:#f0cf8f;font-size:11px;font-weight:700}
+.sv2 .sv-management-status::before{background:#f0cf8f;box-shadow:0 0 8px #f0cf8f}
+.sv2 .sv-management h2{color:#fff}
+.sv2 .sv-management p{color:#b9b19c}
+.sv2 .sv-management-scope li{color:#f3ead8;border-color:#3a3626}
+.sv2 .sv-management-scope span{display:grid;place-items:center;width:26px;height:26px;border-radius:8px;background:rgba(232,194,122,.1);border:1px solid #6b5a35;color:#f0cf8f;font-size:10px;font-weight:800}
+.sv2 .sv-management .sv-button{background:linear-gradient(135deg,#f0cf8f,#c9a25c);border-color:#f0cf8f;color:#1d1606;font-weight:800}
+.sv2 .sv-management .sv-button:hover{background:linear-gradient(135deg,#f6dca6,#d4ae69)}
+.sv2 .sv-management-foot p{color:#9a917c}
