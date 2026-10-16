@@ -217,16 +217,8 @@
 .sv2-big strong{font:800 clamp(88px,11vw,140px)/.9 'Bricolage Grotesque',sans-serif;letter-spacing:-.05em;background:linear-gradient(135deg,#9fe0ff,#1aa3f5);-webkit-background-clip:text;background-clip:text;color:transparent}
 .sv2-big span{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:rgba(54,211,153,.1);border:1px solid rgba(54,211,153,.4);color:#8ff0c9;font-size:13px;font-weight:700}
 .sv2-big span i{width:8px;height:8px;border-radius:50%;background:#36d399;box-shadow:0 0 10px #36d399}
-.sv2-link-down{display:flex;flex-direction:column;align-items:center;gap:0;margin:0 0 -40px}
-.sv2-link-down span{width:2px;height:40px;background:linear-gradient(#2f6a92,#36d399)}
-.sv2-link-down b{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#36d399;color:#05231a;box-shadow:0 0 0 6px rgba(54,211,153,.12),0 0 26px rgba(54,211,153,.35)}
-.sv2-link-down b svg{width:20px;height:20px;stroke-width:2.6}
-.sv2-link-down em{margin-top:12px;color:#8ff0c9;font-size:13px;font-weight:700;font-style:normal}
-.sv2-grid-wrap{padding-top:64px}
 @media(prefers-reduced-motion:no-preference){
   .sv2-big span i{animation:sv2Pulse 2s ease-in-out infinite}
-  .sv2-link-down b{animation:sv2Nudge 2.4s ease-in-out infinite}
   @keyframes sv2Pulse{0%,100%{opacity:1}50%{opacity:.35}}
-  @keyframes sv2Nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
 }
 @media(max-width:620px){.sv2-big{padding:10px 0 4px}.sv2-big strong{font-size:84px}}
