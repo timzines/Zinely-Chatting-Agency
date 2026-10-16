@@ -219,12 +219,12 @@
 .sv2-watch-rim{fill:none;stroke:#1aa3f5;stroke-width:3;filter:drop-shadow(0 0 14px rgba(26,163,245,.45))}
 .sv2-watch-face{fill:#0b1d30;stroke:#1d3d58;stroke-width:1}
 .sv2-watch-ticks line{stroke:#2f5a7b;stroke-width:2;stroke-linecap:round}
-.sv2-watch-ticks line:nth-child(3n+1){stroke:#4ebaff;stroke-width:3}
+.sv2-watch-ticks line{stroke:#4ebaff;stroke-width:3}
 .sv2-watch-hand circle{fill:#bfeaff;filter:drop-shadow(0 0 6px #1aa3f5)}
 .sv2-watch-hand{transform-origin:100px 100px;transform:rotate(40deg)}
 .sv2-watch strong{position:relative;font:800 clamp(56px,6vw,72px)/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.045em;background:linear-gradient(135deg,#bfeaff,#1aa3f5);-webkit-background-clip:text;background-clip:text;color:transparent}
 @media(prefers-reduced-motion:no-preference){
-  .sv2-watch-hand{animation:sv2Tick 20s linear infinite}
-  @keyframes sv2Tick{from{transform:rotate(40deg)}to{transform:rotate(400deg)}}
+  .sv2-watch-rim{animation:sv2Glow 4s ease-in-out infinite alternate}
+  @keyframes sv2Glow{from{filter:drop-shadow(0 0 6px rgba(26,163,245,.25))}to{filter:drop-shadow(0 0 16px rgba(26,163,245,.55))}}
 }
 @media(max-width:620px){.sv2-watch{width:220px}}
