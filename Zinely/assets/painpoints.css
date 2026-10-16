@@ -39,12 +39,12 @@
   .z-fix-labels{display:none}
   .z-fix-list{gap:22px}
   .z-fix-row{grid-template-columns:1fr;grid-template-rows:auto 0 auto}
-  .z-fix-arrow{position:relative;z-index:1;height:0;justify-items:start;padding-left:18px}
-  .z-fix-arrow span{transform:rotate(90deg)}
-  .z-fix-row:hover .z-fix-arrow span{transform:rotate(90deg)}
+  .z-fix-arrow{position:relative;z-index:2;display:block;height:0;padding:0}
+  .z-fix-arrow span{position:absolute;left:50%;top:0;transform:translate(-50%,-50%) rotate(90deg);box-shadow:0 0 0 5px #0a1626,0 0 18px rgba(26,163,245,.3)}
+  .z-fix-row:hover .z-fix-arrow span{transform:translate(-50%,-50%) rotate(90deg)}
   .z-fix-side{padding:28px 18px 22px}
   .z-fix-pain{padding-bottom:34px;border-bottom-left-radius:0;border-bottom-right-radius:0}
-  .z-fix-win{padding-top:42px;border-top-left-radius:0;border-top-right-radius:0}
+  .z-fix-win{padding-top:38px;border-top-left-radius:0;border-top-right-radius:0}
   .z-fix-row:hover .z-fix-win{transform:none}
   .z-fix-side::before{position:absolute;top:10px;right:14px;font-size:9px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
   .z-fix-pain::before{content:'Your DMs today';color:#ff7a7a}

@@ -15,3 +15,6 @@
 .z-results-more .z-button{padding:16px 30px;font-size:15px}
 .z-results-more p{font-size:12.5px;color:#7397b4}
 @media(max-width:540px){.z-results-more{align-items:stretch}.z-result-card .z-chip-rank,.z-result-card .z-chip-stat{font-size:11px}.z-result-card .z-result-caption{flex-wrap:wrap}}
+
+/* Phones: show the first three case studies only */
+@media(max-width:820px){.z-results-grid>.z-result-card:nth-child(n+4){display:none}}
