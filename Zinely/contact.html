@@ -28,7 +28,7 @@
 <link rel="stylesheet" href="mobile.css?v=20261001">
 <script src="./support.js"></script>
 <link rel="stylesheet" href="/assets/estimate.css?v=1">
-<link rel="stylesheet" href="assets/contact.css?v=3">
+<link rel="stylesheet" href="assets/contact.css?v=4">
 <link rel="stylesheet" href="/assets/analytics.css?v=2">
 <script src="/assets/analytics.js?v=2" defer></script>
 </head>
@@ -88,7 +88,7 @@
       <div class="z-contact-intro">
         <div class="z-contact-eyebrow"><span aria-hidden="true"></span>Free earnings estimate</div>
         <h1 id="estimate-title">What could your<br><span>inbox earn?</span></h1>
-        <p class="z-contact-lead">Three quick questions. Tim gets back to you personally.</p>
+        <p class="z-contact-lead">Four quick questions. Tim gets back to you personally.</p>
         <ul class="z-contact-ticks"><li>Free</li><li>No commitment</li><li>No account access needed</li></ul>
         <a class="z-contact-proof" href="cases.html">See our client results <span aria-hidden="true">↗</span></a>
       </div>
@@ -103,18 +103,24 @@
           </div>
         </div>
         <div class="z-contact-step">
-          <label class="z-contact-step-label" for="contact-earnings"><b>2</b>{{ earnLabel }}</label>
-          <div class="z-contact-select"><select id="contact-earnings" value="{{ earn }}" onChange="{{ setEarn }}">
-            <option value="">Choose one</option>
-            <option value="new">New model, not earning yet</option>
-            <option value="u5">Under $5K a month</option>
-            <option value="5-15">$5K–$15K a month</option>
-            <option value="15-50">$15K–$50K a month</option>
-            <option value="50+">$50K+ a month</option>
-          </select></div>
+          <p class="z-contact-step-label" id="platform-label"><b>2</b>{{ platformLabel }}</p>
+          <div class="z-contact-platforms" role="group" aria-labelledby="platform-label">
+            <button type="button" aria-pressed="{{ isOnlyfans }}" onClick="{{ pickOnlyfans }}"><img src="/assets/platform-onlyfans-icon.png" alt="" width="24" height="18">OnlyFans</button>
+            <button type="button" aria-pressed="{{ isFanvue }}" onClick="{{ pickFanvue }}"><img src="/assets/platform-fanvue.png" alt="" width="18" height="18">Fanvue</button>
+            <button type="button" aria-pressed="{{ isFansly }}" onClick="{{ pickFansly }}"><img src="/assets/platform-fansly.png" alt="" width="22" height="18">Fansly</button>
+            <button type="button" aria-pressed="{{ isOther }}" onClick="{{ pickOther }}"><span class="z-plat-other" aria-hidden="true">+</span>Other</button>
+          </div>
+          <sc-if value="{{ isOther }}" hint-placeholder-val="{{ false }}"><input class="z-contact-input" type="text" maxlength="40" placeholder="Which platform?" aria-label="Which platform?" value="{{ otherPlatform }}" onInput="{{ setOtherPlatform }}"></sc-if>
         </div>
         <div class="z-contact-step">
-          <p class="z-contact-step-label" id="channel-label"><b>3</b>Best way to contact you</p>
+          <p class="z-contact-step-label" id="earn-label"><b>3</b>{{ earnLabel }}</p>
+          <div class="z-dd" ref="{{ ddRef }}" data-open="{{ ddOpen }}" onKeyDown="{{ ddKey }}">
+            <button type="button" class="z-dd-button" aria-haspopup="listbox" aria-expanded="{{ ddOpen }}" aria-labelledby="earn-label" data-empty="{{ earnEmpty }}" onClick="{{ toggleDd }}"><span>{{ earnText }}</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+            <ul class="z-dd-list" role="listbox" aria-labelledby="earn-label"><li role="option" aria-selected="{{ earnSel_new }}" onClick="{{ pickEarn_new }}">New model, not earning yet<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7"/></svg></li><li role="option" aria-selected="{{ earnSel_u5 }}" onClick="{{ pickEarn_u5 }}">Under $5K a month<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7"/></svg></li><li role="option" aria-selected="{{ earnSel_5_15 }}" onClick="{{ pickEarn_5_15 }}">$5K–$15K a month<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7"/></svg></li><li role="option" aria-selected="{{ earnSel_15_50 }}" onClick="{{ pickEarn_15_50 }}">$15K–$50K a month<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7"/></svg></li><li role="option" aria-selected="{{ earnSel_50p }}" onClick="{{ pickEarn_50p }}">$50K+ a month<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7"/></svg></li></ul>
+          </div>
+        </div>
+        <div class="z-contact-step">
+          <p class="z-contact-step-label" id="channel-label"><b>4</b>Best way to contact you</p>
           <div class="z-contact-apps" role="group" aria-labelledby="channel-label">
             <button type="button" class="z-app-whatsapp" aria-pressed="{{ isWhatsapp }}" onClick="{{ pickWhatsapp }}"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>WhatsApp</span></button>
             <button type="button" class="z-app-telegram" aria-pressed="{{ isTelegram }}" onClick="{{ pickTelegram }}"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span>Telegram</span></button>
@@ -126,8 +132,8 @@
           <div class="z-contact-draft-label"><span>Your message to Tim</span></div>
           <p class="z-contact-draft">{{ draftText }}</p>
         </div>
-        <sc-if value="{{ notDiscord }}" hint-placeholder-val="{{ true }}"><a class="z-contact-send" data-estimate-cta href="{{ sendUrl }}" target="_blank" rel="noopener" aria-label="{{ sendLabel }}"><span>{{ sendLabel }}</span><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 3-7 18-4-7-7-4 18-7ZM10 14 21 3"></path></svg></a></sc-if>
-        <sc-if value="{{ isDiscord }}" hint-placeholder-val="{{ false }}"><button type="button" class="z-contact-send" data-estimate-cta onClick="{{ copyDiscord }}"><span>{{ discordLabel }}</span><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 3-7 18-4-7-7-4 18-7ZM10 14 21 3"></path></svg></button></sc-if>
+        <sc-if value="{{ notDiscord }}" hint-placeholder-val="{{ true }}"><a class="z-send" data-channel="{{ channel }}" data-estimate-cta href="{{ sendUrl }}" target="_blank" rel="noopener"><span class="z-send-logo"><svg class="z-ic-whatsapp" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><svg class="z-ic-telegram" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><svg class="z-ic-email" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg></span><span class="z-send-text">{{ sendLabel }}</span><svg class="z-send-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></sc-if>
+        <sc-if value="{{ isDiscord }}" hint-placeholder-val="{{ false }}"><button type="button" class="z-send" data-channel="discord" data-estimate-cta onClick="{{ copyDiscord }}"><span class="z-send-logo"><svg class="z-ic-discord" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg></span><span class="z-send-text">{{ discordLabel }}</span><svg class="z-send-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></sc-if>
         <p class="z-contact-send-note">{{ sendNote }}</p>
       </div>
     </section>
@@ -140,11 +146,24 @@
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { audience: "creator", earn: "", channel: "telegram", copied: false };
+    this.state = { audience: "creator", platform: "", other: "", earn: "", channel: "telegram", copied: false, ddOpen: false };
+    this.ddRef = React.createRef();
+  }
+  componentDidMount() {
+    this._outside = (e) => {
+      if (this.state.ddOpen && this.ddRef.current && !this.ddRef.current.contains(e.target)) this.setState({ ddOpen: false });
+    };
+    document.addEventListener("click", this._outside);
+  }
+  componentWillUnmount() {
+    document.removeEventListener("click", this._outside);
   }
   renderVals() {
-    const { audience, earn, channel, copied } = this.state;
-    const who = { creator: "I'm a creator", ai: "I run an AI model", agency: "I run an agency" }[audience];
+    const { audience, platform, other, earn, channel, copied, ddOpen } = this.state;
+    const names = { onlyfans: "OnlyFans", fanvue: "Fanvue", fansly: "Fansly" };
+    const platName = platform === "other" ? other.trim() : (names[platform] || "");
+    const on = platName ? " on " + platName : "";
+    const who = { creator: "I'm a creator" + on, ai: "I run an AI model" + on, agency: "I run an agency" + (platName ? " with models on " + platName : "") }[audience];
     const ranges = { u5: "under $5K", "5-15": "about $5K–$15K", "15-50": "about $15K–$50K", "50+": "over $50K" };
     let earnLine = "";
     if (earn === "new") earnLine = audience === "agency" ? " Our models are new and not earning yet." : " It's a new model, not earning yet.";
@@ -164,20 +183,49 @@ class Component extends DCLogic {
       email: "Opens your email app, addressed to timzines@zinelyagency.com.",
       discord: "We copy your message. Add timzines on Discord and paste it.",
     };
+    const earnLabels = { "new": "New model, not earning yet", "u5": "Under $5K a month", "5-15": "$5K–$15K a month", "15-50": "$15K–$50K a month", "50+": "$50K+ a month" };
     const pick = (c) => () => this.setState({ channel: c, copied: false });
+    const pickPlat = (p) => () => this.setState({ platform: p });
+    const pickEarn = (k) => () => this.setState({ earn: k, ddOpen: false });
     return {
       calendly: tg,
       estimateUrl: urls.telegram,
       draftText: draft,
-      earn: earn,
-      earnLabel: audience === "agency" ? "What does your roster make?" : "What does it make now?",
-      setEarn: (e) => this.setState({ earn: e.target.value }),
       isCreator: audience === "creator",
       isAi: audience === "ai",
       isAgency: audience === "agency",
       selectCreator: () => this.setState({ audience: "creator" }),
       selectAi: () => this.setState({ audience: "ai" }),
       selectAgency: () => this.setState({ audience: "agency" }),
+      platformLabel: audience === "agency" ? "Which platform are your models on?" : "Which platform?",
+      isOnlyfans: platform === "onlyfans",
+      isFanvue: platform === "fanvue",
+      isFansly: platform === "fansly",
+      isOther: platform === "other",
+      pickOnlyfans: pickPlat("onlyfans"),
+      pickFanvue: pickPlat("fanvue"),
+      pickFansly: pickPlat("fansly"),
+      pickOther: pickPlat("other"),
+      otherPlatform: other,
+      setOtherPlatform: (e) => this.setState({ other: e.target.value }),
+      earnLabel: audience === "agency" ? "What does your roster make?" : "What does it make now?",
+      ddRef: this.ddRef,
+      ddOpen: ddOpen,
+      earnEmpty: !earn,
+      earnText: earnLabels[earn] || "Choose one",
+      toggleDd: () => this.setState({ ddOpen: !ddOpen }),
+      ddKey: (e) => { if (e.key === "Escape") this.setState({ ddOpen: false }); },
+      earnSel_new: earn === "new",
+      pickEarn_new: pickEarn("new"),
+      earnSel_u5: earn === "u5",
+      pickEarn_u5: pickEarn("u5"),
+      earnSel_5_15: earn === "5-15",
+      pickEarn_5_15: pickEarn("5-15"),
+      earnSel_15_50: earn === "15-50",
+      pickEarn_15_50: pickEarn("15-50"),
+      earnSel_50p: earn === "50+",
+      pickEarn_50p: pickEarn("50+"),
+      channel: channel,
       isTelegram: channel === "telegram",
       isWhatsapp: channel === "whatsapp",
       isDiscord: channel === "discord",
@@ -190,7 +238,7 @@ class Component extends DCLogic {
       sendUrl: urls[channel] || urls.telegram,
       sendLabel: labels[channel] || labels.telegram,
       sendNote: notes[channel],
-      discordLabel: copied ? "Copied. Now paste it to timzines" : "Copy message & open Discord",
+      discordLabel: copied ? "Copied. Paste it to timzines" : "Copy message & open Discord",
       copyDiscord: () => {
         const done = () => { this.setState({ copied: true }); window.open("https://discord.com/app", "_blank", "noopener"); };
         if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(draft).then(done, done);

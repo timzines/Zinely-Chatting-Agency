@@ -101,3 +101,39 @@
 .z-contact-form .z-contact-draft{min-height:0}
 button.z-contact-send{cursor:pointer;font:inherit;color:#fff;text-align:left}
 @media(max-width:480px){.z-contact-apps{grid-template-columns:repeat(2,minmax(0,1fr))}.z-contact-apps button{flex-direction:row;justify-content:center;padding:12px 8px}.z-contact-apps svg{width:20px;height:20px}}
+/* v4: platform step, custom dropdown, app-branded send button */
+.z-contact-platforms{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.z-contact-platforms button{display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 6px;border:1px solid #28455f;border-radius:11px;background:#08172688;color:#a9c3d7;font:600 13px 'Figtree',sans-serif;cursor:pointer;transition:border-color .2s,background .2s,color .2s}
+.z-contact-platforms img{height:18px;width:auto;object-fit:contain}
+.z-contact-platforms button:hover{color:#fff;border-color:#3b6a8c}
+.z-contact-platforms button[aria-pressed=true]{border-color:#1aa3f5;background:#1aa3f51f;color:#fff;box-shadow:0 0 0 1px #1aa3f5 inset}
+.z-plat-other{display:grid;place-items:center;width:18px;height:18px;border-radius:5px;background:#1d3a52;color:#9fc2da;font-size:14px;line-height:1}
+.z-contact-platforms button:focus-visible,.z-dd-button:focus-visible,.z-dd-list li:focus-visible,.z-send:focus-visible{outline:2px solid #78d0ff;outline-offset:3px}
+.z-contact-input{width:100%;margin-top:8px;padding:12px 14px;border:1px solid #2f5a7b;border-radius:11px;background:#081726;color:#eaf4fd;font:600 14px 'Figtree',sans-serif;outline:none}
+.z-contact-input:focus{border-color:#1aa3f5;box-shadow:0 0 0 3px #1aa3f526}
+.z-contact-input::placeholder{color:#5f819c}
+.z-dd{position:relative}
+.z-dd-button{display:flex;align-items:center;justify-content:space-between;width:100%;padding:13px 15px;border:1px solid #28455f;border-radius:11px;background:#08172688;color:#eaf4fd;font:600 14px 'Figtree',sans-serif;cursor:pointer;transition:border-color .2s}
+.z-dd-button[data-empty=true] span{color:#7f9fb8}
+.z-dd-button svg{width:18px;height:18px;color:#8fb2d4;transition:transform .2s}
+.z-dd[data-open=true] .z-dd-button{border-color:#1aa3f5;box-shadow:0 0 0 3px #1aa3f520}
+.z-dd[data-open=true] .z-dd-button svg{transform:rotate(180deg)}
+.z-dd-list{position:absolute;z-index:20;left:0;right:0;top:calc(100% + 6px);margin:0;padding:6px;list-style:none;border:1px solid #2f5a7b;border-radius:12px;background:#0c1f33;box-shadow:0 18px 40px rgba(2,11,21,.6);opacity:0;transform:translateY(-4px);pointer-events:none;transition:opacity .15s,transform .15s}
+.z-dd[data-open=true] .z-dd-list{opacity:1;transform:none;pointer-events:auto}
+.z-dd-list li{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-radius:8px;color:#cfe3f2;font-size:14px;font-weight:600;cursor:pointer}
+.z-dd-list li:hover{background:#163552;color:#fff}
+.z-dd-list li svg{width:16px;height:16px;color:#36d399;opacity:0}
+.z-dd-list li[aria-selected=true]{color:#fff;background:#12304a}
+.z-dd-list li[aria-selected=true] svg{opacity:1}
+.z-send{--c:#2aabee;--c2:#1c8ccc;display:flex;align-items:center;gap:12px;width:100%;padding:12px 16px 12px 12px;border:0;border-radius:14px;background:linear-gradient(135deg,var(--c),var(--c2));color:#fff;font:800 15.5px 'Figtree',sans-serif;text-decoration:none;text-align:left;cursor:pointer;box-shadow:0 12px 28px color-mix(in srgb,var(--c) 35%,transparent);transition:transform .2s,box-shadow .2s,filter .2s}
+.z-send:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.z-send[data-channel=whatsapp]{--c:#25d366;--c2:#14a84c}
+.z-send[data-channel=discord]{--c:#5865f2;--c2:#4250d6}
+.z-send[data-channel=email]{--c:#1aa3f5;--c2:#2e89d6}
+.z-send-logo{display:grid;place-items:center;width:38px;height:38px;flex:none;border-radius:10px;background:rgba(255,255,255,.18)}
+.z-send-logo svg{width:21px;height:21px;display:none}
+.z-send[data-channel=telegram] .z-ic-telegram,.z-send[data-channel=whatsapp] .z-ic-whatsapp,.z-send[data-channel=email] .z-ic-email,.z-send[data-channel=discord] .z-ic-discord{display:block}
+.z-send-text{flex:1}
+.z-send-arrow{width:20px;height:20px;transition:transform .2s}
+.z-send:hover .z-send-arrow{transform:translateX(3px)}
+@media(max-width:480px){.z-contact-platforms{grid-template-columns:repeat(2,minmax(0,1fr))}.z-send{font-size:14.5px}}
