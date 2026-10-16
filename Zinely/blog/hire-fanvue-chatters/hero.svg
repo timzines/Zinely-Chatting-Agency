@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="448" viewBox="0 0 620 448" role="img" aria-labelledby="title desc">
+<title id="title">A test chat scorecard for a Fanvue chatter</title><desc id="desc">An illustrative scorecard from a paid test chat. The applicant handled a discount request without cutting the price straight away and kept the persona's details right, but offered a set the fan already owned, and suggested moving a fan to Telegram, which is a red flag because Fanvue asks creators to keep conversations and payments on the platform.</desc>
+<rect x="1" y="1" width="618" height="446" rx="24" fill="#0e2134" stroke="#284960"/>
+<circle cx="36" cy="36" r="4" fill="#36d399"/><text x="51" y="41" fill="#9cbacf" font-family="Arial,sans-serif" font-size="12" letter-spacing="1.4">TEST CHAT SCORECARD · APPLICANT B</text>
+<path d="M30 61H590" stroke="#284960"/>
+<g font-family="Arial,sans-serif">
+<rect x="30" y="80" width="560" height="62" rx="12" fill="#17344a"/>
+<circle cx="58" cy="111" r="13" fill="#173f46" stroke="#36d399"/><path d="M51 111l5 5 9-10" stroke="#36d399" stroke-width="2" fill="none"/>
+<text x="84" y="106" fill="#f0f8ff" font-size="15" font-weight="700">"Can I get it cheaper?"</text><text x="84" y="126" fill="#a9cbe0" font-size="12">Kept the price, offered a smaller set instead</text>
+<rect x="30" y="152" width="560" height="62" rx="12" fill="#17344a"/>
+<circle cx="58" cy="183" r="13" fill="#173f46" stroke="#36d399"/><path d="M51 183l5 5 9-10" stroke="#36d399" stroke-width="2" fill="none"/>
+<text x="84" y="178" fill="#f0f8ff" font-size="15" font-weight="700">Persona details</text><text x="84" y="198" fill="#a9cbe0" font-size="12">Right city, right backstory, AI disclosure respected</text>
+<rect x="30" y="224" width="560" height="62" rx="12" fill="#17344a"/>
+<circle cx="58" cy="255" r="13" fill="#3a2a2e" stroke="#f0b35a"/><text x="58" y="260" fill="#f0b35a" font-size="15" text-anchor="middle" font-weight="700">!</text>
+<text x="84" y="250" fill="#f0f8ff" font-size="15" font-weight="700">Fan already owns the red set</text><text x="84" y="270" fill="#a9cbe0" font-size="12">Offered it again without checking the notes</text>
+<rect x="30" y="296" width="560" height="62" rx="12" fill="#2a1f27" stroke="#7a3a44"/>
+<circle cx="58" cy="327" r="13" fill="#3a2a2e" stroke="#f08a8a"/><path d="M52 321l12 12M64 321l-12 12" stroke="#f08a8a" stroke-width="2"/>
+<text x="84" y="322" fill="#f0f8ff" font-size="15" font-weight="700">"Add me on Telegram, it's easier"</text><text x="84" y="342" fill="#e6b9bf" font-size="12">Red flag: keep conversations and payments on Fanvue</text>
+<rect x="430" y="372" width="160" height="34" rx="10" fill="#183f5a" stroke="#1aa3f5"/><text x="510" y="394" fill="#bfe8ff" font-size="13" text-anchor="middle">Verdict: not this one</text>
+<text x="31" y="424" fill="#77a5c0" font-size="12" letter-spacing="1">ILLUSTRATIVE TEST · NOT A REAL APPLICANT</text>
+</g>
+</svg>

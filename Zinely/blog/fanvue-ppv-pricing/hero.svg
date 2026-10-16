@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="448" viewBox="0 0 620 448" role="img" aria-labelledby="title desc">
+<title id="title">An example Fanvue PPV price ladder</title><desc id="desc">An illustrative price ladder for Fanvue paid messages, rising from a single photo or short clip at the entry step, to a standard set, a bundle, and a custom offer quoted one to one and approved by the creator. Every paid message goes out with a blurred preview.</desc>
+<rect x="1" y="1" width="618" height="446" rx="24" fill="#0e2134" stroke="#284960"/>
+<circle cx="36" cy="36" r="4" fill="#36d399"/><text x="51" y="41" fill="#9cbacf" font-family="Arial,sans-serif" font-size="12" letter-spacing="1.4">AN EXAMPLE PPV PRICE LADDER</text>
+<path d="M30 61H590" stroke="#284960"/>
+<g font-family="Arial,sans-serif">
+<rect x="30" y="300" width="130" height="80" rx="12" fill="#17344a" stroke="#2c5069"/>
+<text x="46" y="326" fill="#8db8d2" font-size="10" letter-spacing="1.1">ENTRY</text><text x="46" y="350" fill="#f0f8ff" font-size="20" font-weight="700">$12.99</text><text x="46" y="368" fill="#a9cbe0" font-size="11">One photo or clip</text>
+<rect x="172" y="240" width="130" height="140" rx="12" fill="#17344a" stroke="#2c5069"/>
+<text x="188" y="266" fill="#8db8d2" font-size="10" letter-spacing="1.1">STANDARD SET</text><text x="188" y="290" fill="#f0f8ff" font-size="20" font-weight="700">$24.99</text><text x="188" y="308" fill="#a9cbe0" font-size="11">A small themed set</text>
+<rect x="314" y="170" width="130" height="210" rx="12" fill="#183f5a" stroke="#56b9e6"/>
+<text x="330" y="196" fill="#87d9ff" font-size="10" letter-spacing="1.1">BUNDLE</text><text x="330" y="220" fill="#f0f8ff" font-size="20" font-weight="700">$44.99</text><text x="330" y="238" fill="#a9cbe0" font-size="11">Several sets together</text>
+<rect x="456" y="96" width="134" height="284" rx="12" fill="#173f46" stroke="#397365"/>
+<text x="472" y="122" fill="#9fe3c6" font-size="10" letter-spacing="1.1">CUSTOM · 1:1</text><text x="472" y="146" fill="#f0f8ff" font-size="20" font-weight="700">Quoted</text><text x="472" y="164" fill="#d2f4e8" font-size="11">You approve first</text>
+<rect x="472" y="196" width="102" height="70" rx="10" fill="#21524f"/><path d="M482 254l20-24 16 16 10-10 18 18" stroke="#8fe0bd" stroke-width="2" fill="none"/>
+<text x="472" y="288" fill="#a8dcc6" font-size="11">Blurred preview</text><text x="472" y="304" fill="#a8dcc6" font-size="11">on every offer</text>
+<path d="M60 284L214 224L356 154L500 82" stroke="#1aa3f5" stroke-width="2" stroke-dasharray="6 6" fill="none"/>
+<text x="30" y="110" fill="#8db8d2" font-size="12">Price goes up with</text><text x="30" y="128" fill="#8db8d2" font-size="12">volume, exclusivity</text><text x="30" y="146" fill="#8db8d2" font-size="12">and rapport.</text>
+<text x="31" y="424" fill="#77a5c0" font-size="12" letter-spacing="1">ILLUSTRATIVE PRICES · SET YOUR OWN LADDER</text>
+</g>
+</svg>

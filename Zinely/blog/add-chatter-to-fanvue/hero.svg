@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="448" viewBox="0 0 620 448" role="img" aria-labelledby="title desc">
+<title id="title">How chatter access works on Fanvue</title><desc id="desc">The creator account invites a manager account from Settings, Management. The manager invites each chatter as a team member. Team members work in messages, the feed and the vault but cannot post or delete vault content. Managers cannot access payouts, change the creator's email or password, or delete the account. No password is shared.</desc>
+<rect x="1" y="1" width="618" height="446" rx="24" fill="#0e2134" stroke="#284960"/>
+<circle cx="36" cy="36" r="4" fill="#36d399"/><text x="51" y="41" fill="#9cbacf" font-family="Arial,sans-serif" font-size="12" letter-spacing="1.4">CHATTER ACCESS ON FANVUE · NO PASSWORD SHARED</text>
+<path d="M30 61H590" stroke="#284960"/>
+<g font-family="Arial,sans-serif">
+<rect x="30" y="80" width="250" height="70" rx="14" fill="#183f5a" stroke="#1aa3f5"/>
+<text x="48" y="108" fill="#f0f8ff" font-size="17" font-weight="700">Your creator account</text>
+<text x="48" y="132" fill="#a9cbe0" font-size="12">Payouts, email, password stay yours</text>
+<path d="M155 150V178" stroke="#56b9e6" stroke-width="2"/><path d="M149 172l6 8 6-8" stroke="#56b9e6" stroke-width="2" fill="none"/>
+<text x="168" y="170" fill="#87d9ff" font-size="11" letter-spacing="1">MANAGER INVITE</text>
+<rect x="30" y="184" width="250" height="70" rx="14" fill="#17344a" stroke="#2c5069"/>
+<text x="48" y="212" fill="#f0f8ff" font-size="17" font-weight="700">Manager account</text>
+<text x="48" y="236" fill="#a9cbe0" font-size="12">You, your agency or the chat team</text>
+<path d="M155 254V282" stroke="#56b9e6" stroke-width="2"/><path d="M149 276l6 8 6-8" stroke="#56b9e6" stroke-width="2" fill="none"/>
+<text x="168" y="274" fill="#87d9ff" font-size="11" letter-spacing="1">TEAM-MEMBER INVITE</text>
+<rect x="30" y="288" width="250" height="70" rx="14" fill="#17344a" stroke="#2c5069"/>
+<text x="48" y="316" fill="#f0f8ff" font-size="17" font-weight="700">Team member (chatter)</text>
+<text x="48" y="340" fill="#a9cbe0" font-size="12">Their own Fanvue login</text>
+<rect x="318" y="80" width="272" height="132" rx="16" fill="#173f46" stroke="#397365"/>
+<text x="336" y="106" fill="#9fe3c6" font-size="11" letter-spacing="1.2">TEAM MEMBERS CAN</text>
+<circle cx="341" cy="134" r="3" fill="#36d399"/><text x="352" y="139" fill="#e4f7ef" font-size="14">Read and answer messages</text>
+<circle cx="341" cy="162" r="3" fill="#36d399"/><text x="352" y="167" fill="#e4f7ef" font-size="14">See the main feed</text>
+<circle cx="341" cy="190" r="3" fill="#36d399"/><text x="352" y="195" fill="#e4f7ef" font-size="14">Use the vault</text>
+<rect x="318" y="226" width="272" height="132" rx="16" fill="#122b40" stroke="#2c5069"/>
+<text x="336" y="252" fill="#8db8d2" font-size="11" letter-spacing="1.2">PER FANVUE, THEY CAN'T</text>
+<path d="M337 276l8 8M345 276l-8 8" stroke="#f08a8a" stroke-width="2"/><text x="352" y="285" fill="#e1ecf4" font-size="14">Post or delete vault content</text>
+<path d="M337 302l8 8M345 302l-8 8" stroke="#f08a8a" stroke-width="2"/><text x="352" y="311" fill="#e1ecf4" font-size="14">Managers: no payouts</text>
+<path d="M337 328l8 8M345 328l-8 8" stroke="#f08a8a" stroke-width="2"/><text x="352" y="337" fill="#e1ecf4" font-size="14">No email, password or deletion</text>
+<text x="31" y="424" fill="#77a5c0" font-size="12" letter-spacing="1">SUMMARY OF FANVUE HELP CENTRE GUIDANCE · CHECKED OCT 16, 2026</text>
+</g>
+</svg>

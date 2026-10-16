@@ -1,0 +1,12 @@
+/* Fanvue page: the homepage layout with Fanvue green as the accent. */
+.z-fv{--z-fv:#49f264;--z-blue:#49f264}
+.z-fv .z-fv-accent{color:var(--z-fv)}
+.z-fv .z-fv-label{display:inline-flex;align-items:center;gap:9px}
+.z-fv .z-fv-label img{width:18px;height:18px;border-radius:5px}
+.z-fv-platform{display:flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;border:1px solid rgba(73,242,100,.45);border-radius:14px;background:rgba(73,242,100,.07);box-shadow:0 0 26px rgba(73,242,100,.15)}
+.z-fv-platform span{font-family:'Figtree',sans-serif;font-weight:700;font-size:24px;letter-spacing:-.01em;color:#fff}
+.z-fv .z-fv-rate .z-rate-number{font-size:clamp(64px,9vw,96px)}
+.z-fv-rate-note{margin:14px 0 0;font-size:13.5px;color:#a8c5d6}
+/* Keep Zinely blue for buttons and solution greens readable next to Fanvue green */
+.z-fv .z-why-copy h3 span,.z-fv .z-title span{color:var(--z-fv)}
+.z-fv .z-fix .z-title span,.z-fv .z-diy-band h3 span{color:#36d399}

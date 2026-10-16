@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="448" viewBox="0 0 620 448" role="img" aria-labelledby="title desc">
+<title id="title">One Fanvue conversation, four moments</title><desc id="desc">An illustrative Fanvue conversation in four moments: the welcome message asks where the fan is writing from, the chatter remembers he gets paid on Friday, a paid message with a blurred preview follows his interest, and a follow-up arrives when he said he'd be back.</desc>
+<rect x="1" y="1" width="618" height="446" rx="24" fill="#0e2134" stroke="#284960"/>
+<circle cx="36" cy="36" r="4" fill="#36d399"/><text x="51" y="41" fill="#9cbacf" font-family="Arial,sans-serif" font-size="12" letter-spacing="1.4">ONE FANVUE CONVERSATION, FOUR MOMENTS</text>
+<path d="M30 61H590" stroke="#284960"/>
+<g font-family="Arial,sans-serif">
+<path d="M58 92V352" stroke="#2c5069" stroke-width="2" stroke-dasharray="5 6"/>
+<circle cx="58" cy="100" r="13" fill="#12334a" stroke="#56b9e6"/><text x="58" y="105" fill="#87d9ff" font-size="13" text-anchor="middle">1</text>
+<text x="86" y="92" fill="#8db8d2" font-size="11" letter-spacing="1.2">WELCOME</text>
+<rect x="86" y="100" width="300" height="38" rx="14" fill="#17344a"/><text x="102" y="124" fill="#d7e9f4" font-size="14">Glad you're here. Where are you from?</text>
+<circle cx="58" cy="176" r="13" fill="#12334a" stroke="#56b9e6"/><text x="58" y="181" fill="#87d9ff" font-size="13" text-anchor="middle">2</text>
+<text x="86" y="168" fill="#8db8d2" font-size="11" letter-spacing="1.2">RAPPORT</text>
+<rect x="232" y="176" width="300" height="38" rx="14" fill="#1b4a68"/><text x="248" y="200" fill="#eaf6ff" font-size="14">Toronto. Payday's Friday, finally.</text>
+<circle cx="58" cy="252" r="13" fill="#12334a" stroke="#1aa3f5"/><text x="58" y="257" fill="#bfe8ff" font-size="13" text-anchor="middle">3</text>
+<text x="86" y="244" fill="#8db8d2" font-size="11" letter-spacing="1.2">THE OFFER, WHEN HE ASKS</text>
+<rect x="86" y="252" width="300" height="56" rx="14" fill="#183f5a" stroke="#1aa3f5"/>
+<rect x="100" y="262" width="54" height="36" rx="8" fill="#2a5876"/><path d="M110 290l12-14 10 10 6-6 10 10" stroke="#7fc9f0" stroke-width="2" fill="none"/>
+<text x="166" y="276" fill="#f0f8ff" font-size="14" font-weight="700">Paid message · preview</text><text x="166" y="296" fill="#a9cbe0" font-size="12">Price from your approved ladder</text>
+<circle cx="58" cy="340" r="13" fill="#12334a" stroke="#36d399"/><text x="58" y="345" fill="#d2f4e8" font-size="13" text-anchor="middle">4</text>
+<text x="86" y="332" fill="#8db8d2" font-size="11" letter-spacing="1.2">FOLLOW-UP, FRIDAY EVENING HIS TIME</text>
+<rect x="86" y="340" width="300" height="38" rx="14" fill="#173f46" stroke="#397365"/><text x="102" y="364" fill="#d2f4e8" font-size="14">You made it to Friday. How was the week?</text>
+<rect x="420" y="240" width="170" height="138" rx="16" fill="#122b40" stroke="#2c5069"/>
+<text x="436" y="266" fill="#8db8d2" font-size="11" letter-spacing="1.2">NOTE FOR NEXT SHIFT</text>
+<path d="M436 278H574" stroke="#2c5069"/>
+<text x="436" y="302" fill="#f0f8ff" font-size="13">Toronto, evenings</text>
+<text x="436" y="326" fill="#f0f8ff" font-size="13">Paid on Fridays</text>
+<text x="436" y="350" fill="#f0f8ff" font-size="13">Likes the red set</text>
+<text x="31" y="424" fill="#77a5c0" font-size="12" letter-spacing="1">ILLUSTRATIVE CONVERSATION · NOT A REAL FAN</text>
+</g>
+</svg>
