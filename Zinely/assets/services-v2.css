@@ -100,7 +100,7 @@
 .sv2-fan-head strong{color:#fff;font-size:13.5px}
 .sv2-fan-head em{margin-left:auto;padding:3px 9px;border-radius:999px;background:rgba(232,194,122,.14);border:1px solid rgba(232,194,122,.4);color:#f6d796;font-size:10.5px;font-weight:800;font-style:normal}
 .sv2-fan-rows{display:grid;gap:4px;margin-top:8px}
-.sv2-fan-rows span{display:flex;justify-content:space-between;padding:5px 0;color:#7f9fb8;font-size:12.5px}
+.sv2-fan-rows span{display:flex;justify-content:space-between;padding:5px 8px;margin:0 -8px;border-radius:7px;color:#7f9fb8;font-size:12.5px}
 .sv2-fan-rows b{color:#e6f2fb;font-weight:600}
 .sv2-fan-rows .sv2-red{color:#ffb0b0}
 
@@ -163,14 +163,15 @@
   @keyframes sv2Dot{0%,100%{opacity:.3;transform:none}50%{opacity:1;transform:translateY(-3px)}}
   @keyframes sv2Msg{0%,36%{opacity:0;transform:translateY(8px)}44%,92%{opacity:1;transform:none}100%{opacity:0}}
 
-  .sv2-art-ladder.is-live i{animation:sv2Grow 6s var(--sv2-ease) infinite}
-  .sv2-art-ladder.is-live div:nth-child(2) i{animation-delay:.15s}.sv2-art-ladder.is-live div:nth-child(3) i{animation-delay:.3s}.sv2-art-ladder.is-live div:nth-child(4) i{animation-delay:.45s}
-  @keyframes sv2Grow{0%{transform:scaleY(0)}14%,90%{transform:scaleY(1)}100%{transform:scaleY(0)}}
+  .sv2-art-ladder.is-live>div{animation:sv2Step 12s ease-in-out infinite}
+  .sv2-art-ladder.is-live>div:nth-child(2){animation-delay:3s}.sv2-art-ladder.is-live>div:nth-child(3){animation-delay:6s}.sv2-art-ladder.is-live>div:nth-child(4){animation-delay:9s}
+  @keyframes sv2Step{0%,30%,100%{opacity:.55}8%,22%{opacity:1}}
 
 
 
-  .sv2-art-fan.is-live .sv2-fan-rows span{animation:sv2In 7s var(--sv2-ease) infinite}
-  .sv2-art-fan.is-live .sv2-fan-rows span:nth-child(2){animation-delay:.3s}.sv2-art-fan.is-live .sv2-fan-rows span:nth-child(3){animation-delay:.6s}
+  .sv2-art-fan.is-live .sv2-fan-rows span{animation:sv2Row2 9s ease-in-out infinite}
+  .sv2-art-fan.is-live .sv2-fan-rows span:nth-child(2){animation-delay:3s}.sv2-art-fan.is-live .sv2-fan-rows span:nth-child(3){animation-delay:6s}
+  @keyframes sv2Row2{0%,30%,100%{background:transparent}8%,22%{background:rgba(26,163,245,.1)}}
 }
 
 @media(max-width:980px){
