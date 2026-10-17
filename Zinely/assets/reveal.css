@@ -1,25 +1,52 @@
 /* Scroll reveal (classes come only from reveal.js, so content is always visible without it).
-   Transition-based: a block starts moving the moment its edge enters the screen, so nothing
-   sits blank and then pops. Each kind of block has its own entrance (data-rv), set by the script. */
-.rv-on .rv{opacity:0;transform:var(--rv-from,translateY(22px));transition:opacity calc(var(--rv-dur,.7s) * .6) ease-out var(--rv-delay,0ms),transform var(--rv-dur,.7s) cubic-bezier(.2,.75,.2,1) var(--rv-delay,0ms),filter calc(var(--rv-dur,.7s) * .7) ease-out var(--rv-delay,0ms);will-change:opacity,transform}
+   Only opacity and transform move: no blur, no shadow or colour animation, so it stays smooth on
+   phones. Each kind of block has its own entrance (data-rv, set by the script); the fade lands a
+   little before the glide, which is what makes it feel settled rather than floaty. */
+.rv-on .rv{opacity:0;transform:var(--rv-from,translateY(20px));transition:opacity var(--rv-op,.55s) ease-out var(--rv-delay,0ms),transform var(--rv-dur,.8s) cubic-bezier(.22,1,.36,1) var(--rv-delay,0ms)}
+.rv-on .rv.rv-in{opacity:1;transform:none;will-change:opacity,transform}
 /* A block that lands deep on screen from a fling settles fast instead of gliding in from nothing. */
-.rv-on .rv.rv-fast{--rv-dur:.38s;--rv-delay:0ms!important;filter:none}
-.rv-on .rv.rv-in{opacity:1;transform:none;filter:none}
-/* Headings settle into focus; cards grow up from their base; rows slide in from the side;
-   big panels ease up almost in place; the hero introduces itself line by line. */
-.rv-on .rv[data-rv="heading"]{--rv-from:translateY(16px);filter:blur(7px)}
-.rv-on .rv[data-rv="card"]{--rv-from:translateY(20px) scale(.965);transform-origin:50% 100%}
-.rv-on .rv[data-rv="row"]{--rv-from:translateX(-24px)}
-.rv-on .rv[data-rv="band"]{--rv-from:translateY(14px) scale(.985);--rv-dur:.85s;transform-origin:50% 100%}
-.rv-on .rv[data-rv="hero"]{--rv-from:translateY(18px);--rv-dur:.8s;filter:blur(5px)}
-.rv-on .rv[data-rv="hero-side"]{--rv-from:translateX(26px) scale(.98);--rv-dur:.95s}
+.rv-on .rv.rv-fast{--rv-dur:.4s;--rv-op:.3s;--rv-delay:0ms!important}
+
+/* Headings rise into place; cards grow up from their base; panels ease up almost in place;
+   the hero introduces itself line by line, its side panel arriving a beat later. */
+.rv-on .rv[data-rv=heading]{--rv-from:translateY(14px);--rv-dur:.7s}
+.rv-on .rv[data-rv=card]{--rv-from:translateY(24px) scale(.97);transform-origin:50% 100%}
+.rv-on .rv[data-rv=row]{--rv-from:translateY(10px);--rv-dur:.7s}
+.rv-on .rv[data-rv=band]{--rv-from:translateY(16px) scale(.985);--rv-dur:.85s;transform-origin:50% 100%}
+.rv-on .rv[data-rv=up]{--rv-from:translateY(12px);--rv-dur:.7s}
+.rv-on .rv[data-rv=hero]{--rv-from:translateY(16px);--rv-dur:.8s}
+.rv-on .rv[data-rv=hero-side]{--rv-from:translateY(18px) scale(.97);--rv-dur:.95s;--rv-op:.7s;transform-origin:50% 100%}
+.rv-on .rv[data-rv=hero-fade]{--rv-from:none;--rv-op:.9s}
+
+/* Section-specific touches */
+.rv-on .rv[data-rv=card].z-pack{--rv-from:translateY(18px) scale(.99)}
+.rv-on .rv[data-rv=card].z-case{--rv-from:translateY(22px)}
+.rv-on .rv[data-rv=band].z-diy-pain{--rv-from:translateY(22px) scale(.97)}
+.rv-on .rv[data-rv=band].z-diy-bridge{--rv-from:scale(.85);transform-origin:50% 50%}
+.rv-on .rv[data-rv=hero-side].sv2-hub,.rv-on .rv[data-rv=band].sv2-hub{--rv-from:scale(.9);--rv-dur:1s;transform-origin:50% 50%}
+.rv-on .rv[data-rv=band].sv2-plus{--rv-from:none}
+.rv-on .z-flow-steps>.rv[data-rv=row]{--rv-from:translateY(14px) scale(.96)}
+/* Problem → solution rows: the problem slides in from the left, the fix from the right, then the arrow appears. */
+.rv-on .rv[data-rv=row].z-fix-row{--rv-from:none}
+.rv-on .rv[data-rv=row].z-fix-row>.z-fix-pain{transform:translateX(-22px);transition:transform .8s cubic-bezier(.22,1,.36,1) var(--rv-delay,0ms)}
+.rv-on .rv[data-rv=row].z-fix-row>.z-fix-win{transform:translateX(22px);transition:transform .8s cubic-bezier(.22,1,.36,1) calc(var(--rv-delay,0ms) + 90ms)}
+.rv-on .rv[data-rv=row].z-fix-row>.z-fix-arrow>span{opacity:0;transition:opacity .4s ease-out calc(var(--rv-delay,0ms) + 380ms)}
+
 @media(max-width:820px){
- .rv-on .rv{--rv-dur:.55s;--rv-from:translateY(14px)}
- .rv-on .rv[data-rv="heading"]{--rv-from:translateY(12px);filter:none}
- .rv-on .rv[data-rv="card"]{--rv-from:translateY(16px) scale(.98)}
- .rv-on .rv[data-rv="row"]{--rv-from:translateX(-16px)}
- .rv-on .rv[data-rv="band"]{--rv-from:translateY(12px);--rv-dur:.6s}
- .rv-on .rv[data-rv="hero"]{--rv-from:translateY(14px);--rv-dur:.6s;filter:none}
- .rv-on .rv[data-rv="hero-side"]{--rv-from:translateY(18px) scale(.985);--rv-dur:.7s}
+ .rv-on .rv{--rv-dur:.6s;--rv-op:.45s;--rv-from:translateY(14px)}
+ .rv-on .rv[data-rv=heading]{--rv-from:translateY(10px)}
+ .rv-on .rv[data-rv=card]{--rv-from:translateY(16px) scale(.98)}
+ .rv-on .rv[data-rv=band]{--rv-from:translateY(12px);--rv-dur:.65s}
+ .rv-on .rv[data-rv=hero]{--rv-from:translateY(12px);--rv-dur:.65s}
+ .rv-on .rv[data-rv=hero-side]{--rv-from:translateY(14px) scale(.985);--rv-dur:.75s}
+ .rv-on .rv[data-rv=band].z-diy-pain{--rv-from:translateY(14px)}
+ .rv-on .rv[data-rv=hero-side].sv2-hub,.rv-on .rv[data-rv=band].sv2-hub{--rv-from:scale(.94)}
+ .rv-on .rv[data-rv=row].z-fix-row>.z-fix-pain{transform:translateX(-12px)}
+ .rv-on .rv[data-rv=row].z-fix-row>.z-fix-win{transform:translateX(12px)}
 }
-@media(prefers-reduced-motion:reduce){.rv-on .rv{opacity:1;transform:none;filter:none;transition:none}}
+
+/* Landed state for the split rows (last, so it wins at every width). */
+.rv-on .rv.rv-in.z-fix-row>.z-fix-pain,.rv-on .rv.rv-in.z-fix-row>.z-fix-win{transform:none}
+.rv-on .rv.rv-in.z-fix-row>.z-fix-arrow>span{opacity:1}
+
+@media(prefers-reduced-motion:reduce){.rv-on .rv{opacity:1;transform:none;transition:none}}
