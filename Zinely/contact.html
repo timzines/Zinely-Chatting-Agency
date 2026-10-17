@@ -28,7 +28,7 @@
 <link rel="stylesheet" href="mobile.css?v=20261001">
 <script src="./support.js"></script>
 <link rel="stylesheet" href="/assets/estimate.css?v=1">
-<link rel="stylesheet" href="assets/contact.css?v=4">
+<link rel="stylesheet" href="assets/contact.css?v=6">
 <link rel="stylesheet" href="/assets/analytics.css?v=2">
 <script src="/assets/analytics.js?v=2" defer></script>
 <link rel="stylesheet" href="/assets/reveal.css?v=4">
@@ -66,6 +66,7 @@
         <a href="cases.html" style="color:#8FB2D4;text-decoration:none;font-weight:600;font-size:14.5px" style-hover="color:#EAF4FD">Case studies</a>
         <a href="pricing.html" style="color:#8FB2D4;text-decoration:none;font-weight:600;font-size:14.5px" style-hover="color:#EAF4FD">Pricing</a>
         <a href="/blog/" style="color:#8FB2D4;text-decoration:none;font-weight:600;font-size:14.5px" style-hover="color:#EAF4FD">Blog</a>
+        <a href="/trial" style="color:#8FB2D4;text-decoration:none;font-weight:600;font-size:14.5px" style-hover="color:#EAF4FD">Trial week</a>
         <a data-estimate-cta aria-label="Contact us" href="/contact" style="display:flex;align-items:center;gap:8px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:14.5px;padding:10px 20px;border-radius:11px;text-decoration:none;box-shadow:0 8px 18px rgba(26,163,245,.3)" style-hover="transform:translateY(-1px)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 2v-10a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8Z"></path></svg>Contact us</a>
       </div>
       <a data-estimate-cta aria-label="Contact us" class="z-nav-cta" href="/contact" style="display:none;align-items:center;gap:7px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:13px;padding:9px 13px;border-radius:10px;text-decoration:none;margin-left:auto;white-space:nowrap"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 2v-10a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8Z"></path></svg>Contact us</a>
@@ -76,6 +77,7 @@
           <a href="cases.html" style="color:#EAF4FD;text-decoration:none;font-weight:700;font-size:16px;padding:15px 4px;border-bottom:1px solid rgba(28,58,90,.55)">Case studies</a>
           <a href="pricing.html" style="color:#EAF4FD;text-decoration:none;font-weight:700;font-size:16px;padding:15px 4px;border-bottom:1px solid rgba(28,58,90,.55)">Pricing</a>
           <a href="/blog/" style="color:#EAF4FD;text-decoration:none;font-weight:700;font-size:16px;padding:15px 4px;border-bottom:1px solid rgba(28,58,90,.55)">Blog</a>
+          <a href="/trial" style="color:#EAF4FD;text-decoration:none;font-weight:700;font-size:16px;padding:15px 4px;border-bottom:1px solid rgba(28,58,90,.55)">Trial week</a>
           <a data-estimate-cta aria-label="Contact us" href="/contact" style="margin-top:10px;display:flex;align-items:center;justify-content:center;gap:9px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:15.5px;padding:14px 20px;border-radius:12px;text-decoration:none;box-shadow:0 10px 24px rgba(26,163,245,.35)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 2v-10a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8Z"></path></svg>Contact us</a>
         </div>
       </details>
@@ -84,16 +86,28 @@
 
   <div style="position:relative;z-index:1;max-width:1160px;margin:0 auto;padding:0 24px">
 
-    <section class="z-contact-hero" id="estimate" aria-labelledby="estimate-title">
+    <span id="trial" aria-hidden="true"></span>
+    <section class="z-contact-hero" id="estimate" aria-labelledby="estimate-title" data-intent="{{ intent }}">
       <div class="z-contact-intro">
-        <div class="z-contact-eyebrow"><span aria-hidden="true"></span>Free earnings estimate</div>
+        <div class="z-contact-eyebrow"><span aria-hidden="true"></span><em>{{ eyebrowText }}</em></div>
         <h1 id="estimate-title">What could your<br><span>inbox earn?</span></h1>
-        <p class="z-contact-lead">Four quick questions. Tim gets back to you personally.</p>
-        <ul class="z-contact-ticks"><li>Free</li><li>No commitment</li><li>No account access needed</li></ul>
+        <sc-if value="{{ isTrial }}" hint-placeholder-val="{{ false }}"><p class="z-contact-h1-alt" aria-hidden="true">Seven days.<br><span>Then decide.</span></p></sc-if>
+        <sc-if value="{{ notTrial }}" hint-placeholder-val="{{ true }}"><p class="z-contact-lead">Four quick questions. Tim gets back to you personally.</p>
+        <ul class="z-contact-ticks"><li>Free</li><li>No commitment</li><li>No account access needed</li></ul></sc-if>
+        <sc-if value="{{ isTrial }}" hint-placeholder-val="{{ false }}"><p class="z-contact-lead">Four quick questions. Tim checks the fit and sets up your seven days.</p>
+        <ul class="z-contact-ticks"><li>Paid by commission only</li><li>No commitment after day 7</li><li>9–10+ new free subs a day</li></ul></sc-if>
         <a class="z-contact-proof" href="cases.html">See our client results <span aria-hidden="true">↗</span></a>
       </div>
 
-      <div class="z-contact-composer z-contact-form" aria-label="Get your free earnings estimate">
+      <div class="z-contact-composer z-contact-form" aria-label="Get your free earnings estimate or start a trial week">
+        <div class="z-contact-step z-contact-intent">
+          <p class="z-contact-step-label" id="intent-label">I'm here for</p>
+          <div class="z-contact-options" role="group" aria-labelledby="intent-label">
+            <button type="button" aria-pressed="{{ notTrial }}" onClick="{{ selectEstimate }}">Free estimate</button>
+            <button type="button" aria-pressed="{{ isTrial }}" onClick="{{ selectTrial }}">Trial week</button>
+          </div>
+          <sc-if value="{{ isTrial }}" hint-placeholder-val="{{ false }}"><p class="z-contact-intent-note">Seven days at your normal rate, nothing upfront. For accounts averaging 9–10+ new free subscribers a day. <a href="/trial">Details</a></p></sc-if>
+        </div>
         <div class="z-contact-step">
           <p class="z-contact-step-label" id="setup-label"><b>1</b>Your setup</p>
           <div class="z-contact-options" role="group" aria-labelledby="setup-label">
@@ -146,7 +160,7 @@
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { audience: "creator", platform: "", other: "", earn: "", channel: "telegram", copied: false, ddOpen: false };
+    this.state = { audience: "creator", platform: "", other: "", earn: "", channel: "telegram", copied: false, ddOpen: false, intent: "estimate" };
     this.ddRef = React.createRef();
   }
   componentDidMount() {
@@ -154,12 +168,17 @@ class Component extends DCLogic {
       if (this.state.ddOpen && this.ddRef.current && !this.ddRef.current.contains(e.target)) this.setState({ ddOpen: false });
     };
     document.addEventListener("click", this._outside);
+    this._hash = () => { if (window.location.hash === "#trial") this.setState({ intent: "trial" }); else if (window.location.hash === "#estimate") this.setState({ intent: "estimate" }); };
+    this._hash();
+    window.addEventListener("hashchange", this._hash);
   }
   componentWillUnmount() {
     document.removeEventListener("click", this._outside);
+    window.removeEventListener("hashchange", this._hash);
   }
   renderVals() {
-    const { audience, platform, other, earn, channel, copied, ddOpen } = this.state;
+    const { audience, platform, other, earn, channel, copied, ddOpen, intent } = this.state;
+    const trial = intent === "trial";
     const names = { onlyfans: "OnlyFans", fanvue: "Fanvue", fansly: "Fansly" };
     const platName = platform === "other" ? other.trim() : (names[platform] || "");
     const on = platName ? " on " + platName : "";
@@ -168,13 +187,14 @@ class Component extends DCLogic {
     let earnLine = "";
     if (earn === "new") earnLine = audience === "agency" ? " Our models are new and not earning yet." : " It's a new model, not earning yet.";
     else if (ranges[earn]) earnLine = (audience === "agency" ? " The roster makes " : " It's making ") + ranges[earn] + " a month right now.";
-    const draft = "Hi Tim, " + who + "." + earnLine + " I'd like a free earnings estimate" + (audience === "agency" ? " for my roster." : ".");
+    const ask = trial ? " I'd like to start a trial week" + (audience === "agency" ? " with one of my models." : ".") : " I'd like a free earnings estimate" + (audience === "agency" ? " for my roster." : ".");
+    const draft = "Hi Tim, " + who + "." + earnLine + ask;
     const text = encodeURIComponent(draft);
     const tg = this.props.telegramUrl ?? "https://t.me/timzines";
     const urls = {
       telegram: tg + (tg.includes("?") ? "&" : "?") + "text=" + text,
       whatsapp: "https://wa.me/421915748982?text=" + text,
-      email: "mailto:timzines@zinelyagency.com?subject=" + encodeURIComponent("Free earnings estimate") + "&body=" + text,
+      email: "mailto:timzines@zinelyagency.com?subject=" + encodeURIComponent(trial ? "Trial week" : "Free earnings estimate") + "&body=" + text,
     };
     const labels = { telegram: "Message Tim on Telegram", whatsapp: "Message Tim on WhatsApp", email: "Email Tim" };
     const notes = {
@@ -188,6 +208,12 @@ class Component extends DCLogic {
     const pickPlat = (p) => () => this.setState({ platform: p });
     const pickEarn = (k) => () => this.setState({ earn: k, ddOpen: false });
     return {
+      intent: intent,
+      isTrial: trial,
+      notTrial: !trial,
+      eyebrowText: trial ? "Trial week" : "Free earnings estimate",
+      selectEstimate: () => this.setState({ intent: "estimate" }),
+      selectTrial: () => this.setState({ intent: "trial" }),
       calendly: tg,
       estimateUrl: urls.telegram,
       draftText: draft,

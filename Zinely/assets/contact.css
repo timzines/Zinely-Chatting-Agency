@@ -137,3 +137,15 @@ button.z-contact-send{cursor:pointer;font:inherit;color:#fff;text-align:left}
 .z-send-arrow{width:20px;height:20px;transition:transform .2s}
 .z-send:hover .z-send-arrow{transform:translateX(3px)}
 @media(max-width:480px){.z-contact-platforms{grid-template-columns:repeat(2,minmax(0,1fr))}.z-send{font-size:14.5px}}
+
+/* Intent toggle: estimate or trial week */
+.z-contact-intent{margin-bottom:6px}
+.z-contact-intent .z-contact-step-label{color:#aac5da}
+.z-contact-intent-note{margin:10px 2px 0;font-size:12.5px;line-height:1.55;color:#8fb2d4}
+.z-contact-intent-note a{color:#79cbff;text-decoration:none;font-weight:700}
+.z-contact-eyebrow em{font-style:normal;white-space:nowrap}
+.z-contact-hero[data-intent=trial] h1{display:none}
+.z-contact-h1-alt{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(44px,4.8vw,66px);font-weight:800;line-height:1.06;letter-spacing:-.045em;color:#fff;margin:24px 0}
+.z-contact-h1-alt>span{color:#1aa3f5}
+@media(max-width:480px){.z-contact-h1-alt{margin:20px 0;font-size:44px}}
+@media(max-width:360px){.z-contact-h1-alt{font-size:38px}}
