@@ -9,7 +9,7 @@
     const ctx = canvas.getContext('2d');
     const img = new Image();
     img.src = '/assets/logo.png';
-    const bubble = { x: 60, y: 48, w: 56, h: 56, vx: 118, vy: 83 };
+    const bubble = { x: 60, y: 48, w: 56, h: 56, vx: 196, vy: 139, angle: 0, spin: 1.6 };
     const particles = [];
     let W = 0, H = 0, dpr = 1, last = 0, raf = 0, visible = true, ready = false;
 
@@ -59,10 +59,12 @@
     function step(dt) {
       bubble.x += bubble.vx * dt;
       bubble.y += bubble.vy * dt;
-      if (bubble.x <= 0) { bubble.x = 0; bubble.vx = Math.abs(bubble.vx); burst(2, bubble.y + bubble.h / 2, 1, 0); nudgeOffCorner(); }
-      else if (bubble.x + bubble.w >= W) { bubble.x = W - bubble.w; bubble.vx = -Math.abs(bubble.vx); burst(W - 2, bubble.y + bubble.h / 2, -1, 0); nudgeOffCorner(); }
-      if (bubble.y <= 0) { bubble.y = 0; bubble.vy = Math.abs(bubble.vy); burst(bubble.x + bubble.w / 2, 2, 0, 1); nudgeOffCorner(); }
-      else if (bubble.y + bubble.h >= H) { bubble.y = H - bubble.h; bubble.vy = -Math.abs(bubble.vy); burst(bubble.x + bubble.w / 2, H - 2, 0, -1); nudgeOffCorner(); }
+      bubble.angle += bubble.spin * dt;
+      const hit = () => { bubble.spin = -bubble.spin * (0.9 + Math.random() * 0.3); nudgeOffCorner(); };
+      if (bubble.x <= 0) { bubble.x = 0; bubble.vx = Math.abs(bubble.vx); burst(2, bubble.y + bubble.h / 2, 1, 0); hit(); }
+      else if (bubble.x + bubble.w >= W) { bubble.x = W - bubble.w; bubble.vx = -Math.abs(bubble.vx); burst(W - 2, bubble.y + bubble.h / 2, -1, 0); hit(); }
+      if (bubble.y <= 0) { bubble.y = 0; bubble.vy = Math.abs(bubble.vy); burst(bubble.x + bubble.w / 2, 2, 0, 1); hit(); }
+      else if (bubble.y + bubble.h >= H) { bubble.y = H - bubble.h; bubble.vy = -Math.abs(bubble.vy); burst(bubble.x + bubble.w / 2, H - 2, 0, -1); hit(); }
       for (let i = particles.length - 1; i >= 0; i--) {
         const p = particles[i];
         p.life += dt;
@@ -82,12 +84,14 @@
         ctx.arc(p.x, p.y, p.r * (0.4 + 0.6 * t), 0, Math.PI * 2);
         ctx.fill();
       }
-      ctx.globalAlpha = 0.92;
+      ctx.globalAlpha = 0.55;
       if (ready) {
         ctx.save();
-        ctx.shadowColor = 'rgba(26,163,245,.45)';
-        ctx.shadowBlur = 22;
-        ctx.drawImage(img, bubble.x, bubble.y, bubble.w, bubble.h);
+        ctx.translate(bubble.x + bubble.w / 2, bubble.y + bubble.h / 2);
+        ctx.rotate(bubble.angle);
+        ctx.shadowColor = 'rgba(26,163,245,.4)';
+        ctx.shadowBlur = 18;
+        ctx.drawImage(img, -bubble.w / 2, -bubble.h / 2, bubble.w, bubble.h);
         ctx.restore();
       }
       ctx.globalAlpha = 1;

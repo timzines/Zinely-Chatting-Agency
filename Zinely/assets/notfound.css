@@ -1,5 +1,5 @@
 /* 404 page: one calm block over a bouncing-bubble canvas. */
-.nf-hero{position:relative;min-height:calc(100vh - 66px);min-height:calc(100svh - 66px);display:grid;place-items:center;padding:48px 0;overflow:hidden}
+.nf-hero{position:relative;width:100vw;margin-left:calc(50% - 50vw);min-height:calc(100vh - 66px);min-height:calc(100svh - 66px);display:grid;place-items:center;padding:48px 24px;overflow:hidden;box-sizing:border-box}
 .nf-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}
 .nf-content{position:relative;z-index:1;text-align:center;max-width:560px;margin:0 auto}
 .nf-code{font-weight:700;letter-spacing:.28em;text-transform:uppercase;font-size:12px;color:#1AA3F5;margin-bottom:18px}
