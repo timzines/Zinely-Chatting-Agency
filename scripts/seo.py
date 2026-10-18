@@ -93,7 +93,8 @@ def local_file(url):
 
 def read_pages():
     # uploads are assets, never publishable article sources.
-    return [Page(p) for p in sorted(SITE.rglob("*.html")) if "uploads" not in p.relative_to(SITE).parts]
+    # 404.html is the not-found page served by Cloudflare; it is noindex and never a sitemap entry.
+    return [Page(p) for p in sorted(SITE.rglob("*.html")) if "uploads" not in p.relative_to(SITE).parts and p.relative_to(SITE).as_posix() != "404.html"]
 
 
 def audit(pages):
