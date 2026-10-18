@@ -33,6 +33,7 @@
 <script src="assets/interactions.js?v=20261017-3" defer></script>
 <script src="./support.js" defer></script>
 <link rel="stylesheet" href="/assets/estimate.css?v=1">
+<link rel="stylesheet" href="/assets/footer.css?v=1">
 <link rel="stylesheet" href="/assets/trial.css?v=1">
 <link rel="stylesheet" href="/assets/analytics.css?v=3">
 <script src="/assets/analytics.js?v=3" defer></script>
@@ -137,7 +138,7 @@
         <h2><span>03</span>Starting</h2>
         <ul>
           <li><a href="/contact#estimate">Free earnings estimate</a>: a personal review of your traffic, content and sales. No account access needed, no commitment.</li>
-          <li><a href="/trial">Trial week</a>: seven days of 24/7 chatting at your normal rate, for accounts averaging 9–10+ new free subscribers a day. Nothing upfront, nothing after day 7 unless you carry on.</li>
+          <li><a href="/trial">Trial week</a>: a paid seven-day trial at your normal rate, for accounts averaging 9–10+ new free subscribers a day. Nothing upfront, no commitment: if you don't like us after day 7, you don't proceed.</li>
           <li>Launch: usually within 24 hours once your voice guide, price ladder and access are ready.</li>
         </ul>
       </div>
@@ -184,39 +185,34 @@
     </section>
 
     <!-- CTA -->
-    <section style="padding:70px 0 40px;text-align:center;max-width:640px;margin:0 auto">
-      <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4.6vw,46px);letter-spacing:-.02em;line-height:1.05;margin:0;color:#fff">Questions before <br><span style="color:#1AA3F5">you start?</span></h2>
-      <p class="z-estimate-note">Ask Tim directly on WhatsApp, Telegram, Discord or email. No commitment.</p>
-      <a data-estimate-cta aria-label="Contact us" href="/contact" style="display:inline-flex;align-items:center;gap:10px;margin-top:26px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:17px;padding:16px 38px;border-radius:14px;text-decoration:none;box-shadow:0 14px 30px rgba(26,163,245,.38)" style-hover="transform:translateY(-2px)"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 2v-10a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8Z"></path></svg>Contact us</a>
+    <section data-screen-label="Final CTA" class="z-final">
+      <h2>Questions before<br><span>you start?</span></h2>
+      <ul class="z-final-ticks"><li>WhatsApp, Telegram, Discord or email</li><li>No commitment</li></ul>
+      <a data-estimate-cta class="z-final-btn" href="/contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 2v-10a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8Z"/></svg>Contact us</a>
     </section>
 
     <!-- FOOTER -->
-    <div data-site-footer style="border-top:1px solid #1C3A5A;padding:26px 0 40px">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px 28px">
-        <div style="display:flex;align-items:center;gap:9px">
-        <img src="assets/logo.png" alt="" style="width:22px;height:22px">
-        <span style="color:#8FB2D4;font-size:13.5px"><b style="color:#EAF4FD">Zinely Agency</b> · Human chatting for real &amp; AI models</span>
+    <footer class="z-foot" data-site-footer>
+      <div class="z-foot-top">
+        <a class="z-foot-brand" href="/" aria-label="Zinely home">
+          <img src="/assets/zinely-logo-512.png" alt="Zinely Chatting Agency logo" width="40" height="40" loading="lazy">
+          <span class="z-foot-name"><strong>Zinely</strong><small>Chatting Agency</small></span>
+        </a>
+        <nav class="z-foot-nav" aria-label="Footer">
+          <a href="/services">Services</a>
+          <a href="/cases">Case studies</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/trial">Trial week</a>
+          <a href="/blog/">Blog</a>
+          <a href="/contact">Contact</a>
+        </nav>
+        <p class="z-foot-tag">Human chatters for real &amp; AI models, backed by our own AI tools. AI never chats with your fans.</p>
       </div>
-        <div class="z-footer-links" style="display:flex;gap:20px;flex-wrap:wrap">
-          <a href="/services" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Services</a>
-          <a href="/cases" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Case studies</a>
-          <a href="/pricing" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Pricing</a>
-          <a href="/blog/" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Blog</a>
-          <a href="/trial" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Trial week</a>
-          <a href="/contact" style="color:#5E82A6;text-decoration:none;font-size:13.5px;font-weight:600">Contact</a>
-        </div>
+      <div class="z-foot-bottom">
+        <p class="z-foot-legal"><span>© 2026 TMG digital, s. r. o.</span><a href="/terms">Working terms</a><a href="/privacy">Privacy</a><span data-analytics-slot></span><a href="https://t.me/zinelyagency">Telegram group ↗</a></p>
+        <p class="z-foot-plat"><span>Chatting for</span><a href="/onlyfans-chatting-agency/" title="OnlyFans chatting agency">OnlyFans</a><a href="/fanvue" title="Fanvue chatting agency for AI models">Fanvue</a><a href="/fansly-chatting-agency/" title="Fansly chatting service">Fansly</a><a href="/onlyfans-chatting-for-agencies/" title="White label chatting for agencies">Agencies</a></p>
       </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px 28px;margin-top:18px;padding-top:14px;border-top:1px solid rgba(28,58,90,.55)">
-        <div style="display:flex;gap:18px;flex-wrap:wrap">
-          <a href="/onlyfans-chatting-agency/" style="color:#5E82A6;text-decoration:none;font-size:13px;font-weight:600">OnlyFans chatting agency</a>
-          <a href="/fanvue" style="color:#5E82A6;text-decoration:none;font-size:13px;font-weight:600">Fanvue chatting agency</a>
-          <a href="/fansly-chatting-agency/" style="color:#5E82A6;text-decoration:none;font-size:13px;font-weight:600">Fansly chatting service</a>
-          <a href="/onlyfans-chatting-for-agencies/" style="color:#5E82A6;text-decoration:none;font-size:13px;font-weight:600">Chatting for agencies</a>
-        </div>
-        <p style="margin:0;display:flex;gap:16px;flex-wrap:wrap;align-items:center;color:#5E82A6;font-size:12.5px;font-weight:600"><span style="font-weight:500">© 2026 TMG digital, s. r. o.</span><a href="/terms" style="color:#5E82A6;text-decoration:none">Working terms</a><a href="/privacy" style="color:#5E82A6;text-decoration:none">Privacy</a><span data-analytics-slot></span><a href="https://t.me/zinelyagency" style="color:#5E82A6;text-decoration:none">Telegram group ↗</a></p>
-      </div>
-    </div>
-
+    </footer>
   </div>
 </div>
 </x-dc>

@@ -98,7 +98,7 @@
         <sc-if value="{{ notTrial }}" hint-placeholder-val="{{ true }}"><p class="z-contact-lead">Four quick questions. Tim gets back to you personally.</p>
         <ul class="z-contact-ticks"><li>Free</li><li>No commitment</li><li>No account access needed</li></ul></sc-if>
         <sc-if value="{{ isTrial }}" hint-placeholder-val="{{ false }}"><p class="z-contact-lead">Four quick questions. Tim checks the fit and sets up your seven days.</p>
-        <ul class="z-contact-ticks"><li>Paid by commission only</li><li>No commitment after day 7</li><li>9–10+ new free subs a day</li></ul></sc-if>
+        <ul class="z-contact-ticks"><li>Paid by commission</li><li>Zero commitment after day 7</li><li>9–10+ new free subs a day</li></ul></sc-if>
         <a class="z-contact-proof" href="/cases">See our client results <span aria-hidden="true">↗</span></a>
       </div>
 
@@ -109,7 +109,7 @@
             <button type="button" aria-pressed="{{ notTrial }}" onClick="{{ selectEstimate }}">Free estimate</button>
             <button type="button" aria-pressed="{{ isTrial }}" onClick="{{ selectTrial }}">Trial week</button>
           </div>
-          <sc-if value="{{ isTrial }}" hint-placeholder-val="{{ false }}"><p class="z-contact-intent-note">Seven days at your normal rate, nothing upfront. For accounts averaging 9–10+ new free subscribers a day. <a href="/trial">Details</a></p></sc-if>
+          <sc-if value="{{ isTrial }}" hint-placeholder-val="{{ false }}"><p class="z-contact-intent-note">A paid 7-day trial with no commitment: normal commission on what we sell, nothing upfront, and you only continue if you like us. For accounts averaging 9–10+ new free subscribers a day. <a href="/trial">Details</a></p></sc-if>
         </div>
         <div class="z-contact-step">
           <p class="z-contact-step-label" id="setup-label"><b>1</b>Your setup</p>
