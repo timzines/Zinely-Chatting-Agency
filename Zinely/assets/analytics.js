@@ -102,8 +102,11 @@
   controls.hidden = true;
   document.body.appendChild(controls);
   function placeControls() {
-    const footer = document.querySelector('.sc-host .z-footer-links')?.parentElement || document.querySelector('.footer');
-    if (!footer) return false;
+    // Core pages render inside .sc-host; the raw <x-dc> template must never receive the control.
+    const slot = document.querySelector('x-dc') ? document.querySelector('.sc-host [data-analytics-slot]') : document.querySelector('[data-analytics-slot]');
+    const footer = slot && (slot.closest('[data-site-footer]') || slot.closest('p')?.parentElement);
+    if (!slot || !footer) return false;
+    slot.appendChild(settings);
     footer.appendChild(controls);
     controls.hidden = false;
     return true;

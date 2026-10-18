@@ -2,8 +2,10 @@
 .z-analytics-controls,.z-analytics-panel,.z-analytics-settings{font-family:'Figtree',system-ui,sans-serif;box-sizing:border-box}
 .z-analytics-panel[hidden],.z-analytics-controls[hidden]{display:none!important}
 .z-analytics-controls{position:relative;flex-basis:100%;width:100%;margin:0;padding:0;color:#a8bfd1;text-align:left}
-.z-analytics-settings{display:inline-block;padding:6px 0;border:0;background:none;color:#85a9c3;font-size:12px;line-height:20px;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
-.z-analytics-settings:hover{color:#b3d9ef}
+.z-analytics-settings{display:inline;padding:0;border:0;background:none;color:#5E82A6;font:inherit;font-weight:600;text-decoration:none;cursor:pointer}
+.z-analytics-settings:hover{color:#8FB2D4}
+.z-analytics-controls{flex-basis:auto;width:100%}
+.z-analytics-controls:not(:has(.z-analytics-panel:not([hidden]))){display:none}
 .z-analytics-panel{max-width:620px;margin:10px 0 0;padding:16px 0 0;border-top:1px solid #28465e}
 .z-analytics-panel h2{margin:0 0 8px;font-size:16px;line-height:1.3;color:#eaf4fd}
 .z-analytics-panel p{margin:0;font-size:13px;line-height:1.7;color:#a8bfd1}
