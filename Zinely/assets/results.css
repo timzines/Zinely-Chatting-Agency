@@ -30,3 +30,7 @@
 .z-result-card .z-chip-rank{padding:0;border:0;background:none;color:#a8bfcf;font-weight:600;font-size:12.5px}
 .z-result-card .z-chip-rank svg{stroke:#e8c27a}
 @media(max-width:540px){.z-result-card .z-chip-stat{font-size:12.5px}.z-result-featured .z-chip-stat{font-size:13.5px}}
+
+/* Caption is just platform and date now */
+.z-result-card .z-result-caption>span{font-size:12.5px;color:#7fa3c0;font-weight:600}
+.z-result-featured .z-result-caption{padding-top:0}
