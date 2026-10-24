@@ -1,7 +1,7 @@
 {
   "https://zinelyagency.com/": {
-    "sha256": "108466b12494a9fdd17d1fd6731d5a376a849561599fa0c3c47169ac361217c9",
-    "lastmod": "2026-10-18"
+    "sha256": "a9611b8748b2c215a9cba60f6c4be84f2d1b1febd00450691228ab73e38a1ccf",
+    "lastmod": "2026-10-24"
   },
   "https://zinelyagency.com/blog/": {
     "sha256": "c2b0d5b2e2c8bfaeb5fbab3550762be30b9f83baf148aea5944b7e210a59e6f2",
@@ -52,12 +52,12 @@
     "lastmod": "2026-10-18"
   },
   "https://zinelyagency.com/cases": {
-    "sha256": "b3383caea4f1a641b6af84fdec655f4410a468f7e125ca48fac91ab24b887767",
-    "lastmod": "2026-10-18"
+    "sha256": "fd04e7d0441967c03994bb9eb35a3bd4bac464ccd66506f151c6849b2df3c04b",
+    "lastmod": "2026-10-24"
   },
   "https://zinelyagency.com/contact": {
-    "sha256": "32f8330f1be820233db344123f29b3d4e0d870eb534db3be15585220ae28691c",
-    "lastmod": "2026-10-19"
+    "sha256": "a879710e234deb902b218514df7e26d03c80140589f806af97f591ea6af43143",
+    "lastmod": "2026-10-24"
   },
   "https://zinelyagency.com/fansly-chatting-agency/": {
     "sha256": "03587d6aa6bdf94b2e1198a8accdb0dbb8029af8554c2cb9684461ff4dcf509c",
@@ -76,23 +76,55 @@
     "lastmod": "2026-10-18"
   },
   "https://zinelyagency.com/pricing": {
-    "sha256": "71c9cbe89df497acffeca17d5ab52258e6015c1e3698ae2c947c5d59c3613acb",
-    "lastmod": "2026-10-18"
+    "sha256": "148ff8baa7e59e1cd0331d2ca3a7970387bbc04049d9c9f67d7da72d5f8c9d10",
+    "lastmod": "2026-10-24"
   },
   "https://zinelyagency.com/privacy": {
-    "sha256": "0a89338d31e26c2e1d03ccbc6e5476f108568f175be615f1673c796b81afd054",
-    "lastmod": "2026-10-18"
+    "sha256": "7a6bad73d479d20a09610ddacb8d5802662f937fd97729f3ae2352b8d656b713",
+    "lastmod": "2026-10-24"
   },
   "https://zinelyagency.com/services": {
-    "sha256": "0c18652e3fe0feabffbca2386ed530a5a93407c4d7a07305f4a219b7a04fa49d",
-    "lastmod": "2026-10-18"
+    "sha256": "073dd2b445eb624ee2bb5b2239d047cdfd69beda52ee8c8a86e58456698438de",
+    "lastmod": "2026-10-24"
+  },
+  "https://zinelyagency.com/sk/": {
+    "sha256": "c143f77eecb65364e82725b8adb326c74cb617d319d8dd69646fd896f18ac485",
+    "lastmod": "2026-10-24"
+  },
+  "https://zinelyagency.com/sk/cennik": {
+    "sha256": "b4ca7105cd60d19127f76ea66c26b7c0c5e76b4fcaca7a504f75a64715e96034",
+    "lastmod": "2026-10-24"
+  },
+  "https://zinelyagency.com/sk/kontakt": {
+    "sha256": "2d344b90f385b43e8f3533e66463af6e6b04ac3093e57810e39ebd7a27e89846",
+    "lastmod": "2026-10-24"
+  },
+  "https://zinelyagency.com/sk/ochrana-sukromia": {
+    "sha256": "ee713df2d47e8c87f1ef49e236196ef0d1aecfa4e7e9351cc2029df62dccfcd1",
+    "lastmod": "2026-10-24"
+  },
+  "https://zinelyagency.com/sk/podmienky": {
+    "sha256": "1b6e7ae6b2a1db65f78426ed9b51559831b5f25175753e7551ddfbd05c1ffcf6",
+    "lastmod": "2026-10-24"
+  },
+  "https://zinelyagency.com/sk/skusobny-tyzden": {
+    "sha256": "18976881fc1e7fe838e5544d272a70eb0d35e920b6067ef5006a92dffea8071c",
+    "lastmod": "2026-10-24"
+  },
+  "https://zinelyagency.com/sk/sluzby": {
+    "sha256": "d84afaa6436162e6f804504a432ef260ab95758f04029ce48b9e6f2120ea1f4d",
+    "lastmod": "2026-10-24"
+  },
+  "https://zinelyagency.com/sk/vysledky": {
+    "sha256": "b4660300b75fe0f255a656d247dcfef599ec514b071722a93f75812dc5591907",
+    "lastmod": "2026-10-24"
   },
   "https://zinelyagency.com/terms": {
-    "sha256": "2de30f0eb09836dc51d08db641945a106f7065740c087c4c0e64fbbf972438da",
-    "lastmod": "2026-10-18"
+    "sha256": "08a04319bf4c1be7a8ce92ec2904a08b88b53cc0b52aa6b2393c2b80d0f8efa0",
+    "lastmod": "2026-10-24"
   },
   "https://zinelyagency.com/trial": {
-    "sha256": "11f29b8e9aeab017012a93854fa86dfc6feb26249bfbc62a75a67cf2d90fa672",
-    "lastmod": "2026-10-18"
+    "sha256": "20dd14776acac300db7f2fe53f9bc7f55a36d973ffa70601a9d6514fd74e98df",
+    "lastmod": "2026-10-24"
   }
 }

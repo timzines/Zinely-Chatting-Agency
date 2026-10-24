@@ -28,6 +28,7 @@
 - [Case studies](https://zinelyagency.com/cases): real account dashboards with dates, including a $160,854.32 all-time account after a DM takeover
 - [Fanvue chatting agency for AI models](https://zinelyagency.com/fanvue)
 - [OnlyFans chatting agency](https://zinelyagency.com/onlyfans-chatting-agency/)
+- [Slovak version (Slovenská verzia)](https://zinelyagency.com/sk/): the full site in Slovak, made in collaboration with Tomáš Ižvolt (IZWI AI, https://www.izvolttomas.com/), who teaches how to create AI models
 - [White label chatting for OnlyFans agencies](https://zinelyagency.com/onlyfans-chatting-for-agencies/)
 - [Fansly chatting agency](https://zinelyagency.com/fansly-chatting-agency/)
 - [What an OnlyFans chatting agency actually does](https://zinelyagency.com/blog/onlyfans-chatting-agency-guide/)

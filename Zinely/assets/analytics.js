@@ -53,20 +53,39 @@
     document.head.appendChild(script);
   }
 
+  // The Slovak pages (/sk/) declare lang="sk"; everything else stays English.
+  const text = document.documentElement.lang === 'sk' ? {
+    controls: 'Nastavenia súkromia',
+    title: 'Voliteľná analytika',
+    body: 'Povoliť cookies Google Analytics na meranie návštev a kliknutí na kontaktné odkazy? Reklama ostáva vypnutá. Voľbu tu môžeš kedykoľvek zmeniť.',
+    how: 'Ako Google používa tieto údaje ↗',
+    deny: 'Nie, ďakujem',
+    allow: 'Povoliť analytiku',
+    settings: 'Nastavenia analytiky'
+  } : {
+    controls: 'Privacy settings',
+    title: 'Optional analytics',
+    body: 'Allow Google Analytics cookies to measure visits and contact-link clicks? Advertising stays off. You can change your choice here anytime.',
+    how: 'How Google uses this data ↗',
+    deny: 'No thanks',
+    allow: 'Allow analytics',
+    settings: 'Analytics settings'
+  };
+
   // Preferences live in the footer; never interrupt a visit with a prompt.
   const controls = document.createElement('footer');
   controls.className = 'z-analytics-controls';
-  controls.setAttribute('aria-label', 'Privacy settings');
+  controls.setAttribute('aria-label', text.controls);
   const panel = document.createElement('section');
   panel.id = 'z-analytics-panel';
   panel.className = 'z-analytics-panel';
   panel.setAttribute('aria-labelledby', 'z-analytics-title');
-  panel.innerHTML = '<h2 id="z-analytics-title">Optional analytics</h2><p>Allow Google Analytics cookies to measure visits and contact-link clicks? Advertising stays off. You can change your choice here anytime. <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google uses this data ↗</a></p><div class="z-analytics-actions"><button type="button" data-analytics-choice="denied">No thanks</button><button type="button" data-analytics-choice="granted">Allow analytics</button></div>';
+  panel.innerHTML = `<h2 id="z-analytics-title">${text.title}</h2><p>${text.body} <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">${text.how}</a></p><div class="z-analytics-actions"><button type="button" data-analytics-choice="denied">${text.deny}</button><button type="button" data-analytics-choice="granted">${text.allow}</button></div>`;
   panel.hidden = true;
   const settings = document.createElement('button');
   settings.type = 'button';
   settings.className = 'z-analytics-settings';
-  settings.textContent = 'Analytics settings';
+  settings.textContent = text.settings;
   settings.setAttribute('aria-controls', panel.id);
   settings.setAttribute('aria-expanded', 'false');
   settings.addEventListener('click', () => {
@@ -130,7 +149,7 @@
     try { destination = new URL(link.href, location.href); } catch { return; }
     const path = location.pathname;
     const audience = path.includes('chatting-for-agencies') ? 'agency_owner' : path.includes('fanvue') ? 'fanvue_operator' : path.includes('onlyfans') ? 'creator' : 'mixed';
-    const opensEstimate = destination.origin === location.origin && /^\/contact(?:\.html)?\/?$/.test(destination.pathname) && destination.hash === '#estimate';
+    const opensEstimate = destination.origin === location.origin && /^\/(?:contact|sk\/kontakt)(?:\.html)?\/?$/.test(destination.pathname) && destination.hash === '#estimate';
     if (opensEstimate) {
       window.gtag('event', 'estimate_start', {
         send_to: measurementId,
