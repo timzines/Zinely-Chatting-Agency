@@ -29,6 +29,13 @@
 .z-pflow-step .z-izwi-logo{width:46px;height:46px}
 .z-pflow-icon{display:grid;place-items:center;flex:none;box-sizing:border-box;width:46px;height:46px;border-radius:12px;color:#6fd0ff;background:rgba(26,163,245,.12);border:1px solid rgba(26,163,245,.3)}
 .z-pflow-icon svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+/* "Fans write to you": white chat bubble with a heart on a filled blue tile, plus an unread badge. */
+.z-pflow-fans{position:relative;background:linear-gradient(145deg,#1AA3F5,#2E89D6);border-color:rgba(255,255,255,.14);color:#fff;box-shadow:0 8px 20px rgba(26,163,245,.35)}
+.z-pflow-fans svg{width:24px;height:24px;stroke-width:1.9}
+.z-pflow-fans .z-heart{fill:currentColor;stroke:none}
+.z-pflow-fans i{position:absolute;top:-7px;right:-7px;display:grid;place-items:center;min-width:19px;height:19px;padding:0 5px;box-sizing:border-box;border-radius:999px;background:#ff5d7a;color:#fff;font:800 10.5px/1 'Figtree',sans-serif;font-style:normal;box-shadow:0 0 0 3px #0f2338}
+@media(prefers-reduced-motion:no-preference){.z-pflow-fans i{animation:zFanPing 2.6s ease-out infinite}}
+@keyframes zFanPing{0%{box-shadow:0 0 0 3px #0f2338,0 0 0 3px rgba(255,93,122,.55)}70%,100%{box-shadow:0 0 0 3px #0f2338,0 0 0 11px rgba(255,93,122,0)}}
 .z-pflow-zinely{border-color:rgba(54,211,153,.4)}
 .z-pflow-zinely .z-pflow-icon{background:rgba(54,211,153,.12);border-color:rgba(54,211,153,.35)}
 .z-pflow-zinely .z-pflow-icon img{width:28px;height:28px}
@@ -53,9 +60,13 @@
 .z-ppath-izwi .z-izwi-logo svg{width:21px;height:21px}
 .z-ppath-izwi .z-izwi-word{font-size:22px}
 .z-ppath-izwi .z-ppath-end{border:1px solid rgba(174,205,227,.35);color:#AECDE3}
-.z-ppath-go{background:linear-gradient(145deg,#1AA3F5,#2E89D6);border:1px solid rgba(255,255,255,.12);box-shadow:0 12px 26px rgba(26,163,245,.32)}
+/* A deeper blue than the buttons so white text reads clearly; our logo mirrors the IZWI card. */
+.z-ppath-go{background:linear-gradient(145deg,#1784d6,#1257a6);border:1px solid rgba(255,255,255,.18);box-shadow:0 12px 26px rgba(18,100,190,.4)}
 .z-ppath-go:hover{box-shadow:0 16px 34px rgba(26,163,245,.45)}
-.z-ppath-go .z-ppath-q{color:rgba(255,255,255,.85)}
+.z-ppath-go .z-ppath-q{color:#fff;opacity:.92;text-shadow:0 1px 2px rgba(3,20,40,.35)}
+.z-ppath-go .z-ppath-main{text-shadow:0 1px 2px rgba(3,20,40,.3)}
+.z-zinely-logo{display:grid;place-items:center;flex:none;width:38px;height:38px;box-sizing:border-box;border-radius:10px;background:#0A1626;border:1px solid rgba(255,255,255,.2)}
+.z-zinely-logo img{width:24px;height:24px}
 .z-ppath-go .z-ppath-end{background:rgba(255,255,255,.16);color:#fff}
 
 /* Contact page: English-only chatting, said plainly next to the form. */
