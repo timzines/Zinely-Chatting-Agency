@@ -36,10 +36,9 @@
 .z-pflow-fans i{position:absolute;top:-7px;right:-7px;display:grid;place-items:center;min-width:19px;height:19px;padding:0 5px;box-sizing:border-box;border-radius:999px;background:#ff5d7a;color:#fff;font:800 10.5px/1 'Figtree',sans-serif;font-style:normal;box-shadow:0 0 0 3px #0f2338}
 @media(prefers-reduced-motion:no-preference){.z-pflow-fans i{animation:zFanPing 2.6s ease-out infinite}}
 @keyframes zFanPing{0%{box-shadow:0 0 0 3px #0f2338,0 0 0 3px rgba(255,93,122,.55)}70%,100%{box-shadow:0 0 0 3px #0f2338,0 0 0 11px rgba(255,93,122,0)}}
-.z-pflow-zinely{border-color:rgba(54,211,153,.4)}
-.z-pflow-zinely .z-pflow-icon{background:rgba(54,211,153,.12);border-color:rgba(54,211,153,.35)}
-.z-pflow-zinely .z-pflow-icon img{width:28px;height:28px}
-.z-pflow-zinely strong{color:#7de6c0}
+/* Step 3 is a plain step like the others: our logo on the same navy tile as the estimate card. */
+.z-pflow-step .z-zinely-logo{width:46px;height:46px;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.35)}
+.z-pflow-step .z-zinely-logo img{width:28px;height:28px}
 .z-pflow-arrow{display:grid;place-items:center}
 .z-pflow-arrow span{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:#10243c;border:1px solid #2a5a7e;color:#4ebaff;box-shadow:0 0 18px rgba(26,163,245,.25)}
 .z-pflow-arrow svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
