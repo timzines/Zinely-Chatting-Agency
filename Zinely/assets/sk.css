@@ -29,13 +29,10 @@
 .z-pflow-step .z-izwi-logo{width:46px;height:46px}
 .z-pflow-icon{display:grid;place-items:center;flex:none;box-sizing:border-box;width:46px;height:46px;border-radius:12px;color:#6fd0ff;background:rgba(26,163,245,.12);border:1px solid rgba(26,163,245,.3)}
 .z-pflow-icon svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-/* "Fans write to you": white chat bubble with a heart on a filled blue tile, plus an unread badge. */
-.z-pflow-fans{position:relative;background:linear-gradient(145deg,#1AA3F5,#2E89D6);border-color:rgba(255,255,255,.14);color:#fff;box-shadow:0 8px 20px rgba(26,163,245,.35)}
-.z-pflow-fans svg{width:24px;height:24px;stroke-width:1.9}
-.z-pflow-fans .z-heart{fill:currentColor;stroke:none}
-.z-pflow-fans i{position:absolute;top:-7px;right:-7px;display:grid;place-items:center;min-width:19px;height:19px;padding:0 5px;box-sizing:border-box;border-radius:999px;background:#ff5d7a;color:#fff;font:800 10.5px/1 'Figtree',sans-serif;font-style:normal;box-shadow:0 0 0 3px #0f2338}
-@media(prefers-reduced-motion:no-preference){.z-pflow-fans i{animation:zFanPing 2.6s ease-out infinite}}
-@keyframes zFanPing{0%{box-shadow:0 0 0 3px #0f2338,0 0 0 3px rgba(255,93,122,.55)}70%,100%{box-shadow:0 0 0 3px #0f2338,0 0 0 11px rgba(255,93,122,0)}}
+/* "Fans write to you": a quiet outline tile, so the IZWI and Zinely logos and the buttons carry the focus. */
+.z-pflow-fans{background:rgba(255,255,255,.03);border-color:#27485f;color:#7fa3c0}
+.z-pflow-fans svg{width:22px;height:22px;stroke-width:1.8}
+.z-pflow-fans .z-heart{fill:currentColor;stroke:none;opacity:.8}
 /* Step 3 is a plain step like the others: our logo on the same navy tile as the estimate card. */
 .z-pflow-step .z-zinely-logo{width:46px;height:46px;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.35)}
 .z-pflow-step .z-zinely-logo img{width:28px;height:28px}
