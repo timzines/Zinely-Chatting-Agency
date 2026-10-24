@@ -104,3 +104,6 @@
 
 /* Slovak labels run longer; keep the live pill on the trial visual on one line. */
 .z-tr-live{white-space:nowrap}
+
+/* Slovak writes a space before %: give the big rate figure that gap. */
+.z-rate-number span:not(.sc-interp){margin-left:.14em}
