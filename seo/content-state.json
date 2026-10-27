@@ -1,7 +1,7 @@
 {
   "https://zinelyagency.com/": {
-    "sha256": "5729572de03e3ca3729ae1ba8120cf8f59515e69fc43acb333e3e10050047009",
-    "lastmod": "2026-10-26"
+    "sha256": "8886fe7d8570e81a0cab343e3a99d4194f1ad0db61106e9a79675add9ad36a32",
+    "lastmod": "2026-10-27"
   },
   "https://zinelyagency.com/blog/": {
     "sha256": "d02008dc55cd72b9a8ac2d1c290d5929eac6ff3342f36afb34bc9d02f976fa7d",
@@ -76,8 +76,8 @@
     "lastmod": "2026-10-26"
   },
   "https://zinelyagency.com/pricing": {
-    "sha256": "5e8d5fc44c531637fa0113cc90609c1e8c9ce3b15fd087a70ec9ba3ebf9dd67d",
-    "lastmod": "2026-10-26"
+    "sha256": "3ffe62c4f24de985ff6a7b0ac7ab3d466a8acc48a777770f52e1f603914c4099",
+    "lastmod": "2026-10-27"
   },
   "https://zinelyagency.com/privacy": {
     "sha256": "5f2c946059e43a6f5f80286c10891cb844ae9a68966524c823c65f9f213329fd",
@@ -88,12 +88,12 @@
     "lastmod": "2026-10-26"
   },
   "https://zinelyagency.com/sk/": {
-    "sha256": "f838bcf45d17082c304f7f9a681fd80af30b81f16712f52a550fbd1b38c618fd",
-    "lastmod": "2026-10-26"
+    "sha256": "64b0f026a8798031d5ec4d45139de79960801f9b5aef1ed771589d9012d3d596",
+    "lastmod": "2026-10-27"
   },
   "https://zinelyagency.com/sk/cennik": {
-    "sha256": "6478deb93fb0dc0b337f3d0fe2de79b06150630b50ccc05ed08d455d1fc8af62",
-    "lastmod": "2026-10-26"
+    "sha256": "46c418198348a8a2d26bc3082c4f09f2bdc53606b163ad4aa8ffc39ac01cfc55",
+    "lastmod": "2026-10-27"
   },
   "https://zinelyagency.com/sk/kontakt": {
     "sha256": "b8b78baaa835a0378b992c2384854cffb9ac93b79fa9c2e195bfabbda1a92a5e",
@@ -104,12 +104,12 @@
     "lastmod": "2026-10-26"
   },
   "https://zinelyagency.com/sk/podmienky": {
-    "sha256": "7d41b2e26542342e6fbdce5605cabb4a5b65211f30089523c5a4e6d06cacaad6",
-    "lastmod": "2026-10-26"
+    "sha256": "2ebd88260c498d5afab8fb8bceb0f19d739998caf47c4a99ec3117f47b305f2a",
+    "lastmod": "2026-10-27"
   },
   "https://zinelyagency.com/sk/skusobny-tyzden": {
-    "sha256": "62f66446c57f7350556e535899b5167062612aedf5cc675a0f0ec6db1ccef6ab",
-    "lastmod": "2026-10-26"
+    "sha256": "3daed5b4980954c41fc3d7de75ad53b49abcb99f07200acf85991da780746c81",
+    "lastmod": "2026-10-27"
   },
   "https://zinelyagency.com/sk/sluzby": {
     "sha256": "dd49341d5607e75f91de1427eb5cf965629de543ffcb0276db3175adbfbc140c",
@@ -120,11 +120,11 @@
     "lastmod": "2026-10-26"
   },
   "https://zinelyagency.com/terms": {
-    "sha256": "8c66644532d46387659fb836140e188913612634b2de80c49ce0552f9978af59",
-    "lastmod": "2026-10-26"
+    "sha256": "2cc14bacb5f148babdd076afbb8bb2437910b3217eb6b0d4908df1771c6e4ffa",
+    "lastmod": "2026-10-27"
   },
   "https://zinelyagency.com/trial": {
-    "sha256": "b9e1605b6d32d41ec6a8965e7bc65e28b94fdd089c27146c17e006b5a1996648",
-    "lastmod": "2026-10-26"
+    "sha256": "322fccd6cc464488d377917d6fec90bd448c3bd79cc4d97e85cf5af2d74f5b89",
+    "lastmod": "2026-10-27"
   }
 }
