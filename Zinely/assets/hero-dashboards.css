@@ -1,0 +1,21 @@
+/* Homepage hero, right side: rotating screenshots of real client Fanvue dashboards.
+   Used by /, /sk/ and /fanvue. Behaviour lives in hero-dashboards.js. */
+.zd,.zd *{box-sizing:border-box}
+.zd{width:100%;max-width:500px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.zd-caption{display:flex;align-items:center;flex-wrap:wrap;gap:12px}
+.zd-logo{height:20px;width:auto;display:block}
+.zd-divider{width:1px;height:18px;background:#2A4066}
+.zd-caption-text{font-size:13px;font-weight:600;line-height:1.4;color:#A9B8CF}
+.zd-frame{position:relative;height:600px;border-radius:18px;border:1px solid #2A2F38;background:#151515;overflow:hidden;box-shadow:0 0 0 6px rgba(46,155,240,.08),0 40px 80px rgba(0,0,0,.6)}
+.zd-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;opacity:0;transition:opacity .7s ease}
+.zd-slide.is-active{opacity:1}
+.zd-dots{display:flex;justify-content:center;align-items:center}
+.zd-dot{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;margin:0;padding:0;border:0;background:transparent;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.zd-dot span{display:block;width:8px;height:8px;border-radius:999px;background:#2A4066;transition:width .3s ease,background-color .3s ease}
+.zd-dot[aria-current="true"] span{width:28px;background:#2E9BF0}
+.zd-dot:focus-visible{outline:2px solid #7CC1FF;outline-offset:-6px;border-radius:12px}
+
+/* Below 960px the hero stacks: copy first, dashboards underneath. */
+@media (max-width:959.98px){.z-hero{grid-template-columns:minmax(0,1fr)!important}}
+@media (max-width:559.98px){.zd-frame{height:440px}}
+@media (prefers-reduced-motion:reduce){.zd-slide,.zd-dot span{transition:none}}

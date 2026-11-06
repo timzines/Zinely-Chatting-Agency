@@ -222,7 +222,6 @@ input.zslider.z-revenue-slider::-moz-range-track{background:transparent;height:8
 @media(prefers-reduced-motion:reduce){
  html{scroll-behavior:auto!important}
  .z-section *,.z-cases-hero *,.z-case-nav *,.z-case *,.z-rate-card *,.z-accordion *{animation:none!important;transition:none!important}
- .z-feed>div{animation:none!important}
 }
 
 /* Audience routes use real links and remain readable without interaction. */

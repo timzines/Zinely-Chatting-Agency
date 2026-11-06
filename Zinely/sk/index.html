@@ -44,6 +44,8 @@
 <script src="/assets/difference.js?v=8" defer></script>
 <link rel="stylesheet" href="/assets/hero-proof.css?v=5">
 <script src="/assets/hero-proof.js?v=2" defer></script>
+<link rel="stylesheet" href="/assets/hero-dashboards.css?v=1">
+<script src="/assets/hero-dashboards.js?v=1" defer></script>
 <script src="/support.js" defer></script>
 <link rel="stylesheet" href="/assets/estimate.css?v=1">
 <link rel="stylesheet" href="/assets/footer.css?v=1">
@@ -79,8 +81,6 @@
   input.zslider::-webkit-slider-thumb:active{cursor:grabbing;transform:scale(1.05)}
   input.zslider::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:5px solid #1AA3F5;box-shadow:0 2px 12px rgba(26,163,245,.6);cursor:grab}
   input.zslider::-moz-range-track{height:6px;border-radius:999px;background:#16324F}
-  @keyframes zFeed{from{transform:translateY(0)}to{transform:translateY(-50%)}}
-  @keyframes zGlow{0%,100%{box-shadow:0 0 14px rgba(54,211,153,.25);text-shadow:0 0 10px rgba(127,240,196,.5)}50%{box-shadow:0 0 26px rgba(54,211,153,.55);text-shadow:0 0 18px rgba(127,240,196,.95)}}
 </style>
 </helmet>
 
@@ -157,25 +157,24 @@
         </dl>
       </div>
 
-      <!-- ILLUSTRATIVE PURCHASES FEED -->
-      <div data-nosnippet class="m-hide" style="justify-self:center;width:100%;max-width:440px;position:relative;perspective:900px">
-        <div ref="{{ phoneRef }}" style="background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:24px;padding:22px 22px 10px;box-shadow:0 30px 80px rgba(0,0,0,.45);will-change:transform;transform-style:preserve-3d">
-          <div class="z-feed" style="position:relative;height:430px;overflow:hidden">
-            <div style="animation:zFeed 30s linear infinite;opacity:.82">
-              <sc-for list="{{ feedRows }}" as="row" hint-placeholder-count="8">
-                <div style="display:flex;align-items:center;gap:13px;padding:13px 2px;border-bottom:1px solid rgba(28,58,90,.55)">
-                  <div style="flex:none;width:40px;height:40px;border-radius:50%;background:#243B57;display:grid;place-items:center;font-weight:800;font-size:13.5px;color:#8FB2D4"><bdi children="{{ row.ini }}"></bdi></div>
-                  <div style="flex:1;min-width:0">
-                    <div style="font-weight:700;font-size:14px;color:#EAF4FD"><bdi children="{{ row.name }}"></bdi></div>
-                    <div style="font-size:12.5px;color:#5E82A6;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><bdi children="{{ row.act }}"></bdi> · <bdi children="{{ row.time }}"></bdi></div>
-                  </div>
-                  <div style="flex:none;font-family:'Bricolage Grotesque';font-weight:800;font-size:16.5px;color:#36D399"><bdi children="{{ row.amt }}"></bdi></div>
-                </div>
-              </sc-for>
-            </div>
-            <div style="position:absolute;top:0;left:0;right:0;height:36px;background:linear-gradient(180deg,#10243C,transparent);pointer-events:none"></div>
-            <div style="position:absolute;bottom:0;left:0;right:0;height:44px;background:linear-gradient(0deg,#0E2138,transparent);pointer-events:none"></div>
-          </div>
+      <!-- REAL CLIENT DASHBOARDS: rotating screenshots, behaviour in assets/hero-dashboards.js -->
+      <div class="zd" role="region" aria-roledescription="karusel" aria-label="Skutočné dashboardy tržieb klientov">
+        <div class="zd-caption">
+          <!-- TODO(fanvue-logo): the official Fanvue logo was not in the hero kit. Save it as /assets/fanvue-logo.svg, then swap this comment for:
+               <img class="zd-logo" src="/assets/fanvue-logo.svg" alt="Fanvue" height="20"><span class="zd-divider" aria-hidden="true"></span> -->
+          <span class="zd-caption-text">Snímka obrazovky z&nbsp;dashboardu klienta na Fanvue</span>
+        </div>
+        <div class="zd-frame">
+          <picture><source type="image/webp" srcset="/assets/zinely-dashboard-1.webp"><img class="zd-slide is-active" src="/assets/zinely-dashboard-1.png" width="500" height="574" alt="Tržby klienta na Fanvue podľa typu, spolu $181K" fetchpriority="high"></picture>
+          <picture><source type="image/webp" srcset="/assets/zinely-dashboard-2.webp"><img class="zd-slide" loading="lazy" src="/assets/zinely-dashboard-2.png" width="519" height="613" alt="Tržby klienta na Fanvue podľa typu, spolu $71K" aria-hidden="true"></picture>
+          <picture><source type="image/webp" srcset="/assets/zinely-dashboard-3.webp"><img class="zd-slide" loading="lazy" src="/assets/zinely-dashboard-3.png" width="536" height="480" alt="Tržby klienta na Fanvue podľa typu, spolu $181K" aria-hidden="true"></picture>
+          <picture><source type="image/webp" srcset="/assets/zinely-dashboard-4.webp"><img class="zd-slide" loading="lazy" src="/assets/zinely-dashboard-4.png" width="513" height="559" alt="Tržby klienta na Fanvue podľa typu, spolu $65K" aria-hidden="true"></picture>
+        </div>
+        <div class="zd-dots">
+          <button class="zd-dot" type="button" aria-label="Zobraziť dashboard 1 zo 4" aria-current="true"><span></span></button>
+          <button class="zd-dot" type="button" aria-label="Zobraziť dashboard 2 zo 4" aria-current="false"><span></span></button>
+          <button class="zd-dot" type="button" aria-label="Zobraziť dashboard 3 zo 4" aria-current="false"><span></span></button>
+          <button class="zd-dot" type="button" aria-label="Zobraziť dashboard 4 zo 4" aria-current="false"><span></span></button>
         </div>
       </div>
     </section>
@@ -671,33 +670,6 @@
 <script type="text/x-dc" data-dc-script data-props="{&quot;telegramUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://t.me/timzines&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;managementOpen&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Full management&quot;}}">
 class Component extends DCLogic {
   state = { calcType: "real", calcTier: "t1", calcSubs: 1500, revM: 70000 };
-  phoneRef = React.createRef();
-  componentDidMount() {
-    this._onMove = (e) => {
-      const el = this.phoneRef.current;
-      if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      const r = el.getBoundingClientRect();
-      // only react while the card is near the viewport
-      if (r.bottom < -100 || r.top > window.innerHeight + 100) return;
-      const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
-      const dx = Math.max(-1, Math.min(1, (e.clientX - cx) / (window.innerWidth / 2)));
-      const dy = Math.max(-1, Math.min(1, (e.clientY - cy) / (window.innerHeight / 2)));
-      el.style.transition = "transform .18s ease-out";
-      el.style.transform = "rotateY(" + (dx * 7).toFixed(2) + "deg) rotateX(" + (-dy * 7).toFixed(2) + "deg) translate3d(" + (dx * 6).toFixed(1) + "px," + (dy * 6).toFixed(1) + "px,0)";
-    };
-    this._onLeave = () => {
-      const el = this.phoneRef.current;
-      if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      el.style.transition = "transform .6s cubic-bezier(.22,1,.36,1)";
-      el.style.transform = "rotateY(0deg) rotateX(0deg) translate3d(0,0,0)";
-    };
-    window.addEventListener("mousemove", this._onMove);
-    document.documentElement.addEventListener("mouseleave", this._onLeave);
-  }
-  componentWillUnmount() {
-    window.removeEventListener("mousemove", this._onMove);
-    document.documentElement.removeEventListener("mouseleave", this._onLeave);
-  }
   renderVals() {
     const open = this.props.managementOpen ?? false;
     const { calcType, calcTier, calcSubs } = this.state;
@@ -710,24 +682,6 @@ class Component extends DCLogic {
       estimateUrl: (this.props.telegramUrl ?? "https://t.me/timzines") + ((this.props.telegramUrl ?? "").includes("?") ? "&" : "?") + "text=" + encodeURIComponent("Ahoj, Tim, chcem bezplatný odhad zárobku pre svoj účet alebo agentúru."),
       mgmtOpen: open,
       mgmtClosed: !open,
-      phoneRef: this.phoneRef,
-      feedRows: (() => {
-        const rows = [
-          { ini: "RF", name: "Relieved Firefly", act: "Kúpil tvoju správu", time: "pred 2 min", amt: "$59,99" },
-          { ini: "BJ", name: "Big John", act: "Poslal ti tip", time: "pred 9 min", amt: "$200,00" },
-          { ini: "CD", name: "Cautious Damselfly", act: "Kúpil tvoju správu", time: "pred 14 min", amt: "$69,00" },
-          { ini: "DC", name: "Disturbing Crane", act: "Kúpil tvoju správu", time: "pred 26 min", amt: "$175,99" },
-          { ini: "SP", name: "Supreme Puma", act: "Poslal ti tip", time: "pred 41 min", amt: "$450,00" },
-          { ini: "SD", name: "Selected Duck", act: "Kúpil tvoju správu", time: "pred 1 h", amt: "$85,00" },
-          { ini: "EH", name: "Enormous Hyena", act: "Kúpil tvoju správu", time: "pred 1 h", amt: "$120,99" },
-          { ini: "GO", name: "Golden Otter", act: "Poslal ti tip", time: "pred 2 h", amt: "$150,99" },
-          { ini: "UB", name: "Uniform Bedbug", act: "Kúpil tvoju správu", time: "pred 2 h", amt: "$39,99" },
-          { ini: "HM", name: "Hungry Mandrill", act: "Kúpil tvoju správu", time: "pred 3 h", amt: "$250,00" },
-          { ini: "DB", name: "Distant Barnacle", act: "Poslal ti tip", time: "pred 3 h", amt: "$90,00" },
-          { ini: "PW", name: "Patient Walrus", act: "Kúpil tvoju správu", time: "pred 4 h", amt: "$45,00" },
-        ];
-        return [...rows, ...rows];
-      })(),
       realActive: calcType === "real",
       aiActive: calcType === "ai",
       t1Active: calcTier === "t1",

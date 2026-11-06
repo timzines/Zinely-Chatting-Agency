@@ -32,11 +32,6 @@
   .z-steps > div > div:nth-child(2) { margin: 3px 0 5px !important; }
   .z-steps > div p { max-width: none !important; }
 
-  /* Purchases · Live feed: shorter card so the hero doesn't run forever,
-     smaller subtitle so "Purchased your message · 2m ago" fits a phone row */
-  .z-feed { height: 300px !important; }
-  .z-feed [style*="text-overflow"] { font-size: 11.5px !important; }
-
   /* Calculator: tighter card, toggle buttons that can shrink */
   .z-calc { padding: 24px 16px !important; }
   .z-tbtn { min-width: 0 !important; gap: 6px !important; padding: 11px 8px !important; font-size: 13px !important; white-space: nowrap; }

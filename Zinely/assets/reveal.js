@@ -51,7 +51,7 @@
     const vh = innerHeight;
     const intro = [];
     // A hero introduces itself: the copy line by line, the side panel a beat later. The homepage
-    // side panel tilts with the mouse through an inline transform, so it only fades.
+    // side panel (the client dashboard carousel) only fades.
     document.querySelectorAll(HEROES).forEach((hero) => {
       if (done.has(hero) || hero.closest('x-dc')) return;
       done.add(hero);
