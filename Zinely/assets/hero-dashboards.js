@@ -1,6 +1,7 @@
 /* Homepage hero dashboards: crossfade to the next screenshot every 3.5 s, looping.
    Pauses while hovered (mouse), while a dot has keyboard focus and while the tab is hidden.
-   Reduced motion: no auto-advance (CSS drops the fade), the dots still switch slides.
+   The frame tilts toward the mouse (same feel as the old hero card).
+   Reduced motion: no auto-advance and no tilt (CSS drops the fade), the dots still switch slides.
    support.js renders the page outside <x-dc>, so this mounts on that copy once it exists. */
 (() => {
   const INTERVAL = 3500;
@@ -47,7 +48,35 @@
     root.addEventListener('focusin', e => { focused = keyboardFocus(e.target); if (focused) stop(); });
     root.addEventListener('focusout', e => { if (!root.contains(e.relatedTarget)) { focused = false; restart(); } });
     document.addEventListener('visibilitychange', restart);
-    if (motion.addEventListener) motion.addEventListener('change', restart);
+
+    // Mouse-follow tilt: up to 7deg and a 6px drift toward the pointer, anywhere on the page.
+    const frame = root.querySelector('.zd-frame');
+    let pointer = null, raf = 0;
+    function tilt() {
+      raf = 0;
+      if (!pointer || motion.matches) return;
+      // Measure the untransformed frame (offsets ignore its own tilt) and only react near the viewport.
+      const box = root.getBoundingClientRect();
+      const top = box.top + frame.offsetTop, h = frame.offsetHeight;
+      if (top + h < -100 || top > innerHeight + 100) return;
+      const cx = box.left + frame.offsetLeft + frame.offsetWidth / 2, cy = top + h / 2;
+      const dx = Math.max(-1, Math.min(1, (pointer.x - cx) / (innerWidth / 2)));
+      const dy = Math.max(-1, Math.min(1, (pointer.y - cy) / (innerHeight / 2)));
+      frame.style.transition = 'transform .18s ease-out';
+      frame.style.transform = `rotateY(${(dx * 7).toFixed(2)}deg) rotateX(${(-dy * 7).toFixed(2)}deg) translate3d(${(dx * 6).toFixed(1)}px,${(dy * 6).toFixed(1)}px,0)`;
+    }
+    function untilt() {
+      pointer = null;
+      frame.style.transition = 'transform .6s cubic-bezier(.22,1,.36,1)';
+      frame.style.transform = 'rotateY(0deg) rotateX(0deg) translate3d(0,0,0)';
+    }
+    addEventListener('pointermove', e => {
+      if (e.pointerType !== 'mouse') return;
+      pointer = { x: e.clientX, y: e.clientY };
+      if (!raf) raf = requestAnimationFrame(tilt);
+    }, { passive: true });
+    document.documentElement.addEventListener('mouseleave', untilt);
+    if (motion.addEventListener) motion.addEventListener('change', () => { if (motion.matches) untilt(); restart(); });
 
     // Slides 2-4 are lazy; warm them once the page has loaded so the first crossfade is never blank.
     const warm = () => slides.forEach(slide => { slide.loading = 'eager'; });
