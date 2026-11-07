@@ -49,26 +49,26 @@
     root.addEventListener('focusout', e => { if (!root.contains(e.relatedTarget)) { focused = false; restart(); } });
     document.addEventListener('visibilitychange', restart);
 
-    // Mouse-follow tilt: up to 7deg and a 6px drift toward the pointer, anywhere on the page.
-    const frame = root.querySelector('.zd-frame');
+    // Mouse-follow tilt of the caption + frame together: up to 7deg and a 6px drift toward the pointer.
+    const group = root.querySelector('.zd-tilt');
     let pointer = null, raf = 0;
     function tilt() {
       raf = 0;
       if (!pointer || motion.matches) return;
-      // Measure the untransformed frame (offsets ignore its own tilt) and only react near the viewport.
+      // Measure the untransformed group (offsets ignore its own tilt) and only react near the viewport.
       const box = root.getBoundingClientRect();
-      const top = box.top + frame.offsetTop, h = frame.offsetHeight;
+      const top = box.top + group.offsetTop, h = group.offsetHeight;
       if (top + h < -100 || top > innerHeight + 100) return;
-      const cx = box.left + frame.offsetLeft + frame.offsetWidth / 2, cy = top + h / 2;
+      const cx = box.left + group.offsetLeft + group.offsetWidth / 2, cy = top + h / 2;
       const dx = Math.max(-1, Math.min(1, (pointer.x - cx) / (innerWidth / 2)));
       const dy = Math.max(-1, Math.min(1, (pointer.y - cy) / (innerHeight / 2)));
-      frame.style.transition = 'transform .18s ease-out';
-      frame.style.transform = `rotateY(${(dx * 7).toFixed(2)}deg) rotateX(${(-dy * 7).toFixed(2)}deg) translate3d(${(dx * 6).toFixed(1)}px,${(dy * 6).toFixed(1)}px,0)`;
+      group.style.transition = 'transform .18s ease-out';
+      group.style.transform = `rotateY(${(dx * 7).toFixed(2)}deg) rotateX(${(-dy * 7).toFixed(2)}deg) translate3d(${(dx * 6).toFixed(1)}px,${(dy * 6).toFixed(1)}px,0)`;
     }
     function untilt() {
       pointer = null;
-      frame.style.transition = 'transform .6s cubic-bezier(.22,1,.36,1)';
-      frame.style.transform = 'rotateY(0deg) rotateX(0deg) translate3d(0,0,0)';
+      group.style.transition = 'transform .6s cubic-bezier(.22,1,.36,1)';
+      group.style.transform = 'rotateY(0deg) rotateX(0deg) translate3d(0,0,0)';
     }
     addEventListener('pointermove', e => {
       if (e.pointerType !== 'mouse') return;

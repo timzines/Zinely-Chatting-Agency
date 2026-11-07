@@ -43,8 +43,8 @@
 <script src="assets/difference.js?v=8" defer></script>
 <link rel="stylesheet" href="assets/hero-proof.css?v=5">
 <script src="assets/hero-proof.js?v=2" defer></script>
-<link rel="stylesheet" href="/assets/hero-dashboards.css?v=2">
-<script src="/assets/hero-dashboards.js?v=2" defer></script>
+<link rel="stylesheet" href="/assets/hero-dashboards.css?v=3">
+<script src="/assets/hero-dashboards.js?v=3" defer></script>
 <script src="./support.js" defer></script>
 <link rel="stylesheet" href="/assets/estimate.css?v=1">
 <link rel="stylesheet" href="/assets/footer.css?v=1">
@@ -61,7 +61,7 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=Inter+Tight:wght@500&display=swap" rel="stylesheet">
 <style>
   body{margin:0;background:#0A1626;-webkit-font-smoothing:antialiased}
   html{scroll-behavior:smooth}
@@ -156,16 +156,18 @@
 
       <!-- REAL CLIENT DASHBOARDS: rotating screenshots, behaviour in assets/hero-dashboards.js -->
       <div class="zd" role="region" aria-roledescription="carousel" aria-label="Real client earnings dashboards">
-        <div class="zd-caption">
-          <img class="zd-logo" src="/assets/fanvue-logo.svg" alt="Fanvue" width="90" height="20">
-          <span class="zd-divider" aria-hidden="true"></span>
-          <span class="zd-caption-text">Screenshots of clients’ Fanvue dashboards:</span>
-        </div>
-        <div class="zd-frame">
-          <picture><source type="image/webp" srcset="/assets/zinely-dashboard-1-wm.webp"><img class="zd-slide is-active" src="/assets/zinely-dashboard-1-wm.png" width="498" height="582" alt="Client Fanvue earnings by type, $181K total" fetchpriority="high"></picture>
-          <picture><source type="image/webp" srcset="/assets/zinely-dashboard-2-wm.webp"><img class="zd-slide" loading="lazy" src="/assets/zinely-dashboard-2-wm.png" width="498" height="582" alt="Client Fanvue earnings by type, $71K total" aria-hidden="true"></picture>
-          <picture><source type="image/webp" srcset="/assets/zinely-dashboard-3-wm.webp"><img class="zd-slide" loading="lazy" src="/assets/zinely-dashboard-3-wm.png" width="498" height="582" alt="Client Fanvue earnings by type, $181K total" aria-hidden="true"></picture>
-          <picture><source type="image/webp" srcset="/assets/zinely-dashboard-4-wm.webp"><img class="zd-slide" loading="lazy" src="/assets/zinely-dashboard-4-wm.png" width="498" height="582" alt="Client Fanvue earnings by type, $65K total" aria-hidden="true"></picture>
+        <div class="zd-tilt">
+          <div class="zd-caption">
+            <img class="zd-logo" src="/assets/fanvue-logo.svg" alt="Fanvue" width="90" height="20">
+            <span class="zd-divider" aria-hidden="true"></span>
+            <span class="zd-caption-text">Client Dashboard Results:</span>
+          </div>
+          <div class="zd-frame">
+            <picture><source type="image/webp" srcset="/assets/zinely-dashboard-1-wm.webp?v=2"><img class="zd-slide is-active" src="/assets/zinely-dashboard-1-wm.png?v=2" width="498" height="582" alt="Client Fanvue earnings by type, $181K total" fetchpriority="high"></picture>
+            <picture><source type="image/webp" srcset="/assets/zinely-dashboard-2-wm.webp?v=2"><img class="zd-slide" loading="lazy" src="/assets/zinely-dashboard-2-wm.png?v=2" width="498" height="582" alt="Client Fanvue earnings by type, $71K total" aria-hidden="true"></picture>
+            <picture><source type="image/webp" srcset="/assets/zinely-dashboard-3-wm.webp?v=2"><img class="zd-slide" loading="lazy" src="/assets/zinely-dashboard-3-wm.png?v=2" width="498" height="582" alt="Client Fanvue earnings by type, $181K total" aria-hidden="true"></picture>
+            <picture><source type="image/webp" srcset="/assets/zinely-dashboard-4-wm.webp?v=2"><img class="zd-slide" loading="lazy" src="/assets/zinely-dashboard-4-wm.png?v=2" width="498" height="582" alt="Client Fanvue earnings by type, $65K total" aria-hidden="true"></picture>
+          </div>
         </div>
         <div class="zd-dots">
           <button class="zd-dot" type="button" aria-label="Show dashboard 1 of 4" aria-current="true"><span></span></button>

@@ -4,12 +4,15 @@
    so the frame takes that shape and each dashboard sits identically inside it. */
 .zd,.zd *{box-sizing:border-box}
 .zd{position:relative;width:100%;max-width:500px;margin:0 auto;display:flex;flex-direction:column;gap:12px;perspective:900px}
+/* Caption + frame tilt together toward the mouse; the dots stay put under the cursor. */
+.zd-tilt{display:flex;flex-direction:column;gap:12px;will-change:transform}
 .zd-caption{display:flex;align-items:center;flex-wrap:wrap;gap:12px}
 .zd-logo{height:20px;width:auto;display:block;flex:none}
 .zd-divider{width:1px;height:18px;background:#2A4066;flex:none}
-.zd-caption-text{flex:1 1 180px;font-size:13px;font-weight:600;line-height:1.4;color:#A9B8CF}
+/* Inter Tight is the closest free match to the Fanvue wordmark (Akzidenz Grotesk); sized to its letter height. */
+.zd-caption-text{flex:1 1 0;min-width:0;font-family:'Inter Tight','Figtree',system-ui,sans-serif;font-size:20px;font-weight:500;line-height:20px;letter-spacing:-.005em;color:#fff}
 .zd-frame{position:relative;box-sizing:content-box;aspect-ratio:498/582;border-radius:18px;border:1px solid #2A2F38;background:#151515;overflow:hidden;
-  box-shadow:0 0 0 6px rgba(46,155,240,.08),0 40px 80px rgba(0,0,0,.6);will-change:transform}
+  box-shadow:0 0 0 6px rgba(46,155,240,.08),0 40px 80px rgba(0,0,0,.6)}
 .zd-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s ease}
 .zd-slide.is-active{opacity:1}
 .zd-dots{display:flex;justify-content:center;align-items:center}
@@ -20,4 +23,5 @@
 
 /* Below 960px the hero stacks: copy first, dashboards underneath. */
 @media (max-width:959.98px){.z-hero{grid-template-columns:minmax(0,1fr)!important}}
+@media (max-width:420px){.zd-logo{height:17px}.zd-caption-text{font-size:17px;line-height:17px}}
 @media (prefers-reduced-motion:reduce){.zd-slide,.zd-dot span{transition:none}}
