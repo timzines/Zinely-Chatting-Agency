@@ -11,10 +11,19 @@
 .zd-divider{width:1px;height:18px;background:#2A4066;flex:none}
 /* Inter Tight is the closest free match to the Fanvue wordmark (Akzidenz Grotesk); sized to its letter height. */
 .zd-caption-text{flex:1 1 0;min-width:0;font-family:'Inter Tight','Figtree',system-ui,sans-serif;font-size:20px;font-weight:500;line-height:20px;letter-spacing:-.005em;color:#fff}
-.zd-frame{position:relative;box-sizing:content-box;aspect-ratio:498/582;border-radius:18px;border:1px solid #2A2F38;background:#151515;overflow:hidden;
+.zd-frame{position:relative;box-sizing:content-box;aspect-ratio:498/582;border-radius:18px;border:1px solid #2A2F38;background:#151515;
   box-shadow:0 0 0 6px rgba(46,155,240,.08),0 40px 80px rgba(0,0,0,.6)}
-.zd-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s ease}
+/* The slides round their own corners (frame radius minus its 1px border) so the streak can sit on the border. */
+.zd-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:17px;opacity:0;transition:opacity .7s ease}
 .zd-slide.is-active{opacity:1}
+/* Light streak: two comets chase each other around the frame border, one lap of the pattern per slide,
+   so a comet reaches the top-left corner exactly when the dashboard changes (hero-dashboards.js builds
+   the layers and listens for each lap). The box is the border's centre line; every layer is one rect
+   with pathLength 100 and a dash that repeats every 50. */
+.zd-streak{position:absolute;left:-.5px;top:-.5px;width:calc(100% + 1px);height:calc(100% + 1px);overflow:visible;pointer-events:none;fill:none}
+.zd-streak rect{stroke-linecap:round;animation:zd-orbit var(--zd-lap,3.5s) linear infinite}
+.zd-streak.is-paused rect{animation-play-state:paused}
+@keyframes zd-orbit{from{stroke-dashoffset:var(--zd-from)}to{stroke-dashoffset:var(--zd-to)}}
 .zd-dots{display:flex;justify-content:center;align-items:center}
 .zd-dot{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;margin:0;padding:0;border:0;background:transparent;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .zd-dot span{display:block;width:8px;height:8px;border-radius:999px;background:#2A4066;transition:width .3s ease,background-color .3s ease}
@@ -24,4 +33,4 @@
 /* Below 960px the hero stacks: copy first, dashboards underneath. */
 @media (max-width:959.98px){.z-hero{grid-template-columns:minmax(0,1fr)!important}}
 @media (max-width:420px){.zd-logo{height:17px}.zd-caption-text{font-size:17px;line-height:17px}}
-@media (prefers-reduced-motion:reduce){.zd-slide,.zd-dot span{transition:none}}
+@media (prefers-reduced-motion:reduce){.zd-slide,.zd-dot span{transition:none}.zd-streak{display:none}.zd-streak rect{animation:none}}
