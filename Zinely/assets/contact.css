@@ -149,3 +149,9 @@ button.z-contact-send{cursor:pointer;font:inherit;color:#fff;text-align:left}
 .z-contact-h1-alt>span{color:#1aa3f5}
 @media(max-width:480px){.z-contact-h1-alt{margin:20px 0;font-size:44px}}
 @media(max-width:360px){.z-contact-h1-alt{font-size:38px}}
+
+/* Send is held back until a required follow-up (exact amount under $5K, traffic of a new model) is filled in. */
+.z-send[data-blocked]{filter:saturate(.25) brightness(.62);box-shadow:none}
+.z-send[data-blocked]:hover{transform:none;filter:saturate(.25) brightness(.7)}
+.z-send[data-blocked]:hover .z-send-arrow{transform:none}
+.z-contact-send-note[data-blocked=true]{color:#ffc978;font-weight:600}
