@@ -1,8 +1,10 @@
 /* Homepage hero dashboards: crossfade to the next screenshot every 3.5 s, looping.
-   Pauses while hovered (mouse), while a dot has keyboard focus and while the tab is hidden.
+   Pauses while a dot has keyboard focus, while the frame is off screen and while the tab is hidden
+   (not on mouse hover: the dots show a running timer, and a timer that stops under the mouse looks broken).
    A light streak circles the frame border and is the clock: the dashboard changes each time a
-   comet comes back to the top-left corner. The streak rests while the frame is off screen.
-   The dots show the same timer: the active pill slowly stretches to the next dot, then glides onto it.
+   comet comes back to the top-left corner. Coming back on screen always starts a fresh, full lap.
+   The dots show the same timer: the active pill slowly stretches to the next dot, then lands on it;
+   on the last dot it shrinks to a dot instead and that dot glides back to the first.
    The frame tilts toward the mouse (same feel as the old hero card).
    Reduced motion: no streak, no auto-advance and no tilt (CSS drops the fade), the dots still switch slides.
    support.js renders the page outside <x-dc>, so this mounts on that copy once it exists. */
@@ -41,7 +43,7 @@
   // Dots: each button is 44px wide; the blue pill rests 28px wide in the middle of the active one.
   // Landing on a dot takes SETTLE ms and overshoots it by BOUNCE px before coming to rest;
   // the end of the pill that was already there gets pushed NUDGE px and comes back.
-  const DOT = 44, PILL_LEFT = 8, PILL_RIGHT = 36, SETTLE = 900, BOUNCE = 4, NUDGE = 2.5;
+  const DOT = 44, PILL_LEFT = 8, PILL_RIGHT = 36, SETTLE = 800, BOUNCE = 2.5, NUDGE = 1.25;
   const easeSettle = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
   const easeReach = t => .65 * t + .35 * (.5 - Math.cos(Math.PI * t) / 2);
   // A spring let go from rest: starts gently, passes the target by `over` (a fraction of the
@@ -57,22 +59,23 @@
     return ease;
   }
 
-  // The pill is one round-capped line drawn over the dots row (it hangs off the first dot so it
-  // always lines up with them); the script moves its two ends.
-  function buildRunner(firstDot, count) {
+  // The pill is one round-capped line drawn over the dots row (centred on it the same way the
+  // row centres its dots, so the two always line up); the script moves its two ends.
+  function buildRunner(row, count) {
     const NS = 'http://www.w3.org/2000/svg';
     const svg = document.createElementNS(NS, 'svg');
     svg.setAttribute('class', 'zd-runner');
     svg.setAttribute('aria-hidden', 'true');
     svg.setAttribute('width', count * DOT);
     svg.setAttribute('height', DOT);
+    svg.style.marginLeft = -count * DOT / 2 + 'px';
     const line = document.createElementNS(NS, 'line');
     line.setAttribute('x1', PILL_LEFT + 4);
     line.setAttribute('x2', PILL_RIGHT - 4);
     line.setAttribute('y1', DOT / 2);
     line.setAttribute('y2', DOT / 2);
     svg.appendChild(line);
-    firstDot.appendChild(svg);
+    row.appendChild(svg);
     return line;
   }
 
@@ -85,16 +88,17 @@
     const slides = [...root.querySelectorAll('.zd-slide')];
     const dots = [...root.querySelectorAll('.zd-dot')];
     const motion = matchMedia('(prefers-reduced-motion: reduce)');
-    let index = 0, timer = null, dueAt = 0, hovered = false, focused = false, away = false, quietUntil = 0;
+    let index = 0, timer = null, dueAt = 0, focused = false, away = false, quietUntil = 0;
     const streak = buildStreak(root.querySelector('.zd-frame'));
     const head = streak.lastElementChild;
     // True while the streak is circling (not under reduced motion, not if its CSS is missing).
     const orbiting = () => getComputedStyle(head).animationName !== 'none';
 
     // Dots pill = the timer you can read: it settles on the active dot, then slowly stretches to the
-    // next one and arrives as the dashboard changes (on the last dot it stretches back to the first).
+    // next one and arrives as the dashboard changes. The last dot has no next one, so there the pill
+    // shrinks to a dot, and that dot glides back to the first and opens up again.
     // Each end of the pill follows its own short list of moves; a later move takes over once it starts.
-    const runner = buildRunner(dots[0], dots.length);
+    const runner = buildRunner(root.querySelector('.zd-dots'), dots.length);
     root.dataset.zdRunner = '';
     const ends = { left: { at: PILL_LEFT, moves: [] }, right: { at: PILL_RIGHT, moves: [] } };
     let runnerFrame = 0, runnerDot = 0;
@@ -139,11 +143,12 @@
       }
       if (reach > 0) {
         const last = index === slides.length - 1;
-        const side = last ? 'left' : 'right';
-        ends[side].moves.push({
-          from: rest[side], to: last ? PILL_LEFT : rest.right + DOT,
-          start: now + wait, time: Math.max(300, reach - wait), ease: easeReach
+        const glide = (side, to) => ends[side].moves.push({
+          from: rest[side], to, start: now + wait, time: Math.max(300, reach - wait), ease: easeReach
         });
+        // Last dot: both ends close in on the dot underneath (8px wide, in the middle of the 28px pill).
+        if (last) { glide('left', rest.left + 10); glide('right', rest.right - 10); }
+        else glide('right', rest.right + DOT);
       }
       if (!runnerFrame) runnerFrame = requestAnimationFrame(drawRunner);
     }
@@ -167,9 +172,11 @@
         else slide.setAttribute('aria-hidden', 'true');
       });
       dots.forEach((dot, k) => dot.setAttribute('aria-current', k === index ? 'true' : 'false'));
+      // Fetch the one after this now, so it is there when the lap ends.
+      slides[(index + 1) % slides.length].loading = 'eager';
     }
     function stop() { clearTimeout(timer); timer = null; }
-    const held = () => motion.matches || hovered || focused || away || document.hidden;
+    const held = () => motion.matches || focused || away || document.hidden;
     // Never fade onto a screenshot that hasn't arrived yet: fetch it now and try again next time.
     function advance() {
       const next = slides[(index + 1) % slides.length];
@@ -192,7 +199,14 @@
     // Start the wait for the next dashboard again and point the dots pill at it.
     const restart = () => { schedule(INTERVAL); syncRunner(); };
     const hold = () => { stop(); syncRunner(); };
-    // A lap that ends right after a click or after the mouse leaves must not switch straight away.
+    // Back in view (nobody saw where the streak stopped): start its lap over, so the first thing
+    // seen is a whole, normally paced lap and not the hurried tail end of one.
+    function freshLap() {
+      if (!head.getAnimations) return;
+      [...streak.children].forEach(layer => { const lap = layer.getAnimations()[0]; if (lap) lap.currentTime = 0; });
+      quietUntil = 0;
+    }
+    // A lap that ends right after a click must not switch straight away.
     const quiet = ms => { quietUntil = performance.now() + ms; };
     head.addEventListener('animationiteration', () => {
       if (!held() && performance.now() >= quietUntil && advance()) syncRunner();
@@ -201,18 +215,16 @@
       new IntersectionObserver(entries => {
         const gone = !entries[entries.length - 1].isIntersecting;
         streak.classList.toggle('is-paused', gone);
-        if (gone !== away) { away = gone; restart(); }
+        if (gone !== away) { away = gone; if (!gone) freshLap(); restart(); }
       }, { rootMargin: '100px' }).observe(root);
     }
     // A mouse click also focuses the dot; only keyboard focus should hold the rotation.
     const keyboardFocus = el => { try { return el.matches(':focus-visible'); } catch { return true; } };
 
     dots.forEach((dot, k) => dot.addEventListener('click', () => { show(k); quiet(INTERVAL * .6); restart(); }));
-    root.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') { hovered = true; hold(); } });
-    root.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') { hovered = false; quiet(1500); restart(); } });
     root.addEventListener('focusin', e => { focused = keyboardFocus(e.target); if (focused) hold(); });
     root.addEventListener('focusout', e => { if (!root.contains(e.relatedTarget)) { focused = false; restart(); } });
-    document.addEventListener('visibilitychange', restart);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) freshLap(); restart(); });
 
     // Mouse-follow tilt of the caption + frame together: up to 7deg and a 6px drift toward the pointer.
     const group = root.querySelector('.zd-tilt');
