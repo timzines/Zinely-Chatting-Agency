@@ -2,6 +2,7 @@
    Pauses while hovered (mouse), while a dot has keyboard focus and while the tab is hidden.
    A light streak circles the frame border and is the clock: the dashboard changes each time a
    comet comes back to the top-left corner. The streak rests while the frame is off screen.
+   The dots show the same timer: the active pill slowly stretches to the next dot, then glides onto it.
    The frame tilts toward the mouse (same feel as the old hero card).
    Reduced motion: no streak, no auto-advance and no tilt (CSS drops the fade), the dots still switch slides.
    support.js renders the page outside <x-dc>, so this mounts on that copy once it exists. */
@@ -37,6 +38,44 @@
     return svg;
   }
 
+  // Dots: each button is 44px wide; the blue pill rests 28px wide in the middle of the active one.
+  // Landing on a dot takes SETTLE ms and overshoots it by BOUNCE px before coming to rest;
+  // the end of the pill that was already there gets pushed NUDGE px and comes back.
+  const DOT = 44, PILL_LEFT = 8, PILL_RIGHT = 36, SETTLE = 900, BOUNCE = 4, NUDGE = 2.5;
+  const easeSettle = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  const easeReach = t => .65 * t + .35 * (.5 - Math.cos(Math.PI * t) / 2);
+  // A spring let go from rest: starts gently, passes the target by `over` (a fraction of the
+  // distance), swings back and is still at t = 1. `peak` is when it is furthest past the target.
+  function spring(over) {
+    const ln = Math.log(Math.max(.005, Math.min(.3, over)));
+    const damping = -ln / Math.sqrt(Math.PI * Math.PI + ln * ln);
+    const rate = 5 / damping, swing = rate * Math.sqrt(1 - damping * damping);
+    const at = t => 1 - Math.exp(-5 * t) * (Math.cos(swing * t) + 5 / swing * Math.sin(swing * t));
+    const end = at(1);
+    const ease = t => at(t) / end;
+    ease.peak = Math.PI / swing;
+    return ease;
+  }
+
+  // The pill is one round-capped line drawn over the dots row (it hangs off the first dot so it
+  // always lines up with them); the script moves its two ends.
+  function buildRunner(firstDot, count) {
+    const NS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('class', 'zd-runner');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('width', count * DOT);
+    svg.setAttribute('height', DOT);
+    const line = document.createElementNS(NS, 'line');
+    line.setAttribute('x1', PILL_LEFT + 4);
+    line.setAttribute('x2', PILL_RIGHT - 4);
+    line.setAttribute('y1', DOT / 2);
+    line.setAttribute('y2', DOT / 2);
+    svg.appendChild(line);
+    firstDot.appendChild(svg);
+    return line;
+  }
+
   function mount() {
     const root = [...document.querySelectorAll('.zd')].find(el => !el.closest('x-dc'));
     if (!root) return false;
@@ -46,11 +85,79 @@
     const slides = [...root.querySelectorAll('.zd-slide')];
     const dots = [...root.querySelectorAll('.zd-dot')];
     const motion = matchMedia('(prefers-reduced-motion: reduce)');
-    let index = 0, timer = null, hovered = false, focused = false, quietUntil = 0;
+    let index = 0, timer = null, dueAt = 0, hovered = false, focused = false, away = false, quietUntil = 0;
     const streak = buildStreak(root.querySelector('.zd-frame'));
     const head = streak.lastElementChild;
     // True while the streak is circling (not under reduced motion, not if its CSS is missing).
     const orbiting = () => getComputedStyle(head).animationName !== 'none';
+
+    // Dots pill = the timer you can read: it settles on the active dot, then slowly stretches to the
+    // next one and arrives as the dashboard changes (on the last dot it stretches back to the first).
+    // Each end of the pill follows its own short list of moves; a later move takes over once it starts.
+    const runner = buildRunner(dots[0], dots.length);
+    root.dataset.zdRunner = '';
+    const ends = { left: { at: PILL_LEFT, moves: [] }, right: { at: PILL_RIGHT, moves: [] } };
+    let runnerFrame = 0, runnerDot = 0;
+    function place(end, now) {
+      for (const m of end.moves) {
+        if (now < m.start) continue;
+        const t = Math.min(1, (now - m.start) / m.time);
+        // A nudge is a push out and back (no net travel) on top of the move itself.
+        end.at = m.from + (m.to - m.from) * m.ease(t) + (m.nudge ? m.nudge * Math.pow(Math.sin(Math.PI * t), 2) : 0);
+      }
+      return end.at;
+    }
+    function drawRunner(now) {
+      runnerFrame = 0;
+      runner.setAttribute('x1', (place(ends.left, now) + 4).toFixed(2));
+      runner.setAttribute('x2', (place(ends.right, now) - 4).toFixed(2));
+      const moving = end => end.moves.some(m => now < m.start + m.time);
+      if (moving(ends.left) || moving(ends.right)) runnerFrame = requestAnimationFrame(drawRunner);
+    }
+    // reach = ms until the next dashboard; 0 = just rest on the active dot (held, or reduced motion).
+    function runTo(reach) {
+      const now = performance.now();
+      const rest = { left: index * DOT + PILL_LEFT, right: index * DOT + PILL_RIGHT };
+      // Arriving on a new dot lands with a small bounce; going back to rest on the same dot is a plain glide.
+      const landing = index !== runnerDot;
+      runnerDot = index;
+      let wait = 0, landed = null;
+      for (const side of ['left', 'right']) {
+        const end = ends[side], from = place(end, now), gap = rest[side] - from;
+        end.moves = [];
+        if (motion.matches || Math.abs(gap) < .01) { end.at = rest[side]; continue; }
+        const ease = landing && Math.abs(gap) > 2 * BOUNCE ? spring(BOUNCE / Math.abs(gap)) : easeSettle;
+        end.moves.push({ from, to: rest[side], start: now, time: SETTLE, ease });
+        landed = wait ? null : { side, gap, peak: ease.peak };
+        wait = SETTLE;
+      }
+      // One end landed while the other was already in place: the landing pushes that one a little.
+      if (landed && landed.peak) {
+        const other = landed.side === 'left' ? 'right' : 'left';
+        const peak = landed.peak * SETTLE, time = Math.min(1.2 * peak, 2 * (SETTLE - peak));
+        ends[other].moves.push({ from: rest[other], to: rest[other], nudge: Math.sign(landed.gap) * NUDGE, start: now + peak - time / 2, time, ease: t => t });
+      }
+      if (reach > 0) {
+        const last = index === slides.length - 1;
+        const side = last ? 'left' : 'right';
+        ends[side].moves.push({
+          from: rest[side], to: last ? PILL_LEFT : rest.right + DOT,
+          start: now + wait, time: Math.max(300, reach - wait), ease: easeReach
+        });
+      }
+      if (!runnerFrame) runnerFrame = requestAnimationFrame(drawRunner);
+    }
+    // Time left until the dashboard changes: the rest of the streak's lap (plus whole laps a quiet spell skips).
+    function untilNext() {
+      const now = performance.now();
+      if (!orbiting()) return dueAt ? Math.max(0, dueAt - now) : 0;
+      const lap = head.getAnimations ? head.getAnimations()[0] : null;
+      let left = INTERVAL - (lap && typeof lap.currentTime === 'number' ? lap.currentTime % INTERVAL : 0);
+      if (left < 50) left += INTERVAL;
+      while (now + left < quietUntil) left += INTERVAL;
+      return left;
+    }
+    const syncRunner = () => runTo(held() ? 0 : untilNext());
 
     function show(n) {
       index = (n + slides.length) % slides.length;
@@ -62,7 +169,7 @@
       dots.forEach((dot, k) => dot.setAttribute('aria-current', k === index ? 'true' : 'false'));
     }
     function stop() { clearTimeout(timer); timer = null; }
-    const held = () => motion.matches || hovered || focused || document.hidden;
+    const held = () => motion.matches || hovered || focused || away || document.hidden;
     // Never fade onto a screenshot that hasn't arrived yet: fetch it now and try again next time.
     function advance() {
       const next = slides[(index + 1) % slides.length];
@@ -73,27 +180,37 @@
     // The streak's laps drive the rotation; the timer only runs if the streak is not circling.
     function schedule(delay) {
       stop();
+      dueAt = 0;
       if (held() || orbiting()) return;
-      timer = setTimeout(() => schedule(advance() ? INTERVAL : 250), delay);
+      dueAt = performance.now() + delay;
+      timer = setTimeout(() => {
+        const moved = advance();
+        schedule(moved ? INTERVAL : 250);
+        if (moved) syncRunner();
+      }, delay);
     }
-    const restart = () => schedule(INTERVAL);
+    // Start the wait for the next dashboard again and point the dots pill at it.
+    const restart = () => { schedule(INTERVAL); syncRunner(); };
+    const hold = () => { stop(); syncRunner(); };
     // A lap that ends right after a click or after the mouse leaves must not switch straight away.
     const quiet = ms => { quietUntil = performance.now() + ms; };
     head.addEventListener('animationiteration', () => {
-      if (!held() && performance.now() >= quietUntil) advance();
+      if (!held() && performance.now() >= quietUntil && advance()) syncRunner();
     });
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(entries => {
-        streak.classList.toggle('is-paused', !entries[entries.length - 1].isIntersecting);
+        const gone = !entries[entries.length - 1].isIntersecting;
+        streak.classList.toggle('is-paused', gone);
+        if (gone !== away) { away = gone; restart(); }
       }, { rootMargin: '100px' }).observe(root);
     }
     // A mouse click also focuses the dot; only keyboard focus should hold the rotation.
     const keyboardFocus = el => { try { return el.matches(':focus-visible'); } catch { return true; } };
 
     dots.forEach((dot, k) => dot.addEventListener('click', () => { show(k); quiet(INTERVAL * .6); restart(); }));
-    root.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') { hovered = true; stop(); } });
-    root.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') { hovered = false; quiet(1000); restart(); } });
-    root.addEventListener('focusin', e => { focused = keyboardFocus(e.target); if (focused) stop(); });
+    root.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') { hovered = true; hold(); } });
+    root.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') { hovered = false; quiet(1500); restart(); } });
+    root.addEventListener('focusin', e => { focused = keyboardFocus(e.target); if (focused) hold(); });
     root.addEventListener('focusout', e => { if (!root.contains(e.relatedTarget)) { focused = false; restart(); } });
     document.addEventListener('visibilitychange', restart);
 

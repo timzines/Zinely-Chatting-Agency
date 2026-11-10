@@ -28,6 +28,12 @@
 .zd-dot{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;margin:0;padding:0;border:0;background:transparent;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .zd-dot span{display:block;width:8px;height:8px;border-radius:999px;background:#2A4066;transition:width .3s ease,background-color .3s ease}
 .zd-dot[aria-current="true"] span{width:28px;background:#2E9BF0}
+/* With the script running, the active dot is a pill the script draws over the row (.zd-runner):
+   it stretches toward the next dot as the timer runs, so every dot underneath stays a plain dot. */
+.zd[data-zd-runner] .zd-dot[aria-current="true"] span{width:8px;background:#2A4066}
+.zd-dot:first-child{position:relative}
+.zd-runner{position:absolute;left:0;top:0;overflow:visible;pointer-events:none}
+.zd-runner line{stroke:#2E9BF0;stroke-width:8;stroke-linecap:round}
 .zd-dot:focus-visible{outline:2px solid #7CC1FF;outline-offset:-6px;border-radius:12px}
 
 /* Below 960px the hero stacks: copy first, dashboards underneath. */
