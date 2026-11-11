@@ -61,6 +61,7 @@
 .zq-tick svg{width:12px;height:12px}
 .zq-opt[aria-pressed=true] .zq-tick{animation:zq-pop .45s .05s cubic-bezier(.34,1.7,.5,1) both}
 .zq-grid--plat .zq-opt{gap:11px;padding:10px 30px 10px 10px;border-radius:14px}
+.zq-grid--plat .zq-opt[data-v=other]{grid-column:span 2}
 .zq-grid--plat .zq-tick,.zq-grid--app .zq-tick{top:8px;right:8px;width:18px;height:18px;margin:0}
 .zq-grid--plat .zq-tick svg,.zq-grid--app .zq-tick svg{width:10px;height:10px}
 .zq-grid--app .zq-opt{flex-direction:column;gap:9px;padding:18px 8px 14px;text-align:center;justify-content:center}
