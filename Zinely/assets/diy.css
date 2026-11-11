@@ -1,44 +1,44 @@
 /* Hiring your own chatters: four short pains, then one panel that takes each of them off your plate. */
 .z-diy-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0;padding:0;list-style:none}
-.z-diy-pain{display:flex;flex-direction:column;padding:22px 20px 20px;border:1px solid rgba(255,107,107,.2);border-radius:16px;background:linear-gradient(170deg,rgba(255,107,107,.08),rgba(13,29,48,.6) 55%);transition:border-color .25s,transform .3s var(--z-ease)}
-.z-diy-pain:hover{border-color:rgba(255,107,107,.5);transform:translateY(-3px)}
-.z-diy-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;color:#ff8a8a;background:rgba(255,107,107,.12);border:1px solid rgba(255,107,107,.28);margin-bottom:18px}
+.z-diy-pain{display:flex;flex-direction:column;padding:24px 20px 20px;border:1px solid rgba(255,107,107,.2);border-radius:16px;background:rgba(255,107,107,.08);transition:border-color .25s,transform .3s var(--z-ease)}
+.z-diy-pain:hover{border-color:rgba(255,107,107,.5);}
+.z-diy-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;color:#ff8a8a;background:rgba(255,107,107,.12);border:1px solid rgba(255,107,107,.28);margin-bottom:16px}
 .z-diy-icon svg,.z-diy-fix-icon svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .z-diy-pain h3{font:800 18.5px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;color:#fff;margin:0 0 8px}
-.z-diy-pain p{font-size:13.5px;line-height:1.55;color:#b6a3aa;margin:0 0 18px}
-.z-diy-cost{margin-top:auto;align-self:flex-start;padding:5px 10px;border-radius:8px;background:rgba(255,107,107,.13);color:#ff9d9d;font-size:11.5px;font-weight:800;letter-spacing:.02em}
+.z-diy-pain p{font-size:14px;line-height:1.55;color:#b6a3aa;margin:0 0 16px}
+.z-diy-cost{margin-top:auto;align-self:flex-start;padding:4px 10px;border-radius:8px;background:rgba(255,107,107,.13);color:#ff9d9d;font-size:12px;font-weight:800;letter-spacing:.02em}
 /* The bridge from problems to the panel: our logo */
 .z-diy-bridge{display:flex;flex-direction:column;align-items:center;margin:4px 0}
-.z-diy-bridge::before{content:'';width:2px;height:30px;background:linear-gradient(rgba(255,107,107,.4),#36d399)}
+.z-diy-bridge::before{content:'';width:2px;height:30px;background:#36d399}
 .z-diy-bridge::after{content:'';width:2px;height:22px;background:#36d399}
-.z-diy-logo{position:relative;display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:#0d2433;border:1px solid rgba(54,211,153,.5);box-shadow:0 0 0 6px rgba(54,211,153,.07),0 0 30px rgba(54,211,153,.25)}
-.z-diy-logo img{width:34px;height:34px;filter:drop-shadow(0 4px 10px rgba(26,163,245,.35))}
+.z-diy-logo{position:relative;display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:#0d2433;border:1px solid rgba(54,211,153,.5);box-shadow:0 0 0 6px rgba(54,211,153,.07)}
+.z-diy-logo img{width:34px;height:34px;filter:none}
 /* The panel */
-.z-diy-band{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center;padding:40px;border:1px solid rgba(54,211,153,.4);border-radius:22px;background:radial-gradient(ellipse at 0 0,rgba(54,211,153,.14),transparent 55%),linear-gradient(135deg,#0f2a2c,#0c1f31);box-shadow:0 20px 50px rgba(2,11,21,.4)}
+.z-diy-band{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center;padding:40px;border:1px solid rgba(54,211,153,.4);border-radius:24px;background:linear-gradient(135deg,#0f2a2c,#0b1b2e);box-shadow:0 20px 50px rgba(2,11,21,.4)}
 .z-diy-band h3{font:800 clamp(32px,3.6vw,44px)/1.06 'Bricolage Grotesque',sans-serif;letter-spacing:-.04em;color:#fff;margin:0}
 .z-diy-band h3 span{color:var(--z-green)}
 .z-diy-band-copy>p{font-size:15px;line-height:1.7;color:#b2d3c8;margin:16px 0 0;max-width:360px}
-.z-diy-cta{display:inline-flex;align-items:center;gap:10px;margin-top:24px;padding:12px 18px;border-radius:12px;background:var(--z-green);color:#05231a;font-size:14px;font-weight:800;text-decoration:none;transition:filter .2s,transform .2s}
-.z-diy-cta:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.z-diy-cta{display:inline-flex;align-items:center;gap:10px;margin-top:24px;padding:12px 16px;border-radius:12px;background:var(--z-green);color:#05231a;font-size:14px;font-weight:800;text-decoration:none;transition:filter .2s,transform .2s}
+.z-diy-cta:hover{filter:brightness(1.08);}
 .z-diy-fixes{display:grid;gap:8px;margin:0;padding:0;list-style:none}
 /* Each row starts as the red problem; on reveal it is struck out and turns into the green fix */
-.z-diy-fixes li{display:grid;grid-template-columns:36px minmax(0,1fr) 22px;align-items:center;gap:14px;padding:15px 16px;border:1px solid rgba(54,211,153,.35);border-radius:13px;background:rgba(54,211,153,.06)}
-.z-diy-fix-icon{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;color:#6fe3b8;background:rgba(54,211,153,.12)}
+.z-diy-fixes li{display:grid;grid-template-columns:36px minmax(0,1fr) 22px;align-items:center;gap:16px;padding:16px 16px;border:1px solid rgba(54,211,153,.35);border-radius:12px;background:rgba(54,211,153,.06)}
+.z-diy-fix-icon{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;color:#8ff0c9;background:rgba(54,211,153,.12)}
 .z-diy-fix-icon svg{width:19px;height:19px}
 .z-diy-swap{display:flex;flex-direction:column;align-items:flex-start;min-width:0}
 .z-diy-fixes s{position:relative;display:inline-block;line-height:1.25;font-size:13px;font-weight:600;color:#f2c4c4;text-decoration:none;transform-origin:left center}
 .z-diy-fixes s::after{content:'';position:absolute;left:-3px;right:-3px;top:calc(50% - .5px);height:1.5px;border-radius:2px;background:rgba(255,107,107,.7);transform-origin:left}
-.z-diy-fixes strong{color:#effaf5;font-size:14.5px;font-weight:700;margin-top:3px}
+.z-diy-fixes strong{color:#effaf5;font-size:15px;font-weight:700;margin-top:3px}
 .z-diy-check{width:22px;height:22px;fill:none;stroke:#36d399;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .z-diy-check circle{stroke:#2f7a63;stroke-width:1.2}
-.z-diy-reading{margin:18px 0 0;text-align:center;font-size:12px;color:#7f9db3}
-.z-diy-reading a{color:#64bff4;text-underline-offset:3px}
+.z-diy-reading{margin:16px 0 0;text-align:center;font-size:12px;color:#8fb2d4}
+.z-diy-reading a{color:#79cbff;text-underline-offset:3px}
 @media(prefers-reduced-motion:no-preference){
   .z-diy-fixes li:nth-child(1){--d:.3s}.z-diy-fixes li:nth-child(2){--d:1.2s}.z-diy-fixes li:nth-child(3){--d:2.1s}.z-diy-fixes li:nth-child(4){--d:3s}
   /* Before the reveal: red problem state */
   .z-diy-fixes li{border-color:rgba(255,107,107,.35);background:rgba(255,107,107,.06)}
   .z-diy-fixes .z-diy-fix-icon{color:#ff8a8a;background:rgba(255,107,107,.12)}
-  .z-diy-fixes s{font-size:14.5px;font-weight:700;color:#ff9d9d;transform:translateY(11px)}
+  .z-diy-fixes s{font-size:15px;font-weight:700;color:#ff9d9d;transform:translateY(11px)}
   .z-diy-fixes s::after{transform:scaleX(0)}
   .z-diy-fixes strong,.z-diy-fixes .z-diy-check{opacity:0}
   /* The reveal, one row at a time, top to bottom */
@@ -60,16 +60,16 @@
 @media(max-width:1000px){.z-diy-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.z-diy-band{grid-template-columns:1fr;gap:28px;padding:32px}.z-diy-band-copy>p{max-width:none}}
 @media(max-width:560px){
   .z-diy-grid{grid-template-columns:1fr;gap:10px}
-  .z-diy-pain{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:14px;padding:18px 16px}
+  .z-diy-pain{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:16px;padding:16px 16px}
   .z-diy-icon{grid-row:span 3;width:40px;height:40px;margin:0}
-  .z-diy-pain h3{font-size:17px;margin-bottom:5px}
+  .z-diy-pain h3{font-size:18px;margin-bottom:4px}
   .z-diy-pain p{font-size:13px;margin-bottom:10px}
   .z-diy-cost{justify-self:start}
-  .z-diy-band{padding:26px 16px;border-radius:18px}
+  .z-diy-band{padding:24px 16px;border-radius:20px}
   .z-diy-band h3{font-size:34px}
   .z-diy-band-copy>p{font-size:14px}
-  .z-diy-fixes li{grid-template-columns:32px minmax(0,1fr) 20px;gap:11px;padding:12px}
+  .z-diy-fixes li{grid-template-columns:32px minmax(0,1fr) 20px;gap:12px;padding:12px}
   .z-diy-fix-icon{width:32px;height:32px}
-  .z-diy-fixes strong{font-size:13.5px}
+  .z-diy-fixes strong{font-size:14px}
   .z-diy-cta{width:100%;justify-content:center;box-sizing:border-box}
 }

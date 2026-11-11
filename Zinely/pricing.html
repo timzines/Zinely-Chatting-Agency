@@ -31,13 +31,13 @@
 <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png">
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="mobile.css?v=20261001">
-<link rel="stylesheet" href="assets/refinements.css?v=20261017-5">
+<link rel="stylesheet" href="mobile.css?v=20261111-1">
+<link rel="stylesheet" href="assets/refinements.css?v=20261111-1">
 <script src="assets/interactions.js?v=20261017-3" defer></script>
 <script src="./support.js" defer></script>
-<link rel="stylesheet" href="/assets/estimate.css?v=1">
-<link rel="stylesheet" href="/assets/footer.css?v=1">
-<link rel="stylesheet" href="/assets/analytics.css?v=3">
+<link rel="stylesheet" href="/assets/estimate.css?v=20261111-1">
+<link rel="stylesheet" href="/assets/footer.css?v=20261111-1">
+<link rel="stylesheet" href="/assets/analytics.css?v=20261111-1">
 <script src="/assets/analytics.js?v=3" defer></script>
 <script src="/assets/quote.js?v=4" defer></script>
 <link rel="stylesheet" href="/assets/reveal.css?v=4">
@@ -61,43 +61,43 @@
   }
   details summary::-webkit-details-marker{display:none}
   input.zslider{-webkit-appearance:none;appearance:none;height:6px;border-radius:999px;background:#16324F;outline:none}
-  input.zslider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;background:#fff;border:5px solid #1AA3F5;box-shadow:0 2px 12px rgba(26,163,245,.6);cursor:grab;transition:transform .15s ease}
+  input.zslider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;background:#fff;border:5px solid #1AA3F5;box-shadow:none;cursor:grab;transition:transform .15s ease}
   input.zslider::-webkit-slider-thumb:hover{transform:scale(1.15)}
   input.zslider::-webkit-slider-thumb:active{cursor:grabbing;transform:scale(1.05)}
-  input.zslider::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:5px solid #1AA3F5;box-shadow:0 2px 12px rgba(26,163,245,.6);cursor:grab}
+  input.zslider::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:5px solid #1AA3F5;box-shadow:none;cursor:grab}
   input.zslider::-moz-range-track{height:6px;border-radius:999px;background:#16324F}
 </style>
 </helmet>
 
 <div data-screen-label="Pricing" style="font-family:'Figtree',system-ui,sans-serif;color:#EAF4FD;line-height:1.6;background:#0A1626;min-height:100vh;position:relative;overflow-x:clip">
 
-  <div style="position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.55;background:radial-gradient(1200px 600px at 80% -10%, rgba(26,163,245,.13), transparent 60%),radial-gradient(900px 500px at -10% 30%, rgba(46,137,214,.10), transparent 55%),repeating-linear-gradient(115deg, rgba(26,163,245,.025) 0 2px, transparent 2px 26px)"></div>
+  <div style="position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.55;background:none"></div>
 
   <!-- NAV -->
   <div style="position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(10,22,38,.82);border-bottom:1px solid #1C3A5A">
-    <div class="z-navbar" style="max-width:1160px;margin:0 auto;padding:13px 24px;display:flex;align-items:center;gap:28px">
+    <div class="z-navbar" style="max-width:1160px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:28px">
       <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none">
-        <img src="assets/logo.png" alt="Zinely" style="width:34px;height:34px;filter:drop-shadow(0 6px 14px rgba(26,163,245,.4))">
+        <img src="assets/logo.png" alt="Zinely" style="width:34px;height:34px;filter:none">
         <span style="display:flex;flex-direction:column;line-height:1"><span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:20px;color:#fff;letter-spacing:-.01em">Zinely</span><span style="font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#5E82A6;margin-top:3px">Chatting Agency</span></span>
       </a>
-      <div class="z-nav-desktop" style="display:flex;gap:26px;margin-left:auto;align-items:center">
-        <a href="/services" style="color:#8FB2D4;text-decoration:none;font-weight:600;font-size:14.5px" style-hover="color:#EAF4FD">Services</a>
-        <a href="/cases" style="color:#8FB2D4;text-decoration:none;font-weight:600;font-size:14.5px" style-hover="color:#EAF4FD">Case studies</a>
-        <a href="/pricing" style="color:#EAF4FD;text-decoration:none;font-weight:700;font-size:14.5px">Pricing</a>
-        <a href="/blog/" style="color:#8FB2D4;text-decoration:none;font-weight:600;font-size:14.5px" style-hover="color:#EAF4FD">Blog</a>
-        <a href="/trial" style="color:#8FB2D4;text-decoration:none;font-weight:600;font-size:14.5px" style-hover="color:#EAF4FD">Trial week</a>
-        <a data-estimate-cta aria-label="Contact us" href="/contact" style="display:flex;align-items:center;gap:8px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:14.5px;padding:10px 20px;border-radius:11px;text-decoration:none;box-shadow:0 8px 18px rgba(26,163,245,.3)" style-hover="transform:translateY(-1px)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 2v-10a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8Z"></path></svg>Contact us</a>
+      <div class="z-nav-desktop" style="display:flex;gap:24px;margin-left:auto;align-items:center">
+        <a href="/services" style="color:#8FB2D4;text-decoration:none;font-weight:600;font-size:15px" style-hover="color:#EAF4FD">Services</a>
+        <a href="/cases" style="color:#8FB2D4;text-decoration:none;font-weight:600;font-size:15px" style-hover="color:#EAF4FD">Case studies</a>
+        <a href="/pricing" style="color:#EAF4FD;text-decoration:none;font-weight:700;font-size:15px">Pricing</a>
+        <a href="/blog/" style="color:#8FB2D4;text-decoration:none;font-weight:600;font-size:15px" style-hover="color:#EAF4FD">Blog</a>
+        <a href="/trial" style="color:#8FB2D4;text-decoration:none;font-weight:600;font-size:15px" style-hover="color:#EAF4FD">Trial week</a>
+        <a data-estimate-cta aria-label="Contact us" href="/contact" style="display:flex;align-items:center;gap:8px;background:#1AA3F5;color:#fff;font-weight:700;font-size:15px;padding:10px 20px;border-radius:12px;text-decoration:none;box-shadow:none" style-hover="filter:brightness(1.1)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 2v-10a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8Z"></path></svg>Contact us</a>
       </div>
-      <a data-estimate-cta aria-label="Contact us" class="z-nav-cta" href="/contact" style="display:none;align-items:center;gap:7px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:13px;padding:9px 13px;border-radius:10px;text-decoration:none;margin-left:auto;white-space:nowrap"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 2v-10a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8Z"></path></svg>Contact us</a>
+      <a data-estimate-cta aria-label="Contact us" class="z-nav-cta" href="/contact" style="display:none;align-items:center;gap:8px;background:#1AA3F5;color:#fff;font-weight:700;font-size:13px;padding:8px 12px;border-radius:10px;text-decoration:none;margin-left:auto;white-space:nowrap"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 2v-10a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8Z"></path></svg>Contact us</a>
       <details class="z-burger" style="display:none;flex:none">
-        <summary aria-label="Open navigation menu" style="list-style:none;cursor:pointer;width:42px;height:42px;display:grid;place-items:center;border:1px solid #1C3A5A;border-radius:11px;background:rgba(16,36,60,.65)"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#EAF4FD" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></summary>
+        <summary aria-label="Open navigation menu" style="list-style:none;cursor:pointer;width:42px;height:42px;display:grid;place-items:center;border:1px solid #1C3A5A;border-radius:12px;background:rgba(16,36,60,.65)"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#EAF4FD" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></summary>
         <div style="position:absolute;left:0;right:0;top:100%;background:#0B1B2E;border-bottom:1px solid #1C3A5A;box-shadow:0 30px 60px rgba(0,0,0,.55);padding:6px 20px 20px;display:grid">
-          <a href="/services" style="color:#EAF4FD;text-decoration:none;font-weight:700;font-size:16px;padding:15px 4px;border-bottom:1px solid rgba(28,58,90,.55)">Services</a>
-          <a href="/cases" style="color:#EAF4FD;text-decoration:none;font-weight:700;font-size:16px;padding:15px 4px;border-bottom:1px solid rgba(28,58,90,.55)">Case studies</a>
-          <a href="/pricing" style="color:#EAF4FD;text-decoration:none;font-weight:700;font-size:16px;padding:15px 4px;border-bottom:1px solid rgba(28,58,90,.55)">Pricing</a>
-          <a href="/blog/" style="color:#EAF4FD;text-decoration:none;font-weight:700;font-size:16px;padding:15px 4px;border-bottom:1px solid rgba(28,58,90,.55)">Blog</a>
-          <a href="/trial" style="color:#EAF4FD;text-decoration:none;font-weight:700;font-size:16px;padding:15px 4px;border-bottom:1px solid rgba(28,58,90,.55)">Trial week</a>
-          <a data-estimate-cta aria-label="Contact us" href="/contact" style="margin-top:10px;display:flex;align-items:center;justify-content:center;gap:9px;background:linear-gradient(145deg,#1AA3F5,#2E89D6);color:#fff;font-weight:700;font-size:15.5px;padding:14px 20px;border-radius:12px;text-decoration:none;box-shadow:0 10px 24px rgba(26,163,245,.35)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 2v-10a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8Z"></path></svg>Contact us</a>
+          <a href="/services" style="color:#EAF4FD;text-decoration:none;font-weight:700;font-size:16px;padding:16px 4px;border-bottom:1px solid rgba(28,58,90,.55)">Services</a>
+          <a href="/cases" style="color:#EAF4FD;text-decoration:none;font-weight:700;font-size:16px;padding:16px 4px;border-bottom:1px solid rgba(28,58,90,.55)">Case studies</a>
+          <a href="/pricing" style="color:#EAF4FD;text-decoration:none;font-weight:700;font-size:16px;padding:16px 4px;border-bottom:1px solid rgba(28,58,90,.55)">Pricing</a>
+          <a href="/blog/" style="color:#EAF4FD;text-decoration:none;font-weight:700;font-size:16px;padding:16px 4px;border-bottom:1px solid rgba(28,58,90,.55)">Blog</a>
+          <a href="/trial" style="color:#EAF4FD;text-decoration:none;font-weight:700;font-size:16px;padding:16px 4px;border-bottom:1px solid rgba(28,58,90,.55)">Trial week</a>
+          <a data-estimate-cta aria-label="Contact us" href="/contact" style="margin-top:10px;display:flex;align-items:center;justify-content:center;gap:8px;background:#1AA3F5;color:#fff;font-weight:700;font-size:16px;padding:16px 20px;border-radius:12px;text-decoration:none;box-shadow:none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 2v-10a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8Z"></path></svg>Contact us</a>
         </div>
       </details>
     </div>
@@ -113,7 +113,7 @@
     </section>
 
     <!-- BIG RATE CARD -->
-    <section data-screen-label="Rate" style="padding:50px 0 10px;max-width:880px;margin:0 auto">
+    <section data-screen-label="Rate" style="padding:48px 0 10px;max-width:880px;margin:0 auto">
       <div class="z-rate-card">
         <span class="z-eyebrow">OnlyFans &amp; Fansly chatting rates</span>
         <div class="z-rate-number" aria-live="polite"><bdi children="{{ rateLabel }}"></bdi><span>%</span></div>
@@ -130,44 +130,44 @@
 
     <!-- WHAT'S INCLUDED -->
     <section data-screen-label="Included" style="padding:60px 0 10px;max-width:880px;margin:0 auto">
-      <div style="text-align:center;margin-bottom:30px">
+      <div style="text-align:center;margin-bottom:32px">
         <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(28px,4vw,40px);letter-spacing:-.02em;margin:0;color:#fff">Everything included. No add-ons.</h2>
       </div>
-      <div class="m-cols" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
-        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:18px;padding:26px 26px" style-hover="border-color:#1AA3F5;transform:translateY(-3px)">
+      <div class="m-cols" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#0E2138,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:24px 24px" style-hover="border-color:#1AA3F5;">
           <div style="position:absolute;top:-24px;right:-12px;font-family:'Bricolage Grotesque';font-weight:800;font-size:110px;line-height:1;color:rgba(143,178,212,.06);pointer-events:none;letter-spacing:-.05em">24/7</div>
-          <div style="width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(54,211,153,.12);border:1px solid rgba(54,211,153,.5);color:#36D399;font-weight:800;font-size:15px;margin-bottom:14px">✓</div>
-          <h4 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:17.5px;color:#fff;margin:0 0 5px;position:relative">24/7/365 coverage</h4>
+          <div style="width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(54,211,153,.12);border:1px solid rgba(54,211,153,.5);color:#36D399;font-weight:800;font-size:15px;margin-bottom:16px">✓</div>
+          <h4 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:18px;color:#fff;margin:0 0 4px;position:relative">24/7/365 coverage</h4>
           <p style="color:#8FB2D4;font-size:14px;margin:0;position:relative">Every timezone, weekends and holidays included.</p>
         </div>
-        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:18px;padding:26px 26px" style-hover="border-color:#1AA3F5;transform:translateY(-3px)">
+        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#0E2138,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:24px 24px" style-hover="border-color:#1AA3F5;">
           <div style="position:absolute;top:-24px;right:-8px;font-family:'Bricolage Grotesque';font-weight:800;font-size:110px;line-height:1;color:rgba(143,178,212,.06);pointer-events:none">★</div>
-          <div style="width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(54,211,153,.12);border:1px solid rgba(54,211,153,.5);color:#36D399;font-weight:800;font-size:15px;margin-bottom:14px">✓</div>
-          <h4 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:17.5px;color:#fff;margin:0 0 5px;position:relative">Trained closers</h4>
+          <div style="width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(54,211,153,.12);border:1px solid rgba(54,211,153,.5);color:#36D399;font-weight:800;font-size:15px;margin-bottom:16px">✓</div>
+          <h4 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:18px;color:#fff;margin:0 0 4px;position:relative">Trained closers</h4>
           <p style="color:#8FB2D4;font-size:14px;margin:0;position:relative">Drilled on our full chatting playbook before touching an account.</p>
         </div>
-        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:18px;padding:26px 26px" style-hover="border-color:#1AA3F5;transform:translateY(-3px)">
+        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#0E2138,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:24px 24px" style-hover="border-color:#1AA3F5;">
           <div style="position:absolute;top:-24px;right:-8px;font-family:'Bricolage Grotesque';font-weight:800;font-size:110px;line-height:1;color:rgba(143,178,212,.06);pointer-events:none">QA</div>
-          <div style="width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(54,211,153,.12);border:1px solid rgba(54,211,153,.5);color:#36D399;font-weight:800;font-size:15px;margin-bottom:14px">✓</div>
-          <h4 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:17.5px;color:#fff;margin:0 0 5px;position:relative">Team leaders &amp; QA</h4>
+          <div style="width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(54,211,153,.12);border:1px solid rgba(54,211,153,.5);color:#36D399;font-weight:800;font-size:15px;margin-bottom:16px">✓</div>
+          <h4 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:18px;color:#fff;margin:0 0 4px;position:relative">Team leaders &amp; QA</h4>
           <p style="color:#8FB2D4;font-size:14px;margin:0;position:relative">Escalation and chat review on every account, every day.</p>
         </div>
-        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:18px;padding:26px 26px" style-hover="border-color:#1AA3F5;transform:translateY(-3px)">
+        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#0E2138,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:24px 24px" style-hover="border-color:#1AA3F5;">
           <div style="position:absolute;top:-24px;right:-8px;font-family:'Bricolage Grotesque';font-weight:800;font-size:110px;line-height:1;color:rgba(143,178,212,.06);pointer-events:none">CRM</div>
-          <div style="width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(54,211,153,.12);border:1px solid rgba(54,211,153,.5);color:#36D399;font-weight:800;font-size:15px;margin-bottom:14px">✓</div>
-          <h4 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:17.5px;color:#fff;margin:0 0 5px;position:relative">Fan CRM</h4>
+          <div style="width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(54,211,153,.12);border:1px solid rgba(54,211,153,.5);color:#36D399;font-weight:800;font-size:15px;margin-bottom:16px">✓</div>
+          <h4 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:18px;color:#fff;margin:0 0 4px;position:relative">Fan CRM</h4>
           <p style="color:#8FB2D4;font-size:14px;margin:0;position:relative">Every fan profiled and remembered across every shift.</p>
         </div>
-        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:18px;padding:26px 26px" style-hover="border-color:#1AA3F5;transform:translateY(-3px)">
+        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#0E2138,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:24px 24px" style-hover="border-color:#1AA3F5;">
           <div style="position:absolute;top:-24px;right:-8px;font-family:'Bricolage Grotesque';font-weight:800;font-size:110px;line-height:1;color:rgba(143,178,212,.06);pointer-events:none">$</div>
-          <div style="width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(54,211,153,.12);border:1px solid rgba(54,211,153,.5);color:#36D399;font-weight:800;font-size:15px;margin-bottom:14px">✓</div>
-          <h4 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:17.5px;color:#fff;margin:0 0 5px;position:relative">PPV pricing strategy</h4>
+          <div style="width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(54,211,153,.12);border:1px solid rgba(54,211,153,.5);color:#36D399;font-weight:800;font-size:15px;margin-bottom:16px">✓</div>
+          <h4 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:18px;color:#fff;margin:0 0 4px;position:relative">PPV pricing strategy</h4>
           <p style="color:#8FB2D4;font-size:14px;margin:0;position:relative">Tiered by spender, framed before sending, followed up after.</p>
         </div>
-        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#10243C,#0E2138);border:1px solid #1C3A5A;border-radius:18px;padding:26px 26px" style-hover="border-color:#1AA3F5;transform:translateY(-3px)">
+        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#0E2138,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:24px 24px" style-hover="border-color:#1AA3F5;">
           <div style="position:absolute;top:-24px;right:-8px;font-family:'Bricolage Grotesque';font-weight:800;font-size:110px;line-height:1;color:rgba(143,178,212,.06);pointer-events:none">2%</div>
-          <div style="width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(54,211,153,.12);border:1px solid rgba(54,211,153,.5);color:#36D399;font-weight:800;font-size:15px;margin-bottom:14px">✓</div>
-          <h4 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:17.5px;color:#fff;margin:0 0 5px;position:relative">Whale program</h4>
+          <div style="width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(54,211,153,.12);border:1px solid rgba(54,211,153,.5);color:#36D399;font-weight:800;font-size:15px;margin-bottom:16px">✓</div>
+          <h4 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:18px;color:#fff;margin:0 0 4px;position:relative">Whale program</h4>
           <p style="color:#8FB2D4;font-size:14px;margin:0;position:relative">Your top spenders reserved for your best closers.</p>
         </div>
       </div>
