@@ -22,7 +22,7 @@
     back: 'Späť', close: 'Zavrieť', hint: 'Ťukni na jednu možnosť', next: 'Pokračovať',
     q1: 'Kto si?',
     who: {
-      model: ['Modelka', 'Marketing si riešim sama'],
+      model: ['Reálna modelka', 'Tvorím vlastný obsah'],
       agency: ['Agentúra', 'Chat pre reálne modelky'],
       ai: ['AI modelka', 'Chat pre moju AI modelku'],
     },
@@ -32,7 +32,15 @@
     amount: 'Mesačný zárobok v dolároch', per: 'mesačne', notYet: 'Zatiaľ nezarába',
     trafficAsk: 'Akú návštevnosť má účet?', trafficEg: 'napr. 30K na Instagrame, 15 nových odberateľov denne',
     needAmount: 'Doplň mesačnú sumu.', needTraffic: 'Doplň návštevnosť účtu.',
-    q4: 'Kde ťa najlepšie zastihneme?', q4Sub: 'Otvorí sa so správou pre Tima, stačí ju odoslať.',
+    q4: 'Kde ťa najlepšie zastihneme?',
+    qHow: 'Kto napíše prvý?', me: 'Napíšem Timovi', tim: 'Tim napíše mne',
+    meSub: { whatsapp: 'Otvorí WhatsApp so správou', telegram: 'Otvorí Telegram so správou', email: 'Otvorí e-mail so správou', discord: 'Skopíruje ju a otvorí Discord' },
+    timSub: { whatsapp: 'Nechám svoje číslo na WhatsApp', telegram: 'Nechám svoje meno na Telegrame', discord: 'Nechám svoje meno na Discorde', email: 'Nechám svoj e-mail' },
+    contactEg: { whatsapp: 'Číslo na WhatsApp s predvoľbou', telegram: '@meno na Telegrame', discord: 'Meno na Discorde', email: 'tvoj@email.com' },
+    needContact: { whatsapp: 'Doplň svoje číslo na WhatsApp.', telegram: 'Doplň svoje meno na Telegrame.', discord: 'Doplň svoje meno na Discorde.', email: 'Doplň svoj e-mail.' },
+    send: 'Odoslať Timovi', sending: 'Odosielam…', failed: 'Nepodarilo sa odoslať. Ťukni radšej na „Napíšem Timovi“.',
+    sent: 'Odoslané', sentTitle: 'Odoslané Timovi.',
+    sentSub: { whatsapp: (c) => 'Ozve sa ti na WhatsApp na čísle ' + c + '.', telegram: (c) => 'Ozve sa ti na Telegrame (' + c + ').', discord: (c) => 'Pridá si ťa na Discorde (' + c + ').', email: (c) => 'Napíše ti na ' + c + '.' },
     email: 'E-mail', copy: 'Skopírovať správu',
     done: {
       whatsapp: ['Už stačí len odoslať.', 'Správa čaká vo WhatsAppe. Tim odpovedá osobne.', 'Otvoriť WhatsApp znova'],
@@ -47,7 +55,7 @@
     back: 'Back', close: 'Close', hint: 'Tap one to continue', next: 'Continue',
     q1: 'Which one are you?',
     who: {
-      model: ['Model', 'I handle my own marketing'],
+      model: ['Real model', "I'm the creator myself"],
       agency: ['Agency', 'Chatting for real models'],
       ai: ['AI model owner', 'Chatting for my AI model'],
     },
@@ -57,7 +65,15 @@
     amount: 'Monthly earnings in dollars', per: 'a month', notYet: 'Not earning yet',
     trafficAsk: 'What traffic does it have?', trafficEg: 'e.g. 30K on Instagram, 15 new subs a day',
     needAmount: 'Add the monthly amount to continue.', needTraffic: 'Add its traffic to continue.',
-    q4: 'Best way to reach you?', q4Sub: 'Tap one. It opens with your message to Tim, ready to send.',
+    q4: 'Best way to reach you?',
+    qHow: 'Who writes first?', me: "I'll message Tim", tim: 'Tim messages me',
+    meSub: { whatsapp: 'Opens WhatsApp, message ready', telegram: 'Opens Telegram, message ready', email: 'Opens my email, message ready', discord: 'Copies it and opens Discord' },
+    timSub: { whatsapp: "I'll leave my WhatsApp number", telegram: "I'll leave my Telegram username", discord: "I'll leave my Discord username", email: "I'll leave my email" },
+    contactEg: { whatsapp: 'WhatsApp number, with country code', telegram: '@username on Telegram', discord: 'Discord username', email: 'you@email.com' },
+    needContact: { whatsapp: 'Add your WhatsApp number.', telegram: 'Add your Telegram username.', discord: 'Add your Discord username.', email: 'Add your email.' },
+    send: 'Send to Tim', sending: 'Sending…', failed: "Couldn't send it. Tap “I'll message Tim” instead.",
+    sent: 'Sent', sentTitle: 'Sent to Tim.',
+    sentSub: { whatsapp: (c) => "He'll message you on WhatsApp at " + c + '.', telegram: (c) => "He'll message " + c + ' on Telegram.', discord: (c) => "He'll add " + c + ' on Discord.', email: (c) => "He'll email you at " + c + '.' },
     email: 'Email', copy: 'Copy message',
     done: {
       whatsapp: ['Now just hit send.', 'Your message is waiting in WhatsApp. Tim replies personally.', 'Open WhatsApp again'],
@@ -70,11 +86,12 @@
 
   const line = (d, extra = '') => `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"${extra}>${d}</svg>`;
   const I = {
-    model: line('<circle class="zq-f" cx="14" cy="10.5" r="5"/><path d="M4.5 26.5c0-5 4.2-8.3 9.5-8.3 1.9 0 3.6.4 5.1 1.2"/><path class="zq-f" d="M24.2 28.3s-4.7-2.7-4.7-5.9a2.5 2.5 0 0 1 4.7-1.3 2.5 2.5 0 0 1 4.7 1.3c0 3.2-4.7 5.9-4.7 5.9Z"/>'),
-    agency: line('<circle class="zq-f" cx="16" cy="10.5" r="4.3"/><path d="M8.3 26c0-4.4 3.4-7.3 7.7-7.3s7.7 2.9 7.7 7.3"/><circle cx="6.3" cy="13.2" r="2.8"/><path d="M1.8 23.3c0-2.5 1.5-4.4 3.8-5.1"/><circle cx="25.7" cy="13.2" r="2.8"/><path d="M30.2 23.3c0-2.5-1.5-4.4-3.8-5.1"/>'),
-    ai: line('<circle class="zq-f" cx="13" cy="12" r="5"/><path d="M3.5 27.5c0-5 4.2-8.3 9.5-8.3s9.5 3.3 9.5 8.3"/><path class="zq-f" d="M24.5 2.5c.5 2.9 1.6 4 4.5 4.5-2.9.5-4 1.6-4.5 4.5-.5-2.9-1.6-4-4.5-4.5 2.9-.5 4-1.6 4.5-4.5Z"/><path d="M27.5 14.5v3.4M25.8 16.2h3.4"/>'),
+    model: line('<path class="zq-s" fill-rule="evenodd" d="M14 3.5c-4.8 0-8.2 3.5-8.2 8.5 0 4.2-.6 7-2.3 9.5 1.8.7 3.6.9 5.3.7C6.2 23.5 4.4 25.7 4 29h20c-.4-3.3-2.2-5.5-4.8-6.8 1.7.2 3.5 0 5.3-.7-1.7-2.5-2.3-5.3-2.3-9.5 0-5-3.4-8.5-8.2-8.5ZM10 12.3c2-.2 4.1-1.2 5.3-2.9.8 1.5 1.7 2.4 2.9 3a4.2 4.2 0 1 1-8.2-.1Z"/><path class="zq-s" d="M26.5 10.5s-3.7-2.2-3.7-4.8a2 2 0 0 1 3.7-1.1 2 2 0 0 1 3.7 1.1c0 2.6-3.7 4.8-3.7 4.8Z"/>'),
+    agency: line('<path class="zq-s" fill-rule="evenodd" d="M8.5 3.5h9A2.5 2.5 0 0 1 20 6v22.5H6V6a2.5 2.5 0 0 1 2.5-2.5ZM9.3 8h2.4v2.4H9.3ZM14.3 8h2.4v2.4h-2.4ZM9.3 13h2.4v2.4H9.3ZM14.3 13h2.4v2.4h-2.4ZM9.3 18h2.4v2.4H9.3ZM14.3 18h2.4v2.4h-2.4ZM11.8 23.5h2.4v5h-2.4Z"/><path class="zq-s2" fill-rule="evenodd" d="M21.5 12.5h3A2.5 2.5 0 0 1 27 15v13.5h-5.5ZM23.3 16.5h2v2h-2ZM23.3 21.5h2v2h-2Z"/><path d="M3 28.5h26"/>'),
+    ai: line('<path class="zq-s" fill-rule="evenodd" d="M14 3.5c-4.8 0-8.2 3.5-8.2 8.5 0 4.2-.6 7-2.3 9.5 1.8.7 3.6.9 5.3.7C6.2 23.5 4.4 25.7 4 29h20c-.4-3.3-2.2-5.5-4.8-6.8 1.7.2 3.5 0 5.3-.7-1.7-2.5-2.3-5.3-2.3-9.5 0-5-3.4-8.5-8.2-8.5ZM10 12.3c2-.2 4.1-1.2 5.3-2.9.8 1.5 1.7 2.4 2.9 3a4.2 4.2 0 1 1-8.2-.1Z"/><path class="zq-s" d="M26.5 1.5c.5 2.9 1.6 4 4.5 4.5-2.9.5-4 1.6-4.5 4.5-.5-2.9-1.6-4-4.5-4.5 2.9-.5 4-1.6 4.5-4.5Z"/><path d="M28 13.5v4M26 15.5h4"/>'),
     coins: line('<rect class="zq-coin" x="6" y="23" width="18" height="5" rx="2.5"/><rect class="zq-coin" x="6" y="18.5" width="18" height="5" rx="2.5"/><rect class="zq-coin" x="6" y="14" width="18" height="5" rx="2.5"/><rect class="zq-coin" x="6" y="9.5" width="18" height="5" rx="2.5"/><rect class="zq-coin" x="6" y="5" width="18" height="5" rx="2.5"/><path class="zq-spark zq-f" d="M27.5 1.5c.3 1.9 1.1 2.7 3 3-1.9.3-2.7 1.1-3 3-.3-1.9-1.1-2.7-3-3 1.9-.3 2.7-1.1 3-3Z"/>'),
     more: line('<path d="M16 8v16M8 16h16"/>'),
+    inbox: line('<path class="zq-f" d="M27.5 15a10 10 0 0 1-10 10H9l-4.5 3.5V15a10 10 0 0 1 10-10h3a10 10 0 0 1 10 10Z"/><path d="M11.5 15h.1M16 15h.1M20.5 15h.1" stroke-width="3"/>'),
     clock: line('<circle cx="16" cy="16" r="11.5"/><path d="M16 9.5V16l4.3 2.7"/>'),
     seed: line('<path d="M16 28V15"/><path class="zq-f" d="M16 17.5c0-5-3.3-8-9.5-8 0 5 3.3 8 9.5 8Z" fill="currentColor" fill-opacity=".2"/><path d="M16 13c0-4.3 2.9-7 8.5-7 0 4.3-2.9 7-8.5 7Z" fill="currentColor" fill-opacity=".2"/>'),
     check: line('<path d="m7 16.5 6 6L25 10"/>', ' stroke-width="3.6"'),
@@ -88,10 +105,17 @@
     discord: '<svg class="zq-app-ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>',
   };
   // [key, name, the logo fills its tile]
-  const PLATFORMS = [['onlyfans', 'OnlyFans', false], ['fanvue', 'Fanvue', true], ['fansly', 'Fansly', false], ['loyalfans', 'LoyalFans', true], ['fanfix', 'Fanfix', true], ['mym', 'MYM', true]];
+  const PLATFORMS = [['onlyfans', 'OnlyFans', false], ['fanvue', 'Fanvue', true], ['fansly', 'Fansly', false], ['loyalfans', 'LoyalFans', true], ['fanfix', 'Fanfix', true], ['mym', 'MYM', true], ['stacked', 'Stacked', true]];
+  // An AI model lives on Stacked or Fanvue (or somewhere typed in); everyone else gets the creator platforms.
+  const platformsFor = (who) => PLATFORMS.filter(([key]) => (who === 'ai' ? key === 'stacked' || key === 'fanvue' : key !== 'stacked')).sort((a, b) => (who === 'ai' ? (a[0] === 'stacked' ? -1 : 1) : 0));
   const APPS = [['whatsapp', 'WhatsApp'], ['telegram', 'Telegram'], ['discord', 'Discord'], ['email', T.email]];
-  const ORDER = ['who', 'platform', 'earn', 'channel', 'done'];
-  const state = { intent: 'estimate', step: 'who', who: '', platform: '', other: '', amount: '', fresh: false, traffic: '', channel: '' };
+  const ORDER = ['who', 'platform', 'earn', 'channel', 'how', 'done'];
+  // [number shown in "Step n of 4", how full the bar is]
+  const PROGRESS = { who: [1, 0.22], platform: [2, 0.46], earn: [3, 0.7], channel: [4, 0.88], how: [4, 0.95], done: [4, 1] };
+  const state = { intent: 'estimate', step: 'who', who: '', platform: '', other: '', amount: '', fresh: false, traffic: '', channel: '', contact: '', sent: false };
+  // "Tim messages me" has to reach Tim without the visitor's app: the answers are posted to a form
+  // relay that emails them to him. The site itself has no backend. Change the address here only.
+  const LEAD_URL = 'https://formsubmit.co/ajax/timzines@gmail.com';
 
   const el = (html) => { const t = document.createElement('template'); t.innerHTML = html.trim(); return t.content.firstElementChild; };
   const money = (digits) => (digits ? Number(digits).toLocaleString('en-US').replace(/,/g, sk ? ' ' : ',') : '');
@@ -119,9 +143,12 @@
 
   // The message Tim receives. He reads these himself: it always says who, where, how much (or what
   // traffic a new model has) and what they want.
-  function draft() {
+  function platformName() {
     const named = PLATFORMS.find((p) => p[0] === state.platform);
-    const platform = state.platform === 'other' ? state.other.trim() : named ? named[1] : '';
+    return state.platform === 'other' ? state.other.trim() : named ? named[1] : '';
+  }
+  function draft() {
+    const platform = platformName();
     const agency = state.who === 'agency';
     const trial = state.intent === 'trial';
     const traffic = state.traffic.trim().replace(/[.\s]+$/, '');
@@ -153,6 +180,34 @@
     if (channel === 'email') return 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(T.subject[state.intent === 'trial' ? 'trial' : state.fresh ? 'fresh' : 'estimate']) + '&body=' + body;
     return 'https://discord.com/app';
   }
+  // Emails the answers and the contact they left to Tim. Rejects when it did not go through, so the
+  // screen can send them to "I'll message Tim" instead of losing the lead.
+  function sendLead(contact, trap) {
+    if (trap) return Promise.resolve(); // a bot filled the hidden field
+    const who = { model: 'Real model', agency: 'Agency (real models)', ai: 'AI model owner' }[state.who] || '';
+    const app = (APPS.find((a) => a[0] === state.channel) || [])[1] || state.channel;
+    const earns = state.fresh ? 'not earning yet' : '$' + Number(state.amount).toLocaleString('en-US') + ' a month';
+    const body = {
+      _subject: 'New lead: ' + [who, platformName(), earns, app].filter(Boolean).join(' · '),
+      _template: 'table',
+      _captcha: 'false',
+      'Wants': state.intent === 'trial' ? 'Trial week' : 'Free earnings estimate',
+      'Who': who,
+      'Platform': platformName(),
+      'Makes now': state.fresh ? 'Not earning yet. Traffic: ' + state.traffic.trim() : earns,
+      'Contact them on': app,
+      'Their contact': contact,
+      'Their message': draft(),
+      'Sent from': location.pathname + (sk ? ' (Slovak site)' : ''),
+    };
+    if (state.channel === 'email') body._replyto = contact;
+    const stop = new AbortController();
+    const timer = setTimeout(() => stop.abort(), 12000);
+    return fetch(LEAD_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(body), signal: stop.signal })
+      .then((reply) => reply.json())
+      .then((reply) => { if (String(reply.success) !== 'true') throw new Error(reply.message || 'not accepted'); })
+      .finally(() => clearTimeout(timer));
+  }
   function copy(text) {
     const fallback = () => {
       const area = document.createElement('textarea');
@@ -165,7 +220,7 @@
     else fallback();
   }
 
-  /* ---------- the five screens ---------- */
+  /* ---------- the screens ---------- */
   function screen(question, sub) {
     const step = el('<div class="zq-step"><h2 class="zq-q" id="zq-q" tabindex="-1"></h2></div>');
     step.firstElementChild.textContent = question;
@@ -198,11 +253,13 @@
   const SCREENS = {
     who() {
       const step = screen(T.q1);
-      const g = grid('who', ['model', 'agency', 'ai'].map((key) => `<button type="button" class="zq-opt" data-v="${key}" aria-pressed="${state.who === key}"><span class="zq-ico">${I[key]}</span><span class="zq-txt"><b>${T.who[key][0]}</b><small>${T.who[key][1]}</small></span><span class="zq-tick">${I.check}</span></button>`));
+      const g = grid('who', ['model', 'agency', 'ai'].map((key) => `<button type="button" class="zq-opt zq-who-${key}" data-v="${key}" aria-pressed="${state.who === key}"><span class="zq-ico">${I[key]}</span><span class="zq-txt"><b>${T.who[key][0]}</b><small>${T.who[key][1]}</small></span><span class="zq-tick">${I.check}</span></button>`));
       g.addEventListener('click', (e) => {
         const tile = e.target.closest('.zq-opt');
         if (!tile || busy) return;
         state.who = tile.dataset.v;
+        // A platform picked for another answer may not be offered for this one.
+        if (state.platform !== 'other' && !platformsFor(state.who).some(([key]) => key === state.platform)) state.platform = '';
         choose(g, tile, () => show('platform', 1));
       });
       step.append(g, el(`<p class="zq-hint">${T.hint}</p>`));
@@ -210,7 +267,7 @@
     },
     platform() {
       const step = screen(state.who === 'agency' ? T.q2Agency : T.q2);
-      const tiles = PLATFORMS.map(([key, name, full]) => `<button type="button" class="zq-opt" data-v="${key}" aria-pressed="${state.platform === key}"><span class="zq-logo"${full ? ' data-full' : ''}><img src="/assets/plat-${key}.webp" alt="" width="96" height="96" decoding="async"></span><span class="zq-name">${name}</span><span class="zq-tick">${I.check}</span></button>`);
+      const tiles = platformsFor(state.who).map(([key, name, full]) => `<button type="button" class="zq-opt" data-v="${key}" aria-pressed="${state.platform === key}"><span class="zq-logo"${full ? ' data-full' : ''}><img src="/assets/plat-${key}.webp" alt="" width="96" height="96" decoding="async"></span><span class="zq-name">${name}</span><span class="zq-tick">${I.check}</span></button>`);
       tiles.push(`<button type="button" class="zq-opt" data-v="other" aria-pressed="${state.platform === 'other'}"><span class="zq-logo">${I.more}</span><span class="zq-name">${T.other}</span><span class="zq-tick">${I.check}</span></button>`);
       const g = grid('plat', tiles);
       const field = el(`<label class="zq-field" hidden><input class="zq-input" type="text" maxlength="40" autocomplete="off" enterkeyhint="next" placeholder="${T.otherAsk}" aria-label="${T.otherAsk}"></label>`);
@@ -280,29 +337,91 @@
       return step;
     },
     channel() {
-      const step = screen(T.q4, T.q4Sub);
+      const step = screen(T.q4);
+      const g = grid('app', APPS.map(([key, name]) => `<button type="button" class="zq-opt zq-app-${key}" data-v="${key}" aria-pressed="${state.channel === key}"><span class="zq-ico">${I[key]}</span><span class="zq-name">${name}</span><span class="zq-tick">${I.check}</span></button>`));
+      g.addEventListener('click', (e) => {
+        const tile = e.target.closest('.zq-opt');
+        if (!tile || busy) return;
+        if (state.channel !== tile.dataset.v) state.contact = '';
+        state.channel = tile.dataset.v;
+        choose(g, tile, () => show('how', 1));
+      });
+      step.append(g, el(`<p class="zq-hint">${T.hint}</p>`));
+      return step;
+    },
+    // Either they message Tim themselves (the card is a real link, so the tap opens the app with the
+    // message written), or they leave their contact and the answers are emailed to Tim.
+    how() {
+      const channel = state.channel || 'telegram';
       const text = draft();
-      const g = grid('app', APPS.map(([key, name]) => {
-        const inner = `<span class="zq-ico">${I[key]}</span><span class="zq-name">${name}</span><span class="zq-tick">${I.check}</span>`;
-        const common = `class="zq-opt zq-app-${key}" data-v="${key}" aria-pressed="${state.channel === key}"`;
-        if (key === 'discord') return `<button type="button" ${common}>${inner}</button>`;
-        return `<a ${common} role="button" data-estimate-cta href="${sendUrl(key, text)}"${key === 'email' ? '' : ' target="_blank" rel="noopener"'}>${inner}</a>`;
-      }));
-      // The tiles for WhatsApp, Telegram and email are real links, so the tap itself opens the app.
+      const step = screen(T.qHow);
+      const inner = (icon, title, sub) => `<span class="zq-ico">${icon}</span><span class="zq-txt"><b>${title}</b><small>${sub}</small></span><span class="zq-tick">${I.check}</span>`;
+      const mine = channel === 'discord'
+        ? `<button type="button" class="zq-opt zq-app-discord" data-v="me" aria-pressed="false">${inner(I.discord, T.me, T.meSub.discord)}</button>`
+        : `<a class="zq-opt zq-app-${channel}" data-v="me" role="button" aria-pressed="false" data-estimate-cta href="${sendUrl(channel, text)}"${channel === 'email' ? '' : ' target="_blank" rel="noopener"'}>${inner(I[channel], T.me, T.meSub[channel])}</a>`;
+      const g = grid('how', [mine, `<button type="button" class="zq-opt" data-v="tim" aria-pressed="false">${inner(I.inbox, T.tim, T.timSub[channel])}</button>`]);
+      const kind = { whatsapp: 'type="tel" inputmode="tel" autocomplete="tel"', email: 'type="email" inputmode="email" autocomplete="email"' }[channel] || 'type="text" autocomplete="off" autocapitalize="off" spellcheck="false"';
+      const field = el(`<label class="zq-field" hidden><input class="zq-input" ${kind} maxlength="80" enterkeyhint="send" placeholder="${T.contactEg[channel]}" aria-label="${T.contactEg[channel]}"><input class="zq-trap" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"></label>`);
+      const [input, trap] = field.children;
+      const next = el(`<button type="button" class="zq-next" hidden><span>${T.send}</span>${I.arrow}</button>`);
+      const note = el('<p class="zq-note" aria-live="polite" hidden></p>');
+      const hint = el(`<p class="zq-hint">${T.hint}</p>`);
+      const clean = () => {
+        const value = input.value.trim();
+        if (channel === 'whatsapp') return value.replace(/\D/g, '').length >= 7 ? value : '';
+        if (channel === 'email') return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value) ? value : '';
+        if (channel === 'telegram') return value.replace(/^@/, '').length >= 3 ? (/^[@+\d]/.test(value) ? value : '@' + value) : '';
+        return value.length >= 2 ? value : '';
+      };
+      const paint = () => next.setAttribute('aria-disabled', String(!clean()));
+      const go = () => {
+        if (busy) return;
+        const contact = clean();
+        if (!contact) return refuse(field, note, T.needContact[channel], input);
+        busy = true;
+        note.textContent = '';
+        next.setAttribute('aria-busy', 'true');
+        next.firstElementChild.textContent = T.sending;
+        sendLead(contact, trap.value).then(() => {
+          busy = false;
+          state.contact = contact;
+          state.sent = true;
+          show('done', 1);
+        }, () => {
+          busy = false;
+          next.removeAttribute('aria-busy');
+          next.firstElementChild.textContent = T.send;
+          refuse(next, note, T.failed);
+        });
+      };
+      input.value = state.contact;
+      input.addEventListener('input', () => { state.contact = input.value; note.textContent = ''; paint(); });
+      input.addEventListener('keydown', (e) => { if (e.key === 'Enter') go(); });
+      next.addEventListener('click', go);
       g.addEventListener('click', (e) => {
         const tile = e.target.closest('.zq-opt');
         if (!tile) return;
         if (busy) { e.preventDefault(); return; }
-        state.channel = tile.dataset.v;
-        if (state.channel === 'discord') { copy(text); window.open('https://discord.com/app', '_blank', 'noopener'); }
+        if (tile.dataset.v === 'tim') {
+          const from = stage.offsetHeight;
+          choose(g, tile);
+          field.hidden = next.hidden = note.hidden = false;
+          hint.hidden = true;
+          paint();
+          glide(from);
+          input.focus({ preventScroll: true });
+          return;
+        }
+        state.sent = false;
+        if (channel === 'discord') { copy(text); window.open('https://discord.com/app', '_blank', 'noopener'); }
         choose(g, tile, () => show('done', 1));
       });
-      step.append(g);
+      step.append(g, field, next, note, hint);
       return step;
     },
     done() {
       const channel = state.channel || 'telegram';
-      const [title, sub, again] = T.done[channel];
+      const [title, sub, again] = state.sent ? [T.sentTitle, T.sentSub[channel](state.contact)] : T.done[channel];
       const text = draft();
       const step = screen(title, sub);
       step.classList.add('zq-done');
@@ -319,7 +438,12 @@
       });
       const send = el(`<a class="zq-next zq-send zq-app-${channel}" data-estimate-cta href="${sendUrl(channel, text)}"${channel === 'email' ? '' : ' target="_blank" rel="noopener"'}>${I[channel]}<span>${again}</span>${I.arrow}</a>`);
       if (channel === 'discord') send.addEventListener('click', () => copy(text));
-      step.append(bubble, send);
+      if (!state.sent) step.append(bubble, send);
+      else if (opened) {
+        const shut = el(`<button type="button" class="zq-next zq-next--ghost"><span>${T.close}</span></button>`);
+        shut.addEventListener('click', () => close());
+        step.append(shut);
+      }
       return step;
     },
   };
@@ -328,12 +452,12 @@
   function header() {
     const index = ORDER.indexOf(state.step);
     const done = state.step === 'done';
-    const number = Math.min(index + 1, 4);
+    const [number, filled] = PROGRESS[state.step];
     backBtn.hidden = index === 0;
     timeEl.hidden = done;
-    countEl.innerHTML = done ? T.ready : (state.intent === 'trial' ? T.trial + ' · ' : '') + T.step[0] + `<b${shownNumber && shownNumber !== number ? ' class="zq-flip"' : ''}>${number}</b>` + T.step[1];
+    countEl.innerHTML = done ? (state.sent ? T.sent : T.ready) : (state.intent === 'trial' ? T.trial + ' · ' : '') + T.step[0] + `<b${shownNumber && shownNumber !== number ? ' class="zq-flip"' : ''}>${number}</b>` + T.step[1];
     shownNumber = done ? 0 : number;
-    bar.style.setProperty('--zq-p', done ? 1 : number * 0.24 - 0.02);
+    bar.style.setProperty('--zq-p', filled);
   }
   // Glide the card to its new height instead of jumping.
   let settle = 0;
@@ -391,7 +515,7 @@
     document.documentElement.dataset.zqIntent = intent;
     if (!stage.firstElementChild) return;
     // The message is written when its screen is drawn, so redraw it for the new ask.
-    if (changed && (state.step === 'channel' || state.step === 'done')) show('channel', -1);
+    if (changed && ['channel', 'how', 'done'].includes(state.step)) show('channel', -1);
     else header();
   }
 
