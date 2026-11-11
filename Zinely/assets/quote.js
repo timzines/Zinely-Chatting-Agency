@@ -23,9 +23,9 @@
     back: 'Späť', close: 'Zavrieť', hint: 'Ťukni na jednu možnosť', next: 'Pokračovať',
     q1: 'Kto si?',
     who: {
-      model: ['Reálna modelka', 'Tvorím vlastný obsah'],
+      model: ['Reálna modelka', 'Tvoríš vlastný obsah'],
       agency: ['Agentúra', 'Chat pre reálne modelky'],
-      ai: ['AI modelka', 'Chat pre moju AI modelku'],
+      ai: ['AI modelka', 'Chat pre tvoju AI modelku'],
     },
     q2: 'Na akej platforme?', q2Agency: 'Na akej platforme sú tvoje modelky?',
     other: 'Iná', otherAsk: 'Ktorá platforma?', needPlatform: 'Napíš, o ktorú platformu ide.',
@@ -34,12 +34,14 @@
     trafficAsk: 'Akú návštevnosť má účet?', trafficEg: 'napr. 30K na Instagrame, 15 nových odberateľov denne',
     needAmount: 'Doplň mesačnú sumu.', needTraffic: 'Doplň návštevnosť účtu.',
     q4: 'Kde ťa najlepšie zastihneme?',
-    qHow: 'Kto napíše prvý?', me: 'Napíšem vám', tim: 'Napíšte mi vy',
-    meSub: { whatsapp: 'Otvorí WhatsApp so správou', telegram: 'Otvorí Telegram so správou', email: 'Otvorí e-mail so správou', discord: 'Skopíruje ju a otvorí Discord' },
-    timSub: { whatsapp: 'Nechám svoje číslo na WhatsApp', telegram: 'Nechám svoje meno na Telegrame', discord: 'Nechám svoje meno na Discorde', email: 'Nechám svoj e-mail' },
-    contactEg: { whatsapp: 'Číslo na WhatsApp s predvoľbou', telegram: '@meno na Telegrame', discord: 'Meno na Discorde', email: 'tvoj@email.com' },
+    qHow: 'Ako chceš začať?', me: 'Napíš nám hneď', tim: 'Napíšeme ti my',
+    meSub: { whatsapp: 'Otvorí WhatsApp s hotovou správou', telegram: 'Otvorí Telegram s hotovou správou', email: 'Otvorí tvoj e-mail s hotovou správou', discord: 'Skopíruje správu a otvorí Discord' },
+    timSub: { whatsapp: 'Nechaj nám číslo na WhatsApp', telegram: 'Nechaj nám meno na Telegrame', discord: 'Nechaj nám meno na Discorde', email: 'Nechaj nám svoj e-mail' },
+    contactLabel: { whatsapp: 'Tvoje číslo na WhatsApp', telegram: 'Tvoje meno na Telegrame', discord: 'Tvoje meno na Discorde', email: 'Tvoj e-mail' },
+    willReach: { whatsapp: 'Ozveme sa ti na WhatsAppe.', telegram: 'Ozveme sa ti na Telegrame.', discord: 'Pridáme si ťa na Discorde.', email: 'Ozveme sa ti e-mailom.' },
+    contactEg: { whatsapp: 'Číslo s predvoľbou, napr. +421…', telegram: '@meno', discord: 'meno', email: 'tvoj@email.com' },
     needContact: { whatsapp: 'Doplň svoje číslo na WhatsApp.', telegram: 'Doplň svoje meno na Telegrame.', discord: 'Doplň svoje meno na Discorde.', email: 'Doplň svoj e-mail.' },
-    send: 'Odoslať', sending: 'Odosielam…', failed: 'Nepodarilo sa odoslať. Ťukni radšej na „Napíšem vám“.',
+    send: 'Odoslať', sending: 'Odosielam…', failed: 'Nepodarilo sa odoslať. Ťukni radšej na „Napíš nám hneď“.',
     sent: 'Odoslané', sentTitle: 'Máme to.',
     sentSub: { whatsapp: (c) => 'Ozveme sa ti na WhatsApp na čísle ' + c + '.', telegram: (c) => 'Ozveme sa ti na Telegrame (' + c + ').', discord: (c) => 'Pridáme si ťa na Discorde (' + c + ').', email: (c) => 'Napíšeme ti na ' + c + '.' },
     email: 'E-mail', copy: 'Skopírovať správu',
@@ -57,9 +59,9 @@
     back: 'Back', close: 'Close', hint: 'Tap one to continue', next: 'Continue',
     q1: 'Which one are you?',
     who: {
-      model: ['Real model', "I'm the creator myself"],
+      model: ['Real model', "You're the creator yourself"],
       agency: ['Agency', 'Chatting for real models'],
-      ai: ['AI model owner', 'Chatting for my AI model'],
+      ai: ['AI model owner', 'Chatting for your AI model'],
     },
     q2: 'Which platform?', q2Agency: 'Which platform are your models on?',
     other: 'Other', otherAsk: 'Which platform?', needPlatform: 'Type the platform to continue.',
@@ -68,12 +70,14 @@
     trafficAsk: 'What traffic does it have?', trafficEg: 'e.g. 30K on Instagram, 15 new subs a day',
     needAmount: 'Add the monthly amount to continue.', needTraffic: 'Add its traffic to continue.',
     q4: 'Best way to reach you?',
-    qHow: 'Who writes first?', me: "I'll message you", tim: 'You message me',
-    meSub: { whatsapp: 'Opens WhatsApp, message ready', telegram: 'Opens Telegram, message ready', email: 'Opens my email, message ready', discord: 'Copies it and opens Discord' },
-    timSub: { whatsapp: "I'll leave my WhatsApp number", telegram: "I'll leave my Telegram username", discord: "I'll leave my Discord username", email: "I'll leave my email" },
-    contactEg: { whatsapp: 'WhatsApp number, with country code', telegram: '@username on Telegram', discord: 'Discord username', email: 'you@email.com' },
+    qHow: 'How do you want to start?', me: 'Message us now', tim: 'Have us message you',
+    meSub: { whatsapp: 'Opens WhatsApp with your message written', telegram: 'Opens Telegram with your message written', email: 'Opens your email with the message written', discord: 'Copies your message and opens Discord' },
+    timSub: { whatsapp: 'Leave your WhatsApp number', telegram: 'Leave your Telegram username', discord: 'Leave your Discord username', email: 'Leave your email' },
+    contactLabel: { whatsapp: 'Your WhatsApp number', telegram: 'Your Telegram username', discord: 'Your Discord username', email: 'Your email' },
+    willReach: { whatsapp: "We'll message you on WhatsApp.", telegram: "We'll message you on Telegram.", discord: "We'll add you on Discord.", email: "We'll email you." },
+    contactEg: { whatsapp: 'With country code, e.g. +1…', telegram: '@username', discord: 'username', email: 'you@email.com' },
     needContact: { whatsapp: 'Add your WhatsApp number.', telegram: 'Add your Telegram username.', discord: 'Add your Discord username.', email: 'Add your email.' },
-    send: 'Send', sending: 'Sending…', failed: "Couldn't send it. Tap “I'll message you” instead.",
+    send: 'Send', sending: 'Sending…', failed: "Couldn't send it. Tap “Message us now” instead.",
     sent: 'Sent', sentTitle: 'Got it.',
     sentSub: { whatsapp: (c) => "We'll message you on WhatsApp at " + c + '.', telegram: (c) => "We'll message " + c + ' on Telegram.', discord: (c) => "We'll add " + c + ' on Discord.', email: (c) => "We'll email you at " + c + '.' },
     email: 'Email', copy: 'Copy message',
@@ -357,7 +361,9 @@
       return step;
     },
     // Either they message Tim themselves (the card is a real link, so the tap opens the app with the
-    // message written), or they leave their contact and the answers are emailed to Tim.
+    // message written), or they leave their contact and the answers are emailed to Tim. The cards
+    // are worded as the form speaking to the visitor ("Message us" / "Have us message you"): with
+    // the visitor speaking, "I" and "you" swapped meaning between the two cards.
     how() {
       const channel = state.channel || 'telegram';
       const text = draft();
@@ -368,8 +374,8 @@
         : `<a class="zq-opt zq-app-${channel}" data-v="me" role="button" aria-pressed="false" data-estimate-cta href="${sendUrl(channel, text)}"${channel === 'email' ? '' : ' target="_blank" rel="noopener"'}>${inner(I[channel], T.me, T.meSub[channel])}</a>`;
       const g = grid('how', [mine, `<button type="button" class="zq-opt" data-v="tim" aria-pressed="false">${inner(I.inbox, T.tim, T.timSub[channel])}</button>`]);
       const kind = { whatsapp: 'type="tel" inputmode="tel" autocomplete="tel"', email: 'type="email" inputmode="email" autocomplete="email"' }[channel] || 'type="text" autocomplete="off" autocapitalize="off" spellcheck="false"';
-      const field = el(`<label class="zq-field" hidden><input class="zq-input" ${kind} maxlength="80" enterkeyhint="send" placeholder="${T.contactEg[channel]}" aria-label="${T.contactEg[channel]}"><input class="zq-trap" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"></label>`);
-      const [input, trap] = field.children;
+      const field = el(`<label class="zq-field" hidden><span>${T.contactLabel[channel]}</span><input class="zq-input" ${kind} maxlength="80" enterkeyhint="send" placeholder="${T.contactEg[channel]}"><input class="zq-trap" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"></label>`);
+      const [, input, trap] = field.children;
       const next = el(`<button type="button" class="zq-next" hidden><span>${T.send}</span>${I.arrow}</button>`);
       const note = el('<p class="zq-note" aria-live="polite" hidden></p>');
       const hint = el(`<p class="zq-hint">${T.hint}</p>`);
@@ -413,7 +419,7 @@
           const from = stage.offsetHeight;
           choose(g, tile);
           field.hidden = next.hidden = note.hidden = false;
-          hint.hidden = true;
+          hint.textContent = T.willReach[channel];
           paint();
           glide(from);
           input.focus({ preventScroll: true });
@@ -423,7 +429,7 @@
         if (channel === 'discord') { copy(text); window.open('https://discord.com/app', '_blank', 'noopener'); }
         choose(g, tile, () => show('done', 1));
       });
-      step.append(g, field, next, note, hint);
+      step.append(g, field, next, hint, note);
       return step;
     },
     done() {
