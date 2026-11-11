@@ -18,6 +18,7 @@
 
   const T = sk ? {
     label: 'Štyri rýchle otázky',
+    titles: { estimate: 'Bezplatný odhad zárobku', trial: 'Skúšobný týždeň', contact: 'Napíš nám' },
     step: ['Krok ', ' zo 4'], trial: 'Skúšobný týždeň', ready: 'Pripravené', time: 'Zaberie 60 sekúnd',
     back: 'Späť', close: 'Zavrieť', hint: 'Ťukni na jednu možnosť', next: 'Pokračovať',
     q1: 'Kto si?',
@@ -51,6 +52,7 @@
     subject: { trial: 'Skúšobný týždeň', fresh: 'Nový účet', estimate: 'Bezplatný odhad zárobku' },
   } : {
     label: 'Four quick questions',
+    titles: { estimate: 'Free earnings estimate', trial: 'Start a trial week', contact: 'Contact us' },
     step: ['Step ', ' of 4'], trial: 'Trial week', ready: 'Ready to send', time: 'Takes 60 seconds',
     back: 'Back', close: 'Close', hint: 'Tap one to continue', next: 'Continue',
     q1: 'Which one are you?',
@@ -122,6 +124,7 @@
   const buzz = () => { try { if (navigator.vibrate) navigator.vibrate(10); } catch { /* not allowed here */ } };
 
   const root = el(`<div class="zq-root" data-step="who"><div class="zq-card" role="group" aria-label="${T.label}">
+    <div class="zq-title" hidden><img src="/assets/logo.png" alt="" width="26" height="26"><strong></strong></div>
     <div class="zq-head">
       <button type="button" class="zq-round zq-back" hidden aria-label="${T.back}">${I.back}</button>
       <span class="zq-count"></span>
@@ -137,6 +140,9 @@
   const closeBtn = root.querySelector('.zq-close');
   const countEl = root.querySelector('.zq-count');
   const timeEl = root.querySelector('.zq-time');
+  // Popup only: a title row saying what this is (the page around the inline form already does).
+  const titleEl = root.querySelector('.zq-title');
+  let topic = '';
   const bar = root.querySelector('.zq-bar i');
   let busy = false;
   let shownNumber = 0;
@@ -456,7 +462,9 @@
     const [number, filled] = PROGRESS[state.step];
     backBtn.hidden = index === 0;
     timeEl.hidden = done;
-    countEl.innerHTML = done ? (state.sent ? T.sent : T.ready) : (state.intent === 'trial' ? T.trial + ' · ' : '') + T.step[0] + `<b${shownNumber && shownNumber !== number ? ' class="zq-flip"' : ''}>${number}</b>` + T.step[1];
+    const titled = !titleEl.hidden;
+    if (titled) titleEl.querySelector('strong').textContent = T.titles[state.intent === 'trial' ? 'trial' : topic === 'contact' ? 'contact' : 'estimate'];
+    countEl.innerHTML = done ? (state.sent ? T.sent : T.ready) : (state.intent === 'trial' && !titled ? T.trial + ' · ' : '') + T.step[0] + `<b${shownNumber && shownNumber !== number ? ' class="zq-flip"' : ''}>${number}</b>` + T.step[1];
     shownNumber = done ? 0 : number;
     bar.style.setProperty('--zq-p', filled);
   }
@@ -566,7 +574,7 @@
     overlay.style.height = viewport.height + 'px';
     overlay.style.top = viewport.offsetTop + 'px';
   }
-  function open(intent, from) {
+  function open(intent, from, asked) {
     if (inline) {
       setIntent(intent || 'estimate');
       root.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'center' });
@@ -580,6 +588,8 @@
       card.setAttribute('role', 'dialog');
       card.setAttribute('aria-modal', 'true');
       closeBtn.hidden = false;
+      titleEl.hidden = false;
+      titleEl.appendChild(closeBtn);
       closeBtn.addEventListener('click', () => close());
       overlay.firstElementChild.addEventListener('click', () => close());
       overlay.addEventListener('keydown', (e) => {
@@ -593,8 +603,10 @@
       });
       if (viewport) { viewport.addEventListener('resize', fit); viewport.addEventListener('scroll', fit); }
     }
+    topic = asked || intent || 'estimate';
     setIntent(intent || 'estimate');
     if (!stage.firstElementChild) show(state.step, 1);
+    header();
     warm();
     opened = true;
     styled.then(() => {
@@ -634,7 +646,8 @@
     const intent = url.hash === '#trial' ? 'trial' : url.hash === '#estimate' || link.hasAttribute('data-estimate-cta') ? 'estimate' : '';
     if (!intent) return;
     e.preventDefault();
-    open(intent, link);
+    // A plain "Contact us" button (no #estimate / #trial) gets a "Contact us" title.
+    open(intent, link, url.hash ? intent : 'contact');
   });
 
   window.zinelyQuote = { open, close };

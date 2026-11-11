@@ -39,7 +39,10 @@
 <link rel="stylesheet" href="/assets/footer.css?v=20261111-1">
 <link rel="stylesheet" href="/assets/analytics.css?v=20261111-1">
 <script src="/assets/analytics.js?v=3" defer></script>
-<script src="/assets/quote.js?v=4" defer></script>
+<script src="/assets/quote.js?v=5" defer></script>
+<link rel="stylesheet" href="/assets/home.css?v=2">
+<link rel="stylesheet" href="/assets/pages.css?v=1">
+<script src="/assets/home.js?v=2" defer></script>
 <link rel="stylesheet" href="/assets/reveal.css?v=4">
 <script src="/assets/reveal.js?v=6" defer></script>
 </head>
@@ -106,88 +109,75 @@
   <div style="position:relative;z-index:1;max-width:1160px;margin:0 auto;padding:0 24px">
 
     <!-- HERO -->
-    <section style="text-align:center;padding:76px 0 20px;max-width:720px;margin:0 auto">
-      <div style="font-weight:700;letter-spacing:.28em;text-transform:uppercase;font-size:12px;color:#1AA3F5;margin-bottom:16px">Pricing</div>
-      <h1 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(38px,5.6vw,62px);line-height:1.02;letter-spacing:-.025em;margin:0;color:#fff">If we don't sell, <br><span style="color:#1AA3F5">you don't pay.</span></h1>
-      <p style="color:#8FB2D4;font-size:18px;margin:20px auto 0;max-width:540px">Commission on the net tips and PPV our chatters close. Rates depend on your platform and agreed terms. No retainers, no minimums, no lock-in. <a href="/terms" style="color:#79cbff;text-decoration:none;font-weight:600">All working terms →</a></p>
+    <section class="zp-hero">
+      <span class="z-eyebrow">Pricing</span>
+      <h1 class="z-title">If we don't sell, <br><span>you don't pay.</span></h1>
+      <p>Commission on the net tips and PPV our chatters close. Nothing else.</p>
     </section>
 
     <!-- BIG RATE CARD -->
-    <section data-screen-label="Rate" style="padding:48px 0 10px;max-width:880px;margin:0 auto">
-      <div class="z-rate-card">
-        <span class="z-eyebrow">OnlyFans &amp; Fansly chatting rates</span>
+    <section data-screen-label="Rate" style="padding:36px 0 10px;max-width:860px;margin:0 auto">
+      <div class="z-rate-card zh-rate" data-kind="{{ rateKind }}">
+        <div class="zh-seg" role="group" aria-label="Model type">
+          <button class="zh-seg-btn" type="button" aria-pressed="{{ rateReal }}" onClick="{{ setRateReal }}"><img src="assets/platform-onlyfans-icon.png" alt="" width="27" height="19">Real models</button>
+          <button class="zh-seg-btn" type="button" aria-pressed="{{ rateAi }}" onClick="{{ setRateAi }}"><img src="assets/platform-fanvue.png" alt="" width="19" height="19">AI models</button>
+        </div>
         <div class="z-rate-number" aria-live="polite"><bdi children="{{ rateLabel }}"></bdi><span>%</span></div>
         <p class="z-rate-description">of net tips &amp; PPV. <strong>Subscriptions stay 100% yours.</strong></p>
-        <div class="z-revenue-control">
+        <div class="z-revenue-control zh-rate-real">
           <div class="z-revenue-heading"><label for="monthly-revenue">Your monthly revenue</label><output for="monthly-revenue"><bdi children="{{ revLabel }}"></bdi><small> / month</small></output></div>
           <input id="monthly-revenue" class="zslider z-revenue-slider" type="range" aria-label="Your monthly revenue" min="0" max="140000" step="2500" value="{{ revM }}" aria-valuetext="{{ revenueAria }}" onInput="{{ onRevChange }}" style="{{ revenueStyle }}">
           <div class="z-rate-ticks"><span data-active="{{ tier25 }}">25%<small>Up to $40K</small></span><span data-active="{{ tier20 }}">20%<small>$40K–$90K</small></span><span data-active="{{ tier16 }}">16.5%<small>Above $90K</small></span></div>
         </div>
-        <p style="font-size:13px;color:#a8c5d6;margin:24px 0 0">OnlyFans &amp; Fansly: 25% up to $40K a month, 20% from $40K to $90K, 16.5% above $90K. <a href="/fanvue" style="color:#b0e5d6;text-decoration:none;font-weight:600">Fanvue: usually 20–25%</a> of net tips &amp; PPV we close. Final terms agreed before launch.</p>
-        <div class="z-rate-benefits"><span>No retainers</span><span>No minimums</span><span>No lock-in</span><a href="/trial">Try us for a week →</a></div>
+        <p class="zh-rate-ai">For AI models on <a href="/fanvue">Fanvue</a>. Your exact rate is agreed before launch.</p>
+        <ul class="zh-rate-benefits"><li>No retainers</li><li>No minimums</li><li>No lock-in</li></ul>
+        <a class="zh-link zh-rate-more" href="/terms">All working terms <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <!-- WHO GETS WHAT -->
+    <section data-screen-label="Split" class="z-section zp-share" aria-labelledby="split-title">
+      <div class="z-section-head"><span class="z-eyebrow">Who gets what</span><h2 class="z-title" id="split-title">Most of it <span>stays yours.</span></h2></div>
+      <div class="zp-share-card" data-zh-in>
+        <div class="zp-share-row">
+          <div class="zp-share-label"><span>Net tips &amp; PPV we close</span><span><i class="zp-dot-you"></i>You<i class="zp-dot-us"></i>Zinely</span></div>
+          <div class="zp-share-bar"><span class="zp-you"><bdi children="{{ keepLabel }}"></bdi>%</span><span class="zp-us" style="{{ usStyle }}"><bdi children="{{ rateLabel }}"></bdi>%</span></div>
+        </div>
+        <div class="zp-share-row">
+          <div class="zp-share-label"><span>Subscriptions &amp; renewals</span></div>
+          <div class="zp-share-bar"><span class="zp-you">100%</span></div>
+        </div>
+        <ul class="zh-trial-stats zp-zero">
+          <li><strong>$0</strong><span>setup fee</span></li>
+          <li><strong>$0</strong><span>retainer</span></li>
+          <li><strong>$0</strong><span>minimum</span></li>
+        </ul>
       </div>
     </section>
 
     <!-- WHAT'S INCLUDED -->
-    <section data-screen-label="Included" style="padding:60px 0 10px;max-width:880px;margin:0 auto">
-      <div style="text-align:center;margin-bottom:32px">
-        <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(28px,4vw,40px);letter-spacing:-.02em;margin:0;color:#fff">Everything included. No add-ons.</h2>
-      </div>
-      <div class="m-cols" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
-        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#0E2138,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:24px 24px" style-hover="border-color:#1AA3F5;">
-          <div style="position:absolute;top:-24px;right:-12px;font-family:'Bricolage Grotesque';font-weight:800;font-size:110px;line-height:1;color:rgba(143,178,212,.06);pointer-events:none;letter-spacing:-.05em">24/7</div>
-          <div style="width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(54,211,153,.12);border:1px solid rgba(54,211,153,.5);color:#36D399;font-weight:800;font-size:15px;margin-bottom:16px">✓</div>
-          <h4 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:18px;color:#fff;margin:0 0 4px;position:relative">24/7/365 coverage</h4>
-          <p style="color:#8FB2D4;font-size:14px;margin:0;position:relative">Every timezone, weekends and holidays included.</p>
-        </div>
-        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#0E2138,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:24px 24px" style-hover="border-color:#1AA3F5;">
-          <div style="position:absolute;top:-24px;right:-8px;font-family:'Bricolage Grotesque';font-weight:800;font-size:110px;line-height:1;color:rgba(143,178,212,.06);pointer-events:none">★</div>
-          <div style="width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(54,211,153,.12);border:1px solid rgba(54,211,153,.5);color:#36D399;font-weight:800;font-size:15px;margin-bottom:16px">✓</div>
-          <h4 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:18px;color:#fff;margin:0 0 4px;position:relative">Trained closers</h4>
-          <p style="color:#8FB2D4;font-size:14px;margin:0;position:relative">Drilled on our full chatting playbook before touching an account.</p>
-        </div>
-        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#0E2138,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:24px 24px" style-hover="border-color:#1AA3F5;">
-          <div style="position:absolute;top:-24px;right:-8px;font-family:'Bricolage Grotesque';font-weight:800;font-size:110px;line-height:1;color:rgba(143,178,212,.06);pointer-events:none">QA</div>
-          <div style="width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(54,211,153,.12);border:1px solid rgba(54,211,153,.5);color:#36D399;font-weight:800;font-size:15px;margin-bottom:16px">✓</div>
-          <h4 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:18px;color:#fff;margin:0 0 4px;position:relative">Team leaders &amp; QA</h4>
-          <p style="color:#8FB2D4;font-size:14px;margin:0;position:relative">Escalation and chat review on every account, every day.</p>
-        </div>
-        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#0E2138,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:24px 24px" style-hover="border-color:#1AA3F5;">
-          <div style="position:absolute;top:-24px;right:-8px;font-family:'Bricolage Grotesque';font-weight:800;font-size:110px;line-height:1;color:rgba(143,178,212,.06);pointer-events:none">CRM</div>
-          <div style="width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(54,211,153,.12);border:1px solid rgba(54,211,153,.5);color:#36D399;font-weight:800;font-size:15px;margin-bottom:16px">✓</div>
-          <h4 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:18px;color:#fff;margin:0 0 4px;position:relative">Fan CRM</h4>
-          <p style="color:#8FB2D4;font-size:14px;margin:0;position:relative">Every fan profiled and remembered across every shift.</p>
-        </div>
-        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#0E2138,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:24px 24px" style-hover="border-color:#1AA3F5;">
-          <div style="position:absolute;top:-24px;right:-8px;font-family:'Bricolage Grotesque';font-weight:800;font-size:110px;line-height:1;color:rgba(143,178,212,.06);pointer-events:none">$</div>
-          <div style="width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(54,211,153,.12);border:1px solid rgba(54,211,153,.5);color:#36D399;font-weight:800;font-size:15px;margin-bottom:16px">✓</div>
-          <h4 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:18px;color:#fff;margin:0 0 4px;position:relative">PPV pricing strategy</h4>
-          <p style="color:#8FB2D4;font-size:14px;margin:0;position:relative">Tiered by spender, framed before sending, followed up after.</p>
-        </div>
-        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,#0E2138,#0E2138);border:1px solid #1C3A5A;border-radius:20px;padding:24px 24px" style-hover="border-color:#1AA3F5;">
-          <div style="position:absolute;top:-24px;right:-8px;font-family:'Bricolage Grotesque';font-weight:800;font-size:110px;line-height:1;color:rgba(143,178,212,.06);pointer-events:none">2%</div>
-          <div style="width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(54,211,153,.12);border:1px solid rgba(54,211,153,.5);color:#36D399;font-weight:800;font-size:15px;margin-bottom:16px">✓</div>
-          <h4 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:18px;color:#fff;margin:0 0 4px;position:relative">Whale program</h4>
-          <p style="color:#8FB2D4;font-size:14px;margin:0;position:relative">Your top spenders reserved for your best closers.</p>
-        </div>
+    <section data-screen-label="Included" class="z-section zp-inc" aria-labelledby="included-title">
+      <div class="z-section-head"><span class="z-eyebrow">One price</span><h2 class="z-title" id="included-title">Everything included. <span>No add-ons.</span></h2></div>
+      <div class="zp-inc-card">
+        <span class="zp-inc-label">Included in your commission</span>
+        <ul>
+          <li><span class="zh-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="s" fill-rule="evenodd" d="M16 3.5a12.5 12.5 0 1 1 0 25 12.5 12.5 0 0 1 0-25Zm-1.2 5.5v7.6l5.3 3.3 1.3-2-4.2-2.6V9Z"/></svg></span><div><h3>24/7/365 coverage</h3><p>Every timezone, weekends and holidays.</p></div></li>
+          <li><span class="zh-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="s" d="m16 3.5 3.7 7.9 8.6 1.1-6.3 6 1.6 8.6-7.6-4.2-7.6 4.2 1.6-8.6-6.3-6 8.6-1.1Z"/></svg></span><div><h3>Trained closers</h3><p>Drilled on our full playbook before touching an account.</p></div></li>
+          <li><span class="zh-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="s" d="M16 3 5.5 6.8v7.7c0 6.6 4.5 11.3 10.5 14.5 6-3.2 10.5-7.9 10.5-14.5V6.8Z"/><path class="cut" d="m11 15.5 3.5 3.5 6.5-7"/></svg></span><div><h3>Team leaders &amp; QA</h3><p>Chats reviewed on every account, every day.</p></div></li>
+          <li><span class="zh-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="s" fill-rule="evenodd" d="M6 6.5h20A2.5 2.5 0 0 1 28.5 9v14a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 23V9A2.5 2.5 0 0 1 6 6.5Zm5.5 5a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6ZM6.8 21.8c.5-2 2.4-3.2 4.7-3.2s4.2 1.2 4.7 3.2ZM19 12.5h6v2.2h-6ZM19 17.3h4.5v2.2H19Z"/></svg></span><div><h3>Fan CRM</h3><p>Every fan remembered across every shift.</p></div></li>
+          <li><span class="zh-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="s" fill-rule="evenodd" d="M4 6.5A2.5 2.5 0 0 1 6.5 4h8.6c.7 0 1.3.3 1.8.7l10.4 10.4a2.5 2.5 0 0 1 0 3.5l-8.7 8.7a2.5 2.5 0 0 1-3.5 0L4.7 16.9A2.5 2.5 0 0 1 4 15.1ZM10.5 8.2a2.3 2.3 0 1 0 0 4.6 2.3 2.3 0 0 0 0-4.6Z"/></svg></span><div><h3>PPV pricing strategy</h3><p>Tiered by spender, followed up after.</p></div></li>
+          <li><span class="zh-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="s" d="M10 5h12l6.5 8L16 28 3.5 13Z"/><path class="cut cut-thin" d="M4.5 13h23M12.2 13 16 26.5 19.8 13M10.5 5.5l1.7 7.5M21.5 5.5 19.8 13"/></svg></span><div><h3>Whale program</h3><p>Top spenders go to your best closers.</p></div></li>
+        </ul>
       </div>
     </section>
 
     <!-- PRICING FAQ -->
-    <section data-screen-label="FAQ" style="padding:60px 0 10px;max-width:760px;margin:0 auto">
-      <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(26px,3.8vw,36px);letter-spacing:-.02em;margin:0 0 24px;color:#fff;text-align:center">Pricing questions.</h2>
+    <section data-screen-label="FAQ" class="z-section" style="max-width:860px;margin:0 auto">
+      <div class="z-section-head"><span class="z-eyebrow">Pricing questions</span><h2 class="z-title">Quick <span>answers.</span></h2></div>
       <div class="z-accordion">
         <details>
           <summary>Why percentage instead of a flat fee?</summary>
           <div class="z-answer"><p>Because it puts us on your side of the table. A flat fee gets paid whether your DMs earn or not — a percentage only pays us when you get paid. Our incentive is your revenue, full stop.</p></div>
-        </details>
-        <details>
-          <summary>How does the sliding rate work?</summary>
-          <div class="z-answer"><p>For OnlyFans and Fansly, the rate is tied to your monthly revenue: 25% up to $40k, 20% from $40k to $90k, and 16.5% above $90k. Fanvue commission is usually 20–25% of net tips and PPV our chatters close. Final terms are agreed before launch.</p></div>
-        </details>
-        <details>
-          <summary>Are there any other costs?</summary>
-          <div class="z-answer"><p>No. No setup fee, no retainer, no minimum, no per-chatter charge. The percentage is the whole price.</p></div>
         </details>
         <details>
           <summary>How does billing work?</summary>
@@ -205,11 +195,11 @@
     </section>
 
     <!-- CTA -->
-    <section data-screen-label="Final CTA" class="z-final">
-      <h2>See what could work<br><span>for your account.</span></h2>
-      <ul class="z-final-ticks"><li>Free</li><li>No commitment</li><li>No account access needed</li></ul>
-      <a data-estimate-cta class="z-final-btn" href="/contact#estimate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 2v-10a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8Z"/></svg>Get a free earnings estimate</a>
-      <a class="z-final-alt" href="/trial">Or try us for a week <span aria-hidden="true">→</span></a>
+    <section data-screen-label="Final CTA" class="zh-final" data-zh-in>
+      <h2>You pay nothing <br><span>until we sell.</span></h2>
+      <a data-estimate-cta class="zh-final-btn" href="/contact#estimate">Get my free earnings estimate <span aria-hidden="true">→</span></a>
+      <ul class="zh-final-ticks"><li>Free</li><li>No commitment</li><li>No account access needed</li></ul>
+      <a class="zh-final-alt" href="/trial">Or try us for a week <span aria-hidden="true">→</span></a>
     </section>
 
     <!-- FOOTER -->
@@ -239,10 +229,12 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;telegramUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://t.me/timzines&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;}}">
 class Component extends DCLogic {
-  state = { revM: 70000 };
+  state = { revM: 70000, rateType: "real" };
   renderVals() {
     const revM = this.state.revM;
-    const rate = revM <= 40000 ? "25" : revM <= 90000 ? "20" : "16.5";
+    const ai = this.state.rateType === "ai";
+    const tier = revM <= 40000 ? "25" : revM <= 90000 ? "20" : "16.5";
+    const rate = ai ? "20–25" : tier;
     return {
       calendly: this.props.telegramUrl ?? "https://t.me/timzines",
       estimateUrl: (this.props.telegramUrl ?? "https://t.me/timzines") + ((this.props.telegramUrl ?? "").includes("?") ? "&" : "?") + "text=" + encodeURIComponent("Hi Zinely, I'd like a free earnings estimate for my account or roster."),
@@ -254,6 +246,13 @@ class Component extends DCLogic {
       revM: revM,
       revLabel: "$" + revM.toLocaleString("en-US"),
       rateLabel: rate,
+      rateKind: this.state.rateType,
+      rateReal: !ai,
+      rateAi: ai,
+      setRateReal: () => this.setState({ rateType: "real" }),
+      setRateAi: () => this.setState({ rateType: "ai" }),
+      keepLabel: ai ? "75–80" : String(100 - Number(tier)),
+      usStyle: { width: (ai ? 25 : Number(tier)) + "%" },
       onRevChange: (e) => this.setState({ revM: Number(e.target.value) }),
     };
   }

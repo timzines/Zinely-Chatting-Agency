@@ -1,9 +1,9 @@
-/* Homepage motion that is not a scroll reveal:
-   - "What makes us different": each tab opens on the problem, then turns into how we solve it.
-     The tabs themselves (and their auto-advance) stay in difference.js; this only sets
+/* Motion that is not a scroll reveal (homepage, case studies, pricing, trial week):
+   - "What makes us different" (homepage): each tab opens on the problem, then turns into how we
+     solve it. The tabs themselves (and their auto-advance) stay in difference.js; this only sets
      data-phase="bad" | "fix" on the open panel.
    - [data-zh-in] blocks get .is-in the first time they are properly on screen (the steps track,
-     the trial week, the last call to action).
+     the trial week, revenue bars, the last call to action).
    Without this script, or with reduced motion, every block simply shows its finished state. */
 (() => {
   if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
@@ -36,24 +36,30 @@
     play(open());
   }
 
-  function mount() {
+  const done = new WeakSet();
+  const seen = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-in');
+      seen.unobserve(entry.target);
+    });
+  }, {threshold: .35});
+  // The page is drawn by its runtime after load, so look again as it arrives; the raw <x-dc>
+  // template is never the place.
+  function scan() {
+    document.querySelectorAll('[data-zh-in]').forEach((el) => {
+      if (done.has(el) || el.closest('x-dc')) return;
+      done.add(el);
+      seen.observe(el);
+    });
     const shell = document.querySelector('.zh-why .z-why-shell');
-    if (!shell || shell.closest('x-dc')) return false;
-    stages(shell);
-    const seen = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-in');
-        seen.unobserve(entry.target);
-      });
-    }, {threshold: .35});
-    document.querySelectorAll('[data-zh-in]').forEach((el) => seen.observe(el));
-    return true;
+    if (shell && !done.has(shell) && !shell.closest('x-dc')) { done.add(shell); stages(shell); }
   }
-
-  if (!mount()) {
-    const observer = new MutationObserver(() => { if (mount()) observer.disconnect(); });
-    observer.observe(document.body || document.documentElement, {childList: true, subtree: true});
+  const start = () => {
+    scan();
+    const observer = new MutationObserver(scan);
+    observer.observe(document.body, {childList: true, subtree: true});
     setTimeout(() => observer.disconnect(), 15000);
-  }
+  };
+  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start);
 })();
