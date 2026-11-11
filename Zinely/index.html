@@ -54,8 +54,10 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "WebSite", "@id": "https://zinelyagency.com/#website", "url": "https://zinelyagency.com/", "name": "Zinely", "alternateName": "Zinely Chatting Agency", "inLanguage": "en", "publisher": {"@id": "https://zinelyagency.com/#organization"}}
 </script>
+<link rel="stylesheet" href="/assets/home.css?v=1">
+<script src="/assets/home.js?v=1" defer></script>
 <link rel="stylesheet" href="/assets/reveal.css?v=4">
-<script src="/assets/reveal.js?v=5" defer></script>
+<script src="/assets/reveal.js?v=6" defer></script>
 </head>
 <body>
 <x-dc>
@@ -191,34 +193,23 @@
     </section>
 
     <!-- PROBLEM / SOLUTION -->
-    <section data-screen-label="Problem" class="z-fix" aria-labelledby="fix-title">
+    <section data-screen-label="Problem" class="z-section zh-fix" aria-labelledby="fix-title">
       <div class="z-section-head">
-        <span class="z-eyebrow">Just 3 of the many we fix</span>
+        <span class="z-eyebrow">Sound familiar?</span>
         <h2 class="z-title" id="fix-title">Three problems every creator hits. <br><span>We solve all three.</span></h2>
       </div>
-      <div class="z-fix-labels" aria-hidden="true"><span>✕ Your DMs today</span><span>✓ With <img src="assets/logo.png" alt=""> Zinely</span></div>
-      <ul class="z-fix-list">
-        <li class="z-fix-row">
-          <div class="z-fix-side z-fix-pain"><span class="z-fix-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><h3>You spend 10 hours a day answering DMs</h3><p>No time left to create content or grow the business.</p></div></div>
-          <div class="z-fix-arrow" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></span></div>
-          <div class="z-fix-side z-fix-win"><span class="z-fix-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 2v-10a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8Z"/><path d="m8 11 2.5 2.5L15 9"/></svg></span><div><h3>We chat 24/7, so you can grow</h3><p>Every fan answered, <b>every hour of every day</b>. Your time goes back into the business.</p></div></div>
-        </li>
-        <li class="z-fix-row">
-          <div class="z-fix-side z-fix-pain"><span class="z-fix-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20v-1.5A6.5 6.5 0 0 1 13 13.4M16 15l5 5m0-5-5 5"/></svg></span><div><h3>Your chatters are untrained and don't show up</h3><p>Hired off Telegram or Reddit, they turn up late or not at all.</p></div></div>
-          <div class="z-fix-arrow" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></span></div>
-          <div class="z-fix-side z-fix-win"><span class="z-fix-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20v-1.5A6.5 6.5 0 0 1 13 13.4M15 17l2 2 4-5"/></svg></span><div><h3>Trained chatters on every shift</h3><p>We hire, train and manage the whole team. <b>You never chase anyone again.</b></p></div></div>
-        </li>
-        <li class="z-fix-row">
-          <div class="z-fix-side z-fix-pain"><span class="z-fix-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6.5 9.5v.01M17.5 14.5v.01"/></svg></span><div><h3>You pay chatters hourly, even when they don't sell</h3><p>Almost every chatter wants an hourly rate on top of commission.</p></div></div>
-          <div class="z-fix-arrow" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></span></div>
-          <div class="z-fix-side z-fix-win"><span class="z-fix-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 17 9.5 11.5l3.5 3.5L20 8"/><path d="M15 8h5v5"/></svg></span><div><h3>You only pay commission on what we sell</h3><p>No hourly rate, no setup fee. <b>If we don't make you money, you don't pay us.</b></p></div></div>
-        </li>
-      </ul>
-      <p class="z-fix-note">And plenty more we take off your plate. No retainer, no minimum, no lock-in. <a href="/pricing">See how pricing works →</a></p>
+      <div class="zh-fix-table">
+        <div class="zh-fix-head" aria-hidden="true"><span>Your DMs today</span><span>With <img src="assets/logo.png" alt="" width="16" height="16" loading="lazy"> Zinely</span></div>
+        <ul class="zh-fix-list">
+          <li class="zh-fix-row"><p class="zh-fix-pain"><i class="zh-x" aria-hidden="true"></i><span class="zh-sr">Today: </span>10 hours a day answering DMs</p><p class="zh-fix-win"><i class="zh-ok" aria-hidden="true"></i><span class="zh-sr">With Zinely: </span>We chat 24/7, so you can grow</p></li>
+          <li class="zh-fix-row"><p class="zh-fix-pain"><i class="zh-x" aria-hidden="true"></i><span class="zh-sr">Today: </span>Chatters who don't show up</p><p class="zh-fix-win"><i class="zh-ok" aria-hidden="true"></i><span class="zh-sr">With Zinely: </span>Trained chatters on every shift</p></li>
+          <li class="zh-fix-row"><p class="zh-fix-pain"><i class="zh-x" aria-hidden="true"></i><span class="zh-sr">Today: </span>Hourly pay, even when nothing sells</p><p class="zh-fix-win"><i class="zh-ok" aria-hidden="true"></i><span class="zh-sr">With Zinely: </span>You pay only on what we sell</p></li>
+        </ul>
+      </div>
     </section>
 
     <!-- SERVICES -->
-    <section data-screen-label="Services" class="z-section z-services-compact" id="services">
+    <section data-screen-label="Services" class="z-section z-services-compact zh-services" id="services">
       <div class="z-compact-heading"><div><span class="z-eyebrow">One service. Everything included.</span><h2 class="z-title">Our <span>chatting service.</span></h2></div><a class="z-text-link" href="/services">All services <span aria-hidden="true">↗</span></a></div>
       <div class="z-pack">
         <div class="z-pack-core">
@@ -228,12 +219,12 @@
           <a data-estimate-cta class="z-pack-cta" aria-label="Get a free account review" href="/contact#estimate"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.04 15.31l-.38 5.37c.54 0 .78-.23 1.06-.5l2.55-2.44 5.28 3.87c.97.53 1.66.25 1.92-.9L22.9 3.9c.31-1.4-.51-1.95-1.45-1.6L3.1 9.36c-1.36.53-1.34 1.29-.23 1.63l4.7 1.47L18.5 5.6c.51-.34.98-.15.6.19L9.04 15.31z"></path></svg>Get a free account review <span aria-hidden="true">→</span></a>
         </div>
         <div class="z-pack-plus">
-          <span class="z-pack-label">Included with your chatting</span>
+          <span class="z-pack-label">Included free with your chatting</span>
           <ul>
-            <li class="z-pack-gold"><span class="z-pack-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></svg></span><div><h4>Your own account manager</h4><p>Knows your account and your fans. Always one message away.</p></div></li>
-            <li><span class="z-pack-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><div><h4>Personalised pricing chart</h4><p>Built for your content, so every PPV is priced to sell.</p></div></li>
-            <li><span class="z-pack-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/><path d="M3 11h18"/></svg></span><div><h4>Vault organisation</h4><p>Clear folders, so the right content sells in seconds.</p></div></li>
-            <li><span class="z-pack-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5M9 13l2 2 4-4"/></svg></span><div><h4>Proven script templates</h4><p>Scripts used on $100K+ accounts, plus exactly how each image should look.</p></div></li>
+            <li><span class="zh-ico zh-gold" aria-hidden="true"><svg viewBox="0 0 32 32"><circle class="s" cx="12.5" cy="11" r="5"/><path class="s" d="M3 28.5c0-5.6 4.3-9.5 9.5-9.5s9.5 3.9 9.5 9.5Z"/><path class="s2" d="M21.5 3.5h6.5a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2.7l-2.6 2.3v-2.3h-1.2a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2Z"/></svg></span><div><h4>Your own account manager</h4><p>Knows your account and your fans. Always one message away.</p></div></li>
+            <li><span class="zh-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="s" fill-rule="evenodd" d="M4 6.5A2.5 2.5 0 0 1 6.5 4h8.6c.7 0 1.3.3 1.8.7l10.4 10.4a2.5 2.5 0 0 1 0 3.5l-8.7 8.7a2.5 2.5 0 0 1-3.5 0L4.7 16.9A2.5 2.5 0 0 1 4 15.1ZM10.5 8.2a2.3 2.3 0 1 0 0 4.6 2.3 2.3 0 0 0 0-4.6Z"/></svg></span><div><h4>Personalised pricing chart</h4><p>Built for your content, so every PPV is priced to sell.</p></div></li>
+            <li><span class="zh-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="s2" d="M3.5 8A2.5 2.5 0 0 1 6 5.5h6.3c.8 0 1.5.4 2 1L15.6 8H26a2.5 2.5 0 0 1 2.5 2.5V13h-25Z"/><path class="s" d="M3.5 13h25v11a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 24Z"/></svg></span><div><h4>Vault organisation</h4><p>Clear folders, so the right content sells in seconds.</p></div></li>
+            <li><span class="zh-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="s" fill-rule="evenodd" d="M9 3.5h9.5l6 6V26a2.5 2.5 0 0 1-2.5 2.5H9A2.5 2.5 0 0 1 6.5 26V6A2.5 2.5 0 0 1 9 3.5ZM10.5 14.5h10v2.2h-10ZM10.5 19.5h6.5v2.2h-6.5Z"/></svg></span><div><h4>Proven script templates</h4><p>Scripts used on $100K+ accounts, plus exactly how each image should look.</p></div></li>
           </ul>
         </div>
       </div>
@@ -241,69 +232,65 @@
     </section>
 
     <!-- CASE STUDIES PREVIEW -->
-    <section class="z-section" data-screen-label="Case studies" id="results">
+    <section class="z-section zh-results" data-screen-label="Case studies" id="results">
       <div class="z-compact-heading"><div><span class="z-eyebrow">Real accounts. Real results.</span><h2 class="z-title">Our clients' <span>case studies.</span></h2></div><a class="z-text-link" href="/cases">All case studies <span aria-hidden="true">↗</span></a></div>
       <div class="z-results-grid">
         <a class="z-result-card z-result-featured" href="cases.html#case-growth" aria-label="Read case study: $164.9K all-time earnings, full dm takeover">
           <div class="z-result-card-top"><div><strong>$164.9K</strong><span>All-time earnings</span><div class="z-result-chips"><span class="z-chip-stat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17l6-6 4 4 6-6M15 9h5v5"/></svg>$96.9K from messages</span></div></div><span class="z-result-arrow" aria-hidden="true">↗</span></div>
-          <div class="z-result-image"><img src="assets/case-growth-september-dashboard.webp" width="1200" height="780" alt="Account dashboard for the $164.9K case study" loading="lazy"></div>
+          <div class="z-result-image"><img src="/assets/case-preview-growth.webp?v=1" width="1200" height="545" alt="Account dashboard for the $164.9K case study" loading="lazy"></div>
           <div class="z-result-caption"><span>Fanvue · Sep 2026</span></div>
         </a>
         <a class="z-result-card" href="cases.html#case-earlier-original" aria-label="Read case study: $160.9K all-time earnings, full dm takeover">
           <div class="z-result-card-top"><div><strong>$160.9K</strong><span>All-time earnings</span><div class="z-result-chips"><span class="z-chip-stat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 2v-10a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8Z"/></svg>75% from messages &amp; tips</span></div></div><span class="z-result-arrow" aria-hidden="true">↗</span></div>
-          <div class="z-result-image"><img src="assets/case1-dashboard-wm5.webp" width="1200" height="717" alt="Account dashboard for the $160.9K case study" loading="lazy"></div>
+          <div class="z-result-image"><img src="/assets/case-preview-one.webp?v=1" width="1200" height="545" alt="Account dashboard for the $160.9K case study" loading="lazy"></div>
           <div class="z-result-caption"><span>July 2026</span></div>
         </a>
         <a class="z-result-card" href="cases.html#case-partnership" aria-label="Read case study: $64.3K all-time earnings, ongoing partnership">
           <div class="z-result-card-top"><div><strong>$64.3K</strong><span>All-time earnings</span><div class="z-result-chips"><span class="z-chip-stat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17l6-6 4 4 6-6M15 9h5v5"/></svg>$24.3K in August</span></div></div><span class="z-result-arrow" aria-hidden="true">↗</span></div>
-          <div class="z-result-image"><img src="assets/case-partnership-dashboard.webp" width="1200" height="611" alt="Account dashboard for the $64.3K case study" loading="lazy"></div>
+          <div class="z-result-image"><img src="/assets/case-preview-partnership.webp?v=1" width="1200" height="545" alt="Account dashboard for the $64.3K case study" loading="lazy"></div>
           <div class="z-result-caption"><span>Fanvue · Aug 2026</span></div>
         </a>
         <a class="z-result-card" href="cases.html#case-earlier-growth" aria-label="Read case study: $28.9K all-time earnings, takeover from may 25">
           <div class="z-result-card-top"><div><strong>$28.9K</strong><span>All-time earnings</span><div class="z-result-chips"><span class="z-chip-stat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 2v-10a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8Z"/></svg>89% from messages &amp; tips</span></div></div><span class="z-result-arrow" aria-hidden="true">↗</span></div>
-          <div class="z-result-image"><img src="assets/case2-dashboard-wm2.webp" width="1200" height="752" alt="Account dashboard for the $28.9K case study" loading="lazy"></div>
+          <div class="z-result-image"><img src="/assets/case-preview-two.webp?v=1" width="1200" height="545" alt="Account dashboard for the $28.9K case study" loading="lazy"></div>
           <div class="z-result-caption"><span>July 2026</span></div>
         </a>
         <a class="z-result-card" href="cases.html#case-takeover" aria-label="Read case study: $22.2K all-time earnings, chatting takeover">
           <div class="z-result-card-top"><div><strong>$22.2K</strong><span>All-time earnings</span><div class="z-result-chips"><span class="z-chip-stat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 2v-10a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8Z"/></svg>95% from messages &amp; tips</span></div></div><span class="z-result-arrow" aria-hidden="true">↗</span></div>
-          <div class="z-result-image"><img src="assets/case-takeover-dashboard.webp" width="1200" height="607" alt="Account dashboard for the $22.2K case study" loading="lazy"></div>
+          <div class="z-result-image"><img src="/assets/case-preview-takeover.webp?v=1" width="1200" height="545" alt="Account dashboard for the $22.2K case study" loading="lazy"></div>
           <div class="z-result-caption"><span>Fanvue · Sep 2026</span></div>
         </a>
       </div>
-      <div class="z-results-more"><a class="z-button z-button-primary" href="/cases">See more results <span aria-hidden="true">→</span></a><p>Every account, with the original dashboards.</p></div>
+      <div class="zh-more"><a class="zh-btn zh-btn-lg" href="/cases">See all case studies <span aria-hidden="true">→</span></a><p>Every account, with the original dashboards.</p></div>
     </section>
 
     <!-- DIY PAIN POINTS -->
-    <section data-screen-label="DIY pain" class="z-section z-diy" id="why-zinely">
+    <section data-screen-label="DIY pain" class="z-section z-diy zh-diy" id="why-zinely">
       <div class="z-section-head">
         <span class="z-eyebrow">Your time has better places to be</span>
-        <h2 class="z-title">Hiring your own chatters? <br><span style="color:#ef9999">The hidden cost adds up.</span></h2>
+        <h2 class="z-title">Hiring your own chatters? <br><span>The hidden cost adds up.</span></h2>
       </div>
-      <ul class="z-diy-grid">
-        <li class="z-diy-pain"><span class="z-diy-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20v-1.5A6.5 6.5 0 0 1 13 13.4M16 15l5 5m0-5-5 5"/></svg></span><h3>Chatters who ghost</h3><p>Weeks of training, then they quit or can't sell.</p><span class="z-diy-cost">Weeks wasted</span></li>
-        <li class="z-diy-pain"><span class="z-diy-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg></span><h3>Micromanaging, forever</h3><p>Up at 3 AM checking if anyone's on shift.</p><span class="z-diy-cost">Your nights</span></li>
-        <li class="z-diy-pain"><span class="z-diy-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></svg></span><h3>Payroll by spreadsheet</h3><p>Hours and commissions, tallied by hand.</p><span class="z-diy-cost">Every single week</span></li>
-        <li class="z-diy-pain"><span class="z-diy-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7l6 6 4-4 8 8"/><path d="M15 15h6V9"/></svg></span><h3>Chatters burn your whales</h3><p>Hard-selling with no relationship drives your best spenders away.</p><span class="z-diy-cost">$10,000s lost</span></li>
-      </ul>
-      <div class="z-diy-bridge" aria-hidden="true"><span class="z-diy-logo"><img src="assets/logo.png" alt="" width="34" height="34" loading="lazy"></span></div>
       <div class="z-diy-band">
         <div class="z-diy-band-copy">
           <h3>All of that is <br><span>our problem now.</span></h3>
           <p>We run the whole chatting operation. You focus on content and growth.</p>
           <a class="z-diy-cta" href="#how-it-works">See how we get you started <span aria-hidden="true">→</span></a>
         </div>
-        <ul class="z-diy-fixes">
-          <li><span class="z-diy-fix-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20v-1.5A6.5 6.5 0 0 1 13 13.4M15 17l2 2 4-5"/></svg></span><span class="z-diy-swap"><s>Chatters who ghost</s><strong>We hire and train every chatter</strong></span><svg class="z-diy-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path pathLength="1" d="m7.5 12 3 3 6-6"/></svg></li>
-          <li><span class="z-diy-fix-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="z-diy-swap"><s>Micromanaging every shift</s><strong>Every shift covered and checked</strong></span><svg class="z-diy-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path pathLength="1" d="m7.5 12 3 3 6-6"/></svg></li>
-          <li><span class="z-diy-fix-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 7V5H6a2.5 2.5 0 0 0 0 5h14v10H6a3 3 0 0 1-3-3V7.5M16 14.5h1"/></svg></span><span class="z-diy-swap"><s>Payroll spreadsheets</s><strong>We pay the team, not you</strong></span><svg class="z-diy-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path pathLength="1" d="m7.5 12 3 3 6-6"/></svg></li>
-          <li><span class="z-diy-fix-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10A4.5 4.5 0 0 1 12 7.4 4.5 4.5 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z"/></svg></span><span class="z-diy-swap"><s>Burned whales</s><strong>Spenders kept for months, some for years</strong></span><svg class="z-diy-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path pathLength="1" d="m7.5 12 3 3 6-6"/></svg></li>
-        </ul>
+        <div class="zh-diy-side">
+          <div class="zh-diy-who" aria-hidden="true"><span class="zh-diy-who-old">On your own</span><span class="zh-diy-who-new">With <img src="assets/logo.png" alt="" width="16" height="16" loading="lazy"> Zinely</span></div>
+          <ul class="z-diy-fixes">
+          <li><span class="z-diy-swap"><s>Chatters who ghost</s><strong>We hire and train every chatter</strong></span><em class="zh-diy-cost">Weeks wasted</em><svg class="z-diy-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path pathLength="1" d="m7.5 12 3 3 6-6"/></svg></li>
+          <li><span class="z-diy-swap"><s>Micromanaging every shift</s><strong>Every shift covered and checked</strong></span><em class="zh-diy-cost">Your nights</em><svg class="z-diy-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path pathLength="1" d="m7.5 12 3 3 6-6"/></svg></li>
+          <li><span class="z-diy-swap"><s>Payroll spreadsheets</s><strong>We pay the team, not you</strong></span><em class="zh-diy-cost">Every week</em><svg class="z-diy-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path pathLength="1" d="m7.5 12 3 3 6-6"/></svg></li>
+          <li><span class="z-diy-swap"><s>Burned whales</s><strong>Spenders kept for months, some for years</strong></span><em class="zh-diy-cost">$10,000s lost</em><svg class="z-diy-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path pathLength="1" d="m7.5 12 3 3 6-6"/></svg></li>
+          </ul>
+        </div>
       </div>
       <p class="z-diy-reading">Weighing it up? <a href="/blog/hire-chatters-or-chatting-agency/">Hiring chatters vs a chatting agency</a> · <a href="/blog/why-chatters-underperform/">Why chatters underperform</a></p>
     </section>
 
     <!-- WHAT MAKES US DIFFERENT -->
-    <section data-screen-label="What makes us different" class="z-section z-why" id="difference" aria-labelledby="difference-title">
+    <section data-screen-label="What makes us different" class="z-section z-why zh-why" id="difference" aria-labelledby="difference-title">
       <div class="z-section-head"><span class="z-eyebrow">The Zinely approach</span><h2 class="z-title" id="difference-title">What makes us <span>different.</span></h2></div>
       <div class="z-why-shell">
         <div class="z-why-tabs" role="tablist" aria-label="What makes us different">
@@ -319,19 +306,18 @@
             <p>Our AI tools put each fan's history beside the chat, so no shift starts from zero.</p>
             <span class="z-why-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v5c0 5 8 10 8 10s8-5 8-10V6l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>AI never chats with your fans</span>
           </div>
-          <div class="z-why-visual" aria-hidden="true">
-            <div class="z-why-profile">
-              <div class="z-why-profile-head"><b>M</b><div><strong>Mike, 34</strong><small>Subscribed 7 months · Texas, US</small></div><em>Whale</em></div>
-              <div class="z-why-fields">
-                <div><span>Job</span><strong>Truck driver</strong></div>
-                <div><span>Timezone</span><strong>CST · Online late</strong></div>
-                <div><span>Into</span><strong>Gym, NFL, BBQ</strong></div>
-                <div><span>Likes</span><strong>Lingerie sets</strong></div>
-                <div><span>Total spent</span><strong>$2,340</strong></div>
-                <div><span>Payday</span><strong>Friday</strong></div>
+          <div class="zh-stage" aria-hidden="true">
+            <div class="zh-stage-top"><span class="zh-phase"><b class="zh-phase-bad">No fan context</b><b class="zh-phase-good">With <img src="assets/logo.png" alt="" width="16" height="16" loading="lazy"> Zinely</b></span><button class="zh-replay" type="button" tabindex="-1" aria-label="Play again"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.6-5.9"/><path d="M4 4v4.5h4.5"/></svg></button></div>
+            <div class="zh-scene zh-s1">
+              <div class="zh-fan">
+                <span class="zh-fan-av"><b>?</b><b>M</b></span>
+                <span class="zh-fan-id"><strong>Mike</strong><em>Whale</em></span>
+                <ul><li>Truck driver</li><li>Payday Friday</li><li>Likes lingerie sets</li></ul>
               </div>
-              <div class="z-why-flag"><span>Last PPV</span><strong>Already sent, don't resend</strong></div>
-              <div class="z-why-shiftnote"><span>Note from last shift</span>Rough week at work. Check in before selling.</div>
+              <div class="zh-chat">
+                <p class="zh-msg zh-in">Hey, remember me? 😊</p>
+                <div class="zh-swap"><p class="zh-msg zh-out zh-msg-bad">Hi! What's your name?</p><p class="zh-msg zh-out zh-msg-good">Mike! How was the road this week?</p></div>
+              </div>
             </div>
           </div>
         </div>
@@ -341,11 +327,13 @@
             <h3>Fans who <span>buy again.</span></h3>
             <p>We build trust instead of hard-selling, so your spenders stay for months.</p>
           </div>
-          <div class="z-why-visual" aria-hidden="true">
-            <div class="z-why-bars">
-              <div class="z-why-bars-head"><span>One fan's monthly spend</span><em>Example</em></div>
-              <div class="z-why-bars-grid"><i style="--h:22%"></i><i style="--h:34%"></i><i style="--h:41%"></i><i style="--h:58%"></i><i style="--h:72%"></i><i style="--h:94%"></i></div>
-              <div class="z-why-bars-axis"><span>M1</span><span>M2</span><span>M3</span><span>M4</span><span>M5</span><span>M6</span></div>
+          <div class="zh-stage" aria-hidden="true">
+            <div class="zh-stage-top"><span class="zh-phase"><b class="zh-phase-bad">Hard selling</b><b class="zh-phase-good">With <img src="assets/logo.png" alt="" width="16" height="16" loading="lazy"> Zinely</b></span><button class="zh-replay" type="button" tabindex="-1" aria-label="Play again"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.6-5.9"/><path d="M4 4v4.5h4.5"/></svg></button></div>
+            <div class="zh-scene zh-s2">
+              <div class="zh-bars-head"><span>One fan's monthly spend</span><em>Example</em></div>
+              <div class="zh-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="zh-bars-axis"><span>M1</span><span>M2</span><span>M3</span><span>M4</span><span>M5</span><span>M6</span></div>
+              <p class="zh-cap"><b class="zh-cap-bad">Gone by month 3</b><b class="zh-cap-good">Still buying in month 6</b></p>
             </div>
           </div>
         </div>
@@ -355,11 +343,15 @@
             <h3>We start <span>the conversation.</span></h3>
             <p>Mass messages and personal follow-ups every shift turn a quiet inbox into sales.</p>
           </div>
-          <div class="z-why-visual" aria-hidden="true">
-            <div class="z-why-chat">
-              <div class="z-why-msg z-why-out">Hey you, how was your day?</div>
-              <div class="z-why-msg z-why-in">Long one. Glad you messaged 😊</div>
-              <div class="z-why-msg z-why-sale"><svg viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 7"/></svg>PPV unlocked</div>
+          <div class="zh-stage" aria-hidden="true">
+            <div class="zh-stage-top"><span class="zh-phase"><b class="zh-phase-bad">Quiet inbox</b><b class="zh-phase-good">With <img src="assets/logo.png" alt="" width="16" height="16" loading="lazy"> Zinely</b></span><button class="zh-replay" type="button" tabindex="-1" aria-label="Play again"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.6-5.9"/><path d="M4 4v4.5h4.5"/></svg></button></div>
+            <div class="zh-scene zh-s3">
+              <p class="zh-msg zh-out zh-nudge">Hey you, how was your day?</p>
+              <ul class="zh-inbox">
+                <li><span class="zh-av">J</span><span class="zh-row-id"><strong>Jake</strong><small><b class="zh-st-bad">Quiet for 9 days</b><b class="zh-st-good">Replied just now</b></small></span><em><svg viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 7"/></svg>PPV unlocked</em></li>
+                <li><span class="zh-av">D</span><span class="zh-row-id"><strong>Dan</strong><small><b class="zh-st-bad">Quiet for 12 days</b><b class="zh-st-good">Replied just now</b></small></span></li>
+                <li><span class="zh-av">R</span><span class="zh-row-id"><strong>Ryan</strong><small><b class="zh-st-bad">Quiet for 6 days</b><b class="zh-st-good">Replied just now</b></small></span><em><svg viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 7"/></svg>PPV unlocked</em></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -369,36 +361,38 @@
             <h3>Tested on <span>our own accounts.</span></h3>
             <p>What sells on our accounts shapes the pricing, content and offers we bring to yours.</p>
           </div>
-          <div class="z-why-visual" aria-hidden="true">
-            <div class="z-why-loop">
-              <div><span><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3"/></svg></span><strong>Test</strong></div>
-              <i></i>
-              <div><span><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><strong>Learn</strong></div>
-              <i></i>
-              <div><span><svg viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 7"/></svg></span><strong>Apply to yours</strong></div>
+          <div class="zh-stage" aria-hidden="true">
+            <div class="zh-stage-top"><span class="zh-phase"><b class="zh-phase-bad">Guessing on your fans</b><b class="zh-phase-good">With <img src="assets/logo.png" alt="" width="16" height="16" loading="lazy"> Zinely</b></span><button class="zh-replay" type="button" tabindex="-1" aria-label="Play again"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.6-5.9"/><path d="M4 4v4.5h4.5"/></svg></button></div>
+            <div class="zh-scene zh-s4">
+              <div class="zh-lab zh-lab-ours"><span class="zh-lab-name">Our accounts</span><ul><li>Offer A<i></i></li><li class="zh-lab-win">Offer B<i></i><svg viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 7"/></svg></li><li>Offer C<i></i></li></ul></div>
+              <span class="zh-lab-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></span>
+              <div class="zh-lab zh-lab-yours"><span class="zh-lab-name">Your account</span><ul class="zh-guess"><li>Offer A <b>?</b></li><li>Offer B <b>?</b></li><li>Offer C <b>?</b></li></ul><p class="zh-proven"><svg viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 7"/></svg>Offer B<small>Proven first</small></p></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="z-section z-audiences" id="who-we-help" aria-labelledby="audience-title">
-      <div class="z-section-head"><span class="z-eyebrow">Built around your operation</span><h2 class="z-title" id="audience-title">You bring the traffic. <br><span>We handle the conversations.</span></h2></div>
-      <div class="z-audience-grid">
-        <a class="z-audience-card z-audience-agencies" href="/onlyfans-chatting-for-agencies/">
-          <div class="z-audience-brand"><span class="z-audience-roster"><span><img src="assets/platform-onlyfans-icon.png" alt="OnlyFans" width="42" height="30" loading="lazy"></span><span><img src="assets/platform-fanvue.png" alt="Fanvue" width="31" height="31" loading="lazy"></span><span><img src="assets/platform-fansly.png" alt="Fansly" width="43" height="27" loading="lazy"></span></span></div>
-          <span class="z-eyebrow">Agency owners</span><h3>Outsource your <br>chatting team.</h3><p>Your brand, your creators. We run the inbox.</p>
-          <span class="z-text-link">Chatting for agencies <span aria-hidden="true">↗</span></span>
+    <section class="z-section zh-who" id="who-we-help" aria-labelledby="audience-title">
+      <div class="z-section-head"><span class="z-eyebrow">Who we chat for</span><h2 class="z-title" id="audience-title">You bring the traffic. <br><span>We handle the conversations.</span></h2></div>
+      <div class="zh-who-grid">
+        <a class="zh-who-card zh-who-model" href="/onlyfans-chatting-agency/">
+          <span class="zh-ico zh-ico-xl" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="s" fill-rule="evenodd" d="M14 3.5c-4.8 0-8.2 3.5-8.2 8.5 0 4.2-.6 7-2.3 9.5 1.8.7 3.6.9 5.3.7C6.2 23.5 4.4 25.7 4 29h20c-.4-3.3-2.2-5.5-4.8-6.8 1.7.2 3.5 0 5.3-.7-1.7-2.5-2.3-5.3-2.3-9.5 0-5-3.4-8.5-8.2-8.5ZM10 12.3c2-.2 4.1-1.2 5.3-2.9.8 1.5 1.7 2.4 2.9 3a4.2 4.2 0 1 1-8.2-.1Z"/><path class="s" d="M26.5 10.5s-3.7-2.2-3.7-4.8a2 2 0 0 1 3.7-1.1 2 2 0 0 1 3.7 1.1c0 2.6-3.7 4.8-3.7 4.8Z"/></svg></span>
+          <h3>Models</h3>
+          <p>You make the content. We handle the DMs.</p>
+          <span class="zh-who-go">Chatting for creators <span aria-hidden="true">→</span></span>
         </a>
-        <a class="z-audience-card z-audience-creators" href="/onlyfans-chatting-agency/">
-          <div class="z-audience-brand"><span class="z-audience-wordmark"><img src="assets/platform-onlyfans-trim.png" alt="OnlyFans" width="148" height="38" loading="lazy"></span></div>
-          <span class="z-eyebrow">OnlyFans creators</span><h3>Fans coming in. <br>Inbox piling up.</h3><p>You make the content. We handle the DMs.</p>
-          <span class="z-text-link">Chatting for creators <span aria-hidden="true">↗</span></span>
+        <a class="zh-who-card zh-who-ai" href="/fanvue">
+          <span class="zh-ico zh-ico-xl" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="s" fill-rule="evenodd" d="M14 3.5c-4.8 0-8.2 3.5-8.2 8.5 0 4.2-.6 7-2.3 9.5 1.8.7 3.6.9 5.3.7C6.2 23.5 4.4 25.7 4 29h20c-.4-3.3-2.2-5.5-4.8-6.8 1.7.2 3.5 0 5.3-.7-1.7-2.5-2.3-5.3-2.3-9.5 0-5-3.4-8.5-8.2-8.5ZM10 12.3c2-.2 4.1-1.2 5.3-2.9.8 1.5 1.7 2.4 2.9 3a4.2 4.2 0 1 1-8.2-.1Z"/><path class="s" d="M26.5 1.5c.5 2.9 1.6 4 4.5 4.5-2.9.5-4 1.6-4.5 4.5-.5-2.9-1.6-4-4.5-4.5 2.9-.5 4-1.6 4.5-4.5Z"/><path class="ln" d="M28 13.5v4M26 15.5h4"/></svg></span>
+          <h3>AI models</h3>
+          <p>Your AI model. Human chatters, 24/7.</p>
+          <span class="zh-who-go">Fanvue chatting agency <span aria-hidden="true">→</span></span>
         </a>
-        <a class="z-audience-card z-audience-ai" href="/fanvue">
-          <div class="z-audience-brand"><span class="z-audience-wordmark z-audience-fanvue"><img src="assets/platform-fanvue.png" alt="" width="35" height="35" loading="lazy"><span>fanvue</span></span></div>
-          <span class="z-eyebrow">Fanvue AI-model operators</span><h3>Your AI Model. <br>Human chatters.</h3><p>One consistent voice for your character, 24/7.</p>
-          <span class="z-text-link">Fanvue chatting agency <span aria-hidden="true">↗</span></span>
+        <a class="zh-who-card zh-who-agency" href="/onlyfans-chatting-for-agencies/">
+          <span class="zh-ico zh-ico-xl" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="s" fill-rule="evenodd" d="M8.5 3.5h9A2.5 2.5 0 0 1 20 6v22.5H6V6a2.5 2.5 0 0 1 2.5-2.5ZM9.3 8h2.4v2.4H9.3ZM14.3 8h2.4v2.4h-2.4ZM9.3 13h2.4v2.4H9.3ZM14.3 13h2.4v2.4h-2.4ZM9.3 18h2.4v2.4H9.3ZM14.3 18h2.4v2.4h-2.4ZM11.8 23.5h2.4v5h-2.4Z"/><path class="s2" fill-rule="evenodd" d="M21.5 12.5h3A2.5 2.5 0 0 1 27 15v13.5h-5.5ZM23.3 16.5h2v2h-2ZM23.3 21.5h2v2h-2Z"/><path class="ln" d="M3 28.5h26"/></svg></span>
+          <h3>Agencies</h3>
+          <p>Your brand, your models. We run the inbox.</p>
+          <span class="zh-who-go">Chatting for agencies <span aria-hidden="true">→</span></span>
         </a>
       </div>
     </section>
@@ -406,7 +400,7 @@
     <!-- HOW IT WORKS -->
     <section data-screen-label="How it works" class="z-section z-flow" id="how-it-works" aria-labelledby="start-title">
       <div class="z-section-head"><span class="z-eyebrow">How it works</span><h2 class="z-title" id="start-title">From first message to live chatters <br><span>in 24 hours.</span></h2></div>
-      <ol class="z-flow-steps">
+      <ol class="z-flow-steps zh-flow" data-zh-in>
         <li><span class="z-flow-dot" aria-hidden="true">1</span><h3>Message us</h3><p>Tell us about your account.</p></li>
         <li><span class="z-flow-dot" aria-hidden="true">2</span><h3>We review it</h3><p>Traffic, content and sales.</p></li>
         <li><span class="z-flow-dot" aria-hidden="true">3</span><h3>Plan &amp; setup</h3><p>Your voice, pricing and access.</p></li>
@@ -420,20 +414,24 @@
 
 
     <!-- TRIAL WEEK -->
-    <section data-screen-label="Trial week" class="z-section z-trial" id="trial-week" aria-labelledby="trial-title">
-      <div class="z-trial-band">
-        <div>
-          <span class="z-eyebrow">Paid 7-day trial · No commitment</span>
+    <section data-screen-label="Trial week" class="z-section zh-trial-sec" id="trial-week" aria-labelledby="trial-title">
+      <div class="zh-trial">
+        <div class="zh-trial-copy">
+          <span class="z-eyebrow">Paid trial week</span>
           <h3 id="trial-title">Not sure yet? <br><span>Try us for a week.</span></h3>
-          <p>A paid 7-day trial, no commitment. You pay our normal commission on what we sell that week. Don't like us after day 7? No hard feelings.</p>
-          <a class="z-trial-cta" href="/trial">How the trial week works <span aria-hidden="true">→</span></a>
-          <span class="z-trial-alt">Not there yet? <a href="/contact#estimate">Start with the free estimate.</a></span>
+          <p>You pay our normal commission on what we sell. Nothing else.</p>
+          <div class="zh-trial-actions"><a class="zh-btn" href="/contact#trial">Start a trial week <span aria-hidden="true">→</span></a><a class="zh-link" href="/trial">How it works</a></div>
         </div>
-        <ul class="z-trial-facts">
-          <li><span><svg viewBox="0 0 24 24"><path d="M12 3v18M7 8h7a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h8"/></svg></span><div><strong>Paid, not free</strong><small>Normal commission on what we close. Nothing upfront.</small></div></li>
-          <li><span><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20v-1.5A6.5 6.5 0 0 1 13 13.4M17 8v6m-3-3h6"/></svg></span><div><strong>9–10+ new free subs a day</strong><small>The one rule before we start.</small></div></li>
-          <li class="z-trial-fact-green"><span><svg viewBox="0 0 24 24"><path d="M9 11l3 3 7-7"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></span><div><strong>Zero commitment after day 7</strong><small>Stay, or we remove our access the same day.</small></div></li>
-        </ul>
+        <div class="zh-trial-side" data-zh-in>
+          <div class="zh-week-head" aria-hidden="true"><span>Your trial week</span><span>Day 7: your call</span></div>
+          <ol class="zh-week" aria-label="Seven days of 24/7 chatting"><li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li></ol>
+          <ul class="zh-trial-stats">
+            <li><strong>$0</strong><span>upfront</span></li>
+            <li><strong>7</strong><span>days of 24/7 chatting</span></li>
+            <li><strong>0</strong><span>commitment after day 7</span></li>
+          </ul>
+          <p class="zh-trial-rule">For accounts getting 9–10+ new free subs a day.</p>
+        </div>
       </div>
     </section>
 
@@ -510,33 +508,51 @@
     <section data-screen-label="Pricing" id="pricing" style="padding:80px 0 10px;max-width:860px;margin:0 auto">
       <div style="text-align:center;margin-bottom:32px">
         <div style="font-weight:700;letter-spacing:.28em;text-transform:uppercase;font-size:12px;color:#1AA3F5;margin-bottom:12px">Pricing</div>
-        <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4.4vw,44px);letter-spacing:-.02em;margin:0;color:#fff">If we don't sell, you don't pay.</h2>
+        <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4.4vw,44px);letter-spacing:-.02em;margin:0;color:#fff;text-wrap:balance">If we don't sell, you don't pay.</h2>
       </div>
-      <div class="z-rate-card">
-        <span class="z-eyebrow">OnlyFans &amp; Fansly chatting rates</span>
+      <div class="z-rate-card zh-rate" data-kind="{{ rateKind }}">
+        <div class="zh-seg" role="group" aria-label="Model type">
+          <button class="zh-seg-btn" type="button" aria-pressed="{{ rateReal }}" onClick="{{ setRateReal }}"><img src="assets/platform-onlyfans-icon.png" alt="" width="27" height="19" loading="lazy">Real models</button>
+          <button class="zh-seg-btn" type="button" aria-pressed="{{ rateAi }}" onClick="{{ setRateAi }}"><img src="assets/platform-fanvue.png" alt="" width="19" height="19" loading="lazy">AI models</button>
+        </div>
         <div class="z-rate-number" aria-live="polite"><bdi children="{{ rateLabel }}"></bdi><span>%</span></div>
         <p class="z-rate-description">of net tips &amp; PPV. <strong>Subscriptions stay 100% yours.</strong></p>
-        <div class="z-revenue-control">
+        <div class="z-revenue-control zh-rate-real">
           <div class="z-revenue-heading"><label for="monthly-revenue">Your monthly revenue</label><output for="monthly-revenue"><bdi children="{{ revLabel }}"></bdi><small> / month</small></output></div>
           <input id="monthly-revenue" class="zslider z-revenue-slider" type="range" aria-label="Your monthly revenue" min="0" max="140000" step="2500" value="{{ revM }}" aria-valuetext="{{ revenueAria }}" onInput="{{ onRevChange }}" style="{{ revenueStyle }}">
           <div class="z-rate-ticks"><span data-active="{{ tier25 }}">25%<small>Up to $40K</small></span><span data-active="{{ tier20 }}">20%<small>$40K–$90K</small></span><span data-active="{{ tier16 }}">16.5%<small>Above $90K</small></span></div>
         </div>
-        <p style="font-size:13px;color:#a8c5d6;margin:24px 0 0">OnlyFans &amp; Fansly: 25% up to $40K a month, 20% from $40K to $90K, 16.5% above $90K. <a href="/fanvue" style="color:#b0e5d6;text-decoration:none;font-weight:600">Fanvue: usually 20–25%</a> of net tips &amp; PPV we close. Final terms agreed before launch.</p>
-        <div class="z-rate-benefits"><span>No retainers</span><span>No minimums</span><span>No lock-in</span><a href="/pricing">Full pricing details →</a></div>
+        <p class="zh-rate-ai">For AI models on <a href="/fanvue">Fanvue</a>. Your exact rate is agreed before launch.</p>
+        <ul class="zh-rate-benefits"><li>No retainers</li><li>No minimums</li><li>No lock-in</li></ul>
+        <a class="zh-link zh-rate-more" href="/pricing">Full pricing details <span aria-hidden="true">→</span></a>
       </div>
     </section>
 
-
     <!-- ACCOUNT SAFETY -->
-    <section data-screen-label="Account safety" class="z-section z-safe" id="account-safety" aria-labelledby="safety-title">
+    <section data-screen-label="Account safety" class="z-section zh-safe" id="account-safety" aria-labelledby="safety-title">
       <div class="z-section-head"><span class="z-eyebrow">Account safety</span><h2 class="z-title" id="safety-title">Your account <span>stays yours.</span></h2></div>
-      <ul class="z-safe-grid">
-        <li><span class="z-safe-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><h3>You keep the login</h3><p>Only you hold the password, the account email and the two-factor codes.</p></li>
-        <li><span class="z-safe-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v5c0 5 8 10 8 10s8-5 8-10V6l-8-3Z"/><path d="M12 8v4m0 3h.01"/></svg></span><h3>Access agreed, then removed</h3><p>Set up your platform's own way before day 1, in writing. The day you stop, our access goes.</p></li>
-        <li><span class="z-safe-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5M8 13h8M8 17h5"/></svg></span><h3>Fan notes, nothing sensitive</h3><p>We note what fans tell us. Never passwords, never payment details.</p></li>
-        <li><span class="z-safe-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0M17 3l2 2-2 2"/></svg></span><h3>A human decides on anything risky</h3><p>Strict rules on vault content and customs. Anything unusual goes to a team leader first.</p></li>
-      </ul>
-      <div class="z-safe-foot"><span>Stop anytime. No notice period, no exit fee.</span><a href="/terms">Read our working terms →</a></div>
+      <div class="zh-safe-grid">
+        <div class="zh-safe-card zh-safe-keys">
+          <div class="zh-safe-top"><span class="zh-ico zh-green" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="ln" d="M10.5 14v-3.5a5.5 5.5 0 0 1 11 0V14"/><path class="s" fill-rule="evenodd" d="M8.5 13.5h15A2.5 2.5 0 0 1 26 16v10a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 6 26V16a2.5 2.5 0 0 1 2.5-2.5ZM16 18a2.1 2.1 0 0 0-1.1 3.9V24h2.2v-2.1A2.1 2.1 0 0 0 16 18Z"/></svg></span><h3>You keep the login</h3></div>
+          <p>These never leave your hands:</p>
+          <ul class="zh-safe-kept"><li><svg viewBox="0 0 32 32" aria-hidden="true"><path class="ln" d="M10.5 14v-3.5a5.5 5.5 0 0 1 11 0V14"/><path class="s" fill-rule="evenodd" d="M8.5 13.5h15A2.5 2.5 0 0 1 26 16v10a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 6 26V16a2.5 2.5 0 0 1 2.5-2.5ZM16 18a2.1 2.1 0 0 0-1.1 3.9V24h2.2v-2.1A2.1 2.1 0 0 0 16 18Z"/></svg>Password</li><li><svg viewBox="0 0 32 32" aria-hidden="true"><path class="ln" d="M10.5 14v-3.5a5.5 5.5 0 0 1 11 0V14"/><path class="s" fill-rule="evenodd" d="M8.5 13.5h15A2.5 2.5 0 0 1 26 16v10a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 6 26V16a2.5 2.5 0 0 1 2.5-2.5ZM16 18a2.1 2.1 0 0 0-1.1 3.9V24h2.2v-2.1A2.1 2.1 0 0 0 16 18Z"/></svg>Account email</li><li><svg viewBox="0 0 32 32" aria-hidden="true"><path class="ln" d="M10.5 14v-3.5a5.5 5.5 0 0 1 11 0V14"/><path class="s" fill-rule="evenodd" d="M8.5 13.5h15A2.5 2.5 0 0 1 26 16v10a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 6 26V16a2.5 2.5 0 0 1 2.5-2.5ZM16 18a2.1 2.1 0 0 0-1.1 3.9V24h2.2v-2.1A2.1 2.1 0 0 0 16 18Z"/></svg>Two-factor codes</li><li><svg viewBox="0 0 32 32" aria-hidden="true"><path class="ln" d="M10.5 14v-3.5a5.5 5.5 0 0 1 11 0V14"/><path class="s" fill-rule="evenodd" d="M8.5 13.5h15A2.5 2.5 0 0 1 26 16v10a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 6 26V16a2.5 2.5 0 0 1 2.5-2.5ZM16 18a2.1 2.1 0 0 0-1.1 3.9V24h2.2v-2.1A2.1 2.1 0 0 0 16 18Z"/></svg>Payouts</li></ul>
+        </div>
+        <div class="zh-safe-card">
+          <span class="zh-ico zh-green" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="s" fill-rule="evenodd" d="M10.5 9a7 7 0 1 1 0 14 7 7 0 0 1 0-14Zm0 4.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5Z"/><path class="s" d="M16.5 14.5H29v3h-2v4h-3v-4h-2v3h-3v-3h-2.5Z"/></svg></span>
+          <h3>Access agreed, then removed</h3>
+          <p>Set up your platform's own way, in writing. The day you stop, our access goes.</p>
+        </div>
+        <div class="zh-safe-card">
+          <span class="zh-ico zh-green" aria-hidden="true"><svg viewBox="0 0 32 32"><circle class="s" cx="12.5" cy="10" r="5"/><path class="s" d="M3 27.5c0-5.6 4.3-9.5 9.5-9.5 1.7 0 3.2.4 4.6 1.1a8.4 8.4 0 0 0-1 8.4Z"/><circle class="s" cx="24" cy="22.5" r="6.5"/><path class="cut" d="m21 22.6 2.1 2.1 3.9-4.2"/></svg></span>
+          <h3>A human decides on anything risky</h3>
+          <p>Anything unusual goes to a team leader first.</p>
+        </div>
+      </div>
+      <div class="zh-safe-bar">
+        <span class="zh-safe-seal" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="s" d="M16 3 5.5 6.8v7.7c0 6.6 4.5 11.3 10.5 14.5 6-3.2 10.5-7.9 10.5-14.5V6.8Z"/><path class="zh-seal-tick" d="m11 15.5 3.5 3.5 6.5-7"/></svg></span>
+        <p><strong>Stop anytime. No notice period, no exit fee.</strong><small>Zinely is a brand of TMG digital, s. r. o., a company registered in Slovakia (EU).</small></p>
+        <a class="zh-btn zh-btn-ghost" href="/terms">Read our working terms <span aria-hidden="true">→</span></a>
+      </div>
     </section>
 
     <!-- FAQ (condensed) -->
@@ -544,66 +560,43 @@
       <div class="z-faq-heading"><div><span class="z-eyebrow">Good questions. Straight answers.</span><h2 class="z-title">Quick answers.</h2></div><p>Still curious? <a href="/contact">Talk to us ↗</a></p></div>
       <div class="z-accordion">
         <details>
-          <summary>Can I switch from my current chatting team?</summary>
-          <div class="z-answer"><p>Start with a free earnings estimate and tell us what isn’t working. We can discuss your current setup, voice, boundaries and handover before you decide whether to switch. You don’t need to share account access for that first review.</p></div>
-        </details>
-        <details>
-          <summary>Do you work with AI models as well as real creators?</summary>
-          <div class="z-answer"><p>Yes. We manage chatting for real creators and AI-model operators, including on Fanvue. The persona can be AI-generated; our chatters are human. Your character guide, content boundaries and fan notes keep shifts consistent. <a href="/fanvue">See how Fanvue chatting works →</a></p></div>
-        </details>
-        <details>
           <summary>Do you use AI to chat with fans?</summary>
           <div class="z-answer"><p>No. Every message your fans receive is sent by a human chatter. We use AI inside our own tools to give chatters each fan’s context — past conversations, purchases, preferences, boundaries and notes from earlier shifts — so they always know who they’re talking to. AI helps our chatters; it never chats. <a href="/blog/ai-assisted-human-chatting/">How AI-assisted human chatting works →</a></p></div>
-        </details>
-        <details>
-          <summary>What do I get with the free earnings estimate?</summary>
-          <div class="z-answer"><p>A personal review from our team, an estimated earnings range with the assumptions explained, and the chatting opportunities we see. Send your platform, recent revenue, subscriber or traffic numbers, and what you want to improve, on WhatsApp, Telegram, Discord or email. For agencies, include the number of accounts. It’s free and there’s no commitment; an estimate is not a guarantee.</p></div>
         </details>
         <details>
           <summary>Will fans know it isn't me?</summary>
           <div class="z-answer"><p>We build the chatting around your tone, emoji habits, boundaries and backstory. Detailed fan notes help each shift pick up naturally. Our chatters are human, including when the model is AI-generated.</p></div>
         </details>
         <details>
-          <summary>Do you take subscription money as well?</summary>
-          <div class="z-answer"><p>No — never. Subscriptions and renewals stay 100% yours. Our percentage applies only to the tips and PPVs our chatters close in the DMs.</p></div>
-        </details>
-        <details>
-          <summary>How often do you get paid?</summary>
-          <div class="z-answer"><p>Every two weeks. We total the period's tips &amp; PPVs, apply the agreed percentage, and send the invoice — payable by bank transfer or crypto. Your platform payouts go straight to your own bank account; we never have access to them.</p></div>
+          <summary>Is my account safe with you?</summary>
+          <div class="z-answer"><p>Yes. Only you hold the password, account email and two-factor codes. Strict rules on vault content and customs, no improvising on sensitive situations — anything risky gets escalated to a team leader before anyone acts. Your account is treated like the business it is. <a href="#account-safety">How we handle access →</a></p></div>
         </details>
         <details>
           <summary>How do I know my account actually gets 24/7 chatting?</summary>
           <div class="z-answer"><p>We have systems that monitor every account around the clock. If a chatter misses a shift, cover chatters step in — and if our systems detect no one active on your account, it's flagged to management immediately. Coverage isn't a promise, it's monitored.</p></div>
         </details>
         <details>
-          <summary>Is my account safe with you?</summary>
-          <div class="z-answer"><p>Yes. Only you hold the password, account email and two-factor codes. Strict rules on vault content and customs, no improvising on sensitive situations — anything risky gets escalated to a team leader before anyone acts. Your account is treated like the business it is. <a href="#account-safety">How we handle access →</a></p></div>
+          <summary>Do you take subscription money as well?</summary>
+          <div class="z-answer"><p>No — never. Subscriptions and renewals stay 100% yours. Our percentage applies only to the tips and PPVs our chatters close in the DMs.</p></div>
         </details>
         <details>
           <summary>Can I stop whenever I want?</summary>
           <div class="z-answer"><p>Yes — no lock-in contracts, no notice periods, no exit fees. We keep partners with results, not paperwork.</p></div>
         </details>
-        <details>
-          <summary>How fast can we start?</summary>
-          <div class="z-answer"><p>Usually within 24 hours of your message — onboarding captures your voice and content library, then our chatters go live.</p></div>
-        </details>
-        <details>
-          <summary>Can I try it before committing?</summary>
-          <div class="z-answer"><p>Yes. The trial week is seven days of 24/7 chatting, paid by commission at your normal rate, with no commitment: if you don't like us after day 7, you don't proceed. It's for accounts averaging 9–10 or more new free subscribers a day. <a href="/trial">How the trial week works →</a></p></div>
-        </details>
-        <details>
-          <summary>I run an agency — can you take over our chatting?</summary>
-          <div class="z-answer"><p>Yes, that's most of our business. Your clients, your creators, our closers — and invisible to their fans.</p></div>
-        </details>
       </div>
     </section>
 
     <!-- FINAL CTA -->
-    <section data-screen-label="Final CTA" class="z-final">
-      <h2>What could your<br><span>inbox earn?</span></h2>
-      <ul class="z-final-ticks"><li>Free</li><li>No commitment</li><li>No account access needed</li></ul>
-      <a data-estimate-cta class="z-final-btn" href="/contact#estimate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 2v-10a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8Z"/></svg>Get a free earnings estimate</a>
-      <a class="z-final-alt" href="/trial">Or try us for a week <span aria-hidden="true">→</span></a>
+    <section data-screen-label="Final CTA" class="zh-final" data-zh-in>
+      <div class="zh-final-fans" aria-hidden="true">
+        <p><i>J</i>hey, you there? 👀<small>2h ago</small></p>
+        <p><i>D</i>got anything new for me?<small>5h ago</small></p>
+        <p><i>R</i>just got paid 😏<small>1d ago</small></p>
+      </div>
+      <h2>Your fans are messaging right now. <br><span>Who's answering?</span></h2>
+      <a data-estimate-cta class="zh-final-btn" href="/contact#estimate">Get my free earnings estimate <span aria-hidden="true">→</span></a>
+      <ul class="zh-final-ticks"><li>Free</li><li>No commitment</li><li>No account access needed</li></ul>
+      <a class="zh-final-alt" href="/trial">Or try us for a week <span aria-hidden="true">→</span></a>
     </section>
 
     <!-- FOOTER -->
@@ -633,7 +626,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;telegramUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://t.me/timzines&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;managementOpen&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Full management&quot;}}">
 class Component extends DCLogic {
-  state = { calcType: "real", calcTier: "t1", calcSubs: 1500, revM: 70000 };
+  state = { calcType: "real", calcTier: "t1", calcSubs: 1500, revM: 70000, rateType: "real" };
   renderVals() {
     const open = this.props.managementOpen ?? false;
     const { calcType, calcTier, calcSubs } = this.state;
@@ -683,7 +676,12 @@ class Component extends DCLogic {
       tier16: this.state.revM > 90000,
       revM: this.state.revM,
       revLabel: "$" + this.state.revM.toLocaleString("en-US"),
-      rateLabel: this.state.revM <= 40000 ? "25" : this.state.revM <= 90000 ? "20" : "16.5",
+      rateLabel: this.state.rateType === "ai" ? "20–25" : this.state.revM <= 40000 ? "25" : this.state.revM <= 90000 ? "20" : "16.5",
+      rateKind: this.state.rateType,
+      rateReal: this.state.rateType === "real",
+      rateAi: this.state.rateType === "ai",
+      setRateReal: () => this.setState({ rateType: "real" }),
+      setRateAi: () => this.setState({ rateType: "ai" }),
       onRevChange: (e) => this.setState({ revM: Number(e.target.value) }),
     };
   }

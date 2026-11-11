@@ -6,10 +6,10 @@
   // Which entrance each block gets. First match wins; anything else rises in place.
   const KINDS = [
     ['heading', '.z-section-head, .z-compact-heading, .z-faq-heading, .sv2-services-head, .sv2-hero-copy, .z-contact-intro'],
-    ['card', '.z-result-card, .z-audience-card, .z-service-tile, .sv2-card, .ed-card, .blog-card, .z-case, .z-pack, .ps-metrics'],
+    ['card', '.z-result-card, .z-audience-card, .z-service-tile, .sv2-card, .ed-card, .blog-card, .z-case, .z-pack, .ps-metrics, .zh-who-card, .zh-safe-card'],
     ['row', '.z-fix-labels, .z-fix-row, .z-flow-steps > li, .z-accordion > details'],
-    ['band', '.z-why-shell, .z-calc, .z-rate-card, .z-diy-pain, .z-diy-bridge, .sv2-core, .sv2-plus, .sv2-hub, .sv2-who, .sv-management, .ps-section, .ps-commercial, .z-contact-composer, .z-honourable, .ed-section'],
-    ['up', '.z-fix-note, .z-results-more, .z-flow-cta, .sv2-mini-cta, .sv2-close, .ps-close, .ed-cta'],
+    ['band', '.z-why-shell, .z-calc, .z-rate-card, .z-diy-pain, .z-diy-bridge, .sv2-core, .sv2-plus, .sv2-hub, .sv2-who, .sv-management, .ps-section, .ps-commercial, .z-contact-composer, .z-honourable, .ed-section, .zh-fix-table, .zh-trial, .zh-safe-bar, .zh-final'],
+    ['up', '.z-fix-note, .z-results-more, .zh-more, .z-flow-cta, .sv2-mini-cta, .sv2-close, .ps-close, .ed-cta'],
   ];
   const BLOCKS = KINDS.map(([, selector]) => selector).join(',');
   const HEROES = '.z-hero, .sv2-hero, .z-contact-hero, .ps-hero';
