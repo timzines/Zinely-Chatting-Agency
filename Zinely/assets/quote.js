@@ -17,7 +17,7 @@
   const CONTACT_PATH = /^\/(?:contact|sk\/kontakt)(?:\.html)?\/?$/;
 
   const T = sk ? {
-    label: 'Štyri rýchle otázky pre Tima',
+    label: 'Štyri rýchle otázky',
     step: ['Krok ', ' zo 4'], trial: 'Skúšobný týždeň', ready: 'Pripravené', time: 'Zaberie 60 sekúnd',
     back: 'Späť', close: 'Zavrieť', hint: 'Ťukni na jednu možnosť', next: 'Pokračovať',
     q1: 'Kto si?',
@@ -33,24 +33,24 @@
     trafficAsk: 'Akú návštevnosť má účet?', trafficEg: 'napr. 30K na Instagrame, 15 nových odberateľov denne',
     needAmount: 'Doplň mesačnú sumu.', needTraffic: 'Doplň návštevnosť účtu.',
     q4: 'Kde ťa najlepšie zastihneme?',
-    qHow: 'Kto napíše prvý?', me: 'Napíšem Timovi', tim: 'Tim napíše mne',
+    qHow: 'Kto napíše prvý?', me: 'Napíšem vám', tim: 'Napíšte mi vy',
     meSub: { whatsapp: 'Otvorí WhatsApp so správou', telegram: 'Otvorí Telegram so správou', email: 'Otvorí e-mail so správou', discord: 'Skopíruje ju a otvorí Discord' },
     timSub: { whatsapp: 'Nechám svoje číslo na WhatsApp', telegram: 'Nechám svoje meno na Telegrame', discord: 'Nechám svoje meno na Discorde', email: 'Nechám svoj e-mail' },
     contactEg: { whatsapp: 'Číslo na WhatsApp s predvoľbou', telegram: '@meno na Telegrame', discord: 'Meno na Discorde', email: 'tvoj@email.com' },
     needContact: { whatsapp: 'Doplň svoje číslo na WhatsApp.', telegram: 'Doplň svoje meno na Telegrame.', discord: 'Doplň svoje meno na Discorde.', email: 'Doplň svoj e-mail.' },
-    send: 'Odoslať Timovi', sending: 'Odosielam…', failed: 'Nepodarilo sa odoslať. Ťukni radšej na „Napíšem Timovi“.',
-    sent: 'Odoslané', sentTitle: 'Odoslané Timovi.',
-    sentSub: { whatsapp: (c) => 'Ozve sa ti na WhatsApp na čísle ' + c + '.', telegram: (c) => 'Ozve sa ti na Telegrame (' + c + ').', discord: (c) => 'Pridá si ťa na Discorde (' + c + ').', email: (c) => 'Napíše ti na ' + c + '.' },
+    send: 'Odoslať', sending: 'Odosielam…', failed: 'Nepodarilo sa odoslať. Ťukni radšej na „Napíšem vám“.',
+    sent: 'Odoslané', sentTitle: 'Máme to.',
+    sentSub: { whatsapp: (c) => 'Ozveme sa ti na WhatsApp na čísle ' + c + '.', telegram: (c) => 'Ozveme sa ti na Telegrame (' + c + ').', discord: (c) => 'Pridáme si ťa na Discorde (' + c + ').', email: (c) => 'Napíšeme ti na ' + c + '.' },
     email: 'E-mail', copy: 'Skopírovať správu',
     done: {
-      whatsapp: ['Už stačí len odoslať.', 'Správa čaká vo WhatsAppe. Tim odpovedá osobne.', 'Otvoriť WhatsApp znova'],
-      telegram: ['Už stačí len odoslať.', 'Správa čaká v Telegrame. Tim odpovedá osobne.', 'Otvoriť Telegram znova'],
+      whatsapp: ['Už stačí len odoslať.', 'Správa čaká vo WhatsAppe. Odpovedáme osobne.', 'Otvoriť WhatsApp znova'],
+      telegram: ['Už stačí len odoslať.', 'Správa čaká v Telegrame. Odpovedáme osobne.', 'Otvoriť Telegram znova'],
       email: ['E-mail je pripravený.', 'Adresovaný na ' + EMAIL + '. Stačí ho odoslať.', 'Otvoriť e-mail znova'],
       discord: ['Správa je skopírovaná.', 'Pridaj si timzines na Discorde a vlož ju do chatu.', 'Otvoriť Discord'],
     },
     subject: { trial: 'Skúšobný týždeň', fresh: 'Nový účet', estimate: 'Bezplatný odhad zárobku' },
   } : {
-    label: 'Four quick questions for Tim',
+    label: 'Four quick questions',
     step: ['Step ', ' of 4'], trial: 'Trial week', ready: 'Ready to send', time: 'Takes 60 seconds',
     back: 'Back', close: 'Close', hint: 'Tap one to continue', next: 'Continue',
     q1: 'Which one are you?',
@@ -66,18 +66,18 @@
     trafficAsk: 'What traffic does it have?', trafficEg: 'e.g. 30K on Instagram, 15 new subs a day',
     needAmount: 'Add the monthly amount to continue.', needTraffic: 'Add its traffic to continue.',
     q4: 'Best way to reach you?',
-    qHow: 'Who writes first?', me: "I'll message Tim", tim: 'Tim messages me',
+    qHow: 'Who writes first?', me: "I'll message you", tim: 'You message me',
     meSub: { whatsapp: 'Opens WhatsApp, message ready', telegram: 'Opens Telegram, message ready', email: 'Opens my email, message ready', discord: 'Copies it and opens Discord' },
     timSub: { whatsapp: "I'll leave my WhatsApp number", telegram: "I'll leave my Telegram username", discord: "I'll leave my Discord username", email: "I'll leave my email" },
     contactEg: { whatsapp: 'WhatsApp number, with country code', telegram: '@username on Telegram', discord: 'Discord username', email: 'you@email.com' },
     needContact: { whatsapp: 'Add your WhatsApp number.', telegram: 'Add your Telegram username.', discord: 'Add your Discord username.', email: 'Add your email.' },
-    send: 'Send to Tim', sending: 'Sending…', failed: "Couldn't send it. Tap “I'll message Tim” instead.",
-    sent: 'Sent', sentTitle: 'Sent to Tim.',
-    sentSub: { whatsapp: (c) => "He'll message you on WhatsApp at " + c + '.', telegram: (c) => "He'll message " + c + ' on Telegram.', discord: (c) => "He'll add " + c + ' on Discord.', email: (c) => "He'll email you at " + c + '.' },
+    send: 'Send', sending: 'Sending…', failed: "Couldn't send it. Tap “I'll message you” instead.",
+    sent: 'Sent', sentTitle: 'Got it.',
+    sentSub: { whatsapp: (c) => "We'll message you on WhatsApp at " + c + '.', telegram: (c) => "We'll message " + c + ' on Telegram.', discord: (c) => "We'll add " + c + ' on Discord.', email: (c) => "We'll email you at " + c + '.' },
     email: 'Email', copy: 'Copy message',
     done: {
-      whatsapp: ['Now just hit send.', 'Your message is waiting in WhatsApp. Tim replies personally.', 'Open WhatsApp again'],
-      telegram: ['Now just hit send.', 'Your message is waiting in Telegram. Tim replies personally.', 'Open Telegram again'],
+      whatsapp: ['Now just hit send.', 'Your message is waiting in WhatsApp. We reply personally.', 'Open WhatsApp again'],
+      telegram: ['Now just hit send.', 'Your message is waiting in Telegram. We reply personally.', 'Open Telegram again'],
       email: ['Your email is ready.', 'Addressed to ' + EMAIL + '. Just hit send.', 'Open email again'],
       discord: ['Message copied.', 'Add timzines on Discord and paste it in the chat.', 'Open Discord'],
     },
@@ -91,7 +91,7 @@
     ai: line('<path class="zq-s" fill-rule="evenodd" d="M14 3.5c-4.8 0-8.2 3.5-8.2 8.5 0 4.2-.6 7-2.3 9.5 1.8.7 3.6.9 5.3.7C6.2 23.5 4.4 25.7 4 29h20c-.4-3.3-2.2-5.5-4.8-6.8 1.7.2 3.5 0 5.3-.7-1.7-2.5-2.3-5.3-2.3-9.5 0-5-3.4-8.5-8.2-8.5ZM10 12.3c2-.2 4.1-1.2 5.3-2.9.8 1.5 1.7 2.4 2.9 3a4.2 4.2 0 1 1-8.2-.1Z"/><path class="zq-s" d="M26.5 1.5c.5 2.9 1.6 4 4.5 4.5-2.9.5-4 1.6-4.5 4.5-.5-2.9-1.6-4-4.5-4.5 2.9-.5 4-1.6 4.5-4.5Z"/><path d="M28 13.5v4M26 15.5h4"/>'),
     coins: line('<rect class="zq-coin" x="6" y="23" width="18" height="5" rx="2.5"/><rect class="zq-coin" x="6" y="18.5" width="18" height="5" rx="2.5"/><rect class="zq-coin" x="6" y="14" width="18" height="5" rx="2.5"/><rect class="zq-coin" x="6" y="9.5" width="18" height="5" rx="2.5"/><rect class="zq-coin" x="6" y="5" width="18" height="5" rx="2.5"/><path class="zq-spark zq-f" d="M27.5 1.5c.3 1.9 1.1 2.7 3 3-1.9.3-2.7 1.1-3 3-.3-1.9-1.1-2.7-3-3 1.9-.3 2.7-1.1 3-3Z"/>'),
     more: line('<path d="M16 8v16M8 16h16"/>'),
-    inbox: line('<path class="zq-f" d="M27.5 15a10 10 0 0 1-10 10H9l-4.5 3.5V15a10 10 0 0 1 10-10h3a10 10 0 0 1 10 10Z"/><path d="M11.5 15h.1M16 15h.1M20.5 15h.1" stroke-width="3"/>'),
+    inbox: line('<path class="zq-s" fill-rule="evenodd" d="M16 4.5c7 0 12.5 4.6 12.5 10.3S23 25.1 16 25.1c-1.5 0-2.9-.2-4.2-.6L5.5 27.5l1.8-5.3c-2.4-1.9-3.8-4.5-3.8-7.4C3.5 9.1 9 4.5 16 4.5ZM12 14.8a1.7 1.7 0 1 1-3.4 0 1.7 1.7 0 0 1 3.4 0ZM17.7 14.8a1.7 1.7 0 1 1-3.4 0 1.7 1.7 0 0 1 3.4 0ZM23.4 14.8a1.7 1.7 0 1 1-3.4 0 1.7 1.7 0 0 1 3.4 0Z"/>'),
     clock: line('<circle cx="16" cy="16" r="11.5"/><path d="M16 9.5V16l4.3 2.7"/>'),
     seed: line('<path d="M16 28V15"/><path class="zq-f" d="M16 17.5c0-5-3.3-8-9.5-8 0 5 3.3 8 9.5 8Z" fill="currentColor" fill-opacity=".2"/><path d="M16 13c0-4.3 2.9-7 8.5-7 0 4.3-2.9 7-8.5 7Z" fill="currentColor" fill-opacity=".2"/>'),
     check: line('<path d="m7 16.5 6 6L25 10"/>', ' stroke-width="3.6"'),
@@ -141,7 +141,8 @@
   let busy = false;
   let shownNumber = 0;
 
-  // The message Tim receives. He reads these himself: it always says who, where, how much (or what
+  // The message Tim receives. The form never names him (owner: visitors don't know him yet), so it
+  // opens with a plain "Hi". He reads these himself: it always says who, where, how much (or what
   // traffic a new model has) and what they want.
   function platformName() {
     const named = PLATFORMS.find((p) => p[0] === state.platform);
@@ -162,7 +163,7 @@
       const ask = trial ? ' Chcem začať skúšobný týždeň' + (agency ? ' s jednou zo svojich modeliek.' : '.')
         : state.fresh ? ' Chcem sa poradiť, ako ' + (agency ? 's nimi ' : '') + 'začať.'
         : ' Chcem bezplatný odhad zárobku' + (agency ? ' pre svoju agentúru.' : '.');
-      return 'Ahoj, Tim, ' + who + '.' + earn + ask;
+      return 'Ahoj, ' + who + '.' + earn + ask;
     }
     const on = platform ? ' on ' + platform : '';
     const who = { model: "I'm a model" + on + ' and I handle my own marketing', agency: 'I run an agency with real models' + on + ' and want to outsource chatting', ai: 'I own an AI model' + on + ' and want to outsource chatting' }[state.who || 'model'];
@@ -171,7 +172,7 @@
     const ask = trial ? " I'd like to start a trial week" + (agency ? ' with one of my models.' : '.')
       : state.fresh ? " I'd like to talk about getting " + (agency ? 'them' : 'it') + ' started with you.'
       : " I'd like a free earnings estimate" + (agency ? ' for my roster.' : '.');
-    return 'Hi Tim, ' + who + '.' + earn + ask;
+    return 'Hi, ' + who + '.' + earn + ask;
   }
   function sendUrl(channel, text) {
     const body = encodeURIComponent(text);
