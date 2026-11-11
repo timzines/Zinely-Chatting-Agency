@@ -51,7 +51,7 @@
       email: ['E-mail je pripravený.', 'Adresovaný na ' + EMAIL + '. Stačí ho odoslať.', 'Otvoriť e-mail znova'],
       discord: ['Správa je skopírovaná.', 'Pridaj si timzines na Discorde a vlož ju do chatu.', 'Otvoriť Discord'],
     },
-    subject: { trial: 'Skúšobný týždeň', fresh: 'Nový účet', estimate: 'Bezplatný odhad zárobku' },
+    subject: { trial: 'Zinely Chatting Agency: skúšobný týždeň', fresh: 'Zinely Chatting Agency: nový účet', estimate: 'Zinely Chatting Agency: bezplatný odhad zárobku' },
   } : {
     label: 'Four quick questions',
     titles: { estimate: 'Free earnings estimate', trial: 'Start a trial week', contact: 'Contact us' },
@@ -87,7 +87,7 @@
       email: ['Your email is ready.', 'Addressed to ' + EMAIL + '. Just hit send.', 'Open email again'],
       discord: ['Message copied.', 'Add timzines on Discord and paste it in the chat.', 'Open Discord'],
     },
-    subject: { trial: 'Trial week', fresh: 'New model', estimate: 'Free earnings estimate' },
+    subject: { trial: 'Zinely Chatting Agency: trial week', fresh: 'Zinely Chatting Agency: new model', estimate: 'Zinely Chatting Agency: free earnings estimate' },
   };
 
   const line = (d, extra = '') => `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"${extra}>${d}</svg>`;
@@ -191,17 +191,37 @@
     if (channel === 'email') return 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(T.subject[state.intent === 'trial' ? 'trial' : state.fresh ? 'fresh' : 'estimate']) + '&body=' + body;
     return 'https://discord.com/app';
   }
+  // A link Tim can click in the lead email to open that person's chat. Discord has no link by
+  // username (only by numeric id), so there it is an instruction instead.
+  function contactLink(channel, contact) {
+    const value = String(contact || '').trim();
+    if (channel === 'whatsapp') {
+      const digits = value.replace(/\D/g, '').replace(/^00/, '');
+      return digits.length >= 7 ? 'https://wa.me/' + digits : '';
+    }
+    if (channel === 'telegram') {
+      const handle = value.replace(/^@/, '');
+      if (/^[A-Za-z][A-Za-z0-9_]{2,31}$/.test(handle)) return 'https://t.me/' + handle;
+      const digits = value.replace(/\D/g, '').replace(/^00/, '');
+      return /^[+\d][\d\s().-]+$/.test(value) && digits.length >= 7 ? 'https://t.me/+' + digits : '';
+    }
+    if (channel === 'email') return 'Hit Reply on this email, or write to ' + value;
+    if (channel === 'discord') return 'Discord has no direct link. Add friend: ' + value;
+    return '';
+  }
   // Emails the answers and the contact they left to Tim. Rejects when it did not go through, so the
-  // screen can send them to "I'll message Tim" instead of losing the lead.
+  // screen can send them to "Message us now" instead of losing the lead.
   function sendLead(contact, trap) {
     if (trap) return Promise.resolve(); // a bot filled the hidden field
     const who = { model: 'Real model', agency: 'Agency (real models)', ai: 'AI model owner' }[state.who] || '';
     const app = (APPS.find((a) => a[0] === state.channel) || [])[1] || state.channel;
     const earns = state.fresh ? 'not earning yet' : '$' + Number(state.amount).toLocaleString('en-US') + ' a month';
+    const kind = state.intent === 'trial' ? 'new trial week request' : state.fresh ? 'new model enquiry' : 'new estimate request';
     const body = {
-      _subject: 'New lead: ' + [who, platformName(), earns, app].filter(Boolean).join(' · '),
+      _subject: 'Zinely Chatting Agency: ' + kind + ' (' + [who, platformName(), earns, app].filter(Boolean).join(' · ') + ')',
       _template: 'table',
       _captcha: 'false',
+      'Open their chat': contactLink(state.channel, contact) || 'No link for this contact. Use the details below.',
       'Wants': state.intent === 'trial' ? 'Trial week' : 'Free earnings estimate',
       'Who': who,
       'Platform': platformName(),
@@ -383,7 +403,10 @@
         const value = input.value.trim();
         if (channel === 'whatsapp') return value.replace(/\D/g, '').length >= 7 ? value : '';
         if (channel === 'email') return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value) ? value : '';
-        if (channel === 'telegram') return value.replace(/^@/, '').length >= 3 ? (/^[@+\d]/.test(value) ? value : '@' + value) : '';
+        if (channel === 'telegram') {
+          const name = value.replace(/^(https?:\/\/)?(www\.)?(t|telegram)\.me\//i, '').replace(/[/?#].*$/, '');
+          return name.replace(/^@/, '').length >= 3 ? (/^[@+\d]/.test(name) ? name : '@' + name) : '';
+        }
         return value.length >= 2 ? value : '';
       };
       const paint = () => next.setAttribute('aria-disabled', String(!clean()));
