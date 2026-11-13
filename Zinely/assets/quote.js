@@ -19,7 +19,7 @@
   const T = sk ? {
     label: 'Štyri rýchle otázky',
     titles: { estimate: 'Bezplatný odhad zárobku', trial: 'Skúšobný týždeň', contact: 'Napíš nám' },
-    step: ['Krok ', ' zo 4'], trial: 'Skúšobný týždeň', ready: 'Pripravené', time: 'Zaberie 60 sekúnd',
+    step: ['Krok ', ' zo 4'], trial: 'Skúšobný týždeň', ready: 'Pripravené', time: 'Zaberie &lt;&nbsp;30 sekúnd',
     back: 'Späť', close: 'Zavrieť', hint: 'Ťukni na jednu možnosť', next: 'Pokračovať',
     q1: 'Kto si?',
     who: {
@@ -55,7 +55,7 @@
   } : {
     label: 'Four quick questions',
     titles: { estimate: 'Free earnings estimate', trial: 'Start a trial week', contact: 'Contact us' },
-    step: ['Step ', ' of 4'], trial: 'Trial week', ready: 'Ready to send', time: 'Takes 60 seconds',
+    step: ['Step ', ' of 4'], trial: 'Trial week', ready: 'Ready to send', time: 'Takes &lt;&nbsp;30 seconds',
     back: 'Back', close: 'Close', hint: 'Tap one to continue', next: 'Continue',
     q1: 'Which one are you?',
     who: {
